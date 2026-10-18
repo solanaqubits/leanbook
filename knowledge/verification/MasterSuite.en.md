@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: bcbd259e1ecc3d504bc79871be63463fe0921f59f07ec57411e9496977a6d0b7
+source_sha256: a15a0180fbc9de3e10407c5cd467dcafe82b84a5152aadfba472c8176deeba46
 novelty: not-assessed
 status: reviewed
 ---
@@ -140,3 +140,7 @@ result retains response availability and cryptographic security as external obli
 Release v0.7.11 adds `CryptoFullSuite.ipa_probability`: finite distinct-square
 fork probabilities and heavy-prefix bounds, with explicit valid-child premises
 for extractor composition. General forking and ROM security remain open.
+
+Release v0.7.12 adds `CryptoFullSuite.ipa_tree_probability` and
+`CryptoFullSuite.ipa_bounded_retry`: complete-tree conditional probability,
+first-success extraction and finite expected attempt count. No ROM/PPT claim.

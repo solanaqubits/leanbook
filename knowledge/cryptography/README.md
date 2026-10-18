@@ -87,3 +87,7 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Finite shared-prefix IPA fork acquisition](../04_cryptography/CryptoBulletproofsIPAForkingExtractionContract.md) — seven distinct nonzero accepting calls, recursive coverage, and witness-or-relation extraction.
 
 - [Finite IPA forking probability](../04_cryptography/CryptoBulletproofsIPAFiniteForkingProbabilityContract.md) — four uniform draws, heavy prefixes, and conditional extractor composition.
+
+- [Complete IPA tree probability](../04_cryptography/CryptoBulletproofsIPATreeProbabilityContract.md).
+
+- [Bounded IPA retries and expected attempt count](../04_cryptography/CryptoBulletproofsIPABoundedRetryContract.md).

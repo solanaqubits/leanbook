@@ -1511,5 +1511,23 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoBulletproofsIPAFiniteForkingProbabilityContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoBulletproofsIPATreeProbabilityContract": {
+    "suite_struct": "CryptoBulletproofsIPATreeProbabilityContractSuite",
+    "suite_type": "CryptoBulletproofsIPATreeProbabilityContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "ipa_tree_probability",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoBulletproofsIPATreeProbabilityContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoBulletproofsIPABoundedRetryContract": {
+    "suite_struct": "CryptoBulletproofsIPABoundedRetryContractSuite",
+    "suite_type": "CryptoBulletproofsIPABoundedRetryContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "ipa_bounded_retry",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoBulletproofsIPABoundedRetryContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

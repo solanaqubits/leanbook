@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: bfaea294e45eeff2538b8767a7b3abb87241026b5135a2814169778a41b9682f
+source_sha256: e67eb9278ca20fde70850fffb035b23bebbd2b8acb7bac66039c820f3357b183
 novelty: not-assessed
 status: reviewed
 ---
@@ -64,3 +64,7 @@ result retains response availability and cryptographic security as external obli
 Release v0.7.11 adds `CryptoFullSuite.ipa_probability`: finite distinct-square
 fork probabilities and heavy-prefix bounds, with explicit valid-child premises
 for extractor composition. General forking and ROM security remain open.
+
+Release v0.7.12 adds `CryptoFullSuite.ipa_tree_probability` and
+`CryptoFullSuite.ipa_bounded_retry`: complete-tree conditional probability,
+first-success extraction and finite expected attempt count. No ROM/PPT claim.

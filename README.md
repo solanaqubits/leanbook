@@ -30,16 +30,18 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**204 direct imports in MasterSuite**, **248 Lean sources including Verification.lean**.
-[Release v0.7.11](docs/release-v0.7.11.en.md) adds finite IPA forking probability
-(epsilon204). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**206 direct imports in MasterSuite**, **250 Lean sources including Verification.lean**.
+[Release v0.7.12](docs/release-v0.7.12.en.md) adds complete IPA tree probability
+and bounded retries (epsilon205–206). Lake remains 0.7.1; the full public beta
+basis remains v0.7.1.
 
-[Finite IPA forking probability](knowledge/04_cryptography/CryptoBulletproofsIPAFiniteForkingProbabilityContract.md)
-bounds the probability of four accepting challenges with distinct squares under
-independent uniform sampling with replacement, and the fraction of heavy prefixes.
-Protocol composition filters zero/absent replies through `replySet` and requires
-valid completed child trees. General forking, Fiat–Shamir/ROM security and a
-success probability for the whole recursive tree are not established.
+The complete-tree bound conditions each local check on all preceding successful
+checks. Retry bounds condition each attempt on all preceding failures. The checked
+extractor stops at the first successful candidate and returns a valid witness or
+a generator relation. Expected attempt count is at most1/p under the stated
+conditional hypotheses; this is not a runtime or expected-PPT bound. Repeating
+one shared tape need not amplify success. General Forking Lemma and ROM security
+remain open.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

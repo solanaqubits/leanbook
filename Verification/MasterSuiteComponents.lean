@@ -1,3 +1,5 @@
+import Verification.CryptoBulletproofsIPABoundedRetryContract
+import Verification.CryptoBulletproofsIPATreeProbabilityContract
 import Verification.CryptoBulletproofsIPAFiniteForkingProbabilityContract
 import Verification.CryptoBulletproofsIPAForkingExtractionContract
 import Verification.DistributedTendermintHeaderChainEpochAuthContract
@@ -208,6 +210,10 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoBulletproofsIPABoundedRetryContract
+  (CryptoBulletproofsIPABoundedRetryContractSuite)
+open CryptoBulletproofsIPATreeProbabilityContract
+  (CryptoBulletproofsIPATreeProbabilityContractSuite)
 open CryptoBulletproofsIPAFiniteForkingProbabilityContract
   (CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite)
 open CryptoBulletproofsIPAForkingExtractionContract
@@ -439,6 +445,8 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  ipa_bounded_retry : CryptoBulletproofsIPABoundedRetryContractSuite
+  ipa_tree_probability : CryptoBulletproofsIPATreeProbabilityContractSuite
   ipa_probability : CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite
   ipa_forking : CryptoBulletproofsIPAForkingExtractionContractSuite
   ipa_tree : CryptoBulletproofsTreeExtraction.CryptoBulletproofsTreeExtractionSuite
@@ -503,6 +511,8 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  ipa_bounded_retry := CryptoBulletproofsIPABoundedRetryContract.verification_suite
+  ipa_tree_probability := CryptoBulletproofsIPATreeProbabilityContract.verification_suite
   ipa_probability := CryptoBulletproofsIPAFiniteForkingProbabilityContract.verification_suite
   ipa_forking := CryptoBulletproofsIPAForkingExtractionContract.verification_suite
   ipa_tree := by

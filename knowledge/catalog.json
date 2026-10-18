@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoBulletproofsIPABoundedRetryContract",
+        "Verification.CryptoBulletproofsIPATreeProbabilityContract",
         "Verification.CryptoBulletproofsIPAFiniteForkingProbabilityContract",
         "Verification.CryptoBulletproofsIPAForkingExtractionContract",
         "Verification.DistributedTendermintHeaderChainEpochAuthContract",
@@ -1439,6 +1441,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoBulletproofsIPABoundedRetryContract",
+        "Verification.CryptoBulletproofsIPATreeProbabilityContract",
         "Verification.CryptoBulletproofsIPAFiniteForkingProbabilityContract",
         "Verification.CryptoBulletproofsIPAForkingExtractionContract",
         "Verification.DistributedTendermintHeaderChainEpochAuthContract",
@@ -2829,6 +2833,29 @@
       "card": "knowledge/04_cryptography/CryptoBulletproofsIPAFiniteForkingProbabilityContract.md",
       "project_imports": [
         "Verification.CryptoBulletproofsIPAForkingExtractionContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoBulletproofsIPATreeProbabilityContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoBulletproofsIPATreeProbabilityContract.lean",
+      "card": "knowledge/04_cryptography/CryptoBulletproofsIPATreeProbabilityContract.md",
+      "project_imports": [
+        "Verification.CryptoBulletproofsIPAFiniteForkingProbabilityContract",
+        "Verification.CryptoBulletproofsTreeExtraction"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoBulletproofsIPABoundedRetryContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoBulletproofsIPABoundedRetryContract.lean",
+      "card": "knowledge/04_cryptography/CryptoBulletproofsIPABoundedRetryContract.md",
+      "project_imports": [
+        "Verification.CryptoBulletproofsIPATreeProbabilityContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"
