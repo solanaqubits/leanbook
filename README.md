@@ -30,17 +30,17 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**213 direct imports in MasterSuite**, **257 Lean sources including Verification.lean**.
-[Release v0.7.18](docs/release-v0.7.18.en.md) adds an uncompressed interactive
-hidden-inner-product protocol (epsilon213). Lake remains 0.7.1; the full public
+**214 direct imports in MasterSuite**, **258 Lean sources including Verification.lean**.
+[Release v0.7.19](docs/release-v0.7.19.en.md) adds causal IPA compression for the
+hidden-inner-product protocol (epsilon214). Lake remains 0.7.1; the full public
 beta basis remains v0.7.1.
 
-Three accepting transcripts with common announcements and distinct challenges
-extract a joint witness or an explicit generator relation. Completeness and
-extraction do not assume bijective blinding. Exact full-transcript HVZK does,
-with an executable simulator that performs no discrete-log inversion.
-IPA compression, adversarial fork acquisition, malicious-verifier ZK,
-Fiat-Shamir/ROM and polynomial-time guarantees remain outside scope.
+Single compressed executions are complete and preserve exact honest-verifier
+simulation under bijective blinding. Sequential independent challenges match
+the postprocessing law. Six supplied IPA trees give a joint witness or an explicit
+generator relation; they are extractor inputs, not the transmitted proof.
+Adversarial fork acquisition, malicious-verifier ZK, Fiat-Shamir/ROM and
+polynomial-time guarantees remain outside scope.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

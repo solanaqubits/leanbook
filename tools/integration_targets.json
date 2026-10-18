@@ -1592,5 +1592,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarInnerProductProtocolContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarInnerProductCompressionContract": {
+    "suite_struct": "CryptoHiddenScalarInnerProductCompressionContractSuite",
+    "suite_type": "CryptoHiddenScalarInnerProductCompressionContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "hidden_scalar_compression",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarInnerProductCompressionContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

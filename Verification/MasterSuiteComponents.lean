@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarInnerProductCompressionContract
 import Verification.CryptoHiddenScalarInnerProductProtocolContract
 import Verification.CryptoBulletproofsIPAPedersenOpeningConsistencyContract
 import Verification.CryptoBulletproofsIPAPublicScalarBindingContract
@@ -217,6 +218,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarInnerProductCompressionContract
+  (CryptoHiddenScalarInnerProductCompressionContractSuite)
 open CryptoHiddenScalarInnerProductProtocolContract
   (CryptoHiddenScalarInnerProductProtocolContractSuite)
 open CryptoBulletproofsIPAPedersenOpeningConsistencyContract
@@ -466,6 +469,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  hidden_scalar_compression : CryptoHiddenScalarInnerProductCompressionContractSuite
   hidden_scalar_protocol : CryptoHiddenScalarInnerProductProtocolContractSuite
   ipa_pedersen_consistency : CryptoBulletproofsIPAPedersenOpeningConsistencyContractSuite
   ipa_public_scalar : CryptoBulletproofsIPAPublicScalarBindingContractSuite
@@ -539,6 +543,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  hidden_scalar_compression := CryptoHiddenScalarInnerProductCompressionContract.verification_suite
   hidden_scalar_protocol := CryptoHiddenScalarInnerProductProtocolContract.verification_suite
   ipa_pedersen_consistency := by
     exact CryptoBulletproofsIPAPedersenOpeningConsistencyContract.verification_suite

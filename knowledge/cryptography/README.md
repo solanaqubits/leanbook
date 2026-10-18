@@ -105,3 +105,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Pedersen opening consistency with IPA](../04_cryptography/CryptoBulletproofsIPAPedersenOpeningConsistencyContract.md).
 
 - [Hidden inner-product protocol and exact HVZK](../04_cryptography/CryptoHiddenScalarInnerProductProtocolContract.md).
+
+- [Hidden inner-product compression and supplied-fork extraction](../04_cryptography/CryptoHiddenScalarInnerProductCompressionContract.md).

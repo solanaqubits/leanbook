@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: dc0e0f635ae08f0b04dfc8e1e600066e80c3d5304e8b09db9a985b5ea4b66dda
+source_sha256: b8c88bf043d92e85272b86a01fee5dc83074117feaa5d206cb2801ece98aa479
 novelty: not-assessed
 status: reviewed
 ---
@@ -169,3 +169,8 @@ Release v0.7.18 adds `CryptoFullSuite.hidden_scalar_protocol`: full-vector
 interactive hidden-inner-product verification, three-point witness-or-relation
 extraction, and exact honest-verifier simulation under bijective blinding.
 IPA compression, adversarial fork acquisition, ROM and PPT remain outside scope.
+
+Release v0.7.19 adds `CryptoFullSuite.hidden_scalar_compression`: complete
+single-path IPA compression, causal independent execution, exact HVZK under
+bijective blinding, and witness-or-relation extraction from six supplied trees.
+Adversarial fork acquisition, ROM and polynomial-time guarantees remain open.

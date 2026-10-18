@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 65770d399171b85699fceece23cca8cc30453e7ecdf12a8cf49f686bf3a9287c
+source_sha256: eeb02b54631a0850bf2c100599ab3bf5a15bf0e1359183b67dc78204ebc4065e
 novelty: not-assessed
 status: reviewed
 ---
@@ -93,3 +93,8 @@ Release v0.7.18 adds `CryptoFullSuite.hidden_scalar_protocol`: full-vector
 interactive hidden-inner-product verification, three-point witness-or-relation
 extraction, and exact honest-verifier simulation under bijective blinding.
 IPA compression, adversarial fork acquisition, ROM and PPT remain outside scope.
+
+Release v0.7.19 adds `CryptoFullSuite.hidden_scalar_compression`: complete
+single-path IPA compression, causal independent execution, exact HVZK under
+bijective blinding, and witness-or-relation extraction from six supplied trees.
+Adversarial fork acquisition, ROM and polynomial-time guarantees remain open.
