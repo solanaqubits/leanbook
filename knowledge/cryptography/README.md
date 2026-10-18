@@ -97,3 +97,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Recursive finite IPA tree generation](../04_cryptography/CryptoBulletproofsIPARecursiveTreeGeneratorContract.md).
 
 - [Node-local multi-level IPA retries](../04_cryptography/CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract.md).
+
+- [Partial IPA branch cache and resource comparison](../04_cryptography/CryptoBulletproofsIPAPartialBranchCacheResourceContract.md).

@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: e020c30a80625c39cf91d2302a14df68e8529ab235233d1d9a872d1b93750232
+source_sha256: 25d6c155724c56403a8868df6fd088b8a010cf1140b06d4e9177e4a0cfcf7093
 novelty: not-assessed
 status: reviewed
 ---
@@ -77,3 +77,6 @@ Source availability, ROM and runtime claims remain outside the proved guarantees
 Release v0.7.14 adds `CryptoFullSuite.ipa_node_retry`: independent local retries
 at every recursive IPA node, exact finite probabilities and conditional lower
 bounds. Strict actual amplification requires an actual attempt rate in (0,1).
+
+Release v0.7.15 adds `CryptoFullSuite.ipa_partial_cache`: fixed-fork partial-cache
+context safety, scheduled child-call dominance and independent exact probabilities.

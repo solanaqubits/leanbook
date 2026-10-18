@@ -1,3 +1,4 @@
+import Verification.CryptoBulletproofsIPAPartialBranchCacheResourceContract
 import Verification.CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract
 import Verification.CryptoBulletproofsIPARecursiveTreeGeneratorContract
 import Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract
@@ -213,6 +214,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoBulletproofsIPAPartialBranchCacheResourceContract
+  (CryptoBulletproofsIPAPartialBranchCacheResourceContractSuite)
 open CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract
   (CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContractSuite)
 open CryptoBulletproofsIPARecursiveTreeGeneratorContract
@@ -454,6 +457,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  ipa_partial_cache : CryptoBulletproofsIPAPartialBranchCacheResourceContractSuite
   ipa_node_retry : CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContractSuite
   ipa_recursive_generator : CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite
   ipa_product_tapes : CryptoBulletproofsIPAProductTapeCandidateGeneratorContractSuite
@@ -523,6 +527,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  ipa_partial_cache := CryptoBulletproofsIPAPartialBranchCacheResourceContract.verification_suite
   ipa_node_retry := CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract.verification_suite
   ipa_recursive_generator := CryptoBulletproofsIPARecursiveTreeGeneratorContract.verification_suite
   ipa_product_tapes := CryptoBulletproofsIPAProductTapeCandidateGeneratorContract.verification_suite

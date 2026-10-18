@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 39d43d98cb443769b99168f7b9a331faf2c8ab77e5f433dd0497e20571e84e04
+source_sha256: ad8b234e923b048d485c1e744f2d022002cfc964576c085f24081780ecc4547e
 novelty: not-assessed
 status: reviewed
 ---
@@ -122,3 +122,6 @@ Source availability, ROM and runtime claims remain outside the proved guarantees
 Release v0.7.14 adds `CryptoFullSuite.ipa_node_retry`: independent local retries
 at every recursive IPA node, exact finite probabilities and conditional lower
 bounds. Strict actual amplification requires an actual attempt rate in (0,1).
+
+Release v0.7.15 adds `CryptoFullSuite.ipa_partial_cache`: fixed-fork partial-cache
+context safety, scheduled child-call dominance and independent exact probabilities.

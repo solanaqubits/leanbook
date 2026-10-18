@@ -1556,5 +1556,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoBulletproofsIPAPartialBranchCacheResourceContract": {
+    "suite_struct": "CryptoBulletproofsIPAPartialBranchCacheResourceContractSuite",
+    "suite_type": "CryptoBulletproofsIPAPartialBranchCacheResourceContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "ipa_partial_cache",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoBulletproofsIPAPartialBranchCacheResourceContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

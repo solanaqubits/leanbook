@@ -30,17 +30,17 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**209 direct imports in MasterSuite**, **253 Lean sources including Verification.lean**.
-[Release v0.7.14](docs/release-v0.7.14.en.md) adds node-local bounded retries
-inside recursive IPA generation (epsilon209). Lake remains 0.7.1;
-the full public beta basis remains v0.7.1.
+**210 direct imports in MasterSuite**, **254 Lean sources including Verification.lean**.
+[Release v0.7.15](docs/release-v0.7.15.en.md) adds partial caching of successful
+IPA child branches with an explicit resource comparison (epsilon210).
+Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Each node attempt uses a fresh root seed and four fresh recursively budgeted child
-tapes. The checked generator yields an existing IPA opening or a generator relation.
-Finite counting gives exact retry probabilities and a per-depth lower bound under
-explicit local availability. Actual success is monotone in budgets; strict growth
-requires the actual attempt probability in (0,1). General Forking Lemma, ROM and
-polynomial runtime are not claimed. Private artifacts are excluded from this release.
+For a fixed valid parent fork and aligned tape table, caching preserves successful
+children, includes every reset-success outcome and uses no more child-generator
+calls under the common R-round / 4R-call limit. Exact product probabilities require
+independent tapes. Context transfer concerns unchanged valid trees and equality of
+full computed child contexts. Cost counts scheduled calls, not machine runtime.
+General Forking Lemma, ROM and polynomial runtime are not claimed.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)
