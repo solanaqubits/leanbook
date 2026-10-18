@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: e67eb9278ca20fde70850fffb035b23bebbd2b8acb7bac66039c820f3357b183
+source_sha256: 705b34e37474af42b9f53d4f0c1dd36c67e94746bfa80bd91e54bd91b7eecc11
 novelty: not-assessed
 status: reviewed
 ---
@@ -68,3 +68,8 @@ for extractor composition. General forking and ROM security remain open.
 Release v0.7.12 adds `CryptoFullSuite.ipa_tree_probability` and
 `CryptoFullSuite.ipa_bounded_retry`: complete-tree conditional probability,
 first-success extraction and finite expected attempt count. No ROM/PPT claim.
+
+Release v0.7.13 adds `CryptoFullSuite.ipa_product_tapes` and
+`CryptoFullSuite.ipa_recursive_generator`: concrete independent retry tapes,
+recursive checked child generation and finite conditional tree probability.
+Source availability, ROM and runtime claims remain outside the proved guarantees.

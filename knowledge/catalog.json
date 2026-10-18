@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoBulletproofsIPARecursiveTreeGeneratorContract",
+        "Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract",
         "Verification.CryptoBulletproofsIPABoundedRetryContract",
         "Verification.CryptoBulletproofsIPATreeProbabilityContract",
         "Verification.CryptoBulletproofsIPAFiniteForkingProbabilityContract",
@@ -1441,6 +1443,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoBulletproofsIPARecursiveTreeGeneratorContract",
+        "Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract",
         "Verification.CryptoBulletproofsIPABoundedRetryContract",
         "Verification.CryptoBulletproofsIPATreeProbabilityContract",
         "Verification.CryptoBulletproofsIPAFiniteForkingProbabilityContract",
@@ -2856,6 +2860,28 @@
       "card": "knowledge/04_cryptography/CryptoBulletproofsIPABoundedRetryContract.md",
       "project_imports": [
         "Verification.CryptoBulletproofsIPATreeProbabilityContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoBulletproofsIPAProductTapeCandidateGeneratorContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoBulletproofsIPAProductTapeCandidateGeneratorContract.lean",
+      "card": "knowledge/04_cryptography/CryptoBulletproofsIPAProductTapeCandidateGeneratorContract.md",
+      "project_imports": [
+        "Verification.CryptoBulletproofsIPABoundedRetryContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoBulletproofsIPARecursiveTreeGeneratorContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoBulletproofsIPARecursiveTreeGeneratorContract.lean",
+      "card": "knowledge/04_cryptography/CryptoBulletproofsIPARecursiveTreeGeneratorContract.md",
+      "project_imports": [
+        "Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

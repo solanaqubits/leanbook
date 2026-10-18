@@ -1,3 +1,5 @@
+import Verification.CryptoBulletproofsIPARecursiveTreeGeneratorContract
+import Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract
 import Verification.CryptoBulletproofsIPABoundedRetryContract
 import Verification.CryptoBulletproofsIPATreeProbabilityContract
 import Verification.CryptoBulletproofsIPAFiniteForkingProbabilityContract
@@ -210,6 +212,10 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoBulletproofsIPARecursiveTreeGeneratorContract
+  (CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite)
+open CryptoBulletproofsIPAProductTapeCandidateGeneratorContract
+  (CryptoBulletproofsIPAProductTapeCandidateGeneratorContractSuite)
 open CryptoBulletproofsIPABoundedRetryContract
   (CryptoBulletproofsIPABoundedRetryContractSuite)
 open CryptoBulletproofsIPATreeProbabilityContract
@@ -445,6 +451,8 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  ipa_recursive_generator : CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite
+  ipa_product_tapes : CryptoBulletproofsIPAProductTapeCandidateGeneratorContractSuite
   ipa_bounded_retry : CryptoBulletproofsIPABoundedRetryContractSuite
   ipa_tree_probability : CryptoBulletproofsIPATreeProbabilityContractSuite
   ipa_probability : CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite
@@ -511,6 +519,8 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  ipa_recursive_generator := CryptoBulletproofsIPARecursiveTreeGeneratorContract.verification_suite
+  ipa_product_tapes := CryptoBulletproofsIPAProductTapeCandidateGeneratorContract.verification_suite
   ipa_bounded_retry := CryptoBulletproofsIPABoundedRetryContract.verification_suite
   ipa_tree_probability := CryptoBulletproofsIPATreeProbabilityContract.verification_suite
   ipa_probability := CryptoBulletproofsIPAFiniteForkingProbabilityContract.verification_suite

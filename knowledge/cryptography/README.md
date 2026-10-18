@@ -91,3 +91,7 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Complete IPA tree probability](../04_cryptography/CryptoBulletproofsIPATreeProbabilityContract.md).
 
 - [Bounded IPA retries and expected attempt count](../04_cryptography/CryptoBulletproofsIPABoundedRetryContract.md).
+
+- [IPA candidate generation on independent product tapes](../04_cryptography/CryptoBulletproofsIPAProductTapeCandidateGeneratorContract.md).
+
+- [Recursive finite IPA tree generation](../04_cryptography/CryptoBulletproofsIPARecursiveTreeGeneratorContract.md).

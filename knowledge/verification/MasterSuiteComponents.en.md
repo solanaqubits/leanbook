@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: c10ddc0cab10d13f454248172a6e96c4b663ae99b6661568d66e1a20b03dcc21
+source_sha256: 95d404d47ce83ee265e9dd8c56dc630e0ba841f5b48e256c635e22ea8a30adf0
 novelty: not-assessed
 status: reviewed
 ---
@@ -113,3 +113,8 @@ for extractor composition. General forking and ROM security remain open.
 Release v0.7.12 adds `CryptoFullSuite.ipa_tree_probability` and
 `CryptoFullSuite.ipa_bounded_retry`: complete-tree conditional probability,
 first-success extraction and finite expected attempt count. No ROM/PPT claim.
+
+Release v0.7.13 adds `CryptoFullSuite.ipa_product_tapes` and
+`CryptoFullSuite.ipa_recursive_generator`: concrete independent retry tapes,
+recursive checked child generation and finite conditional tree probability.
+Source availability, ROM and runtime claims remain outside the proved guarantees.

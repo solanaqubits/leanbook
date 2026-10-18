@@ -30,18 +30,18 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**206 direct imports in MasterSuite**, **250 Lean sources including Verification.lean**.
-[Release v0.7.12](docs/release-v0.7.12.en.md) adds complete IPA tree probability
-and bounded retries (epsilon205–206). Lake remains 0.7.1; the full public beta
-basis remains v0.7.1.
+**208 direct imports in MasterSuite**, **252 Lean sources including Verification.lean**.
+[Release v0.7.13](docs/release-v0.7.13.en.md) adds concrete independent retry tapes
+and recursive finite IPA tree generation (epsilon207–208). Lake remains 0.7.1;
+the full public beta basis remains v0.7.1.
 
-The complete-tree bound conditions each local check on all preceding successful
-checks. Retry bounds condition each attempt on all preceding failures. The checked
-extractor stops at the first successful candidate and returns a valid witness or
-a generator relation. Expected attempt count is at most1/p under the stated
-conditional hypotheses; this is not a runtime or expected-PPT bound. Repeating
-one shared tape need not amplify success. General Forking Lemma and ROM security
-remain open.
+The concrete product experiment derives RetryBounds, exact success probabilities
+and bounded expected attempt counts. The recursive generator checks scalar
+openings and computes child contexts from their parents. Its finite probability
+formula conditions on the root before multiplying child rates; positive lower
+bounds require explicit local availability. Successful extraction returns a valid
+opening in the existing interface or a nontrivial generator relation. General
+Forking Lemma, Fiat–Shamir/ROM and polynomial runtime remain outside scope.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

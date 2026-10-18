@@ -235,3 +235,7 @@ open CryptoCommitmentVectorPedersenGroup in
 
 #audit_axioms CryptoBulletproofsIPABoundedRetryContract.verification_suite
 #audit_axioms CryptoBulletproofsIPATreeProbabilityContract.verification_suite
+
+#audit_axioms CryptoBulletproofsIPAProductTapeCandidateGeneratorContract.verification_suite
+
+#audit_axioms CryptoBulletproofsIPARecursiveTreeGeneratorContract.verification_suite
