@@ -248,3 +248,5 @@ open CryptoCommitmentVectorPedersenGroup in
 #audit_axioms CryptoHiddenScalarInnerProductProtocolContract.verification_suite
 
 #audit_axioms CryptoHiddenScalarInnerProductCompressionContract.verification_suite
+
+#audit_axioms CryptoHiddenScalarForkAcquisitionContract.verification_suite

@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarForkAcquisitionContract",
         "Verification.CryptoHiddenScalarInnerProductCompressionContract",
         "Verification.CryptoHiddenScalarInnerProductProtocolContract",
         "Verification.CryptoBulletproofsIPAPedersenOpeningConsistencyContract",
@@ -1449,6 +1450,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarForkAcquisitionContract",
         "Verification.CryptoHiddenScalarInnerProductCompressionContract",
         "Verification.CryptoHiddenScalarInnerProductProtocolContract",
         "Verification.CryptoBulletproofsIPAPedersenOpeningConsistencyContract",
@@ -2962,6 +2964,18 @@
       "card": "knowledge/04_cryptography/CryptoHiddenScalarInnerProductCompressionContract.md",
       "project_imports": [
         "Verification.CryptoHiddenScalarInnerProductProtocolContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarForkAcquisitionContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarForkAcquisitionContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarForkAcquisitionContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarInnerProductCompressionContract",
+        "Verification.CryptoBulletproofsIPATreeProbabilityContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

@@ -30,17 +30,17 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**214 direct imports in MasterSuite**, **258 Lean sources including Verification.lean**.
-[Release v0.7.19](docs/release-v0.7.19.en.md) adds causal IPA compression for the
-hidden-inner-product protocol (epsilon214). Lake remains 0.7.1; the full public
+**215 direct imports in MasterSuite**, **259 Lean sources including Verification.lean**.
+[Release v0.7.20](docs/release-v0.7.20.en.md) adds snapshot-indexed acquisition of
+hidden-scalar nested forks (epsilon215). Lake remains 0.7.1; the full public
 beta basis remains v0.7.1.
 
-Single compressed executions are complete and preserve exact honest-verifier
-simulation under bijective blinding. Sequential independent challenges match
-the postprocessing law. Six supplied IPA trees give a joint witness or an explicit
-generator relation; they are extractor inputs, not the transmitted proof.
-Adversarial fork acquisition, malicious-verifier ZK, Fiat-Shamir/ROM and
-polynomial-time guarantees remain outside scope.
+A finite collector restores before each candidate, preserves actual transition
+provenance and produces a valid compressed fork on success. Extraction yields a
+joint witness or an explicit generator relation. Exact Q(k), R(k)=Q(k)-1 apply to
+Clean runs; arbitrary outcomes retain actual logs and schedule-based bounds.
+Conditional probability premises are explicit. External-process refinement,
+general Bellare–Neven, Fiat–Shamir/ROM and polynomial complexity remain open.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

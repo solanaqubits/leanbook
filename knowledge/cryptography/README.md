@@ -107,3 +107,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Hidden inner-product protocol and exact HVZK](../04_cryptography/CryptoHiddenScalarInnerProductProtocolContract.md).
 
 - [Hidden inner-product compression and supplied-fork extraction](../04_cryptography/CryptoHiddenScalarInnerProductCompressionContract.md).
+
+- [Snapshot-indexed nested fork acquisition](../04_cryptography/CryptoHiddenScalarForkAcquisitionContract.md).

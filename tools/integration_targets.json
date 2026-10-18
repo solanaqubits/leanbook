@@ -1601,5 +1601,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarInnerProductCompressionContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarForkAcquisitionContract": {
+    "suite_struct": "CryptoHiddenScalarForkAcquisitionContractSuite",
+    "suite_type": "CryptoHiddenScalarForkAcquisitionContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "fork_acquisition",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarForkAcquisitionContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

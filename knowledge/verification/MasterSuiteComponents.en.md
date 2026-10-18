@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: b33de2839115d2ecb56a6c98c32bd9c56d22d1f183b708484a32a86535929a48
+source_sha256: d29d5bd2c60cd63764a1dd986515794608045cfb37c5eb3bce0aa78d9d2d40ab
 novelty: not-assessed
 status: reviewed
 ---
@@ -143,3 +143,8 @@ Release v0.7.19 adds `CryptoFullSuite.hidden_scalar_compression`: complete
 single-path IPA compression, causal independent execution, exact HVZK under
 bijective blinding, and witness-or-relation extraction from six supplied trees.
 Adversarial fork acquisition, ROM and polynomial-time guarantees remain open.
+
+Release v0.7.20 adds `CryptoFullSuite.fork_acquisition`: snapshot-indexed nested
+acquisition with model-relative provenance and witness-or-relation extraction.
+Exact Q/R costs apply to Clean runs; arbitrary runs retain actual logs and schedule
+bounds. Conditional probability premises remain explicit; no ROM or PPT claim.
