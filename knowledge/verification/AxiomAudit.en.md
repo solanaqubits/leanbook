@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 58c5d54dafc12797d28d96e8af3b203dd63b6718a2bbda9a90755fc8690bb160
+source_sha256: 65770d399171b85699fceece23cca8cc30453e7ecdf12a8cf49f686bf3a9287c
 novelty: not-assessed
 status: reviewed
 ---
@@ -88,3 +88,8 @@ Release v0.7.17 adds `CryptoFullSuite.ipa_pedersen_consistency`: a supplied
 Pedersen fork and two IPA trees are checked at one extracted scalar, yielding
 a joint witness or an extended-generator relation. No single-transcript hidden-c
 verifier or full ZK is claimed.
+
+Release v0.7.18 adds `CryptoFullSuite.hidden_scalar_protocol`: full-vector
+interactive hidden-inner-product verification, three-point witness-or-relation
+extraction, and exact honest-verifier simulation under bijective blinding.
+IPA compression, adversarial fork acquisition, ROM and PPT remain outside scope.

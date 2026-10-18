@@ -1583,5 +1583,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "by\n    exact CryptoBulletproofsIPAPedersenOpeningConsistencyContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarInnerProductProtocolContract": {
+    "suite_struct": "CryptoHiddenScalarInnerProductProtocolContractSuite",
+    "suite_type": "CryptoHiddenScalarInnerProductProtocolContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "hidden_scalar_protocol",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarInnerProductProtocolContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

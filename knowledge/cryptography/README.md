@@ -103,3 +103,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [IPA binding to a public scalar](../04_cryptography/CryptoBulletproofsIPAPublicScalarBindingContract.md).
 
 - [Pedersen opening consistency with IPA](../04_cryptography/CryptoBulletproofsIPAPedersenOpeningConsistencyContract.md).
+
+- [Hidden inner-product protocol and exact HVZK](../04_cryptography/CryptoHiddenScalarInnerProductProtocolContract.md).

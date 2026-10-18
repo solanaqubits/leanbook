@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 23efb5d2300954039449fee4468597134102066a90b45f8590109818e991b7d8
+source_sha256: 6619e12621b98899ff8e6e1e6d9ae3ecdc22507e5197a4b9bbdd2df8cb9c0c04
 novelty: not-assessed
 status: reviewed
 ---
@@ -133,3 +133,8 @@ Release v0.7.17 adds `CryptoFullSuite.ipa_pedersen_consistency`: a supplied
 Pedersen fork and two IPA trees are checked at one extracted scalar, yielding
 a joint witness or an extended-generator relation. No single-transcript hidden-c
 verifier or full ZK is claimed.
+
+Release v0.7.18 adds `CryptoFullSuite.hidden_scalar_protocol`: full-vector
+interactive hidden-inner-product verification, three-point witness-or-relation
+extraction, and exact honest-verifier simulation under bijective blinding.
+IPA compression, adversarial fork acquisition, ROM and PPT remain outside scope.

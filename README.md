@@ -30,18 +30,17 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**212 direct imports in MasterSuite**, **256 Lean sources including Verification.lean**.
-[Release v0.7.17](docs/release-v0.7.17.en.md) adds algebraic consistency between
-a supplied Pedersen opening fork and two IPA trees (epsilon212).
-Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**213 direct imports in MasterSuite**, **257 Lean sources including Verification.lean**.
+[Release v0.7.18](docs/release-v0.7.18.en.md) adds an uncompressed interactive
+hidden-inner-product protocol (epsilon213). Lake remains 0.7.1; the full public
+beta basis remains v0.7.1.
 
-Both IPA trees are checked at the scalar extracted from the opening fork.
-The result is either a joint witness opening Q and V with dot(a,b)=c, or an
-explicit nonzero relation over the extended generator basis. Honest all-depth
-completeness and finite regressions cover mismatched openings and contexts.
-This is checking of supplied forks after extraction, not a single-transcript
-hidden-scalar verifier. Fork acquisition, full ZK, Fiat-Shamir/ROM and polynomial
-extraction time remain unproved.
+Three accepting transcripts with common announcements and distinct challenges
+extract a joint witness or an explicit generator relation. Completeness and
+extraction do not assume bijective blinding. Exact full-transcript HVZK does,
+with an executable simulator that performs no discrete-log inversion.
+IPA compression, adversarial fork acquisition, malicious-verifier ZK,
+Fiat-Shamir/ROM and polynomial-time guarantees remain outside scope.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

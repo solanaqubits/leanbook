@@ -244,3 +244,5 @@ open CryptoCommitmentVectorPedersenGroup in
 #audit_axioms CryptoBulletproofsIPARecursiveTreeGeneratorContract.verification_suite
 
 #audit_axioms CryptoBulletproofsIPAPedersenOpeningConsistencyContract.verification_suite
+
+#audit_axioms CryptoHiddenScalarInnerProductProtocolContract.verification_suite
