@@ -1,3 +1,4 @@
+import Verification.CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract
 import Verification.CryptoBulletproofsIPARecursiveTreeGeneratorContract
 import Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract
 import Verification.CryptoBulletproofsIPABoundedRetryContract
@@ -212,6 +213,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract
+  (CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContractSuite)
 open CryptoBulletproofsIPARecursiveTreeGeneratorContract
   (CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite)
 open CryptoBulletproofsIPAProductTapeCandidateGeneratorContract
@@ -451,6 +454,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  ipa_node_retry : CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContractSuite
   ipa_recursive_generator : CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite
   ipa_product_tapes : CryptoBulletproofsIPAProductTapeCandidateGeneratorContractSuite
   ipa_bounded_retry : CryptoBulletproofsIPABoundedRetryContractSuite
@@ -519,6 +523,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  ipa_node_retry := CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract.verification_suite
   ipa_recursive_generator := CryptoBulletproofsIPARecursiveTreeGeneratorContract.verification_suite
   ipa_product_tapes := CryptoBulletproofsIPAProductTapeCandidateGeneratorContract.verification_suite
   ipa_bounded_retry := CryptoBulletproofsIPABoundedRetryContract.verification_suite

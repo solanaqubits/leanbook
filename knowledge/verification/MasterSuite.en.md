@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 4345f847d2f6566d95dcdfc798eced091e093a6a1a03099e910f14fbb9464e92
+source_sha256: 9440b897819ed4c2f0e4501412b3e83c7a6233985edf69df9543219fa25ed25f
 novelty: not-assessed
 status: reviewed
 ---
@@ -149,3 +149,7 @@ Release v0.7.13 adds `CryptoFullSuite.ipa_product_tapes` and
 `CryptoFullSuite.ipa_recursive_generator`: concrete independent retry tapes,
 recursive checked child generation and finite conditional tree probability.
 Source availability, ROM and runtime claims remain outside the proved guarantees.
+
+Release v0.7.14 adds `CryptoFullSuite.ipa_node_retry`: independent local retries
+at every recursive IPA node, exact finite probabilities and conditional lower
+bounds. Strict actual amplification requires an actual attempt rate in (0,1).

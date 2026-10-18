@@ -1547,5 +1547,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoBulletproofsIPARecursiveTreeGeneratorContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract": {
+    "suite_struct": "CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContractSuite",
+    "suite_type": "CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "ipa_node_retry",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

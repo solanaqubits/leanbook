@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 705b34e37474af42b9f53d4f0c1dd36c67e94746bfa80bd91e54bd91b7eecc11
+source_sha256: e020c30a80625c39cf91d2302a14df68e8529ab235233d1d9a872d1b93750232
 novelty: not-assessed
 status: reviewed
 ---
@@ -73,3 +73,7 @@ Release v0.7.13 adds `CryptoFullSuite.ipa_product_tapes` and
 `CryptoFullSuite.ipa_recursive_generator`: concrete independent retry tapes,
 recursive checked child generation and finite conditional tree probability.
 Source availability, ROM and runtime claims remain outside the proved guarantees.
+
+Release v0.7.14 adds `CryptoFullSuite.ipa_node_retry`: independent local retries
+at every recursive IPA node, exact finite probabilities and conditional lower
+bounds. Strict actual amplification requires an actual attempt rate in (0,1).

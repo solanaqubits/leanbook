@@ -95,3 +95,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [IPA candidate generation on independent product tapes](../04_cryptography/CryptoBulletproofsIPAProductTapeCandidateGeneratorContract.md).
 
 - [Recursive finite IPA tree generation](../04_cryptography/CryptoBulletproofsIPARecursiveTreeGeneratorContract.md).
+
+- [Node-local multi-level IPA retries](../04_cryptography/CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract.md).
