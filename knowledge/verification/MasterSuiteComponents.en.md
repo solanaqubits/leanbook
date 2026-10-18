@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 0b57dca1a2da2cb44bdc02672bbf28788f310de406aa21d69125aefa9b957cbf
+source_sha256: 23efb5d2300954039449fee4468597134102066a90b45f8590109818e991b7d8
 novelty: not-assessed
 status: reviewed
 ---
@@ -128,3 +128,8 @@ context safety, scheduled child-call dominance and independent exact probabiliti
 
 Release v0.7.16 adds `CryptoFullSuite.ipa_public_scalar`: two supplied outer trees
 bind dot(a,b)=c or yield an explicit original-generator relation; obtaining the pair remains external.
+
+Release v0.7.17 adds `CryptoFullSuite.ipa_pedersen_consistency`: a supplied
+Pedersen fork and two IPA trees are checked at one extracted scalar, yielding
+a joint witness or an extended-generator relation. No single-transcript hidden-c
+verifier or full ZK is claimed.

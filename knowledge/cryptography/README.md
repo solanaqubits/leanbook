@@ -101,3 +101,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Partial IPA branch cache and resource comparison](../04_cryptography/CryptoBulletproofsIPAPartialBranchCacheResourceContract.md).
 
 - [IPA binding to a public scalar](../04_cryptography/CryptoBulletproofsIPAPublicScalarBindingContract.md).
+
+- [Pedersen opening consistency with IPA](../04_cryptography/CryptoBulletproofsIPAPedersenOpeningConsistencyContract.md).

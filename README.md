@@ -30,17 +30,18 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**211 direct imports in MasterSuite**, **255 Lean sources including Verification.lean**.
-[Release v0.7.16](docs/release-v0.7.16.en.md) adds IPA binding to an explicit
-public scalar through two supplied outer-challenge trees (epsilon211).
+**212 direct imports in MasterSuite**, **256 Lean sources including Verification.lean**.
+[Release v0.7.17](docs/release-v0.7.17.en.md) adds algebraic consistency between
+a supplied Pedersen opening fork and two IPA trees (epsilon212).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Two valid trees for one PublicClaim(Q,c) and distinct nonzero external challenges
-yield either a vector opening of Q with dot(a,b)=c or an explicit nonzero relation
-on the original generators G,H,U. Both computed contexts are checked. Honest
-extraction and a depth-zero countermodel over F5 are included. Obtaining the two
-trees from an adversary, full zero knowledge, Fiat-Shamir/ROM and polynomial
-extraction time are not established.
+Both IPA trees are checked at the scalar extracted from the opening fork.
+The result is either a joint witness opening Q and V with dot(a,b)=c, or an
+explicit nonzero relation over the extended generator basis. Honest all-depth
+completeness and finite regressions cover mismatched openings and contexts.
+This is checking of supplied forks after extraction, not a single-transcript
+hidden-scalar verifier. Fork acquisition, full ZK, Fiat-Shamir/ROM and polynomial
+extraction time remain unproved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

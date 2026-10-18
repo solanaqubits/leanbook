@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoBulletproofsIPAPedersenOpeningConsistencyContract",
         "Verification.CryptoBulletproofsIPAPublicScalarBindingContract",
         "Verification.CryptoBulletproofsIPAPartialBranchCacheResourceContract",
         "Verification.CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract",
@@ -1446,6 +1447,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoBulletproofsIPAPedersenOpeningConsistencyContract",
         "Verification.CryptoBulletproofsIPAPublicScalarBindingContract",
         "Verification.CryptoBulletproofsIPAPartialBranchCacheResourceContract",
         "Verification.CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract",
@@ -2921,6 +2923,18 @@
       "card": "knowledge/04_cryptography/CryptoBulletproofsIPAPublicScalarBindingContract.md",
       "project_imports": [
         "Verification.CryptoBulletproofsTreeExtraction"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoBulletproofsIPAPedersenOpeningConsistencyContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoBulletproofsIPAPedersenOpeningConsistencyContract.lean",
+      "card": "knowledge/04_cryptography/CryptoBulletproofsIPAPedersenOpeningConsistencyContract.md",
+      "project_imports": [
+        "Verification.CryptoBulletproofsIPAPublicScalarBindingContract",
+        "Verification.CryptoPedersenCommitmentOpeningExtractionContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"
