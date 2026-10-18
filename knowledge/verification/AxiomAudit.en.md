@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 25d6c155724c56403a8868df6fd088b8a010cf1140b06d4e9177e4a0cfcf7093
+source_sha256: 46283bd231c085eedc1d8ff42efcbe3aea5e10813e537921b83f3bf3d7172a61
 novelty: not-assessed
 status: reviewed
 ---
@@ -80,3 +80,6 @@ bounds. Strict actual amplification requires an actual attempt rate in (0,1).
 
 Release v0.7.15 adds `CryptoFullSuite.ipa_partial_cache`: fixed-fork partial-cache
 context safety, scheduled child-call dominance and independent exact probabilities.
+
+Release v0.7.16 adds `CryptoFullSuite.ipa_public_scalar`: two supplied outer trees
+bind dot(a,b)=c or yield an explicit original-generator relation; obtaining the pair remains external.

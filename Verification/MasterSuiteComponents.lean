@@ -1,3 +1,4 @@
+import Verification.CryptoBulletproofsIPAPublicScalarBindingContract
 import Verification.CryptoBulletproofsIPAPartialBranchCacheResourceContract
 import Verification.CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract
 import Verification.CryptoBulletproofsIPARecursiveTreeGeneratorContract
@@ -214,6 +215,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoBulletproofsIPAPublicScalarBindingContract
+  (CryptoBulletproofsIPAPublicScalarBindingContractSuite)
 open CryptoBulletproofsIPAPartialBranchCacheResourceContract
   (CryptoBulletproofsIPAPartialBranchCacheResourceContractSuite)
 open CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract
@@ -457,6 +460,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  ipa_public_scalar : CryptoBulletproofsIPAPublicScalarBindingContractSuite
   ipa_partial_cache : CryptoBulletproofsIPAPartialBranchCacheResourceContractSuite
   ipa_node_retry : CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContractSuite
   ipa_recursive_generator : CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite
@@ -527,6 +531,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  ipa_public_scalar := CryptoBulletproofsIPAPublicScalarBindingContract.verification_suite
   ipa_partial_cache := CryptoBulletproofsIPAPartialBranchCacheResourceContract.verification_suite
   ipa_node_retry := CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract.verification_suite
   ipa_recursive_generator := CryptoBulletproofsIPARecursiveTreeGeneratorContract.verification_suite

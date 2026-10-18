@@ -1565,5 +1565,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoBulletproofsIPAPartialBranchCacheResourceContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoBulletproofsIPAPublicScalarBindingContract": {
+    "suite_struct": "CryptoBulletproofsIPAPublicScalarBindingContractSuite",
+    "suite_type": "CryptoBulletproofsIPAPublicScalarBindingContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "ipa_public_scalar",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoBulletproofsIPAPublicScalarBindingContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

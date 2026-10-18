@@ -57,9 +57,10 @@
         "Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract",
         "Verification.CryptoBulletproofsIPARecursiveTreeGeneratorContract",
         "Verification.CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract",
-        "Verification.CryptoBulletproofsIPAPartialBranchCacheResourceContract"
+        "Verification.CryptoBulletproofsIPAPartialBranchCacheResourceContract",
+        "Verification.CryptoBulletproofsIPAPublicScalarBindingContract"
       ],
-      "description": "Finite shared-prefix distinct-square branch acquisition and recursive composition with the existing IPA witness-or-generator-relation extractor. Finite four-draw probability and heavy-prefix bounds with explicit valid-child extraction bridge. Complete finite correlated-tape tree probability from sequential conditional bounds. Bounded first-success retries under conditional failure-prefix bounds and finite expected attempt count. Checked finite candidates and explicit independent product tapes deriving exact retry probabilities and RetryBounds. Recursive checked generation from explicit messages and scalar proposals, and node-local bounded retries on fresh independent composite-attempt tapes. Fixed-fork partial child cache, instrumented child-call cost and comparison with complete-row reset under aligned tapes."
+      "description": "Finite shared-prefix distinct-square branch acquisition and recursive composition with the existing IPA witness-or-generator-relation extractor. Finite four-draw probability and heavy-prefix bounds with explicit valid-child extraction bridge. Complete finite correlated-tape tree probability from sequential conditional bounds. Bounded first-success retries under conditional failure-prefix bounds and finite expected attempt count. Checked finite candidates and explicit independent product tapes deriving exact retry probabilities and RetryBounds. Recursive checked generation from explicit messages and scalar proposals, and node-local bounded retries on fresh independent composite-attempt tapes. Fixed-fork partial child cache, instrumented child-call cost and comparison with complete-row reset under aligned tapes. Two supplied distinct outer-challenge trees bind a public scalar c or extract an explicit relation in the original generator basis."
     }
   },
   "infrastructure_batches": {

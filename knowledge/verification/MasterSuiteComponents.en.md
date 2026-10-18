@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: ad8b234e923b048d485c1e744f2d022002cfc964576c085f24081780ecc4547e
+source_sha256: 0b57dca1a2da2cb44bdc02672bbf28788f310de406aa21d69125aefa9b957cbf
 novelty: not-assessed
 status: reviewed
 ---
@@ -125,3 +125,6 @@ bounds. Strict actual amplification requires an actual attempt rate in (0,1).
 
 Release v0.7.15 adds `CryptoFullSuite.ipa_partial_cache`: fixed-fork partial-cache
 context safety, scheduled child-call dominance and independent exact probabilities.
+
+Release v0.7.16 adds `CryptoFullSuite.ipa_public_scalar`: two supplied outer trees
+bind dot(a,b)=c or yield an explicit original-generator relation; obtaining the pair remains external.

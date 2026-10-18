@@ -99,3 +99,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Node-local multi-level IPA retries](../04_cryptography/CryptoBulletproofsIPAMultiLevelNodeRetryGeneratorContract.md).
 
 - [Partial IPA branch cache and resource comparison](../04_cryptography/CryptoBulletproofsIPAPartialBranchCacheResourceContract.md).
+
+- [IPA binding to a public scalar](../04_cryptography/CryptoBulletproofsIPAPublicScalarBindingContract.md).

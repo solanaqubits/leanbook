@@ -30,17 +30,17 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**210 direct imports in MasterSuite**, **254 Lean sources including Verification.lean**.
-[Release v0.7.15](docs/release-v0.7.15.en.md) adds partial caching of successful
-IPA child branches with an explicit resource comparison (epsilon210).
+**211 direct imports in MasterSuite**, **255 Lean sources including Verification.lean**.
+[Release v0.7.16](docs/release-v0.7.16.en.md) adds IPA binding to an explicit
+public scalar through two supplied outer-challenge trees (epsilon211).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-For a fixed valid parent fork and aligned tape table, caching preserves successful
-children, includes every reset-success outcome and uses no more child-generator
-calls under the common R-round / 4R-call limit. Exact product probabilities require
-independent tapes. Context transfer concerns unchanged valid trees and equality of
-full computed child contexts. Cost counts scheduled calls, not machine runtime.
-General Forking Lemma, ROM and polynomial runtime are not claimed.
+Two valid trees for one PublicClaim(Q,c) and distinct nonzero external challenges
+yield either a vector opening of Q with dot(a,b)=c or an explicit nonzero relation
+on the original generators G,H,U. Both computed contexts are checked. Honest
+extraction and a depth-zero countermodel over F5 are included. Obtaining the two
+trees from an adversary, full zero knowledge, Fiat-Shamir/ROM and polynomial
+extraction time are not established.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)
