@@ -30,16 +30,16 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**215 direct imports in MasterSuite**, **259 Lean sources including Verification.lean**.
-[Release v0.7.20](docs/release-v0.7.20.en.md) adds snapshot-indexed acquisition of
-hidden-scalar nested forks (epsilon215). Lake remains 0.7.1; the full public
-beta basis remains v0.7.1.
+**216 direct imports in MasterSuite**, **260 Lean sources including Verification.lean**.
+[Release v0.7.21](docs/release-v0.7.21.en.md) adds conditional retained-branch
+quota probabilities (epsilon216). Lake remains 0.7.1; the full public beta
+basis remains v0.7.1.
 
-A finite collector restores before each candidate, preserves actual transition
-provenance and produces a valid compressed fork on success. Extraction yields a
-joint witness or an explicit generator relation. Exact Q(k), R(k)=Q(k)-1 apply to
-Clean runs; arbitrary outcomes retain actual logs and schedule-based bounds.
-Conditional probability premises are explicit. External-process refinement,
+The actual snapshot collector accumulates successful distinct branches despite
+failed probes and repeats. An explicit conditional progress bound yields a finite
+quota lower bound without assuming independent trials. Direct adapters use quotas
+4/2/3 and compose positive success probability with provenance and extraction.
+Local density is not inferred from global acceptance. External-process refinement,
 general Bellare–Neven, Fiat–Shamir/ROM and polynomial complexity remain open.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)

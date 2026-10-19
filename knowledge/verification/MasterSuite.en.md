@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: bb2e22b6996c2a8568d8bf05e9f8acd9344c995d2653c36d015437f1baeb4d1d
+source_sha256: 0d1c9ab56dda2953d051a7cd80feb13f2e42db37a4b983a2e25e524225a1476d
 novelty: not-assessed
 status: reviewed
 ---
@@ -179,3 +179,7 @@ Release v0.7.20 adds `CryptoFullSuite.fork_acquisition`: snapshot-indexed nested
 acquisition with model-relative provenance and witness-or-relation extraction.
 Exact Q/R costs apply to Clean runs; arbitrary runs retain actual logs and schedule
 bounds. Conditional probability premises remain explicit; no ROM or PPT claim.
+
+Release v0.7.21 adds `CryptoFullSuite.fork_progress`: conditional quota probability
+bounds for retained branches, including retries, with direct snapshot adapters
+and provenance/extraction composition. No independence or global-density inference.
