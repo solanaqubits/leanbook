@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: dfb301a46baa5100597f1074714dd6371f65960a7fee4011a4af14bc660b30b1
+source_sha256: 8bccec4ba21dfa300eb754fb0ee99b27a0e2b2eabf31696ebf1436a5ff1c27d4
 novelty: not-assessed
 status: reviewed
 ---
@@ -107,3 +107,7 @@ bounds. Conditional probability premises remain explicit; no ROM or PPT claim.
 Release v0.7.21 adds `CryptoFullSuite.fork_progress`: conditional quota probability
 bounds for retained branches, including retries, with direct snapshot adapters
 and provenance/extraction composition. No independence or global-density inference.
+
+Release v0.7.22 adds `CryptoFullSuite.fork_schedule`: independent finite full-probe
+schedules derive conditional progress rates max(0,d-j beta). Local success density
+and per-class mass bounds remain explicit; snapshot acquisition and extraction are reused.

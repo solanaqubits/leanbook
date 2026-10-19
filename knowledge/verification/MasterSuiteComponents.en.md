@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 109a1b7c53485aef09d42b666287d6f50e3daada02ffd89891c1ccc2ace487e3
+source_sha256: ad711a9ccf05bedf4f34776fec2194f3e674d27f892888ac59af1adf0df8cc7c
 novelty: not-assessed
 status: reviewed
 ---
@@ -152,3 +152,7 @@ bounds. Conditional probability premises remain explicit; no ROM or PPT claim.
 Release v0.7.21 adds `CryptoFullSuite.fork_progress`: conditional quota probability
 bounds for retained branches, including retries, with direct snapshot adapters
 and provenance/extraction composition. No independence or global-density inference.
+
+Release v0.7.22 adds `CryptoFullSuite.fork_schedule`: independent finite full-probe
+schedules derive conditional progress rates max(0,d-j beta). Local success density
+and per-class mass bounds remain explicit; snapshot acquisition and extraction are reused.

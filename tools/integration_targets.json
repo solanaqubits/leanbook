@@ -1619,5 +1619,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarForkProgressProbabilityContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarForkScheduleProgressContract": {
+    "suite_struct": "CryptoHiddenScalarForkScheduleProgressContractSuite",
+    "suite_type": "CryptoHiddenScalarForkScheduleProgressContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "fork_schedule",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarForkScheduleProgressContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarForkScheduleProgressContract
 import Verification.CryptoHiddenScalarForkProgressProbabilityContract
 import Verification.CryptoHiddenScalarForkAcquisitionContract
 import Verification.CryptoHiddenScalarInnerProductCompressionContract
@@ -220,6 +221,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarForkScheduleProgressContract
+  (CryptoHiddenScalarForkScheduleProgressContractSuite)
 open CryptoHiddenScalarForkProgressProbabilityContract
   (CryptoHiddenScalarForkProgressProbabilityContractSuite)
 open CryptoHiddenScalarForkAcquisitionContract
@@ -475,6 +478,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  fork_schedule : CryptoHiddenScalarForkScheduleProgressContractSuite
   fork_progress : CryptoHiddenScalarForkProgressProbabilityContractSuite
   fork_acquisition : CryptoHiddenScalarForkAcquisitionContractSuite
   hidden_scalar_compression : CryptoHiddenScalarInnerProductCompressionContractSuite
@@ -551,6 +555,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  fork_schedule := CryptoHiddenScalarForkScheduleProgressContract.verification_suite
   fork_progress := CryptoHiddenScalarForkProgressProbabilityContract.verification_suite
   fork_acquisition := CryptoHiddenScalarForkAcquisitionContract.verification_suite
   hidden_scalar_compression := CryptoHiddenScalarInnerProductCompressionContract.verification_suite

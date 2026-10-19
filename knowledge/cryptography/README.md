@@ -111,3 +111,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Snapshot-indexed nested fork acquisition](../04_cryptography/CryptoHiddenScalarForkAcquisitionContract.md).
 
 - [Retained-branch quota probability](../04_cryptography/CryptoHiddenScalarForkProgressProbabilityContract.md).
+
+- [Independent full-probe schedule progress](../04_cryptography/CryptoHiddenScalarForkScheduleProgressContract.md).

@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarForkScheduleProgressContract",
         "Verification.CryptoHiddenScalarForkProgressProbabilityContract",
         "Verification.CryptoHiddenScalarForkAcquisitionContract",
         "Verification.CryptoHiddenScalarInnerProductCompressionContract",
@@ -1451,6 +1452,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarForkScheduleProgressContract",
         "Verification.CryptoHiddenScalarForkProgressProbabilityContract",
         "Verification.CryptoHiddenScalarForkAcquisitionContract",
         "Verification.CryptoHiddenScalarInnerProductCompressionContract",
@@ -2990,6 +2992,18 @@
       "project_imports": [
         "Verification.CryptoHiddenScalarForkAcquisitionContract",
         "Verification.CryptoBulletproofsIPABoundedRetryContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarForkScheduleProgressContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarForkScheduleProgressContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarForkScheduleProgressContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarForkProgressProbabilityContract",
+        "Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"
