@@ -1,3 +1,5 @@
+import Verification.CryptoHiddenScalarForkRecursiveQuotaContract
+import Verification.CryptoHiddenScalarForkLocalDensityContract
 import Verification.CryptoHiddenScalarForkScheduleProgressContract
 import Verification.CryptoHiddenScalarForkProgressProbabilityContract
 import Verification.CryptoHiddenScalarForkAcquisitionContract
@@ -221,6 +223,10 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarForkRecursiveQuotaContract
+  (CryptoHiddenScalarForkRecursiveQuotaContractSuite)
+open CryptoHiddenScalarForkLocalDensityContract
+  (CryptoHiddenScalarForkLocalDensityContractSuite)
 open CryptoHiddenScalarForkScheduleProgressContract
   (CryptoHiddenScalarForkScheduleProgressContractSuite)
 open CryptoHiddenScalarForkProgressProbabilityContract
@@ -478,6 +484,8 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  fork_recursive_quota : CryptoHiddenScalarForkRecursiveQuotaContractSuite
+  fork_local_density : CryptoHiddenScalarForkLocalDensityContractSuite
   fork_schedule : CryptoHiddenScalarForkScheduleProgressContractSuite
   fork_progress : CryptoHiddenScalarForkProgressProbabilityContractSuite
   fork_acquisition : CryptoHiddenScalarForkAcquisitionContractSuite
@@ -555,6 +563,8 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  fork_recursive_quota := CryptoHiddenScalarForkRecursiveQuotaContract.verification_suite
+  fork_local_density := CryptoHiddenScalarForkLocalDensityContract.verification_suite
   fork_schedule := CryptoHiddenScalarForkScheduleProgressContract.verification_suite
   fork_progress := CryptoHiddenScalarForkProgressProbabilityContract.verification_suite
   fork_acquisition := CryptoHiddenScalarForkAcquisitionContract.verification_suite

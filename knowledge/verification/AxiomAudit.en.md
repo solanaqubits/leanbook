@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 8bccec4ba21dfa300eb754fb0ee99b27a0e2b2eabf31696ebf1436a5ff1c27d4
+source_sha256: 1eae1b44991b98ec8f789d1e4fb57228e89561c3d5456114cab3533465c57fc9
 novelty: not-assessed
 status: reviewed
 ---
@@ -111,3 +111,9 @@ and provenance/extraction composition. No independence or global-density inferen
 Release v0.7.22 adds `CryptoFullSuite.fork_schedule`: independent finite full-probe
 schedules derive conditional progress rates max(0,d-j beta). Local success density
 and per-class mass bounds remain explicit; snapshot acquisition and extraction are reused.
+
+Release v0.7.23 adds CryptoFullSuite.fork_local_density and fork_recursive_quota.
+Exact child-law averaging and bottom-up quota4/2/3 bounds use actual snapshot
+acquisition and extraction. Concrete finite iid microseed laws have common shape
+and budget per depth, with snapshot-dependent call decoding and proven key masses.
+No global acceptance inference, external-process refinement, ROM or runtime claim.

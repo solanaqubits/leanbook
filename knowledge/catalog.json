@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarForkRecursiveQuotaContract",
+        "Verification.CryptoHiddenScalarForkLocalDensityContract",
         "Verification.CryptoHiddenScalarForkScheduleProgressContract",
         "Verification.CryptoHiddenScalarForkProgressProbabilityContract",
         "Verification.CryptoHiddenScalarForkAcquisitionContract",
@@ -1452,6 +1454,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarForkRecursiveQuotaContract",
+        "Verification.CryptoHiddenScalarForkLocalDensityContract",
         "Verification.CryptoHiddenScalarForkScheduleProgressContract",
         "Verification.CryptoHiddenScalarForkProgressProbabilityContract",
         "Verification.CryptoHiddenScalarForkAcquisitionContract",
@@ -3004,6 +3008,28 @@
       "project_imports": [
         "Verification.CryptoHiddenScalarForkProgressProbabilityContract",
         "Verification.CryptoBulletproofsIPAProductTapeCandidateGeneratorContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarForkLocalDensityContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarForkLocalDensityContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarForkLocalDensityContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarForkScheduleProgressContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarForkRecursiveQuotaContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarForkRecursiveQuotaContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarForkRecursiveQuotaContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarForkLocalDensityContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

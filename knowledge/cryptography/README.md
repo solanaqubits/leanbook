@@ -113,3 +113,7 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Retained-branch quota probability](../04_cryptography/CryptoHiddenScalarForkProgressProbabilityContract.md).
 
 - [Independent full-probe schedule progress](../04_cryptography/CryptoHiddenScalarForkScheduleProgressContract.md).
+
+- [fork local density](../04_cryptography/CryptoHiddenScalarForkLocalDensityContract.md).
+
+- [fork recursive quota](../04_cryptography/CryptoHiddenScalarForkRecursiveQuotaContract.md).

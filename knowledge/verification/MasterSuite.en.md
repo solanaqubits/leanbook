@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 9c763ce559d57fefdb3fca3a88a8803702b217bac6ab3fb66fcddc58479cf647
+source_sha256: b7bf2e6a4a6727465c056fe58ca178ec6ee31068cf8a66f592f5f1ef231a8e64
 novelty: not-assessed
 status: reviewed
 ---
@@ -187,3 +187,9 @@ and provenance/extraction composition. No independence or global-density inferen
 Release v0.7.22 adds `CryptoFullSuite.fork_schedule`: independent finite full-probe
 schedules derive conditional progress rates max(0,d-j beta). Local success density
 and per-class mass bounds remain explicit; snapshot acquisition and extraction are reused.
+
+Release v0.7.23 adds CryptoFullSuite.fork_local_density and fork_recursive_quota.
+Exact child-law averaging and bottom-up quota4/2/3 bounds use actual snapshot
+acquisition and extraction. Concrete finite iid microseed laws have common shape
+and budget per depth, with snapshot-dependent call decoding and proven key masses.
+No global acceptance inference, external-process refinement, ROM or runtime claim.

@@ -1628,5 +1628,23 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarForkScheduleProgressContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarForkLocalDensityContract": {
+    "suite_struct": "CryptoHiddenScalarForkLocalDensityContractSuite",
+    "suite_type": "CryptoHiddenScalarForkLocalDensityContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "fork_local_density",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarForkLocalDensityContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarForkRecursiveQuotaContract": {
+    "suite_struct": "CryptoHiddenScalarForkRecursiveQuotaContractSuite",
+    "suite_type": "CryptoHiddenScalarForkRecursiveQuotaContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "fork_recursive_quota",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarForkRecursiveQuotaContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

@@ -30,17 +30,18 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**217 direct imports in MasterSuite**, **261 Lean sources including Verification.lean**.
-[Release v0.7.22](docs/release-v0.7.22.en.md) adds independent full-probe schedule
-progress (epsilon217). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**219 direct imports in MasterSuite**, **263 Lean sources including Verification.lean**.
+[Release v0.7.23](docs/release-v0.7.23.en.md) adds exact child-law density and
+recursive fork quota bounds (epsilon218–219). Lake remains 0.7.1; the full public
+beta basis remains v0.7.1.
 
-Independent finite full-probe schedules derive the actual collector's conditional
-progress bound p(j)=max(0,d-j beta). Here d bounds full child-acquisition success,
-beta bounds one key-class mass, and j counts successfully retained distinct keys.
-The proof preserves microseed weights and composes with quotas 4/2/3, provenance
-and extraction. Local density is not inferred from global acceptance.
-General Bellare–Neven, external-process refinement, Fiat–Shamir/ROM and polynomial
-complexity remain open.
+Bottom-up bounds start at actual leaf checks and compose through quotas4/2/3
+with the existing snapshot acquirer and witness-or-relation extractor. Full-probe
+density d averages child completion bounds; quotaLower produces each node's delta.
+Finite independent microseed laws use common shape/budget per depth and exact
+snapshot-dependent decoding. Key-class masses are proved explicitly.
+Global acceptance inference, general variable-cardinality laws, external-process
+refinement, Fiat–Shamir/ROM and polynomial complexity are not claimed.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

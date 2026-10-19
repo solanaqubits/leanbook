@@ -254,3 +254,7 @@ open CryptoCommitmentVectorPedersenGroup in
 #audit_axioms CryptoHiddenScalarForkProgressProbabilityContract.verification_suite
 
 #audit_axioms CryptoHiddenScalarForkScheduleProgressContract.verification_suite
+
+#audit_axioms CryptoHiddenScalarForkLocalDensityContract.verification_suite
+
+#audit_axioms CryptoHiddenScalarForkRecursiveQuotaContract.verification_suite
