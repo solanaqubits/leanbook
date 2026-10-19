@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarThresholdQuotaContract",
         "Verification.CryptoHiddenScalarSinglePathContract",
         "Verification.CryptoHiddenScalarForkRecursiveQuotaContract",
         "Verification.CryptoHiddenScalarForkLocalDensityContract",
@@ -1455,6 +1456,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarThresholdQuotaContract",
         "Verification.CryptoHiddenScalarSinglePathContract",
         "Verification.CryptoHiddenScalarForkRecursiveQuotaContract",
         "Verification.CryptoHiddenScalarForkLocalDensityContract",
@@ -3043,6 +3045,17 @@
       "card": "knowledge/04_cryptography/CryptoHiddenScalarSinglePathContract.md",
       "project_imports": [
         "Verification.CryptoHiddenScalarForkRecursiveQuotaContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarThresholdQuotaContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarThresholdQuotaContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarThresholdQuotaContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarSinglePathContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

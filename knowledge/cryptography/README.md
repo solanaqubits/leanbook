@@ -119,3 +119,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [fork recursive quota](../04_cryptography/CryptoHiddenScalarForkRecursiveQuotaContract.md).
 
 - [single path](../04_cryptography/CryptoHiddenScalarSinglePathContract.md).
+
+- [threshold quota](../04_cryptography/CryptoHiddenScalarThresholdQuotaContract.md).

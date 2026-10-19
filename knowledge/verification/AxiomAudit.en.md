@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 56d77e5a5a3b8b0a370352ca5f40c65c795e7d0a90a52e7a653ec41063843430
+source_sha256: 01e0d7205d52d285cd3d28aa26892e801e912cba35b1c30e0146059c637c9e8f
 novelty: not-assessed
 status: reviewed
 ---
@@ -123,3 +123,9 @@ Actual causal execution is equivalent to compressedVerify with exact reachable
 snapshots and finite microseed prefix decomposition. Complete rejected transcripts
 remain produced with accepted=false; aborts and malformed packets produce none.
 Heavy-prefix bounds do not yet imply recursive quota completion.
+
+Release v0.7.25 adds CryptoFullSuite.threshold_quota.
+Guarded local single-path rates and profile monotonicity support recursive
+threshold transfer into actual fork acquisition. Acceptance above the root
+threshold and a positive computed bound imply witness-or-generator-relation
+extraction for the fixed-tape finite microseed plan.

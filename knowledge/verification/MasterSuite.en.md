@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: eff793c879d3899cadba451bb381fd9c4f3e830fa1174b097d3c730ef06a7617
+source_sha256: 030e4bb55698706fa251ac35bae939d321a9fb017ea90da92a3a9d5bf33d13af
 novelty: not-assessed
 status: reviewed
 ---
@@ -199,3 +199,9 @@ Actual causal execution is equivalent to compressedVerify with exact reachable
 snapshots and finite microseed prefix decomposition. Complete rejected transcripts
 remain produced with accepted=false; aborts and malformed packets produce none.
 Heavy-prefix bounds do not yet imply recursive quota completion.
+
+Release v0.7.25 adds CryptoFullSuite.threshold_quota.
+Guarded local single-path rates and profile monotonicity support recursive
+threshold transfer into actual fork acquisition. Acceptance above the root
+threshold and a positive computed bound imply witness-or-generator-relation
+extraction for the fixed-tape finite microseed plan.

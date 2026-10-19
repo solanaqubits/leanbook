@@ -1655,5 +1655,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarSinglePathContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarThresholdQuotaContract": {
+    "suite_struct": "CryptoHiddenScalarThresholdQuotaContractSuite",
+    "suite_type": "CryptoHiddenScalarThresholdQuotaContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "threshold_quota",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarThresholdQuotaContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

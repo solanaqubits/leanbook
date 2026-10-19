@@ -30,17 +30,19 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**220 direct imports in MasterSuite**, **264 Lean sources including Verification.lean**.
-[Release v0.7.24](docs/release-v0.7.24.en.md) adds the single causal path contract
-(epsilon220). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**221 direct imports in MasterSuite**, **265 Lean sources including Verification.lean**.
+[Release v0.7.25](docs/release-v0.7.25.en.md) adds the threshold quota contract
+(epsilon221). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Single-path execution uses the actual snapshot model, produces a compressed
-transcript and proves acceptance equivalent to compressedVerify. Exact prefix
-splits preserve microseed multiplicities and support finite heavy-prefix bounds.
-A complete transcript can be rejected with accepted=false; primitive aborts and
-malformed packets produce no transcript. Early-stop resource behavior is not modeled.
-Recursive heavy-prefix-to-quota composition, random-tape averaging, external-process
-refinement, Fiat–Shamir/ROM and polynomial complexity remain separate obligations.
+Guarded local single-path rates, profile monotonicity and threshold induction
+connect single-path acceptance to the recursive bound for actual fork acquisition.
+Acceptance above the chosen root threshold and a positive computed bound yield
+a valid witness or a nontrivial generator relation through the existing extractor.
+The adversary tape is fixed; finite independent microseed products retain their
+original laws, depth budgets and snapshot-dependent decoders. Density margins
+and sufficient budgets establish positivity; a zero bound does not rule out
+actual success. Random-tape averaging, external-process refinement,
+Fiat–Shamir/ROM, polynomial complexity and hardware tests are not established.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

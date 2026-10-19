@@ -260,3 +260,5 @@ open CryptoCommitmentVectorPedersenGroup in
 #audit_axioms CryptoHiddenScalarForkRecursiveQuotaContract.verification_suite
 
 #audit_axioms CryptoHiddenScalarSinglePathContract.verification_suite
+
+#audit_axioms CryptoHiddenScalarThresholdQuotaContract.verification_suite

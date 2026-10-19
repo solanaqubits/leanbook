@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarThresholdQuotaContract
 import Verification.CryptoHiddenScalarSinglePathContract
 import Verification.CryptoHiddenScalarForkRecursiveQuotaContract
 import Verification.CryptoHiddenScalarForkLocalDensityContract
@@ -224,6 +225,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarThresholdQuotaContract
+  (CryptoHiddenScalarThresholdQuotaContractSuite)
 open CryptoHiddenScalarSinglePathContract
   (CryptoHiddenScalarSinglePathContractSuite)
 open CryptoHiddenScalarForkRecursiveQuotaContract
@@ -487,6 +490,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  threshold_quota : CryptoHiddenScalarThresholdQuotaContractSuite
   single_path : CryptoHiddenScalarSinglePathContractSuite
   fork_recursive_quota : CryptoHiddenScalarForkRecursiveQuotaContractSuite
   fork_local_density : CryptoHiddenScalarForkLocalDensityContractSuite
@@ -567,6 +571,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  threshold_quota := CryptoHiddenScalarThresholdQuotaContract.verification_suite
   single_path := CryptoHiddenScalarSinglePathContract.verification_suite
   fork_recursive_quota := CryptoHiddenScalarForkRecursiveQuotaContract.verification_suite
   fork_local_density := CryptoHiddenScalarForkLocalDensityContract.verification_suite
