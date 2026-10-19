@@ -1,3 +1,5 @@
+import Verification.CryptoHiddenScalarTapeAverageContract
+import Verification.ExternalActuatorContract
 import Verification.CryptoHiddenScalarThresholdQuotaContract
 import Verification.CryptoHiddenScalarSinglePathContract
 import Verification.CryptoHiddenScalarForkRecursiveQuotaContract

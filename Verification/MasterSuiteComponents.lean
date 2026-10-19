@@ -1,3 +1,5 @@
+import Verification.CryptoHiddenScalarTapeAverageContract
+import Verification.ExternalActuatorContract
 import Verification.CryptoHiddenScalarThresholdQuotaContract
 import Verification.CryptoHiddenScalarSinglePathContract
 import Verification.CryptoHiddenScalarForkRecursiveQuotaContract
@@ -225,6 +227,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarTapeAverageContract
+  (CryptoHiddenScalarTapeAverageContractSuite)
 open CryptoHiddenScalarThresholdQuotaContract
   (CryptoHiddenScalarThresholdQuotaContractSuite)
 open CryptoHiddenScalarSinglePathContract
@@ -490,6 +494,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  tape_average : CryptoHiddenScalarTapeAverageContractSuite
   threshold_quota : CryptoHiddenScalarThresholdQuotaContractSuite
   single_path : CryptoHiddenScalarSinglePathContractSuite
   fork_recursive_quota : CryptoHiddenScalarForkRecursiveQuotaContractSuite
@@ -571,6 +576,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  tape_average := CryptoHiddenScalarTapeAverageContract.verification_suite
   threshold_quota := CryptoHiddenScalarThresholdQuotaContract.verification_suite
   single_path := CryptoHiddenScalarSinglePathContract.verification_suite
   fork_recursive_quota := CryptoHiddenScalarForkRecursiveQuotaContract.verification_suite
@@ -929,6 +935,7 @@ structure DistributedSystemsFullSuite : Prop where
   raft_joint_reconfiguration : DistributedRaftJointConsensusReconfigSuite
   marzullo_sweep : DistributedMarzulloIntervalConsensus.DistributedMarzulloIntervalConsensusSuite
   marzullo_event_sorting : DistributedMarzulloEventSorting.DistributedMarzulloEventSortingSuite
+  external_actuator : ExternalActuatorContract.ExternalActuatorContractSuite
 
 theorem distributed_systems_full_master_suite : DistributedSystemsFullSuite := {
   header_chain_auth := by
@@ -1010,6 +1017,7 @@ theorem distributed_systems_full_master_suite : DistributedSystemsFullSuite := {
     exact DistributedMarzulloIntervalConsensus.verification_suite
   marzullo_event_sorting := by
     exact DistributedMarzulloEventSorting.verification_suite
+  external_actuator := ExternalActuatorContract.verification_suite
 }
 
 theorem DistributedSystemsFullSuite.two_phase_commit (suite : DistributedSystemsFullSuite) :

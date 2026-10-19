@@ -1664,5 +1664,23 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarThresholdQuotaContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.ExternalActuatorContract": {
+    "suite_struct": "ExternalActuatorContractSuite",
+    "suite_type": "ExternalActuatorContract.ExternalActuatorContractSuite",
+    "parent": "DistributedSystemsFullSuite",
+    "field": "external_actuator",
+    "constructor": "distributed_systems_full_master_suite",
+    "proof": "ExternalActuatorContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarTapeAverageContract": {
+    "suite_struct": "CryptoHiddenScalarTapeAverageContractSuite",
+    "suite_type": "CryptoHiddenScalarTapeAverageContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "tape_average",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarTapeAverageContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

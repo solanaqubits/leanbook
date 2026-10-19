@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 01e0d7205d52d285cd3d28aa26892e801e912cba35b1c30e0146059c637c9e8f
+source_sha256: 04c876c7f746d74dfefd55bfa955a2edbbe6d5a5d871cfbf950c5c91c0d74cbd
 novelty: not-assessed
 status: reviewed
 ---
@@ -129,3 +129,9 @@ Guarded local single-path rates and profile monotonicity support recursive
 threshold transfer into actual fork acquisition. Acceptance above the root
 threshold and a positive computed bound imply witness-or-generator-relation
 extraction for the fixed-tape finite microseed plan.
+
+Release v0.7.26 adds CryptoFullSuite.tape_average and
+DistributedSystemsFullSuite.external_actuator. Finite tape averaging retains
+acceptance guards and dependent plan seed laws. The actuator model proves
+at-most-once software dispatch under its sequential durable-history transitions;
+physical effects and concrete implementation refinement are not established.

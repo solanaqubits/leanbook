@@ -30,19 +30,20 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**221 direct imports in MasterSuite**, **265 Lean sources including Verification.lean**.
-[Release v0.7.25](docs/release-v0.7.25.en.md) adds the threshold quota contract
-(epsilon221). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**223 direct imports in MasterSuite**, **267 Lean sources including Verification.lean**.
+[Release v0.7.26](docs/release-v0.7.26.en.md) adds finite adversary tape averaging
+(epsilon222) and the separately named ExternalActuatorContract.
+Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Guarded local single-path rates, profile monotonicity and threshold induction
-connect single-path acceptance to the recursive bound for actual fork acquisition.
-Acceptance above the chosen root threshold and a positive computed bound yield
-a valid witness or a nontrivial generator relation through the existing extractor.
-The adversary tape is fixed; finite independent microseed products retain their
-original laws, depth budgets and snapshot-dependent decoders. Density margins
-and sufficient budgets establish positivity; a zero bound does not rule out
-actual success. Random-tape averaging, external-process refinement,
-Fiat–Shamir/ROM, polynomial complexity and hardware tests are not established.
+Tape averaging combines guarded conditional bounds under a finite rational tape law
+and each tape's original ProtocolPlan microseed law. A positive average yields an
+actual successful tape/seed pair of positive joint mass and witness-or-relation
+extraction. This is an existential result, not an efficient search guarantee.
+
+The actuator contract proves at-most-once software command dispatch per action ID
+within its sequential model, with preserved durable history and consumed volatile
+permits. Recovery can leave dispatch history observationally ambiguous. Physical
+effects, deployed persistence/fencing and concrete process refinement are not proved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

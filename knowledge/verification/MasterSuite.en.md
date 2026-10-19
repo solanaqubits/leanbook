@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 030e4bb55698706fa251ac35bae939d321a9fb017ea90da92a3a9d5bf33d13af
+source_sha256: 2627d77d7bb3f434ba6a83d17e4045f2c4a32f50d92e081bae348b369270cf17
 novelty: not-assessed
 status: reviewed
 ---
@@ -205,3 +205,9 @@ Guarded local single-path rates and profile monotonicity support recursive
 threshold transfer into actual fork acquisition. Acceptance above the root
 threshold and a positive computed bound imply witness-or-generator-relation
 extraction for the fixed-tape finite microseed plan.
+
+Release v0.7.26 adds CryptoFullSuite.tape_average and
+DistributedSystemsFullSuite.external_actuator. Finite tape averaging retains
+acceptance guards and dependent plan seed laws. The actuator model proves
+at-most-once software dispatch under its sequential durable-history transitions;
+physical effects and concrete implementation refinement are not established.

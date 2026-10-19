@@ -132,3 +132,5 @@ The operational machine establishes election safety; NetworkInduction establishe
 
 - [Composite epoch safety and accountable collection](../02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md).
 - [Checked header-chain history](../02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md).
+
+- [Actuator command history and recovery](ExternalActuatorContract.en.md).
