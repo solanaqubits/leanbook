@@ -1646,5 +1646,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarForkRecursiveQuotaContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarSinglePathContract": {
+    "suite_struct": "CryptoHiddenScalarSinglePathContractSuite",
+    "suite_type": "CryptoHiddenScalarSinglePathContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "single_path",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarSinglePathContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

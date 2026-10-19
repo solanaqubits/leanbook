@@ -30,18 +30,17 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**219 direct imports in MasterSuite**, **263 Lean sources including Verification.lean**.
-[Release v0.7.23](docs/release-v0.7.23.en.md) adds exact child-law density and
-recursive fork quota bounds (epsilon218–219). Lake remains 0.7.1; the full public
-beta basis remains v0.7.1.
+**220 direct imports in MasterSuite**, **264 Lean sources including Verification.lean**.
+[Release v0.7.24](docs/release-v0.7.24.en.md) adds the single causal path contract
+(epsilon220). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Bottom-up bounds start at actual leaf checks and compose through quotas4/2/3
-with the existing snapshot acquirer and witness-or-relation extractor. Full-probe
-density d averages child completion bounds; quotaLower produces each node's delta.
-Finite independent microseed laws use common shape/budget per depth and exact
-snapshot-dependent decoding. Key-class masses are proved explicitly.
-Global acceptance inference, general variable-cardinality laws, external-process
-refinement, Fiat–Shamir/ROM and polynomial complexity are not claimed.
+Single-path execution uses the actual snapshot model, produces a compressed
+transcript and proves acceptance equivalent to compressedVerify. Exact prefix
+splits preserve microseed multiplicities and support finite heavy-prefix bounds.
+A complete transcript can be rejected with accepted=false; primitive aborts and
+malformed packets produce no transcript. Early-stop resource behavior is not modeled.
+Recursive heavy-prefix-to-quota composition, random-tape averaging, external-process
+refinement, Fiat–Shamir/ROM and polynomial complexity remain separate obligations.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

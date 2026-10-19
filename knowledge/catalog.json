@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarSinglePathContract",
         "Verification.CryptoHiddenScalarForkRecursiveQuotaContract",
         "Verification.CryptoHiddenScalarForkLocalDensityContract",
         "Verification.CryptoHiddenScalarForkScheduleProgressContract",
@@ -1454,6 +1455,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarSinglePathContract",
         "Verification.CryptoHiddenScalarForkRecursiveQuotaContract",
         "Verification.CryptoHiddenScalarForkLocalDensityContract",
         "Verification.CryptoHiddenScalarForkScheduleProgressContract",
@@ -3030,6 +3032,17 @@
       "card": "knowledge/04_cryptography/CryptoHiddenScalarForkRecursiveQuotaContract.md",
       "project_imports": [
         "Verification.CryptoHiddenScalarForkLocalDensityContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarSinglePathContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarSinglePathContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarSinglePathContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarForkRecursiveQuotaContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

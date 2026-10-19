@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 1eae1b44991b98ec8f789d1e4fb57228e89561c3d5456114cab3533465c57fc9
+source_sha256: 56d77e5a5a3b8b0a370352ca5f40c65c795e7d0a90a52e7a653ec41063843430
 novelty: not-assessed
 status: reviewed
 ---
@@ -117,3 +117,9 @@ Exact child-law averaging and bottom-up quota4/2/3 bounds use actual snapshot
 acquisition and extraction. Concrete finite iid microseed laws have common shape
 and budget per depth, with snapshot-dependent call decoding and proven key masses.
 No global acceptance inference, external-process refinement, ROM or runtime claim.
+
+Release v0.7.24 adds CryptoFullSuite.single_path.
+Actual causal execution is equivalent to compressedVerify with exact reachable
+snapshots and finite microseed prefix decomposition. Complete rejected transcripts
+remain produced with accepted=false; aborts and malformed packets produce none.
+Heavy-prefix bounds do not yet imply recursive quota completion.

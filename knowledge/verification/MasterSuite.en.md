@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: b7bf2e6a4a6727465c056fe58ca178ec6ee31068cf8a66f592f5f1ef231a8e64
+source_sha256: eff793c879d3899cadba451bb381fd9c4f3e830fa1174b097d3c730ef06a7617
 novelty: not-assessed
 status: reviewed
 ---
@@ -193,3 +193,9 @@ Exact child-law averaging and bottom-up quota4/2/3 bounds use actual snapshot
 acquisition and extraction. Concrete finite iid microseed laws have common shape
 and budget per depth, with snapshot-dependent call decoding and proven key masses.
 No global acceptance inference, external-process refinement, ROM or runtime claim.
+
+Release v0.7.24 adds CryptoFullSuite.single_path.
+Actual causal execution is equivalent to compressedVerify with exact reachable
+snapshots and finite microseed prefix decomposition. Complete rejected transcripts
+remain produced with accepted=false; aborts and malformed packets produce none.
+Heavy-prefix bounds do not yet imply recursive quota completion.

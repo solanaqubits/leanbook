@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarSinglePathContract
 import Verification.CryptoHiddenScalarForkRecursiveQuotaContract
 import Verification.CryptoHiddenScalarForkLocalDensityContract
 import Verification.CryptoHiddenScalarForkScheduleProgressContract

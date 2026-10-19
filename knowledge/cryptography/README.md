@@ -117,3 +117,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [fork local density](../04_cryptography/CryptoHiddenScalarForkLocalDensityContract.md).
 
 - [fork recursive quota](../04_cryptography/CryptoHiddenScalarForkRecursiveQuotaContract.md).
+
+- [single path](../04_cryptography/CryptoHiddenScalarSinglePathContract.md).
