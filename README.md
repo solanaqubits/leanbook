@@ -30,20 +30,20 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**223 direct imports in MasterSuite**, **267 Lean sources including Verification.lean**.
-[Release v0.7.26](docs/release-v0.7.26.en.md) adds finite adversary tape averaging
-(epsilon222) and the separately named ExternalActuatorContract.
+**225 direct imports in MasterSuite**, **269 Lean sources including Verification.lean**.
+[Release v0.7.27](docs/release-v0.7.27.en.md) adds weighted heavy tapes
+(epsilon223) and the separately named ActuatorArbitrationContract.
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Tape averaging combines guarded conditional bounds under a finite rational tape law
-and each tape's original ProtocolPlan microseed law. A positive average yields an
-actual successful tape/seed pair of positive joint mass and witness-or-relation
-extraction. This is an existential result, not an efficient search guarantee.
+Weighted heavy-tape bounds combine global single-path acceptance with a separate
+positive quota margin to obtain a positive-mass successful tape/seed pair and
+witness-or-generator-relation extraction. Constant and varying cutoffs are distinct;
+no efficient search guarantee follows from the existential result.
 
-The actuator contract proves at-most-once software command dispatch per action ID
-within its sequential model, with preserved durable history and consumed volatile
-permits. Recovery can leave dispatch history observationally ambiguous. Physical
-effects, deployed persistence/fencing and concrete process refinement are not proved.
+Serialized arbitration preserves full receipts, grant history and actuator state.
+Per-case and shared-resource version checks exclude stale fresh commits, while exact
+replay returns the old result without reactivation. Physical effects, deployed
+serialization/fencing and concrete process refinement are not proved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

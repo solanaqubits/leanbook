@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 04c876c7f746d74dfefd55bfa955a2edbbe6d5a5d871cfbf950c5c91c0d74cbd
+source_sha256: dec5811981cd61eec1fb3096a76464057bb4ec62923d8acb7132038c1c62d3bc
 novelty: not-assessed
 status: reviewed
 ---
@@ -135,3 +135,8 @@ DistributedSystemsFullSuite.external_actuator. Finite tape averaging retains
 acceptance guards and dependent plan seed laws. The actuator model proves
 at-most-once software dispatch under its sequential durable-history transitions;
 physical effects and concrete implementation refinement are not established.
+
+Release v0.7.27 adds CryptoFullSuite.heavy_tape and
+DistributedSystemsFullSuite.actuator_arbitration. Weighted heavy-tape bounds
+retain separate positive quota margins. Serialized arbitration preserves receipts
+and grant history; physical effects and implementation refinement are not established.

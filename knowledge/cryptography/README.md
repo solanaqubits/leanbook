@@ -123,3 +123,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [threshold quota](../04_cryptography/CryptoHiddenScalarThresholdQuotaContract.md).
 
 - [tape average](../04_cryptography/CryptoHiddenScalarTapeAverageContract.md).
+
+- [heavy tape](../04_cryptography/CryptoHiddenScalarHeavyTapeContract.md).

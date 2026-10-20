@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 2627d77d7bb3f434ba6a83d17e4045f2c4a32f50d92e081bae348b369270cf17
+source_sha256: 12564b35e5690711e9e3359d68f295aa731e8f32fc5e58743a1c51c2705c6235
 novelty: not-assessed
 status: reviewed
 ---
@@ -211,3 +211,8 @@ DistributedSystemsFullSuite.external_actuator. Finite tape averaging retains
 acceptance guards and dependent plan seed laws. The actuator model proves
 at-most-once software dispatch under its sequential durable-history transitions;
 physical effects and concrete implementation refinement are not established.
+
+Release v0.7.27 adds CryptoFullSuite.heavy_tape and
+DistributedSystemsFullSuite.actuator_arbitration. Weighted heavy-tape bounds
+retain separate positive quota margins. Serialized arbitration preserves receipts
+and grant history; physical effects and implementation refinement are not established.

@@ -134,3 +134,5 @@ The operational machine establishes election safety; NetworkInduction establishe
 - [Checked header-chain history](../02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md).
 
 - [Actuator command history and recovery](ExternalActuatorContract.en.md).
+
+- [Serialized arbitration and immutable receipts](ActuatorArbitrationContract.en.md).
