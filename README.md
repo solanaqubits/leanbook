@@ -30,16 +30,15 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**228 direct imports in MasterSuite**, **272 Lean sources including Verification.lean**.
-[Release v0.7.30](docs/release-v0.7.30.en.md) adds geometric quota deficit
-bounds and explicit multiblock tape budgets (epsilon226).
+**229 direct imports in MasterSuite**, **273 Lean sources including Verification.lean**.
+[Release v0.7.31](docs/release-v0.7.31.en.md) adds constructive minimal geometric
+block budgets and explicit root-quota deficit targets (epsilon227).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Deficit submultiplicativity and block bounds require probability ranges and
-sufficient budgets. Blocks are analytical partitions, with retained successes;
-no block independence or collector restart is assumed. Tape extraction retains
-qualification and the explicit root budget >= 3K, beyond the basic certificate.
-Exact child bounds, original microseed laws and existing extraction are preserved.
+Finite rational search selects a minimum geometric exponent, not a minimum actual
+collector budget. Tape bounds retain qualification, explicit root budgets >=3K,
+exact child bounds and original microseed laws. Global error separately retains
+the mass outside the selected set. Existing acquisition and extraction are reused.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 573491598727754f4c62930e415f8a942154eed24df9678eea72b50b2878f9de
+source_sha256: f51d2868d3d7b94a675941c01a6a3b93d3ca4d6bf13343fab03f7d5fd7351a16
 novelty: not-assessed
 status: reviewed
 ---
@@ -150,3 +150,6 @@ budget monotonicity, explicit margin powers and budget-sensitive tape minima.
 
 Release v0.7.30 adds CryptoFullSuite.quota_deficit: submultiplicative deficits,
 analytical geometric block bounds and explicit multiblock tape budgets.
+
+Release v0.7.31 adds CryptoFullSuite.quota_budget: minimal geometric block budgets,
+root deficit targets and weighted outside-set error bounds.

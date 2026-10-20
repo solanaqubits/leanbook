@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 83e718d3cd76111758205dcc4e60f53982346813159c8a1bb6ee8022d6317082
+source_sha256: a993b808e1239f1fdd28e36154d7ab958cb2c4f22d1392a98304291eab06e814
 novelty: not-assessed
 status: reviewed
 ---
@@ -226,3 +226,6 @@ budget monotonicity, explicit margin powers and budget-sensitive tape minima.
 
 Release v0.7.30 adds CryptoFullSuite.quota_deficit: submultiplicative deficits,
 analytical geometric block bounds and explicit multiblock tape budgets.
+
+Release v0.7.31 adds CryptoFullSuite.quota_budget: minimal geometric block budgets,
+root deficit targets and weighted outside-set error bounds.
