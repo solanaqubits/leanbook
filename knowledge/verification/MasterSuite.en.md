@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 12564b35e5690711e9e3359d68f295aa731e8f32fc5e58743a1c51c2705c6235
+source_sha256: 59f3fb017b648f25d51cfb935965a2366d188b07c66a3f31a263a661686a5cb0
 novelty: not-assessed
 status: reviewed
 ---
@@ -216,3 +216,7 @@ Release v0.7.27 adds CryptoFullSuite.heavy_tape and
 DistributedSystemsFullSuite.actuator_arbitration. Weighted heavy-tape bounds
 retain separate positive quota margins. Serialized arbitration preserves receipts
 and grant history; physical effects and implementation refinement are not established.
+
+Release v0.7.28 adds CryptoFullSuite.quota_margin: decidable recursive
+arithmetic certificates, an exact finite minimum and positive-mass extraction
+under separate acceptance and tape-weight hypotheses.

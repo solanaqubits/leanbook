@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: dec5811981cd61eec1fb3096a76464057bb4ec62923d8acb7132038c1c62d3bc
+source_sha256: 6d357a7c315019b15ab2abb4c48948e3d42a56c896c602347f2777dfcf4eb957
 novelty: not-assessed
 status: reviewed
 ---
@@ -140,3 +140,7 @@ Release v0.7.27 adds CryptoFullSuite.heavy_tape and
 DistributedSystemsFullSuite.actuator_arbitration. Weighted heavy-tape bounds
 retain separate positive quota margins. Serialized arbitration preserves receipts
 and grant history; physical effects and implementation refinement are not established.
+
+Release v0.7.28 adds CryptoFullSuite.quota_margin: decidable recursive
+arithmetic certificates, an exact finite minimum and positive-mass extraction
+under separate acceptance and tape-weight hypotheses.

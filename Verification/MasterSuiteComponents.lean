@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarQuotaMarginContract
 import Verification.CryptoHiddenScalarHeavyTapeContract
 import Verification.ActuatorArbitrationContract
 import Verification.CryptoHiddenScalarTapeAverageContract
@@ -229,6 +230,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarQuotaMarginContract
+  (CryptoHiddenScalarQuotaMarginContractSuite)
 open CryptoHiddenScalarHeavyTapeContract
   (CryptoHiddenScalarHeavyTapeContractSuite)
 open CryptoHiddenScalarTapeAverageContract
@@ -498,6 +501,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  quota_margin : CryptoHiddenScalarQuotaMarginContractSuite
   heavy_tape : CryptoHiddenScalarHeavyTapeContractSuite
   tape_average : CryptoHiddenScalarTapeAverageContractSuite
   threshold_quota : CryptoHiddenScalarThresholdQuotaContractSuite
@@ -581,6 +585,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  quota_margin := CryptoHiddenScalarQuotaMarginContract.verification_suite
   heavy_tape := CryptoHiddenScalarHeavyTapeContract.verification_suite
   tape_average := CryptoHiddenScalarTapeAverageContract.verification_suite
   threshold_quota := CryptoHiddenScalarThresholdQuotaContract.verification_suite

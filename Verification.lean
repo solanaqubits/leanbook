@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarQuotaMarginContract
 import Verification.CryptoHiddenScalarHeavyTapeContract
 import Verification.ActuatorArbitrationContract
 import Verification.CryptoHiddenScalarTapeAverageContract

@@ -30,20 +30,17 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**225 direct imports in MasterSuite**, **269 Lean sources including Verification.lean**.
-[Release v0.7.27](docs/release-v0.7.27.en.md) adds weighted heavy tapes
-(epsilon223) and the separately named ActuatorArbitrationContract.
+**226 direct imports in MasterSuite**, **270 Lean sources including Verification.lean**.
+[Release v0.7.28](docs/release-v0.7.28.en.md) adds decidable quota margin
+certificates and a computed positive finite minimum (epsilon224).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Weighted heavy-tape bounds combine global single-path acceptance with a separate
-positive quota margin to obtain a positive-mass successful tape/seed pair and
-witness-or-generator-relation extraction. Constant and varying cutoffs are distinct;
-no efficient search guarantee follows from the existential result.
-
-Serialized arbitration preserves full receipts, grant history and actuator state.
-Per-case and shared-resource version checks exclude stale fresh commits, while exact
-replay returns the old result without reactivation. Physical effects, deployed
-serialization/fencing and concrete process refinement are not proved.
+Recursive certificates check existing plan budgets and strict threshold-density
+margins. Their finite minimum supplies the positive constant used in the existing
+acquisition and extraction theorems. Tape acceptance and positive original tape
+mass remain separate requirements. A positive certificate alone does not imply
+successful execution; a zero conservative bound does not preclude actual success.
+The sampler, collector and witness-or-generator-relation extractor are unchanged.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

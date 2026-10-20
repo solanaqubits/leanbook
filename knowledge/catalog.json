@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaMarginContract",
         "Verification.CryptoHiddenScalarHeavyTapeContract",
         "Verification.ActuatorArbitrationContract",
         "Verification.CryptoHiddenScalarTapeAverageContract",
@@ -1460,6 +1461,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaMarginContract",
         "Verification.CryptoHiddenScalarHeavyTapeContract",
         "Verification.ActuatorArbitrationContract",
         "Verification.CryptoHiddenScalarTapeAverageContract",
@@ -3106,6 +3108,17 @@
       "card": "knowledge/distributed/ActuatorArbitrationContract.en.md",
       "project_imports": [
         "Verification.ExternalActuatorContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarQuotaMarginContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarQuotaMarginContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaMarginContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarHeavyTapeContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

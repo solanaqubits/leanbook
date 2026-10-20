@@ -1700,5 +1700,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarHeavyTapeContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaMarginContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaMarginContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaMarginContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_margin",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaMarginContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
