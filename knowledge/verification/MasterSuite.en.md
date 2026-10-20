@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 7d598b739cfaf312005da7af77e92f6a7442f6e6b5678f8455033f6ea954a218
+source_sha256: 7c126181971fbbbf68683192629b02c9f36f615461fd8d57394c5266cb3da450
 novelty: not-assessed
 status: reviewed
 ---
@@ -232,3 +232,6 @@ root deficit targets and weighted outside-set error bounds.
 
 Release v0.7.32 adds CryptoFullSuite.quota_minimum: exact finite reference-quota budget search,
 global minimality on success and bounded-window failure.
+
+Release v0.7.33 adds CryptoFullSuite.quota_tabular: materialized quota rows,
+exact scalar, deficit and bounded-search equivalence for arbitrary rational profiles.

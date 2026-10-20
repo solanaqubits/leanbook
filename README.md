@@ -30,15 +30,15 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**230 direct imports in MasterSuite**, **274 Lean sources including Verification.lean**.
-[Release v0.7.32](docs/release-v0.7.32.en.md) adds finite search for the exact
-minimum reference quota budget (epsilon228).
+**231 direct imports in MasterSuite**, **275 Lean sources including Verification.lean**.
+[Release v0.7.33](docs/release-v0.7.33.en.md) adds materialized quota rows and
+exact equivalence to the reference recursion and bounded search (epsilon229).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-A successful bounded search is globally minimal for quotaLower. Failure only
-excludes the supplied inclusive window. Probability ranges justify the sufficient
-geometric cap and extension to larger budgets. This is not a minimum budget
-claim for the actual collector; no DP implementation is introduced.
+The equivalence holds for every rational profile, without probability-range
+assumptions. Each transition reads an immutable previous Vector. The search
+adapter rebuilds rows per candidate; streaming reuse and performance claims
+remain outside this release. The cold-cache qutrit Spec setup fix is included.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

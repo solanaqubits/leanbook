@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 39083e9ce8103797648e7909242bc6c3063886fc9f7a2c615532222e21521982
+source_sha256: a450eb2cad637fd34dc52f7053326812bd28b74edec9ae512cc4bc8aef6c8bbe
 novelty: not-assessed
 status: reviewed
 ---
@@ -156,3 +156,6 @@ root deficit targets and weighted outside-set error bounds.
 
 Release v0.7.32 adds CryptoFullSuite.quota_minimum: exact finite reference-quota budget search,
 global minimality on success and bounded-window failure.
+
+Release v0.7.33 adds CryptoFullSuite.quota_tabular: materialized quota rows,
+exact scalar, deficit and bounded-search equivalence for arbitrary rational profiles.

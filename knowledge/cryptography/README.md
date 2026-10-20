@@ -135,3 +135,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Constructive quota budgets](../04_cryptography/CryptoHiddenScalarQuotaBudgetContract.md).
 
 - [Exact reference quota budgets](../04_cryptography/CryptoHiddenScalarQuotaMinimumContract.md).
+
+- [Exact reference quota budgets](../04_cryptography/CryptoHiddenScalarQuotaTabularContract.md).
