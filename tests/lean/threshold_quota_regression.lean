@@ -87,7 +87,14 @@ theorem threshold_ipa_value : treeThresholdBound (treePlan 1) thresholds.tail.ta
 example : etaThresholdBound (etaPlan 1) thresholds.tail =
     1983204328040277140569872224468428083 / 16000000000000000000000000000000000000 := by decide +kernel
 theorem threshold_positive : 0 < protocolThresholdBound (plan 1) thresholds := by decide +kernel
-theorem accepts_all : acceptanceRate (plan 1) (claim 1) (model 1) = 1 := by decide +kernel
+-- Prove acceptance before counting: evaluating the filtered intersection directly
+-- creates a quadratic finite-set reduction and can exhaust verification memory.
+theorem accepts_each : ∀ w : SinglePathSeed (plan 1), AcceptedRun (plan 1) (claim 1) (model 1) w := by
+  decide +kernel
+
+theorem accepts_all : acceptanceRate (plan 1) (claim 1) (model 1) = 1 := by
+  simp [acceptanceRate, accepts_each, Prob.probability]
+  decide +kernel
 example : protocolThresholdBound (plan 1) thresholds ≤ (plan 1).bound (claim 1) (model 1) :=
   acceptance_threshold_le _ _ _ _ (by rw [accepts_all]; exact le_rfl)
 example : ∃ w : (plan 1).Seed, ∃ f,

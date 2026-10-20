@@ -129,3 +129,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Decidable quota margins and a finite positive minimum](../04_cryptography/CryptoHiddenScalarQuotaMarginContract.md).
 
 - [Explicit factorized quota bounds](../04_cryptography/CryptoHiddenScalarQuotaProductContract.md).
+
+- [Geometric quota deficit bounds](../04_cryptography/CryptoHiddenScalarQuotaDeficitContract.md).

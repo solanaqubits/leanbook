@@ -30,16 +30,16 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**227 direct imports in MasterSuite**, **271 Lean sources including Verification.lean**.
-[Release v0.7.29](docs/release-v0.7.29.en.md) adds explicit factorized quota
-bounds and budget-sensitive tape minima (epsilon225).
+**228 direct imports in MasterSuite**, **272 Lean sources including Verification.lean**.
+[Release v0.7.30](docs/release-v0.7.30.en.md) adds geometric quota deficit
+bounds and explicit multiblock tape budgets (epsilon226).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Exact diagonals need no probability ranges; budget monotonicity and probabilistic
-product lower bounds require them. Root product comparisons require budget >= 3,
-as demonstrated by the budget-two counterexample. Plan adapters retain exact
-child threshold bounds. Original microseed laws, collectors and the
-witness-or-generator-relation extractor are unchanged.
+Deficit submultiplicativity and block bounds require probability ranges and
+sufficient budgets. Blocks are analytical partitions, with retained successes;
+no block independence or collector restart is assumed. Tape extraction retains
+qualification and the explicit root budget >= 3K, beyond the basic certificate.
+Exact child bounds, original microseed laws and existing extraction are preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

@@ -1718,5 +1718,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarQuotaProductContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaDeficitContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaDeficitContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaDeficitContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_deficit",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaDeficitContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

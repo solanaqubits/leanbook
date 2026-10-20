@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: e84178208467c15fff8f13db0dc06c167f4bc3a8ad59688386fbf5d2fc8eba6d
+source_sha256: 73bbec45d06ab5623f95493cf5c11ce58575a9bfd240caeaf87bd1a922808043
 novelty: not-assessed
 status: reviewed
 ---
@@ -192,3 +192,6 @@ under separate acceptance and tape-weight hypotheses.
 
 Release v0.7.29 adds CryptoFullSuite.quota_product: exact diagonals,
 budget monotonicity, explicit margin powers and budget-sensitive tape minima.
+
+Release v0.7.30 adds CryptoFullSuite.quota_deficit: submultiplicative deficits,
+analytical geometric block bounds and explicit multiblock tape budgets.
