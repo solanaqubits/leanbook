@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 6d357a7c315019b15ab2abb4c48948e3d42a56c896c602347f2777dfcf4eb957
+source_sha256: 0cfae4046153d0b54a8929a766fa11c9826166be7b64087e919a0e6932643b1d
 novelty: not-assessed
 status: reviewed
 ---
@@ -144,3 +144,6 @@ and grant history; physical effects and implementation refinement are not establ
 Release v0.7.28 adds CryptoFullSuite.quota_margin: decidable recursive
 arithmetic certificates, an exact finite minimum and positive-mass extraction
 under separate acceptance and tape-weight hypotheses.
+
+Release v0.7.29 adds CryptoFullSuite.quota_product: exact diagonals,
+budget monotonicity, explicit margin powers and budget-sensitive tape minima.

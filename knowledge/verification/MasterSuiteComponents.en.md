@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: dcabd75f24348750d75c95be74e5ad289304bb7a11a4baa215e34c6497f8f1c7
+source_sha256: e84178208467c15fff8f13db0dc06c167f4bc3a8ad59688386fbf5d2fc8eba6d
 novelty: not-assessed
 status: reviewed
 ---
@@ -189,3 +189,6 @@ and grant history; physical effects and implementation refinement are not establ
 Release v0.7.28 adds CryptoFullSuite.quota_margin: decidable recursive
 arithmetic certificates, an exact finite minimum and positive-mass extraction
 under separate acceptance and tape-weight hypotheses.
+
+Release v0.7.29 adds CryptoFullSuite.quota_product: exact diagonals,
+budget monotonicity, explicit margin powers and budget-sensitive tape minima.

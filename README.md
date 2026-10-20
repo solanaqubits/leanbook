@@ -30,17 +30,16 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**226 direct imports in MasterSuite**, **270 Lean sources including Verification.lean**.
-[Release v0.7.28](docs/release-v0.7.28.en.md) adds decidable quota margin
-certificates and a computed positive finite minimum (epsilon224).
+**227 direct imports in MasterSuite**, **271 Lean sources including Verification.lean**.
+[Release v0.7.29](docs/release-v0.7.29.en.md) adds explicit factorized quota
+bounds and budget-sensitive tape minima (epsilon225).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Recursive certificates check existing plan budgets and strict threshold-density
-margins. Their finite minimum supplies the positive constant used in the existing
-acquisition and extraction theorems. Tape acceptance and positive original tape
-mass remain separate requirements. A positive certificate alone does not imply
-successful execution; a zero conservative bound does not preclude actual success.
-The sampler, collector and witness-or-generator-relation extractor are unchanged.
+Exact diagonals need no probability ranges; budget monotonicity and probabilistic
+product lower bounds require them. Root product comparisons require budget >= 3,
+as demonstrated by the budget-two counterexample. Plan adapters retain exact
+child threshold bounds. Original microseed laws, collectors and the
+witness-or-generator-relation extractor are unchanged.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

@@ -268,3 +268,5 @@ open CryptoCommitmentVectorPedersenGroup in
 #audit_axioms CryptoHiddenScalarHeavyTapeContract.verification_suite
 
 #audit_axioms CryptoHiddenScalarQuotaMarginContract.verification_suite
+
+#audit_axioms CryptoHiddenScalarQuotaProductContract.verification_suite
