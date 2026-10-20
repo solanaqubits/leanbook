@@ -20,6 +20,14 @@ class QutritCircuitLiveTests(unittest.TestCase):
         return result.stdout
 
     def test_qutrit_circuit_contract(self):
+        # The pinned test specification is outside the default library import
+        # closure. Build it explicitly instead of relying on another test's cache.
+        lake = shutil.which('lake')
+        self.assertIsNotNone(lake)
+        build = subprocess.run(
+            [lake, 'build', '--wfail', 'Verification.Specs.QuantumQutritDecoderSpec'],
+            cwd=ROOT, capture_output=True, text=True, timeout=180)
+        self.assertEqual(build.returncode, 0, build.stdout + build.stderr)
         self.run_lean('tests/lean/qutrit_circuit_regression.lean')
 
     def test_executable_basis_interpreter(self):
