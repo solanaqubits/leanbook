@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: f51d2868d3d7b94a675941c01a6a3b93d3ca4d6bf13343fab03f7d5fd7351a16
+source_sha256: 39083e9ce8103797648e7909242bc6c3063886fc9f7a2c615532222e21521982
 novelty: not-assessed
 status: reviewed
 ---
@@ -153,3 +153,6 @@ analytical geometric block bounds and explicit multiblock tape budgets.
 
 Release v0.7.31 adds CryptoFullSuite.quota_budget: minimal geometric block budgets,
 root deficit targets and weighted outside-set error bounds.
+
+Release v0.7.32 adds CryptoFullSuite.quota_minimum: exact finite reference-quota budget search,
+global minimality on success and bounded-window failure.

@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 9c7a02859b05acc9464e9ded3433de52e0a8072a69bde3c66da144eefda3f830
+source_sha256: 3a41dc08dba0a47e204caee2565b14dbbdb6ecf442f4f49a3fca728f43951ef3
 novelty: not-assessed
 status: reviewed
 ---
@@ -198,3 +198,6 @@ analytical geometric block bounds and explicit multiblock tape budgets.
 
 Release v0.7.31 adds CryptoFullSuite.quota_budget: minimal geometric block budgets,
 root deficit targets and weighted outside-set error bounds.
+
+Release v0.7.32 adds CryptoFullSuite.quota_minimum: exact finite reference-quota budget search,
+global minimality on success and bounded-window failure.

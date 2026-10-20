@@ -30,15 +30,15 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**229 direct imports in MasterSuite**, **273 Lean sources including Verification.lean**.
-[Release v0.7.31](docs/release-v0.7.31.en.md) adds constructive minimal geometric
-block budgets and explicit root-quota deficit targets (epsilon227).
+**230 direct imports in MasterSuite**, **274 Lean sources including Verification.lean**.
+[Release v0.7.32](docs/release-v0.7.32.en.md) adds finite search for the exact
+minimum reference quota budget (epsilon228).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Finite rational search selects a minimum geometric exponent, not a minimum actual
-collector budget. Tape bounds retain qualification, explicit root budgets >=3K,
-exact child bounds and original microseed laws. Global error separately retains
-the mass outside the selected set. Existing acquisition and extraction are reused.
+A successful bounded search is globally minimal for quotaLower. Failure only
+excludes the supplied inclusive window. Probability ranges justify the sufficient
+geometric cap and extension to larger budgets. This is not a minimum budget
+claim for the actual collector; no DP implementation is introduced.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

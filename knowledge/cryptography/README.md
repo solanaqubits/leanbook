@@ -133,3 +133,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Geometric quota deficit bounds](../04_cryptography/CryptoHiddenScalarQuotaDeficitContract.md).
 
 - [Constructive quota budgets](../04_cryptography/CryptoHiddenScalarQuotaBudgetContract.md).
+
+- [Exact reference quota budgets](../04_cryptography/CryptoHiddenScalarQuotaMinimumContract.md).
