@@ -143,3 +143,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Structural accounting for quota search](../04_cryptography/CryptoHiddenScalarQuotaCostContract.md).
 
 - [Structural accounting for quota search](../04_cryptography/CryptoHiddenScalarQuotaComparisonContract.md).
+
+- [Fast boundary branches for quota search](../04_cryptography/CryptoHiddenScalarQuotaFastContract.md).

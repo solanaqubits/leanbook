@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: e788b382f3f5eb1ede50fe868f760ccaea6f929dd65ebd8f8babd1a3d6eb062e
+source_sha256: 852f37dab0fc9e9c460f00bdd2f52933912a732200d72265d413d4c99edd373b
 novelty: not-assessed
 status: reviewed
 ---
@@ -213,3 +213,6 @@ exact structural counters and unconditional Option equality.
 
 Release v0.7.36 adds CryptoFullSuite.quota_comparison: tabular/streaming cost comparison,
 exact triangular counters and unconditional Option equality.
+
+Release v0.7.37 adds CryptoFullSuite.quota_fast: fast boundary branches,
+exact branch-sensitive counters and unconditional Option equality.

@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 2f81aef14b55498a6affa56fc465caa3bed215fdcbab07ab4b125b546a85c437
+source_sha256: 4aaa58a527bd05c29faa37ea87e56ee64746407b5dc373eb0be6ea8f8fd700f6
 novelty: not-assessed
 status: reviewed
 ---
@@ -168,3 +168,6 @@ exact structural counters and unconditional Option equality.
 
 Release v0.7.36 adds CryptoFullSuite.quota_comparison: tabular/streaming cost comparison,
 exact triangular counters and unconditional Option equality.
+
+Release v0.7.37 adds CryptoFullSuite.quota_fast: fast boundary branches,
+exact branch-sensitive counters and unconditional Option equality.
