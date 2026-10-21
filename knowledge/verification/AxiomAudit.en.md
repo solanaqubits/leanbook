@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 3d3dac3bed9df9eb883ea6832c9e30999fd525332cb2a5c425ab58821a371b30
+source_sha256: 8c296391376d34a5cabb4157047edde2744ad38614a8d4e3a67f8c62a0466435
 novelty: not-assessed
 status: reviewed
 ---
@@ -177,3 +177,6 @@ retained-row/prefix invariants and conditional continuation equivalence.
 
 Release v0.7.39 adds CryptoFullSuite.quota_resume_cost: instrumented resumption,
 full retained-result equality and exact four-counter additivity for nondecreasing caps.
+
+Release v0.7.40 adds CryptoFullSuite.quota_chain: finite quota chains,
+full state and four-counter equality under List.IsChain (<=) (cap0::caps).

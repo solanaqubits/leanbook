@@ -1808,5 +1808,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarQuotaResumeCostContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaChainContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaChainContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaChainContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_chain",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaChainContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

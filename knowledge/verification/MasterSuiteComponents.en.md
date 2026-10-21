@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: f408460c3bc93b3893443222bb4511add5e01d34d9084f9bb6ea64dc056a12da
+source_sha256: 5a14d37ce5fc722855b0fbf89cf24fc2511a3c5ff41499279e9a59591aebda2d
 novelty: not-assessed
 status: reviewed
 ---
@@ -222,3 +222,6 @@ retained-row/prefix invariants and conditional continuation equivalence.
 
 Release v0.7.39 adds CryptoFullSuite.quota_resume_cost: instrumented resumption,
 full retained-result equality and exact four-counter additivity for nondecreasing caps.
+
+Release v0.7.40 adds CryptoFullSuite.quota_chain: finite quota chains,
+full state and four-counter equality under List.IsChain (<=) (cap0::caps).

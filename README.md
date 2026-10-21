@@ -30,14 +30,14 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**237 direct imports in MasterSuite**, **281 Lean sources including Verification.lean**.
-[Release v0.7.39](docs/release-v0.7.39.en.md) adds instrumented quota resumption
-(epsilon235). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**238 direct imports in MasterSuite**, **282 Lean sources including Verification.lean**.
+[Release v0.7.40](docs/release-v0.7.40.en.md) adds finite quota resume chains
+(epsilon236). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Instrumented start and continuation preserve the full retained search result.
-Exact checks, initializations, transitions and active updates are counted.
-For nondecreasing caps, the two-stage total equals the cold streaming counters.
-All rational profiles are supported. Guards, stack, allocation and bit costs
+The actual continuation fold preserves the full result and all four counters
+of a cold start at the last cap under List.IsChain (<=) (cap0::caps).
+The same premise applies to equality with the reference selector through toOption.
+Arbitrary rational profiles and tolerances are allowed. Machine and bit costs
 are outside this structural model. The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
