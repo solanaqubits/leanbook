@@ -30,15 +30,16 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**233 direct imports in MasterSuite**, **277 Lean sources including Verification.lean**.
-[Release v0.7.35](docs/release-v0.7.35.en.md) adds structural accounting for
-streaming quota search (epsilon231). Lake remains 0.7.1; the full public beta
-basis remains v0.7.1.
+**234 direct imports in MasterSuite**, **278 Lean sources including Verification.lean**.
+[Release v0.7.36](docs/release-v0.7.36.en.md) adds exact comparisons of tabular
+and streaming quota search costs (epsilon232). Lake remains 0.7.1; the full
+public beta basis remains v0.7.1.
 
-Instrumented results equal both streaming and reference selectors for every
-rational profile. Exact checks, transitions and active-entry updates yield
-the structural bound C <= 2*(n+1)*(cap+1). Bit costs, machine time and memory
-are outside this model. The explicit qutrit Spec build is preserved.
+Instrumented tabular results equal the original selector for arbitrary rational
+profiles. For j<n, triangular row costs yield exact savings and strictness
+criteria. Absorbed states bypass tabular rows, so streaming is not universally
+cheaper. Bit costs, runtime and memory are outside this structural model.
+The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

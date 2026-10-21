@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 3e9aaf08faa9962cb5631b6ca9288fa28d2ae331ab0ec6344faa5f9e701f1dad
+source_sha256: 2f81aef14b55498a6affa56fc465caa3bed215fdcbab07ab4b125b546a85c437
 novelty: not-assessed
 status: reviewed
 ---
@@ -165,3 +165,6 @@ unconditional Option equality with the reference bounded search.
 
 Release v0.7.35 adds CryptoFullSuite.quota_cost: instrumented streaming search,
 exact structural counters and unconditional Option equality.
+
+Release v0.7.36 adds CryptoFullSuite.quota_comparison: tabular/streaming cost comparison,
+exact triangular counters and unconditional Option equality.

@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarQuotaComparisonContract
 import Verification.CryptoHiddenScalarQuotaCostContract
 import Verification.CryptoHiddenScalarQuotaStreamingContract
 import Verification.CryptoHiddenScalarQuotaTabularContract
@@ -237,6 +238,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarQuotaComparisonContract
+  (CryptoHiddenScalarQuotaComparisonContractSuite)
 open CryptoHiddenScalarQuotaCostContract
   (CryptoHiddenScalarQuotaCostContractSuite)
 open CryptoHiddenScalarQuotaStreamingContract
@@ -522,6 +525,7 @@ structure CryptoFullSuite : Prop where
   ipa_extraction : CryptoBulletproofsWitnessExtraction.CryptoBulletproofsWitnessExtractionSuite
   range_extraction : CryptoBulletproofsRangeWitnessExtractionSuite
   range_grid : CryptoBulletproofsRangeInterpolation.CryptoBulletproofsRangeInterpolationSuite
+  quota_comparison : CryptoHiddenScalarQuotaComparisonContractSuite
   quota_cost : CryptoHiddenScalarQuotaCostContractSuite
   quota_streaming : CryptoHiddenScalarQuotaStreamingContractSuite
   quota_tabular : CryptoHiddenScalarQuotaTabularContractSuite
@@ -613,6 +617,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   range_extraction := CryptoBulletproofsRangeWitnessExtraction.verification_suite
   range_grid := by
     exact CryptoBulletproofsRangeInterpolation.verification_suite
+  quota_comparison := CryptoHiddenScalarQuotaComparisonContract.verification_suite
   quota_cost := CryptoHiddenScalarQuotaCostContract.verification_suite
   quota_streaming := CryptoHiddenScalarQuotaStreamingContract.verification_suite
   quota_tabular := CryptoHiddenScalarQuotaTabularContract.verification_suite

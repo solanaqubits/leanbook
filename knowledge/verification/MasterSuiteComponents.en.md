@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 59d7e6593bef8e77846ab1cd361a1506342bc1bf262c484be098d8185f95575f
+source_sha256: e788b382f3f5eb1ede50fe868f760ccaea6f929dd65ebd8f8babd1a3d6eb062e
 novelty: not-assessed
 status: reviewed
 ---
@@ -210,3 +210,6 @@ unconditional Option equality with the reference bounded search.
 
 Release v0.7.35 adds CryptoFullSuite.quota_cost: instrumented streaming search,
 exact structural counters and unconditional Option equality.
+
+Release v0.7.36 adds CryptoFullSuite.quota_comparison: tabular/streaming cost comparison,
+exact triangular counters and unconditional Option equality.

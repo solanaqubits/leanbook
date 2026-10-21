@@ -1772,5 +1772,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarQuotaCostContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaComparisonContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaComparisonContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaComparisonContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_comparison",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaComparisonContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
