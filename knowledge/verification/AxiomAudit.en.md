@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 778ba19fc2e292028bb2257561f760340f2b7b21db1c1f7ecb0c3d3cbe0ea386
+source_sha256: 3e9aaf08faa9962cb5631b6ca9288fa28d2ae331ab0ec6344faa5f9e701f1dad
 novelty: not-assessed
 status: reviewed
 ---
@@ -162,3 +162,6 @@ exact scalar, deficit and bounded-search equivalence for arbitrary rational prof
 
 Release v0.7.34 adds CryptoFullSuite.quota_streaming: streaming search with reusable rows,
 unconditional Option equality with the reference bounded search.
+
+Release v0.7.35 adds CryptoFullSuite.quota_cost: instrumented streaming search,
+exact structural counters and unconditional Option equality.

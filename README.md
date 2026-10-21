@@ -30,15 +30,15 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**232 direct imports in MasterSuite**, **276 Lean sources including Verification.lean**.
-[Release v0.7.34](docs/release-v0.7.34.en.md) adds streaming quota budget search
-with reusable materialized rows and unconditional Option equality (epsilon230).
-Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**233 direct imports in MasterSuite**, **277 Lean sources including Verification.lean**.
+[Release v0.7.35](docs/release-v0.7.35.en.md) adds structural accounting for
+streaming quota search (epsilon231). Lake remains 0.7.1; the full public beta
+basis remains v0.7.1.
 
-The scan checks budgets 0 through cap inclusively, retains the current row and
-returns the first success. Equality holds for every rational profile and tolerance,
-including nonmonotone profiles. Performance and complexity are separate questions.
-The existing cold-cache qutrit Spec setup fix is preserved.
+Instrumented results equal both streaming and reference selectors for every
+rational profile. Exact checks, transitions and active-entry updates yield
+the structural bound C <= 2*(n+1)*(cap+1). Bit costs, machine time and memory
+are outside this model. The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

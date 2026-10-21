@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: fdfa4265c32aefa2c56fd04b6e7980873e002ad9bf640f7344be207c03fb6c50
+source_sha256: 59d7e6593bef8e77846ab1cd361a1506342bc1bf262c484be098d8185f95575f
 novelty: not-assessed
 status: reviewed
 ---
@@ -207,3 +207,6 @@ exact scalar, deficit and bounded-search equivalence for arbitrary rational prof
 
 Release v0.7.34 adds CryptoFullSuite.quota_streaming: streaming search with reusable rows,
 unconditional Option equality with the reference bounded search.
+
+Release v0.7.35 adds CryptoFullSuite.quota_cost: instrumented streaming search,
+exact structural counters and unconditional Option equality.

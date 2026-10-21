@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarQuotaCostContract
 import Verification.CryptoHiddenScalarQuotaStreamingContract
 import Verification.CryptoHiddenScalarQuotaTabularContract
 import Verification.CryptoHiddenScalarQuotaMinimumContract
