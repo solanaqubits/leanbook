@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaStreamingContract",
         "Verification.CryptoHiddenScalarQuotaTabularContract",
         "Verification.CryptoHiddenScalarQuotaMinimumContract",
         "Verification.CryptoHiddenScalarQuotaBudgetContract",
@@ -1466,6 +1467,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaStreamingContract",
         "Verification.CryptoHiddenScalarQuotaTabularContract",
         "Verification.CryptoHiddenScalarQuotaMinimumContract",
         "Verification.CryptoHiddenScalarQuotaBudgetContract",
@@ -3184,6 +3186,17 @@
       "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaTabularContract.md",
       "project_imports": [
         "Verification.CryptoHiddenScalarQuotaMinimumContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarQuotaStreamingContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarQuotaStreamingContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaStreamingContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaTabularContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

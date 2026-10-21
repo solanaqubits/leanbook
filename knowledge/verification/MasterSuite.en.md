@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 7c126181971fbbbf68683192629b02c9f36f615461fd8d57394c5266cb3da450
+source_sha256: 2fa1ecc4a4a9d74061dfb9198b9a60db304d5bee741fe5b39efe57dde0bf7eae
 novelty: not-assessed
 status: reviewed
 ---
@@ -235,3 +235,6 @@ global minimality on success and bounded-window failure.
 
 Release v0.7.33 adds CryptoFullSuite.quota_tabular: materialized quota rows,
 exact scalar, deficit and bounded-search equivalence for arbitrary rational profiles.
+
+Release v0.7.34 adds CryptoFullSuite.quota_streaming: streaming search with reusable rows,
+unconditional Option equality with the reference bounded search.

@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: a450eb2cad637fd34dc52f7053326812bd28b74edec9ae512cc4bc8aef6c8bbe
+source_sha256: 778ba19fc2e292028bb2257561f760340f2b7b21db1c1f7ecb0c3d3cbe0ea386
 novelty: not-assessed
 status: reviewed
 ---
@@ -159,3 +159,6 @@ global minimality on success and bounded-window failure.
 
 Release v0.7.33 adds CryptoFullSuite.quota_tabular: materialized quota rows,
 exact scalar, deficit and bounded-search equivalence for arbitrary rational profiles.
+
+Release v0.7.34 adds CryptoFullSuite.quota_streaming: streaming search with reusable rows,
+unconditional Option equality with the reference bounded search.

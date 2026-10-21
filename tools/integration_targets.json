@@ -1754,5 +1754,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarQuotaTabularContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaStreamingContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaStreamingContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaStreamingContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_streaming",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaStreamingContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

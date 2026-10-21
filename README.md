@@ -30,15 +30,15 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**231 direct imports in MasterSuite**, **275 Lean sources including Verification.lean**.
-[Release v0.7.33](docs/release-v0.7.33.en.md) adds materialized quota rows and
-exact equivalence to the reference recursion and bounded search (epsilon229).
+**232 direct imports in MasterSuite**, **276 Lean sources including Verification.lean**.
+[Release v0.7.34](docs/release-v0.7.34.en.md) adds streaming quota budget search
+with reusable materialized rows and unconditional Option equality (epsilon230).
 Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-The equivalence holds for every rational profile, without probability-range
-assumptions. Each transition reads an immutable previous Vector. The search
-adapter rebuilds rows per candidate; streaming reuse and performance claims
-remain outside this release. The cold-cache qutrit Spec setup fix is included.
+The scan checks budgets 0 through cap inclusively, retains the current row and
+returns the first success. Equality holds for every rational profile and tolerance,
+including nonmonotone profiles. Performance and complexity are separate questions.
+The existing cold-cache qutrit Spec setup fix is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)
