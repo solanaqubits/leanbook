@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 4dcc73efec33dfb3cab475028a44ac0368f8135ea11dd328d3448322876cfe1c
+source_sha256: f408460c3bc93b3893443222bb4511add5e01d34d9084f9bb6ea64dc056a12da
 novelty: not-assessed
 status: reviewed
 ---
@@ -219,3 +219,6 @@ exact branch-sensitive counters and unconditional Option equality.
 
 Release v0.7.38 adds CryptoFullSuite.quota_resumable: certified resumable search,
 retained-row/prefix invariants and conditional continuation equivalence.
+
+Release v0.7.39 adds CryptoFullSuite.quota_resume_cost: instrumented resumption,
+full retained-result equality and exact four-counter additivity for nondecreasing caps.

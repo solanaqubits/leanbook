@@ -30,16 +30,15 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**236 direct imports in MasterSuite**, **280 Lean sources including Verification.lean**.
-[Release v0.7.38](docs/release-v0.7.38.en.md) adds certified resumable quota
-search (epsilon234). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**237 direct imports in MasterSuite**, **281 Lean sources including Verification.lean**.
+[Release v0.7.39](docs/release-v0.7.39.en.md) adds instrumented quota resumption
+(epsilon235). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-Exhausted cursors retain the actual row and a certificate of failed budgets.
-Continuation matches cold reference search at any cap for exhausted cursors.
-For an already found genuine minimum T, equality requires T <= newCap.
-End-to-end continuation uses nondecreasing windows. All rational profiles are
-supported. No new cost, serialization or physical performance claim is made.
-The explicit qutrit Spec build is preserved.
+Instrumented start and continuation preserve the full retained search result.
+Exact checks, initializations, transitions and active updates are counted.
+For nondecreasing caps, the two-stage total equals the cold streaming counters.
+All rational profiles are supported. Guards, stack, allocation and bit costs
+are outside this structural model. The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

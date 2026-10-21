@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: ab98ffaa5ed332cb97c0d5b072ca4a1ed27129e6265e584ae862b508f162f649
+source_sha256: 3d3dac3bed9df9eb883ea6832c9e30999fd525332cb2a5c425ab58821a371b30
 novelty: not-assessed
 status: reviewed
 ---
@@ -174,3 +174,6 @@ exact branch-sensitive counters and unconditional Option equality.
 
 Release v0.7.38 adds CryptoFullSuite.quota_resumable: certified resumable search,
 retained-row/prefix invariants and conditional continuation equivalence.
+
+Release v0.7.39 adds CryptoFullSuite.quota_resume_cost: instrumented resumption,
+full retained-result equality and exact four-counter additivity for nondecreasing caps.

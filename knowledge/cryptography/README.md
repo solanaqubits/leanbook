@@ -147,3 +147,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Fast boundary branches for quota search](../04_cryptography/CryptoHiddenScalarQuotaFastContract.md).
 
 - [Certified resumable quota search](../04_cryptography/CryptoHiddenScalarQuotaResumableContract.md).
+
+- [Exact structural costs of quota resumption](../04_cryptography/CryptoHiddenScalarQuotaResumeCostContract.md).

@@ -1799,5 +1799,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarQuotaResumableContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaResumeCostContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaResumeCostContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaResumeCostContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_resume_cost",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaResumeCostContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
