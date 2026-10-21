@@ -1790,5 +1790,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarQuotaFastContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaResumableContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaResumableContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaResumableContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_resumable",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaResumableContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

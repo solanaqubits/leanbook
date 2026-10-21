@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 852f37dab0fc9e9c460f00bdd2f52933912a732200d72265d413d4c99edd373b
+source_sha256: 4dcc73efec33dfb3cab475028a44ac0368f8135ea11dd328d3448322876cfe1c
 novelty: not-assessed
 status: reviewed
 ---
@@ -216,3 +216,6 @@ exact triangular counters and unconditional Option equality.
 
 Release v0.7.37 adds CryptoFullSuite.quota_fast: fast boundary branches,
 exact branch-sensitive counters and unconditional Option equality.
+
+Release v0.7.38 adds CryptoFullSuite.quota_resumable: certified resumable search,
+retained-row/prefix invariants and conditional continuation equivalence.

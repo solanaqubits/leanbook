@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 4aaa58a527bd05c29faa37ea87e56ee64746407b5dc373eb0be6ea8f8fd700f6
+source_sha256: ab98ffaa5ed332cb97c0d5b072ca4a1ed27129e6265e584ae862b508f162f649
 novelty: not-assessed
 status: reviewed
 ---
@@ -171,3 +171,6 @@ exact triangular counters and unconditional Option equality.
 
 Release v0.7.37 adds CryptoFullSuite.quota_fast: fast boundary branches,
 exact branch-sensitive counters and unconditional Option equality.
+
+Release v0.7.38 adds CryptoFullSuite.quota_resumable: certified resumable search,
+retained-row/prefix invariants and conditional continuation equivalence.

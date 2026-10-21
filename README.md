@@ -30,17 +30,16 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**235 direct imports in MasterSuite**, **279 Lean sources including Verification.lean**.
-[Release v0.7.37](docs/release-v0.7.37.en.md) adds fast boundary branches for
-quota search (epsilon233). Lake remains 0.7.1; the full public beta basis remains
-v0.7.1.
+**236 direct imports in MasterSuite**, **280 Lean sources including Verification.lean**.
+[Release v0.7.38](docs/release-v0.7.38.en.md) adds certified resumable quota
+search (epsilon234). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-The fast selector equals the reference search for arbitrary rational profiles.
-Absorbed and zero-window branches use one deficit check and no row construction
-or transitions in the structural model. Regular branches preserve streaming
-counters. Negative tolerance is not rejected globally outside probability ranges.
-No machine allocation or runtime claim is made. The explicit qutrit Spec build
-is preserved.
+Exhausted cursors retain the actual row and a certificate of failed budgets.
+Continuation matches cold reference search at any cap for exhausted cursors.
+For an already found genuine minimum T, equality requires T <= newCap.
+End-to-end continuation uses nondecreasing windows. All rational profiles are
+supported. No new cost, serialization or physical performance claim is made.
+The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)
