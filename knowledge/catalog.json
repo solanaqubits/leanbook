@@ -614,6 +614,9 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaCanonicalWireContract",
+        "Verification.CryptoHiddenScalarQuotaProfileContract",
+        "Verification.CryptoHiddenScalarQuotaCodecContract",
         "Verification.CryptoHiddenScalarQuotaSnapshotContract",
         "Verification.CryptoHiddenScalarQuotaFastChainContract",
         "Verification.CryptoHiddenScalarQuotaFastStartContract",
@@ -1476,6 +1479,9 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaCanonicalWireContract",
+        "Verification.CryptoHiddenScalarQuotaProfileContract",
+        "Verification.CryptoHiddenScalarQuotaCodecContract",
         "Verification.CryptoHiddenScalarQuotaSnapshotContract",
         "Verification.CryptoHiddenScalarQuotaFastChainContract",
         "Verification.CryptoHiddenScalarQuotaFastStartContract",
@@ -3315,6 +3321,39 @@
       "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaSnapshotContract.md",
       "project_imports": [
         "Verification.CryptoHiddenScalarQuotaChainContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarQuotaCodecContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarQuotaCodecContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaCodecContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaSnapshotContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarQuotaCanonicalWireContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarQuotaCanonicalWireContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaCanonicalWireContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaSnapshotContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarQuotaProfileContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarQuotaProfileContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaProfileContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaSnapshotContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

@@ -6,6 +6,8 @@ license = "Apache-2.0"
 licenseFiles = ["LICENSE"]
 homepage = "https://github.com/solanaqubits/lean-verification-components"
 defaultTargets = ["Verification"]
+# Bound per-file elaboration concurrency; kernel checks remain unchanged.
+weakLeanArgs = ["-j1"]
 
 [leanOptions]
 warningAsError = true

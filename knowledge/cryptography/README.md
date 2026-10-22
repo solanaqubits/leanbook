@@ -157,3 +157,8 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Resume chains with one fast start](../04_cryptography/CryptoHiddenScalarQuotaFastChainContract.md).
 
 - [Checked quota cursor snapshots](../04_cryptography/CryptoHiddenScalarQuotaSnapshotContract.md).
+
+- [CryptoHiddenScalarQuotaCodecContract](../04_cryptography/CryptoHiddenScalarQuotaCodecContract.md).
+- [CryptoHiddenScalarQuotaCanonicalWireContract](../04_cryptography/CryptoHiddenScalarQuotaCanonicalWireContract.md).
+- [CryptoHiddenScalarQuotaProfileContract](../04_cryptography/CryptoHiddenScalarQuotaProfileContract.md).
+- [Bounded snapshot reader and CLI](../../docs/quota-snapshot-reader.en.md).

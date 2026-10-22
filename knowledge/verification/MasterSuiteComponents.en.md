@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 1ad2b8e91705fe77f782ab10985ef51faacdd7bf888d778e92fc21c452ebb46d
+source_sha256: 6ca78d61bf4fa5eb44a7d9ae58a893429e832856650b0addeb52b3f436128dbe
 novelty: not-assessed
 status: reviewed
 ---
@@ -234,3 +234,5 @@ full state/cost pair equality under nondecreasing caps.
 
 Release v0.7.43 adds CryptoFullSuite.quota_snapshot: typed cursor snapshots,
 checked restoration, exact round trip and safe continuation.
+
+Release v0.7.44 adds quota_codec, quota_canonical_wire and quota_profile: bounded canonical bytes, strict structured representations and independently checked finite profile transfer.

@@ -1844,5 +1844,32 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarQuotaSnapshotContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaCodecContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaCodecContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaCodecContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_codec",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaCodecContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaProfileContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaProfileContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaProfileContract.CryptoHiddenScalarQuotaProfileContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_profile",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaProfileContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaCanonicalWireContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaCanonicalWireContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaCanonicalWireContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_canonical_wire",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaCanonicalWireContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

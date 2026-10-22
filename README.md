@@ -30,14 +30,16 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**241 direct imports in MasterSuite**, **285 Lean sources including Verification.lean**.
-[Release v0.7.43](docs/release-v0.7.43.en.md) adds checked typed cursor
-snapshots (epsilon239). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**244 direct imports in MasterSuite**, **288 Lean sources including Verification.lean**.
+[Release v0.7.44](docs/release-v0.7.44.en.md) adds canonical snapshot bytes,
+a bounded file reader/CLI, strict structured rational snapshots and independently
+checked finite profile transfer (epsilon240–242). Lake remains 0.7.1; the full
+public beta basis remains v0.7.1.
 
-Restoration reconstructs rejection of the whole budget prefix and checks the
-saved row. Soundness, completeness, exact cursor round trip and continuation
-correctness hold for arbitrary rational profiles and tolerances. This is a
-typed in-memory snapshot contract; byte encoding and authentication are separate.
+[Snapshot v1 format](docs/quota-codec-v1.en.md) ·
+[Reader and CLI](docs/quota-snapshot-reader.en.md).
+Canonical decoding, semantic cursor restoration and authentication are distinct
+layers. Profile checks require an independently supplied expected context.
 The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)

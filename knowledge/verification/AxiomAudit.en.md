@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 4300108f003b6c5cb69feb3d99ea11c0a9f60d4182af5510a2cb4c7c25e1d558
+source_sha256: 91acec1f78c5244f953c77c9516bad17295af6b3022b00a9993c3992fc2a99dd
 novelty: not-assessed
 status: reviewed
 ---
@@ -189,3 +189,5 @@ full state/cost pair equality under nondecreasing caps.
 
 Release v0.7.43 adds CryptoFullSuite.quota_snapshot: typed cursor snapshots,
 checked restoration, exact round trip and safe continuation.
+
+Release v0.7.44 adds quota_codec, quota_canonical_wire and quota_profile: bounded canonical bytes, strict structured representations and independently checked finite profile transfer.

@@ -1,3 +1,6 @@
+import Verification.CryptoHiddenScalarQuotaCanonicalWireContract
+import Verification.CryptoHiddenScalarQuotaProfileContract
+import Verification.CryptoHiddenScalarQuotaCodecContract
 import Verification.CryptoHiddenScalarQuotaSnapshotContract
 import Verification.CryptoHiddenScalarQuotaFastChainContract
 import Verification.CryptoHiddenScalarQuotaFastStartContract
@@ -237,6 +240,11 @@ import Verification.SpinPhotonicWaveguide
 import Verification.DistributedCoordinatedAttackImpossibility
 
 set_option linter.style.header false
+
+open CryptoHiddenScalarQuotaCodecContract (CryptoHiddenScalarQuotaCodecContractSuite)
+
+open CryptoHiddenScalarQuotaCanonicalWireContract
+  (CryptoHiddenScalarQuotaCanonicalWireContractSuite)
 
 namespace MasterSuite
 
@@ -584,6 +592,9 @@ structure CryptoFullSuite : Prop where
   ipa_forking : CryptoBulletproofsIPAForkingExtractionContractSuite
   ipa_tree : CryptoBulletproofsTreeExtraction.CryptoBulletproofsTreeExtractionSuite
   quota_snapshot : CryptoHiddenScalarQuotaSnapshotContractSuite
+  quota_codec : CryptoHiddenScalarQuotaCodecContractSuite
+  quota_canonical_wire : CryptoHiddenScalarQuotaCanonicalWireContractSuite
+  quota_profile : CryptoHiddenScalarQuotaProfileContract.CryptoHiddenScalarQuotaProfileContractSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -685,6 +696,9 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   ipa_tree := by
     exact CryptoBulletproofsTreeExtraction.verification_suite
   quota_snapshot := CryptoHiddenScalarQuotaSnapshotContract.verification_suite
+  quota_codec := CryptoHiddenScalarQuotaCodecContract.verification_suite
+  quota_canonical_wire := CryptoHiddenScalarQuotaCanonicalWireContract.verification_suite
+  quota_profile := CryptoHiddenScalarQuotaProfileContract.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :
