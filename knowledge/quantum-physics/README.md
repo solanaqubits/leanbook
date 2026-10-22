@@ -143,3 +143,8 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [Qutrit decoder circuit refinement](../03_quantum_information/QuantumQutritDecoderCircuitRefinement.md): executable three-gate interpreter, exact matrix/channel refinement, and incorrect-circuit witnesses.
 
 - [HCTK scalar partition](../03_quantum_physics_and_optics/HCTKScalarPartition.md) — formal scalar functions, transfer conservation and bounded regularization; no physical topology claim.
+
+- [PrometheusPiModelContract](PrometheusPiModelContract.md).
+- [PrometheusNoiseAudit](PrometheusNoiseAudit.md).
+- [PrometheusUCNAudit](PrometheusUCNAudit.md).
+- [PB11EnergyBalance](PB11EnergyBalance.md).

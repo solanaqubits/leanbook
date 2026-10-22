@@ -1,3 +1,9 @@
+import Verification.DigitalProvenanceManifestContract
+import Verification.PB11EnergyBalance
+import Verification.PrometheusUCNAudit
+import Verification.PrometheusNoiseAudit
+import Verification.PrometheusPiModelContract
+import Verification.CryptoHiddenScalarQuotaProfileCodecContract
 import Verification.CryptoHiddenScalarQuotaCanonicalWireContract
 import Verification.CryptoHiddenScalarQuotaProfileContract
 import Verification.CryptoHiddenScalarQuotaCodecContract
@@ -253,6 +259,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarQuotaProfileCodecContract
+  (CryptoHiddenScalarQuotaProfileCodecContractSuite)
 open CryptoHiddenScalarQuotaSnapshotContract
   (CryptoHiddenScalarQuotaSnapshotContractSuite)
 open CryptoHiddenScalarQuotaFastChainContract
@@ -595,6 +603,8 @@ structure CryptoFullSuite : Prop where
   quota_codec : CryptoHiddenScalarQuotaCodecContractSuite
   quota_canonical_wire : CryptoHiddenScalarQuotaCanonicalWireContractSuite
   quota_profile : CryptoHiddenScalarQuotaProfileContract.CryptoHiddenScalarQuotaProfileContractSuite
+  quota_profile_codec : CryptoHiddenScalarQuotaProfileCodecContractSuite
+  provenance_manifest : DigitalProvenanceManifestContract.DigitalProvenanceManifestContractSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -699,6 +709,8 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   quota_codec := CryptoHiddenScalarQuotaCodecContract.verification_suite
   quota_canonical_wire := CryptoHiddenScalarQuotaCanonicalWireContract.verification_suite
   quota_profile := CryptoHiddenScalarQuotaProfileContract.verification_suite
+  quota_profile_codec := CryptoHiddenScalarQuotaProfileCodecContract.verification_suite
+  provenance_manifest := DigitalProvenanceManifestContract.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :
@@ -778,6 +790,10 @@ structure QuantumPhysicsFullSuite : Prop where
   complementary_channel : QuantumComplementaryChannelContractSuite
   stinespring : QuantumStinespringDilationContract.QuantumStinespringDilationContractSuite
   cptp_channel : QuantumCPTPChannelContract.QuantumCPTPChannelContractSuite
+  prometheus_pi : PrometheusPiModelContract.PrometheusPiModelContractSuite
+  pb11_energy : PB11EnergyBalance.PB11EnergyBalanceSuite
+  prometheus_noise_audit : PrometheusNoiseAudit.PrometheusNoiseAuditSuite
+  prometheus_ucn_audit : PrometheusUCNAudit.PrometheusUCNAuditSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -870,6 +886,10 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   complementary_channel := QuantumComplementaryChannelContract.verification_suite
   stinespring := QuantumStinespringDilationContract.verification_suite
   cptp_channel := QuantumCPTPChannelContract.verification_suite
+  prometheus_pi := PrometheusPiModelContract.verification_suite
+  pb11_energy := PB11EnergyBalance.verification_suite
+  prometheus_noise_audit := PrometheusNoiseAudit.verification_suite
+  prometheus_ucn_audit := PrometheusUCNAudit.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

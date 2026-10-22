@@ -614,6 +614,12 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.DigitalProvenanceManifestContract",
+        "Verification.PB11EnergyBalance",
+        "Verification.PrometheusUCNAudit",
+        "Verification.PrometheusNoiseAudit",
+        "Verification.PrometheusPiModelContract",
+        "Verification.CryptoHiddenScalarQuotaProfileCodecContract",
         "Verification.CryptoHiddenScalarQuotaCanonicalWireContract",
         "Verification.CryptoHiddenScalarQuotaProfileContract",
         "Verification.CryptoHiddenScalarQuotaCodecContract",
@@ -1479,6 +1485,12 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.DigitalProvenanceManifestContract",
+        "Verification.PB11EnergyBalance",
+        "Verification.PrometheusUCNAudit",
+        "Verification.PrometheusNoiseAudit",
+        "Verification.PrometheusPiModelContract",
+        "Verification.CryptoHiddenScalarQuotaProfileCodecContract",
         "Verification.CryptoHiddenScalarQuotaCanonicalWireContract",
         "Verification.CryptoHiddenScalarQuotaProfileContract",
         "Verification.CryptoHiddenScalarQuotaCodecContract",
@@ -3355,6 +3367,65 @@
       "project_imports": [
         "Verification.CryptoHiddenScalarQuotaSnapshotContract"
       ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarQuotaProfileCodecContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarQuotaProfileCodecContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaProfileCodecContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaCodecContract",
+        "Verification.CryptoHiddenScalarQuotaProfileContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusPiModelContract",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusPiModelContract.lean",
+      "card": "knowledge/quantum-physics/PrometheusPiModelContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "DigitalProvenanceManifestContract",
+      "section": "cryptography",
+      "source": "Verification/DigitalProvenanceManifestContract.lean",
+      "card": "knowledge/04_cryptography/DigitalProvenanceManifestContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaCodecContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusNoiseAudit",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusNoiseAudit.lean",
+      "card": "knowledge/quantum-physics/PrometheusNoiseAudit.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusUCNAudit",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusUCNAudit.lean",
+      "card": "knowledge/quantum-physics/PrometheusUCNAudit.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PB11EnergyBalance",
+      "section": "quantum-physics",
+      "source": "Verification/PB11EnergyBalance.lean",
+      "card": "knowledge/quantum-physics/PB11EnergyBalance.md",
+      "project_imports": [],
       "novelty": "not-assessed",
       "status": "reviewed"
     }

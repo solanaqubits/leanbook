@@ -30,16 +30,18 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**244 direct imports in MasterSuite**, **288 Lean sources including Verification.lean**.
-[Release v0.7.44](docs/release-v0.7.44.en.md) adds canonical snapshot bytes,
-a bounded file reader/CLI, strict structured rational snapshots and independently
-checked finite profile transfer (epsilon240–242). Lake remains 0.7.1; the full
-public beta basis remains v0.7.1.
+**250 direct imports in MasterSuite**, **294 Lean sources including Verification.lean**.
+[Release v0.7.45](docs/release-v0.7.45.en.md) adds canonical finite-profile bytes
+(QCP/01), a bounded profile reader/CLI, canonical provenance manifests (QPM/01),
+and conditional scalar physics models (epsilon243–248).
+Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-[Snapshot v1 format](docs/quota-codec-v1.en.md) ·
-[Reader and CLI](docs/quota-snapshot-reader.en.md).
-Canonical decoding, semantic cursor restoration and authentication are distinct
-layers. Profile checks require an independently supplied expected context.
+[Snapshot format](docs/quota-codec-v1.en.md) ·
+[Snapshot reader](docs/quota-snapshot-reader.en.md) ·
+[Profile reader](docs/quota-profile-reader.en.md).
+Canonical bytes, mathematical restoration and cryptographic authentication are
+separate layers. The manifest codec does not implement signature verification.
+Conditional physics theorems do not qualify a physical device.
 The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)

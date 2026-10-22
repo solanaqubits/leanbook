@@ -162,3 +162,7 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [CryptoHiddenScalarQuotaCanonicalWireContract](../04_cryptography/CryptoHiddenScalarQuotaCanonicalWireContract.md).
 - [CryptoHiddenScalarQuotaProfileContract](../04_cryptography/CryptoHiddenScalarQuotaProfileContract.md).
 - [Bounded snapshot reader and CLI](../../docs/quota-snapshot-reader.en.md).
+
+- [CryptoHiddenScalarQuotaProfileCodecContract](../04_cryptography/CryptoHiddenScalarQuotaProfileCodecContract.md).
+- [DigitalProvenanceManifestContract](../04_cryptography/DigitalProvenanceManifestContract.md).
+- [Bounded profile reader and CLI](../../docs/quota-profile-reader.en.md).
