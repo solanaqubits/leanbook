@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: 8c296391376d34a5cabb4157047edde2744ad38614a8d4e3a67f8c62a0466435
+source_sha256: eb996160a40250e7f04eb01ba7198d6162f27720889d164cadb84ab9eaaea713
 novelty: not-assessed
 status: reviewed
 ---
@@ -180,3 +180,6 @@ full retained-result equality and exact four-counter additivity for nondecreasin
 
 Release v0.7.40 adds CryptoFullSuite.quota_chain: finite quota chains,
 full state and four-counter equality under List.IsChain (<=) (cap0::caps).
+
+Release v0.7.41 adds CryptoFullSuite.quota_fast_start: fast successful quota starts,
+full result equality and exact branch-specific structural counts.

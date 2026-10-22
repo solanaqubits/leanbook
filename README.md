@@ -30,15 +30,15 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**238 direct imports in MasterSuite**, **282 Lean sources including Verification.lean**.
-[Release v0.7.40](docs/release-v0.7.40.en.md) adds finite quota resume chains
-(epsilon236). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**239 direct imports in MasterSuite**, **283 Lean sources including Verification.lean**.
+[Release v0.7.41](docs/release-v0.7.41.en.md) adds fast successful quota starts
+(epsilon237). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-The actual continuation fold preserves the full result and all four counters
-of a cold start at the last cap under List.IsChain (<=) (cap0::caps).
-The same premise applies to equality with the reference selector through toOption.
-Arbitrary rational profiles and tolerances are allowed. Machine and bit costs
-are outside this structural model. The explicit qutrit Spec build is preserved.
+The optimized start preserves the full QuotaSearchResult for arbitrary rational
+profiles, tolerances and caps. A successful zero-budget check avoids modeled row
+initialization; delegation preserves the old start and adds one threshold check.
+Counts exclude physical allocations, runtime and rational bit complexity.
+The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
 and [checked header chains](knowledge/02_distributed_systems/DistributedTendermintHeaderChainEpochAuthContract.md)

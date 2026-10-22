@@ -151,3 +151,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Exact structural costs of quota resumption](../04_cryptography/CryptoHiddenScalarQuotaResumeCostContract.md).
 
 - [Full state and cost equality of quota chains](../04_cryptography/CryptoHiddenScalarQuotaChainContract.md).
+
+- [Fast successful start of resumable quota search](../04_cryptography/CryptoHiddenScalarQuotaFastStartContract.md).

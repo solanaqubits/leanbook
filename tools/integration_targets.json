@@ -1817,5 +1817,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "CryptoHiddenScalarQuotaChainContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoHiddenScalarQuotaFastStartContract": {
+    "suite_struct": "CryptoHiddenScalarQuotaFastStartContractSuite",
+    "suite_type": "CryptoHiddenScalarQuotaFastStartContractSuite",
+    "parent": "CryptoFullSuite",
+    "field": "quota_fast_start",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoHiddenScalarQuotaFastStartContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

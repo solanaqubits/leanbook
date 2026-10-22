@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 4b66a9be20ddc63e24e114dd45aa49bdfb45f40123c0338d64113269ce5dcd15
+source_sha256: dafa8d0bc61216f37aadbe8e96d3ea3f15947af657f56b3a400ffd56de24338e
 novelty: not-assessed
 status: reviewed
 ---
@@ -256,3 +256,6 @@ full retained-result equality and exact four-counter additivity for nondecreasin
 
 Release v0.7.40 adds CryptoFullSuite.quota_chain: finite quota chains,
 full state and four-counter equality under List.IsChain (<=) (cap0::caps).
+
+Release v0.7.41 adds CryptoFullSuite.quota_fast_start: fast successful quota starts,
+full result equality and exact branch-specific structural counts.
