@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: dafa8d0bc61216f37aadbe8e96d3ea3f15947af657f56b3a400ffd56de24338e
+source_sha256: 674ed188410c911fe43e6b043bbaa5be95beb43a4220f8636c159089b7454d62
 novelty: not-assessed
 status: reviewed
 ---
@@ -259,3 +259,6 @@ full state and four-counter equality under List.IsChain (<=) (cap0::caps).
 
 Release v0.7.41 adds CryptoFullSuite.quota_fast_start: fast successful quota starts,
 full result equality and exact branch-specific structural counts.
+
+Release v0.7.42 adds CryptoFullSuite.quota_fast_chain: fast-start quota chains,
+full state/cost pair equality under nondecreasing caps.

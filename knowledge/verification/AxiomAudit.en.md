@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: eb996160a40250e7f04eb01ba7198d6162f27720889d164cadb84ab9eaaea713
+source_sha256: c985b8b45d34ad820904e85e435041ab4907b6318a146ffc6def2bb6a5923984
 novelty: not-assessed
 status: reviewed
 ---
@@ -183,3 +183,6 @@ full state and four-counter equality under List.IsChain (<=) (cap0::caps).
 
 Release v0.7.41 adds CryptoFullSuite.quota_fast_start: fast successful quota starts,
 full result equality and exact branch-specific structural counts.
+
+Release v0.7.42 adds CryptoFullSuite.quota_fast_chain: fast-start quota chains,
+full state/cost pair equality under nondecreasing caps.

@@ -30,14 +30,15 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**239 direct imports in MasterSuite**, **283 Lean sources including Verification.lean**.
-[Release v0.7.41](docs/release-v0.7.41.en.md) adds fast successful quota starts
-(epsilon237). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**240 direct imports in MasterSuite**, **284 Lean sources including Verification.lean**.
+[Release v0.7.42](docs/release-v0.7.42.en.md) adds resume chains with one fast
+start (epsilon238). Lake remains 0.7.1; the full public beta basis remains v0.7.1.
 
-The optimized start preserves the full QuotaSearchResult for arbitrary rational
-profiles, tolerances and caps. A successful zero-budget check avoids modeled row
-initialization; delegation preserves the old start and adds one threshold check.
-Counts exclude physical allocations, runtime and rational bit complexity.
+Under List.IsChain (<=) (cap0::caps), the actual fold preserves the full state
+and cost pair of a cold fast start at lastCap. Success counts are (1,0,0,0);
+fallback counts are (t+2,1,t,n*t), with one extra threshold check for the entire
+chain. Arbitrary rational profiles and tolerances are allowed. Counts exclude
+physical allocations, runtime and rational bit complexity.
 The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)
