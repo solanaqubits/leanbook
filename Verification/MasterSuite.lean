@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarQuotaSnapshotContract
 import Verification.CryptoHiddenScalarQuotaFastChainContract
 import Verification.CryptoHiddenScalarQuotaFastStartContract
 import Verification.CryptoHiddenScalarQuotaChainContract

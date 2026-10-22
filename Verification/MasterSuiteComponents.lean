@@ -1,3 +1,4 @@
+import Verification.CryptoHiddenScalarQuotaSnapshotContract
 import Verification.CryptoHiddenScalarQuotaFastChainContract
 import Verification.CryptoHiddenScalarQuotaFastStartContract
 import Verification.CryptoHiddenScalarQuotaChainContract
@@ -244,6 +245,8 @@ open QuantumQutritDecoderCircuitRefinement
 open QuantumQutritTwoOfThreeSecretSharingContract
 open QuantumErasureCorrectabilityContract
 open QuantumReferencePreservingRecoveryContract
+open CryptoHiddenScalarQuotaSnapshotContract
+  (CryptoHiddenScalarQuotaSnapshotContractSuite)
 open CryptoHiddenScalarQuotaFastChainContract
   (CryptoHiddenScalarQuotaFastChainContractSuite)
 open CryptoHiddenScalarQuotaFastStartContract
@@ -580,6 +583,7 @@ structure CryptoFullSuite : Prop where
   ipa_probability : CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite
   ipa_forking : CryptoBulletproofsIPAForkingExtractionContractSuite
   ipa_tree : CryptoBulletproofsTreeExtraction.CryptoBulletproofsTreeExtractionSuite
+  quota_snapshot : CryptoHiddenScalarQuotaSnapshotContractSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -680,6 +684,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   ipa_forking := CryptoBulletproofsIPAForkingExtractionContract.verification_suite
   ipa_tree := by
     exact CryptoBulletproofsTreeExtraction.verification_suite
+  quota_snapshot := CryptoHiddenScalarQuotaSnapshotContract.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :

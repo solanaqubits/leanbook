@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 7a76381f434a7bb35c60da1a06bd2acf4516f3cf75a09bca135e948039d76bba
+source_sha256: 1ad2b8e91705fe77f782ab10985ef51faacdd7bf888d778e92fc21c452ebb46d
 novelty: not-assessed
 status: reviewed
 ---
@@ -231,3 +231,6 @@ full result equality and exact branch-specific structural counts.
 
 Release v0.7.42 adds CryptoFullSuite.quota_fast_chain: fast-start quota chains,
 full state/cost pair equality under nondecreasing caps.
+
+Release v0.7.43 adds CryptoFullSuite.quota_snapshot: typed cursor snapshots,
+checked restoration, exact round trip and safe continuation.

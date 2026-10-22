@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: c985b8b45d34ad820904e85e435041ab4907b6318a146ffc6def2bb6a5923984
+source_sha256: 4300108f003b6c5cb69feb3d99ea11c0a9f60d4182af5510a2cb4c7c25e1d558
 novelty: not-assessed
 status: reviewed
 ---
@@ -186,3 +186,6 @@ full result equality and exact branch-specific structural counts.
 
 Release v0.7.42 adds CryptoFullSuite.quota_fast_chain: fast-start quota chains,
 full state/cost pair equality under nondecreasing caps.
+
+Release v0.7.43 adds CryptoFullSuite.quota_snapshot: typed cursor snapshots,
+checked restoration, exact round trip and safe continuation.

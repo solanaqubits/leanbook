@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaSnapshotContract",
         "Verification.CryptoHiddenScalarQuotaFastChainContract",
         "Verification.CryptoHiddenScalarQuotaFastStartContract",
         "Verification.CryptoHiddenScalarQuotaChainContract",
@@ -1475,6 +1476,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaSnapshotContract",
         "Verification.CryptoHiddenScalarQuotaFastChainContract",
         "Verification.CryptoHiddenScalarQuotaFastStartContract",
         "Verification.CryptoHiddenScalarQuotaChainContract",
@@ -3302,6 +3304,17 @@
       "project_imports": [
         "Verification.CryptoHiddenScalarQuotaChainContract",
         "Verification.CryptoHiddenScalarQuotaFastStartContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "CryptoHiddenScalarQuotaSnapshotContract",
+      "section": "cryptography",
+      "source": "Verification/CryptoHiddenScalarQuotaSnapshotContract.lean",
+      "card": "knowledge/04_cryptography/CryptoHiddenScalarQuotaSnapshotContract.md",
+      "project_imports": [
+        "Verification.CryptoHiddenScalarQuotaChainContract"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

@@ -155,3 +155,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [Fast successful start of resumable quota search](../04_cryptography/CryptoHiddenScalarQuotaFastStartContract.md).
 
 - [Resume chains with one fast start](../04_cryptography/CryptoHiddenScalarQuotaFastChainContract.md).
+
+- [Checked quota cursor snapshots](../04_cryptography/CryptoHiddenScalarQuotaSnapshotContract.md).
