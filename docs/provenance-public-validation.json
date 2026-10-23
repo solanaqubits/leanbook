@@ -1,0 +1,132 @@
+{
+  "schema": "provenance-public-validation-v1",
+  "kind": "scoped_public_source_and_portable_tests",
+  "base": "c4b0a88bf58d934b58d3a343dcbbd654581d04e7",
+  "test_count": 84,
+  "skips": 0,
+  "audit": {
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "declarations": 38305,
+    "violations": []
+  },
+  "native_worker_compiled": true,
+  "external_witness": "NOT_CONNECTED",
+  "native_target_acceptance": "NOT_RUN: example target profile, separate opt-in tests",
+  "full_public_beta": false,
+  "independent_agent_audit": "PENDING",
+  "checks": [
+    {
+      "command": [
+        "git",
+        "fetch",
+        "origin",
+        "main"
+      ],
+      "exit_code": 0,
+      "seconds": 1.49,
+      "log": "public-fetch.log",
+      "sha256": "779e6c06a4e24ecceeda1e896d6477904e63c32959ad4370ee8e9a3806cb8976"
+    },
+    {
+      "command": [
+        "git",
+        "merge",
+        "--ff-only",
+        "c4b0a88bf58d934b58d3a343dcbbd654581d04e7"
+      ],
+      "exit_code": 0,
+      "seconds": 0.0,
+      "log": "public-reconcile.log",
+      "sha256": "e5d6c99aec87ec07a2d1b5c1222d8b690d0a61c3548a55c795fff56db9450d0d"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_knowledge.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.22,
+      "log": "public-knowledge.log",
+      "sha256": "2a2d99c59f7981166cf0062d5465d19c9210f8462605b6626d753e327664bee5"
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "seconds": 70.76,
+      "log": "public-build.log",
+      "sha256": "9315bb8f6bf4bfe1596b8435c2d8fe5466d6faa843f3cb356620d4dd734d887b"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/verifier_skill.py",
+        "--timeout",
+        "1800",
+        "verify",
+        "Verification/MasterSuite.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 40.51,
+      "log": "public-scope.json",
+      "sha256": "6ef8c419d571bca29fa6fe6263d9a947a7a70c45d9f437307d0491e5da7c2518"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "tools.challenge_store.build"
+      ],
+      "exit_code": 0,
+      "seconds": 10.42,
+      "log": "public-native-worker-build.log",
+      "sha256": "cdefcdcc5bc2246cae2c6d2a2a44e716e93db3db6c775d492036dd58df81f11c"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_provenance_challenge",
+        "tests.test_provenance_ready_prepared",
+        "tests.test_provenance_replay_semantics",
+        "tests.test_provenance_manifest",
+        "tests.test_provenance_verifier",
+        "tests.test_provenance_report",
+        "tests.test_provenance_recovery",
+        "tests.test_provenance_replay",
+        "tests.test_sqlite_runtime.RuntimePackagingTests",
+        "tests.test_provenance_anchor.AnchorProtocolTests",
+        "tests.test_provenance_files.BoundedFileReadTests",
+        "tests.test_anchored_cli.ArgumentTests",
+        "tests.test_witness_config.ConfigTests",
+        "tests.test_witness_config.ProbeTests",
+        "tests.test_witness_https.WireTests",
+        "tests.test_witness_https.HTTPSTests"
+      ],
+      "exit_code": 0,
+      "seconds": 48.81,
+      "log": "public-tests.log",
+      "sha256": "08560dd2f39ad157ff453926ac0ead211ff59a35f0589056e4432723c1e3d997"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "public-diff.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

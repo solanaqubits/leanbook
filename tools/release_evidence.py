@@ -109,7 +109,7 @@ def run_beta(root, directory, auditor):
            universal_semantic_conformance=False)
     commands=[('root-build',['lake','build','--wfail']),
       ('verify-all',['python3','tools/verifier_skill.py','--timeout','3600','verify-all']),
-      ('registry-audit',['lake','env','lean','-DwarningAsError=true','Verification/AxiomAudit.lean']),
+      ('registry-audit',['lake','env','lean','-j1','-DwarningAsError=true','Verification/AxiomAudit.lean']),
       ('independent-audit',['lake','env',str(auditor),'--root','Verification','--modules-from','Verification','--allow',','.join(sorted(ALLOWED)),'--json']),
       ('all-tests',['python3','-m','unittest','discover','-s','tests','-v']),
       ('knowledge',['python3','scripts/check_knowledge.py']),

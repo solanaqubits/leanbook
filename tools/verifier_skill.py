@@ -158,7 +158,7 @@ class Verifier:
             '-- IMPORTS', '\n'.join('import ' + module for module in modules))
         with tempfile.TemporaryDirectory(prefix='lean-verifier-audit-') as tmp:
             path = Path(tmp) / 'Audit.lean'; path.write_text(code)
-            result = self.run([self.lake, 'env', 'lean', '-DwarningAsError=true', str(path)])
+            result = self.run([self.lake, 'env', 'lean', '-j1', '-DwarningAsError=true', str(path)])
         matches = re.findall(r'^VERIFIER_AUDIT_JSON=(.*)$', result['output'], re.M)
         audit = json.loads(matches[-1]) if matches else None
         return result, audit
@@ -178,7 +178,7 @@ class Verifier:
         report['steps'].append(build)
         if build['returncode'] != 0: return report
         for module in modules:
-            check = self.run([self.lake, 'env', 'lean', '-DwarningAsError=true',
+            check = self.run([self.lake, 'env', 'lean', '-j1', '-DwarningAsError=true',
                               str(closure[module].relative_to(self.project))])
             report['steps'].append(check)
             if check['returncode'] != 0: return report

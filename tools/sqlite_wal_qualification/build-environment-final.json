@@ -1,0 +1,19 @@
+{
+  "flags": {
+    "CFLAGS": "-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -O2 -fno-strict-aliasing   -DSQLITE_SECURE_DELETE -DSQLITE_ENABLE_COLUMN_METADATA   -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS   -DSQLITE_ENABLE_RTREE=1 -DSQLITE_SOUNDEX=1   -DSQLITE_ENABLE_UNLOCK_NOTIFY   -DSQLITE_ENABLE_DBSTAT_VTAB   -DSQLITE_ALLOW_ROWID_IN_VIEW   -DSQLITE_ENABLE_UPDATE_DELETE_LIMIT=1   -DSQLITE_ENABLE_LOAD_EXTENSION   -DSQLITE_ENABLE_JSON1   -DSQLITE_LIKE_DOESNT_MATCH_BLOBS   -DSQLITE_THREADSAFE=1   -DSQLITE_ENABLE_FTS3_TOKENIZER=1   -DSQLITE_USE_URI=1   -DSQLITE_MAX_SCHEMA_RETRY=25   -DSQLITE_ENABLE_PREUPDATE_HOOK   -DSQLITE_ENABLE_SESSION   -DSQLITE_ENABLE_STMTVTAB   -DSQLITE_MAX_VARIABLE_NUMBER=250000",
+    "CPPFLAGS": "-Wdate-time -D_FORTIFY_SOURCE=3",
+    "LDFLAGS": "-Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,--as-needed",
+    "SOURCE_DATE_EPOCH": "1772559241"
+  },
+  "configure": [
+    "--prefix=/nonexistent/sqlite-wal-isolated",
+    "--enable-threadsafe",
+    "--enable-load-extension",
+    "--enable-json",
+    "--enable-fts4",
+    "--enable-fts5",
+    "--disable-amalgamation",
+    "--disable-tcl"
+  ],
+  "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+}

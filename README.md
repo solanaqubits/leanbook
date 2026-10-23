@@ -1114,3 +1114,7 @@ See [publication notes](docs/publication.en.md) for Reservoir requirements.
 [Two-participant 3PC](knowledge/09_distributed_systems/DistributedThreePhaseCommit.md) proves operational safety and conditional completion using a kernel-checked finite invariant certificate. Accurate membership, unique backup appointment and atomic epoch fencing are explicit external contracts. Weak fairness is required for eventual completion; no partition tolerance or runtime implementation is claimed.
 
 See the [quantum/hardware contract publication](docs/quantum-series-sync.en.md) for twelve additional scoped models and their explicit limits.
+
+## Provenance runtime and audit preparation
+
+[Source/export boundaries and test setup](docs/provenance-test-setup.en.md) · [SQLite adapter](tools/challenge_store/README.md) · [Runtime qualification](tools/challenge_store/RUNTIME.en.md). Native acceptance requires a separately qualified host; ordinary CI does not provide it.

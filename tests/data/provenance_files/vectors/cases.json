@@ -1,0 +1,102 @@
+[
+  {
+    "id": "manifest-tail",
+    "field": "manifest",
+    "file": "manifest-tail/manifest.bytes",
+    "phase": "preflight",
+    "error": "decode_rejected",
+    "sql": "unchanged"
+  },
+  {
+    "id": "manifest-truncated",
+    "field": "manifest",
+    "file": "manifest-truncated/manifest.bytes",
+    "phase": "preflight",
+    "error": "decode_rejected",
+    "sql": "unchanged"
+  },
+  {
+    "id": "manifest-version",
+    "field": "manifest",
+    "file": "manifest-version/manifest.bytes",
+    "phase": "preflight",
+    "error": "decode_rejected",
+    "sql": "unchanged"
+  },
+  {
+    "id": "manifest-uleb-padding",
+    "field": "manifest",
+    "file": "manifest-uleb-padding/manifest.bytes",
+    "phase": "preflight",
+    "error": "decode_rejected",
+    "sql": "unchanged"
+  },
+  {
+    "id": "manifest-invalid-utf8",
+    "field": "manifest",
+    "file": "manifest-invalid-utf8/manifest.bytes",
+    "phase": "preflight",
+    "error": "decode_rejected",
+    "sql": "unchanged"
+  },
+  {
+    "id": "manifest-noncanonical-rational",
+    "field": "manifest",
+    "file": "manifest-noncanonical-rational/manifest.bytes",
+    "phase": "preflight",
+    "error": "decode_rejected",
+    "sql": "unchanged"
+  },
+  {
+    "id": "signature-mutated",
+    "field": "signature",
+    "file": "signature-mutated/signature.bytes",
+    "phase": "registered",
+    "reason": "verification_rejected",
+    "sql": "aborted_only"
+  },
+  {
+    "id": "snapshot-mutated",
+    "field": "snapshot",
+    "file": "snapshot-mutated/snapshot.bytes",
+    "phase": "registered",
+    "reason": "verification_rejected",
+    "sql": "aborted_only"
+  },
+  {
+    "id": "profile-mutated",
+    "field": "profile",
+    "file": "profile-mutated/profile.bytes",
+    "phase": "registered",
+    "reason": "verification_rejected",
+    "sql": "aborted_only"
+  },
+  {
+    "id": "context-expectedSessionId",
+    "contextField": "expectedSessionId",
+    "phase": "registered",
+    "reason": "verification_rejected",
+    "sql": "aborted_only"
+  },
+  {
+    "id": "context-contextId",
+    "contextField": "contextId",
+    "phase": "registered",
+    "reason": "verification_rejected",
+    "sql": "aborted_only"
+  },
+  {
+    "id": "context-expectedPolicyVersion",
+    "contextField": "expectedPolicyVersion",
+    "phase": "registered",
+    "reason": "verification_rejected",
+    "sql": "aborted_only"
+  },
+  {
+    "id": "not-issued",
+    "issued": false,
+    "phase": "registered",
+    "reason": "challenge_not_issued",
+    "sql": "aborted_only"
+  }
+]

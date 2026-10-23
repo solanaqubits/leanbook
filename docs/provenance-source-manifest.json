@@ -1,0 +1,491 @@
+{
+  "schema": "provenance-public-source-manifest-v1",
+  "source_commit": "c78d0fd2d68bea99c8572f02e71c2702fcf6686a",
+  "scope": "Reviewed selected source export; private evidence and production credentials excluded",
+  "files": [
+    {
+      "path": "Verification/DigitalProvenanceChallengeRegistryContract.lean",
+      "source_sha256": "94fdbf3c00bd4a72322d8798a1ec6ed58507c5c81ace9300eda44bd5581b043d",
+      "public_sha256": "94fdbf3c00bd4a72322d8798a1ec6ed58507c5c81ace9300eda44bd5581b043d",
+      "transformations": []
+    },
+    {
+      "path": "Verification/DigitalProvenanceReadyPreparedContract.lean",
+      "source_sha256": "16031c0ee371a0f5a61c11aadfac2ae224549363a78791b145c0ffd4cc169197",
+      "public_sha256": "16031c0ee371a0f5a61c11aadfac2ae224549363a78791b145c0ffd4cc169197",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/README.md",
+      "source_sha256": "c835195d6e35f105d9bac7026ab3c4c6e996f030ab5321dc03ddf8f98e1c88a7",
+      "public_sha256": "c835195d6e35f105d9bac7026ab3c4c6e996f030ab5321dc03ddf8f98e1c88a7",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/generate_vectors.py",
+      "source_sha256": "8b1e059a29d61b7c985c22c1e4e407a7ace5ed864d128ec522de0c229944f572",
+      "public_sha256": "8b1e059a29d61b7c985c22c1e4e407a7ace5ed864d128ec522de0c229944f572",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/cases.json",
+      "source_sha256": "c5b43160972636192a0d8f7d93559fc537b8603967465402108d3fd824fa6527",
+      "public_sha256": "c5b43160972636192a0d8f7d93559fc537b8603967465402108d3fd824fa6527",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/expected_sql.json",
+      "source_sha256": "d0b2fd34bd88f3f0b4aa58b9347962a3bce8cf8e504c779bdb2f82202c09c2a9",
+      "public_sha256": "d0b2fd34bd88f3f0b4aa58b9347962a3bce8cf8e504c779bdb2f82202c09c2a9",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/good/expected.json",
+      "source_sha256": "79427035b1463086c909e6671cab1f70abb8d52187671e5e8061a65a03ab583b",
+      "public_sha256": "79427035b1463086c909e6671cab1f70abb8d52187671e5e8061a65a03ab583b",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/good/manifest.bytes",
+      "source_sha256": "fe30022b31cbace7dfa3f68fab820d4cde339fafa99d9abca2a501aa56a75edc",
+      "public_sha256": "fe30022b31cbace7dfa3f68fab820d4cde339fafa99d9abca2a501aa56a75edc",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/good/profile.bytes",
+      "source_sha256": "1315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a6",
+      "public_sha256": "1315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a6",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/good/signature.bytes",
+      "source_sha256": "dddaf63d73b47de7aef0a5cb699875da1c1f0e290b988a0a6162c9eb73b38374",
+      "public_sha256": "dddaf63d73b47de7aef0a5cb699875da1c1f0e290b988a0a6162c9eb73b38374",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/good/snapshot.bytes",
+      "source_sha256": "d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea47",
+      "public_sha256": "d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea47",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/manifest-invalid-utf8/manifest.bytes",
+      "source_sha256": "d249f1b1e1e4bcb6f78394a114aadc41e09e1ab0dd3dc1a1ec263f5ed6e5e139",
+      "public_sha256": "d249f1b1e1e4bcb6f78394a114aadc41e09e1ab0dd3dc1a1ec263f5ed6e5e139",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/manifest-noncanonical-rational/manifest.bytes",
+      "source_sha256": "49427c2d084988e242e717ac29b1bbecb4ab8c5e2c8eebd0478c302164cff708",
+      "public_sha256": "49427c2d084988e242e717ac29b1bbecb4ab8c5e2c8eebd0478c302164cff708",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/manifest-tail/manifest.bytes",
+      "source_sha256": "15944da2ca59867801444ec34417ce8be08352fffd4bc769e8d06c72cb3f34e5",
+      "public_sha256": "15944da2ca59867801444ec34417ce8be08352fffd4bc769e8d06c72cb3f34e5",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/manifest-truncated/manifest.bytes",
+      "source_sha256": "92f16b3d9895b34eaeb083b75ca8636988a0661aa35990f351685182124389af",
+      "public_sha256": "92f16b3d9895b34eaeb083b75ca8636988a0661aa35990f351685182124389af",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/manifest-uleb-padding/manifest.bytes",
+      "source_sha256": "b37608177ec6f2ee83d15e524634ff07525c3c1318cf1fc4c246892afd90791e",
+      "public_sha256": "b37608177ec6f2ee83d15e524634ff07525c3c1318cf1fc4c246892afd90791e",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/manifest-version/manifest.bytes",
+      "source_sha256": "20b1e26943ec29f3df32d542fa647cf2bd51ba3314a9d5c4cf0d34fccfcd10fa",
+      "public_sha256": "20b1e26943ec29f3df32d542fa647cf2bd51ba3314a9d5c4cf0d34fccfcd10fa",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/manifest.json",
+      "source_sha256": "dbfdc3f3d554b891f2f3dbded819df88de1e7175ffe2f8ae0964e78c8259758c",
+      "public_sha256": "dbfdc3f3d554b891f2f3dbded819df88de1e7175ffe2f8ae0964e78c8259758c",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/profile-mutated/profile.bytes",
+      "source_sha256": "c4cd99ce19cff96dc271c5290d3f28561cf2b122d03d407387b7f3d80892d00f",
+      "public_sha256": "c4cd99ce19cff96dc271c5290d3f28561cf2b122d03d407387b7f3d80892d00f",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/signature-mutated/signature.bytes",
+      "source_sha256": "e640b182996603ef1cef04ef1f4fcef5963e152284b6e4240c839d4c86b975cc",
+      "public_sha256": "e640b182996603ef1cef04ef1f4fcef5963e152284b6e4240c839d4c86b975cc",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/snapshot-mutated/snapshot.bytes",
+      "source_sha256": "17a0c0ee95ae91cbaf9ac8c4abfeb3fa053c2d249312b8931e6e8bbddbeaa4e1",
+      "public_sha256": "17a0c0ee95ae91cbaf9ac8c4abfeb3fa053c2d249312b8931e6e8bbddbeaa4e1",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/unicode/expected.json",
+      "source_sha256": "41d952de564d6abbba31aaf6a6a5731536539ee5c77d314f6ce237fdd74030a9",
+      "public_sha256": "41d952de564d6abbba31aaf6a6a5731536539ee5c77d314f6ce237fdd74030a9",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/unicode/manifest.bytes",
+      "source_sha256": "bbd28e9cf78295df57fa4ba3e2b48ab0a4788a2b0f373c80c0eb92d8af7ecde8",
+      "public_sha256": "bbd28e9cf78295df57fa4ba3e2b48ab0a4788a2b0f373c80c0eb92d8af7ecde8",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/unicode/profile.bytes",
+      "source_sha256": "1315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a6",
+      "public_sha256": "1315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a6",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/unicode/signature.bytes",
+      "source_sha256": "5fabbf1d17bc618c147093cf82f18ec662956cecc53517752c84fe455ef6dc6b",
+      "public_sha256": "5fabbf1d17bc618c147093cf82f18ec662956cecc53517752c84fe455ef6dc6b",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/provenance_files/vectors/unicode/snapshot.bytes",
+      "source_sha256": "d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea47",
+      "public_sha256": "d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea47",
+      "transformations": []
+    },
+    {
+      "path": "tests/data/sqlite_runtime_legacy.json",
+      "source_sha256": "5b9d1e47bd90cf8c1716ca035af3879ef8d227840498c5d915911c328d38637e",
+      "public_sha256": "5b9d1e47bd90cf8c1716ca035af3879ef8d227840498c5d915911c328d38637e",
+      "transformations": []
+    },
+    {
+      "path": "tests/lean/provenance_challenge_registry.lean",
+      "source_sha256": "5a6d94a9b1fb256440d0518368c8a4197fae741735cd09456e092c57b2620f97",
+      "public_sha256": "5a6d94a9b1fb256440d0518368c8a4197fae741735cd09456e092c57b2620f97",
+      "transformations": []
+    },
+    {
+      "path": "tests/lean/provenance_challenge_regression.lean",
+      "source_sha256": "1d3fe039ad4f3664a6ad8147c89e9d49b931d860e8707e591a23a63c7e684208",
+      "public_sha256": "1d3fe039ad4f3664a6ad8147c89e9d49b931d860e8707e591a23a63c7e684208",
+      "transformations": []
+    },
+    {
+      "path": "tests/lean/provenance_ready_prepared_registry.lean",
+      "source_sha256": "093e4496c3459d175250523aadab2646e7158ca72c91372e07e8762c7d325714",
+      "public_sha256": "093e4496c3459d175250523aadab2646e7158ca72c91372e07e8762c7d325714",
+      "transformations": []
+    },
+    {
+      "path": "tests/lean/provenance_ready_prepared_regression.lean",
+      "source_sha256": "7230abb91cf88dc2db3571fe0b41676bb39119c2a9919a106a7f100ac11ece5e",
+      "public_sha256": "7230abb91cf88dc2db3571fe0b41676bb39119c2a9919a106a7f100ac11ece5e",
+      "transformations": []
+    },
+    {
+      "path": "tests/lean/provenance_replay_semantics.lean",
+      "source_sha256": "0535f44bad454bac87b67e6bddb845cdf5e9d2960d4b88e1bce3eff94d2a50a3",
+      "public_sha256": "0535f44bad454bac87b67e6bddb845cdf5e9d2960d4b88e1bce3eff94d2a50a3",
+      "transformations": []
+    },
+    {
+      "path": "tests/test_anchored_cli.py",
+      "source_sha256": "652ee7708ec137c026812cbeecd5741a1ad034edd7186ab62b1bc1b2de292687",
+      "public_sha256": "0a1851304bb709a3f745a33f79c1836d3a9c10c9ba5d4e85e1893f321f5acf94",
+      "transformations": [
+        "Separate opt-in for host-qualified native tests; generic Lean CI does not qualify target"
+      ]
+    },
+    {
+      "path": "tests/test_challenge_store.py",
+      "source_sha256": "9549d4ff4301ecb32573824dee49eae829011f6561526c16829e2e81bc613abd",
+      "public_sha256": "94907a73cabeceed4d1b78e67ed36b116c7ff64573872fd145f803793a86818e",
+      "transformations": [
+        "Separate opt-in for host-qualified native tests; generic Lean CI does not qualify target"
+      ]
+    },
+    {
+      "path": "tests/test_provenance_anchor.py",
+      "source_sha256": "f56364baaa39e74e20a76b5784a318bca12490a9f9236fef248960a86491c58e",
+      "public_sha256": "57fcce84744689d8c41c3fe6bd3663b4ba759087706465f7a59f8da8f6d39f8f",
+      "transformations": [
+        "Separate opt-in for host-qualified native tests; generic Lean CI does not qualify target"
+      ]
+    },
+    {
+      "path": "tests/test_provenance_challenge.py",
+      "source_sha256": "ac2dfa5301906290d7fed7a82477b92bf66ec8d66287dbb18ca36f3565669e42",
+      "public_sha256": "ac2dfa5301906290d7fed7a82477b92bf66ec8d66287dbb18ca36f3565669e42",
+      "transformations": []
+    },
+    {
+      "path": "tests/test_provenance_files.py",
+      "source_sha256": "93c7e8834fb2e5fd3d07305fc3ef9729d1ab376d6422879d5039415f79c85410",
+      "public_sha256": "2d636ce5087459ca74aec6aa989aff0727aded26608f1e909d9f647819c5df71",
+      "transformations": [
+        "Separate opt-in for host-qualified native tests; generic Lean CI does not qualify target"
+      ]
+    },
+    {
+      "path": "tests/test_provenance_ready_prepared.py",
+      "source_sha256": "2a56561cd50333d3844244b4b3eeca4ae56af6e22bcded9d2c17c89ad8ff0536",
+      "public_sha256": "2a56561cd50333d3844244b4b3eeca4ae56af6e22bcded9d2c17c89ad8ff0536",
+      "transformations": []
+    },
+    {
+      "path": "tests/test_provenance_replay_semantics.py",
+      "source_sha256": "74c0edfc8a3a8e086149ebb546a223db20d99771db78c47d290d33b7ed8a7ae7",
+      "public_sha256": "74c0edfc8a3a8e086149ebb546a223db20d99771db78c47d290d33b7ed8a7ae7",
+      "transformations": []
+    },
+    {
+      "path": "tests/test_sqlite_runtime.py",
+      "source_sha256": "9b8cc76e6eeb2b33aeba0f978708dd6ceaf121e85e9575670768c399b99afeba",
+      "public_sha256": "ec719d85d522f4b93e9d1f2e8575fc626e9bee4dbfc02e62209ba53cb0ee1228",
+      "transformations": [
+        "Separate opt-in for host-qualified native tests; generic Lean CI does not qualify target"
+      ]
+    },
+    {
+      "path": "tests/test_witness_config.py",
+      "source_sha256": "d59c941560227cc260d90de8d3778013c3b21d666ac3731364718582daa0fac4",
+      "public_sha256": "ed7128255af3802f02f3c958031f0f848544e32242fcfc8f20647f4741f931bc",
+      "transformations": [
+        "Separate opt-in for host-qualified native tests; generic Lean CI does not qualify target"
+      ]
+    },
+    {
+      "path": "tests/test_witness_https.py",
+      "source_sha256": "fa581c6a66190a28586136dc9a01e7dfd4330bef290757e45c451c037b89740c",
+      "public_sha256": "7860091fd628dd925b5184a9c6feeae2a47278db5f43af18f54736bca7f543b4",
+      "transformations": [
+        "Separate opt-in for host-qualified native tests; generic Lean CI does not qualify target"
+      ]
+    },
+    {
+      "path": "tools/challenge_store/ANCHOR.md",
+      "source_sha256": "3a928dbdf7e55190edf42950bfa2306e157741f954eb67a0084c43057e9fa1a7",
+      "public_sha256": "feb69737bc24ffe28da3d58f7ad2b6297cdb8643d38115a3abb509e04344cbee",
+      "transformations": [
+        "Links to reviewed English deployment docs"
+      ]
+    },
+    {
+      "path": "tools/challenge_store/ANCHORED_CLI.md",
+      "source_sha256": "a0d538ea95e328fceb3b4d3ec8b304ddd61859a1690e036cf5c0947c830a00d5",
+      "public_sha256": "b153d21a6d509c54672df3ba97b55b76f3a0acd3a5c7bec1b79fbcc48d1a7945",
+      "transformations": [
+        "Links to reviewed English deployment docs"
+      ]
+    },
+    {
+      "path": "tools/challenge_store/DEPLOYMENT_ACCEPTANCE.json",
+      "source_sha256": "f8b2c75cef1821518043d74a2e7b025f78596a60281acd0a92eb0b6c49a8fe57",
+      "public_sha256": "f8b2c75cef1821518043d74a2e7b025f78596a60281acd0a92eb0b6c49a8fe57",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/FileManifest.lean",
+      "source_sha256": "9ddf1d792af3597c3633ab94dd4114c31fc73bf33d2f680098de3d0904606dc1",
+      "public_sha256": "9ddf1d792af3597c3633ab94dd4114c31fc73bf33d2f680098de3d0904606dc1",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/README.md",
+      "source_sha256": "55896271d42bdb7e181468892528c4d593155f9914b2e19a05ddbe1713a93faa",
+      "public_sha256": "e85ef796535a2519467d968c33da98e483529ccb025b9c11874fbd0831055d7c",
+      "transformations": [
+        "Links to reviewed English deployment docs"
+      ]
+    },
+    {
+      "path": "tools/challenge_store/WITNESS_HTTPS.md",
+      "source_sha256": "3e10bfef053543d5595546a1b04f863921316871c028c4434ad7b5b73b29563d",
+      "public_sha256": "3e10bfef053543d5595546a1b04f863921316871c028c4434ad7b5b73b29563d",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/WITNESS_OPERATIONS.md",
+      "source_sha256": "2f045d96fb663e2a9e077043a760910335ecee83b7718bae3c2a8ee6c19e566f",
+      "public_sha256": "2f045d96fb663e2a9e077043a760910335ecee83b7718bae3c2a8ee6c19e566f",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/Wire.lean",
+      "source_sha256": "6dc7098126e64cb03570070d7a62e36f4e34d7a8b87fc2d904598acc52be1872",
+      "public_sha256": "6dc7098126e64cb03570070d7a62e36f4e34d7a8b87fc2d904598acc52be1872",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/Worker.lean",
+      "source_sha256": "c27ba68f7c945d6c5790952eaacdde0acacef2a175d2b77379d8c041751f6228",
+      "public_sha256": "c27ba68f7c945d6c5790952eaacdde0acacef2a175d2b77379d8c041751f6228",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/anchor.py",
+      "source_sha256": "1f648a749c0276c7a457014d573245785ecc7de373bb759c40479c06d82b64fe",
+      "public_sha256": "1f648a749c0276c7a457014d573245785ecc7de373bb759c40479c06d82b64fe",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/anchored_cli.py",
+      "source_sha256": "e3aacd6550b1df7a07ab851ecb7beb6be25ea16317979fe7a6bb85d4ddb55f0b",
+      "public_sha256": "e3aacd6550b1df7a07ab851ecb7beb6be25ea16317979fe7a6bb85d4ddb55f0b",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/bridge.py",
+      "source_sha256": "90ff7c17fb729771d7fbaca18c2e3e8e8940ee649215163ceaf106801d3da167",
+      "public_sha256": "90ff7c17fb729771d7fbaca18c2e3e8e8940ee649215163ceaf106801d3da167",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/build.py",
+      "source_sha256": "5c9d2301a1e259fd0098c2f4b84f20583d420961fa19f7873c725cc9f1fcb7aa",
+      "public_sha256": "5c9d2301a1e259fd0098c2f4b84f20583d420961fa19f7873c725cc9f1fcb7aa",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/checkpoint_profile_v1.json",
+      "source_sha256": "93c065d0816809ed39f5432c24b0947dd8db624e55a506c3d7a37aba391d2583",
+      "public_sha256": "93c065d0816809ed39f5432c24b0947dd8db624e55a506c3d7a37aba391d2583",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/cli.py",
+      "source_sha256": "b9132d86a9a2d0f0fe3281d0600860e1b1de7bac906978ad4d0fa9477177f850",
+      "public_sha256": "b9132d86a9a2d0f0fe3281d0600860e1b1de7bac906978ad4d0fa9477177f850",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/conformance.py",
+      "source_sha256": "4a25ea38d58e2ce47cc58beb5499d5007b8fcf80d16e5683f67c45a3eb2ed311",
+      "public_sha256": "4a25ea38d58e2ce47cc58beb5499d5007b8fcf80d16e5683f67c45a3eb2ed311",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/files.py",
+      "source_sha256": "c34cefea56bfc71a2fb94db23f5b4e03a03487ea9cf4078a124a16d906bf9541",
+      "public_sha256": "c34cefea56bfc71a2fb94db23f5b4e03a03487ea9cf4078a124a16d906bf9541",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/fixtures.py",
+      "source_sha256": "7c5d836928bc59bfdf62eb85ffaeaa4cffcde9aefbc9ab31525bed1209d249aa",
+      "public_sha256": "7c5d836928bc59bfdf62eb85ffaeaa4cffcde9aefbc9ab31525bed1209d249aa",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/profile.json",
+      "source_sha256": "f40345003c775a2fc00622637a72603018adb92cf780d7a6896aa8472244fad3",
+      "public_sha256": "f3c183c92ce6327aca71bf56969a852c6917ff7274ad6012d3545557014498f7",
+      "transformations": [
+        "Example deployment path; target not qualified"
+      ]
+    },
+    {
+      "path": "tools/challenge_store/runtime.py",
+      "source_sha256": "e8403201ed3216e8e0df12458798eaee1b8f366e60fed53c19e4c70462e47d70",
+      "public_sha256": "e8403201ed3216e8e0df12458798eaee1b8f366e60fed53c19e4c70462e47d70",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/schema.sql",
+      "source_sha256": "4f97f2d8360779cd07fee007c3f7725f0e157ba3aa008dc2ff59cbf119d9cc93",
+      "public_sha256": "4f97f2d8360779cd07fee007c3f7725f0e157ba3aa008dc2ff59cbf119d9cc93",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/store.py",
+      "source_sha256": "be3a912254bbeaf3453579a6998ca365addace0867454fca89262ac5de842ddf",
+      "public_sha256": "be3a912254bbeaf3453579a6998ca365addace0867454fca89262ac5de842ddf",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/witness_config.py",
+      "source_sha256": "9ac03821c124d7ab4f2b8c0a50449a1c2f2f8d1b572aa0bd0a8f60a0785662d4",
+      "public_sha256": "9ac03821c124d7ab4f2b8c0a50449a1c2f2f8d1b572aa0bd0a8f60a0785662d4",
+      "transformations": []
+    },
+    {
+      "path": "tools/challenge_store/witness_https.py",
+      "source_sha256": "74910390fd90e5d0d478afe62741b42a22100483b8155a5142522567992f15c0",
+      "public_sha256": "74910390fd90e5d0d478afe62741b42a22100483b8155a5142522567992f15c0",
+      "transformations": []
+    },
+    {
+      "path": "tools/sqlite_wal_qualification/abi_layout.c",
+      "source_sha256": "8206025294fdd4b16f8851b5e8760e9b8d2d98b24e1000dece0e2abbef310109",
+      "public_sha256": "8206025294fdd4b16f8851b5e8760e9b8d2d98b24e1000dece0e2abbef310109",
+      "transformations": []
+    },
+    {
+      "path": "tools/sqlite_wal_qualification/build-environment-final.json",
+      "source_sha256": "0827b4b9beeff0dcf5d93e389c834eaae39e3727f2890bd98255609d1473cdac",
+      "public_sha256": "222a05711ce2eed7dd455b9cfa60642c233f5fa2535e29ca94507c800d9b1c1b",
+      "transformations": [
+        "Compiler prefix-map path redacted; not a byte-reproducible binary claim"
+      ]
+    },
+    {
+      "path": "tools/sqlite_wal_qualification/python_runtime.py",
+      "source_sha256": "0e339012ba58f9e67e5a3476b2a0fdf92556bf62ddb0178d47332c4db98eef4f",
+      "public_sha256": "0e339012ba58f9e67e5a3476b2a0fdf92556bf62ddb0178d47332c4db98eef4f",
+      "transformations": []
+    },
+    {
+      "path": "tools/sqlite_wal_qualification/rebuild.py",
+      "source_sha256": "e24a7ec3adb39f5bf2dc5d797f84f78dc55ce43688d96e89f2776a5944148c1b",
+      "public_sha256": "e24a7ec3adb39f5bf2dc5d797f84f78dc55ce43688d96e89f2776a5944148c1b",
+      "transformations": []
+    },
+    {
+      "path": "tools/sqlite_wal_qualification/run_controls.py",
+      "source_sha256": "1f99dee8625e2e2b01f1f3bbbf44aac64086f2796db0554c3da978f3e434d015",
+      "public_sha256": "1f99dee8625e2e2b01f1f3bbbf44aac64086f2796db0554c3da978f3e434d015",
+      "transformations": []
+    },
+    {
+      "path": "tools/sqlite_wal_qualification/source-manifest.json",
+      "source_sha256": "1ab18dc3b71a752383e3eeff9832b28b8759d7a90fd251a3ca3aa7fb06e0a539",
+      "public_sha256": "1ab18dc3b71a752383e3eeff9832b28b8759d7a90fd251a3ca3aa7fb06e0a539",
+      "transformations": []
+    },
+    {
+      "path": "tools/sqlite_wal_qualification/wal-reset-backport.patch",
+      "source_sha256": "6df296ab6948aef8039ede90c2bcefde78c3bdb00203943057ca363be729f47d",
+      "public_sha256": "6df296ab6948aef8039ede90c2bcefde78c3bdb00203943057ca363be729f47d",
+      "transformations": []
+    },
+    {
+      "path": "tools/sqlite_wal_qualification/wal_race.c",
+      "source_sha256": "b92d4298ffa04f2088aea6cb62d96d749d892ff618183634fa6bba4d88e59673",
+      "public_sha256": "b92d4298ffa04f2088aea6cb62d96d749d892ff618183634fa6bba4d88e59673",
+      "transformations": []
+    },
+    {
+      "path": "tools/verifier_skill.py",
+      "source_sha256": "2f13c47ebf418f7e63f5328520d6496ad232797d538c1ef4998f239f06bf3f54",
+      "public_sha256": "38d848c5ed0b180b83ada78904674e205c735b21bcc96516324133ab01964856",
+      "transformations": [
+        "Preserved existing public English tool; synchronized only explicit single-thread Lean invocation flag"
+      ]
+    },
+    {
+      "path": "tools/release_evidence.py",
+      "source_sha256": "2bbbbc79f88778ed9f826220f8b8abe4972cd799f76009072132ab90909b272f",
+      "public_sha256": "2bbbbc79f88778ed9f826220f8b8abe4972cd799f76009072132ab90909b272f",
+      "transformations": [
+        "Preserved existing public English tool; synchronized only explicit single-thread Lean invocation flag"
+      ]
+    }
+  ]
+}

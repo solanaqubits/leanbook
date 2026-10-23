@@ -1,0 +1,1218 @@
+{
+  "first": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "CONSUMED",
+          {
+            "blob_hex": "8c19075c23f396409ee52228b922b5c28b294f5bb26d26e6997c50e28ebdb3b2"
+          },
+          "v1",
+          "{\"authorization\":\"blocked\",\"contextBinding\":\"matched\",\"freshness\":\"within_trusted_window\",\"keyAuthorization\":\"authorized\",\"profileBinding\":\"matched\",\"replay\":\"challenge_matched\",\"signature\":\"valid\",\"snapshotBinding\":\"matched\"}"
+        ]
+      ],
+      "transactions": [
+        [
+          "first",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "COMMITTED",
+          "newAcceptance",
+          null,
+          1
+        ]
+      ]
+    }
+  },
+  "second": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "CONSUMED",
+          {
+            "blob_hex": "8c19075c23f396409ee52228b922b5c28b294f5bb26d26e6997c50e28ebdb3b2"
+          },
+          "v1",
+          "{\"authorization\":\"blocked\",\"contextBinding\":\"matched\",\"freshness\":\"within_trusted_window\",\"keyAuthorization\":\"authorized\",\"profileBinding\":\"matched\",\"replay\":\"challenge_matched\",\"signature\":\"valid\",\"snapshotBinding\":\"matched\"}"
+        ]
+      ],
+      "transactions": [
+        [
+          "first",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "COMMITTED",
+          "newAcceptance",
+          null,
+          1
+        ]
+      ]
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "CONSUMED",
+          {
+            "blob_hex": "8c19075c23f396409ee52228b922b5c28b294f5bb26d26e6997c50e28ebdb3b2"
+          },
+          "v1",
+          "{\"authorization\":\"blocked\",\"contextBinding\":\"matched\",\"freshness\":\"within_trusted_window\",\"keyAuthorization\":\"authorized\",\"profileBinding\":\"matched\",\"replay\":\"challenge_matched\",\"signature\":\"valid\",\"snapshotBinding\":\"matched\"}"
+        ]
+      ],
+      "transactions": [
+        [
+          "first",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "COMMITTED",
+          "newAcceptance",
+          null,
+          1
+        ],
+        [
+          "second",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "COMMITTED",
+          "historicalReturn",
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "manifest-tail": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    }
+  },
+  "manifest-truncated": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    }
+  },
+  "manifest-version": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    }
+  },
+  "manifest-uleb-padding": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    }
+  },
+  "manifest-invalid-utf8": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    }
+  },
+  "manifest-noncanonical-rational": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    }
+  },
+  "signature-mutated": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": [
+        [
+          "signature-mutated",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "ABORTED",
+          null,
+          "verification_rejected",
+          null
+        ]
+      ]
+    }
+  },
+  "snapshot-mutated": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": [
+        [
+          "snapshot-mutated",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "ABORTED",
+          null,
+          "verification_rejected",
+          null
+        ]
+      ]
+    }
+  },
+  "profile-mutated": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": [
+        [
+          "profile-mutated",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "ABORTED",
+          null,
+          "verification_rejected",
+          null
+        ]
+      ]
+    }
+  },
+  "context-expectedSessionId": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session-mismatch",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session-mismatch\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session-mismatch",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session-mismatch",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session-mismatch",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session-mismatch\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session-mismatch",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session-mismatch",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": [
+        [
+          "context-expectedSessionId",
+          "file-context",
+          "file-session-mismatch",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "ABORTED",
+          null,
+          "verification_rejected",
+          null
+        ]
+      ]
+    }
+  },
+  "context-contextId": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context-mismatch",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context-mismatch\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context-mismatch",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context-mismatch",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context-mismatch",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context-mismatch\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context-mismatch",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context-mismatch",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": [
+        [
+          "context-contextId",
+          "file-context-mismatch",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "ABORTED",
+          null,
+          "verification_rejected",
+          null
+        ]
+      ]
+    }
+  },
+  "context-expectedPolicyVersion": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1-mismatch",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1-mismatch\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1-mismatch",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1-mismatch",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1-mismatch",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1-mismatch\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1-mismatch",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1-mismatch",
+          {
+            "blob_hex": "102030"
+          },
+          "ISSUED",
+          null,
+          null,
+          null
+        ]
+      ],
+      "transactions": [
+        [
+          "context-expectedPolicyVersion",
+          "file-context",
+          "file-session",
+          "file-policy-v1-mismatch",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "ABORTED",
+          null,
+          "verification_rejected",
+          null
+        ]
+      ]
+    }
+  },
+  "not-issued": {
+    "before": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [],
+      "transactions": []
+    },
+    "after": {
+      "context_versions": [
+        [
+          "v1",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+        ]
+      ],
+      "active_contexts": [
+        [
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          "v1"
+        ]
+      ],
+      "challenge_entries": [],
+      "transactions": [
+        [
+          "not-issued",
+          "file-context",
+          "file-session",
+          "file-policy-v1",
+          {
+            "blob_hex": "102030"
+          },
+          {
+            "blob_hex": "53494d4c41425f50524f56454e414e43455f56315f5348413235365f454432353531393a51504d010e666978747572652d7369676e65720c726663383033322d6b6579310d71756f74612d61756469746f720c66696c652d73657373696f6e031020300e66696c652d706f6c6963792d76310b20d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea470a201315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a603010101020c66696c652d636f6e74657874010a746573742d636c6f636b057469636b730103"
+          },
+          "ABORTED",
+          null,
+          "challenge_not_issued",
+          null
+        ]
+      ]
+    }
+  }
+}

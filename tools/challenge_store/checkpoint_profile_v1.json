@@ -1,0 +1,14 @@
+{
+  "schema": "challenge-store-sqlite-profile-v1",
+  "sqlite_version": "3.45.1",
+  "sqlite_source_id": "2024-01-30 16:01:20 e876e51a0ed5c5b3126f52e532044363a014bc594cfefa87ffb5b82257ccalt1",
+  "library_path": "/usr/lib/x86_64-linux-gnu/libsqlite3.so.0.8.6",
+  "library_sha256": "85265a9d4afca6f4b325ceb078b669c754fb881abed4cafe91ccebe9d625d975",
+  "python_version": "3.12.3",
+  "python_extension_path": "/usr/lib/python3.12/lib-dynload/_sqlite3.cpython-312-x86_64-linux-gnu.so",
+  "python_extension_sha256": "ecf54958b24c533f5c8dc67ca82cdce236aeb322864140bfe93eb8a69b729f4d",
+  "journal_mode": "wal",
+  "synchronous": 2,
+  "foreign_keys": 1,
+  "recursive_triggers": 1
+}

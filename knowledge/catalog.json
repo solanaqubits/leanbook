@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.DigitalProvenanceReadyPreparedContract",
+        "Verification.DigitalProvenanceChallengeRegistryContract",
         "Verification.QuantumSteaneCodeErrorCorrectionContract",
         "Verification.QuantumEntanglementSwappingPurificationContract",
         "Verification.QuantumStateAvailabilityContract",
@@ -1520,6 +1522,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.DigitalProvenanceReadyPreparedContract",
+        "Verification.DigitalProvenanceChallengeRegistryContract",
         "Verification.QuantumSteaneCodeErrorCorrectionContract",
         "Verification.QuantumEntanglementSwappingPurificationContract",
         "Verification.QuantumStateAvailabilityContract",
@@ -3711,6 +3715,28 @@
       "source": "Verification/QuantumSteaneCodeErrorCorrectionContract.lean",
       "card": "knowledge/03_quantum_and_hardware/QuantumSteaneCodeErrorCorrectionContract.md",
       "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "DigitalProvenanceChallengeRegistryContract",
+      "section": "cryptography",
+      "source": "Verification/DigitalProvenanceChallengeRegistryContract.lean",
+      "card": "knowledge/04_cryptography/DigitalProvenanceChallengeRegistryContract.md",
+      "project_imports": [
+        "Verification.DigitalProvenanceReportContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "DigitalProvenanceReadyPreparedContract",
+      "section": "cryptography",
+      "source": "Verification/DigitalProvenanceReadyPreparedContract.lean",
+      "card": "knowledge/04_cryptography/DigitalProvenanceReadyPreparedContract.md",
+      "project_imports": [
+        "Verification.DigitalProvenanceRecoveryContract"
+      ],
       "novelty": "not-assessed",
       "status": "reviewed"
     }

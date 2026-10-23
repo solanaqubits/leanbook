@@ -1,0 +1,160 @@
+{
+  "head": {
+    "digest": "a36ccb815a3414286afb70816bb90412812f837611abe49625202c2de2d701b7",
+    "epoch": 0
+  },
+  "image": {
+    "accepted": [],
+    "active": [
+      [
+        {
+          "contextId": "file-context",
+          "policyVersion": "file-policy-v1",
+          "sessionId": "file-session"
+        },
+        "v1"
+      ]
+    ],
+    "contexts": [
+      [
+        "v1",
+        {
+          "allowMissingTimestamp": false,
+          "expected": {
+            "activeChallenge": [
+              16,
+              32,
+              48
+            ],
+            "contextId": "file-context",
+            "expectedEpsilon": [
+              -1,
+              2
+            ],
+            "expectedJ": 1,
+            "expectedN": 3,
+            "expectedPolicyVersion": "file-policy-v1",
+            "expectedRoleId": "quota-auditor",
+            "expectedSessionId": "file-session",
+            "expectedSignerId": "fixture-signer",
+            "keyRegistry": [
+              {
+                "keyId": "rfc8032-key1",
+                "policyVersion": "file-policy-v1",
+                "pubKeyBytes": [
+                  215,
+                  90,
+                  152,
+                  1,
+                  130,
+                  177,
+                  10,
+                  183,
+                  213,
+                  75,
+                  254,
+                  211,
+                  201,
+                  100,
+                  7,
+                  58,
+                  14,
+                  225,
+                  114,
+                  243,
+                  218,
+                  166,
+                  35,
+                  37,
+                  175,
+                  2,
+                  26,
+                  104,
+                  247,
+                  7,
+                  81,
+                  26
+                ],
+                "roleId": "quota-auditor",
+                "signerId": "fixture-signer"
+              }
+            ],
+            "revokedKeys": [],
+            "trustedTimeWindow": {
+              "maxTime": 0,
+              "minTime": -5,
+              "scaleId": "test-clock",
+              "unitId": "ticks"
+            }
+          },
+          "limits": {
+            "manifest": {
+              "maxChallengeBytes": 64,
+              "maxManifestSizeBytes": 4096,
+              "maxStringBytes": 256
+            },
+            "maxContextFieldBytes": 256,
+            "maxKeyRegistrySize": 16,
+            "maxProfileSizeBytes": 4096,
+            "maxRevokedKeys": 16,
+            "maxSnapshotSizeBytes": 4096
+          }
+        }
+      ]
+    ],
+    "entries": [
+      [
+        {
+          "challenge": [
+            16,
+            32,
+            48
+          ],
+          "scope": {
+            "contextId": "file-context",
+            "policyVersion": "file-policy-v1",
+            "sessionId": "file-session"
+          }
+        },
+        "issued"
+      ]
+    ],
+    "transactions": []
+  },
+  "source": "Pre-adoption Store/anchor under original system SQLite; synthetic fixed good vector",
+  "source_commit": "1a7076bfbe9fd74874908e1fd75db4028edab5ea",
+  "sql": {
+    "active_contexts": [
+      [
+        "file-context",
+        "file-session",
+        "file-policy-v1",
+        "v1"
+      ]
+    ],
+    "challenge_entries": [
+      [
+        "file-context",
+        "file-session",
+        "file-policy-v1",
+        {
+          "blob_hex": "102030"
+        },
+        "ISSUED",
+        null,
+        null,
+        null
+      ]
+    ],
+    "context_versions": [
+      [
+        "v1",
+        "file-context",
+        "file-session",
+        "file-policy-v1",
+        "{\"allowMissingTimestamp\":false,\"expected\":{\"activeChallenge\":[16,32,48],\"contextId\":\"file-context\",\"expectedEpsilon\":[-1,2],\"expectedJ\":1,\"expectedN\":3,\"expectedPolicyVersion\":\"file-policy-v1\",\"expectedRoleId\":\"quota-auditor\",\"expectedSessionId\":\"file-session\",\"expectedSignerId\":\"fixture-signer\",\"keyRegistry\":[{\"keyId\":\"rfc8032-key1\",\"policyVersion\":\"file-policy-v1\",\"pubKeyBytes\":[215,90,152,1,130,177,10,183,213,75,254,211,201,100,7,58,14,225,114,243,218,166,35,37,175,2,26,104,247,7,81,26],\"roleId\":\"quota-auditor\",\"signerId\":\"fixture-signer\"}],\"revokedKeys\":[],\"trustedTimeWindow\":{\"maxTime\":0,\"minTime\":-5,\"scaleId\":\"test-clock\",\"unitId\":\"ticks\"}},\"limits\":{\"manifest\":{\"maxChallengeBytes\":64,\"maxManifestSizeBytes\":4096,\"maxStringBytes\":256},\"maxContextFieldBytes\":256,\"maxKeyRegistrySize\":16,\"maxProfileSizeBytes\":4096,\"maxRevokedKeys\":16,\"maxSnapshotSizeBytes\":4096}}"
+      ]
+    ],
+    "transactions": []
+  }
+}

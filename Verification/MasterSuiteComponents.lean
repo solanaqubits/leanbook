@@ -1,3 +1,5 @@
+import Verification.DigitalProvenanceReadyPreparedContract
+import Verification.DigitalProvenanceChallengeRegistryContract
 import Verification.QuantumSteaneCodeErrorCorrectionContract
 import Verification.QuantumEntanglementSwappingPurificationContract
 import Verification.QuantumStateAvailabilityContract
@@ -634,6 +636,8 @@ structure CryptoFullSuite : Prop where
   provenance_replay : DigitalProvenanceReplayContract.ProvenanceReplaySuite
   provenance_report : DigitalProvenanceReportContract.ProvenanceReportSuite
   provenance_recovery : DigitalProvenanceRecoveryContract.ProvenanceRecoverySuite
+  provenance_ready_prepared : DigitalProvenanceReadyPreparedContract.ProofObligations
+  provenance_challenge : DigitalProvenanceChallengeRegistryContract.ChallengeRegistrySuite
   data_availability : DataAvailabilitySamplingContract.DataAvailabilitySamplingSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
@@ -745,6 +749,8 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   provenance_replay := DigitalProvenanceReplayContract.verification_suite
   provenance_report := DigitalProvenanceReportContract.verification_suite
   provenance_recovery := DigitalProvenanceRecoveryContract.verification_suite
+  provenance_ready_prepared := DigitalProvenanceReadyPreparedContract.proof_obligations
+  provenance_challenge := DigitalProvenanceChallengeRegistryContract.verification_suite
   data_availability := DataAvailabilitySamplingContract.verification_suite
 }
 

@@ -1,0 +1,112 @@
+{
+  "kind": "synthetic-file-e2e-v1",
+  "generator": "cryptography 41.0.7",
+  "openssl": "OpenSSL 3.0.13 30 Jan 2024",
+  "files": [
+    {
+      "path": "cases.json",
+      "size": 2490,
+      "sha256": "c5b43160972636192a0d8f7d93559fc537b8603967465402108d3fd824fa6527"
+    },
+    {
+      "path": "expected_sql.json",
+      "size": 57521,
+      "sha256": "d0b2fd34bd88f3f0b4aa58b9347962a3bce8cf8e504c779bdb2f82202c09c2a9"
+    },
+    {
+      "path": "good/expected.json",
+      "size": 5738,
+      "sha256": "79427035b1463086c909e6671cab1f70abb8d52187671e5e8061a65a03ab583b"
+    },
+    {
+      "path": "good/manifest.bytes",
+      "size": 184,
+      "sha256": "fe30022b31cbace7dfa3f68fab820d4cde339fafa99d9abca2a501aa56a75edc"
+    },
+    {
+      "path": "good/profile.bytes",
+      "size": 10,
+      "sha256": "1315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a6"
+    },
+    {
+      "path": "good/signature.bytes",
+      "size": 64,
+      "sha256": "dddaf63d73b47de7aef0a5cb699875da1c1f0e290b988a0a6162c9eb73b38374"
+    },
+    {
+      "path": "good/snapshot.bytes",
+      "size": 11,
+      "sha256": "d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea47"
+    },
+    {
+      "path": "manifest-invalid-utf8/manifest.bytes",
+      "size": 184,
+      "sha256": "d249f1b1e1e4bcb6f78394a114aadc41e09e1ab0dd3dc1a1ec263f5ed6e5e139"
+    },
+    {
+      "path": "manifest-noncanonical-rational/manifest.bytes",
+      "size": 184,
+      "sha256": "49427c2d084988e242e717ac29b1bbecb4ab8c5e2c8eebd0478c302164cff708"
+    },
+    {
+      "path": "manifest-tail/manifest.bytes",
+      "size": 185,
+      "sha256": "15944da2ca59867801444ec34417ce8be08352fffd4bc769e8d06c72cb3f34e5"
+    },
+    {
+      "path": "manifest-truncated/manifest.bytes",
+      "size": 183,
+      "sha256": "92f16b3d9895b34eaeb083b75ca8636988a0661aa35990f351685182124389af"
+    },
+    {
+      "path": "manifest-uleb-padding/manifest.bytes",
+      "size": 185,
+      "sha256": "b37608177ec6f2ee83d15e524634ff07525c3c1318cf1fc4c246892afd90791e"
+    },
+    {
+      "path": "manifest-version/manifest.bytes",
+      "size": 184,
+      "sha256": "20b1e26943ec29f3df32d542fa647cf2bd51ba3314a9d5c4cf0d34fccfcd10fa"
+    },
+    {
+      "path": "profile-mutated/profile.bytes",
+      "size": 10,
+      "sha256": "c4cd99ce19cff96dc271c5290d3f28561cf2b122d03d407387b7f3d80892d00f"
+    },
+    {
+      "path": "signature-mutated/signature.bytes",
+      "size": 64,
+      "sha256": "e640b182996603ef1cef04ef1f4fcef5963e152284b6e4240c839d4c86b975cc"
+    },
+    {
+      "path": "snapshot-mutated/snapshot.bytes",
+      "size": 11,
+      "sha256": "17a0c0ee95ae91cbaf9ac8c4abfeb3fa053c2d249312b8931e6e8bbddbeaa4e1"
+    },
+    {
+      "path": "unicode/expected.json",
+      "size": 5938,
+      "sha256": "41d952de564d6abbba31aaf6a6a5731536539ee5c77d314f6ce237fdd74030a9"
+    },
+    {
+      "path": "unicode/manifest.bytes",
+      "size": 200,
+      "sha256": "bbd28e9cf78295df57fa4ba3e2b48ab0a4788a2b0f373c80c0eb92d8af7ecde8"
+    },
+    {
+      "path": "unicode/profile.bytes",
+      "size": 10,
+      "sha256": "1315f30ffb4ec7678338a77accd9adf08f15ffb718cfba967fdca25fce5042a6"
+    },
+    {
+      "path": "unicode/signature.bytes",
+      "size": 64,
+      "sha256": "5fabbf1d17bc618c147093cf82f18ec662956cecc53517752c84fe455ef6dc6b"
+    },
+    {
+      "path": "unicode/snapshot.bytes",
+      "size": 11,
+      "sha256": "d939339a51d6503e524f670872e2176cfec7d4d6e0641fd958511e1f6213ea47"
+    }
+  ]
+}

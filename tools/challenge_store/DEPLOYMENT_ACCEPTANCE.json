@@ -1,0 +1,37 @@
+{
+  "schema": "anchored-deployment-acceptance-record/v1",
+  "purpose": "Unfilled documentary worksheet; not CLI input, automated authorization or qualification",
+  "state": "not_evaluated",
+  "external_witness": "NOT_CONNECTED",
+  "authorization": "blocked",
+  "release_commit": null,
+  "runtime_profile_sha256": null,
+  "deployment_id": null,
+  "store_id": null,
+  "configuration_sha256": null,
+  "controller_pin_provenance": null,
+  "context_version_ids": [],
+  "gates": [
+    {"id": "runtime", "state": "pending", "owner": null, "evidence": []},
+    {"id": "host", "state": "pending", "owner": null, "evidence": []},
+    {"id": "identity", "state": "pending", "owner": null, "evidence": []},
+    {"id": "witness", "state": "pending", "owner": null, "evidence": []},
+    {"id": "provisioning", "state": "pending", "owner": null, "evidence": []},
+    {"id": "context", "state": "pending", "owner": null, "evidence": []},
+    {"id": "acceptance", "state": "pending", "owner": null, "evidence": []},
+    {"id": "recovery", "state": "pending", "owner": null, "evidence": []},
+    {"id": "operations", "state": "pending", "owner": null, "evidence": []}
+  ],
+  "runs": [],
+  "open_obligations": [
+    "Independent external Witness identity, access and qualification evidence not supplied",
+    "Install and verify the pinned corrected application runtime on the target host; this record performs no rollout",
+    "Provider provisioning, checkpoint continuity and infrastructure acceptance remain external work"
+  ],
+  "operational_decision": {"state": "pending", "reviewer": null, "recorded_at": null, "evidence": []},
+  "limits": [
+    "No secrets or private keys in this record",
+    "Documentary entries do not change application or hardware authorization",
+    "C0-C6 indeterminate; physical tests not_run; Third Obligation OPEN"
+  ]
+}
