@@ -255,6 +255,51 @@
         "Verification.QuantumSteaneCodeErrorCorrectionContract"
       ],
       "description": "Seven-qubit CSS checks, phase-aware single-Pauli recovery and exact distance; no hardware fault-tolerance claim."
+    },
+    "quantum-physics/prometheus-queue-lifetime": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusVariableQueue",
+        "Verification.PrometheusLifetimeInformation"
+      ],
+      "description": "Variable input conservation, overload and finite-buffer losses; conditional finite-law score information, injector yield and lifetime/loss identifiability."
+    },
+    "quantum-physics/prometheus-cascaded-fec": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusCascadedFECBound"
+      ],
+      "description": "Exact five-vote and byte pushforward laws and conditional IID weighted Chernoff bound; no decoder implementation or distribution-free CRC guarantee."
+    },
+    "quantum-physics/prometheus-multilane-identifiability": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusMultiLaneQueue",
+        "Verification.PrometheusLifetimeIdentifiability"
+      ],
+      "description": "Global to vector FIFO envelope with inclusive capacity and conditional two-bin Poisson mean identifiability; calibrated efficiencies only, no hardware WCET or achieved precision."
+    },
+    "quantum-physics/prometheus-jitter-cycle": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusJitterWindow",
+        "Verification.PrometheusRSCycleModel"
+      ],
+      "description": "L2 and explicitly joint Gaussian relative-jitter laws; deterministic wide-macrocycle control schedule, not hardware WCET or decoder refinement."
+    },
+    "quantum-physics/prometheus-finitekey": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusNQKDFiniteKey"
+      ],
+      "description": "Conditional integer finite-key budget, explicit abort and scalar sampling/hash residual bounds; no quantum security bridge."
+    },
+    "quantum-physics/prometheus-threshold-tomography": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusThresholdTomography"
+      ],
+      "description": "Finite MI counterexamples and conditional linearized observation rank; no physical/global numerical certificate."
     }
   },
   "infrastructure_batches": {

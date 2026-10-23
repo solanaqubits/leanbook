@@ -1,3 +1,12 @@
+import Verification.PrometheusVariableQueue
+import Verification.PrometheusLifetimeInformation
+import Verification.PrometheusCascadedFECBound
+import Verification.PrometheusMultiLaneQueue
+import Verification.PrometheusLifetimeIdentifiability
+import Verification.PrometheusJitterWindow
+import Verification.PrometheusRSCycleModel
+import Verification.PrometheusNQKDFiniteKey
+import Verification.PrometheusThresholdTomography
 import Verification.DigitalProvenanceReadyPreparedContract
 import Verification.DigitalProvenanceChallengeRegistryContract
 import Verification.QuantumSteaneCodeErrorCorrectionContract
@@ -767,6 +776,15 @@ theorem CryptoFullSuite.pedersen_commitment (suite : CryptoFullSuite) :
 
 /-- The prescribed mode and gap models, without additional physical claims. -/
 structure QuantumPhysicsFullSuite : Prop where
+  prometheus_variable_queue : PrometheusVariableQueue.PrometheusVariableQueueSuite
+  prometheus_lifetime_information : PrometheusLifetimeInformation.PrometheusLifetimeInformationSuite
+  prometheus_cascaded_fec : PrometheusCascadedFECBound.PrometheusCascadedFECBoundSuite
+  prometheus_multilane : PrometheusMultiLaneQueue.PrometheusMultiLaneQueueSuite
+  prometheus_id : PrometheusLifetimeIdentifiability.PrometheusLifetimeIdentifiabilitySuite
+  jitter_window : PrometheusJitterWindow.PrometheusJitterWindowSuite
+  rs_cycle : PrometheusRSCycleModel.PrometheusRSCycleModelSuite
+  nqkd_finitekey : PrometheusNQKDFiniteKey.PrometheusNQKDFiniteKeySuite
+  threshold_tomography : PrometheusThresholdTomography.PrometheusThresholdTomographySuite
   hctk_scalar : HCTKScalarPartition.HCTKScalarPartitionSuite
   classical_dpi : QuantumChannelClassicalDataProcessing.QuantumChannelClassicalDataProcessingSuite
   povm_entropy : QuantumPOVMInformationEntropy.QuantumPOVMInformationEntropySuite
@@ -855,6 +873,15 @@ structure QuantumPhysicsFullSuite : Prop where
   steane_code : QuantumSteaneCodeErrorCorrectionContract.QuantumSteaneCodeErrorCorrectionSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
+  prometheus_variable_queue := PrometheusVariableQueue.verification_suite
+  prometheus_lifetime_information := PrometheusLifetimeInformation.verification_suite
+  prometheus_cascaded_fec := PrometheusCascadedFECBound.verification_suite
+  prometheus_multilane := PrometheusMultiLaneQueue.verification_suite
+  prometheus_id := PrometheusLifetimeIdentifiability.verification_suite
+  jitter_window := PrometheusJitterWindow.verification_suite
+  rs_cycle := PrometheusRSCycleModel.verification_suite
+  nqkd_finitekey := PrometheusNQKDFiniteKey.verification_suite
+  threshold_tomography := PrometheusThresholdTomography.verification_suite
   hctk_scalar := HCTKScalarPartition.verification_suite
   classical_dpi := QuantumChannelClassicalDataProcessing.verification_suite
   povm_entropy := by

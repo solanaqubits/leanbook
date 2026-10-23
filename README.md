@@ -30,7 +30,9 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**261 direct imports in MasterSuite**, **305 Lean sources including Verification.lean**.
+**284 direct imports in MasterSuite**, **328 Lean sources including Verification.lean**.
+The [bounded Prometheus synchronization](docs/prometheus-lean-sync.en.md) adds nine
+conditional model modules and their public verification scope.
 [Release v0.7.47](docs/release-v0.7.47.en.md) adds granular provenance reports,
 an explicit pinned native IO adapter and sequential replay-registry recovery.
 Lake remains 0.7.1; the designated full public beta basis remains v0.7.1.

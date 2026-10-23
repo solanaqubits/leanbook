@@ -1,0 +1,121 @@
+{
+  "schema": "prometheus-lean-export-1",
+  "private_source_commit": "4eb80b34d514a9220165cf95c943b63d58ab0736",
+  "public_parent": "2939f0c672e181be11c6ccbe8001f517452b0c8c",
+  "modules": [
+    {
+      "module": "Verification.PrometheusVariableQueue",
+      "path": "Verification/PrometheusVariableQueue.lean",
+      "sha256": "d3f329fe3c01037188342f923e49deea58e6290c1ece215d6f176158155757fc"
+    },
+    {
+      "module": "Verification.PrometheusLifetimeInformation",
+      "path": "Verification/PrometheusLifetimeInformation.lean",
+      "sha256": "8995babe9ca365e602c24889f7e21227475f6324950ddb3f211a135de5c09c72"
+    },
+    {
+      "module": "Verification.PrometheusCascadedFECBound",
+      "path": "Verification/PrometheusCascadedFECBound.lean",
+      "sha256": "84f63cd2742baebcd9ffcfc26993c6dfb067c4bac269fbb4a27ff6c1aea91c4d"
+    },
+    {
+      "module": "Verification.PrometheusMultiLaneQueue",
+      "path": "Verification/PrometheusMultiLaneQueue.lean",
+      "sha256": "6c36f1c2622999d22e27ac937e5175c62cb511c738b5af7ce2700dfcc13e72a0"
+    },
+    {
+      "module": "Verification.PrometheusLifetimeIdentifiability",
+      "path": "Verification/PrometheusLifetimeIdentifiability.lean",
+      "sha256": "43aab6100cf254c6653ee9d5ae6dcff49fd17805a1cb9fbab42c256e2c634681"
+    },
+    {
+      "module": "Verification.PrometheusJitterWindow",
+      "path": "Verification/PrometheusJitterWindow.lean",
+      "sha256": "4bb1e74579ba5be44f060e7ba9fa3ef6bdd28222f88671b435235cf64037905a"
+    },
+    {
+      "module": "Verification.PrometheusRSCycleModel",
+      "path": "Verification/PrometheusRSCycleModel.lean",
+      "sha256": "4f2cf41c9c2cf25fa00fa120dc1f8c49b184ed0bcff83350cf3e220c53e7b61a"
+    },
+    {
+      "module": "Verification.PrometheusNQKDFiniteKey",
+      "path": "Verification/PrometheusNQKDFiniteKey.lean",
+      "sha256": "455664c4f99b94810fe540d09894a4f3ff3ee898a9fd56fbd86a657ae21f8e63"
+    },
+    {
+      "module": "Verification.PrometheusThresholdTomography",
+      "path": "Verification/PrometheusThresholdTomography.lean",
+      "sha256": "e421e99e6e09120d42ba6dabb84b0dc399cf666377045195da3f94638d5cf970"
+    }
+  ],
+  "unchanged_dependency_closure": [
+    "Verification.PrometheusChannelAndInjectorAudit",
+    "Verification.PrometheusDecoderQueue",
+    "Verification.PrometheusFiniteBlockAudit",
+    "Verification.PrometheusMetrologyJitter",
+    "Verification.PrometheusPipelinedQueue"
+  ],
+  "fixtures": [
+    "tests/lean/prometheus_cascaded_bound.lean",
+    "tests/lean/prometheus_cascaded_registry.lean",
+    "tests/lean/prometheus_cascaded_votes.lean",
+    "tests/lean/prometheus_cycle_regression.lean",
+    "tests/lean/prometheus_finitekey_registry.lean",
+    "tests/lean/prometheus_finitekey_regression.lean",
+    "tests/lean/prometheus_identifiability_regression.lean",
+    "tests/lean/prometheus_jitter_cycle_registry.lean",
+    "tests/lean/prometheus_jitter_regression.lean",
+    "tests/lean/prometheus_lifetime_information_regression.lean",
+    "tests/lean/prometheus_multilane_registry.lean",
+    "tests/lean/prometheus_multilane_regression.lean",
+    "tests/lean/prometheus_queue_lifetime_registry.lean",
+    "tests/lean/prometheus_threshold_registry.lean",
+    "tests/lean/prometheus_threshold_regression.lean",
+    "tests/lean/prometheus_variable_queue_regression.lean"
+  ],
+  "new_mathematical_claims": false,
+  "independent_audit": "not_performed",
+  "third_obligation": "OPEN",
+  "dependency_sha256": {
+    "Verification.PrometheusChannelAndInjectorAudit": "f90256d8939c5efcf4b6837a5bc3262a77383bfb2948329714fbddc38ae70324",
+    "Verification.PrometheusDecoderQueue": "b3e79f8ba16c7de42f59aade66832d36ac1818e86ba71740bb96f462daccd47e",
+    "Verification.PrometheusFiniteBlockAudit": "d2f6990a11251f3c69d25af600bf385e4212ac35c60b708e614330ef8b38a883",
+    "Verification.PrometheusMetrologyJitter": "ceba223a1d77a88058f4705ab646d56b89a10f2320ab37227d6afeff3f8d9404",
+    "Verification.PrometheusPipelinedQueue": "daa81227d22499bef88861a5d87fafd6bae2794aa948c9a551e7030e8785fb81"
+  },
+  "regression_sha256": {
+    "tests/lean/prometheus_cascaded_bound.lean": "2947f82df0e566b3396b473248e6768d9e2164ed92c6373d956d80e50f0ad2b9",
+    "tests/lean/prometheus_cascaded_registry.lean": "af0c56f63debff98ff0a13b0c3e6b028691ad6f9c0ab01a9a6cb26658ab33174",
+    "tests/lean/prometheus_cascaded_votes.lean": "470b9e0d0d8f43da1071280ad286d495305b1d4d5624e4f53f14094c20baf0c9",
+    "tests/lean/prometheus_cycle_regression.lean": "12d5dc33f3989200bfeb7f5a171ba815157920e55073bf7ccaf5cdf1c0b54922",
+    "tests/lean/prometheus_finitekey_registry.lean": "6638dbffeae9a860ebc43ad00d5250ef5084048265bfbd1cf632d3bd67713420",
+    "tests/lean/prometheus_finitekey_regression.lean": "2ceed53a0bf78dae5193468b55aebc38930ae1d3d521473f04f4961f89f44935",
+    "tests/lean/prometheus_identifiability_regression.lean": "4531b7fe317fc1de862594bd24a548a2f42456575692d861a54ad5e2d27b43a8",
+    "tests/lean/prometheus_jitter_cycle_registry.lean": "6eaccbb0cf790a13089eeb34630207a1732b39eb8584edec6acc064498de4b4c",
+    "tests/lean/prometheus_jitter_regression.lean": "29903c1e5b5416780adedae484c710bdc76d7e4cd349e5844a02f5c7a16c9822",
+    "tests/lean/prometheus_lifetime_information_regression.lean": "60466479c0f5c4eb8d91aeef5d964263c48d54d564c181ebe4c21457edbe0a93",
+    "tests/lean/prometheus_multilane_registry.lean": "afc0f5270721db2ba46c361e7db3402ea9a50a25f4ad6a2dfee1841aeece58fa",
+    "tests/lean/prometheus_multilane_regression.lean": "f92088e6825d65f87bd133a60755255354290420148810d63b490e30d92e97cc",
+    "tests/lean/prometheus_queue_lifetime_registry.lean": "2c38e47f86178c1945b11d5007ad1008dec64cc611e66d434f3c969ac9fe458c",
+    "tests/lean/prometheus_threshold_registry.lean": "9cce02ac064c9b286c4a395c2badaf45c8a639329aca694051e12c708f68d480",
+    "tests/lean/prometheus_threshold_regression.lean": "568f058eecd6d23df47402bbcab267dec3461eca5c59f76cb2743716aab7ee8d",
+    "tests/lean/prometheus_variable_queue_regression.lean": "99725bc3069f2a6da53f2fd9f88166faebbd1014d390eaaec41ed7b37252e073",
+    "tests/test_prometheus_queue_lifetime.py": "edecc0bb51f6262823879ff63ab327f420ac2f2eac3c5d3cd6e7b87a8dedb138",
+    "tests/test_prometheus_cascaded_fec.py": "79e0dea8f946d1bb66aeb9455e6a4f3ee9b2caf85a42a3c0a39ee7db5b1dae05",
+    "tests/test_prometheus_multilane_identifiability.py": "c14d76b0c9bf9852c35220802d164ac1641683ee2de8f45b43d0fd938f042bcd",
+    "tests/test_prometheus_jitter_cycle.py": "1663da5448ebd2d067aa34e16d74873d8fe46266ba8c81f7b70077024452d244",
+    "tests/test_prometheus_finitekey.py": "ee063aab9225ab88307c1fd159fcb99507279f83fe79fb41d33d49077258da73",
+    "tests/test_prometheus_threshold.py": "69536d76b0bc4c1a0b106aa1fc1882c1f58442baa3822503d1bb450557f74175"
+  },
+  "unchanged_trust_sha256": {
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lakefile.toml": "497a2900cc3548a828e10c609f300f7a68d7a1db81c85743e2424881899be5a7",
+    "lake-manifest.json": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+    "tools/verifier_skill.py": "38d848c5ed0b180b83ada78904674e205c735b21bcc96516324133ab01964856",
+    "tools/audit_template.lean": "2524f562c077be9afad37c1977ccf51bd005d873708a9abe2f02f3b294e71489",
+    "tools/verification_plan.py": "8ec8378256c48c0f10757d247df614476656d15040de509b67691e6069778b52",
+    "tools/scope_evidence.py": "99a5cd30438e008c44b59983f3bfe385b62404a799b38b60c4a5cdca008eaff8",
+    "VERSIONING.md": "fdeda3120e39f46b638b766bf741d5b8f595eb380a56ca0494a0a5b7f1b2824e"
+  }
+}

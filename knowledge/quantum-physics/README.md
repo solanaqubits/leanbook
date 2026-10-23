@@ -178,3 +178,17 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [QuantumEntanglementSwappingPurificationContract](../03_quantum_and_hardware/QuantumEntanglementSwappingPurificationContract.md) — explicitly scoped contract; see its assumptions and limitations.
 
 - [QuantumSteaneCodeErrorCorrectionContract](../03_quantum_and_hardware/QuantumSteaneCodeErrorCorrectionContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+## Additional conditional Prometheus audits
+
+| Module | Scope |
+|---|---|
+| [PrometheusVariableQueue](PrometheusVariableQueue.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+| [PrometheusLifetimeInformation](PrometheusLifetimeInformation.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+| [PrometheusCascadedFECBound](PrometheusCascadedFECBound.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+| [PrometheusMultiLaneQueue](PrometheusMultiLaneQueue.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+| [PrometheusLifetimeIdentifiability](PrometheusLifetimeIdentifiability.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+| [PrometheusJitterWindow](PrometheusJitterWindow.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+| [PrometheusRSCycleModel](PrometheusRSCycleModel.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+| [PrometheusNQKDFiniteKey](PrometheusNQKDFiniteKey.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+| [PrometheusThresholdTomography](PrometheusThresholdTomography.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |

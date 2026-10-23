@@ -614,6 +614,15 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.PrometheusVariableQueue",
+        "Verification.PrometheusLifetimeInformation",
+        "Verification.PrometheusCascadedFECBound",
+        "Verification.PrometheusMultiLaneQueue",
+        "Verification.PrometheusLifetimeIdentifiability",
+        "Verification.PrometheusJitterWindow",
+        "Verification.PrometheusRSCycleModel",
+        "Verification.PrometheusNQKDFiniteKey",
+        "Verification.PrometheusThresholdTomography",
         "Verification.DigitalProvenanceReadyPreparedContract",
         "Verification.DigitalProvenanceChallengeRegistryContract",
         "Verification.QuantumSteaneCodeErrorCorrectionContract",
@@ -1522,6 +1531,15 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.PrometheusVariableQueue",
+        "Verification.PrometheusLifetimeInformation",
+        "Verification.PrometheusCascadedFECBound",
+        "Verification.PrometheusMultiLaneQueue",
+        "Verification.PrometheusLifetimeIdentifiability",
+        "Verification.PrometheusJitterWindow",
+        "Verification.PrometheusRSCycleModel",
+        "Verification.PrometheusNQKDFiniteKey",
+        "Verification.PrometheusThresholdTomography",
         "Verification.DigitalProvenanceReadyPreparedContract",
         "Verification.DigitalProvenanceChallengeRegistryContract",
         "Verification.QuantumSteaneCodeErrorCorrectionContract",
@@ -3737,6 +3755,95 @@
       "project_imports": [
         "Verification.DigitalProvenanceRecoveryContract"
       ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusVariableQueue",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusVariableQueue.lean",
+      "card": "knowledge/quantum-physics/PrometheusVariableQueue.md",
+      "project_imports": [
+        "Verification.PrometheusPipelinedQueue"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusLifetimeInformation",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusLifetimeInformation.lean",
+      "card": "knowledge/quantum-physics/PrometheusLifetimeInformation.md",
+      "project_imports": [
+        "Verification.PrometheusMetrologyJitter"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusCascadedFECBound",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusCascadedFECBound.lean",
+      "card": "knowledge/quantum-physics/PrometheusCascadedFECBound.md",
+      "project_imports": [
+        "Verification.PrometheusFiniteBlockAudit"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusMultiLaneQueue",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusMultiLaneQueue.lean",
+      "card": "knowledge/quantum-physics/PrometheusMultiLaneQueue.md",
+      "project_imports": [
+        "Verification.PrometheusVariableQueue"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusLifetimeIdentifiability",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusLifetimeIdentifiability.lean",
+      "card": "knowledge/quantum-physics/PrometheusLifetimeIdentifiability.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusJitterWindow",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusJitterWindow.lean",
+      "card": "knowledge/quantum-physics/PrometheusJitterWindow.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusRSCycleModel",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusRSCycleModel.lean",
+      "card": "knowledge/quantum-physics/PrometheusRSCycleModel.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusNQKDFiniteKey",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusNQKDFiniteKey.lean",
+      "card": "knowledge/quantum-physics/PrometheusNQKDFiniteKey.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusThresholdTomography",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusThresholdTomography.lean",
+      "card": "knowledge/quantum-physics/PrometheusThresholdTomography.md",
+      "project_imports": [],
       "novelty": "not-assessed",
       "status": "reviewed"
     }

@@ -1,0 +1,88 @@
+{
+  "schema": "prometheus-public-lean-checks-1",
+  "status": "passed",
+  "verification_level": "scoped_not_beta",
+  "base_public_sha": "2939f0c672e181be11c6ccbe8001f517452b0c8c",
+  "new_modules": 9,
+  "project_dependencies": 5,
+  "regression_fixture_files": 16,
+  "unittest_count": 71,
+  "skipped_tests": 0,
+  "audit": {
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "declarations": 38901,
+    "violations": []
+  },
+  "audit_source_count": 322,
+  "scope_evidence_sha256": "0d0f5bccb0fccba5fc284608e9c0464827051efaff159b0c4d66bdfa4aff3dc3",
+  "selected_commands": [
+    [
+      "python3",
+      "tools/verification_metadata.py"
+    ],
+    [
+      "python3",
+      "scripts/check_knowledge.py"
+    ],
+    [
+      "git",
+      "diff",
+      "--check"
+    ],
+    [
+      "lake",
+      "build",
+      "--wfail",
+      "Verification.AxiomAudit",
+      "Verification.MasterHundredRegistry",
+      "Verification.MasterSuite",
+      "Verification.MasterSuiteComponents",
+      "Verification.PrometheusCascadedFECBound",
+      "Verification.PrometheusJitterWindow",
+      "Verification.PrometheusLifetimeIdentifiability",
+      "Verification.PrometheusLifetimeInformation",
+      "Verification.PrometheusMultiLaneQueue",
+      "Verification.PrometheusNQKDFiniteKey",
+      "Verification.PrometheusRSCycleModel",
+      "Verification.PrometheusThresholdTomography",
+      "Verification.PrometheusVariableQueue",
+      "Verification"
+    ],
+    [
+      "python3",
+      "tools/verifier_skill.py",
+      "verify",
+      "Verification.AxiomAudit"
+    ],
+    [
+      "python3",
+      "-m",
+      "unittest",
+      "-v",
+      "tests.test_knowledge_catalog",
+      "tests.test_prometheus_audits",
+      "tests.test_prometheus_cascaded_fec",
+      "tests.test_prometheus_channel_injector",
+      "tests.test_prometheus_decoder_queue",
+      "tests.test_prometheus_finiteblock",
+      "tests.test_prometheus_finitekey",
+      "tests.test_prometheus_jitter_cycle",
+      "tests.test_prometheus_multilane_identifiability",
+      "tests.test_prometheus_nqkd_takl",
+      "tests.test_prometheus_pi",
+      "tests.test_prometheus_pipeline_metrology",
+      "tests.test_prometheus_queue_lifetime",
+      "tests.test_prometheus_threshold",
+      "tests.test_verification_hierarchy",
+      "tests.test_verification_scope"
+    ]
+  ],
+  "strict_build_completed": true,
+  "independent_system_audit": "not_performed",
+  "new_scientific_simulations": false,
+  "third_obligation": "OPEN"
+}

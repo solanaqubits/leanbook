@@ -574,7 +574,7 @@
   },
   "Verification.MasterHundredRegistry": {
     "suite_struct": "MasterHundredFormalSuite",
-    "suite_type": "MasterHundredFormalSuite.{u\u2081, u\u2082, u\u2083, u\u2084, u\u2085,\n    uFRI, uHopf, uRaft1, uRaft2, uRaft3}",
+    "suite_type": "MasterHundredFormalSuite.{u₁, u₂, u₃, u₄, u₅,\n    uFRI, uHopf, uRaft1, uRaft2, uRaft3}",
     "parent": "VerificationMasterRegistry",
     "field": "master_hundred_registry",
     "constructor": "verification_master_registry",
@@ -767,7 +767,7 @@
   },
   "Verification.CryptoPedersenHomomorphicSum": {
     "suite_struct": "CryptoPedersenHomomorphicSumSuite",
-    "suite_type": "CryptoPedersenHomomorphicSum.CryptoPedersenHomomorphicSumSuite.{u\u2081}",
+    "suite_type": "CryptoPedersenHomomorphicSum.CryptoPedersenHomomorphicSumSuite.{u₁}",
     "parent": "CryptoFullSuite",
     "field": "pedersen_homomorphic_sum",
     "constructor": "crypto_full_master_suite",
@@ -776,7 +776,7 @@
   },
   "Verification.CryptoSchnorrIdentification": {
     "suite_struct": "CryptoSchnorrIdentificationSuite",
-    "suite_type": "CryptoSchnorrIdentification.CryptoSchnorrIdentificationSuite.{u\u2081}",
+    "suite_type": "CryptoSchnorrIdentification.CryptoSchnorrIdentificationSuite.{u₁}",
     "parent": "CryptoFullSuite",
     "field": "schnorr_identification",
     "constructor": "crypto_full_master_suite",
@@ -2149,6 +2149,87 @@
     "field": "provenance_ready_prepared",
     "constructor": "crypto_full_master_suite",
     "proof": "DigitalProvenanceReadyPreparedContract.proof_obligations",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusVariableQueue": {
+    "suite_struct": "PrometheusVariableQueueSuite",
+    "suite_type": "PrometheusVariableQueue.PrometheusVariableQueueSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_variable_queue",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusVariableQueue.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusLifetimeInformation": {
+    "suite_struct": "PrometheusLifetimeInformationSuite",
+    "suite_type": "PrometheusLifetimeInformation.PrometheusLifetimeInformationSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_lifetime_information",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusLifetimeInformation.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusCascadedFECBound": {
+    "suite_struct": "PrometheusCascadedFECBoundSuite",
+    "suite_type": "PrometheusCascadedFECBound.PrometheusCascadedFECBoundSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_cascaded_fec",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusCascadedFECBound.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusMultiLaneQueue": {
+    "suite_struct": "PrometheusMultiLaneQueueSuite",
+    "suite_type": "PrometheusMultiLaneQueue.PrometheusMultiLaneQueueSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_multilane",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusMultiLaneQueue.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusLifetimeIdentifiability": {
+    "suite_struct": "PrometheusLifetimeIdentifiabilitySuite",
+    "suite_type": "PrometheusLifetimeIdentifiability.PrometheusLifetimeIdentifiabilitySuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_id",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusLifetimeIdentifiability.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusJitterWindow": {
+    "suite_struct": "PrometheusJitterWindowSuite",
+    "suite_type": "PrometheusJitterWindow.PrometheusJitterWindowSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "jitter_window",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusJitterWindow.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusRSCycleModel": {
+    "suite_struct": "PrometheusRSCycleModelSuite",
+    "suite_type": "PrometheusRSCycleModel.PrometheusRSCycleModelSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "rs_cycle",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusRSCycleModel.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusNQKDFiniteKey": {
+    "suite_struct": "PrometheusNQKDFiniteKeySuite",
+    "suite_type": "PrometheusNQKDFiniteKey.PrometheusNQKDFiniteKeySuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "nqkd_finitekey",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusNQKDFiniteKey.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusThresholdTomography": {
+    "suite_struct": "PrometheusThresholdTomographySuite",
+    "suite_type": "PrometheusThresholdTomography.PrometheusThresholdTomographySuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "threshold_tomography",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusThresholdTomography.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
   }
 }
