@@ -306,3 +306,7 @@ open CryptoCommitmentVectorPedersenGroup in
 #audit_axioms DigitalProvenanceVerificationContract.verification_suite
 
 #audit_axioms DigitalProvenanceReplayContract.verification_suite
+
+#audit_axioms DigitalProvenanceReportContract.verification_suite
+
+#audit_axioms DigitalProvenanceRecoveryContract.verification_suite

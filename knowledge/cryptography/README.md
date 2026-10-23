@@ -169,3 +169,6 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 
 - [DigitalProvenanceVerificationContract](../04_cryptography/DigitalProvenanceVerificationContract.md).
 - [DigitalProvenanceReplayContract](../04_cryptography/DigitalProvenanceReplayContract.md).
+
+- [DigitalProvenanceReportContract](../04_cryptography/DigitalProvenanceReportContract.md).
+- [DigitalProvenanceRecoveryContract](../04_cryptography/DigitalProvenanceRecoveryContract.md).

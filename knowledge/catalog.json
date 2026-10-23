@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.DigitalProvenanceRecoveryContract",
+        "Verification.DigitalProvenanceReportContract",
         "Verification.PrometheusTAKLAudit",
         "Verification.PrometheusNQKDAudit",
         "Verification.PrometheusMetrologyJitter",
@@ -1494,6 +1496,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.DigitalProvenanceRecoveryContract",
+        "Verification.DigitalProvenanceReportContract",
         "Verification.PrometheusTAKLAudit",
         "Verification.PrometheusNQKDAudit",
         "Verification.PrometheusMetrologyJitter",
@@ -3535,6 +3539,28 @@
       "source": "Verification/PrometheusTAKLAudit.lean",
       "card": "knowledge/quantum-physics/PrometheusTAKLAudit.md",
       "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "DigitalProvenanceReportContract",
+      "section": "cryptography",
+      "source": "Verification/DigitalProvenanceReportContract.lean",
+      "card": "knowledge/04_cryptography/DigitalProvenanceReportContract.md",
+      "project_imports": [
+        "Verification.DigitalProvenanceManifestContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "DigitalProvenanceRecoveryContract",
+      "section": "cryptography",
+      "source": "Verification/DigitalProvenanceRecoveryContract.lean",
+      "card": "knowledge/04_cryptography/DigitalProvenanceRecoveryContract.md",
+      "project_imports": [
+        "Verification.DigitalProvenanceReplayContract"
+      ],
       "novelty": "not-assessed",
       "status": "reviewed"
     }

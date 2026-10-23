@@ -1,3 +1,5 @@
+import Verification.DigitalProvenanceRecoveryContract
+import Verification.DigitalProvenanceReportContract
 import Verification.PrometheusTAKLAudit
 import Verification.PrometheusNQKDAudit
 import Verification.PrometheusMetrologyJitter
@@ -616,6 +618,8 @@ structure CryptoFullSuite : Prop where
   provenance_manifest : DigitalProvenanceManifestContract.DigitalProvenanceManifestContractSuite
   provenance_verifier : DigitalProvenanceVerificationContract.ProvenanceVerificationSuite
   provenance_replay : DigitalProvenanceReplayContract.ProvenanceReplaySuite
+  provenance_report : DigitalProvenanceReportContract.ProvenanceReportSuite
+  provenance_recovery : DigitalProvenanceRecoveryContract.ProvenanceRecoverySuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -724,6 +728,8 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   provenance_manifest := DigitalProvenanceManifestContract.verification_suite
   provenance_verifier := DigitalProvenanceVerificationContract.verification_suite
   provenance_replay := DigitalProvenanceReplayContract.verification_suite
+  provenance_report := DigitalProvenanceReportContract.verification_suite
+  provenance_recovery := DigitalProvenanceRecoveryContract.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :

@@ -30,18 +30,19 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**259 direct imports in MasterSuite**, **303 Lean sources including Verification.lean**.
-[Release v0.7.46](docs/release-v0.7.46.en.md) adds pure provenance verification,
-sequential replay protection and conditional channel, queue, finite-block,
-metrology, ideal-qubit and ring-model contracts (epsilon249–257).
+**261 direct imports in MasterSuite**, **305 Lean sources including Verification.lean**.
+[Release v0.7.47](docs/release-v0.7.47.en.md) adds granular provenance reports,
+an explicit pinned native IO adapter and sequential replay-registry recovery.
 Lake remains 0.7.1; the designated full public beta basis remains v0.7.1.
 
+[Native adapter](tools/provenance_native/README.md) ·
 [Snapshot format](docs/quota-codec-v1.en.md) ·
 [Snapshot reader](docs/quota-snapshot-reader.en.md) ·
 [Profile reader](docs/quota-profile-reader.en.md).
-Verifier acceptance is relative to supplied cryptographic and policy functions.
-Sequential replay protection does not establish concurrent atomicity or durable
-storage. Conditional physics theorems do not qualify a physical device.
+Recovery preserves acknowledged challenges relative to a retained completed log
+and an independent trusted prefix. Physical WAL/fsync, anti-rollback storage,
+concurrent atomicity and hardware authorization remain external obligations.
+Native conformance tests do not prove cryptographic security or FFI refinement.
 The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)

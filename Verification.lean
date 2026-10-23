@@ -1,3 +1,5 @@
+import Verification.DigitalProvenanceRecoveryContract
+import Verification.DigitalProvenanceReportContract
 import Verification.PrometheusTAKLAudit
 import Verification.PrometheusNQKDAudit
 import Verification.PrometheusMetrologyJitter

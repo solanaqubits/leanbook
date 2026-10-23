@@ -1,0 +1,11 @@
+{
+  "schema": "provenance-native-profile-v1",
+  "platform": "linux-x86_64",
+  "library_path": "/usr/lib/x86_64-linux-gnu/libsodium.so.23.3.0",
+  "library_version": "1.0.18",
+  "package_version": "1.0.18-1ubuntu0.24.04.1",
+  "library_sha256": "fe00408090ea084504d7cb0130af56a22554fe299034b864551b65a64ca8a7b5",
+  "signature_api": "crypto_sign_verify_detached",
+  "hash_api": "crypto_hash_sha256",
+  "policy": "PureEd25519 detached; tested rejection of noncanonical S/points and small-order encodings; no application prehash"
+}

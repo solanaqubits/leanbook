@@ -3,7 +3,7 @@ id: AxiomAudit
 language: en
 section: verification
 source: Verification/AxiomAudit.lean
-source_sha256: e8d0ff6134f7ed1bb66a90be031d9c6ec42d0acba9d3a1f7e711fdc83b5c5ea6
+source_sha256: f071336a672db9518e746960a64a8d6613559b9e0934888600c35d88460a0f53
 novelty: not-assessed
 status: reviewed
 ---
@@ -193,3 +193,5 @@ checked restoration, exact round trip and safe continuation.
 Release v0.7.44 adds quota_codec, quota_canonical_wire and quota_profile: bounded canonical bytes, strict structured representations and independently checked finite profile transfer.
 
 Release v0.7.46 adds pure provenance verification, sequential replay protection and conditional channel/queue/physics contracts (epsilon249–257).
+
+Release v0.7.47 integrates granular provenance reports and sequential replay-registry recovery.

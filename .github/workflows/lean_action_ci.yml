@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v5
@@ -19,6 +19,11 @@ jobs:
           build: true
           build-args: "--wfail"
           axiom-audit: true
+      - name: Install and qualify native provenance backend
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libsodium23=1.0.18-1ubuntu0.24.04.1
+          python3 -c 'import json; from tools.provenance_native.build import qualify; qualify(json.load(open("tools/provenance_native/profile.json")))'
       - name: Verifier CLI regression tests
         run: LEAN_VERIFIER_LIVE_TESTS=1 python3 -m unittest discover -s tests -v
       - name: Verify all modules through the CLI

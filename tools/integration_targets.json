@@ -2006,5 +2006,23 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "PrometheusTAKLAudit.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DigitalProvenanceReportContract": {
+    "suite_struct": "ProvenanceReportSuite",
+    "suite_type": "DigitalProvenanceReportContract.ProvenanceReportSuite",
+    "parent": "CryptoFullSuite",
+    "field": "provenance_report",
+    "constructor": "crypto_full_master_suite",
+    "proof": "DigitalProvenanceReportContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DigitalProvenanceRecoveryContract": {
+    "suite_struct": "ProvenanceRecoverySuite",
+    "suite_type": "DigitalProvenanceRecoveryContract.ProvenanceRecoverySuite",
+    "parent": "CryptoFullSuite",
+    "field": "provenance_recovery",
+    "constructor": "crypto_full_master_suite",
+    "proof": "DigitalProvenanceRecoveryContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
