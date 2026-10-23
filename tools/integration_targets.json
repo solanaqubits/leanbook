@@ -1925,5 +1925,86 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "PB11EnergyBalance.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusChannelAndInjectorAudit": {
+    "suite_struct": "PrometheusChannelAndInjectorAuditSuite",
+    "suite_type": "PrometheusChannelAndInjectorAudit.PrometheusChannelAndInjectorAuditSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_channel",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusChannelAndInjectorAudit.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusFiniteBlockAudit": {
+    "suite_struct": "PrometheusFiniteBlockAuditSuite",
+    "suite_type": "PrometheusFiniteBlockAudit.PrometheusFiniteBlockAuditSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_finiteblock",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusFiniteBlockAudit.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DigitalProvenanceVerificationContract": {
+    "suite_struct": "ProvenanceVerificationSuite",
+    "suite_type": "DigitalProvenanceVerificationContract.ProvenanceVerificationSuite",
+    "parent": "CryptoFullSuite",
+    "field": "provenance_verifier",
+    "constructor": "crypto_full_master_suite",
+    "proof": "DigitalProvenanceVerificationContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusDecoderQueue": {
+    "suite_struct": "PrometheusDecoderQueueSuite",
+    "suite_type": "PrometheusDecoderQueue.PrometheusDecoderQueueSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_queue",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusDecoderQueue.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusPipelinedQueue": {
+    "suite_struct": "PrometheusPipelinedQueueSuite",
+    "suite_type": "PrometheusPipelinedQueue.PrometheusPipelinedQueueSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_pipeline",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusPipelinedQueue.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusMetrologyJitter": {
+    "suite_struct": "PrometheusMetrologyJitterSuite",
+    "suite_type": "PrometheusMetrologyJitter.PrometheusMetrologyJitterSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_metrology",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusMetrologyJitter.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DigitalProvenanceReplayContract": {
+    "suite_struct": "ProvenanceReplaySuite",
+    "suite_type": "DigitalProvenanceReplayContract.ProvenanceReplaySuite",
+    "parent": "CryptoFullSuite",
+    "field": "provenance_replay",
+    "constructor": "crypto_full_master_suite",
+    "proof": "DigitalProvenanceReplayContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusNQKDAudit": {
+    "suite_struct": "PrometheusNQKDAuditSuite",
+    "suite_type": "PrometheusNQKDAudit.PrometheusNQKDAuditSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_nqkd",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusNQKDAudit.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PrometheusTAKLAudit": {
+    "suite_struct": "PrometheusTAKLAuditSuite",
+    "suite_type": "PrometheusTAKLAudit.PrometheusTAKLAuditSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "prometheus_takl",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PrometheusTAKLAudit.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

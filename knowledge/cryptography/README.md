@@ -166,3 +166,6 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [CryptoHiddenScalarQuotaProfileCodecContract](../04_cryptography/CryptoHiddenScalarQuotaProfileCodecContract.md).
 - [DigitalProvenanceManifestContract](../04_cryptography/DigitalProvenanceManifestContract.md).
 - [Bounded profile reader and CLI](../../docs/quota-profile-reader.en.md).
+
+- [DigitalProvenanceVerificationContract](../04_cryptography/DigitalProvenanceVerificationContract.md).
+- [DigitalProvenanceReplayContract](../04_cryptography/DigitalProvenanceReplayContract.md).

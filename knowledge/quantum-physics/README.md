@@ -148,3 +148,11 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [PrometheusNoiseAudit](PrometheusNoiseAudit.md).
 - [PrometheusUCNAudit](PrometheusUCNAudit.md).
 - [PB11EnergyBalance](PB11EnergyBalance.md).
+
+- [PrometheusChannelAndInjectorAudit](PrometheusChannelAndInjectorAudit.md).
+- [PrometheusFiniteBlockAudit](PrometheusFiniteBlockAudit.md).
+- [PrometheusDecoderQueue](PrometheusDecoderQueue.md).
+- [PrometheusPipelinedQueue](PrometheusPipelinedQueue.md).
+- [PrometheusMetrologyJitter](PrometheusMetrologyJitter.md).
+- [PrometheusNQKDAudit](PrometheusNQKDAudit.md).
+- [PrometheusTAKLAudit](PrometheusTAKLAudit.md).

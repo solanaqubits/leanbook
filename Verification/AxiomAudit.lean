@@ -302,3 +302,7 @@ open CryptoCommitmentVectorPedersenGroup in
 #audit_axioms CryptoHiddenScalarQuotaCodecContract.verification_suite
 
 #audit_axioms CryptoHiddenScalarQuotaCanonicalWireContract.verification_suite
+
+#audit_axioms DigitalProvenanceVerificationContract.verification_suite
+
+#audit_axioms DigitalProvenanceReplayContract.verification_suite

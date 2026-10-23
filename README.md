@@ -30,18 +30,18 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
-**250 direct imports in MasterSuite**, **294 Lean sources including Verification.lean**.
-[Release v0.7.45](docs/release-v0.7.45.en.md) adds canonical finite-profile bytes
-(QCP/01), a bounded profile reader/CLI, canonical provenance manifests (QPM/01),
-and conditional scalar physics models (epsilon243–248).
-Lake remains 0.7.1; the full public beta basis remains v0.7.1.
+**259 direct imports in MasterSuite**, **303 Lean sources including Verification.lean**.
+[Release v0.7.46](docs/release-v0.7.46.en.md) adds pure provenance verification,
+sequential replay protection and conditional channel, queue, finite-block,
+metrology, ideal-qubit and ring-model contracts (epsilon249–257).
+Lake remains 0.7.1; the designated full public beta basis remains v0.7.1.
 
 [Snapshot format](docs/quota-codec-v1.en.md) ·
 [Snapshot reader](docs/quota-snapshot-reader.en.md) ·
 [Profile reader](docs/quota-profile-reader.en.md).
-Canonical bytes, mathematical restoration and cryptographic authentication are
-separate layers. The manifest codec does not implement signature verification.
-Conditional physics theorems do not qualify a physical device.
+Verifier acceptance is relative to supplied cryptographic and policy functions.
+Sequential replay protection does not establish concurrent atomicity or durable
+storage. Conditional physics theorems do not qualify a physical device.
 The explicit qutrit Spec build is preserved.
 
 [Composite epoch safety](knowledge/02_distributed_systems/DistributedTendermintEpochTransitionSafetyMasterContract.md)

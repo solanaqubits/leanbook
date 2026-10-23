@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: c7be97ebfd05a4de19cd0a27936374c74b0f8ce99798ed0b59a9c8f3f3a6d5cb
+source_sha256: 5e41747e5e24b33a96e5a5a7625ca789d1f165794565b95273a01101de7658ef
 novelty: not-assessed
 status: reviewed
 ---
@@ -238,3 +238,5 @@ checked restoration, exact round trip and safe continuation.
 Release v0.7.44 adds quota_codec, quota_canonical_wire and quota_profile: bounded canonical bytes, strict structured representations and independently checked finite profile transfer.
 
 Release v0.7.45 adds QCP/01 profile bytes, the QPM/01 manifest codec and conditional scalar model contracts (epsilon243–248).
+
+Release v0.7.46 adds pure provenance verification, sequential replay protection and conditional channel/queue/physics contracts (epsilon249–257).

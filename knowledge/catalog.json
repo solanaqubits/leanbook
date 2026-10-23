@@ -614,6 +614,15 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.PrometheusTAKLAudit",
+        "Verification.PrometheusNQKDAudit",
+        "Verification.PrometheusMetrologyJitter",
+        "Verification.PrometheusPipelinedQueue",
+        "Verification.DigitalProvenanceReplayContract",
+        "Verification.PrometheusFiniteBlockAudit",
+        "Verification.PrometheusDecoderQueue",
+        "Verification.DigitalProvenanceVerificationContract",
+        "Verification.PrometheusChannelAndInjectorAudit",
         "Verification.DigitalProvenanceManifestContract",
         "Verification.PB11EnergyBalance",
         "Verification.PrometheusUCNAudit",
@@ -1485,6 +1494,15 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.PrometheusTAKLAudit",
+        "Verification.PrometheusNQKDAudit",
+        "Verification.PrometheusMetrologyJitter",
+        "Verification.PrometheusPipelinedQueue",
+        "Verification.DigitalProvenanceReplayContract",
+        "Verification.PrometheusFiniteBlockAudit",
+        "Verification.PrometheusDecoderQueue",
+        "Verification.DigitalProvenanceVerificationContract",
+        "Verification.PrometheusChannelAndInjectorAudit",
         "Verification.DigitalProvenanceManifestContract",
         "Verification.PB11EnergyBalance",
         "Verification.PrometheusUCNAudit",
@@ -3425,6 +3443,97 @@
       "section": "quantum-physics",
       "source": "Verification/PB11EnergyBalance.lean",
       "card": "knowledge/quantum-physics/PB11EnergyBalance.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusChannelAndInjectorAudit",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusChannelAndInjectorAudit.lean",
+      "card": "knowledge/quantum-physics/PrometheusChannelAndInjectorAudit.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "DigitalProvenanceVerificationContract",
+      "section": "cryptography",
+      "source": "Verification/DigitalProvenanceVerificationContract.lean",
+      "card": "knowledge/04_cryptography/DigitalProvenanceVerificationContract.md",
+      "project_imports": [
+        "Verification.DigitalProvenanceManifestContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusFiniteBlockAudit",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusFiniteBlockAudit.lean",
+      "card": "knowledge/quantum-physics/PrometheusFiniteBlockAudit.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusDecoderQueue",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusDecoderQueue.lean",
+      "card": "knowledge/quantum-physics/PrometheusDecoderQueue.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusPipelinedQueue",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusPipelinedQueue.lean",
+      "card": "knowledge/quantum-physics/PrometheusPipelinedQueue.md",
+      "project_imports": [
+        "Verification.PrometheusDecoderQueue"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusMetrologyJitter",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusMetrologyJitter.lean",
+      "card": "knowledge/quantum-physics/PrometheusMetrologyJitter.md",
+      "project_imports": [
+        "Verification.PrometheusChannelAndInjectorAudit"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "DigitalProvenanceReplayContract",
+      "section": "cryptography",
+      "source": "Verification/DigitalProvenanceReplayContract.lean",
+      "card": "knowledge/04_cryptography/DigitalProvenanceReplayContract.md",
+      "project_imports": [
+        "Verification.DigitalProvenanceVerificationContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusNQKDAudit",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusNQKDAudit.lean",
+      "card": "knowledge/quantum-physics/PrometheusNQKDAudit.md",
+      "project_imports": [
+        "Verification.QuantumBB84ProtocolQBER"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PrometheusTAKLAudit",
+      "section": "quantum-physics",
+      "source": "Verification/PrometheusTAKLAudit.lean",
+      "card": "knowledge/quantum-physics/PrometheusTAKLAudit.md",
       "project_imports": [],
       "novelty": "not-assessed",
       "status": "reviewed"

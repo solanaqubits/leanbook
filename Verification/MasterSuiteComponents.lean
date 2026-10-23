@@ -1,3 +1,12 @@
+import Verification.PrometheusTAKLAudit
+import Verification.PrometheusNQKDAudit
+import Verification.PrometheusMetrologyJitter
+import Verification.PrometheusPipelinedQueue
+import Verification.DigitalProvenanceReplayContract
+import Verification.PrometheusFiniteBlockAudit
+import Verification.PrometheusDecoderQueue
+import Verification.DigitalProvenanceVerificationContract
+import Verification.PrometheusChannelAndInjectorAudit
 import Verification.DigitalProvenanceManifestContract
 import Verification.PB11EnergyBalance
 import Verification.PrometheusUCNAudit
@@ -605,6 +614,8 @@ structure CryptoFullSuite : Prop where
   quota_profile : CryptoHiddenScalarQuotaProfileContract.CryptoHiddenScalarQuotaProfileContractSuite
   quota_profile_codec : CryptoHiddenScalarQuotaProfileCodecContractSuite
   provenance_manifest : DigitalProvenanceManifestContract.DigitalProvenanceManifestContractSuite
+  provenance_verifier : DigitalProvenanceVerificationContract.ProvenanceVerificationSuite
+  provenance_replay : DigitalProvenanceReplayContract.ProvenanceReplaySuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -711,6 +722,8 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   quota_profile := CryptoHiddenScalarQuotaProfileContract.verification_suite
   quota_profile_codec := CryptoHiddenScalarQuotaProfileCodecContract.verification_suite
   provenance_manifest := DigitalProvenanceManifestContract.verification_suite
+  provenance_verifier := DigitalProvenanceVerificationContract.verification_suite
+  provenance_replay := DigitalProvenanceReplayContract.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :
@@ -794,6 +807,13 @@ structure QuantumPhysicsFullSuite : Prop where
   pb11_energy : PB11EnergyBalance.PB11EnergyBalanceSuite
   prometheus_noise_audit : PrometheusNoiseAudit.PrometheusNoiseAuditSuite
   prometheus_ucn_audit : PrometheusUCNAudit.PrometheusUCNAuditSuite
+  prometheus_channel : PrometheusChannelAndInjectorAudit.PrometheusChannelAndInjectorAuditSuite
+  prometheus_finiteblock : PrometheusFiniteBlockAudit.PrometheusFiniteBlockAuditSuite
+  prometheus_queue : PrometheusDecoderQueue.PrometheusDecoderQueueSuite
+  prometheus_pipeline : PrometheusPipelinedQueue.PrometheusPipelinedQueueSuite
+  prometheus_metrology : PrometheusMetrologyJitter.PrometheusMetrologyJitterSuite
+  prometheus_nqkd : PrometheusNQKDAudit.PrometheusNQKDAuditSuite
+  prometheus_takl : PrometheusTAKLAudit.PrometheusTAKLAuditSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -890,6 +910,13 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   pb11_energy := PB11EnergyBalance.verification_suite
   prometheus_noise_audit := PrometheusNoiseAudit.verification_suite
   prometheus_ucn_audit := PrometheusUCNAudit.verification_suite
+  prometheus_channel := PrometheusChannelAndInjectorAudit.verification_suite
+  prometheus_finiteblock := PrometheusFiniteBlockAudit.verification_suite
+  prometheus_queue := PrometheusDecoderQueue.verification_suite
+  prometheus_pipeline := PrometheusPipelinedQueue.verification_suite
+  prometheus_metrology := PrometheusMetrologyJitter.verification_suite
+  prometheus_nqkd := PrometheusNQKDAudit.verification_suite
+  prometheus_takl := PrometheusTAKLAudit.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/
