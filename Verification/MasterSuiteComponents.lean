@@ -1,3 +1,15 @@
+import Verification.QuantumSteaneCodeErrorCorrectionContract
+import Verification.QuantumEntanglementSwappingPurificationContract
+import Verification.QuantumStateAvailabilityContract
+import Verification.DataAvailabilitySamplingContract
+import Verification.QuantumIVCAccumulatorContract
+import Verification.OptospintronicTransducerContract
+import Verification.FungalMyceliumMemristorContract
+import Verification.BiohybridOrganoidSynapseContract
+import Verification.QuantumDiamondNVInterfaceContract
+import Verification.SpintronicSkyrmionSynapseContract
+import Verification.PhotonicsMachZehnderChiralContract
+import Verification.AlgebraQuaternionSpinor
 import Verification.DigitalProvenanceRecoveryContract
 import Verification.DigitalProvenanceReportContract
 import Verification.PrometheusTAKLAudit
@@ -264,6 +276,8 @@ open CryptoHiddenScalarQuotaCanonicalWireContract
   (CryptoHiddenScalarQuotaCanonicalWireContractSuite)
 
 namespace MasterSuite
+
+open QuantumEntanglementSwappingPurificationContract
 
 open QuantumQutritSecretSharingExplicitDecoder
 open QuantumQutritDecoderCircuitRefinement
@@ -620,6 +634,7 @@ structure CryptoFullSuite : Prop where
   provenance_replay : DigitalProvenanceReplayContract.ProvenanceReplaySuite
   provenance_report : DigitalProvenanceReportContract.ProvenanceReportSuite
   provenance_recovery : DigitalProvenanceRecoveryContract.ProvenanceRecoverySuite
+  data_availability : DataAvailabilitySamplingContract.DataAvailabilitySamplingSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -730,6 +745,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   provenance_replay := DigitalProvenanceReplayContract.verification_suite
   provenance_report := DigitalProvenanceReportContract.verification_suite
   provenance_recovery := DigitalProvenanceRecoveryContract.verification_suite
+  data_availability := DataAvailabilitySamplingContract.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :
@@ -820,6 +836,17 @@ structure QuantumPhysicsFullSuite : Prop where
   prometheus_metrology : PrometheusMetrologyJitter.PrometheusMetrologyJitterSuite
   prometheus_nqkd : PrometheusNQKDAudit.PrometheusNQKDAuditSuite
   prometheus_takl : PrometheusTAKLAudit.PrometheusTAKLAuditSuite
+  quaternion_spinor : AlgebraQuaternionSpinor.QuaternionSpinorSuite
+  mzi_chiral : PhotonicsMachZehnderChiralContract.PhotonicsMachZehnderChiralSuite
+  skyrmion_synapse : SpintronicSkyrmionSynapseContract.SpintronicSkyrmionSynapseSuite
+  diamond_nv : QuantumDiamondNVInterfaceContract.QuantumDiamondNVInterfaceSuite
+  organoid_stdp : BiohybridOrganoidSynapseContract.BiohybridOrganoidSynapseSuite
+  fungal_mycelium : FungalMyceliumMemristorContract.FungalMyceliumMemristorSuite
+  optospintronic : OptospintronicTransducerContract.OptospintronicTransducerSuite
+  quantum_ivc : QuantumIVCAccumulatorContract.QuantumIVCAccumulatorSuite
+  quantum_state_availability : QuantumStateAvailabilityContract.QuantumStateAvailabilitySuite
+  entanglement_swapping_purification : QuantumEntanglementSwappingPurificationSuite
+  steane_code : QuantumSteaneCodeErrorCorrectionContract.QuantumSteaneCodeErrorCorrectionSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -923,6 +950,18 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   prometheus_metrology := PrometheusMetrologyJitter.verification_suite
   prometheus_nqkd := PrometheusNQKDAudit.verification_suite
   prometheus_takl := PrometheusTAKLAudit.verification_suite
+  quaternion_spinor := AlgebraQuaternionSpinor.verification_suite
+  mzi_chiral := PhotonicsMachZehnderChiralContract.verification_suite
+  skyrmion_synapse := SpintronicSkyrmionSynapseContract.verification_suite
+  diamond_nv := QuantumDiamondNVInterfaceContract.verification_suite
+  organoid_stdp := BiohybridOrganoidSynapseContract.verification_suite
+  fungal_mycelium := FungalMyceliumMemristorContract.verification_suite
+  optospintronic := OptospintronicTransducerContract.verification_suite
+  quantum_ivc := QuantumIVCAccumulatorContract.verification_suite
+  quantum_state_availability := QuantumStateAvailabilityContract.verification_suite
+  entanglement_swapping_purification := by
+    exact QuantumEntanglementSwappingPurificationContract.verification_suite
+  steane_code := QuantumSteaneCodeErrorCorrectionContract.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

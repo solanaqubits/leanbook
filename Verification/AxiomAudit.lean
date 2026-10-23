@@ -1,3 +1,15 @@
+import Verification.QuantumSteaneCodeErrorCorrectionContract
+import Verification.QuantumEntanglementSwappingPurificationContract
+import Verification.QuantumStateAvailabilityContract
+import Verification.DataAvailabilitySamplingContract
+import Verification.QuantumIVCAccumulatorContract
+import Verification.OptospintronicTransducerContract
+import Verification.FungalMyceliumMemristorContract
+import Verification.BiohybridOrganoidSynapseContract
+import Verification.QuantumDiamondNVInterfaceContract
+import Verification.SpintronicSkyrmionSynapseContract
+import Verification.PhotonicsMachZehnderChiralContract
+import Verification.AlgebraQuaternionSpinor
 import Lean
 import Verification.MasterSuite
 
@@ -310,3 +322,27 @@ open CryptoCommitmentVectorPedersenGroup in
 #audit_axioms DigitalProvenanceReportContract.verification_suite
 
 #audit_axioms DigitalProvenanceRecoveryContract.verification_suite
+
+#audit_axioms AlgebraQuaternionSpinor.verification_suite
+
+#audit_axioms PhotonicsMachZehnderChiralContract.verification_suite
+
+#audit_axioms SpintronicSkyrmionSynapseContract.verification_suite
+
+#audit_axioms QuantumDiamondNVInterfaceContract.verification_suite
+
+#audit_axioms BiohybridOrganoidSynapseContract.verification_suite
+
+#audit_axioms FungalMyceliumMemristorContract.verification_suite
+
+#audit_axioms OptospintronicTransducerContract.verification_suite
+
+#audit_axioms QuantumIVCAccumulatorContract.verification_suite
+
+#audit_axioms DataAvailabilitySamplingContract.verification_suite
+
+#audit_axioms QuantumStateAvailabilityContract.verification_suite
+
+#audit_axioms QuantumEntanglementSwappingPurificationContract.verification_suite
+
+#audit_axioms QuantumSteaneCodeErrorCorrectionContract.verification_suite

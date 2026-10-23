@@ -1112,3 +1112,5 @@ See [publication notes](docs/publication.en.md) for Reservoir requirements.
 [Operational 2PC timeouts](knowledge/09_distributed_systems/DistributedTwoPhaseCommitTimeout.md) separates safe pre-vote abort from unsafe unilateral prepared decisions, and characterizes blocking only with both participants prepared and a stopped coordinator. Delivery of an in-flight decision remains possible; fairness and recovery are not claimed.
 
 [Two-participant 3PC](knowledge/09_distributed_systems/DistributedThreePhaseCommit.md) proves operational safety and conditional completion using a kernel-checked finite invariant certificate. Accurate membership, unique backup appointment and atomic epoch fencing are explicit external contracts. Weak fairness is required for eventual completion; no partition tolerance or runtime implementation is claimed.
+
+See the [quantum/hardware contract publication](docs/quantum-series-sync.en.md) for twelve additional scoped models and their explicit limits.

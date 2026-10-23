@@ -172,3 +172,5 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 
 - [DigitalProvenanceReportContract](../04_cryptography/DigitalProvenanceReportContract.md).
 - [DigitalProvenanceRecoveryContract](../04_cryptography/DigitalProvenanceRecoveryContract.md).
+
+- [DataAvailabilitySamplingContract](../01_cryptography_and_protocols/DataAvailabilitySamplingContract.md) — explicitly scoped contract; see its assumptions and limitations.

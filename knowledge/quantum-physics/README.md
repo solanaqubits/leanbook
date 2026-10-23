@@ -156,3 +156,25 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [PrometheusMetrologyJitter](PrometheusMetrologyJitter.md).
 - [PrometheusNQKDAudit](PrometheusNQKDAudit.md).
 - [PrometheusTAKLAudit](PrometheusTAKLAudit.md).
+
+- [AlgebraQuaternionSpinor](../05_mathematics_and_geometry/AlgebraQuaternionSpinor.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [PhotonicsMachZehnderChiralContract](PhotonicsMachZehnderChiralContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [SpintronicSkyrmionSynapseContract](../04_spintronics_and_hardware/SpintronicSkyrmionSynapseContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [QuantumDiamondNVInterfaceContract](../03_quantum_and_hardware/QuantumDiamondNVInterfaceContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [BiohybridOrganoidSynapseContract](../02_biological_and_wetware/BiohybridOrganoidSynapseContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [FungalMyceliumMemristorContract](../02_biological_and_wetware/FungalMyceliumMemristorContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [OptospintronicTransducerContract](../04_spintronics_and_hardware/OptospintronicTransducerContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [QuantumIVCAccumulatorContract](../01_cryptography_and_protocols/QuantumIVCAccumulatorContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [QuantumStateAvailabilityContract](../03_quantum_and_hardware/QuantumStateAvailabilityContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [QuantumEntanglementSwappingPurificationContract](../03_quantum_and_hardware/QuantumEntanglementSwappingPurificationContract.md) — explicitly scoped contract; see its assumptions and limitations.
+
+- [QuantumSteaneCodeErrorCorrectionContract](../03_quantum_and_hardware/QuantumSteaneCodeErrorCorrectionContract.md) — explicitly scoped contract; see its assumptions and limitations.

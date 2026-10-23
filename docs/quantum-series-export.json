@@ -1,0 +1,128 @@
+{
+  "schema": "leanbook-quantum-series-export-1",
+  "scope": "Twelve existing contracts; source identity and scoped public verification, not a new whole-stack audit.",
+  "independent_stack_audit": "deferred_to_separate_agent",
+  "third_obligation": "OPEN",
+  "modules": [
+    {
+      "epsilon": 263,
+      "module": "AlgebraQuaternionSpinor",
+      "source": "Verification/AlgebraQuaternionSpinor.lean",
+      "source_sha256": "e4d4087fcb064019253fc8fb1bd08bb08fb14738d01069d189cfa34c13b8d852",
+      "card": "knowledge/05_mathematics_and_geometry/AlgebraQuaternionSpinor.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "2fc9d6fcddabc84e52939a7cc8a57d7ad3bdd0e42e9006dfca80e2850e01bc54",
+      "source_transform": "license_header_only"
+    },
+    {
+      "epsilon": 264,
+      "module": "PhotonicsMachZehnderChiralContract",
+      "source": "Verification/PhotonicsMachZehnderChiralContract.lean",
+      "source_sha256": "4ad8a2e9fb81ae52dd443b18b36543d99d9c0df6657be6544d5aa832804bc39a",
+      "card": "knowledge/quantum-physics/PhotonicsMachZehnderChiralContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "bbe9a23684eff00e05b1bb2bcf3b0ae2fb3350ab9299b140a82adae89571b091",
+      "source_transform": "license_header_only"
+    },
+    {
+      "epsilon": 266,
+      "module": "SpintronicSkyrmionSynapseContract",
+      "source": "Verification/SpintronicSkyrmionSynapseContract.lean",
+      "source_sha256": "69dcc25af65936881debd0740bc37259797eee5705c3977f016aeff58b5ef56f",
+      "card": "knowledge/04_spintronics_and_hardware/SpintronicSkyrmionSynapseContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "088cdd1e398838f31ccd2a3d27c80c2460dcb6d2b2d3b9b4bacc7a41d3672fa9",
+      "source_transform": "license_header_only"
+    },
+    {
+      "epsilon": 267,
+      "module": "QuantumDiamondNVInterfaceContract",
+      "source": "Verification/QuantumDiamondNVInterfaceContract.lean",
+      "source_sha256": "473f35b48666e79f7cd240e409e7a426c24e46dd7c7541a1f819b5169833e35e",
+      "card": "knowledge/03_quantum_and_hardware/QuantumDiamondNVInterfaceContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "473f35b48666e79f7cd240e409e7a426c24e46dd7c7541a1f819b5169833e35e",
+      "source_transform": "identity"
+    },
+    {
+      "epsilon": 270,
+      "module": "BiohybridOrganoidSynapseContract",
+      "source": "Verification/BiohybridOrganoidSynapseContract.lean",
+      "source_sha256": "153db5c451f061fbb51d445832d195c890e34e9a24c185068d278e62aefd88f3",
+      "card": "knowledge/02_biological_and_wetware/BiohybridOrganoidSynapseContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "153db5c451f061fbb51d445832d195c890e34e9a24c185068d278e62aefd88f3",
+      "source_transform": "identity"
+    },
+    {
+      "epsilon": 271,
+      "module": "FungalMyceliumMemristorContract",
+      "source": "Verification/FungalMyceliumMemristorContract.lean",
+      "source_sha256": "3db5a6cf089f0b71d646c9f391a32d79ce85b5ecfd54d2d9a7422697769555a6",
+      "card": "knowledge/02_biological_and_wetware/FungalMyceliumMemristorContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "3db5a6cf089f0b71d646c9f391a32d79ce85b5ecfd54d2d9a7422697769555a6",
+      "source_transform": "identity"
+    },
+    {
+      "epsilon": 274,
+      "module": "OptospintronicTransducerContract",
+      "source": "Verification/OptospintronicTransducerContract.lean",
+      "source_sha256": "47f43ff50de91774cfd220db9566116e65372c68bc95c11d51d47ca69ce75bfa",
+      "card": "knowledge/04_spintronics_and_hardware/OptospintronicTransducerContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "47f43ff50de91774cfd220db9566116e65372c68bc95c11d51d47ca69ce75bfa",
+      "source_transform": "identity"
+    },
+    {
+      "epsilon": 275,
+      "module": "QuantumIVCAccumulatorContract",
+      "source": "Verification/QuantumIVCAccumulatorContract.lean",
+      "source_sha256": "5dd19e3f8e75cbf5c57d2306f74527ea328fc1c2d82f1b8e3164cfc6ed77eab9",
+      "card": "knowledge/01_cryptography_and_protocols/QuantumIVCAccumulatorContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "5dd19e3f8e75cbf5c57d2306f74527ea328fc1c2d82f1b8e3164cfc6ed77eab9",
+      "source_transform": "identity"
+    },
+    {
+      "epsilon": 277,
+      "module": "DataAvailabilitySamplingContract",
+      "source": "Verification/DataAvailabilitySamplingContract.lean",
+      "source_sha256": "017861e04c443db54b7291b85e7a85951d3fec811b2ced0e914a89b0adb7fb19",
+      "card": "knowledge/01_cryptography_and_protocols/DataAvailabilitySamplingContract.md",
+      "section": "cryptography",
+      "original_source_sha256": "017861e04c443db54b7291b85e7a85951d3fec811b2ced0e914a89b0adb7fb19",
+      "source_transform": "identity"
+    },
+    {
+      "epsilon": 279,
+      "module": "QuantumStateAvailabilityContract",
+      "source": "Verification/QuantumStateAvailabilityContract.lean",
+      "source_sha256": "1d2c65ea39ae6601c73758c3036aa7d7a85b1c990438cf36cf87d4c3e1ac5e79",
+      "card": "knowledge/03_quantum_and_hardware/QuantumStateAvailabilityContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "1d2c65ea39ae6601c73758c3036aa7d7a85b1c990438cf36cf87d4c3e1ac5e79",
+      "source_transform": "identity"
+    },
+    {
+      "epsilon": 280,
+      "module": "QuantumEntanglementSwappingPurificationContract",
+      "source": "Verification/QuantumEntanglementSwappingPurificationContract.lean",
+      "source_sha256": "26dfbf25fcdcfb7d447f229ef46b717e4e1a141e6e3f5f060e456c98049a25d6",
+      "card": "knowledge/03_quantum_and_hardware/QuantumEntanglementSwappingPurificationContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "26dfbf25fcdcfb7d447f229ef46b717e4e1a141e6e3f5f060e456c98049a25d6",
+      "source_transform": "identity"
+    },
+    {
+      "epsilon": 282,
+      "module": "QuantumSteaneCodeErrorCorrectionContract",
+      "source": "Verification/QuantumSteaneCodeErrorCorrectionContract.lean",
+      "source_sha256": "86c65a7c7f821fb8b09ee7faec8785b7c9319a919bc3d78b8c06ceaf1f9610cb",
+      "card": "knowledge/03_quantum_and_hardware/QuantumSteaneCodeErrorCorrectionContract.md",
+      "section": "quantum-physics",
+      "original_source_sha256": "86c65a7c7f821fb8b09ee7faec8785b7c9319a919bc3d78b8c06ceaf1f9610cb",
+      "source_transform": "identity"
+    }
+  ]
+}

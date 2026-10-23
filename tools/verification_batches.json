@@ -171,6 +171,90 @@
         "Verification.PrometheusTAKLAudit"
       ],
       "description": "Finite Born-law BB84 interception, noninformative-instrument counterexample, and conditional golden-rule / Aharonov-Casher ring audits; no neutrino encoding, composable security or weak-QFT derivation."
+    },
+    "quantum-physics/quaternion-spinor": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.AlgebraQuaternionSpinor"
+      ],
+      "description": "Mathlib real quaternion algebra and unitary group; conjugation on Euclidean three-space preserves norm and distance and composes as a group action. No SU(2)/SO(3) identification, covering theorem or physical implementation."
+    },
+    "quantum-physics/mzi-chiral": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PhotonicsMachZehnderChiralContract"
+      ],
+      "description": "Coherent lossless two-mode Hadamard MZI with phase-flip mirror, intensity conservation and exact routing; physical chirality and external control energy not proved."
+    },
+    "quantum-physics/skyrmion-synapse": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.SpintronicSkyrmionSynapseContract"
+      ],
+      "description": "Bounded discrete counter, rational normalized weight, inclusive current thresholds and homogeneous pulse-dose saturation. No derived topological charge or physical thermal-retention theorem."
+    },
+    "quantum-physics/diamond-nv": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumDiamondNVInterfaceContract"
+      ],
+      "description": "Rational optical population transfer and contrast, geometric residual and ideal complex microwave pi isometry. No calibrated NV/ISC dynamics, quantum nondemolition readout or physical coherence retention claim."
+    },
+    "quantum-physics/organoid-stdp": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.BiohybridOrganoidSynapseContract"
+      ],
+      "description": "Signed rational STDP window, clamped weights and finite ensemble normalization to a nonnegative abstract resource budget. No physiological hyperexcitability or metabolic safety claim."
+    },
+    "quantum-physics/fungal-mycelium": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.FungalMyceliumMemristorContract"
+      ],
+      "description": "Prescribed rational conductance adaptation and history dependence, strict stimulus threshold and geometric spatial attenuation. No temporal oscillation decay or biological viability guarantee."
+    },
+    "quantum-physics/optospintronic": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.OptospintronicTransducerContract"
+      ],
+      "description": "Bounded rational mean polarized momentum transfer and explicit uncoupled/saturation remainder accounting. No microscopic integer quantization or validated physical interface."
+    },
+    "quantum-physics/quantum-ivc": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumIVCAccumulatorContract"
+      ],
+      "description": "Boolean validity accumulation and clipped rational loss ledger; explicit unit-cost verifier expression. No cryptographic authentication, hardware constant time or physical NV coherence claim."
+    },
+    "cryptography/data-availability": {
+      "direction": "cryptography",
+      "modules": [
+        "Verification.DataAvailabilitySamplingContract"
+      ],
+      "description": "Distinct-point polynomial reconstruction and finite uniform with-replacement DAS probability; static authentic shares assumed, no network or quantum-state guarantee."
+    },
+    "quantum-physics/quantum-state-availability": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumStateAvailabilityContract"
+      ],
+      "description": "Ideal complete Bell projection, local reduced states and exact Pauli recovery; logical NV embedding and supplied-metadata release gate, not physical availability or authentication."
+    },
+    "quantum-physics/entanglement-swapping-purification": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumEntanglementSwappingPurificationContract"
+      ],
+      "description": "Ideal four-qubit Bell swapping and conditional independent binary phase-label filtering; no general BBPSSW/Deutsch circuit or physical repeater guarantee."
+    },
+    "quantum-physics/steane-code": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumSteaneCodeErrorCorrectionContract"
+      ],
+      "description": "Seven-qubit CSS checks, phase-aware single-Pauli recovery and exact distance; no hardware fault-tolerance claim."
     }
   },
   "infrastructure_batches": {

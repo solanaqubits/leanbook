@@ -2024,5 +2024,113 @@
     "constructor": "crypto_full_master_suite",
     "proof": "DigitalProvenanceRecoveryContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.AlgebraQuaternionSpinor": {
+    "suite_struct": "QuaternionSpinorSuite",
+    "suite_type": "AlgebraQuaternionSpinor.QuaternionSpinorSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "quaternion_spinor",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "AlgebraQuaternionSpinor.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.PhotonicsMachZehnderChiralContract": {
+    "suite_struct": "PhotonicsMachZehnderChiralSuite",
+    "suite_type": "PhotonicsMachZehnderChiralContract.PhotonicsMachZehnderChiralSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "mzi_chiral",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "PhotonicsMachZehnderChiralContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.SpintronicSkyrmionSynapseContract": {
+    "suite_struct": "SpintronicSkyrmionSynapseSuite",
+    "suite_type": "SpintronicSkyrmionSynapseContract.SpintronicSkyrmionSynapseSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "skyrmion_synapse",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "SpintronicSkyrmionSynapseContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumDiamondNVInterfaceContract": {
+    "suite_struct": "QuantumDiamondNVInterfaceSuite",
+    "suite_type": "QuantumDiamondNVInterfaceContract.QuantumDiamondNVInterfaceSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "diamond_nv",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumDiamondNVInterfaceContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.BiohybridOrganoidSynapseContract": {
+    "suite_struct": "BiohybridOrganoidSynapseSuite",
+    "suite_type": "BiohybridOrganoidSynapseContract.BiohybridOrganoidSynapseSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "organoid_stdp",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "BiohybridOrganoidSynapseContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.FungalMyceliumMemristorContract": {
+    "suite_struct": "FungalMyceliumMemristorSuite",
+    "suite_type": "FungalMyceliumMemristorContract.FungalMyceliumMemristorSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "fungal_mycelium",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "FungalMyceliumMemristorContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.OptospintronicTransducerContract": {
+    "suite_struct": "OptospintronicTransducerSuite",
+    "suite_type": "OptospintronicTransducerContract.OptospintronicTransducerSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "optospintronic",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "OptospintronicTransducerContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumIVCAccumulatorContract": {
+    "suite_struct": "QuantumIVCAccumulatorSuite",
+    "suite_type": "QuantumIVCAccumulatorContract.QuantumIVCAccumulatorSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "quantum_ivc",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumIVCAccumulatorContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DataAvailabilitySamplingContract": {
+    "suite_struct": "DataAvailabilitySamplingSuite",
+    "suite_type": "DataAvailabilitySamplingContract.DataAvailabilitySamplingSuite",
+    "parent": "CryptoFullSuite",
+    "field": "data_availability",
+    "constructor": "crypto_full_master_suite",
+    "proof": "DataAvailabilitySamplingContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumStateAvailabilityContract": {
+    "suite_struct": "QuantumStateAvailabilitySuite",
+    "suite_type": "QuantumStateAvailabilityContract.QuantumStateAvailabilitySuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "quantum_state_availability",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumStateAvailabilityContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumEntanglementSwappingPurificationContract": {
+    "suite_struct": "QuantumEntanglementSwappingPurificationSuite",
+    "suite_type": "QuantumEntanglementSwappingPurificationSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "entanglement_swapping_purification",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "by\n    exact QuantumEntanglementSwappingPurificationContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumSteaneCodeErrorCorrectionContract": {
+    "suite_struct": "QuantumSteaneCodeErrorCorrectionSuite",
+    "suite_type": "QuantumSteaneCodeErrorCorrectionContract.QuantumSteaneCodeErrorCorrectionSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "steane_code",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumSteaneCodeErrorCorrectionContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

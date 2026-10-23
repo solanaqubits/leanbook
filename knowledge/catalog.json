@@ -614,6 +614,18 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumSteaneCodeErrorCorrectionContract",
+        "Verification.QuantumEntanglementSwappingPurificationContract",
+        "Verification.QuantumStateAvailabilityContract",
+        "Verification.DataAvailabilitySamplingContract",
+        "Verification.QuantumIVCAccumulatorContract",
+        "Verification.OptospintronicTransducerContract",
+        "Verification.FungalMyceliumMemristorContract",
+        "Verification.BiohybridOrganoidSynapseContract",
+        "Verification.QuantumDiamondNVInterfaceContract",
+        "Verification.SpintronicSkyrmionSynapseContract",
+        "Verification.PhotonicsMachZehnderChiralContract",
+        "Verification.AlgebraQuaternionSpinor",
         "Verification.DigitalProvenanceRecoveryContract",
         "Verification.DigitalProvenanceReportContract",
         "Verification.PrometheusTAKLAudit",
@@ -884,6 +896,18 @@
       "source": "Verification/AxiomAudit.lean",
       "card": "knowledge/verification/AxiomAudit.en.md",
       "project_imports": [
+        "Verification.QuantumSteaneCodeErrorCorrectionContract",
+        "Verification.QuantumEntanglementSwappingPurificationContract",
+        "Verification.QuantumStateAvailabilityContract",
+        "Verification.DataAvailabilitySamplingContract",
+        "Verification.QuantumIVCAccumulatorContract",
+        "Verification.OptospintronicTransducerContract",
+        "Verification.FungalMyceliumMemristorContract",
+        "Verification.BiohybridOrganoidSynapseContract",
+        "Verification.QuantumDiamondNVInterfaceContract",
+        "Verification.SpintronicSkyrmionSynapseContract",
+        "Verification.PhotonicsMachZehnderChiralContract",
+        "Verification.AlgebraQuaternionSpinor",
         "Verification.MasterSuite"
       ],
       "novelty": "not-assessed"
@@ -1496,6 +1520,18 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumSteaneCodeErrorCorrectionContract",
+        "Verification.QuantumEntanglementSwappingPurificationContract",
+        "Verification.QuantumStateAvailabilityContract",
+        "Verification.DataAvailabilitySamplingContract",
+        "Verification.QuantumIVCAccumulatorContract",
+        "Verification.OptospintronicTransducerContract",
+        "Verification.FungalMyceliumMemristorContract",
+        "Verification.BiohybridOrganoidSynapseContract",
+        "Verification.QuantumDiamondNVInterfaceContract",
+        "Verification.SpintronicSkyrmionSynapseContract",
+        "Verification.PhotonicsMachZehnderChiralContract",
+        "Verification.AlgebraQuaternionSpinor",
         "Verification.DigitalProvenanceRecoveryContract",
         "Verification.DigitalProvenanceReportContract",
         "Verification.PrometheusTAKLAudit",
@@ -3561,6 +3597,120 @@
       "project_imports": [
         "Verification.DigitalProvenanceReplayContract"
       ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "AlgebraQuaternionSpinor",
+      "section": "quantum-physics",
+      "source": "Verification/AlgebraQuaternionSpinor.lean",
+      "card": "knowledge/05_mathematics_and_geometry/AlgebraQuaternionSpinor.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "PhotonicsMachZehnderChiralContract",
+      "section": "quantum-physics",
+      "source": "Verification/PhotonicsMachZehnderChiralContract.lean",
+      "card": "knowledge/quantum-physics/PhotonicsMachZehnderChiralContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "SpintronicSkyrmionSynapseContract",
+      "section": "quantum-physics",
+      "source": "Verification/SpintronicSkyrmionSynapseContract.lean",
+      "card": "knowledge/04_spintronics_and_hardware/SpintronicSkyrmionSynapseContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumDiamondNVInterfaceContract",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumDiamondNVInterfaceContract.lean",
+      "card": "knowledge/03_quantum_and_hardware/QuantumDiamondNVInterfaceContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "BiohybridOrganoidSynapseContract",
+      "section": "quantum-physics",
+      "source": "Verification/BiohybridOrganoidSynapseContract.lean",
+      "card": "knowledge/02_biological_and_wetware/BiohybridOrganoidSynapseContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "FungalMyceliumMemristorContract",
+      "section": "quantum-physics",
+      "source": "Verification/FungalMyceliumMemristorContract.lean",
+      "card": "knowledge/02_biological_and_wetware/FungalMyceliumMemristorContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "OptospintronicTransducerContract",
+      "section": "quantum-physics",
+      "source": "Verification/OptospintronicTransducerContract.lean",
+      "card": "knowledge/04_spintronics_and_hardware/OptospintronicTransducerContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumIVCAccumulatorContract",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumIVCAccumulatorContract.lean",
+      "card": "knowledge/01_cryptography_and_protocols/QuantumIVCAccumulatorContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "DataAvailabilitySamplingContract",
+      "section": "cryptography",
+      "source": "Verification/DataAvailabilitySamplingContract.lean",
+      "card": "knowledge/01_cryptography_and_protocols/DataAvailabilitySamplingContract.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumStateAvailabilityContract",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumStateAvailabilityContract.lean",
+      "card": "knowledge/03_quantum_and_hardware/QuantumStateAvailabilityContract.md",
+      "project_imports": [
+        "Verification.QuantumDiamondNVInterfaceContract",
+        "Verification.QuantumTeleportationProtocol",
+        "Verification.QuantumNoCloningUnitary"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumEntanglementSwappingPurificationContract",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumEntanglementSwappingPurificationContract.lean",
+      "card": "knowledge/03_quantum_and_hardware/QuantumEntanglementSwappingPurificationContract.md",
+      "project_imports": [
+        "Verification.QuantumStateAvailabilityContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumSteaneCodeErrorCorrectionContract",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumSteaneCodeErrorCorrectionContract.lean",
+      "card": "knowledge/03_quantum_and_hardware/QuantumSteaneCodeErrorCorrectionContract.md",
+      "project_imports": [],
       "novelty": "not-assessed",
       "status": "reviewed"
     }

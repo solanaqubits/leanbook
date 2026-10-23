@@ -1,0 +1,41 @@
+{
+  "schema": "leanbook-quantum-series-checks-1",
+  "scope": "Public tree scoped source/integration checks; not a new full beta or independent whole-stack audit.",
+  "effective_rank": "gamma",
+  "checks": [
+    "lake build --wfail",
+    "verify Verification.MasterSuite",
+    "independent AxiomAudit command",
+    "live selected unittests",
+    "knowledge catalog",
+    "declarative metadata",
+    "source byte equality"
+  ],
+  "live_tests": 33,
+  "new_lean_examples": 563,
+  "audit_declarations": 37457,
+  "audit_sources": 310,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "violations": [],
+  "module_hashes": {
+    "AlgebraQuaternionSpinor": "e4d4087fcb064019253fc8fb1bd08bb08fb14738d01069d189cfa34c13b8d852",
+    "PhotonicsMachZehnderChiralContract": "4ad8a2e9fb81ae52dd443b18b36543d99d9c0df6657be6544d5aa832804bc39a",
+    "SpintronicSkyrmionSynapseContract": "69dcc25af65936881debd0740bc37259797eee5705c3977f016aeff58b5ef56f",
+    "QuantumDiamondNVInterfaceContract": "473f35b48666e79f7cd240e409e7a426c24e46dd7c7541a1f819b5169833e35e",
+    "BiohybridOrganoidSynapseContract": "153db5c451f061fbb51d445832d195c890e34e9a24c185068d278e62aefd88f3",
+    "FungalMyceliumMemristorContract": "3db5a6cf089f0b71d646c9f391a32d79ce85b5ecfd54d2d9a7422697769555a6",
+    "OptospintronicTransducerContract": "47f43ff50de91774cfd220db9566116e65372c68bc95c11d51d47ca69ce75bfa",
+    "QuantumIVCAccumulatorContract": "5dd19e3f8e75cbf5c57d2306f74527ea328fc1c2d82f1b8e3164cfc6ed77eab9",
+    "DataAvailabilitySamplingContract": "017861e04c443db54b7291b85e7a85951d3fec811b2ced0e914a89b0adb7fb19",
+    "QuantumStateAvailabilityContract": "1d2c65ea39ae6601c73758c3036aa7d7a85b1c990438cf36cf87d4c3e1ac5e79",
+    "QuantumEntanglementSwappingPurificationContract": "26dfbf25fcdcfb7d447f229ef46b717e4e1a141e6e3f5f060e456c98049a25d6",
+    "QuantumSteaneCodeErrorCorrectionContract": "86c65a7c7f821fb8b09ee7faec8785b7c9319a919bc3d78b8c06ceaf1f9610cb"
+  },
+  "independent_stack_audit": "not_performed",
+  "physical_validation": false,
+  "third_obligation": "OPEN"
+}
