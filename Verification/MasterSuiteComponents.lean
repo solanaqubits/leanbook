@@ -1,26 +1,26 @@
-import Verification.PrometheusVariableQueue
-import Verification.PrometheusLifetimeInformation
-import Verification.PrometheusCascadedFECBound
-import Verification.PrometheusMultiLaneQueue
-import Verification.PrometheusLifetimeIdentifiability
-import Verification.PrometheusJitterWindow
-import Verification.PrometheusRSCycleModel
-import Verification.PrometheusNQKDFiniteKey
-import Verification.PrometheusThresholdTomography
-import Verification.DigitalProvenanceReadyPreparedContract
-import Verification.DigitalProvenanceChallengeRegistryContract
 import Verification.QuantumSteaneCodeErrorCorrectionContract
 import Verification.QuantumEntanglementSwappingPurificationContract
+import Verification.PrometheusThresholdTomography
 import Verification.QuantumStateAvailabilityContract
+import Verification.PrometheusNQKDFiniteKey
+import Verification.DigitalProvenanceReadyPreparedContract
 import Verification.DataAvailabilitySamplingContract
 import Verification.QuantumIVCAccumulatorContract
+import Verification.PrometheusRSCycleModel
+import Verification.PrometheusJitterWindow
 import Verification.OptospintronicTransducerContract
 import Verification.FungalMyceliumMemristorContract
 import Verification.BiohybridOrganoidSynapseContract
+import Verification.PrometheusLifetimeIdentifiability
+import Verification.PrometheusMultiLaneQueue
 import Verification.QuantumDiamondNVInterfaceContract
 import Verification.SpintronicSkyrmionSynapseContract
+import Verification.PrometheusCascadedFECBound
 import Verification.PhotonicsMachZehnderChiralContract
 import Verification.AlgebraQuaternionSpinor
+import Verification.PrometheusLifetimeInformation
+import Verification.PrometheusVariableQueue
+import Verification.DigitalProvenanceChallengeRegistryContract
 import Verification.DigitalProvenanceRecoveryContract
 import Verification.DigitalProvenanceReportContract
 import Verification.PrometheusTAKLAudit
@@ -287,8 +287,6 @@ open CryptoHiddenScalarQuotaCanonicalWireContract
   (CryptoHiddenScalarQuotaCanonicalWireContractSuite)
 
 namespace MasterSuite
-
-open QuantumEntanglementSwappingPurificationContract
 
 open QuantumQutritSecretSharingExplicitDecoder
 open QuantumQutritDecoderCircuitRefinement
@@ -645,9 +643,9 @@ structure CryptoFullSuite : Prop where
   provenance_replay : DigitalProvenanceReplayContract.ProvenanceReplaySuite
   provenance_report : DigitalProvenanceReportContract.ProvenanceReportSuite
   provenance_recovery : DigitalProvenanceRecoveryContract.ProvenanceRecoverySuite
-  provenance_ready_prepared : DigitalProvenanceReadyPreparedContract.ProofObligations
   provenance_challenge : DigitalProvenanceChallengeRegistryContract.ChallengeRegistrySuite
   data_availability : DataAvailabilitySamplingContract.DataAvailabilitySamplingSuite
+  provenance_ready_prepared : DigitalProvenanceReadyPreparedContract.ProofObligations
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -758,9 +756,9 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   provenance_replay := DigitalProvenanceReplayContract.verification_suite
   provenance_report := DigitalProvenanceReportContract.verification_suite
   provenance_recovery := DigitalProvenanceRecoveryContract.verification_suite
-  provenance_ready_prepared := DigitalProvenanceReadyPreparedContract.proof_obligations
   provenance_challenge := DigitalProvenanceChallengeRegistryContract.verification_suite
   data_availability := DataAvailabilitySamplingContract.verification_suite
+  provenance_ready_prepared := DigitalProvenanceReadyPreparedContract.proof_obligations
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :
@@ -774,17 +772,10 @@ theorem CryptoFullSuite.bls_signature_aggregation (suite : CryptoFullSuite) :
 theorem CryptoFullSuite.pedersen_commitment (suite : CryptoFullSuite) :
     CryptoPedersenCommitment.CryptoPedersenFormalSuite := suite.pedersen
 
+open QuantumEntanglementSwappingPurificationContract
+  (QuantumEntanglementSwappingPurificationSuite) in
 /-- The prescribed mode and gap models, without additional physical claims. -/
 structure QuantumPhysicsFullSuite : Prop where
-  prometheus_variable_queue : PrometheusVariableQueue.PrometheusVariableQueueSuite
-  prometheus_lifetime_information : PrometheusLifetimeInformation.PrometheusLifetimeInformationSuite
-  prometheus_cascaded_fec : PrometheusCascadedFECBound.PrometheusCascadedFECBoundSuite
-  prometheus_multilane : PrometheusMultiLaneQueue.PrometheusMultiLaneQueueSuite
-  prometheus_id : PrometheusLifetimeIdentifiability.PrometheusLifetimeIdentifiabilitySuite
-  jitter_window : PrometheusJitterWindow.PrometheusJitterWindowSuite
-  rs_cycle : PrometheusRSCycleModel.PrometheusRSCycleModelSuite
-  nqkd_finitekey : PrometheusNQKDFiniteKey.PrometheusNQKDFiniteKeySuite
-  threshold_tomography : PrometheusThresholdTomography.PrometheusThresholdTomographySuite
   hctk_scalar : HCTKScalarPartition.HCTKScalarPartitionSuite
   classical_dpi : QuantumChannelClassicalDataProcessing.QuantumChannelClassicalDataProcessingSuite
   povm_entropy : QuantumPOVMInformationEntropy.QuantumPOVMInformationEntropySuite
@@ -860,10 +851,19 @@ structure QuantumPhysicsFullSuite : Prop where
   prometheus_metrology : PrometheusMetrologyJitter.PrometheusMetrologyJitterSuite
   prometheus_nqkd : PrometheusNQKDAudit.PrometheusNQKDAuditSuite
   prometheus_takl : PrometheusTAKLAudit.PrometheusTAKLAuditSuite
+  prometheus_variable_queue : PrometheusVariableQueue.PrometheusVariableQueueSuite
+  prometheus_lifetime_information : PrometheusLifetimeInformation.PrometheusLifetimeInformationSuite
   quaternion_spinor : AlgebraQuaternionSpinor.QuaternionSpinorSuite
   mzi_chiral : PhotonicsMachZehnderChiralContract.PhotonicsMachZehnderChiralSuite
+  prometheus_cascaded_fec : PrometheusCascadedFECBound.PrometheusCascadedFECBoundSuite
   skyrmion_synapse : SpintronicSkyrmionSynapseContract.SpintronicSkyrmionSynapseSuite
+  prometheus_multilane : PrometheusMultiLaneQueue.PrometheusMultiLaneQueueSuite
+  prometheus_id : PrometheusLifetimeIdentifiability.PrometheusLifetimeIdentifiabilitySuite
   diamond_nv : QuantumDiamondNVInterfaceContract.QuantumDiamondNVInterfaceSuite
+  threshold_tomography : PrometheusThresholdTomography.PrometheusThresholdTomographySuite
+  nqkd_finitekey : PrometheusNQKDFiniteKey.PrometheusNQKDFiniteKeySuite
+  jitter_window : PrometheusJitterWindow.PrometheusJitterWindowSuite
+  rs_cycle : PrometheusRSCycleModel.PrometheusRSCycleModelSuite
   organoid_stdp : BiohybridOrganoidSynapseContract.BiohybridOrganoidSynapseSuite
   fungal_mycelium : FungalMyceliumMemristorContract.FungalMyceliumMemristorSuite
   optospintronic : OptospintronicTransducerContract.OptospintronicTransducerSuite
@@ -873,15 +873,6 @@ structure QuantumPhysicsFullSuite : Prop where
   steane_code : QuantumSteaneCodeErrorCorrectionContract.QuantumSteaneCodeErrorCorrectionSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
-  prometheus_variable_queue := PrometheusVariableQueue.verification_suite
-  prometheus_lifetime_information := PrometheusLifetimeInformation.verification_suite
-  prometheus_cascaded_fec := PrometheusCascadedFECBound.verification_suite
-  prometheus_multilane := PrometheusMultiLaneQueue.verification_suite
-  prometheus_id := PrometheusLifetimeIdentifiability.verification_suite
-  jitter_window := PrometheusJitterWindow.verification_suite
-  rs_cycle := PrometheusRSCycleModel.verification_suite
-  nqkd_finitekey := PrometheusNQKDFiniteKey.verification_suite
-  threshold_tomography := PrometheusThresholdTomography.verification_suite
   hctk_scalar := HCTKScalarPartition.verification_suite
   classical_dpi := QuantumChannelClassicalDataProcessing.verification_suite
   povm_entropy := by
@@ -983,10 +974,19 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   prometheus_metrology := PrometheusMetrologyJitter.verification_suite
   prometheus_nqkd := PrometheusNQKDAudit.verification_suite
   prometheus_takl := PrometheusTAKLAudit.verification_suite
+  prometheus_variable_queue := PrometheusVariableQueue.verification_suite
+  prometheus_lifetime_information := PrometheusLifetimeInformation.verification_suite
   quaternion_spinor := AlgebraQuaternionSpinor.verification_suite
   mzi_chiral := PhotonicsMachZehnderChiralContract.verification_suite
+  prometheus_cascaded_fec := PrometheusCascadedFECBound.verification_suite
   skyrmion_synapse := SpintronicSkyrmionSynapseContract.verification_suite
+  prometheus_multilane := PrometheusMultiLaneQueue.verification_suite
+  prometheus_id := PrometheusLifetimeIdentifiability.verification_suite
   diamond_nv := QuantumDiamondNVInterfaceContract.verification_suite
+  threshold_tomography := PrometheusThresholdTomography.verification_suite
+  nqkd_finitekey := PrometheusNQKDFiniteKey.verification_suite
+  jitter_window := PrometheusJitterWindow.verification_suite
+  rs_cycle := PrometheusRSCycleModel.verification_suite
   organoid_stdp := BiohybridOrganoidSynapseContract.verification_suite
   fungal_mycelium := FungalMyceliumMemristorContract.verification_suite
   optospintronic := OptospintronicTransducerContract.verification_suite

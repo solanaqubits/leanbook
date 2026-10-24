@@ -95,7 +95,9 @@
         "Verification.DigitalProvenanceVerificationContract",
         "Verification.DigitalProvenanceReplayContract",
         "Verification.DigitalProvenanceReportContract",
-        "Verification.DigitalProvenanceRecoveryContract"
+        "Verification.DigitalProvenanceRecoveryContract",
+        "Verification.DigitalProvenanceChallengeRegistryContract",
+        "Verification.DigitalProvenanceReadyPreparedContract"
       ],
       "description": "Finite shared-prefix distinct-square branch acquisition and recursive composition with the existing IPA witness-or-generator-relation extractor. Finite four-draw probability and heavy-prefix bounds with explicit valid-child extraction bridge. Complete finite correlated-tape tree probability from sequential conditional bounds. Bounded first-success retries under conditional failure-prefix bounds and finite expected attempt count. Checked finite candidates and explicit independent product tapes deriving exact retry probabilities and RetryBounds. Recursive checked generation from explicit messages and scalar proposals, and node-local bounded retries on fresh independent composite-attempt tapes. Fixed-fork partial child cache, instrumented child-call cost and comparison with complete-row reset under aligned tapes. Two supplied distinct outer-challenge trees bind a public scalar c or extract an explicit relation in the original generator basis. Algebraic consistency of a supplied Pedersen opening fork and two IPA trees at its extracted scalar, with relation transport to the extended basis. Uncompressed hidden inner-product interactive protocol: three-point extraction or relation, and exact full-transcript HVZK under bijective blinding. Single-path hidden-inner-product IPA compression with causal independent execution, exact postprocessing HVZK, and algebraic extraction from six supplied accepting trees. Snapshot-indexed finite acquisition of six IPA trees with provenance, failure-preserving logs, exact clean costs and conditional finite-schedule probability bounds. Conditional retained-branch quota bounds for the actual snapshot collector, including retries and duplicate filtering, with direct 4/2/3-level adapters. Independent finite full-probe schedules imply actual ProgressBounds from local success density and per-class mass caps; fresh-coordinate proof and direct 4/2/3 acquisition adapters. Exact finite child-law averaging at reachable snapshots derives full-probe density; class weights preserved, positive quota threshold, unchanged collectors. Recursive snapshot-indexed finite seed laws derive child bounds bottom-up from actual leaf checks; quota4/2/3 and unchanged acquisition/extraction. Single causal execution, compressed verifier equivalence, snapshot provenance and finite heavy-prefix adapter. Guarded local single-path decomposition, quota profile monotonicity and recursive threshold acquisition/extraction bound. Finite weighted tape averaging of guarded threshold bounds with dependent plan seed spaces. Weighted heavy-tape splitting and global acceptance to guarded acquisition bounds with explicit good-tape margins. Recursive decidable arithmetic margins, exact finite minimum and certified positive-mass extraction. Explicit diagonal products, budget monotonicity, margin powers and budget-sensitive tape adapters. Quota deficit submultiplicativity, geometric block bounds and explicit multiblock tape budgets. Constructive minimum geometric block budgets, root deficit targets and outside-set error decomposition. Exact finite reference-quota budget search, global minimality on success and bounded failure. Materialized quota rows with unconditional rational and bounded-search equivalence. Streaming budget search reuses rows and preserves the exact first feasible result. Instrumented search preserves results and counts checks, transitions and active row updates. Exact tabular vs streaming row accounting, triangular savings on active states and absorbed-state exceptions. Fast absorbed and zero-window branches, exact Option equality and branch-sensitive row counters. Certified exhausted cursors retain rows and failed prefixes; resumable finite search preserves global minimality under explicit window conditions. Instrumented resumption preserves full cursor results and counts actual transitions; four-counter additivity for nondecreasing windows. Full retained-result cold bridge and exact state/cost pair equality for finite nondecreasing resumption chains. Fast successful start, full retained-result equality and honest extra delegated threshold check. Actual chains with fast start, full state/cost equality and a single extra fallback check."
     },
@@ -172,6 +174,14 @@
       ],
       "description": "Finite Born-law BB84 interception, noninformative-instrument counterexample, and conditional golden-rule / Aharonov-Casher ring audits; no neutrino encoding, composable security or weak-QFT derivation."
     },
+    "quantum-physics/prometheus-queue-lifetime": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusVariableQueue",
+        "Verification.PrometheusLifetimeInformation"
+      ],
+      "description": "Variable input conservation, overload and finite-buffer losses; conditional finite-law score information, injector yield and lifetime/loss identifiability."
+    },
     "quantum-physics/quaternion-spinor": {
       "direction": "quantum-physics",
       "modules": [
@@ -185,6 +195,13 @@
         "Verification.PhotonicsMachZehnderChiralContract"
       ],
       "description": "Coherent lossless two-mode Hadamard MZI with phase-flip mirror, intensity conservation and exact routing; physical chirality and external control energy not proved."
+    },
+    "quantum-physics/prometheus-cascaded-fec": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusCascadedFECBound"
+      ],
+      "description": "Exact five-vote and byte pushforward laws and conditional IID weighted Chernoff bound; no decoder implementation or distribution-free CRC guarantee."
     },
     "quantum-physics/skyrmion-synapse": {
       "direction": "quantum-physics",
@@ -200,12 +217,28 @@
       ],
       "description": "Rational optical population transfer and contrast, geometric residual and ideal complex microwave pi isometry. No calibrated NV/ISC dynamics, quantum nondemolition readout or physical coherence retention claim."
     },
+    "quantum-physics/prometheus-multilane-identifiability": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusMultiLaneQueue",
+        "Verification.PrometheusLifetimeIdentifiability"
+      ],
+      "description": "Global to vector FIFO envelope with inclusive capacity and conditional two-bin Poisson mean identifiability; calibrated efficiencies only, no hardware WCET or achieved precision."
+    },
     "quantum-physics/organoid-stdp": {
       "direction": "quantum-physics",
       "modules": [
         "Verification.BiohybridOrganoidSynapseContract"
       ],
       "description": "Signed rational STDP window, clamped weights and finite ensemble normalization to a nonnegative abstract resource budget. No physiological hyperexcitability or metabolic safety claim."
+    },
+    "quantum-physics/prometheus-jitter-cycle": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusJitterWindow",
+        "Verification.PrometheusRSCycleModel"
+      ],
+      "description": "L2 and explicitly joint Gaussian relative-jitter laws; deterministic wide-macrocycle control schedule, not hardware WCET or decoder refinement."
     },
     "quantum-physics/fungal-mycelium": {
       "direction": "quantum-physics",
@@ -235,12 +268,26 @@
       ],
       "description": "Distinct-point polynomial reconstruction and finite uniform with-replacement DAS probability; static authentic shares assumed, no network or quantum-state guarantee."
     },
+    "quantum-physics/prometheus-finitekey": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusNQKDFiniteKey"
+      ],
+      "description": "Conditional integer finite-key budget, explicit abort and scalar sampling/hash residual bounds; no quantum security bridge."
+    },
     "quantum-physics/quantum-state-availability": {
       "direction": "quantum-physics",
       "modules": [
         "Verification.QuantumStateAvailabilityContract"
       ],
       "description": "Ideal complete Bell projection, local reduced states and exact Pauli recovery; logical NV embedding and supplied-metadata release gate, not physical availability or authentication."
+    },
+    "quantum-physics/prometheus-threshold-tomography": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.PrometheusThresholdTomography"
+      ],
+      "description": "Finite MI counterexamples and conditional linearized observation rank; no physical/global numerical certificate."
     },
     "quantum-physics/entanglement-swapping-purification": {
       "direction": "quantum-physics",
@@ -255,51 +302,6 @@
         "Verification.QuantumSteaneCodeErrorCorrectionContract"
       ],
       "description": "Seven-qubit CSS checks, phase-aware single-Pauli recovery and exact distance; no hardware fault-tolerance claim."
-    },
-    "quantum-physics/prometheus-queue-lifetime": {
-      "direction": "quantum-physics",
-      "modules": [
-        "Verification.PrometheusVariableQueue",
-        "Verification.PrometheusLifetimeInformation"
-      ],
-      "description": "Variable input conservation, overload and finite-buffer losses; conditional finite-law score information, injector yield and lifetime/loss identifiability."
-    },
-    "quantum-physics/prometheus-cascaded-fec": {
-      "direction": "quantum-physics",
-      "modules": [
-        "Verification.PrometheusCascadedFECBound"
-      ],
-      "description": "Exact five-vote and byte pushforward laws and conditional IID weighted Chernoff bound; no decoder implementation or distribution-free CRC guarantee."
-    },
-    "quantum-physics/prometheus-multilane-identifiability": {
-      "direction": "quantum-physics",
-      "modules": [
-        "Verification.PrometheusMultiLaneQueue",
-        "Verification.PrometheusLifetimeIdentifiability"
-      ],
-      "description": "Global to vector FIFO envelope with inclusive capacity and conditional two-bin Poisson mean identifiability; calibrated efficiencies only, no hardware WCET or achieved precision."
-    },
-    "quantum-physics/prometheus-jitter-cycle": {
-      "direction": "quantum-physics",
-      "modules": [
-        "Verification.PrometheusJitterWindow",
-        "Verification.PrometheusRSCycleModel"
-      ],
-      "description": "L2 and explicitly joint Gaussian relative-jitter laws; deterministic wide-macrocycle control schedule, not hardware WCET or decoder refinement."
-    },
-    "quantum-physics/prometheus-finitekey": {
-      "direction": "quantum-physics",
-      "modules": [
-        "Verification.PrometheusNQKDFiniteKey"
-      ],
-      "description": "Conditional integer finite-key budget, explicit abort and scalar sampling/hash residual bounds; no quantum security bridge."
-    },
-    "quantum-physics/prometheus-threshold-tomography": {
-      "direction": "quantum-physics",
-      "modules": [
-        "Verification.PrometheusThresholdTomography"
-      ],
-      "description": "Finite MI counterexamples and conditional linearized observation rank; no physical/global numerical certificate."
     }
   },
   "infrastructure_batches": {

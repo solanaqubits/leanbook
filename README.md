@@ -30,6 +30,8 @@ the components in larger formal developments.
 
 ## Verified snapshot
 
+[Combined synchronization v0.7.48](docs/release-v0.7.48.en.md) reconciles all completed streams and preserves their verification boundaries.
+
 **284 direct imports in MasterSuite**, **328 Lean sources including Verification.lean**.
 The [bounded Prometheus synchronization](docs/prometheus-lean-sync.en.md) adds nine
 conditional model modules and their public verification scope.

@@ -11,6 +11,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    env:
+      LEAN_NUM_THREADS: "1"
 
     steps:
       - uses: actions/checkout@v5
@@ -24,11 +26,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends libsodium23=1.0.18-1ubuntu0.24.04.1
           python3 -c 'import json; from tools.provenance_native.build import qualify; qualify(json.load(open("tools/provenance_native/profile.json")))'
-      - name: Verifier CLI regression tests
+      - name: Explicit qutrit specification
+        run: lake env lean -j1 -DwarningAsError=true Verification/Specs/QuantumQutritDecoderSpec.lean
+      # Target-qualified SQLite tests have a separate explicit opt-in. Hosted CI
+      # does not install the host-specific artifact pinned by profile.json.
+      - name: Portable verifier and native-crypto regressions (SQLite target tests excluded)
         run: LEAN_VERIFIER_LIVE_TESTS=1 python3 -m unittest discover -s tests -v
       - name: Verify all modules through the CLI
         run: |
-          python3 tools/verifier_skill.py verify-all > verifier-report.json || {
+          python3 tools/verifier_skill.py --timeout 3600 verify-all > verifier-report.json || {
             cat verifier-report.json
             exit 1
           }
