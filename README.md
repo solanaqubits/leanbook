@@ -39,8 +39,8 @@ the components in larger formal developments.
 **300 direct imports in MasterSuite**, **349 library Lean sources including Verification.lean**.
 The separate `AlccVerifyMain.lean` CLI, auxiliary tooling and test fixtures are outside
 this library-source metric.
-The [300-module extension](docs/toward-300.en.md) records the additions and scope;
-release status is separate from source integration.
+The [v0.9.0 beta checkpoint](docs/release-v0.9.0.en.md) records the full validation
+of the [300-module extension](docs/toward-300.en.md).
 
 ALCC is an additive batch on top of v0.7.48, released with a new full-validation checkpoint; see the
 [public integration record](docs/release-v0.8.0.en.md).
@@ -48,7 +48,8 @@ The [bounded Prometheus synchronization](docs/prometheus-lean-sync.en.md) adds n
 conditional model modules and their public verification scope.
 [Release v0.7.47](docs/release-v0.7.47.en.md) adds granular provenance reports,
 an explicit pinned native IO adapter and sequential replay-registry recovery.
-Lake remains 0.7.1; the designated full public beta basis remains v0.7.1.
+The Lake package metadata retains version 0.7.1; checkpoint tags follow the
+separate [hierarchical version policy](VERSIONING.md).
 
 [Native adapter](tools/provenance_native/README.md) ·
 [Snapshot format](docs/quota-codec-v1.en.md) ·
