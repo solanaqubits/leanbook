@@ -12,6 +12,7 @@ import subprocess
 import sys
 import time
 from verification_plan import plan
+from lean_invoke import elaborate_command
 
 ALLOWED = {'propext','Classical.choice','Quot.sound'}
 AUDITOR_SHA = '8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254'
@@ -19,6 +20,16 @@ AUDITOR_SHA = '8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254'
 
 def digest(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+
+def audited_modules(inputs):
+    """Explicit source scope, including modules outside the root import graph."""
+    return sorted(n[:-5].replace('/', '.') for n in inputs
+                  if n.startswith('Verification/') and n.endswith('.lean'))
+
+
+def strict_build_command(inputs):
+    return ['lake', 'build', '--wfail', 'Verification', *audited_modules(inputs)]
 
 
 def snapshot(root):
@@ -94,6 +105,17 @@ def validate_report(root, directory, expected_digest=None):
                 evidence_sha256=digest(path),authentication='Not established by hashes alone')
 
 
+def beta_commands(inputs, auditor):
+    return [('root-build',strict_build_command(inputs)),
+      ('verify-all',['python3','tools/verifier_skill.py','--timeout','3600','verify-all']),
+      ('registry-audit',elaborate_command('Verification/AxiomAudit.lean')),
+      ('independent-audit',['lake','env',str(auditor),'--root','Verification','--modules-from','Verification','--allow',','.join(sorted(ALLOWED)),'--json']),
+      ('all-tests',['python3','-m','unittest','discover','-s','tests','-v']),
+      ('knowledge',['python3','scripts/check_knowledge.py']),
+      ('scope',['python3','tools/verification_plan.py','--rank','beta']),
+      ('diff',['git','diff','--check'])]
+
+
 def run_beta(root, directory, auditor):
     root,directory,auditor=Path(root).resolve(),Path(directory).resolve(),Path(auditor).resolve()
     if directory.is_relative_to(root):
@@ -107,14 +129,7 @@ def run_beta(root, directory, auditor):
            auditor_sha256=digest(auditor),runtime=runtime_fingerprint(root),test_environment={'LEAN_VERIFIER_LIVE_TESTS':'1'},
            conformance_scope=['Simon pinned pilot','Qutrit decoder pinned contract'],
            universal_semantic_conformance=False)
-    commands=[('root-build',['lake','build','--wfail']),
-      ('verify-all',['python3','tools/verifier_skill.py','--timeout','3600','verify-all']),
-      ('registry-audit',['lake','env','lean','-j1','-DwarningAsError=true','Verification/AxiomAudit.lean']),
-      ('independent-audit',['lake','env',str(auditor),'--root','Verification','--modules-from','Verification','--allow',','.join(sorted(ALLOWED)),'--json']),
-      ('all-tests',['python3','-m','unittest','discover','-s','tests','-v']),
-      ('knowledge',['python3','scripts/check_knowledge.py']),
-      ('scope',['python3','tools/verification_plan.py','--rank','beta']),
-      ('diff',['git','diff','--check'])]
+    commands = beta_commands(inputs, auditor)
     for name,cmd in commands:
         print('RUN '+name,flush=True);start=time.monotonic();log=directory/(name+'.log')
         with log.open('w') as f:
