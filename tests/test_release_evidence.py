@@ -14,6 +14,10 @@ from release_evidence import digest, snapshot, validate_report, AUDITOR_SHA
 class EvidenceTests(unittest.TestCase):
     def setUp(self):
         mock=patch("release_evidence.runtime_fingerprint",return_value={"test_runtime":1});mock.start();self.addCleanup(mock.stop)
+        clean = patch('release_evidence.validate_clean_receipt', return_value={
+            'coverage': {'fresh_modules': ['Verification', 'Verification.A']},
+            'reused_dependency_packages': []})
+        clean.start(); self.addCleanup(clean.stop)
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup)
         self.root=Path(self.tmp.name)/'repo';self.root.mkdir()
         subprocess.run(['git','init','-q'],cwd=self.root,check=True)
@@ -26,7 +30,10 @@ class EvidenceTests(unittest.TestCase):
               'independent-audit':json.dumps(dict(ok=True,violations=[],audited=1,axiomsUsed=[])),
               'all-tests':'Ran 1 tests in 0.1s\n\nOK\n',
               'registry-audit':'passed','knowledge':'passed','scope':'{}','diff':''}
-        self.report=dict(schema_version=1,rank='beta',status='passed',inputs=inputs,checks=[],auditor_sha256=AUDITOR_SHA,runtime={'test_runtime':1})
+        (self.out/'clean-project').mkdir()
+        (self.out/'clean-project/receipt.json').write_text('{}')
+        (self.out/'clean-project/build.log').write_text(logs['root-build'])
+        self.report=dict(schema_version=2,rank='beta',status='passed',inputs=inputs,checks=[],auditor_sha256=AUDITOR_SHA,runtime={'test_runtime':1}, clean_project_receipt_sha256=digest(self.out/'clean-project/receipt.json'))
         for n,text in logs.items():
             p=self.out/(n+'.log');p.write_text(text)
             self.report['checks'].append(dict(name=n,exit_code=0,log=p.name,log_sha256=digest(p)))
@@ -38,6 +45,16 @@ class EvidenceTests(unittest.TestCase):
     def test_runtime_change_rejected(self):
         self.report['runtime'] = {'test_runtime':2};self.save()
         with self.assertRaises(ValueError):validate_report(self.root,self.out)
+    def test_legacy_cached_gate_is_not_new_beta(self):
+        self.report['schema_version'] = 1; self.save()
+        with self.assertRaises(ValueError): validate_report(self.root,self.out)
+    def test_missing_clean_receipt_pin_rejected(self):
+        del self.report['clean_project_receipt_sha256']; self.save()
+        with self.assertRaises(ValueError): validate_report(self.root,self.out)
+    def test_clean_receipt_validator_failure_propagates(self):
+        with patch('release_evidence.validate_clean_receipt', side_effect=ValueError('cached graph')):
+            with self.assertRaisesRegex(ValueError, 'cached graph'):
+                validate_report(self.root,self.out)
     def test_failed_check_rejected(self):
         self.report['checks'][0]['exit_code']=1;self.save()
         with self.assertRaises(ValueError):validate_report(self.root,self.out)

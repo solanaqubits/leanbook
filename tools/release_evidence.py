@@ -13,6 +13,7 @@ import sys
 import time
 from verification_plan import plan
 from lean_invoke import elaborate_command
+from clean_project_build import validate_receipt as validate_clean_receipt
 
 ALLOWED = {'propext','Classical.choice','Quot.sound'}
 AUDITOR_SHA = '8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254'
@@ -60,7 +61,7 @@ def validate_report(root, directory, expected_digest=None):
     if expected_digest and digest(path) != expected_digest:
         raise ValueError('Evidence digest mismatch')
     r=json.loads(path.read_text())
-    if r.get('schema_version') != 1 or r.get('rank') != 'beta' or r.get('status') != 'passed':
+    if r.get('schema_version') != 2 or r.get('rank') != 'beta' or r.get('status') != 'passed':
         raise ValueError('Incomplete beta evidence')
     required={'root-build','verify-all','registry-audit','independent-audit','all-tests','knowledge','scope','diff'}
     if len(r['checks']) != len(required) or {c['name'] for c in r['checks']} != required:
@@ -94,19 +95,25 @@ def validate_report(root, directory, expected_digest=None):
     match=re.search(r'Ran (\d+) tests',test)
     if not match or int(match[1]) <= 0 or not re.search(r'^OK\s*$',test,re.M) or re.search(r'\bskipped\b',test,re.I):
         raise ValueError('Missing tests or unexpected skips')
-    build=(directory/by['root-build']['log']).read_text()
+    clean_directory = directory / 'clean-project'
+    if digest(clean_directory / 'receipt.json') != r.get('clean_project_receipt_sha256'):
+        raise ValueError('Clean-project receipt pin mismatch')
+    clean = validate_clean_receipt(root, clean_directory)
+    build=(clean_directory / 'build.log').read_text()
     jobs=re.search(r'Build completed successfully \((\d+) jobs\)',build)
     if not jobs or re.search(r'\bwarning:',build,re.I):
         raise ValueError('Invalid strict build')
     return dict(ok=True,checked_files=len(r['inputs']),lean_sources=len(expected)+1,
                 declarations=v['audit']['declarations'],independent_declarations=independent['audited'],
                 unittest_count=int(match[1]),build_jobs=int(jobs[1]),
-                fresh_modules=re.findall(r'Built (Verification(?:\.[A-Za-z0-9_]+)?) \(',build),
+                fresh_modules=clean['coverage']['fresh_modules'],
+                reused_dependency_packages=clean['reused_dependency_packages'],
                 evidence_sha256=digest(path),authentication='Not established by hashes alone')
 
 
-def beta_commands(inputs, auditor):
-    return [('root-build',strict_build_command(inputs)),
+def beta_commands(inputs, auditor, directory):
+    return [('root-build',['python3', 'tools/clean_project_build.py',
+                          '--output', str(Path(directory) / 'clean-project')]),
       ('verify-all',['python3','tools/verifier_skill.py','--timeout','3600','verify-all']),
       ('registry-audit',elaborate_command('Verification/AxiomAudit.lean')),
       ('independent-audit',['lake','env',str(auditor),'--root','Verification','--modules-from','Verification','--allow',','.join(sorted(ALLOWED)),'--json']),
@@ -124,18 +131,20 @@ def run_beta(root, directory, auditor):
     if digest(auditor) != AUDITOR_SHA:
         raise ValueError('Independent auditor binary pin mismatch')
     inputs=snapshot(root)
-    r=dict(schema_version=1,rank='beta',status='running',inputs=inputs,checks=[],
+    r=dict(schema_version=2,rank='beta',status='running',inputs=inputs,checks=[],
            base_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),
            auditor_sha256=digest(auditor),runtime=runtime_fingerprint(root),test_environment={'LEAN_VERIFIER_LIVE_TESTS':'1'},
            conformance_scope=['Simon pinned pilot','Qutrit decoder pinned contract'],
            universal_semantic_conformance=False)
-    commands = beta_commands(inputs, auditor)
+    commands = beta_commands(inputs, auditor, directory)
     for name,cmd in commands:
         print('RUN '+name,flush=True);start=time.monotonic();log=directory/(name+'.log')
         with log.open('w') as f:
             p=subprocess.run(cmd,cwd=root,env={**os.environ,'LEAN_VERIFIER_LIVE_TESTS':'1'},stdout=f,stderr=subprocess.STDOUT)
         c=dict(name=name,command=cmd,exit_code=p.returncode,seconds=round(time.monotonic()-start,3),log=log.name,log_sha256=digest(log))
         r['checks'].append(c)
+        if name == 'root-build' and p.returncode == 0:
+            r['clean_project_receipt_sha256'] = digest(directory/'clean-project/receipt.json')
         if p.returncode: r['status']='failed'
         (directory/'evidence.json').write_text(json.dumps(r,indent=2)+'\n')
         print(json.dumps(c),flush=True)

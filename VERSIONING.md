@@ -62,7 +62,9 @@ registry dependents are always built. Explicit reviewed test selection is still
 required for scoped runs; the planner does not infer test coverage from names.
 It does not infer whether arbitrary natural-language requirements are correct.
 
-Beta runs on the final tree, preserving .lake/build:
+Beta runs on the final tree with a fresh project `.lake/build`. Mount external
+`.lake/packages` dependencies read-only (including resolved symlink targets);
+their prebuilt caches are preserved. Ordinary development remains incremental.
 
 ```bash
 python3 tools/release_evidence.py run-beta --output /absolute/external/evidence \
@@ -76,6 +78,15 @@ reports, unexpected skips or changed inputs reject the checkpoint. The full
 unittest includes the registered Simon and qutrit statement-conformance checks.
 Full proof checking is not universal independent specification checking: record
 which modules have normative conformance contracts and which do not.
+
+The initial build now uses `tools/clean_project_build.py`: all declared library
+modules, library roots and executable roots/targets are explicit. It clears only
+the project build directory, disables artifact restoration/downloads, and requires
+fresh compilation coverage for every planned module. Evidence schema 2 binds the
+clean-build receipt, dependency cache hashes, per-target Built/Replayed records,
+and project artifact hashes. Schema 1 historical evidence cannot qualify a new
+beta under this rule. Unregistered test/tool scripts remain separate later checks;
+the clean-build receipt alone is not a complete beta.
 
 Only propext, Classical.choice and Quot.sound are allowed. No sorry, admit,
 user axioms or native-decide bypasses. Do not duplicate an audit immediately

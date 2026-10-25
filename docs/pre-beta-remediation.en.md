@@ -38,9 +38,9 @@ remain distinguishable from production elaboration.
 
 ## Required subsequent work
 
-Stage 1 does **not** enforce a clean project build. The current release-evidence
-validator must not be treated as the completed revised beta gate. Before a new
-qualification, implement and test:
+Stage 1 did **not** enforce a clean project build. The subsequent
+[clean-project mechanism](clean-project-build.en.md) adds this requirement with
+beta evidence schema 2. Before a new qualification, complete and validate:
 
 1. An initially empty project artifact graph, preserving external dependency
    artifacts; explicit project-source/target coverage, Built/Replayed accounting

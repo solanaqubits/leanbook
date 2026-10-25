@@ -38,9 +38,9 @@ class InvocationTests(unittest.TestCase):
                          'documentation-or-comment')
 
     def test_gate_and_ci_use_configured_elaboration(self):
-        commands = beta_commands({'Verification/A.lean': 'a'}, '/auditor')
-        self.assertEqual(commands[0], ('root-build', strict_build_command(
-            {'Verification/A.lean': 'a'})))
+        commands = beta_commands({'Verification/A.lean': 'a'}, '/auditor', '/evidence')
+        self.assertEqual(commands[0], ('root-build', ['python3',
+            'tools/clean_project_build.py', '--output', '/evidence/clean-project']))
         self.assertEqual(dict(commands)['registry-audit'],
                          elaborate_command('Verification/AxiomAudit.lean'))
         self.assertLess([n for n, _ in commands].index('root-build'),

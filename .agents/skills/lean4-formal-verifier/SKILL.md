@@ -37,8 +37,9 @@ successful `verify` with `audit` for the same unchanged inputs. `audit` is an
 alternative entry point, not an independent second auditor. `card` also verifies;
 use it when a generated draft is needed, not as another routine check.
 
-Keep Lake's incremental cache. Do not delete `.lake/build` or request clean
-rebuilds on every edit. Checking one module follows its imports, not its reverse
+Keep Lake's incremental cache during development. Do not delete `.lake/build` or
+request clean rebuilds on every edit. Beta qualification below has a separate
+clean-project requirement. Checking one module follows its imports, not its reverse
 dependents: when changing an existing API, also build affected importing modules
 and run their relevant regressions. Expand the scope if dependencies are unclear.
 Documentation-only edits need documentation/catalog checks, not Lean rechecking.
@@ -52,7 +53,10 @@ Escalate cross-direction changes and trust/toolchain changes as the policy requi
 
 For beta run `tools/release_evidence.py run-beta` with an external evidence directory
 and the pinned independent auditor. This runs every proof, all live tests, registry
-integration, registered conformance checks and catalog checks with cache retained.
+integration, registered conformance checks and catalog checks. Its initial build
+invalidates only project artifacts; mount external dependency caches read-only.
+The clean-build receipt must cover every planned project module and CLI target;
+one or several fresh modules are insufficient. Do not rebuild Mathlib per tree.
 Do not describe registered conformance coverage as independent semantic review of
 all modules. Consult [the hierarchy guide](../../../docs/verification-hierarchy.en.md)
 and [qutrit contract](../../../docs/qutrit-conformance.en.md) for those workflows.
