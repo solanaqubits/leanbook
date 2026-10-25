@@ -1,3 +1,16 @@
+import Verification.DeFiLendingUtilizationTransitions
+import Verification.DeFiFiniteRouteSelection
+import Verification.DeFiStatefulAMMRouting
+import Verification.DeFiAMMIntegerSwap
+import Verification.DeFiAMMExactOutput
+import Verification.CryptoGroth16PairingEquation
+import Verification.CryptoKZGOpeningEquation
+import Verification.CryptoQualifiedDealerSharing
+import Verification.CryptoThresholdBLSGroup
+import Verification.CryptoShamirRefresh
+import Verification.CryptoShamirShareRepair
+import Verification.CryptoPedersenVSSGroup
+import Verification.CryptoFeldmanVSSGroup
 import Verification.AlgebraicCertificateVerify
 import Verification.AlgebraicCertificateCompleteness
 import Verification.AlgebraicCertificateKernel
@@ -649,6 +662,14 @@ structure CryptoFullSuite : Prop where
   provenance_challenge : DigitalProvenanceChallengeRegistryContract.ChallengeRegistrySuite
   data_availability : DataAvailabilitySamplingContract.DataAvailabilitySamplingSuite
   provenance_ready_prepared : DigitalProvenanceReadyPreparedContract.ProofObligations
+  feldman_group : CryptoFeldmanVSSGroup.CryptoFeldmanVSSGroupSuite
+  pedersen_vss : CryptoPedersenVSSGroup.CryptoPedersenVSSGroupSuite
+  share_repair : CryptoShamirShareRepair.CryptoShamirShareRepairSuite
+  share_refresh : CryptoShamirRefresh.CryptoShamirRefreshSuite
+  threshold_bls : CryptoThresholdBLSGroup.CryptoThresholdBLSGroupSuite
+  qualified_sharing : CryptoQualifiedDealerSharing.CryptoQualifiedDealerSharingSuite
+  kzg_equation : CryptoKZGOpeningEquation.CryptoKZGOpeningEquationSuite
+  groth16_pairing : CryptoGroth16PairingEquation.CryptoGroth16PairingEquationSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -762,6 +783,14 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   provenance_challenge := DigitalProvenanceChallengeRegistryContract.verification_suite
   data_availability := DataAvailabilitySamplingContract.verification_suite
   provenance_ready_prepared := DigitalProvenanceReadyPreparedContract.proof_obligations
+  feldman_group := CryptoFeldmanVSSGroup.verification_suite
+  pedersen_vss := CryptoPedersenVSSGroup.verification_suite
+  share_repair := CryptoShamirShareRepair.verification_suite
+  share_refresh := CryptoShamirRefresh.verification_suite
+  threshold_bls := CryptoThresholdBLSGroup.verification_suite
+  qualified_sharing := CryptoQualifiedDealerSharing.verification_suite
+  kzg_equation := CryptoKZGOpeningEquation.verification_suite
+  groth16_pairing := CryptoGroth16PairingEquation.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :
@@ -1079,6 +1108,11 @@ structure FinanceRiskFullSuite : Prop extends FinanceDeFiFullSuite where
   liquidation_accounting : DeFiLendingLiquidationAccounting.DeFiLendingLiquidationAccountingSuite
   utilization_feedback : DeFiLendingUtilizationFeedbackStabilitySuite
   bad_debt : DeFiLendingBadDebtSocialization.DeFiLendingBadDebtSocializationSuite
+  exact_output : DeFiAMMExactOutput.DeFiAMMExactOutputSuite
+  integer_swap : DeFiAMMIntegerSwap.DeFiAMMIntegerSwapSuite
+  stateful_routes : DeFiStatefulAMMRouting.DeFiStatefulAMMRoutingSuite
+  route_selection : DeFiFiniteRouteSelection.DeFiFiniteRouteSelectionSuite
+  lending_step : DeFiLendingUtilizationTransitions.DeFiLendingUtilizationTransitionsSuite
 
 theorem finance_risk_full_master_suite : FinanceRiskFullSuite := {
   liquidation_health := by
@@ -1112,6 +1146,11 @@ theorem finance_risk_full_master_suite : FinanceRiskFullSuite := {
   liquidation_accounting := DeFiLendingLiquidationAccounting.verification_suite
   utilization_feedback := DeFiLendingUtilizationFeedbackStability.verification_suite
   bad_debt := DeFiLendingBadDebtSocialization.verification_suite
+  exact_output := DeFiAMMExactOutput.verification_suite
+  integer_swap := DeFiAMMIntegerSwap.verification_suite
+  stateful_routes := DeFiStatefulAMMRouting.verification_suite
+  route_selection := DeFiFiniteRouteSelection.verification_suite
+  lending_step := DeFiLendingUtilizationTransitions.verification_suite
 }
 
 /-- Alias for the existing concentrated-liquidity component. -/

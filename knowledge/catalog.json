@@ -614,6 +614,19 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.DeFiLendingUtilizationTransitions",
+        "Verification.DeFiFiniteRouteSelection",
+        "Verification.DeFiStatefulAMMRouting",
+        "Verification.DeFiAMMIntegerSwap",
+        "Verification.DeFiAMMExactOutput",
+        "Verification.CryptoGroth16PairingEquation",
+        "Verification.CryptoKZGOpeningEquation",
+        "Verification.CryptoQualifiedDealerSharing",
+        "Verification.CryptoThresholdBLSGroup",
+        "Verification.CryptoShamirRefresh",
+        "Verification.CryptoShamirShareRepair",
+        "Verification.CryptoPedersenVSSGroup",
+        "Verification.CryptoFeldmanVSSGroup",
         "Verification.AlgebraicCertificateVerify",
         "Verification.AlgebraicCertificateCompleteness",
         "Verification.AlgebraicCertificateKernel",
@@ -1539,6 +1552,19 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.DeFiLendingUtilizationTransitions",
+        "Verification.DeFiFiniteRouteSelection",
+        "Verification.DeFiStatefulAMMRouting",
+        "Verification.DeFiAMMIntegerSwap",
+        "Verification.DeFiAMMExactOutput",
+        "Verification.CryptoGroth16PairingEquation",
+        "Verification.CryptoKZGOpeningEquation",
+        "Verification.CryptoQualifiedDealerSharing",
+        "Verification.CryptoThresholdBLSGroup",
+        "Verification.CryptoShamirRefresh",
+        "Verification.CryptoShamirShareRepair",
+        "Verification.CryptoPedersenVSSGroup",
+        "Verification.CryptoFeldmanVSSGroup",
         "Verification.AlgebraicCertificateVerify",
         "Verification.AlgebraicCertificateCompleteness",
         "Verification.AlgebraicCertificateKernel",
@@ -3926,6 +3952,136 @@
         "Verification.AlgebraicCertificateBound",
         "Verification.AlgebraicCertificateCompleteness"
       ]
+    },
+    {
+      "id": "CryptoFeldmanVSSGroup",
+      "section": "cryptography",
+      "source": "Verification/CryptoFeldmanVSSGroup.lean",
+      "card": "knowledge/cryptography/CryptoFeldmanVSSGroup.en.md",
+      "project_imports": [
+        "Verification.CryptoShamirSecretSharingGroup"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "CryptoPedersenVSSGroup",
+      "section": "cryptography",
+      "source": "Verification/CryptoPedersenVSSGroup.lean",
+      "card": "knowledge/cryptography/CryptoPedersenVSSGroup.en.md",
+      "project_imports": [
+        "Verification.CryptoFeldmanVSSGroup",
+        "Verification.CryptoPedersenHomomorphicSum"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "CryptoShamirShareRepair",
+      "section": "cryptography",
+      "source": "Verification/CryptoShamirShareRepair.lean",
+      "card": "knowledge/cryptography/CryptoShamirShareRepair.en.md",
+      "project_imports": [
+        "Verification.CryptoFeldmanVSSGroup"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "CryptoShamirRefresh",
+      "section": "cryptography",
+      "source": "Verification/CryptoShamirRefresh.lean",
+      "card": "knowledge/cryptography/CryptoShamirRefresh.en.md",
+      "project_imports": [
+        "Verification.CryptoFeldmanVSSGroup"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "CryptoThresholdBLSGroup",
+      "section": "cryptography",
+      "source": "Verification/CryptoThresholdBLSGroup.lean",
+      "card": "knowledge/cryptography/CryptoThresholdBLSGroup.en.md",
+      "project_imports": [
+        "Verification.CryptoBLSSignatureAggregationGroup",
+        "Verification.CryptoShamirSecretSharingGroup"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "CryptoQualifiedDealerSharing",
+      "section": "cryptography",
+      "source": "Verification/CryptoQualifiedDealerSharing.lean",
+      "card": "knowledge/cryptography/CryptoQualifiedDealerSharing.en.md",
+      "project_imports": [
+        "Verification.CryptoFeldmanVSSGroup"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "CryptoKZGOpeningEquation",
+      "section": "cryptography",
+      "source": "Verification/CryptoKZGOpeningEquation.lean",
+      "card": "knowledge/cryptography/CryptoKZGOpeningEquation.en.md",
+      "project_imports": [
+        "Verification.CryptoBLSSignatureAggregationGroup"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "CryptoGroth16PairingEquation",
+      "section": "cryptography",
+      "source": "Verification/CryptoGroth16PairingEquation.lean",
+      "card": "knowledge/cryptography/CryptoGroth16PairingEquation.en.md",
+      "project_imports": [
+        "Verification.CryptoBLSSignatureAggregationGroup"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "DeFiAMMExactOutput",
+      "section": "finance",
+      "source": "Verification/DeFiAMMExactOutput.lean",
+      "card": "knowledge/finance/DeFiAMMExactOutput.en.md",
+      "project_imports": [
+        "Verification.DeFiAMMInvariants"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "DeFiAMMIntegerSwap",
+      "section": "finance",
+      "source": "Verification/DeFiAMMIntegerSwap.lean",
+      "card": "knowledge/finance/DeFiAMMIntegerSwap.en.md",
+      "project_imports": [],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "DeFiStatefulAMMRouting",
+      "section": "finance",
+      "source": "Verification/DeFiStatefulAMMRouting.lean",
+      "card": "knowledge/finance/DeFiStatefulAMMRouting.en.md",
+      "project_imports": [
+        "Verification.DeFiAMMInvariants"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "DeFiFiniteRouteSelection",
+      "section": "finance",
+      "source": "Verification/DeFiFiniteRouteSelection.lean",
+      "card": "knowledge/finance/DeFiFiniteRouteSelection.en.md",
+      "project_imports": [
+        "Verification.DeFiStatefulAMMRouting"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "DeFiLendingUtilizationTransitions",
+      "section": "finance",
+      "source": "Verification/DeFiLendingUtilizationTransitions.lean",
+      "card": "knowledge/finance/DeFiLendingUtilizationTransitions.en.md",
+      "project_imports": [
+        "Verification.DeFiKinkedInterestRateUtilization"
+      ],
+      "novelty": "not-assessed"
     }
   ],
   "support_modules": [

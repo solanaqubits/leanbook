@@ -178,3 +178,19 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [DigitalProvenanceChallengeRegistryContract](../04_cryptography/DigitalProvenanceChallengeRegistryContract.md)
 
 - [DigitalProvenanceReadyPreparedContract](../04_cryptography/DigitalProvenanceReadyPreparedContract.md)
+
+- [CryptoFeldmanVSSGroup](CryptoFeldmanVSSGroup.en.md) — Arbitrary-degree finite-field group share consistency and verified reconstruction.
+
+- [CryptoPedersenVSSGroup](CryptoPedersenVSSGroup.en.md) — Joint hiding and verified polynomial Pedersen shares.
+
+- [CryptoShamirShareRepair](CryptoShamirShareRepair.en.md) — Repair at arbitrary participant coordinates.
+
+- [CryptoShamirRefresh](CryptoShamirRefresh.en.md) — Uniform zero-constant polynomial refresh.
+
+- [CryptoThresholdBLSGroup](CryptoThresholdBLSGroup.en.md) — Threshold BLS reconstruction from checked partials.
+
+- [CryptoQualifiedDealerSharing](CryptoQualifiedDealerSharing.en.md) — Aggregation after agreement on qualified dealers.
+
+- [CryptoKZGOpeningEquation](CryptoKZGOpeningEquation.en.md) — Typed pairing equation for polynomial openings.
+
+- [CryptoGroth16PairingEquation](CryptoGroth16PairingEquation.en.md) — Groth16 verification equation in distinct pairing groups.

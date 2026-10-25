@@ -36,7 +36,9 @@ the components in larger formal developments.
 
 [Combined synchronization v0.7.48](docs/release-v0.7.48.en.md) reconciles all completed streams and preserves their verification boundaries.
 
-**287 direct imports in MasterSuite**, **336 Lean sources including Verification.lean**.
+**300 direct imports in MasterSuite**, **349 Lean sources including Verification.lean**.
+The [300-module extension](docs/toward-300.en.md) records the additions and scope;
+release status is separate from source integration.
 
 ALCC is an additive batch on top of v0.7.48, released with a new full-validation checkpoint; see the
 [public integration record](docs/release-v0.8.0.en.md).

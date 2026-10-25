@@ -58,3 +58,13 @@ The models retain their stated balance, price, and fee assumptions. They do not 
 - [Authorized bad debt writeoff and supplier loss](../01_defi/DeFiLendingBadDebtSocialization.md)
 
 - [Utilization feedback stability](../01_defi/DeFiLendingUtilizationFeedbackStability.md) — conditional contraction, bounded disturbances and exact rational trajectories.
+
+- [DeFiAMMExactOutput](DeFiAMMExactOutput.en.md) — Exact-output inverse and minimum AMM input.
+
+- [DeFiAMMIntegerSwap](DeFiAMMIntegerSwap.en.md) — Natural-number AMM rounding and reserve invariants.
+
+- [DeFiStatefulAMMRouting](DeFiStatefulAMMRouting.en.md) — Reserve-updating routes with repeated pools.
+
+- [DeFiFiniteRouteSelection](DeFiFiniteRouteSelection.en.md) — Finite candidate selection with minimum-output execution.
+
+- [DeFiLendingUtilizationTransitions](DeFiLendingUtilizationTransitions.en.md) — Lending transitions conserve assets and change utilization.

@@ -2231,5 +2231,122 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "PrometheusThresholdTomography.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoFeldmanVSSGroup": {
+    "suite_struct": "CryptoFeldmanVSSGroupSuite",
+    "suite_type": "CryptoFeldmanVSSGroup.CryptoFeldmanVSSGroupSuite",
+    "parent": "CryptoFullSuite",
+    "field": "feldman_group",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoFeldmanVSSGroup.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoPedersenVSSGroup": {
+    "suite_struct": "CryptoPedersenVSSGroupSuite",
+    "suite_type": "CryptoPedersenVSSGroup.CryptoPedersenVSSGroupSuite",
+    "parent": "CryptoFullSuite",
+    "field": "pedersen_vss",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoPedersenVSSGroup.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoShamirShareRepair": {
+    "suite_struct": "CryptoShamirShareRepairSuite",
+    "suite_type": "CryptoShamirShareRepair.CryptoShamirShareRepairSuite",
+    "parent": "CryptoFullSuite",
+    "field": "share_repair",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoShamirShareRepair.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoShamirRefresh": {
+    "suite_struct": "CryptoShamirRefreshSuite",
+    "suite_type": "CryptoShamirRefresh.CryptoShamirRefreshSuite",
+    "parent": "CryptoFullSuite",
+    "field": "share_refresh",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoShamirRefresh.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoThresholdBLSGroup": {
+    "suite_struct": "CryptoThresholdBLSGroupSuite",
+    "suite_type": "CryptoThresholdBLSGroup.CryptoThresholdBLSGroupSuite",
+    "parent": "CryptoFullSuite",
+    "field": "threshold_bls",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoThresholdBLSGroup.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoQualifiedDealerSharing": {
+    "suite_struct": "CryptoQualifiedDealerSharingSuite",
+    "suite_type": "CryptoQualifiedDealerSharing.CryptoQualifiedDealerSharingSuite",
+    "parent": "CryptoFullSuite",
+    "field": "qualified_sharing",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoQualifiedDealerSharing.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoKZGOpeningEquation": {
+    "suite_struct": "CryptoKZGOpeningEquationSuite",
+    "suite_type": "CryptoKZGOpeningEquation.CryptoKZGOpeningEquationSuite",
+    "parent": "CryptoFullSuite",
+    "field": "kzg_equation",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoKZGOpeningEquation.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.CryptoGroth16PairingEquation": {
+    "suite_struct": "CryptoGroth16PairingEquationSuite",
+    "suite_type": "CryptoGroth16PairingEquation.CryptoGroth16PairingEquationSuite",
+    "parent": "CryptoFullSuite",
+    "field": "groth16_pairing",
+    "constructor": "crypto_full_master_suite",
+    "proof": "CryptoGroth16PairingEquation.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DeFiAMMExactOutput": {
+    "suite_struct": "DeFiAMMExactOutputSuite",
+    "suite_type": "DeFiAMMExactOutput.DeFiAMMExactOutputSuite",
+    "parent": "FinanceRiskFullSuite",
+    "field": "exact_output",
+    "constructor": "finance_risk_full_master_suite",
+    "proof": "DeFiAMMExactOutput.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DeFiAMMIntegerSwap": {
+    "suite_struct": "DeFiAMMIntegerSwapSuite",
+    "suite_type": "DeFiAMMIntegerSwap.DeFiAMMIntegerSwapSuite",
+    "parent": "FinanceRiskFullSuite",
+    "field": "integer_swap",
+    "constructor": "finance_risk_full_master_suite",
+    "proof": "DeFiAMMIntegerSwap.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DeFiStatefulAMMRouting": {
+    "suite_struct": "DeFiStatefulAMMRoutingSuite",
+    "suite_type": "DeFiStatefulAMMRouting.DeFiStatefulAMMRoutingSuite",
+    "parent": "FinanceRiskFullSuite",
+    "field": "stateful_routes",
+    "constructor": "finance_risk_full_master_suite",
+    "proof": "DeFiStatefulAMMRouting.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DeFiFiniteRouteSelection": {
+    "suite_struct": "DeFiFiniteRouteSelectionSuite",
+    "suite_type": "DeFiFiniteRouteSelection.DeFiFiniteRouteSelectionSuite",
+    "parent": "FinanceRiskFullSuite",
+    "field": "route_selection",
+    "constructor": "finance_risk_full_master_suite",
+    "proof": "DeFiFiniteRouteSelection.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.DeFiLendingUtilizationTransitions": {
+    "suite_struct": "DeFiLendingUtilizationTransitionsSuite",
+    "suite_type": "DeFiLendingUtilizationTransitions.DeFiLendingUtilizationTransitionsSuite",
+    "parent": "FinanceRiskFullSuite",
+    "field": "lending_step",
+    "constructor": "finance_risk_full_master_suite",
+    "proof": "DeFiLendingUtilizationTransitions.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

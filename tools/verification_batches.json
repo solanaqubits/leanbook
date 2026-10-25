@@ -316,6 +316,43 @@
         "Verification.AlgebraicCertificateVerify"
       ],
       "description": "Canonical ALCC bytes, typed decoding, passport binding and three-way certificate verification."
+    },
+    "cryptography/verified-polynomial-sharing": {
+      "direction": "cryptography",
+      "modules": [
+        "Verification.CryptoFeldmanVSSGroup",
+        "Verification.CryptoPedersenVSSGroup",
+        "Verification.CryptoShamirShareRepair",
+        "Verification.CryptoShamirRefresh",
+        "Verification.CryptoQualifiedDealerSharing"
+      ],
+      "description": "Verified polynomial shares, recovery, refresh and qualified-dealer aggregation with explicit protocol boundaries."
+    },
+    "cryptography/pairing-equation-extensions": {
+      "direction": "cryptography",
+      "modules": [
+        "Verification.CryptoThresholdBLSGroup",
+        "Verification.CryptoKZGOpeningEquation",
+        "Verification.CryptoGroth16PairingEquation"
+      ],
+      "description": "Typed pairing equations and threshold signatures; no hardness, SNARK soundness or concrete curve claims."
+    },
+    "finance/stateful-routing-and-rounding": {
+      "direction": "finance",
+      "modules": [
+        "Verification.DeFiAMMExactOutput",
+        "Verification.DeFiAMMIntegerSwap",
+        "Verification.DeFiStatefulAMMRouting",
+        "Verification.DeFiFiniteRouteSelection"
+      ],
+      "description": "Exact-output, integer rounding and stateful finite-route execution contracts."
+    },
+    "finance/lending-state-transitions": {
+      "direction": "finance",
+      "modules": [
+        "Verification.DeFiLendingUtilizationTransitions"
+      ],
+      "description": "Conserved lending accounting and utilization/rate changes under borrow and repayment."
     }
   },
   "infrastructure_batches": {
