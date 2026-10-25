@@ -4082,6 +4082,16 @@
         "Verification.DeFiKinkedInterestRateUtilization"
       ],
       "novelty": "not-assessed"
+    },
+    {
+      "id": "AlgebraicCertificateNormalizeCached",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateNormalizeCached.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateNormalizeCached.en.md",
+      "project_imports": [
+        "Verification.AlgebraicCertificateKernel"
+      ],
+      "novelty": "not-assessed"
     }
   ],
   "support_modules": [

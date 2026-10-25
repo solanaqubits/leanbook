@@ -30,3 +30,5 @@ Soundness retains the assumptions on rule validity and certificate interpretatio
 - [Binding to the supplied passport](AlgebraicCertificateBound.en.md)
 
 - [Canonical bytes to certificate verdict](AlgebraicCertificateVerify.en.md)
+
+- [Coefficient-caching normalization pilot](AlgebraicCertificateNormalizeCached.en.md)

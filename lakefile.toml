@@ -27,3 +27,7 @@ name = "Verification"
 [[lean_exe]]
 name = "alcc-verify"
 root = "AlccVerifyMain"
+
+[[lean_exe]]
+name = "alcc-normalize-bench"
+root = "AlccNormalizeBench"
