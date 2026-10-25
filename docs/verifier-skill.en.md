@@ -19,7 +19,16 @@ Reports use JSON. Check `ok`, errors, `audit`, and source hashes. Module verific
 includes strict compilation, an incremental Lake build against current sources, and a transitive axiom audit of
 project declarations in the imported environment. Only `propext`,
 `Classical.choice`, and `Quot.sound` are allowed. Audit also rebuilds before checking;
-it does not trust an old compiled artifact after source changes.
+the requested source is also freshly elaborated with `lake lean`, preserving
+the workspace's Lean options. `lake env lean` alone does not apply those options.
+This catches contextual lint failures even when the incremental build replays
+an artifact: header linting can change when the library root registers a module,
+although that root is not one of the module's imported dependencies.
+
+This check does not authenticate arbitrary cache artifacts. Dependencies still
+use Lake's cache; cache integrity, the trusted local environment and source
+provenance remain separate requirements. See the
+[v0.9.0 correction](v0.9-build-correction.en.md).
 
 `integrate` previews a diff using a recipe in
 [integration_targets.json](../tools/integration_targets.json). Add `--apply` to

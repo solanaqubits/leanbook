@@ -39,8 +39,11 @@ the components in larger formal developments.
 **300 direct imports in MasterSuite**, **349 library Lean sources including Verification.lean**.
 The separate `AlccVerifyMain.lean` CLI, auxiliary tooling and test fixtures are outside
 this library-source metric.
-The [v0.9.0 beta checkpoint](docs/release-v0.9.0.en.md) records the full validation
-of the [300-module extension](docs/toward-300.en.md).
+The [v0.9.0 publication](docs/release-v0.9.0.en.md) has a confirmed strict-build
+failure; its successful-beta qualification is withdrawn. See the
+[correction and validation boundary](docs/v0.9-build-correction.en.md).
+The last successful beta remains v0.8.0. The
+[300-module extension](docs/toward-300.en.md) describes the source additions.
 
 ALCC is an additive batch on top of v0.7.48, released with a new full-validation checkpoint; see the
 [public integration record](docs/release-v0.8.0.en.md).

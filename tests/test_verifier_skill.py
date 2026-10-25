@@ -44,7 +44,9 @@ class VerifierUnitTests(unittest.TestCase):
             components_before = (root/'Verification/MasterSuiteComponents.lean').read_bytes()
             verifier = mod.Verifier(root)
             before = (root/'Verification/MasterSuite.lean').read_bytes()
-            def fail_after_checking_mutation(_):
+            def fail_after_checking_mutation(values):
+                self.assertEqual(values, ['Verification.DeFiConcentratedLiquidity',
+                                          'Verification.MasterSuite'])
                 self.assertIn('  concentrated :', (root/'Verification/MasterSuiteComponents.lean').read_text())
                 self.assertIn('import Verification.DeFiConcentratedLiquidity', (root/'Verification/MasterSuite.lean').read_text())
                 self.assertIn('import Verification.DeFiConcentratedLiquidity', (root/'Verification.lean').read_text())
@@ -80,6 +82,52 @@ class VerifierUnitTests(unittest.TestCase):
 @unittest.skipUnless(os.environ.get('LEAN_VERIFIER_LIVE_TESTS') == '1', 'Set LEAN_VERIFIER_LIVE_TESTS=1 for compiler tests')
 class VerifierLiveTests(unittest.TestCase):
     def setUp(self): self.verifier = mod.Verifier(ROOT)
+
+    def test_registered_cached_module_is_rechecked_with_workspace_options(self):
+        """Registration activates header linting without changing the module hash."""
+        import subprocess
+        with tempfile.TemporaryDirectory(prefix='lean-root-registration-') as tmp:
+            root = Path(tmp)
+            (root / 'Verification').mkdir()
+            (root / '.lake').mkdir()
+            (root / '.lake/packages').symlink_to((ROOT / '.lake/packages').resolve(),
+                                                target_is_directory=True)
+            for name in ('lakefile.toml', 'lake-manifest.json', 'lean-toolchain'):
+                (root / name).write_bytes((ROOT / name).read_bytes())
+            module = root / 'Verification/CacheProbe.lean'
+            module.write_text('''/-
+Copyright (c) 2026 aicyberg. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: aicyberg
+-/
+import Mathlib.Tactic
+
+/-! A registration-sensitive header linter regression fixture. -/
+namespace CacheProbe
+theorem arithmetic : 2 + 2 = 4 := rfl
+end CacheProbe
+''')
+            (root / 'Verification.lean').write_text('-- Not registered yet.\n')
+            command = [self.verifier.lake, 'build', '--wfail',
+                       'Verification.CacheProbe']
+            first = subprocess.run(command, cwd=root, capture_output=True,
+                                   text=True, timeout=180)
+            self.assertEqual(first.returncode, 0, first.stdout + first.stderr)
+            artifact = root / '.lake/build/lib/lean/Verification/CacheProbe.olean'
+            before = artifact.read_bytes()
+            (root / 'Verification.lean').write_text('import Verification.CacheProbe\n')
+            replay = subprocess.run(command, cwd=root, capture_output=True,
+                                    text=True, timeout=180)
+            self.assertEqual(replay.returncode, 0, replay.stdout + replay.stderr)
+            self.assertEqual(artifact.read_bytes(), before)
+            result = mod.Verifier(root).verify_module(str(module))
+            self.assertFalse(result['ok'], result)
+            self.assertIsNone(result['audit'])
+            check = result['steps'][-1]
+            self.assertEqual(check['command'][1], 'lean')
+            self.assertNotEqual(check['returncode'], 0)
+            self.assertIn('cannot import the whole `Mathlib.Tactic` folder',
+                          check['output'])
 
     def test_positive_scaffold(self):
         result = self.verifier.scaffold_invariant('nat', '∀ n : ℕ, n ≤ n + 1')

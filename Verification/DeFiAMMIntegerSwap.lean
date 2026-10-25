@@ -3,7 +3,9 @@ Copyright (c) 2026 aicyberg. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: aicyberg
 -/
-import Mathlib.Tactic
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 
 /-! Exact natural-number swap arithmetic with a rational fee multiplier.
 Unbounded naturals exclude machine-word overflow; zero-output dust is permitted. -/

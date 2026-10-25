@@ -3,7 +3,7 @@ id: DeFiAMMIntegerSwap
 language: en
 section: finance
 source: Verification/DeFiAMMIntegerSwap.lean
-source_sha256: 184378ac7e10d79f1a411f8bc75178dd30b5a10fab287569614cd325e995ba29
+source_sha256: 237b6d13468591e1169b443f013ba81bf40589993ab00b489f4ff3da74afe439
 novelty: not-assessed
 status: reviewed
 ---
@@ -20,10 +20,10 @@ Lean checks theorem terms and their axiom dependencies. Concrete examples and co
 
 ## Theorem links
 
-- [denominator_positive](../../Verification/DeFiAMMIntegerSwap.lean#L16)
-- [rounding_bounds](../../Verification/DeFiAMMIntegerSwap.lean#L19)
-- [output_lt_reserve](../../Verification/DeFiAMMIntegerSwap.lean#L25)
-- [reserve_product_nondecreasing](../../Verification/DeFiAMMIntegerSwap.lean#L31)
-- [dust_iff](../../Verification/DeFiAMMIntegerSwap.lean#L46)
-- [zero_input](../../Verification/DeFiAMMIntegerSwap.lean#L51)
-- [verification_suite](../../Verification/DeFiAMMIntegerSwap.lean#L58)
+- [denominator_positive](../../Verification/DeFiAMMIntegerSwap.lean#L18)
+- [rounding_bounds](../../Verification/DeFiAMMIntegerSwap.lean#L21)
+- [output_lt_reserve](../../Verification/DeFiAMMIntegerSwap.lean#L27)
+- [reserve_product_nondecreasing](../../Verification/DeFiAMMIntegerSwap.lean#L33)
+- [dust_iff](../../Verification/DeFiAMMIntegerSwap.lean#L48)
+- [zero_input](../../Verification/DeFiAMMIntegerSwap.lean#L53)
+- [verification_suite](../../Verification/DeFiAMMIntegerSwap.lean#L60)

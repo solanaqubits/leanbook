@@ -10,8 +10,8 @@ class FinanceBatchTests(unittest.TestCase):
     def compile_case(self, name):
         lake = shutil.which("lake")
         self.assertIsNotNone(lake)
-        r = subprocess.run([lake, "env", "lean", "-j1", "-DwarningAsError=true",
-                            str(ROOT / "tests/lean" / (name + "_regression.lean"))],
+        r = subprocess.run([lake, "lean", str(ROOT / "tests/lean" / (name + "_regression.lean")),
+                            "--", "-j1", "-DwarningAsError=true"],
                            cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
     def test_amm_exact_output(self):

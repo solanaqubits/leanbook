@@ -16,6 +16,7 @@ example : rp.val.eval 1 ≠ (refresh rp rm).val.eval 1 := by
   decide
 example : (refreshEquiv rp).symm (refresh rp rm) = rm := (refreshEquiv rp).symm_apply_apply rm
 example : refreshLaw rp = PMF.uniformOfFintype (ShamirPoly (ZMod 7) 2 3) := refresh_uniform rp
-example (p' : ShamirPoly (ZMod 7) 2 3) : refreshLaw rp = refreshLaw p' := old_sharing_independent rp p'
+example (p' : ShamirPoly (ZMod 7) 2 3) : refreshLaw rp = refreshLaw p' :=
+  old_sharing_independent rp p'
 example : refresh (refresh rp rm) rm = refresh rp (refresh rm rm) := sequential_refresh rp rm rm
 example : (C (1 : ZMod 7) + X).eval 0 ≠ 0 := by norm_num

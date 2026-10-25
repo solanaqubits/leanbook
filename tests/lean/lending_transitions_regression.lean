@@ -1,6 +1,6 @@
 import Verification.DeFiLendingUtilizationTransitions
 open DeFiLendingUtilizationTransitions
- def s : State := ⟨100, 50, 10, by norm_num, by norm_num, by norm_num, by norm_num⟩
+def s : State := ⟨100, 50, 10, by norm_num, by norm_num, by norm_num, by norm_num⟩
 example : DeFiLendingUtilizationTransitionsSuite := verification_suite
 example : assets s = 140 := by norm_num [assets, s]
 example : usage s = 5 / 14 := by norm_num [usage, assets, s]

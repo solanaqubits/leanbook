@@ -9,10 +9,12 @@ example : CryptoPedersenVSSGroupSuite := verification_suite
 example (x : ZMod 7) : Verify ps 2 (commitments ps vp vr) x (vp.eval x) (vr.eval x) :=
   honest_completeness ps vp vr (by unfold vp; compute_degree!) (by unfold vr; compute_degree!) x
 example : Verify ps 2 (commitments ps vp vr) 1 5 5 := by
-  have h := honest_completeness ps vp vr (n := 2) (by unfold vp; compute_degree!) (by unfold vr; compute_degree!) 1
+  have h := honest_completeness ps vp vr (n := 2)
+    (by unfold vp; compute_degree!) (by unfold vr; compute_degree!) 1
   convert h using 1 <;> norm_num [vp, vr]
 example : ¬ Verify ps 2 (commitments ps vp vr) 1 6 (vr.eval 1) := by
-  rw [fixed_blinding_soundness ps vp vr (by unfold vp; compute_degree!) (by unfold vr; compute_degree!)]
+  rw [fixed_blinding_soundness ps vp vr
+    (by unfold vp; compute_degree!) (by unfold vr; compute_degree!)]
   norm_num [vp]
   decide
 example (m m' : Fin 4 → ZMod 7) : coefficientLaw ps m = coefficientLaw ps m' :=

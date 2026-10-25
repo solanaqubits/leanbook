@@ -158,7 +158,8 @@ class Verifier:
             '-- IMPORTS', '\n'.join('import ' + module for module in modules))
         with tempfile.TemporaryDirectory(prefix='lean-verifier-audit-') as tmp:
             path = Path(tmp) / 'Audit.lean'; path.write_text(code)
-            result = self.run([self.lake, 'env', 'lean', '-j1', '-DwarningAsError=true', str(path)])
+            result = self.run([self.lake, 'lean', str(path), '--',
+                               '-j1', '-DwarningAsError=true'])
         matches = re.findall(r'^VERIFIER_AUDIT_JSON=(.*)$', result['output'], re.M)
         audit = json.loads(matches[-1]) if matches else None
         return result, audit
@@ -178,8 +179,12 @@ class Verifier:
         report['steps'].append(build)
         if build['returncode'] != 0: return report
         for module in modules:
-            check = self.run([self.lake, 'env', 'lean', '-j1', '-DwarningAsError=true',
-                              str(closure[module].relative_to(self.project))])
+            # Re-elaborate under the workspace options even when Lake replayed
+            # an artifact. Header linting depends on root-module membership,
+            # which is not an import dependency of the checked module itself.
+            check = self.run([self.lake, 'lean',
+                              str(closure[module].relative_to(self.project)), '--',
+                              '-j1', '-DwarningAsError=true'])
             report['steps'].append(check)
             if check['returncode'] != 0: return report
         step, audit = self.audit(modules)
@@ -306,7 +311,9 @@ class Verifier:
             try:
                 for name, before, after in plan['changes']:
                     (self.project / name).write_text(after)
-                report['verification'] = self._verify(['Verification.MasterSuite'])
+                # Registration itself can activate linting in the candidate.
+                # Checking only MasterSuite would still load its cached import.
+                report['verification'] = self._verify([plan['module'], 'Verification.MasterSuite'])
                 if not report['verification']['ok']: return report
                 step = self.run([self.lake, 'build', '--wfail']); report['steps'].append(step)
                 if step['returncode'] != 0: return report

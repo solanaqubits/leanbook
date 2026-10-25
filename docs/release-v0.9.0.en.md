@@ -1,5 +1,11 @@
 # v0.9.0 — 300 direct MasterSuite imports
 
+**Correction:** both hosted CI runs failed on the configured header linter in
+`DeFiAMMIntegerSwap`. A fresh build reproduced the failure. The cached local
+results below are retained as historical observations, but do not qualify this
+release as a successful beta. The tag remains immutable; v0.8.0 is the last
+successful beta. See [the correction record](v0.9-build-correction.en.md).
+
 This beta checkpoint extends the public v0.8.0 base
 `7f68d8e577136ba3729643e4a57ad740a668670d` with thirteen mathematical modules:
 eight in cryptographic algebra and five in finance. The
@@ -20,7 +26,7 @@ typed pairing equations, stateful AMM routes, integer rounding and lending
 utilization transitions. They do not claim complete deployed protocol security,
 SNARK knowledge soundness, compatible token units or machine-overflow refinement.
 
-## Accepted validation
+## Historical validation record (release qualification withdrawn)
 
 The full local beta gate is bound to source commit
 `ec290046edcd9a345bdf4dbab1456e892c47f0ea`:
