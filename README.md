@@ -28,11 +28,18 @@ the components in larger formal developments.
 | [Distributed consensus](knowledge/distributed/README.md) | Quorums, reachable Log Matching, and operational Leader Completeness |
 | [Registry and audit](knowledge/verification/README.md) | Selected suites and axiom dependencies |
 
+## ALCC certificate verification
+
+[Canonical byte verification, CLI, and trust boundaries](docs/alcc.en.md).
+
 ## Verified snapshot
 
 [Combined synchronization v0.7.48](docs/release-v0.7.48.en.md) reconciles all completed streams and preserves their verification boundaries.
 
-**284 direct imports in MasterSuite**, **328 Lean sources including Verification.lean**.
+**287 direct imports in MasterSuite**, **336 Lean sources including Verification.lean**.
+
+ALCC is an additive batch on top of v0.7.48, released with a new full-validation checkpoint; see the
+[public integration record](docs/release-v0.8.0.en.md).
 The [bounded Prometheus synchronization](docs/prometheus-lean-sync.en.md) adds nine
 conditional model modules and their public verification scope.
 [Release v0.7.47](docs/release-v0.7.47.en.md) adds granular provenance reports,

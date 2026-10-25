@@ -23,3 +23,7 @@ rev = "v4.33.1"
 
 [[lean_lib]]
 name = "Verification"
+
+[[lean_exe]]
+name = "alcc-verify"
+root = "AlccVerifyMain"

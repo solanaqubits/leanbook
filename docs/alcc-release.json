@@ -1,0 +1,20 @@
+{
+  "schema": "alcc-public-source-selection-v1",
+  "release": "v0.8.0",
+  "public_parent": "f871259852b3bdd74d5fe84f5f74c42d28e4b33f",
+  "historical_kernel_anchor": "4c7e29b9735892e6979e439e9b4e08ea9a745ddc",
+  "rank": "beta",
+  "sources": {
+    "Verification/AlgebraicCertificateKernel.lean": "8806aa50939e92f5c1708d48f15c6a83a33bba386e994ba65b98e2589a1e0559",
+    "Verification/AlgebraicCertificateCompleteness.lean": "06000a837c112a793a8f0c9dd13f8c0e4a78de5637bd65ab5611fa70dc17c341",
+    "Verification/AlgebraicCertificateSyntax.lean": "bcb062358d158095dbb8b070c2f1818d3e12c365bdc84e1ab6bbbb453c2ccbb2",
+    "Verification/AlgebraicCertificateSchema.lean": "788538c9486175e41f4764437121b9090dfb2383377d2491f8cc55f81ecfb176",
+    "Verification/AlgebraicCertificateUnbound.lean": "cc5269996a3a9fbc1e70cb73f26f681d683b7bcade785e96eea4008fece63cc0",
+    "Verification/AlgebraicCertificateSHA256.lean": "863837bd9656b99f0bb54c603168772928116211f23af4c18bd63e4859f1544d",
+    "Verification/AlgebraicCertificateBound.lean": "9853b522f5529512e685b88e107a7bd0064a50752328aca7b569515b0290c1c1",
+    "Verification/AlgebraicCertificateVerify.lean": "77ce6f0f9e90094069edc61173d3d51145635be0d171ed5323c7289d7768df8c"
+  },
+  "native_evidence_kind": "compiled_execution",
+  "release_validation": "Published separately as a sanitized validation asset; no private runtime PIN is shipped.",
+  "production_admission": false
+}

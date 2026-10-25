@@ -302,6 +302,20 @@
         "Verification.QuantumSteaneCodeErrorCorrectionContract"
       ],
       "description": "Seven-qubit CSS checks, phase-aware single-Pauli recovery and exact distance; no hardware fault-tolerance claim."
+    },
+    "proof-graphs/alcc-byte-verification": {
+      "direction": "proof-graphs",
+      "modules": [
+        "Verification.AlgebraicCertificateKernel",
+        "Verification.AlgebraicCertificateCompleteness",
+        "Verification.AlgebraicCertificateSyntax",
+        "Verification.AlgebraicCertificateSchema",
+        "Verification.AlgebraicCertificateUnbound",
+        "Verification.AlgebraicCertificateSHA256",
+        "Verification.AlgebraicCertificateBound",
+        "Verification.AlgebraicCertificateVerify"
+      ],
+      "description": "Canonical ALCC bytes, typed decoding, passport binding and three-way certificate verification."
     }
   },
   "infrastructure_batches": {

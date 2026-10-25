@@ -1,3 +1,6 @@
+import Verification.AlgebraicCertificateVerify
+import Verification.AlgebraicCertificateCompleteness
+import Verification.AlgebraicCertificateKernel
 import Verification.QuantumSteaneCodeErrorCorrectionContract
 import Verification.QuantumEntanglementSwappingPurificationContract
 import Verification.PrometheusThresholdTomography
@@ -1009,10 +1012,14 @@ theorem hopf_full_master_suite : HopfFullSuite := {
 
 /-- Tree-certificate soundness and indexed-DAG soundness and acyclicity. -/
 structure ProofDAGFullSuite : Prop where
+  polynomial_certificate_completeness : AlgebraicCertificateCompleteness.AlgebraicCertificateCompletenessSuite
+  polynomial_certificates : AlgebraicCertificateKernel.AlgebraicCertificateSuite
   dag_soundness : ProofDAGFormalSuite
   dag_acyclic : ProofGraphAcyclicSuite
 
 theorem proof_dag_full_master_suite : ProofDAGFullSuite := {
+  polynomial_certificate_completeness := AlgebraicCertificateCompleteness.verification_suite
+  polynomial_certificates := AlgebraicCertificateKernel.verification_suite
   dag_soundness := proof_dag_master_verification_suite
   dag_acyclic := proof_graph_acyclic_master_verification_suite
 }

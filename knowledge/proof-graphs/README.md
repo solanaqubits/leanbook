@@ -14,3 +14,19 @@
 Soundness retains the assumptions on rule validity and certificate interpretation. This is not a blockchain consensus or distributed execution proof.
 
 [Contributing](../CONTRIBUTING.en.md) · [Validation](../VERIFICATION.en.md)
+
+- [Rational polynomial certificates](AlgebraicCertificateKernel.en.md)
+
+- [Normalization completeness and rejection soundness](AlgebraicCertificateCompleteness.en.md)
+
+- [Canonical ASCII JSON syntax](AlgebraicCertificateSyntax.en.md)
+
+- [Typed ALCC schema decoding](AlgebraicCertificateSchema.en.md)
+
+- [Byte-to-task composition](AlgebraicCertificateUnbound.en.md)
+
+- [SHA-256 functional refinement](AlgebraicCertificateSHA256.en.md)
+
+- [Binding to the supplied passport](AlgebraicCertificateBound.en.md)
+
+- [Canonical bytes to certificate verdict](AlgebraicCertificateVerify.en.md)

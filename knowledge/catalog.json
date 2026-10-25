@@ -614,6 +614,9 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.AlgebraicCertificateVerify",
+        "Verification.AlgebraicCertificateCompleteness",
+        "Verification.AlgebraicCertificateKernel",
         "Verification.QuantumSteaneCodeErrorCorrectionContract",
         "Verification.QuantumEntanglementSwappingPurificationContract",
         "Verification.PrometheusThresholdTomography",
@@ -1536,6 +1539,9 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.AlgebraicCertificateVerify",
+        "Verification.AlgebraicCertificateCompleteness",
+        "Verification.AlgebraicCertificateKernel",
         "Verification.QuantumSteaneCodeErrorCorrectionContract",
         "Verification.QuantumEntanglementSwappingPurificationContract",
         "Verification.PrometheusThresholdTomography",
@@ -3851,6 +3857,75 @@
       "project_imports": [],
       "novelty": "not-assessed",
       "status": "reviewed"
+    },
+    {
+      "id": "AlgebraicCertificateKernel",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateKernel.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateKernel.en.md",
+      "project_imports": []
+    },
+    {
+      "id": "AlgebraicCertificateCompleteness",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateCompleteness.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateCompleteness.en.md",
+      "project_imports": [
+        "Verification.AlgebraicCertificateKernel"
+      ]
+    },
+    {
+      "id": "AlgebraicCertificateSyntax",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateSyntax.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateSyntax.en.md",
+      "project_imports": []
+    },
+    {
+      "id": "AlgebraicCertificateSchema",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateSchema.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateSchema.en.md",
+      "project_imports": [
+        "Verification.AlgebraicCertificateSyntax",
+        "Verification.AlgebraicCertificateKernel"
+      ]
+    },
+    {
+      "id": "AlgebraicCertificateUnbound",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateUnbound.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateUnbound.en.md",
+      "project_imports": [
+        "Verification.AlgebraicCertificateSchema"
+      ]
+    },
+    {
+      "id": "AlgebraicCertificateSHA256",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateSHA256.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateSHA256.en.md",
+      "project_imports": []
+    },
+    {
+      "id": "AlgebraicCertificateBound",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateBound.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateBound.en.md",
+      "project_imports": [
+        "Verification.AlgebraicCertificateUnbound",
+        "Verification.AlgebraicCertificateSHA256"
+      ]
+    },
+    {
+      "id": "AlgebraicCertificateVerify",
+      "section": "proof-graphs",
+      "source": "Verification/AlgebraicCertificateVerify.lean",
+      "card": "knowledge/proof-graphs/AlgebraicCertificateVerify.en.md",
+      "project_imports": [
+        "Verification.AlgebraicCertificateBound",
+        "Verification.AlgebraicCertificateCompleteness"
+      ]
     }
   ],
   "support_modules": [

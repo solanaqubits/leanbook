@@ -21,6 +21,8 @@ jobs:
           build: true
           build-args: "--wfail"
           axiom-audit: true
+      - name: Build optional ALCC CLI
+        run: lake build alcc-verify --wfail
       - name: Install and qualify native provenance backend
         run: |
           sudo apt-get update
