@@ -36,7 +36,9 @@ the components in larger formal developments.
 
 [Combined synchronization v0.7.48](docs/release-v0.7.48.en.md) reconciles all completed streams and preserves their verification boundaries.
 
-**300 direct imports in MasterSuite**, **349 Lean sources including Verification.lean**.
+**300 direct imports in MasterSuite**, **349 library Lean sources including Verification.lean**.
+The separate `AlccVerifyMain.lean` CLI, auxiliary tooling and test fixtures are outside
+this library-source metric.
 The [300-module extension](docs/toward-300.en.md) records the additions and scope;
 release status is separate from source integration.
 

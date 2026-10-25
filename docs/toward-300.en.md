@@ -4,8 +4,10 @@ The counting convention is the number of direct `import` declarations in
 `Verification/MasterSuite.lean`. It is not an epsilon identifier, a count of
 independent security theorems, or the number of every support file. The public
 v0.8.0 source baseline, commit `7f68d8e577136ba3729643e4a57ad740a668670d`,
-has 287 such imports. This extension adds 13, for 300; total Lean sources,
-including `Verification.lean`, increase from 336 to 349.
+has 287 such imports. This extension adds 13, for 300. Library Lean sources,
+including `Verification.lean`, increase from 336 to 349. The separate
+`AlccVerifyMain.lean` CLI, auxiliary Lean tooling and test fixtures are outside
+the beta report's `lean_sources` library metric.
 
 The old 81-import backlog is historical. Raft, Multi-Paxos, typed BLS groups,
 Shamir finite-field secrecy and kinked interest rates already existed. Their
