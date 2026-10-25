@@ -1012,7 +1012,8 @@ theorem hopf_full_master_suite : HopfFullSuite := {
 
 /-- Tree-certificate soundness and indexed-DAG soundness and acyclicity. -/
 structure ProofDAGFullSuite : Prop where
-  polynomial_certificate_completeness : AlgebraicCertificateCompleteness.AlgebraicCertificateCompletenessSuite
+  polynomial_certificate_completeness :
+    AlgebraicCertificateCompleteness.AlgebraicCertificateCompletenessSuite
   polynomial_certificates : AlgebraicCertificateKernel.AlgebraicCertificateSuite
   dag_soundness : ProofDAGFormalSuite
   dag_acyclic : ProofGraphAcyclicSuite

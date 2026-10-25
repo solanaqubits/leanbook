@@ -32,14 +32,14 @@ Scientific priority and first-formalization claims have not been established.
 - [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L653)
 - [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L878)
 - [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1008)
-- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1020)
-- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1034)
-- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1082)
-- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1173)
-- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1264)
+- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1021)
+- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1035)
+- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1083)
+- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1174)
+- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1265)
 - [`verification_master_registry`](../../Verification/MasterSuite.lean#L443)
 
-- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1277)
+- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1278)
 
 ## Verification
 
