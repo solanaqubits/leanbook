@@ -41,6 +41,10 @@ The experimental `alcc-normalize-bench` target uses three-dimensional inputs for
 measurements only. The theorem is not restricted to that measurement corpus.
 The SimLab companion contains the exact reference, bounded corpus, protocol tests
 and comparison driver. See its `docs/alcc-normalization-pilot.en.md` contract.
+The first runtime pilot is blocked at initialization under its fixed 1-GiB
+address-space cap, before any normalization result. There are no accepted timing
+samples or demonstrated performance gains. The semantic refinement proof is
+independent of that infrastructure failure.
 
 ## Combined audit acceptance checklist
 
