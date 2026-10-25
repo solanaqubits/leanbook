@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 0bef70abbfe524da781d383c8eafe1a269a6c291232919b0582a1a36f0adda7d
+source_sha256: 7947f172b5efc0a3d8d3780b4995faf00bfb37d0c8bf74af859a98d591218b3f
 novelty: not-assessed
 status: reviewed
 ---
@@ -14,7 +14,7 @@ status: reviewed
 
 ## Verified result
 
-Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 192 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
+Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 287 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
 
 ## Assumptions and scope
 
@@ -25,21 +25,21 @@ Scientific priority and first-formalization claims have not been established.
 
 ## Proof entry points
 
-- [`finsler_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L319)
-- [`finsler_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L331)
-- [`lamzouri_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L343)
-- [`collatz_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L362)
-- [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L409)
-- [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L549)
-- [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L646)
-- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L656)
-- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L668)
-- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L716)
-- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L797)
-- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L876)
-- [`verification_master_registry`](../../Verification/MasterSuite.lean#L303)
+- [`finsler_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L513)
+- [`finsler_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L525)
+- [`lamzouri_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L537)
+- [`collatz_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L556)
+- [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L653)
+- [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L878)
+- [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1008)
+- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1020)
+- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1034)
+- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1082)
+- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1173)
+- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1264)
+- [`verification_master_registry`](../../Verification/MasterSuite.lean#L443)
 
-- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L889)
+- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1277)
 
 ## Verification
 
@@ -273,3 +273,10 @@ Release v0.7.45 adds QCP/01 profile bytes, the QPM/01 manifest codec and conditi
 Release v0.7.46 adds pure provenance verification, sequential replay protection and conditional channel/queue/physics contracts (epsilon249–257).
 
 Release v0.7.47 integrates granular provenance reports and sequential replay-registry recovery.
+
+## ALCC public integration
+
+ProofDAGFullSuite includes the rational certificate kernel and normalization
+completeness suites. The byte-to-verdict module is imported as part of the
+[ALCC pipeline](../../docs/alcc.en.md). Imported declarations retain their
+individual assumptions; registration supplies no OS or input-authenticity guarantee.

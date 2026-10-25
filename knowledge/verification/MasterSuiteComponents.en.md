@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 426fbb9f92f21dbc718ed828b4629dcc2599a7848d3bac1f479b825534f940d1
+source_sha256: 04988e3f9322aeba2c0f83c6d72f0c903019546fd601aa08264746f9cb3441b4
 novelty: not-assessed
 status: reviewed
 ---
@@ -22,7 +22,7 @@ Universe declarations are retained. In particular, the crypto package carries th
 
 ## Dependency purpose
 
-The module imports the original 99 domain modules and the operational Chandy–Lamport and exact QPE modules. DistributedSystemsFullSuite now includes chandy_lamport; aggregates referring to this package inherit the added field. [`MasterHundredRegistry`](../11_meta_registry/MasterHundredRegistry.md) imports these components to assemble the milestone proposition, and the central [`MasterSuite`](MasterSuite.en.md) can import that milestone. Components do not import either registry, avoiding a cycle. The central registry declaration itself is not defined in this file.
+The historical split started from 99 domain imports; the current import list has expanded with subsequent reviewed packages. DistributedSystemsFullSuite now includes chandy_lamport; aggregates referring to this package inherit the added field. [`MasterHundredRegistry`](../11_meta_registry/MasterHundredRegistry.md) imports these components to assemble the milestone proposition, and the central [`MasterSuite`](MasterSuite.en.md) can import that milestone. Components do not import either registry, avoiding a cycle. The central registry declaration itself is not defined in this file.
 
 The split is organizational. It introduces no new domain result and does not enlarge the meaning of any imported guarantee. A suite bundles selected propositions; it does not certify every declaration in its imports or complete coverage of every subject block. Counts of imports and source files are external repository checks, not theorems of the component packages.
 
@@ -242,3 +242,10 @@ Release v0.7.45 adds QCP/01 profile bytes, the QPM/01 manifest codec and conditi
 Release v0.7.46 adds pure provenance verification, sequential replay protection and conditional channel/queue/physics contracts (epsilon249–257).
 
 Release v0.7.47 integrates granular provenance reports and sequential replay-registry recovery.
+
+## ALCC public integration
+
+ProofDAGFullSuite includes the rational certificate kernel and normalization
+completeness suites. The byte-to-verdict module is imported as part of the
+[ALCC pipeline](../../docs/alcc.en.md). Imported declarations retain their
+individual assumptions; registration supplies no OS or input-authenticity guarantee.
