@@ -85,8 +85,8 @@ flags are enabled by the gate. A fresh checkout must not rely on a transport
 left over from an earlier test run.
 
 The initial clean build still requires exact equality of planned and emitted
-project modules. Final receipt validation permits only the three explicitly
-named challenge-store helper modules (`Wire`, `FileManifest`, `Worker`) added
-by that later step. It still rejects missing planned modules, unexpected
+project modules. Final receipt validation permits only five explicitly
+named runtime helper modules: challenge-store `Wire`, `FileManifest`, `Worker`,
+and provenance-native `Raw`, `Adapter`, added by native preparation and tests. It still rejects missing planned modules, unexpected
 modules, and any change to a frozen clean-build artifact. These helper modules
 are runtime infrastructure, not additions to the audited formal theorem graph.

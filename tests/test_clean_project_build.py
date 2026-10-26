@@ -141,6 +141,24 @@ class CleanBuildTests(unittest.TestCase):
         with self.assertRaises(ValueError): validate_receipt(self.root, out)
 
     @unittest.skipUnless(os.environ.get('LEAN_VERIFIER_LIVE_TESTS'), 'live Lean opt-in')
+    def test_live_native_helpers_preserve_frozen_receipt(self):
+        out = self.base / 'native-evidence'
+        receipt = run(self.root, out, timeout=60)
+        # Structural regression for the five outputs observed in the full native
+        # beta. Compiler/runtime correctness is checked by the native test suite.
+        for module in ('tools.challenge_store.Wire', 'tools.challenge_store.FileManifest',
+                       'tools.challenge_store.Worker', 'tools.provenance_native.Raw',
+                       'tools.provenance_native.Adapter'):
+            path = self.root / '.lake/build/lib/lean' / (module.replace('.', '/') + '.olean')
+            path.parent.mkdir(parents=True, exist_ok=True); path.write_text('native helper')
+        self.assertEqual(validate_receipt(self.root, out)['status'], 'passed')
+        frozen = self.root / '.lake/build/lib/lean/Verification/A.olean'
+        frozen.write_bytes(frozen.read_bytes() + b'tampering')
+        with self.assertRaisesRegex(ValueError, 'project artifact changed'):
+            validate_receipt(self.root, out)
+        self.assertEqual(receipt['coverage']['fresh_module_count'], 4)
+
+    @unittest.skipUnless(os.environ.get('LEAN_VERIFIER_LIVE_TESTS'), 'live Lean opt-in')
     def test_failed_build_keeps_failure_receipt(self):
         (self.root / 'Verification/Outside.lean').write_text('def broken := unknownIdentifier\n')
         out = self.base / 'evidence'

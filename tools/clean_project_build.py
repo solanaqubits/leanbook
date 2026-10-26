@@ -187,7 +187,9 @@ def validate_receipt(root, directory):
                               r['started_ns'], auxiliary_modules=(
                                   'tools.challenge_store.Wire',
                                   'tools.challenge_store.FileManifest',
-                                  'tools.challenge_store.Worker'))
+                                  'tools.challenge_store.Worker',
+                                  'tools.provenance_native.Raw',
+                                  'tools.provenance_native.Adapter'))
     # Subsequent beta checks may add separate artifacts; frozen ones must remain exact.
     for name, h in r['coverage']['artifacts'].items():
         if coverage['artifacts'].get(name) != h:
