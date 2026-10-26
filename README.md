@@ -10,6 +10,10 @@ the components in larger formal developments.
 **[Knowledge base](knowledge/README.md)** · **[Results and value](knowledge/SUMMARY.en.md)** ·
 [Technical reference](docs/verification-details.en.md)
 
+[Reservoir indexing status](docs/reservoir-readiness.en.md): eligibility checked;
+registry inclusion remains unconfirmed. The Lake package identifier is
+`lean-verification-components`.
+
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
 ## Proof sections

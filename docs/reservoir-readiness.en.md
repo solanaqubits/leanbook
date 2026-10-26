@@ -1,4 +1,75 @@
-# Reservoir readiness: v0.5.12 release candidate
+# Reservoir indexing and package identity
+
+## Current check: 2026-10-26
+
+The public repository is [solanaqubits/leanbook](https://github.com/solanaqubits/leanbook).
+Its Lake package identifier remains `lean-verification-components`. Repository
+renaming and package renaming are different operations: keeping this identifier
+preserves existing dependency declarations. Lake package version `0.7.1` and
+checkpoint tags follow the separate [version policy](../VERSIONING.md); neither
+is an established cause of the missing Reservoir entry.
+
+The canonical `homepage` in `lakefile.toml` now points to `solanaqubits/leanbook`.
+No package identifier, dependency revision, toolchain, compiler option, proof,
+build target or published tag was changed by this metadata correction.
+
+| Check | Observed result |
+|---|---|
+| Public source | GitHub API: `private=false`, repository ID `1366429017` |
+| Fork/template origin | `fork=false`; `template_repository=null` |
+| Root manifest | Tracked `lake-manifest.json` retrievable through GitHub Contents API |
+| License | GitHub recognizes `Apache-2.0` |
+| Stars | 3 at inspection |
+| Lake integration | `lake reservoir-config 1.0.0` succeeds; `doIndex=true` |
+| Package page | `@solanaqubits/lean-verification-components`: HTTP 404 |
+| Repository-name page | `@solanaqubits/leanbook`: HTTP 404 |
+| Package metadata API | `/api/v1/packages/solanaqubits/lean-verification-components`: HTTP 404 |
+
+This establishes metadata eligibility and absence at the checked endpoints,
+not Reservoir acceptance or a successful Reservoir build. Our qualified
+[v0.10.0 checkpoint](https://github.com/solanaqubits/leanbook/releases/tag/v0.10.0)
+has its own verification evidence; GitHub CI is not a Reservoir build result.
+
+## Discovery diagnosis and follow-up
+
+[Official inclusion criteria](https://reservoir.lean-lang.org/inclusion-criteria)
+describe automatic indexing, normally approximately daily, and recommend an
+upstream issue if an eligible package remains missing for several days. Our
+historical check below already recorded the missing page on 2026-10-07.
+
+At Reservoir commit `a5774ea3b51fef4a496f35c791cfa660c914454f`,
+[`query_lake_repos`](https://github.com/leanprover/reservoir/blob/a5774ea3b51fef4a496f35c791cfa660c914454f/scripts/utils/repo.py)
+uses GitHub Code Search with `filename:lake-manifest.json path:/`.
+A repository-scoped query returned no results with `incomplete_results=true`,
+while direct retrieval of our manifest succeeded. This is a possible discovery
+failure, not a proven root cause; incomplete search results cannot establish
+that GitHub has permanently excluded the repository.
+
+The same upstream revision has no explicit exclusion for our repository in
+`scripts/package-exclusions.txt`. Its registration API requires a Reservoir
+administrator token; it is not a public self-service registration endpoint.
+
+Useful read-only checks:
+
+```bash
+lake reservoir-config 1.0.0
+lake --wfail check-build
+gh api repos/solanaqubits/leanbook
+gh api repos/solanaqubits/leanbook/contents/lake-manifest.json
+curl --fail-with-body \
+  https://reservoir.lean-lang.org/api/v1/packages/solanaqubits/lean-verification-components
+```
+
+The last command is expected to fail while the package is absent. Successful
+local metadata extraction does not register the package. Inclusion must be
+confirmed by a subsequent registry response; any upstream report and response
+should be recorded separately rather than inferred from a local correction.
+
+## Historical check: v0.5.12 release candidate
+
+The following record describes 2026-10-07 and the previous repository name.
+It is retained as historical evidence, not the current publication status.
+
 
 Checked 2026-10-07 while preparing v0.5.12 from public baseline c4d6d779552d5b52b71778464f2048f0fa22c4a8 and private Simon snapshot 8a58301154937e277e38e417dda503cff403e1b6. Metadata readiness and registry acceptance are separate results. The public validation is recorded in [release v0.5.12](release-v0.5.12.en.md).
 

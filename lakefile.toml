@@ -4,7 +4,7 @@ description = "Formally verified domain-specific invariants in Lean 4: DeFi, qua
 keywords = ["formal-verification", "defi", "quantum-computing", "cryptography", "distributed-systems", "raft", "lean4"]
 license = "Apache-2.0"
 licenseFiles = ["LICENSE"]
-homepage = "https://github.com/solanaqubits/lean-verification-components"
+homepage = "https://github.com/solanaqubits/leanbook"
 defaultTargets = ["Verification"]
 # Bound per-file elaboration concurrency; kernel checks remain unchanged.
 weakLeanArgs = ["-j1"]
