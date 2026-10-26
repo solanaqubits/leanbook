@@ -70,6 +70,30 @@ class CleanBuildTests(unittest.TestCase):
             check_coverage(self.root, project_plan(self.root),
                            '✔ [1/4] Built Verification.A (1s)\n', 0)
 
+    def test_post_build_allows_only_explicit_auxiliary_modules(self):
+        plan = project_plan(self.root)
+        build = self.root / '.lake/build'
+        log = ''
+        for i, module in enumerate(plan['modules']):
+            log += f'✔ [{i+1}/4] Built {module} (1s)\n'
+            stem = module.replace('.', '/')
+            for name in [f'lib/lean/{stem}{suffix}' for suffix in ('.olean', '.ilean', '.trace')] + [f'ir/{stem}.c']:
+                p = build / name; p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_text('{"synthetic":false,"depHash":"fresh"}' if name.endswith('.trace') else 'fresh')
+        binary = build / 'bin/probe'; binary.parent.mkdir(parents=True); binary.write_text('binary')
+        aux = build / 'lib/lean/tools/challenge_store/Wire.olean'
+        aux.parent.mkdir(parents=True); aux.write_text('auxiliary')
+        with self.assertRaisesRegex(ValueError, 'olean set'):
+            check_coverage(self.root, plan, log, 0)
+        check_coverage(self.root, plan, log, 0, auxiliary_modules=['tools.challenge_store.Wire'])
+        unexpected = build / 'lib/lean/Verification/Unexpected.olean'; unexpected.write_text('stale')
+        with self.assertRaisesRegex(ValueError, 'olean set'):
+            check_coverage(self.root, plan, log, 0, auxiliary_modules=['tools.challenge_store.Wire'])
+        unexpected.unlink()
+        (build / 'lib/lean/Verification/A.olean').unlink()
+        with self.assertRaisesRegex(ValueError, 'olean set'):
+            check_coverage(self.root, plan, log, 0, auxiliary_modules=['tools.challenge_store.Wire'])
+
     def test_container_mounts_and_cleanup(self):
         out = self.base / 'container'
         def output(cmd, **kwargs):

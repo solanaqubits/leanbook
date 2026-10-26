@@ -75,3 +75,18 @@ Receipts are unsigned execution records. Hash checks do not authenticate the
 operator, prove source/compiler correspondence, or eliminate concurrent hostile
 writers. Use an isolated worktree, preserve failure receipts, and independently
 review the source, logs and final evidence before publication.
+
+### Full beta runtime preparation
+
+Beta evidence schema 3 includes a mandatory `native-build` step after the axiom
+checks and before the full tests. It builds the SQLite/native challenge-store
+transport from the checked sources; both Lean and provenance-store live-test
+flags are enabled by the gate. A fresh checkout must not rely on a transport
+left over from an earlier test run.
+
+The initial clean build still requires exact equality of planned and emitted
+project modules. Final receipt validation permits only the three explicitly
+named challenge-store helper modules (`Wire`, `FileManifest`, `Worker`) added
+by that later step. It still rejects missing planned modules, unexpected
+modules, and any change to a frozen clean-build artifact. These helper modules
+are runtime infrastructure, not additions to the audited formal theorem graph.

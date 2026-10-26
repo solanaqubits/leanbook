@@ -29,11 +29,11 @@ class EvidenceTests(unittest.TestCase):
               'verify-all':json.dumps(dict(ok=True,source_unchanged=True,policy_findings=[],modules=['Verification.A'],source_sha256={'Verification.A':inputs['Verification/A.lean']},audit={'axioms':[],'declarations':1,'violations':[]})),
               'independent-audit':json.dumps(dict(ok=True,violations=[],audited=1,axiomsUsed=[])),
               'all-tests':'Ran 1 tests in 0.1s\n\nOK\n',
-              'registry-audit':'passed','knowledge':'passed','scope':'{}','diff':''}
+              'native-build':'passed','registry-audit':'passed','knowledge':'passed','scope':'{}','diff':''}
         (self.out/'clean-project').mkdir()
         (self.out/'clean-project/receipt.json').write_text('{}')
         (self.out/'clean-project/build.log').write_text(logs['root-build'])
-        self.report=dict(schema_version=2,rank='beta',status='passed',inputs=inputs,checks=[],auditor_sha256=AUDITOR_SHA,runtime={'test_runtime':1}, clean_project_receipt_sha256=digest(self.out/'clean-project/receipt.json'))
+        self.report=dict(schema_version=3,rank='beta',status='passed',inputs=inputs,checks=[],auditor_sha256=AUDITOR_SHA,runtime={'test_runtime':1}, clean_project_receipt_sha256=digest(self.out/'clean-project/receipt.json'))
         for n,text in logs.items():
             p=self.out/(n+'.log');p.write_text(text)
             self.report['checks'].append(dict(name=n,exit_code=0,log=p.name,log_sha256=digest(p)))
@@ -42,6 +42,17 @@ class EvidenceTests(unittest.TestCase):
         (self.out/'evidence.json').write_text(json.dumps(self.report))
     def test_consistent_evidence(self):
         self.assertTrue(validate_report(self.root,self.out)['ok'])
+    def test_native_build_required_before_tests(self):
+        from release_evidence import beta_commands
+        commands = beta_commands({}, '/auditor', self.out)
+        names = [n for n, _ in commands]
+        self.assertLess(names.index('native-build'), names.index('all-tests'))
+        self.assertEqual(dict(commands)['native-build'],
+                         ['python3', '-m', 'tools.challenge_store.build'])
+        self.report['checks'] = [c for c in self.report['checks'] if c['name'] != 'native-build']
+        self.save()
+        with self.assertRaises(ValueError): validate_report(self.root, self.out)
+
     def test_runtime_change_rejected(self):
         self.report['runtime'] = {'test_runtime':2};self.save()
         with self.assertRaises(ValueError):validate_report(self.root,self.out)

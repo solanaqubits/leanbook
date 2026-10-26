@@ -61,9 +61,9 @@ def validate_report(root, directory, expected_digest=None):
     if expected_digest and digest(path) != expected_digest:
         raise ValueError('Evidence digest mismatch')
     r=json.loads(path.read_text())
-    if r.get('schema_version') != 2 or r.get('rank') != 'beta' or r.get('status') != 'passed':
+    if r.get('schema_version') != 3 or r.get('rank') != 'beta' or r.get('status') != 'passed':
         raise ValueError('Incomplete beta evidence')
-    required={'root-build','verify-all','registry-audit','independent-audit','all-tests','knowledge','scope','diff'}
+    required={'root-build','verify-all','registry-audit','independent-audit','native-build','all-tests','knowledge','scope','diff'}
     if len(r['checks']) != len(required) or {c['name'] for c in r['checks']} != required:
         raise ValueError('Missing or duplicate required check')
     if r.get('auditor_sha256') != AUDITOR_SHA or runtime_fingerprint(root) != r.get('runtime'):
@@ -117,6 +117,7 @@ def beta_commands(inputs, auditor, directory):
       ('verify-all',['python3','tools/verifier_skill.py','--timeout','3600','verify-all']),
       ('registry-audit',elaborate_command('Verification/AxiomAudit.lean')),
       ('independent-audit',['lake','env',str(auditor),'--root','Verification','--modules-from','Verification','--allow',','.join(sorted(ALLOWED)),'--json']),
+      ('native-build',['python3','-m','tools.challenge_store.build']),
       ('all-tests',['python3','-m','unittest','discover','-s','tests','-v']),
       ('knowledge',['python3','scripts/check_knowledge.py']),
       ('scope',['python3','tools/verification_plan.py','--rank','beta']),
@@ -131,16 +132,16 @@ def run_beta(root, directory, auditor):
     if digest(auditor) != AUDITOR_SHA:
         raise ValueError('Independent auditor binary pin mismatch')
     inputs=snapshot(root)
-    r=dict(schema_version=2,rank='beta',status='running',inputs=inputs,checks=[],
+    r=dict(schema_version=3,rank='beta',status='running',inputs=inputs,checks=[],
            base_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),
-           auditor_sha256=digest(auditor),runtime=runtime_fingerprint(root),test_environment={'LEAN_VERIFIER_LIVE_TESTS':'1'},
+           auditor_sha256=digest(auditor),runtime=runtime_fingerprint(root),test_environment={'LEAN_VERIFIER_LIVE_TESTS':'1','PROVENANCE_STORE_LIVE_TESTS':'1'},
            conformance_scope=['Simon pinned pilot','Qutrit decoder pinned contract'],
            universal_semantic_conformance=False)
     commands = beta_commands(inputs, auditor, directory)
     for name,cmd in commands:
         print('RUN '+name,flush=True);start=time.monotonic();log=directory/(name+'.log')
         with log.open('w') as f:
-            p=subprocess.run(cmd,cwd=root,env={**os.environ,'LEAN_VERIFIER_LIVE_TESTS':'1'},stdout=f,stderr=subprocess.STDOUT)
+            p=subprocess.run(cmd,cwd=root,env={**os.environ,**r['test_environment']},stdout=f,stderr=subprocess.STDOUT)
         c=dict(name=name,command=cmd,exit_code=p.returncode,seconds=round(time.monotonic()-start,3),log=log.name,log_sha256=digest(log))
         r['checks'].append(c)
         if name == 'root-build' and p.returncode == 0:
@@ -151,7 +152,12 @@ def run_beta(root, directory, auditor):
         if p.returncode: raise ValueError('Check failed: '+name)
     if snapshot(root) != inputs:raise ValueError('Inputs changed during beta verification')
     r['status']='passed';(directory/'evidence.json').write_text(json.dumps(r,indent=2)+'\n')
-    result=validate_report(root,directory)
+    try:
+        result=validate_report(root,directory)
+    except Exception as error:
+        r['status']='failed'; r['validation_error']=str(error)
+        (directory/'evidence.json').write_text(json.dumps(r,indent=2)+'\n')
+        raise
     (directory/'summary.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result),flush=True)
 

@@ -124,7 +124,7 @@ def log_targets(text, status):
     return sorted(set(re.findall(r'^.*?\[\d+/\d+\] ' + status + r' (\S+)', text, re.M)))
 
 
-def check_coverage(root, plan, text, started_ns):
+def check_coverage(root, plan, text, started_ns, *, auxiliary_modules=()):
     built = log_targets(text, 'Built')
     replayed = log_targets(text, 'Replayed')
     expected = set(plan['modules'])
@@ -133,7 +133,7 @@ def check_coverage(root, plan, text, started_ns):
     artifacts = files(root / '.lake/build')
     actual_modules = {p[len('lib/lean/'):-len('.olean')].replace('/', '.')
                       for p in artifacts if p.startswith('lib/lean/') and p.endswith('.olean')}
-    if actual_modules != expected:
+    if not expected <= actual_modules or actual_modules - expected - set(auxiliary_modules):
         raise ValueError('project olean set differs from planned module set')
     traces = {}
     for module in plan['modules']:
@@ -183,7 +183,11 @@ def validate_receipt(root, directory):
     deps = dependency_state(root, require_readonly=False)
     if deps != r['dependencies_before'] or deps != r['dependencies_after']:
         raise ValueError('dependency artifacts changed')
-    coverage = check_coverage(root, r['plan'], (directory / 'build.log').read_text(), r['started_ns'])
+    coverage = check_coverage(root, r['plan'], (directory / 'build.log').read_text(),
+                              r['started_ns'], auxiliary_modules=(
+                                  'tools.challenge_store.Wire',
+                                  'tools.challenge_store.FileManifest',
+                                  'tools.challenge_store.Worker'))
     # Subsequent beta checks may add separate artifacts; frozen ones must remain exact.
     for name, h in r['coverage']['artifacts'].items():
         if coverage['artifacts'].get(name) != h:
