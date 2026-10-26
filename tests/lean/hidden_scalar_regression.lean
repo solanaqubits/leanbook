@@ -8,80 +8,179 @@ namespace HiddenScalarRegression
 open CryptoHiddenScalarInnerProductProtocolContract CryptoBulletproofsInnerProduct
 local instance : Fact (Nat.Prime 5) := ⟨by decide⟩
 set_option maxRecDepth 10000
-set_option maxHeartbeats 4000000
 abbrev F := ZMod 5
 
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def gens (k : ℕ) : Range.Generators 5 F k := ⟨1, 2, 3, fun _ => 1, fun _ => 1⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def witness (k : ℕ) : Witness 5 k := ⟨fun _ => 1, fun _ => 2, 1⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def claim (k : ℕ) : Claim 5 F k :=
   ⟨gens k, multiscalar_mul (witness k).a (gens k).G + multiscalar_mul (witness k).b (gens k).H,
    dot_product (witness k).a (witness k).b • (gens k).B + (witness k).rho • (gens k).Hblind⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def masks (k : ℕ) : MaskRandomness 5 k := (fun _ => 1, fun _ => 2, 3, 4)
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def challenges : Fin 3 → F := ![0,1,2]
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def fork (k : ℕ) := honestFork (claim k) (witness k) (masks k) challenges
 
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 theorem valid_witness (k : ℕ) : WitnessValid (claim k) (witness k) := ⟨rfl,rfl⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : ValidFork (claim 0) (fork 0) := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract (claim 0) (fork 0) = some (.witness (witness 0)) := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract (claim 1) (fork 1) = some (.witness (witness 1)) := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract (claim 2) (fork 2) = some (.witness (witness 2)) := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example (k : ℕ) (e : F) : Verify (claim k) (honestTranscript (claim k) (witness k) (masks k) e) :=
   honest_completeness _ _ (valid_witness k) _ _
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : (fork 0 0).response.left = (masks 0).1 := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : (fork 0 0).response.right = (masks 0).2.1 := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : (fork 0 0).response.blind = 3 := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : (fork 0 1).response.blind = 3 := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : (fork 0 2).response.blind = 0 := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : (candidate (fork 0)).rho = 1 := by decide +kernel
 
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 theorem blinding (k : ℕ) : Function.Bijective (fun x : F => x • (claim k).generators.Hblind) :=
   CryptoPedersenHomomorphicSum.nonzero_generator_bijective
     (CryptoPedersenHomomorphicSum.scalarSetup 2 (by decide)) (by change (2 : F) ≠ 0; decide)
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example (k : ℕ) (e : F) : realView (claim k) (witness k) e = seededSimView (claim k) e :=
   real_view_eq_seeded_sim_view _ _ (valid_witness k) (blinding k) e
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example (k : ℕ) (nu : PMF F) : honestInteraction (claim k) (witness k) nu =
     simulatedInteraction (claim k) nu := interaction_hvzk _ _ (valid_witness k) (blinding k) nu
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example (e : F) (r : MaskRandomness 5 1) : Verify (claim 1) (seededSimulator (claim 1) e r) :=
   simulator_accepts _ _ _
 
 -- Same P,V and announcement, nonaffine third response: explicit G-H relation.
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def relClaim : Claim 5 F 0 := ⟨⟨1,1,1,fun _ => 1,fun _ => 1⟩,0,0⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def relFork : Fin 3 → Transcript 5 F 0 :=
   ![⟨⟨0,0,0⟩,0,⟨0,0,0⟩⟩, ⟨⟨0,0,0⟩,1,⟨0,0,0⟩⟩,
     ⟨⟨0,0,0⟩,2,⟨fun _ => 1,fun _ => 4,1⟩⟩]
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def rel : Range.RelationCoefficients 5 0 := ⟨fun _ => 1,fun _ => 4,0,0,0⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : ValidFork relClaim relFork := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract relClaim relFork = some (.relation rel) := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : rel ≠ 0 := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : Range.relation_eval relClaim.generators rel = 0 := by decide +kernel
-example : ResultValid relClaim (extract relFork) := three_point_extraction_soundness _ _ (by decide +kernel)
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
+example : ResultValid relClaim (extract relFork) :=
+  three_point_extraction_soundness _ _ (by decide +kernel)
 
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def repeated := fun i : Fin 3 => fork 0 (if i = 2 then 1 else i)
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def badAnn := fun i : Fin 3 => if i = 2 then
   { fork 0 i with announcement := { (fork 0 i).announcement with slope := 0 } } else fork 0 i
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def badResponse := fun i : Fin 3 => if i = 2 then
   { fork 0 i with response := { (fork 0 i).response with blind := 1 } } else fork 0 i
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract (claim 0) repeated = none := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract (claim 0) badAnn = none := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract (claim 0) badResponse = none := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract { claim 0 with P := 0 } (fork 0) = none := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : checkedExtract { claim 0 with V := 0 } (fork 0) = none := by decide +kernel
 
 -- Two evaluations do not fix an arbitrary quadratic polynomial's coefficients.
 -- The perturbation changes coefficient data, not a fixed public statement.
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def perturb (e : F) : F := e * (e - 1)
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : perturb 0 = 0 ∧ perturb 1 = 0 ∧ perturb 2 ≠ 0 := by decide +kernel
-example : Interp.interpolate_quad challenges (fun e => perturb (challenges e)) 2 = 1 := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
+example : Interp.interpolate_quad challenges (fun e => perturb (challenges e)) 2 = 1
+  := by decide +kernel
 
 -- J=0: SAME public claim, two valid witnesses, distinguishable joint transcripts.
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def degenerate : Claim 5 F 0 := ⟨⟨1,0,1,fun _ => 1,fun _ => 1⟩,3,2⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def wa : Witness 5 0 := ⟨fun _ => 1,fun _ => 2,0⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def wb : Witness 5 0 := ⟨fun _ => 2,fun _ => 1,0⟩
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def leakMask : MaskRandomness 5 0 := (fun _ => 1,fun _ => 0,0,0)
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def leak := honestTranscript degenerate wa leakMask 0
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : WitnessValid degenerate wa ∧ WitnessValid degenerate wb := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : Verify degenerate leak := by decide +kernel
 
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 theorem no_second_mask : ¬ ∃ r, honestTranscript degenerate wb r 0 = leak := by
   rintro ⟨r,h⟩
   have hl : r.1 0 = 1 := by
@@ -96,16 +195,26 @@ theorem no_second_mask : ¬ ∃ r, honestTranscript degenerate wb r 0 = leak := 
       degenerate, wb, wa, leak, leakMask, hl, hr] using ht
   exact (by decide : (1 : F) ≠ 2) hbad
 
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 theorem degenerate_views_differ : realView degenerate wa 0 ≠ realView degenerate wb 0 := by
   intro h
   have hs : leak ∈ (realView degenerate wa 0).support := (real_support _ _ _ _).mpr ⟨leakMask,rfl⟩
   rw [h] at hs
   exact no_second_mask ((real_support _ _ _ _).mp hs)
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : ¬ Function.Bijective (fun x : F => x • degenerate.generators.Hblind) := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : ¬ Function.Surjective (fun x : F => x • ((1,0) : F × F)) := by decide +kernel
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 example : ((1,0) : F × F) ≠ 0 := by decide +kernel
 
 -- Runtime checks are separate from kernel proofs and PMF equalities.
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def main : IO Unit := do
   let checks : List (String × Bool) := [
     ("honest0", decide (checkedExtract (claim 0) (fork 0) = some (.witness (witness 0)))),
@@ -130,4 +239,6 @@ def main : IO Unit := do
   IO.println "HIDDEN_SCALAR_OK 19"
 end HiddenScalarRegression
 
+set_option maxHeartbeats 4000000 in
+-- Kernel reduction of fixed fixtures retains the original heartbeat budget.
 def main : IO Unit := HiddenScalarRegression.main

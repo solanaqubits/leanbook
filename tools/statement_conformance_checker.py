@@ -5,6 +5,7 @@ Not a sandbox for hostile metaprograms, a general non-vacuity decision procedure
 or a formally verified Python checker. The contract manifest and this program
 must be reviewed independently of candidates. No automatic rebaselining.
 """
+from lean_invoke import lean_command
 import argparse
 import hashlib
 import json
@@ -34,11 +35,19 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def render_probe(template, module, namespace):
+    """Keep the pinned template's tokens, allowing longer candidate names."""
+    text = template.replace('theorem candidate_to_gold (h :',
+                            'theorem candidate_to_gold\n    (h :')
+    return text.replace('-- CANDIDATE_IMPORT', 'import ' + module).replace(
+        '__CANDIDATE__', namespace)
+
+
 def snapshot(root):
     paths = list((root / 'Verification').rglob('*.lean')) + [root / 'Verification.lean']
     paths += [root / p for p in ['lean-toolchain', 'lakefile.toml', 'lake-manifest.json',
               'tools/statement_conformance_contract.json', 'tools/statement_conformance_probe.lean',
-              'tools/statement_conformance_checker.py', 'tools/verifier_skill.py']]
+              'tools/statement_conformance_checker.py', 'tools/verifier_skill.py', 'tools/lean_invoke.py']]
     return {str(p.relative_to(root)): digest(p) for p in paths}
 
 
@@ -76,8 +85,7 @@ def check(project=ROOT, candidate_module='Verification.QuantumSimonsAlgorithm',
             before = snapshot(root)
             report['source_sha256'] = before
             commands = [[verifier.lake, 'build', '--wfail', *modules]]
-            commands += [[verifier.lake, 'env', 'lean', '-DwarningAsError=true',
-                          str(verifier.source(m)[0].relative_to(root))] for m in modules]
+            commands += [lean_command(['-DwarningAsError=true', str(verifier.source(m)[0].relative_to(root))], lake=verifier.lake) for m in modules]
             for cmd in commands:
                 result = verifier.run(cmd)
                 report['steps'].append(result)
@@ -85,12 +93,11 @@ def check(project=ROOT, candidate_module='Verification.QuantumSimonsAlgorithm',
                     report['failure_stage'] = 'strict_compilation'
                     raise VerificationError('Strict compilation failed or timed out')
             template = (root / 'tools/statement_conformance_probe.lean').read_text()
-            probe = template.replace('-- CANDIDATE_IMPORT', 'import ' + candidate_module)
-            probe = probe.replace('__CANDIDATE__', candidate_namespace)
+            probe = render_probe(template, candidate_module, candidate_namespace)
             with tempfile.TemporaryDirectory(prefix='simon-conformance-') as tmp:
                 path = Path(tmp) / 'Probe.lean'
                 path.write_text(probe)
-                result = verifier.run([verifier.lake, 'env', 'lean', '-DwarningAsError=true', str(path)])
+                result = verifier.run(lean_command(['-DwarningAsError=true', str(path)], lake=verifier.lake))
             report['steps'].append(result)
             # A later run_cmd can print a success-shaped record despite an earlier Lean error.
             # Accept only a successful process AND exactly one well-formed record.

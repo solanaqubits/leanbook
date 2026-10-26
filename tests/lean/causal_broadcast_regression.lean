@@ -17,7 +17,8 @@ example : (Regression.parallel.node 0).log ≠ (Regression.parallel.node 1).log 
 example : ¬ MsgHappensBefore Regression.parallel Regression.first.id Regression.independent.id :=
   Regression.parallel_causally_unrelated.1
 example : Reachable Regression.reordered := counterexample_skip_sequence.1
-example : Regression.first.id ∉ ((deliver Regression.causalBlocked 2 Regression.relay).node 2).log :=
+example : Regression.first.id ∉ ((deliver Regression.causalBlocked 2 Regression.relay).node 2).log
+  :=
   counterexample_missing_cross_check.2.2.2.2.2.2
 example : LegalSchedule (initial 3) Regression.duplicateSchedule :=
   Regression.duplicate_arrival_no_redelivery.1

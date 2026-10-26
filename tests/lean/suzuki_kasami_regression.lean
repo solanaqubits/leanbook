@@ -65,7 +65,8 @@ example : (next (initial (0 : Fin 2)) (.request 0)).token.queue = [] := by decid
 
 -- Critical-section ownership cannot be shipped away; waiting requests append on release.
 def busy : State 2 := runTrace (initial 0) [.request 0, .enter 0, .request 1, .receive ⟨1,1,0⟩]
-example : ValidTrace (initial (0 : Fin 2)) [.request 0, .enter 0, .request 1, .receive ⟨1,1,0⟩] := by decide
+example : ValidTrace (initial (0 : Fin 2)) [.request 0, .enter 0, .request 1, .receive ⟨1,1,0⟩]
+  := by decide
 example : ¬ Enabled busy (.send 0 1) ∧ busy.token.queue = [] := by decide
 example : (next busy (.leave 0)).token.queue = [1] := by decide
 

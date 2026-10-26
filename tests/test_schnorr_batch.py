@@ -1,4 +1,5 @@
 """Compiler regressions for finite-field batch counting and its boundary cases."""
+from tools.lean_invoke import lean_command
 
 import os
 from pathlib import Path
@@ -19,13 +20,7 @@ class SchnorrBatchLiveTests(unittest.TestCase):
         lake = shutil.which("lake")
         self.assertIsNotNone(lake, "lake must be available for live compiler tests")
         result = subprocess.run(
-            [
-                lake,
-                "env",
-                "lean",
-                "-DwarningAsError=true",
-                "tests/lean/schnorr_batch_regression.lean",
-            ],
+            lean_command(['-DwarningAsError=true', 'tests/lean/schnorr_batch_regression.lean'], lake=lake),
             cwd=ROOT,
             capture_output=True,
             text=True,

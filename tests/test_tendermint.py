@@ -1,4 +1,5 @@
 """Weighted Tendermint safety and executable transition regressions."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class TendermintLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/tendermint_regression.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/tendermint_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('TENDERMINT_EXEC_OK: 29 cases', result.stdout)

@@ -10,7 +10,8 @@ example : CryptoBulletproofsIPAPedersenOpeningConsistencyContractSuite := by
   have r := MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
   exact r.crypto_suite.ipa_pedersen_consistency
 example (r : MasterSuite.VerificationMasterRegistry) :
-    CryptoBulletproofsIPAPedersenOpeningConsistencyContractSuite := r.crypto_suite.ipa_pedersen_consistency
+    CryptoBulletproofsIPAPedersenOpeningConsistencyContractSuite
+      := r.crypto_suite.ipa_pedersen_consistency
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :
     CryptoBulletproofsIPAPedersenOpeningConsistencyContractSuite :=
   r.crypto_full_suite.ipa_pedersen_consistency

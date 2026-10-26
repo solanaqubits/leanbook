@@ -150,7 +150,8 @@ example : ElectionHistorySafe RollbackExample.r₁₇ ∧ GlobalLogMatching Roll
   ⟨raft_reconfig_election_safety RollbackExample.reach₁₇,
     raft_reconfig_log_matching RollbackExample.reach₁₇⟩
 
-example : DistributedRaftJointConsensusReconfigSuite := distributed_raft_joint_consensus_master_suite
+example : DistributedRaftJointConsensusReconfigSuite
+  := distributed_raft_joint_consensus_master_suite
 
 #print axioms raft_reconfig_election_safety
 #print axioms raft_reconfig_log_matching

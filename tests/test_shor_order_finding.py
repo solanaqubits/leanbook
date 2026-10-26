@@ -1,4 +1,5 @@
 """Live spectral order-finding regressions, including the actual |1> input."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class ShorOrderFindingLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake, 'lake must be available for live compiler tests')
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/shor_order_finding_regression.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/shor_order_finding_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=120)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

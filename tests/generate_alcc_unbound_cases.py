@@ -3,6 +3,7 @@
 The proof checks actual byte lists; no Lean serializer constructs these inputs.
 This finite fixture preparation is not a proof of Python's JSON implementation.
 """
+from tools.lean_fixture_format import wrap_source
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -110,7 +111,7 @@ end ALCCUnboundCases
 ''']
     metadata = dict(positive_pairs=len(positive),syntax_refusals=len(syntax),
                     schema_refusals=len(structural),lean_assertions=len(positive)*3+len(syntax)*2+len(structural)*3+3)
-    return '\n'.join(lines), metadata
+    return wrap_source('\n'.join(lines)), metadata
 
 
 if __name__ == '__main__':

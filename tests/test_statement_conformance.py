@@ -79,6 +79,16 @@ def candidate(mutation=None):
 
 
 class StatementConformanceTests(unittest.TestCase):
+    def test_rendering_preserves_pinned_tokens(self):
+        template = (ROOT / 'tools/statement_conformance_probe.lean').read_text()
+        name = 'ConformanceFixture' + 'a' * 32
+        module = 'Verification.Specs.' + name
+        original = template.replace('-- CANDIDATE_IMPORT', 'import ' + module).replace(
+            '__CANDIDATE__', name)
+        rendered = checker.render_probe(template, module, name)
+        self.assertEqual(original.split(), rendered.split())
+        self.assertLessEqual(max(map(len, rendered.splitlines())), 100)
+
     @classmethod
     def setUpClass(cls):
         if shutil.which('lake') is None:

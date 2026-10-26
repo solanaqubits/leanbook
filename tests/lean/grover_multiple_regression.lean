@@ -15,7 +15,7 @@ example (k : ℕ) : successWeight {0,2} (stateAt {0,2} k) = 1/2 :=
 example (k : ℕ) : successWeight {1,3} (stateAt {1,3} k) = 1/2 :=
   grover_targets_M2_stationary _ (by decide) k
 
-example (T : Finset (Fin 4)) (h : T.card=2) (k : ℕ) :
+example (T : Finset (Fin 4)) (h : T.card = 2) (k : ℕ) :
     successWeight T (stateAt T k) ≠ 1 := by
   rw [grover_targets_M2_stationary T h k]; norm_num
 

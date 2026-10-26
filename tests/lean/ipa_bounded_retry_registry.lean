@@ -7,7 +7,8 @@ import Verification.MasterSuite
 open CryptoBulletproofsIPABoundedRetryContract
 
 example : CryptoBulletproofsIPABoundedRetryContractSuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).crypto_suite.ipa_bounded_retry
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).crypto_suite.ipa_bounded_retry
 example (r : MasterSuite.VerificationMasterRegistry) :
     CryptoBulletproofsIPABoundedRetryContractSuite := r.crypto_suite.ipa_bounded_retry
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :

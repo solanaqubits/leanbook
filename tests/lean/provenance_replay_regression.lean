@@ -36,7 +36,8 @@ example (r q) (h : (redeemChallenge r q).report = none) :
 example (r qs) : (runRequests r qs).context = r.context := run_context_preserved r qs
 example (r qs) : r.usedChallenges ⊆ (runRequests r qs).usedChallenges := run_used_monotone r qs
 example (r q m) (h : (redeemChallenge r q).report = some (acceptedReport m)) :
-    m.challenge ∈ (redeemChallenge r q).registry.usedChallenges := accepted_manifest_consumed r q m h
+    m.challenge ∈ (redeemChallenge r q).registry.usedChallenges := accepted_manifest_consumed r q m
+      h
 example (r q rp qs later) (h : (redeemChallenge r q).report = some rp)
     (hc : later.expected.challenge = q.expected.challenge) :
     redeemChallenge (runRequests (redeemChallenge r q).registry qs) later =

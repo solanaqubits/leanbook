@@ -14,7 +14,7 @@ example (U V : Q) (hU : IsDensity U) (hV : IsDensity V) :
     (tensor U V).trace = 1 ∧ |S (tensor U V)| ≤ 2 := by
   refine ⟨?_,product_bound U V hU hV⟩
   rw [tensor_trace,hU.2,hV.2,mul_one]
-example (x z : ℝ) (h : x^2+z^2=1) (tau : Outcome → Q) (ht : ∀ a, IsDensity (tau a)) :
+example (x z : ℝ) (h : x ^ 2 + z ^ 2 = 1) (tau : Outcome → Q) (ht : ∀ a, IsDensity (tau a)) :
     |S (interceptResend x z tau rho_minus)| ≤ 2 ∧
     (interceptResend x z tau rho_minus).trace = 1 :=
   ⟨(intercept_resend_forces_separable x z h tau ht).2.2,intercept_trace_one x z h tau ht⟩

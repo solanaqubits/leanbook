@@ -22,7 +22,8 @@ def badTx : RangeReductionTranscript 17 F 1 := { transcript 1 3 with tx := (tran
 def badMu : RangeReductionTranscript 17 F 1 := { transcript 1 3 with mu := (transcript 1 3).mu + 1 }
 def badT1 : RangeReductionTranscript 17 F 1 := { transcript 1 3 with T1 := (transcript 1 3).T1 + 1 }
 def badIPA : RangeReductionTranscript 17 F 1 :=
-  { transcript 1 3 with ipa := { (transcript 1 3).ipa with a_final := (transcript 1 3).ipa.a_final + 1 } }
+  { transcript 1 3 with ipa := { (transcript 1 3).ipa with a_final := (transcript 1 3).ipa.a_final
+                                 + 1 } }
 def checkBad (tr : RangeReductionTranscript 17 F 1) :=
   verify_range_reduction (params 1) (value_commit (params 1) 3 4) 1 3 4 (xs 1) tr
 
@@ -50,16 +51,20 @@ example : run 2 15 = true := by
   simp only [run, transcript, verify_range_reduction, range_prover, range_target, scaled_one]
   decide
 example : checkBad badTx = false := by
-  simp only [checkBad, badTx, transcript, verify_range_reduction, range_prover, range_target, scaled_one]
+  simp only [checkBad, badTx, transcript, verify_range_reduction, range_prover, range_target,
+    scaled_one]
   decide
 example : checkBad badMu = false := by
-  simp only [checkBad, badMu, transcript, verify_range_reduction, range_prover, range_target, scaled_one]
+  simp only [checkBad, badMu, transcript, verify_range_reduction, range_prover, range_target,
+    scaled_one]
   decide
 example : checkBad badT1 = false := by
-  simp only [checkBad, badT1, transcript, verify_range_reduction, range_prover, range_target, scaled_one]
+  simp only [checkBad, badT1, transcript, verify_range_reduction, range_prover, range_target,
+    scaled_one]
   decide
 example : checkBad badIPA = false := by
-  simp only [checkBad, badIPA, transcript, verify_range_reduction, range_prover, range_target, scaled_one]
+  simp only [checkBad, badIPA, transcript, verify_range_reduction, range_prover, range_target,
+    scaled_one]
   decide
 example : run 2 15 0 = false := zero_y_rejected _ _ _ _ _ _
 example : ¬ ∃ b : Fin 4 → ℕ, (∀ i, b i ≤ 1) ∧
@@ -82,7 +87,8 @@ example (a b : Fin 4 → F) (h : formal_t0 a b = formal_rhs (15 : F) 4) : 15 < 2
   formal_identity_natural_range a b 15 (by decide) (by decide) h
 example (y : F) (hy : y ≠ 0) (i : Fin 4) :
     y^i.val • scaled_H (params 2).H y i = (params 2).H i := scaled_generators_valid _ _ hy _
-example : CryptoBulletproofsRangeReductionSuite := CryptoBulletproofsRangeReduction.verification_suite
+example : CryptoBulletproofsRangeReductionSuite
+  := CryptoBulletproofsRangeReduction.verification_suite
 
 def main : IO Unit := do
   let cases : List Bool := [run 0 0, run 0 1, run 1 0, run 1 3, run 2 0, run 2 15,

@@ -60,14 +60,16 @@ example (u0 : ℝ) : Tendsto (trajectory linearModel (1/2) (1/2) u0 (fun _ => 0)
 example (t : ℕ) : |trajectory linearModel (1/2) (1/2) 0 (fun _ => 0) t - 1/2| ≤
     (1/2 : ℝ)^t * (1/2) := by
   simpa only [stable_kappa, zero_sub, abs_neg,
-    abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 1/2)] using noiseless_error linearModel (1/2) (1/2) 0 (1/2)
+    abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 1/2)] using noiseless_error linearModel (1/2) (1/2) 0
+      (1/2)
     (by rw [stable_kappa]; norm_num) (linear_equilibrium _) t
 example (t : ℕ) : |trajectory linearModel (1/2) (1/2) (3/4) (fun _ => 1/8) t - 1/2| =
     (1/4 : ℝ) := by rw [persistent_noise_equilibrium]; norm_num
 example (t : ℕ) : |trajectory linearModel (1/2) (1/2) 0 (fun _ => 1/8) t - 1/2| ≤
     (1/2 : ℝ)^t * (1/2) + (1/8)*(1-(1/2)^t)/(1-1/2) := by
   simpa only [stable_kappa, zero_sub, abs_neg,
-    abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 1/2)] using bounded_perturbation_stability linearModel (1/2) (1/2)
+    abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 1/2)] using bounded_perturbation_stability linearModel
+      (1/2) (1/2)
     0 (1/2) (1/8) (fun _ => 1/8) (by rw [stable_kappa]; norm_num)
     (linear_equilibrium _) (by intro t; norm_num) t
 example (t : ℕ) : trajectory linearModel 3 (1/2) 0 (fun _ => 0) (2*t) = 0 ∧

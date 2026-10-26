@@ -1,4 +1,5 @@
 """Pure provenance policy checks; synthetic callbacks are not crypto validation."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -14,7 +15,7 @@ class ProvenanceReportLiveTests(unittest.TestCase):
     def run_lean(self, *args):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-j1', '-DwarningAsError=true', *args],
+        result = subprocess.run(lean_command(['-j1', '-DwarningAsError=true', *args], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         return result.stdout

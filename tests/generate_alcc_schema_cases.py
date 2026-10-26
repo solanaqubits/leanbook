@@ -3,6 +3,7 @@
 Expected structures are direct positional fixtures, not decoder outputs.
 No JSON parser, hash computation or external CAS is trusted by these tests.
 """
+from tools.lean_fixture_format import wrap_source
 from copy import deepcopy
 from pathlib import Path
 
@@ -188,7 +189,7 @@ example {jp jc : JsonAST} {a b : UnboundTask}
 #print axioms decodePoly_at
 end ALCCSchemaCases
 ''']
-    return '\n'.join(lines), len(positive), len(negative)
+    return wrap_source('\n'.join(lines)), len(positive), len(negative)
 
 
 if __name__ == '__main__':

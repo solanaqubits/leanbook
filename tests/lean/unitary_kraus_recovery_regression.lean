@@ -15,11 +15,13 @@ abbrev D := QuantumUnitaryKrausDiagonalizationRecoveryContract.Examples.repeated
 
 example : U.conjTranspose * U = 1 := Examples.complex_unitary_left
 example : U * U.conjTranspose = 1 := Examples.complex_unitary_right
-example : U.transpose.conjTranspose * U.transpose = 1 := transpose_isometry _ Examples.complex_unitary_right
+example : U.transpose.conjTranspose * U.transpose = 1 := transpose_isometry _
+  Examples.complex_unitary_right
 example : U.transpose ≠ U.conjTranspose := Examples.transpose_not_adjoint
 example : (C.coefficients 0 1).im ≠ 0 := Examples.imaginary_coefficient
 example : (C.coefficients 0 1).im = 84/625 := by rw [Examples.complex_coefficients]; norm_num
-example : (C.coefficients.transpose 0 1).im = -84/625 := by rw [Examples.complex_coefficients]; norm_num
+example : (C.coefficients.transpose 0 1).im = -84/625
+  := by rw [Examples.complex_coefficients]; norm_num
 example : C.coefficients.IsHermitian := by
   change C.coefficients.conjTranspose = C.coefficients
   rw [Examples.complex_coefficients]
@@ -51,12 +53,14 @@ theorem wrong_mixing_fails :
 example : ∀ i, 0 ≤ C.weights i := weights_nonnegative C
 example : ∑ i, C.weights i = 1 := weights_normalized C
 example : (rotated C).operators 0 = ∑ a, U a 0 • E.operators a := mixed_operators _ _ _ _
-example (X : Q 4) : apply_channel (rotated C) X = apply_channel E X := mixed_channel_invariant _ _ _ _
+example (X : Q 4) : apply_channel (rotated C) X = apply_channel E X := mixed_channel_invariant _ _
+  _ _
 example : apply_channel (rotated C) (Matrix.single 0 3 Complex.I) =
     apply_channel E (Matrix.single 0 3 Complex.I) := mixed_channel_invariant _ _ _ _
 example : (U.conjTranspose * C.coefficients * U) 0 1 =
     ∑ a, ∑ b, star (U a 0) * C.coefficients a b * U b 1 := coefficient_entry_sum _ _ _ _
-example : J.conjTranspose * ((rotated C).operators 0).conjTranspose * (rotated C).operators 1 * J = 0 := by
+example : J.conjTranspose * ((rotated C).operators 0).conjTranspose * (rotated C).operators 1 * J =
+  0 := by
   simpa using rotated_diagonal C 0 1
 example : J.conjTranspose * ((rotated C).operators 0).conjTranspose * (rotated C).operators 0 * J =
     (9/25 : ℂ) • (1 : Q 2) := by
@@ -73,7 +77,8 @@ example : apply_channel (certifiedRecovery C)
     (apply_channel E (encode J (Matrix.single 0 1 Complex.I))) = Matrix.single 0 1 Complex.I :=
   certified_recovery_theorem C _
 example : apply_channel (certifiedRecovery C)
-    (apply_channel E (encode J (Matrix.single 1 0 (2 + Complex.I)))) = Matrix.single 1 0 (2 + Complex.I) :=
+    (apply_channel E (encode J (Matrix.single 1 0 (2 + Complex.I)))) = Matrix.single 1 0 (2 +
+      Complex.I) :=
   certified_recovery_theorem C _
 example : apply_channel (certifiedRecovery C)
     (apply_channel E (encode J QuantumHelstromStateDiscrimination.Examples.rhoPlus)) =
@@ -83,8 +88,10 @@ example : Density (apply_channel (certifiedRecovery C)
   (logical_density_recovered C QuantumHelstromStateDiscrimination.Examples.rhoPlus_density).2
 example : QuantumNoBroadcastingMixed.IsCompletelyPositive (apply_channel (certifiedRecovery C)) :=
   certified_recovery_cp C
-example (Y : Q 4) : (apply_channel (certifiedRecovery C) Y).trace = Y.trace := certified_recovery_trace C Y
-example : ∑ i, ((certifiedRecovery C).operators i).conjTranspose * (certifiedRecovery C).operators i = 1 :=
+example (Y : Q 4) : (apply_channel (certifiedRecovery C) Y).trace = Y.trace
+  := certified_recovery_trace C Y
+example : ∑ i, ((certifiedRecovery C).operators i).conjTranspose * (certifiedRecovery C).operators
+  i = 1 :=
   certified_recovery_complete C
 example : Z.weights 1 = 0 := rfl
 example : normalizedError (diagonalCode Z) 1 = 0 := normalized_zero _ _ rfl
@@ -95,7 +102,8 @@ example : D.weights 0 > 0 ∧ D.weights 1 > 0 := by
 example : ∑ i, D.weights i = 1 := weights_normalized D
 example : normalizedError (diagonalCode D) 2 = 0 := normalized_zero _ _ rfl
 example (X : Q 2) : apply_channel (certifiedRecovery Z)
-    (apply_channel (inverseMixed (F := QuantumOrthogonalErrorRecoveryContract.Examples.sectorChannel)
+    (apply_channel (inverseMixed (F
+      := QuantumOrthogonalErrorRecoveryContract.Examples.sectorChannel)
       U Examples.complex_unitary_left) (encode J X)) = X := certified_recovery_theorem Z X
 example : apply_channel (certifiedRecovery D)
     (apply_channel (inverseMixed (F := Examples.repeatedChannel) (1 : Q 3) (by simp))

@@ -1,4 +1,5 @@
 """Kernel and runtime regressions for fixed-fork partial IPA caches and aligned resource bounds."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class IPAPartialCacheLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true', '--run',
-             'tests/lean/ipa_partial_cache_regression.lean'],
+            lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_partial_cache_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('IPA_PARTIAL_CACHE_OK 30', result.stdout)
@@ -25,8 +25,7 @@ class IPAPartialCacheLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/ipa_partial_cache_registry.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/ipa_partial_cache_registry.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

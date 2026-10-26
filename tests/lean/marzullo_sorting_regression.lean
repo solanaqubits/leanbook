@@ -65,7 +65,8 @@ example : merge_sweep_overlap_count [unit, point] = merge_sweep_overlap_count [p
 example : merge_select_best_peak_component misleading_sources = some misleading_peak := by
   rw [merge_selection_eq]
   exact peak_not_necessarily_true_time_counterexample.2.2.1
-example : merge_compute_threshold_hull misleading_sources 2 = some misleading_hull := by rw [merge_compute_threshold_hull_eq]; decide
+example : merge_compute_threshold_hull misleading_sources 2 = some misleading_hull
+  := by rw [merge_compute_threshold_hull_eq]; decide
 
 private def runChecks : IO Unit := do
   let checks : List Bool := [

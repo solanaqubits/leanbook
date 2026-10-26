@@ -1,6 +1,7 @@
 import Verification.CryptoBulletproofsBatchVerification
 
-open CryptoBulletproofsBatchVerification CryptoBulletproofsRangeReduction CryptoBulletproofsInnerProduct
+open CryptoBulletproofsBatchVerification CryptoBulletproofsRangeReduction
+  CryptoBulletproofsInnerProduct
 open scoped BigOperators ENNReal
 instance : Fact (Nat.Prime 17) := ⟨by decide⟩
 abbrev F := ZMod 17
@@ -29,14 +30,18 @@ lemma scaled_one {n : ℕ} (H : Fin n → F) : scaled_H H (1 : F) = H := by
   simp [scaled_H]
 
 lemma honest (k v : ℕ) (hb : ∀ i, bits k v i * (bits k v i - 1) = 0)
-    (hv : ∑ i, (2 : F)^i.val * bits k v i = (v : F)) :
+    (hv : ∑ i, (2 : F) ^ i.val * bits k v i = (v : F)) :
     individual_verify (params k) (instanceProof k v) = true := by
   apply honest_individual_completeness <;> first | decide | assumption
 
-example : individual_verify (params 0) (instanceProof 0 0) = true := honest _ _ (by decide) (by decide)
-example : individual_verify (params 0) (instanceProof 0 1) = true := honest _ _ (by decide) (by decide)
-example : individual_verify (params 1) (instanceProof 1 3) = true := honest _ _ (by decide) (by decide)
-example : individual_verify (params 2) (instanceProof 2 15) = true := honest _ _ (by decide) (by decide)
+example : individual_verify (params 0) (instanceProof 0 0) = true := honest _ _ (by decide)
+  (by decide)
+example : individual_verify (params 0) (instanceProof 0 1) = true := honest _ _ (by decide)
+  (by decide)
+example : individual_verify (params 1) (instanceProof 1 3) = true := honest _ _ (by decide)
+  (by decide)
+example : individual_verify (params 2) (instanceProof 2 15) = true := honest _ _ (by decide)
+  (by decide)
 example (r : Fin 0 → F) : verify_batch (params 1) (Fin.elim0 : Fin 0 → _) r = true := by
   apply batch_protocol_completeness
   intro j
@@ -45,7 +50,8 @@ example : verify_batch (params 1) good sampleWeights = true := by
   apply batch_protocol_completeness
   intro j
   fin_cases j <;> exact honest _ _ (by decide) (by decide)
-example (r : Fin 2 → F) : verify_batch (params 1) (fun _ : Fin 1 => instanceProof 1 3 0) r = false :=
+example (r : Fin 2 → F) : verify_batch (params 1) (fun _ : Fin 1 => instanceProof 1 3 0) r = false
+  :=
   batch_zero_y_rejected (q := 17) (m := 1) (params 1)
     (fun _ => instanceProof 1 3 0) 0 rfl r
 example (r : Fin 2 → F) : verify_batch (params 1)
@@ -77,7 +83,8 @@ example (e : Equiv.Perm (Fin 2)) :
       verify_batch (params 1) good sampleWeights := batch_joint_permutation_invariance _ _ _ _
 example (D : Fin 4 → F) (h : ∃ j, D j ≠ 0) : acceptance_probability (q := 17) D ≤ 1 / 17 :=
   batch_soundness_error_bound _ h
-example : CryptoBulletproofsBatchVerificationSuite := CryptoBulletproofsBatchVerification.verification_suite
+example : CryptoBulletproofsBatchVerificationSuite
+  := CryptoBulletproofsBatchVerification.verification_suite
 
 def main : IO Unit := do
   let single (k v : ℕ) := verify_batch (params k) (fun _ : Fin 1 => instanceProof k v) ![3, 5]
@@ -85,7 +92,8 @@ def main : IO Unit := do
   let badAcceptCount := ((List.range 17).flatMap fun a => (List.range 17).map fun b =>
     verify_batch (params 1) (fun _ : Fin 1 => bad) ![(a : F), (b : F)]).filter id |>.length
   let badScalarCount := ((List.range 17).flatMap fun a => (List.range 17).map fun b =>
-    verify_batch_msm (params 1) (fun _ : Fin 1 => badScalar) ![(a : F), (b : F)]).filter id |>.length
+    verify_batch_msm (params 1) (fun _ : Fin 1 => badScalar) ![(a : F), (b : F)]).filter id
+      |>.length
   let cases : List Bool := [single 0 0, single 0 1, single 1 0, single 1 3, single 2 0, single 2 15,
     verify_batch (params 1) good sampleWeights,
     verify_batch_msm (params 1) good sampleWeights,
@@ -96,7 +104,10 @@ def main : IO Unit := do
     !(verify_batch (params 1) (fun _ : Fin 1 => instanceProof 1 3 0) 0),
     !(verify_batch (params 1) (fun _ : Fin 1 => { instanceProof 1 3 with x := 0 }) 0),
     cancellationAccepted, decide (badAcceptCount = 17), decide (badScalarCount = 17),
-    verify_batch (params 1) (good ∘ Equiv.swap 0 1) (permute_weights (Equiv.swap 0 1) sampleWeights)]
-  if cases.all id then IO.println s!"BULLETPROOFS_BATCH_EXEC_OK: {cases.length} cases; invalid accept counts {badAcceptCount}/289, {badScalarCount}/289"
+    verify_batch (params 1) (good ∘ Equiv.swap 0 1) (permute_weights (Equiv.swap 0 1)
+      sampleWeights)]
+  if cases.all id then
+    IO.println s!"BULLETPROOFS_BATCH_EXEC_OK: {cases.length} cases; invalid accept \
+      counts {badAcceptCount}/289, {badScalarCount}/289"
   else throw (IO.userError s!"Batch regression failed: {cases}")
 #eval main

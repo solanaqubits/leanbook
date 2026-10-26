@@ -108,7 +108,8 @@ example {d e r} (K : KrausChannel d e r) (X : Q d) :
 example {d e r} (K : KrausChannel d e r) (a : Fin e) (b : Fin d) :
     stinespring_matrix (append_zero K).operators (a, Fin.last r) b = 0 := append_zero_block K a b
 
-example (X : Q 2) : partialTrace (dilation (append_zero (append_zero (identity_channel 2))) X) = X := by
+example (X : Q 2) : partialTrace (dilation (append_zero (append_zero (identity_channel 2))) X) = X
+  := by
   simp [partial_trace_stinespring_eq_channel, append_zero_channel]
 
 example : dilation (append_zero (dephasing_channel 2)) rhoPlus (0, 2) (1, 2) = 0 := by

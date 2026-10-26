@@ -31,8 +31,10 @@ example : Hits .weak unitContext {0} := by decide +kernel
 example : ¬ Hits .strict unitContext ∅ := by decide +kernel
 example : inheritedSigners unitContext ∅ sourceCommit sourcePolka adopted = {0} := by decide +kernel
 example : inheritedSigners unitContext {0} sourceCommit sourcePolka adopted = ∅ := by decide +kernel
-example : inheritedSigners unitContext ∅ sourceCommit sourcePolka (fun _ => none) = ∅ := by decide +kernel
-example : Hits .strict unitContext (inheritedSigners unitContext ∅ sourceCommit sourcePolka adopted) :=
+example : inheritedSigners unitContext ∅ sourceCommit sourcePolka (fun _ => none) = ∅
+  := by decide +kernel
+example : Hits .strict unitContext (inheritedSigners unitContext ∅ sourceCommit sourcePolka
+  adopted) :=
   inherited_signers_hit_every_quorum .strict unitContext ∅ sourceCommit sourcePolka adopted
     accepted (by decide +kernel) (by decide +kernel) (by decide +kernel) adoptions
 example : HonestPrevotes .strict unitContext good {0} 7 := by decide +kernel
@@ -78,8 +80,10 @@ example : Polka .strict unitContext good localPolka.round localPolka.value :=
     (by decide +kernel) (by decide +kernel) (by decide +kernel)
 example : Reachable .strict unitContext start replaced :=
   recorded_reachable_refines .strict unitContext good start replaced replaced_recorded
-example : replaced.value = start.value ∨ EarlierPolka .strict unitContext good replaced.round replaced.value :=
-  recorded_value_origin .strict unitContext good start replaced (by decide +kernel) replaced_recorded
+example : replaced.value = start.value ∨ EarlierPolka .strict unitContext good replaced.round
+  replaced.value :=
+  recorded_value_origin .strict unitContext good start replaced (by decide +kernel)
+    replaced_recorded
 example : replaceLock .strict unitContext advanced (unitCertificate 1 3 .prevote 9) = none :=
   future_polka_rejected _ _ _ _ (by decide +kernel)
 example : HonestPrevotes .strict unitContext bareCommit {0} 7 :=
@@ -87,19 +91,23 @@ example : HonestPrevotes .strict unitContext bareCommit {0} 7 :=
 example : Commit .strict unitContext bareCommit 3 9 := uncertified_precommit_counterexample.2.2.1
 example : ¬ HonestPrecommits .strict unitContext bareCommit {0} :=
   uncertified_precommit_counterexample.2.2.2.2.1
-example : WeakPrevotes .strict unitContext circularHistory {0} 7 := nonstrict_round_counterexample.2.1
-example : HonestPrecommits .strict unitContext circularHistory {0} := nonstrict_round_counterexample.2.2.1
+example : WeakPrevotes .strict unitContext circularHistory {0} 7
+  := nonstrict_round_counterexample.2.1
+example : HonestPrecommits .strict unitContext circularHistory {0}
+  := nonstrict_round_counterexample.2.2.1
 example : ¬ HonestPrevotes .strict unitContext circularHistory {0} 7 :=
   nonstrict_round_counterexample.2.2.2.2.1
 example : Polka .strict unitContext circularHistory 1 9 := by decide +kernel
 example : ¬ Polka .strict unitContext circularHistory 0 9 := by decide +kernel
 example : ¬ EarlierPolka .strict unitContext circularHistory 1 9 := by decide +kernel
-example : Polka .strict unitContext { good with votes := good.votes ∪ good.votes } 3 7 := by decide +kernel
+example : Polka .strict unitContext { good with votes := good.votes ∪ good.votes } 3 7
+  := by decide +kernel
 example : ¬ Polka .strict unitContext { good with votes := ∅ } 3 7 := by decide +kernel
 
 /-- A locally checked alternative replacement is possible when the global prevote rule fails. -/
 def alternative : LocalState := { advanced with value := 9, lockedRound := 1 }
-theorem alternative_recorded : RecordedReachable .strict unitContext circularHistory start alternative :=
+theorem alternative_recorded : RecordedReachable .strict unitContext circularHistory start
+  alternative :=
   .step (s := advanced) (.step .initial (.advance 3) trivial (by decide +kernel))
     (.replace (unitCertificate 1 1 .prevote 9)) (by decide +kernel) (by decide +kernel)
 example : EarlierPolka .strict unitContext circularHistory 3 9 :=
@@ -120,8 +128,10 @@ example : EarlierPolka .strict unitContext circularHistory 3 9 :=
   ("foreign epoch", decide (¬ Polka .strict unitContext { good with epoch := 2 } 1 7)),
   ("foreign height", decide (¬ Commit .strict unitContext { good with height := 6 } 3 7)),
   ("registered", decide (Registered unitContext good localPolka)),
-  ("unregistered conflict", decide (¬ Registered unitContext good (unitCertificate 1 1 .prevote 9))),
-  ("self justification rejected", decide (¬ HonestPrevotes .strict unitContext circularHistory {0} 7)),
+  ("unregistered conflict", decide (¬ Registered unitContext good (unitCertificate 1 1 .prevote
+    9))),
+  ("self justification rejected", decide (¬ HonestPrevotes .strict unitContext circularHistory {0}
+    7)),
   ("weak circular rule", decide (WeakPrevotes .strict unitContext circularHistory {0} 7)),
   ("bare commit", decide (Commit .strict unitContext bareCommit 3 9)),
   ("missing certification", decide (¬ HonestPrecommits .strict unitContext bareCommit {0})),

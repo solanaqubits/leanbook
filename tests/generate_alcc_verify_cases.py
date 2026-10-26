@@ -2,6 +2,7 @@
 
 stdlib JSON/hashlib prepare inputs, never proof terms or expected algebraic verdicts.
 """
+from tools.lean_fixture_format import wrap_source
 from copy import deepcopy
 from pathlib import Path
 from tests.generate_alcc_bound_cases import bind
@@ -70,7 +71,7 @@ example : p_reference = p_changed_powers := by decide +kernel
 #print axioms verifyCertificateBytes_false_sound
 end ALCCVerifyCases
 ''']
-    return '\n'.join(lines), dict(accepted=4,rejected=3,decoder_refusals=5,
+    return wrap_source('\n'.join(lines)), dict(accepted=4,rejected=3,decoder_refusals=5,
                                   lean_assertions=26,named_computations=12)
 
 

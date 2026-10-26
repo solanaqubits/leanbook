@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build only the runtime transport. Existing formal sources remain unchanged."""
+from tools.lean_invoke import lean_command
 import hashlib
 import json
 import sqlite3
@@ -15,8 +16,7 @@ def build():
     dest = ROOT/'.lake/build/lib/lean/tools/challenge_store'
     dest.mkdir(parents=True, exist_ok=True)
     for name in ['Wire', 'FileManifest', 'Worker']:
-        subprocess.run(['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',
-                        '-o', str(dest/(name+'.olean')), str(HERE/(name+'.lean'))],
+        subprocess.run(lean_command(['-j1', '-DwarningAsError=true', '-o', str(dest / (name + '.olean')), str(HERE / (name + '.lean'))], lake='lake'),
                        cwd=ROOT, check=True)
     receipt = {'sqlite_version': sqlite3.sqlite_version, 'sqlite_source_id':
         sqlite3.connect(':memory:').execute('select sqlite_source_id()').fetchone()[0],

@@ -7,9 +7,12 @@ import Verification.MasterSuite
 open CryptoBulletproofsIPARecursiveTreeGeneratorContract
 
 example : CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).crypto_suite.ipa_recursive_generator
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).crypto_suite.ipa_recursive_generator
 example (r : MasterSuite.VerificationMasterRegistry) :
-    CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite := r.crypto_suite.ipa_recursive_generator
+    CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite
+      := r.crypto_suite.ipa_recursive_generator
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :
-    CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite := r.crypto_full_suite.ipa_recursive_generator
+    CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite
+      := r.crypto_full_suite.ipa_recursive_generator
 example : CryptoBulletproofsIPARecursiveTreeGeneratorContractSuite := verification_suite

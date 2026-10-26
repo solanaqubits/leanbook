@@ -13,10 +13,10 @@ example : (binaryPOVM 2 (1/2) (by constructor <;> norm_num)).effects 0 *
     (binaryPOVM 2 (1/2) (by constructor <;> norm_num)).effects 0 ≠
     (binaryPOVM 2 (1/2) (by constructor <;> norm_num)).effects 0 :=
   binary_nonprojective (1/2) (by constructor <;> norm_num)
-example (ρ : Q 2) (hρ : ρ.trace=1) :
+example (ρ : Q 2) (hρ : ρ.trace = 1) :
     probability (binaryPOVM 2 (1/2) (by constructor <;> norm_num)) ρ 0=1/2 := by
   simpa using (binary_probability (1/2) (by constructor <;> norm_num) ρ hρ).1
-example (ρ : Q 2) (hρ : ρ.PosSemidef ∧ ρ.trace=1) :
+example (ρ : Q 2) (hρ : ρ.PosSemidef ∧ ρ.trace = 1) :
     (dilate (binaryPOVM 2 (1/2) (by constructor <;> norm_num)) ρ).PosSemidef ∧
     (dilate (binaryPOVM 2 (1/2) (by constructor <;> norm_num)) ρ).trace=1 :=
   density_matrix_dilation _ _ hρ

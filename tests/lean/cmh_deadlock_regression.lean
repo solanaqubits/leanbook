@@ -22,7 +22,8 @@ def absorbed : State 3 := { branching with queue := [] }
 
 theorem branch_trace : Reachable branch absorbed := by
   apply Execution.cons (Step.initiate initial 0 ⟨1, by decide⟩)
-  apply Execution.cons (Step.absorb branching ⟨0,0,1⟩ [] [⟨0,0,2⟩] (by decide) (by unfold Blocked; decide))
+  apply Execution.cons
+    (Step.absorb branching ⟨0,0,1⟩ [] [⟨0,0,2⟩] (by decide) (by unfold Blocked; decide))
   apply Execution.cons (Step.absorb _ ⟨0,0,2⟩ [] [] (by decide) (by unfold Blocked; decide))
   exact .nil _
 

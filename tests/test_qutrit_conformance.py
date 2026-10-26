@@ -71,6 +71,16 @@ def candidate(mutation=None):
 
 @unittest.skipUnless(os.environ.get('LEAN_VERIFIER_LIVE_TESTS') == '1', 'Live Lean checks required')
 class QutritConformanceTests(unittest.TestCase):
+    def test_rendering_preserves_pinned_tokens(self):
+        template = (ROOT / 'tools/qutrit_conformance_probe.lean').read_text()
+        name = 'QutritCandidate' + 'a' * 32
+        module = 'Verification.Specs.' + name
+        original = template.replace('-- CANDIDATE_IMPORT', 'import ' + module).replace(
+            '__CANDIDATE__', name)
+        rendered = checker.render_probe(template, module, name)
+        self.assertEqual(original.split(), rendered.split())
+        self.assertLessEqual(max(map(len, rendered.splitlines())), 100)
+
     def test_original(self):
         r=checker.check(ROOT);self.assertTrue(r['ok'],r)
     def test_alternative_proof(self):
@@ -82,6 +92,10 @@ class QutritConformanceTests(unittest.TestCase):
                 r=checker.check(ROOT,m,n)
                 self.assertFalse(r['ok'],r)
                 self.assertEqual(r['error'],'Contract probe failed',r)
+                kind = 'definition' if mutation == 'wrong_coordinates' else 'statement'
+                self.assertIn('QUTRIT_CONFORMANCE ' + kind + ' mismatch:',
+                              r['steps'][-1]['output'])
+                self.assertNotIn('This line exceeds', r['steps'][-1]['output'])
     def test_invalid_identifier(self):
         r=checker.check(ROOT,'Verification.X\nimport Bad');self.assertFalse(r['ok']);self.assertEqual(r['steps'],[])
     def test_tampered_spec(self):

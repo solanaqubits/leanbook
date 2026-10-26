@@ -1,0 +1,2293 @@
+{
+  "base": "200d40a4",
+  "method": "Python AST list construction search plus textual/dynamic review; not proof of exhaustive runtime callgraph",
+  "rows": [
+    {
+      "file": "tests/test_actuator_arbitration.py",
+      "line": 15,
+      "function": "check_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', *args]",
+      "replacement": "lean_command(['-DwarningAsError=true', *args], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_aggregation.py",
+      "line": 18,
+      "function": "test_aggregation_and_composition",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/aggregation_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/aggregation_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_alcc_bound.py",
+      "line": 28,
+      "function": "run_lean",
+      "original": "['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',\n             '-DrelaxedAutoImplicit=false', str(source)]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '-DrelaxedAutoImplicit=false', str(source)], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened.",
+      "consumer_roles": [
+        "A-positive fixtures",
+        "B-rfl negative claims; exact diagnostic now required"
+      ]
+    },
+    {
+      "file": "tests/test_alcc_schema.py",
+      "line": 24,
+      "function": "run_lean",
+      "original": "['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',\n             '-DrelaxedAutoImplicit=false', str(source)]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '-DrelaxedAutoImplicit=false', str(source)], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened.",
+      "consumer_roles": [
+        "A-positive fixtures",
+        "B-rfl negative claims; exact diagnostic now required"
+      ]
+    },
+    {
+      "file": "tests/test_alcc_syntax.py",
+      "line": 15,
+      "function": "run_lean",
+      "original": "['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',\n             '-DrelaxedAutoImplicit=false', str(source)]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '-DrelaxedAutoImplicit=false', str(source)], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened.",
+      "consumer_roles": [
+        "A-positive fixtures",
+        "B-rfl negative claims; exact diagnostic now required"
+      ]
+    },
+    {
+      "file": "tests/test_alcc_unbound.py",
+      "line": 26,
+      "function": "run_lean",
+      "original": "['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',\n             '-DrelaxedAutoImplicit=false', str(source)]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '-DrelaxedAutoImplicit=false', str(source)], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened.",
+      "consumer_roles": [
+        "A-positive fixtures",
+        "B-rfl negative claims; exact diagnostic now required"
+      ]
+    },
+    {
+      "file": "tests/test_alcc_verify.py",
+      "line": 27,
+      "function": "run_lean",
+      "original": "['lake','env','lean','-j1','-DwarningAsError=true',\n                                 '-DrelaxedAutoImplicit=false',str(source)]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '-DrelaxedAutoImplicit=false', str(source)], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened.",
+      "consumer_roles": [
+        "A-positive fixtures",
+        "B-rfl negative claims; exact diagnostic now required"
+      ]
+    },
+    {
+      "file": "tests/test_bad_debt.py",
+      "line": 18,
+      "function": "test_bad_debt_and_rounding",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/bad_debt_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/bad_debt_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_bb84_qber.py",
+      "line": 18,
+      "function": "test_born_channel_conditioning_and_independent_sample",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/bb84_qber_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/bb84_qber_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_beam_splitter.py",
+      "line": 22,
+      "function": "test_finite_two_photon_lift_and_hom_boundaries",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/beam_splitter_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/beam_splitter_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_bell_analyzer.py",
+      "line": 18,
+      "function": "test_optical_bell_analyzer_povm_and_priors",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/bell_analyzer_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/bell_analyzer_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_bls_group.py",
+      "line": 18,
+      "function": "test_group_completeness_and_invalid_partial_cancellation",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/bls_group_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/bls_group_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_bulletproofs_batch.py",
+      "line": 18,
+      "function": "test_batch_probability_and_msm",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/bulletproofs_batch_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/bulletproofs_batch_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_byzantine_oral.py",
+      "line": 18,
+      "function": "test_operational_simulation_and_equivocation",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/byzantine_oral_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/byzantine_oral_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_causal_broadcast.py",
+      "line": 18,
+      "function": "test_broadcast_trace_safety_and_regressions",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/causal_broadcast_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/causal_broadcast_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_chandy_lamport.py",
+      "line": 22,
+      "function": "test_operational_cuts_transit_and_unreachable_fifo_violation",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/chandy_lamport_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/chandy_lamport_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_chandy_lamport_general.py",
+      "line": 18,
+      "function": "test_general_fifo_cut_recording_and_termination",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/chandy_lamport_general_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/chandy_lamport_general_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_classical_dpi.py",
+      "line": 18,
+      "function": "test_classical_postprocessing_and_entropy",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/classical_dpi_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/classical_dpi_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_cmh_deadlock.py",
+      "line": 22,
+      "function": "test_static_detection_dynamic_counterexample_and_fair_progress",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/cmh_deadlock_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/cmh_deadlock_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_complementary_channel.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_compound_index.py",
+      "line": 18,
+      "function": "test_compound_index_accounting_and_rounding",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/compound_index_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/compound_index_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_concentrated_math.py",
+      "line": 18,
+      "function": "test_rounding_swap_and_tick_traces",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/concentrated_math_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/concentrated_math_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_coordinated_attack.py",
+      "line": 18,
+      "function": "test_operational_impossibility_and_ack_loss",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/coordinated_attack_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/coordinated_attack_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_cphase.py",
+      "line": 16,
+      "function": "test_optical_postselection_and_entanglement",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 'tests/lean/cphase_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/cphase_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_cptp.py",
+      "line": 18,
+      "function": "test_cptp_channels_and_contractivity",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/cptp_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/cptp_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_crdt_lww.py",
+      "line": 18,
+      "function": "test_lww_operational_convergence_and_regressions",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/crdt_lww_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/crdt_lww_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_crdt_orset.py",
+      "line": 18,
+      "function": "test_orset_causality_convergence_and_tombstones",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/crdt_orset_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/crdt_orset_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_data_availability.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_depolarizing.py",
+      "line": 18,
+      "function": "test_cptp_endpoints_composition_and_noisy_e91",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/depolarizing_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/depolarizing_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_deutsch_general.py",
+      "line": 22,
+      "function": "test_operator_circuit_promise_and_legacy_scope",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/deutsch_general_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/deutsch_general_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_diamond_nv.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_dj_balanced.py",
+      "line": 18,
+      "function": "test_balanced_family_cardinality_and_circuit_bridge",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/dj_balanced_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/dj_balanced_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_e91.py",
+      "line": 18,
+      "function": "test_born_chsh_separable_attack_and_routing",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/e91_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/e91_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_elgamal_group.py",
+      "line": 18,
+      "function": "test_weighted_encryption_rerandomization_and_malleability",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/elgamal_group_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/elgamal_group_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_entanglement_swapping.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_erasure_correctability.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_external_actuator.py",
+      "line": 15,
+      "function": "check_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', *args]",
+      "replacement": "lean_command(['-DwarningAsError=true', *args], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_acquisition.py",
+      "line": 18,
+      "function": "test_acquisition_provenance_resources",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/fork_acquisition_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/fork_acquisition_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_acquisition.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/fork_acquisition_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/fork_acquisition_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_local_density.py",
+      "line": 18,
+      "function": "test_local_density_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/fork_local_density_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/fork_local_density_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_local_density.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/fork_local_density_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/fork_local_density_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_progress.py",
+      "line": 18,
+      "function": "test_quota_probabilities_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/fork_progress_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/fork_progress_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_progress.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/fork_progress_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/fork_progress_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_recursive_quota.py",
+      "line": 18,
+      "function": "test_recursive_quota_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/fork_recursive_quota_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/fork_recursive_quota_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_recursive_quota.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/fork_recursive_quota_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/fork_recursive_quota_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_schedule.py",
+      "line": 18,
+      "function": "test_quota_probabilities_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/fork_schedule_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/fork_schedule_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fork_schedule.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/fork_schedule_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/fork_schedule_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_forking.py",
+      "line": 22,
+      "function": "test_counting_and_extraction_boundaries",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/forking_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/forking_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_frost_group.py",
+      "line": 18,
+      "function": "test_sessions_coalitions_canonicalization_and_tampering",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/frost_group_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/frost_group_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_fungal_mycelium.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_general_recovery.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_grover_arbitrary_phase.py",
+      "line": 22,
+      "function": "test_unitarity_plane_probability_and_signed_legacy_bridge",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/grover_arbitrary_phase_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/grover_arbitrary_phase_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_grover_multiple.py",
+      "line": 22,
+      "function": "test_subsets_periods_plane_and_oracle_scope",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/grover_multiple_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/grover_multiple_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hctk_scalar_partition.py",
+      "line": 15,
+      "function": "test_exact_partition_transfer_regularization_and_countermodels",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\",\n                                 \"tests/lean/hctk_scalar_partition_regression.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/hctk_scalar_partition_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hctk_scalar_partition.py",
+      "line": 23,
+      "function": "test_master_registry_projection",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\",\n                                 \"tests/lean/hctk_scalar_partition_registry.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/hctk_scalar_partition_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hctk_scalar_partition.py",
+      "line": 29,
+      "function": "test_explicit_three_store_capture",
+      "original": "[shutil.which(\"lake\"), \"env\", \"lean\", \"-DwarningAsError=true\",\n                                 \"tests/lean/hctk_capture_regression.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/hctk_capture_regression.lean'], lake=shutil.which('lake'))",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_heavy_tape.py",
+      "line": 18,
+      "function": "test_execution_prefixes_and_rejections",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/heavy_tape_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/heavy_tape_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_heavy_tape.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/heavy_tape_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/heavy_tape_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_helstrom.py",
+      "line": 18,
+      "function": "test_helstrom_bounds_and_decision_rules",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/helstrom_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/helstrom_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hidden_compression.py",
+      "line": 18,
+      "function": "test_compression_extraction_and_hvzk",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/hidden_compression_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/hidden_compression_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hidden_compression.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/hidden_compression_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/hidden_compression_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hidden_scalar.py",
+      "line": 18,
+      "function": "test_hidden_scalar_extraction_and_hvzk",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/hidden_scalar_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/hidden_scalar_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hidden_scalar.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/hidden_scalar_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/hidden_scalar_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hom_interference.py",
+      "line": 18,
+      "function": "test_two_photon_interference_and_reference",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/hom_interference_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/hom_interference_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_hundred_registry.py",
+      "line": 61,
+      "function": "test_universes_and_legacy_projections_compile",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 'tests/lean/hundred_registry_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/hundred_registry_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ic_povm.py",
+      "line": 18,
+      "function": "test_dual_tomography_tetrahedron_and_relabeling",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ic_povm_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ic_povm_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa.py",
+      "line": 18,
+      "function": "test_ipa_folding_completeness_and_batch_verification",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_bounded_retry.py",
+      "line": 18,
+      "function": "test_bounded_retry_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_bounded_retry_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_bounded_retry_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_bounded_retry.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_bounded_retry_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_bounded_retry_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_forking.py",
+      "line": 18,
+      "function": "test_finite_prefix_forking_and_tree_composition",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_forking_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_forking_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_forking.py",
+      "line": 28,
+      "function": "test_master_suite_exports_forking_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_forking_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_forking_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_node_retry.py",
+      "line": 18,
+      "function": "test_node_local_retries_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_node_retry_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_node_retry_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_node_retry.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_node_retry_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_node_retry_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_partial_cache.py",
+      "line": 18,
+      "function": "test_partial_cache_resources_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_partial_cache_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_partial_cache_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_partial_cache.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_partial_cache_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_partial_cache_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_pedersen_consistency.py",
+      "line": 18,
+      "function": "test_pedersen_consistency_resources_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_pedersen_consistency_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_pedersen_consistency_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_pedersen_consistency.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_pedersen_consistency_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_pedersen_consistency_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_probability.py",
+      "line": 18,
+      "function": "test_finite_prefix_forking_and_tree_composition",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_probability_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_probability_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_probability.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_probability_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_probability_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_product_tapes.py",
+      "line": 18,
+      "function": "test_product_tapes_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_product_tapes_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_product_tapes_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_product_tapes.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_product_tapes_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_product_tapes_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_public_scalar.py",
+      "line": 18,
+      "function": "test_public_scalar_resources_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_public_scalar_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_public_scalar_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_public_scalar.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_public_scalar_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_public_scalar_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_recursive_generator.py",
+      "line": 18,
+      "function": "test_product_tapes_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_recursive_generator_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_recursive_generator_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_recursive_generator.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_recursive_generator_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_recursive_generator_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_tree_probability.py",
+      "line": 18,
+      "function": "test_correlated_tree_probability_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/ipa_tree_probability_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_tree_probability_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ipa_tree_probability.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ipa_tree_probability_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ipa_tree_probability_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_kink_rate.py",
+      "line": 18,
+      "function": "test_kink_rates_and_rounding",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/kink_rate_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/kink_rate_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_knill_laflamme.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_lean_invoke.py",
+      "line": 88,
+      "function": "test_workspace_options_enforced_with_negative_control",
+      "original": "['lake', 'env', 'lean', str(path)]",
+      "replacement": null,
+      "category": "B-intentional-unconfigured-control",
+      "note": "Failure assertions and fixture semantics retained; shared helper may serve positive and negative cases"
+    },
+    {
+      "file": "tests/test_lending_health.py",
+      "line": 18,
+      "function": "test_lending_health_and_liquidation",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/lending_health_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/lending_health_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_liquidation_accounting.py",
+      "line": 18,
+      "function": "test_liquidation_accounting_and_rounding",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/liquidation_accounting_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/liquidation_accounting_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_marzullo.py",
+      "line": 22,
+      "function": "test_threshold_hull_and_counterexamples",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/marzullo_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/marzullo_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_marzullo_interval.py",
+      "line": 18,
+      "function": "test_sweep_components_hull_and_execution",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/marzullo_interval_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/marzullo_interval_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_marzullo_sorting.py",
+      "line": 18,
+      "function": "test_stable_sort_comparisons_and_consensus",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/marzullo_sorting_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/marzullo_sorting_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_multi_paxos.py",
+      "line": 18,
+      "function": "test_operational_agreement_network_and_faulty_traces",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/multi_paxos_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/multi_paxos_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_musig_group.py",
+      "line": 18,
+      "function": "test_group_completeness_and_rogue_key",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/musig_group_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/musig_group_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_mzi_chiral.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_naimark.py",
+      "line": 18,
+      "function": "test_general_dilation_binary_measurement_and_instruments",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/naimark_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/naimark_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_no_broadcasting.py",
+      "line": 18,
+      "function": "test_cptp_equivalence_singular_spectrum_and_pure_states",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/no_broadcasting_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/no_broadcasting_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_no_cloning_unitary.py",
+      "line": 18,
+      "function": "test_unitary_obstruction_and_phase_invariance",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/no_cloning_unitary_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/no_cloning_unitary_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_numeric_digest_bridge.py",
+      "line": 22,
+      "function": "test_byte_gates_sql_bridge_and_missing_authentication",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/numeric_digest_bridge_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/numeric_digest_bridge_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_numeric_rounding.py",
+      "line": 22,
+      "function": "test_exact_ties_cells_overflow_and_retained_indeterminate",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/numeric_rounding_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/numeric_rounding_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_numeric_sql_gap.py",
+      "line": 22,
+      "function": "test_gap_composition_and_separate_exact_zero",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/numeric_sql_gap_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/numeric_sql_gap_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_numeric_sql_intervals.py",
+      "line": 22,
+      "function": "test_irrational_sql_enclosure_and_rejected_root_witnesses",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/numeric_sql_interval_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/numeric_sql_interval_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_optospintronic.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_organoid_stdp.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_orthogonal_recovery.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_pb11_energy.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_pedersen_opening.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_pedersen_range.py",
+      "line": 18,
+      "function": "test_range_extraction_and_simulation",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/pedersen_range_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/pedersen_range_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_pedersen_sum.py",
+      "line": 18,
+      "function": "test_distributions_extraction_and_aggregation_boundaries",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/pedersen_sum_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/pedersen_sum_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_photonics_phase.py",
+      "line": 18,
+      "function": "test_complex_interferometer_and_visibility",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/photonics_phase_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/photonics_phase_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_povm_entropy.py",
+      "line": 18,
+      "function": "test_exact_entropy_and_general_uncertainty",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/povm_entropy_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/povm_entropy_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_audits.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_cascaded_fec.py",
+      "line": 8,
+      "function": "check_fixture",
+      "original": "['lake','env','lean','-j2','-DwarningAsError=true','tests/lean/'+name+'.lean']",
+      "replacement": "lean_command(['-j2', '-DwarningAsError=true', 'tests/lean/' + name + '.lean'], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_channel_injector.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_decoder_queue.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_finiteblock.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_finitekey.py",
+      "line": 7,
+      "function": "fixture",
+      "original": "['lake','env','lean','-j2','-DwarningAsError=true','tests/lean/'+n+'.lean']",
+      "replacement": "lean_command(['-j2', '-DwarningAsError=true', 'tests/lean/' + n + '.lean'], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_jitter_cycle.py",
+      "line": 8,
+      "function": "fixture",
+      "original": "['lake','env','lean','-j2','-DwarningAsError=true','tests/lean/'+name+'.lean']",
+      "replacement": "lean_command(['-j2', '-DwarningAsError=true', 'tests/lean/' + name + '.lean'], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_multilane_identifiability.py",
+      "line": 8,
+      "function": "check_fixture",
+      "original": "['lake','env','lean','-j2','-DwarningAsError=true','tests/lean/'+name+'.lean']",
+      "replacement": "lean_command(['-j2', '-DwarningAsError=true', 'tests/lean/' + name + '.lean'], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_nqkd_takl.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_pi.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_pipeline_metrology.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_queue_lifetime.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_prometheus_threshold.py",
+      "line": 7,
+      "function": "fixture",
+      "original": "['lake','env','lean','-j2','-DwarningAsError=true','tests/lean/'+n+'.lean']",
+      "replacement": "lean_command(['-j2', '-DwarningAsError=true', 'tests/lean/' + n + '.lean'], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_challenge.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-j1', '-DwarningAsError=true', *args]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', *args], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_manifest.py",
+      "line": 17,
+      "function": "test_finite_transfer_and_refusals",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 '--run', 'tests/lean/provenance_manifest_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/provenance_manifest_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_manifest.py",
+      "line": 26,
+      "function": "test_master_suite_exports_profile_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 'tests/lean/provenance_manifest_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/provenance_manifest_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_native.py",
+      "line": 47,
+      "function": "lean",
+      "original": "['lake','env','lean','-j1','-DwarningAsError=true',\n                                 '--load-dynlib='+str(self.shim),'--run',script,\n                                 self.profile['library_path'],self.profile['library_version'],str(argument)]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '--load-dynlib=' + str(self.shim), '--run', script, self.profile['library_path'], self.profile['library_version'], str(argument)], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_ready_prepared.py",
+      "line": 13,
+      "function": "lean",
+      "original": "['lake','env','lean','-j1','-DwarningAsError=true',*args]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', *args], lake='lake')",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_recovery.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-j1', '-DwarningAsError=true', *args]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', *args], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_replay.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-j1', '-DwarningAsError=true', *args]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', *args], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_replay_semantics.py",
+      "line": 15,
+      "function": "test_contract_examples_and_axiom_dependencies",
+      "original": "['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',\n                            'tests/lean/provenance_replay_semantics.lean']",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', 'tests/lean/provenance_replay_semantics.lean'], lake='lake')",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_report.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-j1', '-DwarningAsError=true', *args]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', *args], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_provenance_verifier.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-j1', '-DwarningAsError=true', *args]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', *args], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_qpe.py",
+      "line": 22,
+      "function": "test_exact_phases_complex_target_and_gate_conventions",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/qpe_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/qpe_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_qpe_general.py",
+      "line": 18,
+      "function": "test_operational_qpe_exact_and_approximate_phases",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/qpe_general_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/qpe_general_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quantum_ivc.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quantum_sql.py",
+      "line": 22,
+      "function": "test_optimizer_calibration_and_domain_boundaries",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/quantum_sql_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quantum_sql_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quantum_state_availability.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quantum_teleportation.py",
+      "line": 18,
+      "function": "test_optical_instrument_mixed_fidelity_and_no_signalling",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quantum_teleportation_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quantum_teleportation_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quaternion_spinor.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_budget.py",
+      "line": 18,
+      "function": "test_minimal_budgets_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_budget_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_budget_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_budget.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_budget_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_budget_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_canonical_wire.py",
+      "line": 17,
+      "function": "test_canonicality_reconstruction_and_continuation",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 '--run', 'tests/lean/quota_canonical_wire_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_canonical_wire_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_canonical_wire.py",
+      "line": 26,
+      "function": "test_master_suite_exports_snapshot_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 'tests/lean/quota_canonical_wire_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_canonical_wire_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_chain.py",
+      "line": 18,
+      "function": "test_chains_states_and_additivity",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_chain_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_chain_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_chain.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_chain_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_chain_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_codec.py",
+      "line": 17,
+      "function": "test_encoding_and_strict_decoding",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 '--run', 'tests/lean/quota_codec_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_codec_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_codec.py",
+      "line": 26,
+      "function": "test_master_suite_exports_codec_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 'tests/lean/quota_codec_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_codec_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_comparison.py",
+      "line": 18,
+      "function": "test_counters_rows_and_boundaries",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_comparison_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_comparison_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_comparison.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_comparison_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_comparison_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_cost.py",
+      "line": 18,
+      "function": "test_counters_rows_and_boundaries",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_cost_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_cost_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_cost.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_cost_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_cost_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_deficit.py",
+      "line": 18,
+      "function": "test_blocks_budgets_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_deficit_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_deficit_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_deficit.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_deficit_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_deficit_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_fast.py",
+      "line": 18,
+      "function": "test_counters_rows_and_boundaries",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_fast_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_fast_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_fast.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_fast_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_fast_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_fast_chain.py",
+      "line": 18,
+      "function": "test_fast_chains_states_and_counts",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_fast_chain_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_fast_chain_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_fast_chain.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_fast_chain_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_fast_chain_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_fast_start.py",
+      "line": 18,
+      "function": "test_fast_starts_states_and_counts",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_fast_start_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_fast_start_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_fast_start.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_fast_start_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_fast_start_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_margin.py",
+      "line": 18,
+      "function": "test_execution_prefixes_and_rejections",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_margin_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_margin_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_margin.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_margin_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_margin_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_minimum.py",
+      "line": 18,
+      "function": "test_finite_search_and_minimality",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_minimum_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_minimum_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_minimum.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_minimum_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_minimum_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_product.py",
+      "line": 18,
+      "function": "test_products_budgets_and_extraction",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_product_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_product_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_product.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_product_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_product_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_profile.py",
+      "line": 17,
+      "function": "test_finite_transfer_and_refusals",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 '--run', 'tests/lean/quota_profile_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_profile_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_profile.py",
+      "line": 26,
+      "function": "test_master_suite_exports_profile_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 'tests/lean/quota_profile_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_profile_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_profile_codec.py",
+      "line": 17,
+      "function": "test_finite_transfer_and_refusals",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 '--run', 'tests/lean/quota_profile_codec_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_profile_codec_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_profile_codec.py",
+      "line": 26,
+      "function": "test_master_suite_exports_profile_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 'tests/lean/quota_profile_codec_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_profile_codec_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_profile_reader.py",
+      "line": 21,
+      "function": "lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', *map(str, args)]",
+      "replacement": "lean_command(['-DwarningAsError=true', *map(str, args)], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened.",
+      "consumer_roles": [
+        "C-compiled CLI",
+        "B-runtime invalid-input/IO statuses, not compilation failure"
+      ]
+    },
+    {
+      "file": "tests/test_quota_reader.py",
+      "line": 21,
+      "function": "lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', *map(str, args)]",
+      "replacement": "lean_command(['-DwarningAsError=true', *map(str, args)], lake=lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened.",
+      "consumer_roles": [
+        "C-compiled CLI",
+        "B-runtime invalid-input/IO statuses, not compilation failure"
+      ]
+    },
+    {
+      "file": "tests/test_quota_resumable.py",
+      "line": 18,
+      "function": "test_cursors_prefixes_and_continuations",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_resumable_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_resumable_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_resumable.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_resumable_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_resumable_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_resume_cost.py",
+      "line": 18,
+      "function": "test_counters_results_and_additivity",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_resume_cost_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_resume_cost_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_resume_cost.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_resume_cost_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_resume_cost_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_snapshot.py",
+      "line": 17,
+      "function": "test_reconstruction_and_continuation",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 '--run', 'tests/lean/quota_snapshot_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_snapshot_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_snapshot.py",
+      "line": 26,
+      "function": "test_master_suite_exports_snapshot_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n                                 'tests/lean/quota_snapshot_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_snapshot_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_streaming.py",
+      "line": 18,
+      "function": "test_streaming_search_equivalence",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_streaming_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_streaming_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_streaming.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_streaming_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_streaming_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_tabular.py",
+      "line": 18,
+      "function": "test_rows_and_search_equivalence",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/quota_tabular_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_tabular_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_quota_tabular.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/quota_tabular_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/quota_tabular_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_qutrit_circuit.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_qutrit_circuit.py",
+      "line": 34,
+      "function": "test_executable_basis_interpreter",
+      "original": "[shutil.which('lake'), 'env', 'lean',\n                                 '-DwarningAsError=true', '--run',\n                                 'tests/lean/qutrit_circuit_execution.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/qutrit_circuit_execution.lean'], lake=shutil.which('lake'))",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_qutrit_explicit_decoder.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_qutrit_secret_sharing.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_raft_commit_application.py",
+      "line": 22,
+      "function": "test_operational_commit_application_and_counterexamples",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/raft_commit_application_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/raft_commit_application_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_raft_complete_bridge.py",
+      "line": 22,
+      "function": "test_real_commit_and_distinct_later_leader",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/raft_complete_bridge_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/raft_complete_bridge_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_raft_joint.py",
+      "line": 18,
+      "function": "test_quorums_real_handover_rollback_and_local_bridge",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/raft_joint_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/raft_joint_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_raft_network_induction.py",
+      "line": 22,
+      "function": "test_nonempty_execution_packet_history_and_conflicting_commands",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/raft_network_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/raft_network_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_range_interpolation.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_range_reduction.py",
+      "line": 18,
+      "function": "test_range_reduction_composition_and_corruption",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/range_reduction_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/range_reduction_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_range_witness.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_raymond_complexity.py",
+      "line": 18,
+      "function": "test_topological_bounds_and_attainment",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/raymond_complexity_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/raymond_complexity_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_raymond_tree.py",
+      "line": 18,
+      "function": "test_safety_routing_accounting_and_reordered_delivery",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/raymond_tree_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/raymond_tree_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_recovery_necessity.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_reference_recovery.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_ricart_agrawala.py",
+      "line": 18,
+      "function": "test_repeated_requests_deferral_reordering_and_conditional_progress",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/ricart_agrawala_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/ricart_agrawala_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_schnorr_batch.py",
+      "line": 22,
+      "function": "test_exact_counts_cancellation_and_repetition",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/schnorr_batch_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/schnorr_batch_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_schnorr_identification.py",
+      "line": 18,
+      "function": "test_completeness_extraction_joint_laws_and_boundaries",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/schnorr_identification_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/schnorr_identification_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_shamir_group.py",
+      "line": 18,
+      "function": "test_threshold_secrecy_group_reconstruction_and_boundaries",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/shamir_group_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/shamir_group_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_shor_continued_fractions.py",
+      "line": 18,
+      "function": "test_executable_candidates_legendre_and_conditional_order_recovery",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/shor_continued_fractions_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/shor_continued_fractions_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_shor_order_finding.py",
+      "line": 18,
+      "function": "test_modular_operator_spectrum_and_actual_input_mixture",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/shor_order_finding_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/shor_order_finding_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_shor_order_recovery.py",
+      "line": 18,
+      "function": "test_lcm_gcd_recovery_and_candidate_provenance",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/shor_order_recovery_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/shor_order_recovery_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_signed_generals.py",
+      "line": 18,
+      "function": "test_operational_signatures_propagation_and_late_chain",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/signed_generals_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/signed_generals_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_simon.py",
+      "line": 18,
+      "function": "test_complex_circuit_distribution_and_recovery",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", \"tests/lean/simon_regression.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/simon_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_single_path.py",
+      "line": 18,
+      "function": "test_execution_prefixes_and_rejections",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/single_path_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/single_path_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_single_path.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/single_path_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/single_path_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_skyrmion_synapse.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_steane_code.py",
+      "line": 18,
+      "function": "check_fixture",
+      "original": "[lake, \"env\", \"lean\", \"-DwarningAsError=true\", f\"tests/lean/{name}.lean\"]",
+      "replacement": "lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_stinespring.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_suzuki_kasami.py",
+      "line": 18,
+      "function": "test_token_queue_counters_and_starvation_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/suzuki_kasami_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/suzuki_kasami_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tape_average.py",
+      "line": 18,
+      "function": "test_execution_prefixes_and_rejections",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/tape_average_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/tape_average_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tape_average.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/tape_average_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/tape_average_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint.py",
+      "line": 18,
+      "function": "test_tendermint_core_safety",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/tendermint_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/tendermint_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_accountability.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_epoch_identity.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_epoch_master.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_epoch_quorum.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_handover_induction.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_header_auth.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_lock_handover.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_replay.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_slashing.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tendermint_unbonding.py",
+      "line": 18,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_three_phase_commit.py",
+      "line": 22,
+      "function": "test_protocol_recovery_progress_and_boundaries",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/three_phase_commit_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/three_phase_commit_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_threshold_quota.py",
+      "line": 18,
+      "function": "test_execution_prefixes_and_rejections",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/threshold_quota_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/threshold_quota_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_threshold_quota.py",
+      "line": 28,
+      "function": "test_master_suite_exports_probability_contract",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/threshold_quota_registry.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/threshold_quota_registry.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_trace_distance.py",
+      "line": 18,
+      "function": "test_trace_distance_metrics_and_measurements",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/trace_distance_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/trace_distance_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_tree_extraction.py",
+      "line": 18,
+      "function": "test_tree_extraction_and_rejection",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/tree_extraction_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/tree_extraction_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_two_phase_commit_timeout.py",
+      "line": 22,
+      "function": "test_operational_timeout_safety_and_blocking",
+      "original": "[\n                lake,\n                \"env\",\n                \"lean\",\n                \"-DwarningAsError=true\",\n                \"tests/lean/two_phase_commit_timeout_regression.lean\",\n            ]",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/two_phase_commit_timeout_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_unitary_kraus_recovery.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_utilization_feedback.py",
+      "line": 17,
+      "function": "run_lean",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', file]",
+      "replacement": "lean_command(['-DwarningAsError=true', file], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_vector_causal.py",
+      "line": 18,
+      "function": "test_causal_reflection_and_operational_regressions",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/vector_causal_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/vector_causal_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_vector_pedersen.py",
+      "line": 18,
+      "function": "test_vector_hiding_relations_and_alternate_openings",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/vector_pedersen_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/vector_pedersen_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_virtual_reserves.py",
+      "line": 18,
+      "function": "test_solvency_and_rounding",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true',\n             'tests/lean/virtual_reserves_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', 'tests/lean/virtual_reserves_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tests/test_witness_extraction.py",
+      "line": 18,
+      "function": "test_local_extraction_and_interpolation",
+      "original": "[lake, 'env', 'lean', '-DwarningAsError=true', '--run',\n             'tests/lean/witness_extraction_regression.lean']",
+      "replacement": "lean_command(['-DwarningAsError=true', '--run', 'tests/lean/witness_extraction_regression.lean'], lake=lake)",
+      "category": "A-strict-driver",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tools/challenge_store/bridge.py",
+      "line": 32,
+      "function": "__init__",
+      "original": "['lake','env','lean','-j1','-DwarningAsError=true',\n            '--load-dynlib='+str(shim),'--run',str(ROOT/'tools/challenge_store/Worker.lean'),\n            p['library_path'],p['library_version']]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '--load-dynlib=' + str(shim), '--run', str(ROOT / 'tools/challenge_store/Worker.lean'), p['library_path'], p['library_version']], lake='lake')",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tools/challenge_store/build.py",
+      "line": 18,
+      "function": "build",
+      "original": "['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',\n                        '-o', str(dest/(name+'.olean')), str(HERE/(name+'.lean'))]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '-o', str(dest / (name + '.olean')), str(HERE / (name + '.lean'))], lake='lake')",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tools/clean_build_container.py",
+      "line": 23,
+      "function": "launch",
+      "original": "['lake', 'env', 'lean', '--print-prefix']",
+      "replacement": null,
+      "category": "D-query",
+      "note": "Failure assertions and fixture semantics retained; shared helper may serve positive and negative cases"
+    },
+    {
+      "file": "tools/provenance_native/build.py",
+      "line": 39,
+      "function": "build",
+      "original": "['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',\n                    '-o', str(libroot/'Raw.olean'), '-c', str(raw_c), str(HERE/'Raw.lean')]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '-o', str(libroot / 'Raw.olean'), '-c', str(raw_c), str(HERE / 'Raw.lean')], lake='lake')",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tools/provenance_native/build.py",
+      "line": 51,
+      "function": "build",
+      "original": "['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',\n                    '-o', str(libroot/'Adapter.olean'), str(HERE / 'Adapter.lean')]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '-o', str(libroot / 'Adapter.olean'), str(HERE / 'Adapter.lean')], lake='lake')",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tools/provenance_native/run.py",
+      "line": 23,
+      "function": "main",
+      "original": "['lake','env','lean','-j1','-DwarningAsError=true',\n                 '--load-dynlib='+str(shim),'--run',str(args.script.resolve()),\n                 profile['library_path'],profile['library_version'],*args.args]",
+      "replacement": "lean_command(['-j1', '-DwarningAsError=true', '--load-dynlib=' + str(shim), '--run', str(args.script.resolve()), profile['library_path'], profile['library_version'], *args.args], lake='lake')",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tools/qutrit_conformance_checker.py",
+      "line": 47,
+      "function": "check",
+      "original": "[verifier.lake, 'env', 'lean', '-DwarningAsError=true', str(p)]",
+      "replacement": "lean_command(['-DwarningAsError=true', str(p)], lake=verifier.lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tools/statement_conformance_checker.py",
+      "line": 79,
+      "function": "check",
+      "original": "[verifier.lake, 'env', 'lean', '-DwarningAsError=true',\n                          str(verifier.source(m)[0].relative_to(root))]",
+      "replacement": "lean_command(['-DwarningAsError=true', str(verifier.source(m)[0].relative_to(root))], lake=verifier.lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    },
+    {
+      "file": "tools/statement_conformance_checker.py",
+      "line": 93,
+      "function": "check",
+      "original": "[verifier.lake, 'env', 'lean', '-DwarningAsError=true', str(path)]",
+      "replacement": "lean_command(['-DwarningAsError=true', str(path)], lake=verifier.lake)",
+      "category": "C-dynamic-or-tool",
+      "note": "Configured invocation; expected results retained. Shared helpers can serve both positive and negative consumers; ALCC rfl failure assertions are strengthened."
+    }
+  ],
+  "summary": {
+    "migrated": 248,
+    "additional_multiline_sites": 20,
+    "intentional_unconfigured_compiler_control": 1,
+    "query_in_AST_list_scope": 1,
+    "other_queries": "direct lean --print-prefix/--version unchanged",
+    "nonclaim": "No proof of exhaustive dynamic callgraph"
+  },
+  "replacement_scope": "Initial invocation translation; JSON diagnostic and fixture repairs are described in lean-invocation-migration.en.md"
+}

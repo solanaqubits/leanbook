@@ -42,7 +42,8 @@ def main (args : List String) : IO Unit := do
   let native := nativeBackend ⟨args[0]!,args[1]!⟩
   let good : VerificationReport := ⟨.valid,.authorized,.matched,.challenge_matched,
     .within_trusted_window,.matched,.matched,.blocked⟩
-  check "independent fixture message equals exact Lean message" (signingMessageV1 m == (← field "message"))
+  check "independent fixture message equals exact Lean message" (signingMessageV1 m == (← field
+    "message"))
   -- Observe the actual IO request sequence, not just a computed planned list.
   let calls ← IO.mkRef ([] : List CryptoRequest)
   let tracked : IOBackend := {
@@ -72,11 +73,13 @@ def main (args : List String) : IO Unit := do
   runCase "revoked" (ctx := {expected with revokedKeys := [("fixture-signer","rfc8032-key1")]})
     (want := {good with signature := .not_checked, keyAuthorization := .revoked_key})
   check "no revoked signature IO" (decide ((← calls.get) = [.hash snapshot,.hash profile]))
-  runCase "short signature" (signature := ⟨#[]⟩) (want := {good with signature := .malformed_signature})
+  runCase "short signature" (signature := ⟨#[]⟩) (want := {good with signature
+                                                            := .malformed_signature})
   check "no malformed signature IO" (decide ((← calls.get) = [.hash snapshot,.hash profile]))
   runCase "changed challenge" (ctx := {expected with activeChallenge := some ⟨#[]⟩})
     (want := {good with replay := .challenge_mismatch})
-  runCase "expired policy window" (ctx := {expected with trustedTimeWindow := some ⟨"test-clock","ticks",0,5⟩})
+  runCase "expired policy window" (ctx := {expected with trustedTimeWindow := some ⟨"test-clock",
+                                            "ticks",0,5⟩})
     (want := {good with freshness := .expired})
   let missing := nativeBackend ⟨"/nonexistent/provenance-library.so",args[1]!⟩
   runCase "missing library" (b := missing) (want := { good with

@@ -1,7 +1,8 @@
 import Verification.MasterSuite
 open CryptoPedersenCommitmentOpeningExtractionContract
 example : CryptoPedersenCommitmentOpeningExtractionContractSuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).crypto_suite.pedersen_opening
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).crypto_suite.pedersen_opening
 example (r : MasterSuite.VerificationMasterRegistry) :
     CryptoPedersenCommitmentOpeningExtractionContractSuite := r.crypto_suite.pedersen_opening
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :

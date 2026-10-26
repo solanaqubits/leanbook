@@ -83,7 +83,8 @@ theorem family_tree_valid (c : OpeningCertificate 101 1) (i : Fin 2) (j l : Fin 
     (r_poly c.b c.t (![1, 2] i) (![0, 1, 2] j) (![0, 1, 2] l))
   have hy : (![1, 2] i : F) ≠ 0 := by fin_cases i <;> decide
   simpa only [branch_statement, family, Ac, Sc,
-    CryptoBulletproofsTreeExtraction.witness_statement, range_ipa_target_invariant _ _ _ _ _ _ _ _ _ _ hy]
+    CryptoBulletproofsTreeExtraction.witness_statement, range_ipa_target_invariant _ _ _ _ _ _ _ _
+      _ _ hy]
     using h
 
 theorem family_local_zero (c : OpeningCertificate 101 1) (i : Fin 2) (j l : Fin 3) :

@@ -1,4 +1,5 @@
 """Kernel and registry checks for Qutrit gate circuit refinement."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -14,7 +15,7 @@ class QutritCircuitLiveTests(unittest.TestCase):
     def run_lean(self, file):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true', file],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', file], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         return result.stdout
@@ -31,9 +32,7 @@ class QutritCircuitLiveTests(unittest.TestCase):
         self.run_lean('tests/lean/qutrit_circuit_regression.lean')
 
     def test_executable_basis_interpreter(self):
-        result = subprocess.run([shutil.which('lake'), 'env', 'lean',
-                                 '-DwarningAsError=true', '--run',
-                                 'tests/lean/qutrit_circuit_execution.lean'],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', '--run', 'tests/lean/qutrit_circuit_execution.lean'], lake=shutil.which('lake')),
                                 cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertEqual(result.stdout.strip(), '0,5,7,8,1,3,4,6,2')

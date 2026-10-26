@@ -55,37 +55,54 @@ def main : IO Unit := do
     ("unknown key", decide (check (p := { policy with lookupKey := fun _ _ => none }) = none)),
     ("revoked key", decide (check (p := { policy with revoked := fun _ _ => true }) = none)),
     ("time rejected", decide (check (p := { policy with acceptsTime := fun _ => false }) = none)),
-    ("signature rejected", decide (check (b := { backend with verifyEd25519 := fun _ _ _ => false }) = none)),
+    ("signature rejected", decide (check (b := { backend with verifyEd25519 := fun _ _ _ => false
+                                                 }) = none)),
     ("bad signature bytes", decide (check (signature := ⟨Array.replicate 64 8⟩) = none)),
     ("short signature", decide (check (b := loose) (signature := ⟨Array.replicate 63 9⟩) = none)),
     ("long signature", decide (check (b := loose) (signature := ⟨Array.replicate 65 9⟩) = none)),
-    ("short public key", decide (check (b := loose) (p := { policy with lookupKey := fun _ _ => some ⟨Array.replicate 31 7⟩ }) = none)),
-    ("long public key", decide (check (b := loose) (p := { policy with lookupKey := fun _ _ => some ⟨Array.replicate 33 7⟩ }) = none)),
+    ("short public key", decide (check (b := loose)
+      (p := { policy with lookupKey := fun _ _ => some ⟨Array.replicate 31 7⟩ }) = none)),
+    ("long public key", decide (check (b := loose)
+      (p := { policy with lookupKey := fun _ _ => some ⟨Array.replicate 33 7⟩ }) = none)),
     ("signer mismatch", decide (check (e := { expected with signerId := "other" }) = none)),
     ("key id mismatch", decide (check (e := { expected with keyId := "other" }) = none)),
     ("role mismatch", decide (check (e := { expected with roleId := "other" }) = none)),
     ("session mismatch", decide (check (e := { expected with sessionId := "other" }) = none)),
     ("challenge mismatch", decide (check (e := { expected with challenge := ⟨#[10, 21]⟩ }) = none)),
-    ("policy version mismatch", decide (check (e := { expected with policyVersion := "other" }) = none)),
+    ("policy version mismatch", decide (check (e := { expected with policyVersion := "other" }) =
+      none)),
     ("n mismatch", decide (check (e := { expected with n := 4 }) = none)),
     ("j mismatch", decide (check (e := { expected with j := 2 }) = none)),
     ("epsilon mismatch", decide (check (e := { expected with epsilon := 0 }) = none)),
-    ("context id mismatch", decide (check (e := { expected with expectedContextId := "other" }) = none)),
+    ("context id mismatch", decide (check (e := { expected with expectedContextId := "other" }) =
+      none)),
     ("missing time", decide (check (b := loose) (mm := { m with claimedTime := none }) = none)),
-    ("time scale mismatch", decide (check (b := loose) (mm := { m with claimedTime := some { timeClaim with scaleId := "other" } }) = none)),
-    ("time unit mismatch", decide (check (b := loose) (mm := { m with claimedTime := some { timeClaim with unitId := "other" } }) = none)),
-    ("time value mismatch", decide (check (b := loose) (mm := { m with claimedTime := some { timeClaim with value := 10 } }) = none)),
+    ("time scale mismatch", decide (check (b := loose) (mm := { m with claimedTime := some {
+      timeClaim with scaleId := "other" } }) = none)),
+    ("time unit mismatch", decide (check (b := loose) (mm := { m with claimedTime := some {
+      timeClaim with unitId := "other" } }) = none)),
+    ("time value mismatch", decide (check (b := loose) (mm := { m with claimedTime := some {
+      timeClaim with value := 10 } }) = none)),
     ("snapshot digest mismatch", decide (check (snapshot := ⟨#[1, 2, 4]⟩) = none)),
     ("profile digest mismatch", decide (check (profile := ⟨#[4, 6]⟩) = none)),
-    ("snapshot size mismatch", decide (check (b := { loose with sha256 := fun _ => digest 1 }) (snapshot := ⟨#[1]⟩) = none)),
-    ("profile size mismatch", decide (check (b := { loose with sha256 := fun _ => digest 2 }) (profile := ⟨#[1]⟩) = none)),
+    ("snapshot size mismatch", decide (check (b := { loose with sha256 := fun _ => digest 1 })
+      (snapshot := ⟨#[1]⟩) = none)),
+    ("profile size mismatch", decide (check (b := { loose with sha256 := fun _ => digest 2 })
+      (profile := ⟨#[1]⟩) = none)),
     ("swapped artifacts", decide (check (snapshot := prof) (profile := snap) = none)),
-    ("malformed empty frame", decide (verifyProvenance limits backend policy expected ⟨#[]⟩ sig snap prof = none)),
-    ("trailing byte", decide (verifyProvenance limits backend policy expected (encodeManifestV1 m ++ ⟨#[0]⟩) sig snap prof = none)),
-    ("manifest limit", decide (verifyProvenance ⟨0, 128, 32⟩ backend policy expected (encodeManifestV1 m) sig snap prof = none)),
-    ("string limit", decide (verifyProvenance ⟨4096, 0, 32⟩ backend policy expected (encodeManifestV1 m) sig snap prof = none)),
-    ("challenge limit", decide (verifyProvenance ⟨4096, 128, 0⟩ backend policy expected (encodeManifestV1 m) sig snap prof = none)),
-    ("no prehash or duplicate domain", decide (check (b := { backend with verifyEd25519 := fun _ msg _ => decide (msg = encodeManifestV1 m) }) = none)),
+    ("malformed empty frame", decide (verifyProvenance limits backend policy expected ⟨#[]⟩ sig
+      snap prof = none)),
+    ("trailing byte", decide (verifyProvenance limits backend policy expected (encodeManifestV1 m
+      ++ ⟨#[0]⟩) sig snap prof = none)),
+    ("manifest limit", decide (verifyProvenance ⟨0, 128, 32⟩ backend policy expected
+      (encodeManifestV1 m) sig snap prof = none)),
+    ("string limit", decide (verifyProvenance ⟨4096, 0, 32⟩ backend policy expected
+      (encodeManifestV1 m) sig snap prof = none)),
+    ("challenge limit", decide (verifyProvenance ⟨4096, 128, 0⟩ backend policy expected
+      (encodeManifestV1 m) sig snap prof = none)),
+    ("no prehash or duplicate domain", decide (check (b := { backend with verifyEd25519 := fun _
+                                                             msg _ => decide (msg =
+                                                             encodeManifestV1 m) }) = none)),
     ("pure replay is not consumed", decide (check = accepted ∧ check = accepted)),
     ("authorization blocked", decide ((check.map (·.authorization)) = some .blocked))]
   for (label, passed) in cases do

@@ -29,7 +29,8 @@ example : execute (oneAsset 200 100 (4/5) (3/4)) 0 1 0 1 = none := by decide +ke
 example : execute (oneAsset 100 100 (6/5) (3/4)) 0 1 0 1 = none := by decide +kernel
 example : execute (oneAsset 10 100 (4/5) (3/4)) 0 20 0 1 = none := by decide +kernel
 example : executeCovered p 0 50 (1/10) 1 = some (settle p 0 50 55) := by decide +kernel
-example : covered (settle p 0 50 55) ∧ healthFactor (settle p 0 50 55) = some (4/5) := by decide +kernel
+example : covered (settle p 0 50 55) ∧ healthFactor (settle p 0 50 55) = some (4/5)
+  := by decide +kernel
 example : execute p 0 50 (1/5) 1 = some (settle p 0 50 60) := by decide +kernel
 example : ¬ covered (settle p 0 50 60) ∧ executeCovered p 0 50 (1/5) 1 = none := by decide +kernel
 example : execute full 0 100 (1/20) 1 = some (settle full 0 100 105) := by decide +kernel
@@ -43,7 +44,8 @@ example : weightedValue (settle mixed 1 20 22) = 119 := by decide +kernel
 example : healthFactor (settle mixed 0 20 11) = some (281/325) := by decide +kernel
 example : healthFactor (settle mixed 1 20 22) = some (119/130) := by decide +kernel
 example : (281/325 : ℚ) < 13/15 ∧ (13/15 : ℚ) < 119/130 := by norm_num
-example : executeChain p [step, step] = some (settle (settle p 0 10 11) 0 10 11) := by decide +kernel
+example : executeChain p [step, step] = some (settle (settle p 0 10 11) 0 10 11)
+  := by decide +kernel
 example : collateralValue (settle (settle p 0 10 11) 0 10 11) - 75 = 3 := by decide +kernel
 example : floorSeizure ints 0 1 (1/10) = 0 := by decide +kernel
 example : ceilRepayment ints 0 1 (1/10) = 3 := by decide +kernel
@@ -52,7 +54,8 @@ example : ceilRepayment ints 0 11 (1/10) = 30 := by decide +kernel
 example : executeFloor ints 0 1 (1/10) 1 = some (ints.settle 0 1 0) := by decide +kernel
 example : executeCeil ints 0 1 (1/10) 1 = some (ints.settle 0 3 1) := by decide +kernel
 example : executeCeil ints 0 100 (1/10) (1/2) = none := by decide +kernel
-example : executeFloor fullInts 0 100 (1/20) 1 = some (fullInts.settle 0 100 105) := by decide +kernel
+example : executeFloor fullInts 0 100 (1/20) 1 = some (fullInts.settle 0 100 105)
+  := by decide +kernel
 example : healthFactor (fullInts.settle 0 100 105).lift = none := by decide +kernel
 example : (executeDiscreteCovered ints 0 1 0 (1/10) 1).isSome = true := by decide +kernel
 example : (executeCeil ints 0 0 (1/10) 1).isSome = false := by decide +kernel

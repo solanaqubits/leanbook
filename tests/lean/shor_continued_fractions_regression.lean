@@ -37,9 +37,9 @@ example (x z : ℚ) : z ∈ convergents x ↔ ∃ k, Real.convergent (x : ℝ) k
 example (x : ℚ) : (partialQuotients x).length ≤ 2 * Nat.log 2 x.den + 1 :=
   euclidean_stages_log_bound x
 example {N Q r s y : ℕ} (hr : 0 < r) (hs : s < r) (hrN : r < N)
-    (hQ : N^2 ≤ Q) (hy : y < Q)
-    (hn : ∃ z : ℤ, |(s : ℝ)/r - (y : ℝ)/Q - z| ≤ 1/(2*(Q : ℝ))) :
-    |(y : ℝ)/Q - (s : ℝ)/r| ≤ 1/(2*(Q : ℝ)) :=
+    (hQ : N ^ 2 ≤ Q) (hy : y < Q)
+    (hn : ∃ z : ℤ, |(s : ℝ) / r - (y : ℝ) / Q - z| ≤ 1 / (2 * (Q : ℝ))) :
+    |(y : ℝ) / Q - (s : ℝ) / r| ≤ 1 / (2 * (Q : ℝ)) :=
   nearest_has_no_wrap hr hs hrN hQ hy hn
 
 def seven : Parameters := ⟨7, by decide, 2, by decide, 3, by decide⟩
@@ -62,6 +62,6 @@ example : reduced oneOfThree.val seven.period ∈ candidates 85 (2^8) seven.modu
     ⟨0, by norm_num [oneOfThree, seven_period]⟩
 -- A wrapped but coarse measurement exists outside the resolution contract.
 example : Nearest 2 (9/10) 0 := ⟨1, by norm_num⟩
-example : ¬ (|(0 : ℝ)/2 - 9/10| ≤ 1/(2*2)) := by norm_num
+example : ¬ (|(0 : ℝ)/2 - 9/10| ≤ 1 / (2*2)) := by norm_num
 
 end ShorContinuedFractionsRegression

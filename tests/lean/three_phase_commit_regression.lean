@@ -1,7 +1,8 @@
 import Verification.DistributedThreePhaseCommit
 open DistributedThreePhaseCommit
 
-def normal_commitEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
+def normal_commitEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1,
+  2, 4]
 def normal_commitFinal : Core := ⟨3, 3, 3, 7, 3, 0, 0, 4, 2, 2, 0, 0⟩
 example : runEvents initial normal_commitEvents = some normal_commitFinal := by decide
 example : AllTerminal normal_commitFinal := by decide
@@ -13,37 +14,43 @@ example : runEvents initial normal_abortEvents = some normal_abortFinal := by de
 example : AllTerminal normal_abortFinal := by decide
 example : Agreement normal_abortFinal := by decide
 
-def before_precommitEvents : List Nat := [0, 1, 2, 4, 11, 14, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
+def before_precommitEvents : List Nat := [0, 1, 2, 4, 11, 14, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2,
+  4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
 def before_precommitFinal : Core := ⟨4, 4, 3, 6, 3, 1, 1, 5, 2, 2, 0, 0⟩
 example : runEvents initial before_precommitEvents = some before_precommitFinal := by decide
 example : AllTerminal before_precommitFinal := by decide
 example : Agreement before_precommitFinal := by decide
 
-def partial_precommitEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 2, 11, 14, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
+def partial_precommitEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 2, 11, 14, 0, 1, 2, 4, 6,
+  7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
 def partial_precommitFinal : Core := ⟨3, 3, 3, 6, 3, 1, 1, 4, 2, 2, 0, 0⟩
 example : runEvents initial partial_precommitEvents = some partial_precommitFinal := by decide
 example : AllTerminal partial_precommitFinal := by decide
 example : Agreement partial_precommitFinal := by decide
 
-def ack_barrierEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 11, 14, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
+def ack_barrierEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 11, 14, 0,
+  1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
 def ack_barrierFinal : Core := ⟨3, 3, 3, 6, 3, 1, 1, 4, 2, 2, 0, 0⟩
 example : runEvents initial ack_barrierEvents = some ack_barrierFinal := by decide
 example : AllTerminal ack_barrierFinal := by decide
 example : Agreement ack_barrierFinal := by decide
 
-def partial_commitEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 2, 11, 14, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
+def partial_commitEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0,
+  2, 11, 14, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 1, 2, 4]
 def partial_commitFinal : Core := ⟨3, 3, 3, 6, 3, 1, 1, 4, 2, 2, 0, 0⟩
 example : runEvents initial partial_commitEvents = some partial_commitFinal := by decide
 example : AllTerminal partial_commitFinal := by decide
 example : Agreement partial_commitFinal := by decide
 
-def participant_stopEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 2, 12, 14, 1, 4, 7, 9, 10, 1, 4, 7, 9, 10, 1, 4]
+def participant_stopEvents : List Nat := [0, 1, 2, 4, 6, 7, 8, 9, 10, 0, 2, 12, 14, 1, 4, 7, 9, 10,
+  1, 4, 7, 9, 10, 1, 4]
 def participant_stopFinal : Core := ⟨2, 4, 3, 5, 2, 2, 1, 5, 0, 2, 0, 0⟩
 example : runEvents initial participant_stopEvents = some participant_stopFinal := by decide
 example : AllTerminal participant_stopFinal := by decide
 example : Agreement participant_stopFinal := by decide
 
-def single_survivorEvents : List Nat := [0, 1, 2, 4, 11, 12, 14, 1, 4, 7, 9, 10, 1, 4, 7, 9, 10, 1, 4]
+def single_survivorEvents : List Nat := [0, 1, 2, 4, 11, 12, 14, 1, 4, 7, 9, 10, 1, 4, 7, 9, 10, 1,
+  4]
 def single_survivorFinal : Core := ⟨1, 4, 3, 4, 2, 2, 1, 5, 0, 2, 0, 0⟩
 example : runEvents initial single_survivorEvents = some single_survivorFinal := by decide
 example : AllTerminal single_survivorFinal := by decide
@@ -55,7 +62,8 @@ example : ¬Agreement { partialState with left := 3, right := 4 } := by decide
 example : participantState participant_stopFinal false = .preCommit ∧
     participantState participant_stopFinal true = .aborted := by decide
 example : ¬alive participant_stopFinal false := by decide
-example : deliverPacket partialState false { request partialState false with epoch := 100 } = none := by
+example : deliverPacket partialState false { request partialState false with epoch := 100 } = none
+  := by
   apply stale_epoch_rejected
   decide
 example : coreStep ack_barrierFinal 8 = none := by decide

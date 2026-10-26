@@ -19,7 +19,8 @@ example (K : KrausChannel 2 3 4) (a : ℕ)
     (X : Matrix (Fin a × Fin 2) (Fin a × Fin 2) ℂ) (hX : X.PosSemidef) :
     (QuantumNoBroadcastingMixed.amplify (apply_channel K) a X).PosSemidef :=
   channel_completely_positive K a X hX
-example (K : KrausChannel 2 3 4) : Density (apply_channel K rhoPlus) := channel_density K rhoPlus_density
+example (K : KrausChannel 2 3 4) : Density (apply_channel K rhoPlus) := channel_density K
+  rhoPlus_density
 example (K : KrausChannel 2 3 4) : dual_channel K 1 = 1 := dual_unital K
 example (K : KrausChannel 2 3 4) (E : Q 3) (X : Q 2) :
     (E * apply_channel K X).trace = (dual_channel K E * X).trace := trace_adjoint_identity K E X
@@ -32,11 +33,13 @@ example (K : KrausChannel 2 3 4) :
   simpa only [QuantumChannelTraceDistanceContract.Regression.noncommuting_distance] using
     trace_distance_contractive K qubitZero_density rhoPlus_density
 example (K : KrausChannel 2 3 4) :
-    trace_norm (apply_channel K qubitZero - apply_channel K rhoPlus) ≤ trace_norm (qubitZero - rhoPlus) :=
+    trace_norm (apply_channel K qubitZero - apply_channel K rhoPlus) ≤ trace_norm (qubitZero -
+      rhoPlus) :=
   trace_norm_contractive K qubitZero_density rhoPlus_density
 example (K : KrausChannel 2 3 4) :
     optimal_success fair (apply_channel K qubitZero) (apply_channel K rhoPlus) ≤
-      optimal_success fair qubitZero rhoPlus := optimal_success_contractive K qubitZero_density rhoPlus_density
+      optimal_success fair qubitZero rhoPlus := optimal_success_contractive K qubitZero_density
+        rhoPlus_density
 example (F : QuantumNoBroadcastingMixed.Channel (Fin 2) (Fin 3)) :
     trace_distance (F.toLinearMap qubitZero) (F.toLinearMap rhoOne) ≤ 1 := by
   simpa only [QuantumChannelTraceDistanceContract.Regression.orthogonal_distance] using
@@ -44,11 +47,13 @@ example (F : QuantumNoBroadcastingMixed.Channel (Fin 2) (Fin 3)) :
 example (F : QuantumNoBroadcastingMixed.Channel (Fin 2) (Fin 3))
     (G : QuantumNoBroadcastingMixed.Channel (Fin 3) (Fin 1)) :
     trace_distance ((G.comp F).toLinearMap qubitZero) ((G.comp F).toLinearMap rhoOne) ≤
-      trace_distance qubitZero rhoOne := cptp_trace_distance_contractive (G.comp F) qubitZero_density rhoOne_density
+      trace_distance qubitZero rhoOne := cptp_trace_distance_contractive (G.comp F)
+        qubitZero_density rhoOne_density
 example (X : Q 0) : apply_channel (identity_channel 0) X = X := identity_channel_apply X
 example : trace_distance (apply_channel (identity_channel 2) qubitZero)
     (apply_channel (identity_channel 2) rhoOne) = 1 := by
-  rw [identity_preserves_distance, QuantumChannelTraceDistanceContract.Regression.orthogonal_distance]
+  rw [identity_preserves_distance,
+    QuantumChannelTraceDistanceContract.Regression.orthogonal_distance]
 example (U : Matrix.unitaryGroup (Fin 2) ℂ) :
     trace_distance (apply_channel (unitary_channel U) qubitZero)
       (apply_channel (unitary_channel U) rhoPlus) = 1 / Real.sqrt 2 := by
@@ -58,11 +63,13 @@ example (U : Matrix.unitaryGroup (Fin 2) ℂ) (X : Q 2) :
     apply_channel (unitary_channel (star U)) (apply_channel (unitary_channel U) X) = X :=
   unitary_inverse_apply U X
 example : trace_distance (apply_channel (reset_channel (0 : Fin 3)) qubitZero)
-    (apply_channel (reset_channel (0 : Fin 3)) rhoOne) = 0 := reset_distance_zero _ qubitZero_density rhoOne_density
+    (apply_channel (reset_channel (0 : Fin 3)) rhoOne) = 0 := reset_distance_zero _
+      qubitZero_density rhoOne_density
 example : apply_channel (reset_channel (0 : Fin 2)) rhoPlus = qubitZero := by
   rw [reset_density _ rhoPlus_density]
   ext i j
-  fin_cases i <;> fin_cases j <;> norm_num [QuantumNoBroadcastingMixed.basisProjector, qubitZero, Matrix.diagonal]
+  fin_cases i <;> fin_cases j <;> norm_num [QuantumNoBroadcastingMixed.basisProjector, qubitZero,
+    Matrix.diagonal]
 -- A trace-preserving channel need not be unital; its dual is unital.
 example : apply_channel (reset_channel (0 : Fin 2)) (1 : Q 2) ≠ 1 := by
   intro h
@@ -77,15 +84,18 @@ example : apply_channel (dephasing_channel 2) qubitZero = qubitZero := by
   ext i j
   fin_cases i <;> fin_cases j <;> norm_num [qubitZero, Matrix.diagonal]
 example : Density rhoMinus := rhoMinus_density
-example : apply_channel (dephasing_channel 2) rhoPlus = apply_channel (dephasing_channel 2) rhoMinus :=
+example : apply_channel (dephasing_channel 2) rhoPlus = apply_channel (dephasing_channel 2)
+  rhoMinus :=
   dephasing_identifies_pair
 example : trace_distance (apply_channel (dephasing_channel 2) rhoPlus)
     (apply_channel (dephasing_channel 2) rhoMinus) = 0 := by
   rw [dephasing_identifies_pair, trace_distance_self]
 example : trace_distance (apply_channel (dephasing_channel 2) rhoPlus)
-    (apply_channel (dephasing_channel 2) rhoMinus) < trace_distance rhoPlus rhoMinus := dephasing_strict_loss
+    (apply_channel (dephasing_channel 2) rhoMinus) < trace_distance rhoPlus rhoMinus
+      := dephasing_strict_loss
 example (K : KrausChannel 2 3 4) (E : FinitePOVM 3 5) :
     TV (prob_dist E (apply_channel K qubitZero)) (prob_dist E (apply_channel K rhoPlus)) ≤
       trace_distance qubitZero rhoPlus :=
   (tv_le_trace_distance_under_povm (channel_density K qubitZero_density)
-    (channel_density K rhoPlus_density) E).trans (trace_distance_contractive K qubitZero_density rhoPlus_density)
+    (channel_density K rhoPlus_density) E).trans (trace_distance_contractive K qubitZero_density
+      rhoPlus_density)

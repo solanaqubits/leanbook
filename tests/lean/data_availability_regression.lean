@@ -14,7 +14,8 @@ private def two : Finset (Fin 4) := {0, 1}
 
 example : ¬ isRecoverable four noneAvailable := by norm_num [isRecoverable, four, noneAvailable]
 example : ¬ isRecoverable four oneAvailable := by norm_num [isRecoverable, four, oneAvailable]
-example : isRecoverable four thresholdAvailable := by norm_num [isRecoverable, four, thresholdAvailable]
+example : isRecoverable four thresholdAvailable
+  := by norm_num [isRecoverable, four, thresholdAvailable]
 example : isRecoverable four allAvailable := by norm_num [isRecoverable, four, allAvailable]
 example : four.n - oneAvailable.availableShards = 3 := rfl
 example : ¬ four.k < four.n - thresholdAvailable.availableShards := by decide

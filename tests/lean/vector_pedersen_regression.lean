@@ -23,7 +23,8 @@ example (S : CryptoPedersenHomomorphicSum.Setup 7 (ZMod 7)) (m r : ZMod 7) :
       CryptoPedersenHomomorphicSum.commit S m r := bridge_to_scalar_pedersen S m r
 
 example (m m' : MsgVector 7 2) (r r' : ZMod 7) :
-    commit_vec (q := 7) bases H (m + m') (r + r') = commit_vec (q := 7) bases H m r + commit_vec (q := 7) bases H m' r' :=
+    commit_vec (q := 7) bases H (m + m') (r + r') = commit_vec (q := 7) bases H m r + commit_vec (q
+      := 7) bases H m' r' :=
   commit_vec_add_homomorphism bases H m m' r r'
 example (m : MsgVector 7 2) (r a : ZMod 7) :
     commit_vec (q := 7) bases H ((-a) • m) ((-a) * r) = (-a) • commit_vec (q := 7) bases H m r :=
@@ -61,7 +62,8 @@ example (G : Fin 2 → ZMod 7) (m : MsgVector 7 2) (r : ZMod 7) (hg : G 0 = G 1)
 
 example (m : MsgVector 7 2) (r : ZMod 7) :
     (m + ![1, 0], r + (-2 : ZMod 7)) ≠ (m, r) ∧
-      commit_vec (q := 7) bases H (m + ![1, 0]) (r + (-2 : ZMod 7)) = commit_vec (q := 7) bases H m r :=
+      commit_vec (q := 7) bases H (m + ![1, 0]) (r + (-2 : ZMod 7)) = commit_vec (q := 7) bases H m
+        r :=
   commit_vec_known_relation_alternate_open bases H m ![1, 0] r (-2)
     (by decide) (Or.inr (by decide))
 

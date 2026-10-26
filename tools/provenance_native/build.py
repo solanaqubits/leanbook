@@ -2,14 +2,16 @@
 """Build the IO shim; qualify a pinned local libsodium binary before launch.
 This is a trusted-host identity check, not hostile-filesystem race protection.
 """
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from tools.lean_invoke import lean_command
 import argparse
 import hashlib
 import json
 import re
 import platform
-from pathlib import Path
 import subprocess
-import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
@@ -36,8 +38,7 @@ def build(output, profile):
     libroot = ROOT/'.lake/build/lib/lean/tools/provenance_native'
     libroot.mkdir(parents=True, exist_ok=True)
     raw_c = output/'Raw.c'
-    subprocess.run(['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',
-                    '-o', str(libroot/'Raw.olean'), '-c', str(raw_c), str(HERE/'Raw.lean')],
+    subprocess.run(lean_command(['-j1', '-DwarningAsError=true', '-o', str(libroot / 'Raw.olean'), '-c', str(raw_c), str(HERE / 'Raw.lean')], lake='lake'),
                    cwd=ROOT, check=True)
     prototypes = re.findall(r'^lean_object\* provenance_(?:verify|sha256)_io\([^\n]+;', raw_c.read_text(), re.M)
     if len(prototypes) != 2:
@@ -48,8 +49,7 @@ def build(output, profile):
            '-I' + str(Path(prefix) / 'include'), '-include', str(abi), str(HERE / 'ffi.c'), str(raw_c),
            '-ldl', '-o', str(shim)]
     subprocess.run(cmd, check=True)
-    subprocess.run(['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',
-                    '-o', str(libroot/'Adapter.olean'), str(HERE / 'Adapter.lean')],
+    subprocess.run(lean_command(['-j1', '-DwarningAsError=true', '-o', str(libroot / 'Adapter.olean'), str(HERE / 'Adapter.lean')], lake='lake'),
                    cwd=ROOT, check=True)
     receipt = dict(profile=profile, lean_version=subprocess.check_output(['lean','--version'],text=True).strip(),
                    raw_sha256=hashlib.sha256((HERE/'Raw.lean').read_bytes()).hexdigest(),

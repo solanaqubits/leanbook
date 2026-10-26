@@ -16,7 +16,8 @@ example : Verify S 3 (publicKey S 2) (sign (2 : ZMod 7) (3 : ZMod 7)) :=
 example : S.pair (∑ _i : Fin 1, sign (2 : ZMod 7) (3 : ZMod 7)) S.source₂.generator =
     S.pair 3 (publicKey S 2) := one_participant S (fun _ => 2) (fun _ => 3)
 
-example : S.pair (sign (2 : ZMod 7) (3 : ZMod 7) + sign (4 : ZMod 7) (5 : ZMod 7)) S.source₂.generator =
+example : S.pair (sign (2 : ZMod 7) (3 : ZMod 7) + sign (4 : ZMod 7) (5 : ZMod 7))
+  S.source₂.generator =
     S.pair 3 (publicKey S 2) + S.pair 5 (publicKey S 4) := two_participants S 2 4 3 5
 
 -- Repeated keys and repeated message points are allowed by algebraic completeness.
@@ -36,7 +37,8 @@ example : ¬ Verify S 3 (publicKey S 2) (sign (2 : ZMod 7) (3 : ZMod 7) + 1) ∧
     ¬ Verify S 5 (publicKey S 4) (sign (4 : ZMod 7) (5 : ZMod 7) - 1) ∧
     (sign (2 : ZMod 7) (3 : ZMod 7) + 1) + (sign (4 : ZMod 7) (5 : ZMod 7) - 1) =
       sign (2 : ZMod 7) (3 : ZMod 7) + sign (4 : ZMod 7) (5 : ZMod 7) ∧
-    S.pair ((sign (2 : ZMod 7) (3 : ZMod 7) + 1) + (sign (4 : ZMod 7) (5 : ZMod 7) - 1)) S.source₂.generator =
+    S.pair ((sign (2 : ZMod 7) (3 : ZMod 7) + 1) + (sign (4 : ZMod 7) (5 : ZMod 7) - 1))
+      S.source₂.generator =
       S.pair 3 (publicKey S 2) + S.pair 5 (publicKey S 4) :=
   bls_error_cancellation_counterexample S 3 5 (publicKey S 2) (publicKey S 4)
     (sign (2 : ZMod 7) (3 : ZMod 7)) (sign (4 : ZMod 7) (5 : ZMod 7)) 1
@@ -54,7 +56,8 @@ example (s : Finset ℕ) (setup : CryptoBLSSignatureAggregation.BLSSetup) (x H :
     CryptoBLSSignatureAggregation.pairing
       (∑ i ∈ s, CryptoBLSSignatureAggregation.sign (x i) (H i)) setup.g2 =
     ∑ i ∈ s, CryptoBLSSignatureAggregation.pairing (H i)
-      (CryptoBLSSignatureAggregation.publicKey (x i) setup) := bridge_to_existing_real_bls s setup x H
+      (CryptoBLSSignatureAggregation.publicKey (x i) setup) := bridge_to_existing_real_bls s setup
+        x H
 
 example : CryptoBLSSignatureAggregationGroupSuite := crypto_bls_group_master_suite
 #print axioms crypto_bls_group_master_suite

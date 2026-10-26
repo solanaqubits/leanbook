@@ -2,8 +2,10 @@ import Verification.MasterSuite
 open DistributedTendermintLockHandoverContract
 
 example : DistributedTendermintLockHandoverContractSuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).distributed_suite.lock_handover
-example (r : MasterSuite.VerificationMasterRegistry) : DistributedTendermintLockHandoverContractSuite :=
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).distributed_suite.lock_handover
+example (r : MasterSuite.VerificationMasterRegistry) :
+  DistributedTendermintLockHandoverContractSuite :=
   r.distributed_suite.lock_handover
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :
     DistributedTendermintLockHandoverContractSuite := r.distributed_systems_full_suite.lock_handover

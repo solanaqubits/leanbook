@@ -1,4 +1,5 @@
 """Sequential replay protection: independent accounting values and checked certificates."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import re
@@ -15,7 +16,7 @@ class TendermintReplayLiveTests(unittest.TestCase):
     def run_lean(self, file):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true', file],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', file], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         return result.stdout

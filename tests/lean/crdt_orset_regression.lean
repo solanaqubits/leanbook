@@ -49,7 +49,8 @@ def boolState : ORSetState Bool 1 := addTag false (1, 0) (addTag true (2, 0) ⊥
 example : contains true (remove false boolState) := by
   apply (observed_remove_exact false true (2, (0 : Fin 1)) boolState).2.mpr
   exact ⟨⟨(2, 0), by decide +kernel, by decide +kernel⟩, by decide +kernel⟩
-example : ¬ contains 7 (addTag 7 (1, 0) Regression.deletedState) := Regression.counterexample_tag_reuse
+example : ¬ contains 7 (addTag 7 (1, 0) Regression.deletedState)
+  := Regression.counterexample_tag_reuse
 example : contains 7 (Regression.unsafeGC Regression.deletedState ⊔ Regression.oldState) :=
   Regression.counterexample_tombstone_gc.2.2.1
 

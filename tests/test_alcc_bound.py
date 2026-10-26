@@ -1,4 +1,7 @@
 """Scoped Lean tests: SHA vectors, binding, and rejection of false proof claims."""
+from tools.lean_invoke import lean_command
+from tools.lean_fixture_format import wrap_source
+from tests.lean_test_support import assert_reduction_rejected
 import os
 from pathlib import Path
 import subprocess
@@ -24,9 +27,11 @@ class ALCCBoundFixtureTests(unittest.TestCase):
 @unittest.skipUnless(os.environ.get('LEAN_VERIFIER_LIVE_TESTS') == '1', 'Live Lean required')
 class ALCCBoundTests(unittest.TestCase):
     def run_lean(self, source, suffix=''):
+        if not Path(source).resolve().is_relative_to(ROOT):
+            source = Path(source)
+            source.write_text(wrap_source(source.read_text()))
         result = subprocess.run(
-            ['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',
-             '-DrelaxedAutoImplicit=false', str(source)],
+            lean_command(['-j1', '-DwarningAsError=true', '-DrelaxedAutoImplicit=false', '--json', str(source)], lake='lake'),
             cwd=ROOT, capture_output=True, text=True, timeout=300)
         target = os.environ.get('ALCC_BOUND_EVIDENCE_DIR')
         if target:
@@ -62,7 +67,7 @@ class ALCCBoundTests(unittest.TestCase):
                 source.write_text('import Verification.AlgebraicCertificateBound\n'
                                   'set_option maxRecDepth 20000\n' + claim)
                 result = self.run_lean(source, '_' + name)
-                self.assertNotEqual(result.returncode, 0)
+                assert_reduction_rejected(self, result)
                 self.assertIn('rfl', result.stdout + result.stderr)
                 for unrelated in ['object file', 'maximum recursion depth', 'unknown identifier']:
                     self.assertNotIn(unrelated, result.stdout + result.stderr)

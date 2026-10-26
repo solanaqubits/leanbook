@@ -1,4 +1,5 @@
 """Kernel regressions for trace distance metrics and measurement TV contraction."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class TraceDistanceLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/trace_distance_regression.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/trace_distance_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

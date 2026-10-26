@@ -159,7 +159,8 @@ instance (a b : Entry (Fin 3) Digest) : Decidable (withoutNextBinding a b) := by
   unfold withoutNextBinding; infer_instance
 example : withoutNextBinding root replacement := by decide +kernel
 example : ¬ LinkValid codec root replacement := by decide +kernel
-example : replacement.current.toGlobal ⟨0,by decide⟩ ≠ root.next.toGlobal ⟨0,by decide⟩ := by decide +kernel
+example : replacement.current.toGlobal ⟨0,by decide⟩ ≠ root.next.toGlobal ⟨0,by decide⟩
+  := by decide +kernel
 example : verifyChain codec allSigned root [replacement] = false := by decide +kernel
 example : EntryValid codec allSigned brokenParent := by decide +kernel
 example : ¬ LinkValid codec root brokenParent := by decide +kernel
@@ -171,11 +172,13 @@ def forkChild : Entry (Fin 3) Digest :=
     next := alternativeThird
     header := {child.header with nextValidatorsHash := configDigest alternativeThird}}
 def forkTip : Entry (Fin 3) Digest :=
-  ⟨⟨7,19,2,configDigest alternativeThird,configDigest alternativeThird,headerDigest forkChild.header⟩,
+  ⟨⟨7,19,2,configDigest alternativeThird,configDigest alternativeThird,headerDigest
+    forkChild.header⟩,
     alternativeThird,alternativeThird,univ⟩
 example : verifyChain codec allSigned root tail = true ∧
     verifyChain codec allSigned root [forkChild,forkTip] = true := by decide +kernel
-example : tip.current.weight ⟨0,by decide⟩ = 6 ∧ forkTip.current.weight ⟨0,by decide⟩ = 7 := by decide +kernel
+example : tip.current.weight ⟨0,by decide⟩ = 6 ∧ forkTip.current.weight ⟨0,by decide⟩ = 7
+  := by decide +kernel
 example : ¬ CommitConsistency codec (root :: tail) [root,forkChild,forkTip] := by
   intro hc
   have he := hc tip (by simp [tail]) forkTip (by simp) rfl rfl
@@ -188,8 +191,10 @@ def collidingRoot : Entry (Fin 3) Digest :=
   {root with header := {root.header with validatorsHash := .genesis,nextValidatorsHash := .genesis}}
 def collidingChild : Entry (Fin 3) Digest :=
   {replacement with header := ⟨7,18,0,.genesis,.genesis,headerDigest collidingRoot.header⟩}
-example : verifyChain collidingCodec allSigned collidingRoot [collidingChild] = true := by decide +kernel
-example : collidingChild.current.toGlobal ⟨0,by decide⟩ ≠ collidingRoot.next.toGlobal ⟨0,by decide⟩ := by decide +kernel
+example : verifyChain collidingCodec allSigned collidingRoot [collidingChild] = true
+  := by decide +kernel
+example : collidingChild.current.toGlobal ⟨0,by decide⟩ ≠ collidingRoot.next.toGlobal ⟨0,by decide⟩
+  := by decide +kernel
 example : ¬ Binding collidingCodec := by
   intro hb
   have he : changedIds = next := hb.config rfl
@@ -197,7 +202,8 @@ example : ¬ Binding collidingCodec := by
   have hn : changedIds.stakeMap 0 ≠ next.stakeMap 0 := by decide +kernel
   exact hn hx
 
--- Actual old-epoch equivocation, old validator absent from the new active set, deadline queue debit.
+-- Actual old-epoch equivocation; old validator absent from the new active set.
+-- The deadline queue debits the old validator.
 def w : Window := ⟨10, by decide⟩
 def oldVotes : Finset (Vote 2) := {⟨0,0,.prevote,some 0⟩, ⟨0,0,.prevote,some 1⟩}
 def payload : Payload 2 := ⟨some oldVotes, ⟨oldVotes.image (fun v => ⟨17,v⟩),∅⟩⟩
@@ -232,18 +238,21 @@ example : (globalBlame old {0}).Nonempty ∧ C.ledger.confiscated <
     attributed admission wellFormed ⟨0, by decide +kernel, by decide +kernel, by decide +kernel⟩
 example : (pipeline C input).ledger.confiscated = 5 := by decide +kernel
 example : (0 : Fin 3) ∉ next.activeIds := by decide +kernel
-example : bound.context.old.toGlobal 0 = 0 ∧ bound.context.next.toGlobal ⟨0,by decide⟩ = 2 := by decide +kernel
+example : bound.context.old.toGlobal 0 = 0 ∧ bound.context.next.toGlobal ⟨0,by decide⟩ = 2
+  := by decide +kernel
 example : (pipeline bound input).ledger.confiscated = 9 := by decide +kernel
 example : (pipeline bound input).ledger.completed 0 = 4 := by decide +kernel
 example : (pipeline bound input).ledger.processed = {(17,0)} := by decide +kernel
 example : (pipeline bound input).ledger.queue = [] := by decide +kernel
 example : totalValue (pipeline bound input).ledger = 31 := by decide +kernel
-example : totalValue (pipeline bound input).ledger = totalValue bound.ledger := pipeline_conservation _ _
+example : totalValue (pipeline bound input).ledger = totalValue bound.ledger
+  := pipeline_conservation _ _
 example : WellFormed (pipeline bound input).ledger := pipeline_wellFormed _ _ wellFormed
 example : (pipeline bound input).ledger.active 2 = bound.ledger.active 2 ∧
     subjectValue (pipeline bound input).ledger 2 = subjectValue bound.ledger 2 :=
   cross_epoch_innocent_index_reuse_protection bound input {0} 2 accepted (by decide +kernel)
-example : settle bound.window (applyHistorical bound.window 17 ⟨2,input⟩ bound.rate (debit bound input)) =
+example : settle bound.window (applyHistorical bound.window 17 ⟨2,input⟩ bound.rate (debit bound
+  input)) =
     pipeline bound input := duplicate_before_settlement bound input
 example : applyHistorical bound.window 17 ⟨2,input⟩ bound.rate (pipeline bound input) =
     pipeline bound input := duplicate_after_settlement bound input
@@ -275,7 +284,8 @@ example : (pipeline pastWindow input).ledger.completed 0 = 8 := by decide +kerne
   ("full check rejects replacement", !verifyChain codec allSigned root [replacement]),
   ("unlinked signed entry", decide (EntryValid codec allSigned brokenParent)),
   ("full signer fork", verifyChain codec allSigned root [forkChild,forkTip]),
-  ("colliding config substitution", verifyChain collidingCodec allSigned collidingRoot [collidingChild]),
+  ("colliding config substitution", verifyChain collidingCodec allSigned collidingRoot
+    [collidingChild]),
   ("actual historical evidence", decide (attribute_evidence (old.atHeight 17)
     input.reference input.evidence = .ok {0})),
   ("old subject exited", decide ((0 : Fin 3) ∉ next.activeIds)),

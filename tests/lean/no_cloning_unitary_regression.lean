@@ -17,7 +17,7 @@ example : VectorClones CNOT zeroKet zeroKet ∧ VectorClones CNOT zeroKet oneKet
 example : CNOT*(plusQubit ⊗ₖ zeroKet)=bell ∧
     CNOT*(plusQubit ⊗ₖ zeroKet) ≠ plusQubit ⊗ₖ plusQubit := cnot_entangles_superposition
 example (v w : Ket 2) : bell ≠ v ⊗ₖ w := bell_not_product v w
-example {d : ℕ} (h : 2≤d) : ¬ ∃ (U : Joint d) (b : Ket d), Unitary U ∧ Normalized b ∧
+example {d : ℕ} (h : 2 ≤ d) : ¬ ∃ (U : Joint d) (b : Ket d), Unitary U ∧ Normalized b ∧
     ∀ ψ, Normalized ψ → DensityClones U b ψ := no_universal_unitary_cloning h
 example (U : Joint 2) (hU : Unitary U) (b : Ket 2) (hb : Normalized b) :
     ¬ ∀ basis bit, DensityClones U b (QuantumBB84ProtocolQBER.ket basis bit) :=

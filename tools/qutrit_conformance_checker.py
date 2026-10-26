@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Pinned module-190 conformance checks in a trusted local Lean project."""
+from lean_invoke import lean_command
 import argparse
 import hashlib
 import json
@@ -10,6 +11,20 @@ from statement_conformance_checker import snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT = 'Verification.QuantumQutritSecretSharingExplicitDecoder'
+
+
+def render_probe(template, module, namespace):
+    """Reflow two application boundaries before expanding candidate names.
+
+    The pinned template and its tokens are unchanged; only whitespace in the
+    generated file changes. Do not suppress the configured long-line linter.
+    """
+    text = template.replace('(groupedCode q) __CANDIDATE__.explicitRecovery',
+                            '(groupedCode q)\n    __CANDIDATE__.explicitRecovery')
+    text = text.replace('Lean.Elab.Term.elabTerm (← `(',
+                        'Lean.Elab.Term.elabTerm\n    (← `(')
+    return text.replace('-- CANDIDATE_IMPORT', 'import ' + module).replace(
+        '__CANDIDATE__', namespace)
 
 
 def check(root=ROOT, module=DEFAULT, namespace='QuantumQutritSecretSharingExplicitDecoder'):
@@ -40,11 +55,11 @@ def check(root=ROOT, module=DEFAULT, namespace='QuantumQutritSecretSharingExplic
             r['steps'].append(build)
             if build['returncode'] or build['timeout']:
                 raise ValueError('Candidate build failed')
-            text = (root / 'tools/qutrit_conformance_probe.lean').read_text().replace(
-                '-- CANDIDATE_IMPORT', 'import ' + module).replace('__CANDIDATE__', namespace)
+            text = render_probe((root / 'tools/qutrit_conformance_probe.lean').read_text(),
+                                module, namespace)
             with tempfile.TemporaryDirectory(prefix='qutrit-conformance-') as tmp:
                 p = Path(tmp) / 'Probe.lean';p.write_text(text)
-                result = verifier.run([verifier.lake, 'env', 'lean', '-DwarningAsError=true', str(p)])
+                result = verifier.run(lean_command(['-DwarningAsError=true', str(p)], lake=verifier.lake))
             r['steps'].append(result)
             marker = 'QUTRIT_CONFORMANCE_OK definitions=8 statements=7'
             if result['returncode'] or result['timeout'] or result['output'].count(marker) != 1:

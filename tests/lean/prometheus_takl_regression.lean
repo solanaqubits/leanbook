@@ -14,7 +14,8 @@ example : |goldenRate 1 (1 : ℂ) (2 + 1/100) - goldenRate 1 1 2| /
     (by norm_num) (by norm_num)
 example : |goldenRate 1 (1 : ℂ) (2 - 1/100) - goldenRate 1 1 2| /
     goldenRate 1 1 2 ≤ 1/200 := by
-  simpa only [sub_eq_add_neg, neg_div] using conditional_relative_rate_bound 1 2 (-1/100) (1/200) 1 (by norm_num)
+  simpa only [sub_eq_add_neg, neg_div] using conditional_relative_rate_bound 1 2 (-1/100) (1/200) 1
+    (by norm_num)
     (by norm_num) (by norm_num) (by norm_num)
 example : periodicDensity 1 (1/100) 0 = 1 := (density_three_values _ _).1
 example : periodicDensity 1 (1/100) Real.pi = 51/50 := by

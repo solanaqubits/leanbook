@@ -1,4 +1,5 @@
 """Stable sorting, counted recursion and consensus backend regressions."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class MarzulloEventSortingLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/marzullo_sorting_regression.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/marzullo_sorting_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('MARZULLO_SORT_EXEC_OK: 12 cases', result.stdout)

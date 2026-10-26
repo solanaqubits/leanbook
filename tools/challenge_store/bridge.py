@@ -1,4 +1,5 @@
 """Private bounded JSON transport to the explicit Lean/native IO worker."""
+from tools.lean_invoke import lean_command
 import json
 import os
 import select
@@ -29,9 +30,7 @@ class Bridge:
         shim=ROOT/'.lake/provenance-native/libprovenance_native.so'
         if not shim.is_file(): raise RuntimeError('run python3 -m tools.challenge_store.build first')
         self.timeout=timeout
-        self.process=subprocess.Popen(['lake','env','lean','-j1','-DwarningAsError=true',
-            '--load-dynlib='+str(shim),'--run',str(ROOT/'tools/challenge_store/Worker.lean'),
-            p['library_path'],p['library_version']],cwd=ROOT,stdin=subprocess.PIPE,
+        self.process=subprocess.Popen(lean_command(['-j1', '-DwarningAsError=true', '--load-dynlib=' + str(shim), '--run', str(ROOT / 'tools/challenge_store/Worker.lean'), p['library_path'], p['library_version']], lake='lake'),cwd=ROOT,stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,bufsize=0)
         os.set_blocking(self.process.stdin.fileno(),False)
         os.set_blocking(self.process.stdout.fileno(),False)

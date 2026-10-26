@@ -4,14 +4,19 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: aicyberg
 -/
 import Verification.MasterSuite
+
+private abbrev migrationRegistry :=
+  MasterSuite.verification_master_registry.{0,0,0,0,0,0,0,0,0,0}
+
 open DistributedTendermintHeaderChainEpochAuthContract
 
 example : DistributedTendermintHeaderChainEpochAuthContractSuite :=
-  (MasterSuite.verification_master_registry.{0,0,0,0,0,0,0,0,0,0}).distributed_suite.header_chain_auth
+  (migrationRegistry).distributed_suite.header_chain_auth
 example (r : MasterSuite.VerificationMasterRegistry) :
     DistributedTendermintHeaderChainEpochAuthContractSuite := r.distributed_suite.header_chain_auth
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :
-    DistributedTendermintHeaderChainEpochAuthContractSuite := r.distributed_systems_full_suite.header_chain_auth
+    DistributedTendermintHeaderChainEpochAuthContractSuite
+      := r.distributed_systems_full_suite.header_chain_auth
 
 open DistributedTendermintEpochIdentityContract DistributedTendermintUnbondingPeriodContract
 open DistributedTendermintEpochTransitionSafetyMasterContract
@@ -33,7 +38,8 @@ example {V D : Type} [DecidableEq D] (codec : Codec V D) (binding : Binding code
     codec binding signed root left right hl hr hc h a b ha hb
 example {V D : Type} [DecidableEq D] (codec : Codec V D) (binding : Binding codec)
     signed parent child (hp : RootValid codec parent)
-    (hc : LinkValid codec parent child ∧ EntryValid codec signed child) : child.current = parent.next :=
+    (hc : LinkValid codec parent child ∧ EntryValid codec signed child) : child.current =
+      parent.next :=
   DistributedTendermintHeaderChainEpochAuthContract.verification_suite.substitution
     codec binding signed parent child hp hc
 example {V D : Type} [DecidableEq D] [DecidableEq V] [Fintype V]

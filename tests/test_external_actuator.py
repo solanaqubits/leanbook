@@ -1,4 +1,5 @@
 """Scoped kernel/model checks; not the 33 SimLab acceptance scenarios."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -12,7 +13,7 @@ class ExternalActuatorTests(unittest.TestCase):
     def check_lean(self, *args):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        p = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true', *args],
+        p = subprocess.run(lean_command(['-DwarningAsError=true', *args], lake=lake),
                            cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
         return p.stdout

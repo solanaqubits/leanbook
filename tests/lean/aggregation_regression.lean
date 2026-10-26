@@ -51,11 +51,12 @@ example : 2 ^ (2 ^ 2) < 17 := by decide
 example (y z : F) : agg_delta 1 4 y z = delta_fn y z 4 := agg_delta_m1_spec _ _
 example (u v s t : Block 2 4 → F) y z x :
     block_dot (agg_l_poly u s z x) (agg_r_poly v t y z x) =
-      agg_t0 u v y z+agg_t1 u v s t y z*x+agg_t2 s t y*x ^ 2 := agg_inner_product_expansion _ _ _ _ _ _ _
+      agg_t0 u v y z+agg_t1 u v s t y z*x+agg_t2 s t y*x ^ 2 := agg_inner_product_expansion _ _ _ _
+        _ _ _
 example (u v : Block 2 4 → F) (values : Fin 2 → F)
     (h : agg_formal_t0 u v = agg_formal_rhs values 4) :
     ∀ r, u r=0 ∨ u r=1 := (agg_poly_identity_implies_bits _ _ _ h).2.1
-example (u v : Block 2 4 → F) (values : Fin 2 → ℕ) (hv : ∀ j, values j<17)
+example (u v : Block 2 4 → F) (values : Fin 2 → ℕ) (hv : ∀ j, values j < 17)
     (h : agg_formal_t0 u v = agg_formal_rhs (fun j => (values j : F)) 4) :
     ∀ j, values j<16 := agg_formal_natural_range _ _ _ hv (by decide) h
 example (u v s t : Block 2 4 → F) values :

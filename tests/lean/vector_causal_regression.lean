@@ -59,4 +59,5 @@ example (v w : VectorClock 2) :
     toPair (tick 1 (merge v w)) = DistributedVectorClocks.receive2 (toPair v) (toPair w) :=
   n2_receive2_bridge v w
 
-example : DistributedVectorClocksCausalOrderSuite := distributed_vector_clocks_causal_order_master_suite
+example : DistributedVectorClocksCausalOrderSuite
+  := distributed_vector_clocks_causal_order_master_suite

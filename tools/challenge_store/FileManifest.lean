@@ -36,6 +36,7 @@ def checkManifestBridge (i : ManifestBridgeInput) : Bool :=
 /-- Pre-registration shape/limit check; content refusals remain the registry's job. -/
 def fileRequestFits (i : FileRequestInput) : Bool :=
   decide (i.request.signed.signature.size = 64 ∧
-    InputsFit i.config.limits i.config.expected i.request.signed i.request.snapshot i.request.profile ∧
+    InputsFit i.config.limits i.config.expected
+      i.request.signed i.request.snapshot i.request.profile ∧
     keyOf i.config.expected = some i.request.key)
 end ChallengeStore

@@ -1,4 +1,5 @@
 """Kernel and runtime regressions for deterministic IPA tree extraction."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class TreeExtractionLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true', '--run',
-             'tests/lean/tree_extraction_regression.lean'],
+            lean_command(['-DwarningAsError=true', '--run', 'tests/lean/tree_extraction_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('TREE_EXTRACTION_OK 28', result.stdout)

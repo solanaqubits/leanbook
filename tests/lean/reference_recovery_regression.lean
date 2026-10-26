@@ -19,7 +19,7 @@ abbrev ET := QuantumKnillLaflammeGeneralRecoveryTheorem.Examples.rectangularChan
 
 example (m : ℕ) (X : Joint m 2) : liftedRecovery E J R m X = X :=
   reference_preserving_recovery E J R (general_recovery_theorem C) m X
-example (X : Q (3*2)) : fromProduct 3 2 (liftedRecovery E J R 3 (toProduct 3 2 X)) = X :=
+example (X : Q (3 * 2)) : fromProduct 3 2 (liftedRecovery E J R 3 (toProduct 3 2 X)) = X :=
   reference_preserving_recovery_flat E J R (general_recovery_theorem C) 3 X
 example (X : Joint 0 2) : liftedRecovery E J R 0 X = X :=
   reference_preserving_recovery E J R (general_recovery_theorem C) 0 X
@@ -71,19 +71,23 @@ example : liftedRecovery ED J (generalRecovery D) 2 (maximallyEntangled 2) = max
   reference_preserving_recovery _ _ _ (general_recovery_theorem D) 2 _
 example (m : ℕ) (X : Joint m 2) : liftedRecovery ET (1 : Q 2) (generalRecovery T) m X = X :=
   reference_preserving_recovery _ _ _ (general_recovery_theorem T) m X
-example : liftedRecovery ET (1 : Q 2) (generalRecovery T) 2 (maximallyEntangled 2) = maximallyEntangled 2 :=
+example : liftedRecovery ET (1 : Q 2) (generalRecovery T) 2 (maximallyEntangled 2) =
+  maximallyEntangled 2 :=
   reference_preserving_recovery _ _ _ (general_recovery_theorem T) 2 _
-example (a : Fin 2) : apply_channel (dephasing_channel 2) (Matrix.single a a 1) = Matrix.single a a 1 :=
+example (a : Fin 2) : apply_channel (dephasing_channel 2) (Matrix.single a a 1) = Matrix.single a a
+  1 :=
   dephasing_preserves_basis a
 example : amplify (apply_channel (dephasing_channel 2)) 2 (maximallyEntangled 2) (0,0) (1,1) = 0 :=
   dephasing_bell_coherence
-example : amplify (apply_channel (dephasing_channel 2)) 2 (maximallyEntangled 2) ≠ maximallyEntangled 2 := by
+example : amplify (apply_channel (dephasing_channel 2)) 2 (maximallyEntangled 2) ≠
+  maximallyEntangled 2 := by
   intro h
   have he := congrArg (fun M : Joint 2 2 => M (0,0) (1,1)) h
   rw [dephasing_bell_coherence, bell_coherence] at he
   norm_num at he
 example {s : ℕ} (R' : KrausChannel 2 2 s) :
-    liftedRecovery (dephasing_channel 2) (1 : Q 2) R' 2 (maximallyEntangled 2) ≠ maximallyEntangled 2 :=
+    liftedRecovery (dephasing_channel 2) (1 : Q 2) R' 2 (maximallyEntangled 2) ≠ maximallyEntangled
+      2 :=
   dephasing_bell_not_recoverable R'
 example : QuantumReferencePreservingRecoveryContractSuite := verification_suite
 end ReferenceRecoveryRegression

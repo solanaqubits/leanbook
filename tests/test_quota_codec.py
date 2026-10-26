@@ -1,4 +1,5 @@
 """Canonical byte codec: fixed-byte expectations and malformed-frame rejection."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -14,8 +15,7 @@ class QuotaCodecLiveTests(unittest.TestCase):
     def test_encoding_and_strict_decoding(self):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true',
-                                 '--run', 'tests/lean/quota_codec_regression.lean'],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_codec_regression.lean'], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('QUOTA_CODEC_OK 42', result.stdout)
@@ -23,8 +23,7 @@ class QuotaCodecLiveTests(unittest.TestCase):
     def test_master_suite_exports_codec_contract(self):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true',
-                                 'tests/lean/quota_codec_registry.lean'],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', 'tests/lean/quota_codec_registry.lean'], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

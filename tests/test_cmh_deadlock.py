@@ -1,4 +1,5 @@
 """Live compiler regressions for static-epoch CMH safety, delivery progress and dynamic counterexamples."""
+from tools.lean_invoke import lean_command
 
 import os
 from pathlib import Path
@@ -19,13 +20,7 @@ class CMHDeadlockLiveTests(unittest.TestCase):
         lake = shutil.which("lake")
         self.assertIsNotNone(lake, "lake must be available for live compiler tests")
         result = subprocess.run(
-            [
-                lake,
-                "env",
-                "lean",
-                "-DwarningAsError=true",
-                "tests/lean/cmh_deadlock_regression.lean",
-            ],
+            lean_command(['-DwarningAsError=true', 'tests/lean/cmh_deadlock_regression.lean'], lake=lake),
             cwd=ROOT,
             capture_output=True,
             text=True,

@@ -32,7 +32,8 @@ example : ¬ (∃ s : State Nat, Run auth conf initial
     [.reserve 7, .issue 7, .recover, .issue 7] s) := by
   rintro ⟨s, hs⟩
   have hb := at_most_one_dispatch hs 7
-  have hn : ¬ dispatchCount ([.reserve 7, .issue 7, .recover, .issue 7] : List (Event Nat)) 7 ≤ 1 := by decide
+  have hn : ¬ dispatchCount ([.reserve 7, .issue 7, .recover, .issue 7] : List (Event Nat)) 7 ≤ 1
+    := by decide
   exact hn hb
 
 /-- Other actions cannot make the older action fresh again. -/

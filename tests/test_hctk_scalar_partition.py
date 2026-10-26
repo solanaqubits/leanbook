@@ -1,4 +1,5 @@
 """Targeted kernel applications and countermodels for epsilon201."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -12,21 +13,18 @@ class HCTKScalarPartitionTests(unittest.TestCase):
     def test_exact_partition_transfer_regularization_and_countermodels(self):
         lake = shutil.which("lake")
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, "env", "lean", "-DwarningAsError=true",
-                                 "tests/lean/hctk_scalar_partition_regression.lean"],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', 'tests/lean/hctk_scalar_partition_regression.lean'], lake=lake),
                                 cwd=ROOT, text=True, capture_output=True, timeout=120)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_master_registry_projection(self):
         lake = shutil.which("lake")
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, "env", "lean", "-DwarningAsError=true",
-                                 "tests/lean/hctk_scalar_partition_registry.lean"],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', 'tests/lean/hctk_scalar_partition_registry.lean'], lake=lake),
                                 cwd=ROOT, text=True, capture_output=True, timeout=120)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_explicit_three_store_capture(self):
-        result = subprocess.run([shutil.which("lake"), "env", "lean", "-DwarningAsError=true",
-                                 "tests/lean/hctk_capture_regression.lean"],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', 'tests/lean/hctk_capture_regression.lean'], lake=shutil.which('lake')),
                                 cwd=ROOT, text=True, capture_output=True, timeout=120)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

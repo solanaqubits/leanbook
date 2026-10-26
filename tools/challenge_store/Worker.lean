@@ -18,7 +18,8 @@ def respond (backend : ProvenanceNative.IOBackend) (j : Json) : IO Json := do
       if let .consumed r := entry then
         let some cfg := image.state.contexts r.pinnedContextVersion |
           throw (IO.userError "missing pinned context")
-        if keyOf cfg.expected != some key || !reportAccepted cfg.allowMissingTimestamp r.historicalReport then
+        if keyOf cfg.expected != some key ||
+            !reportAccepted cfg.allowMissingTimestamp r.historicalReport then
           throw (IO.userError "invalid consumed record")
     for (sc, v) in image.active do
       let some cfg := image.state.contexts v | throw (IO.userError "missing active context")

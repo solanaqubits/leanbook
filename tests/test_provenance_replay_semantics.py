@@ -1,4 +1,5 @@
 """Checked contract examples referencing existing ε262, not a runtime proof."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import re
@@ -12,8 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
                      'Enable live Lean checks')
 class ReplaySemanticsTests(unittest.TestCase):
     def test_contract_examples_and_axiom_dependencies(self):
-        p = subprocess.run(['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',
-                            'tests/lean/provenance_replay_semantics.lean'], cwd=ROOT,
+        p = subprocess.run(lean_command(['-j1', '-DwarningAsError=true', 'tests/lean/provenance_replay_semantics.lean'], lake='lake'), cwd=ROOT,
                            capture_output=True, text=True, timeout=240)
         self.assertEqual(p.returncode, 0, p.stdout + p.stderr)
         declarations = re.findall(r"'ReplaySemanticsRegression\.(\w+)'", p.stdout)

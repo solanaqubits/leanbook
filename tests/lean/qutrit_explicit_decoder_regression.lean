@@ -34,7 +34,8 @@ example : QuantumNoBroadcastingMixed.IsCompletelyPositive (apply_channel explici
   channel_completely_positive _
 example (Y : Q 9) : (apply_channel explicitRecovery Y).trace = Y.trace :=
   channel_trace_preserving _ _
-example (Y : Q 9) (h : Density Y) : Density (apply_channel explicitRecovery Y) := channel_density _ h
+example (Y : Q 9) (h : Density Y) : Density (apply_channel explicitRecovery Y) := channel_density _
+  h
 example (q t w : Fin 3) : recoveryOperator t * erasureOperator 9 3 w * groupedCode q =
     (if t = w then amplitude else 0) • (1 : Q 3) := recovery_branch q t w
 example (q : Fin 3) : recoveryOperator 0 * erasureOperator 9 3 1 * groupedCode q = 0 := by
@@ -62,7 +63,8 @@ example : liftedRecovery (erasureChannel 9 3) (groupedCode 2) explicitRecovery 3
     (maximallyEntangled 3) = maximallyEntangled 3 := explicit_reference_recovery 2 3 _
 example (q : Fin 3) (X : Q 3) :
     apply_channel explicitRecovery (retainedPair q (encode code X)) =
-      apply_channel (pairRecovery q) (retainedPair q (encode code X)) := agrees_with_pairRecovery q X
+      apply_channel (pairRecovery q) (retainedPair q (encode code X)) := agrees_with_pairRecovery q
+        X
 
 example : factorized (Matrix.single 0 1 Complex.I) (triple 0 2 2) (triple 1 1 1) =
     Complex.I / 3 := by

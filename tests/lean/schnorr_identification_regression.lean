@@ -70,14 +70,18 @@ instance : Fact (Nat.Prime 2) := ⟨by decide⟩
 def S5 : Setup 5 (ZMod 5) := oneGeneratorSetup 1 one_ne_zero (ZMod.card 5)
 def S2 : Setup 2 (ZMod 2) := oneGeneratorSetup 1 one_ne_zero (ZMod.card 2)
 
-example : Verify S5 3 ⟨2, 1, 0⟩ ∧ Verify S5 3 ⟨2, 2, 3⟩ := by constructor <;> unfold Verify <;> decide
+example : Verify S5 3 ⟨2, 1, 0⟩ ∧ Verify S5 3 ⟨2, 2, 3⟩
+  := by constructor <;> unfold Verify <;> decide
 example : extractWitness (q := 5) 1 2 0 3 = 3 :=
-  extracted_witness_eq_secret S5 3 2 1 2 0 3 (by decide) (by unfold Verify; decide) (by unfold Verify; decide)
+  extracted_witness_eq_secret S5 3 2 1 2 0 3 (by decide) (by unfold Verify; decide)
+    (by unfold Verify; decide)
 example : extractWitness (q := 2) 0 1 0 1 = 1 :=
-  extracted_witness_eq_secret S2 1 0 0 1 0 1 (by decide) (by unfold Verify; decide) (by unfold Verify; decide)
+  extracted_witness_eq_secret S2 1 0 0 1 0 1 (by decide) (by unfold Verify; decide)
+    (by unfold Verify; decide)
 
 -- Distinct commitments invalidate extraction even with distinct challenges.
-example : Verify S5 1 ⟨0, 0, 0⟩ ∧ Verify S5 1 ⟨1, 1, 2⟩ := by constructor <;> unfold Verify <;> decide
+example : Verify S5 1 ⟨0, 0, 0⟩ ∧ Verify S5 1 ⟨1, 1, 2⟩
+  := by constructor <;> unfold Verify <;> decide
 example : extractWitness (q := 5) 0 1 0 2 = 2 := by
   unfold extractWitness
   rw [← div_eq_mul_inv]

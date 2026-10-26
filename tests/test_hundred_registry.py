@@ -1,4 +1,5 @@
 """Acyclic registry layering and compatibility of integration after the split."""
+from tools.lean_invoke import lean_command
 import importlib.util
 import json
 import os
@@ -58,7 +59,6 @@ class HundredRegistryTests(unittest.TestCase):
     def test_universes_and_legacy_projections_compile(self):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true',
-                                 'tests/lean/hundred_registry_regression.lean'],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', 'tests/lean/hundred_registry_regression.lean'], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=120)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

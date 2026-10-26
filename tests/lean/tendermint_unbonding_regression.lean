@@ -42,7 +42,8 @@ example : requested.queue = [⟨0, 8, 17⟩] := by decide +kernel
 example : totalValue requested = 23 := by decide +kernel
 example : observed (request_unbonding initialState 0 9) = observed initialState := by decide +kernel
 example : observed (request_unbonding initialState 0 0) = observed initialState := by decide +kernel
-example : observed (request_unbonding initialState 0 (-1)) = observed initialState := by decide +kernel
+example : observed (request_unbonding initialState 0 (-1)) = observed initialState
+  := by decide +kernel
 example : finalize_unbonding window deadline = deadline := admission_finalize_noop _ _ rfl
 example : observed (finalize_unbonding window (close_admission requested)) =
     (17, .withdrawal, 0, [8], 5, 0, ∅) := by decide +kernel
@@ -63,11 +64,14 @@ example : observed honest = (28, .admission, 0, [], 5, 8, ∅) := by decide +ker
 example : wrongOrder.completed 0 = 8 ∧ wrongOrder.confiscated = 5 := by decide +kernel
 example : paid.completed 0 ≠ wrongOrder.completed 0 := by decide +kernel
 example : totalValue paid = totalValue deadline := total_value_conservation _ _ _ _
-example : observed mixedAfter = (27, .admission, 1, [4, 6, 4], 10, 0, {(17, 0)}) := by decide +kernel
+example : observed mixedAfter = (27, .admission, 1, [4, 6, 4], 10, 0, {(17, 0)})
+  := by decide +kernel
 example : available mixed 17 0 = 10 := by decide +kernel
 example : totalValue mixedAfter = totalValue mixed := checked_conservation _ _ _ _ _ _
-example : (finalize_unbonding window (close_admission mixedAfter)).completed 0 = 10 := by decide +kernel
-example : (finalize_unbonding window (close_admission mixedAfter)).completed 1 = 4 := by decide +kernel
+example : (finalize_unbonding window (close_admission mixedAfter)).completed 0 = 10
+  := by decide +kernel
+example : (finalize_unbonding window (close_admission mixedAfter)).completed 1 = 4
+  := by decide +kernel
 example : slash_unbonding window (cfg 17) none (view 17) (1/2) deadline = deadline :=
   invalid_certificate_noop _ _ _ _ _ _ .insufficientEvidence rfl
 example : observed (step 17 0 deadline) = observed deadline := by decide +kernel
@@ -75,23 +79,28 @@ example : observed (step 17 2 deadline) = observed deadline := by decide +kernel
 example : observed (step 17 (-1) deadline) = observed deadline := by decide +kernel
 example : (step 16 (1/2) {half with now := 26}).confiscated = 11 := by decide +kernel
 example : toLedger half 17 =
-    DistributedTendermintSlashingReplayProtection.applyCertifiedSet (toLedger deadline 17) 17 {0} (1/2) := by
+    DistributedTendermintSlashingReplayProtection.applyCertifiedSet (toLedger deadline 17) 17 {0}
+      (1/2) := by
   change toLedger (slash_unbonding window (cfg 17) (some votes) (view 17) (1/2) deadline) 17 = _
   rw [accepted_certificate window (cfg 17) (some votes) (view 17) (1/2) deadline {0}
     (by decide +kernel) (by decide +kernel)]
   exact ledger_refinement _ _ _ _
 example : WellFormed initialState := ⟨by decide +kernel, by simp [initialState], by decide +kernel⟩
 example : WellFormed paid := slot_wellFormed _ _ _ _
-  ⟨by decide +kernel, by simp [deadline, requested, request_unbonding, initialState], by decide +kernel⟩
+  ⟨by decide +kernel, by simp [deadline, requested, request_unbonding, initialState],
+    by decide +kernel⟩
 example : deadline.confiscated < half.confiscated := by decide +kernel
 example : (⟨0, 8, 17⟩ : Withdrawal (Fin 3)).maturity window = 27 := by decide
 example : (⟨0, 8, 18⟩ : Withdrawal (Fin 3)).maturity window > 27 := by decide
 -- The stronger assertion about offences AFTER the request is false.
-example : is_timely window 26 28 ∧ (⟨0, 8, 17⟩ : Withdrawal (Fin 3)).maturity window < 28 := by decide
+example : is_timely window 26 28 ∧ (⟨0, 8, 17⟩ : Withdrawal (Fin 3)).maturity window < 28
+  := by decide
 example : advance_time requested = requested := by rfl
 example : (advance_time (close_admission requested)).now = 18 := by rfl
-example : (processSlot window (1/2) deadline [certificate 17, certificate 17]).completed 0 = 4 := by decide +kernel
-example : (processSlot window (1/2) deadline [certificate 17, certificate 17]).confiscated = 9 := by decide +kernel
+example : (processSlot window (1/2) deadline [certificate 17, certificate 17]).completed 0 = 4
+  := by decide +kernel
+example : (processSlot window (1/2) deadline [certificate 17, certificate 17]).confiscated = 9
+  := by decide +kernel
 -- A real reachable protocol history supplies the two conflicting votes.
 def actions : List (Action 3) :=
   [.faulty ⟨0, 0, .prevote, some 0⟩, .faulty ⟨0, 0, .prevote, some 1⟩]
@@ -132,7 +141,8 @@ example : ¬ (⟨0, 8, 17⟩ : Withdrawal (Fin 3)).maturity window ≤ 26 :=
   no_prior_finalization window _ 17 27 26 (by decide) (by decide) (by decide)
 
 #eval [("request", decide (requested.active 0 = 0 ∧ queueValue requested.queue = 8)),
-  ("no early payout", decide ((finalize_unbonding window (close_admission requested)).completed 0 = 0)),
+  ("no early payout", decide ((finalize_unbonding window (close_admission requested)).completed 0 =
+    0)),
   ("future", decide (observed (step 18 (1/2) requested) = observed requested)),
   ("deadline half", decide (paid.completed 0 = 4 ∧ paid.confiscated = 9)),
   ("deadline full", decide (full.confiscated = 13)),
@@ -141,14 +151,16 @@ example : ¬ (⟨0, 8, 17⟩ : Withdrawal (Fin 3)).maturity window ≤ 26 :=
   ("late offence", decide ((step 18 (1/2) deadline).queue = deadline.queue)),
   ("honest", decide (honest.completed 0 = 8)),
   ("priority mutation", decide (wrongOrder.completed 0 = 8 ∧ paid.completed 0 = 4)),
-  ("invalid evidence", decide ((slash_unbonding window (cfg 17) none (view 17) (1/2) deadline).confiscated = 5)),
+  ("invalid evidence", decide ((slash_unbonding window (cfg 17) none (view 17) (1/2)
+    deadline).confiscated = 5)),
   ("invalid rate", decide ((step 17 2 deadline).confiscated = 5)),
   ("mixed queue", decide (mixedAfter.queue.map Withdrawal.amount = [4, 6, 4])),
   ("slot time", decide (paid.now = 28)),
   ("conservation", decide (totalValue paid = 23)),
   ("fresh positive", decide (half.confiscated > deadline.confiscated)),
   ("old key", decide ((step 17 1 half).confiscated = 9)),
-  ("request overdraw", decide (observed (request_unbonding initialState 0 9) = observed initialState)),
+  ("request overdraw", decide (observed (request_unbonding initialState 0 9) = observed
+    initialState)),
   ("new height", decide ((step 16 (1/2) {half with now := 26}).confiscated = 11)),
   ("reachable", (run (cfg 17) initial actions).isSome)]
 end TendermintUnbondingRegression

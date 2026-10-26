@@ -80,7 +80,8 @@ example : honestPaid.completed 0 = 8 := by decide +kernel
 example : full.ledger.queue = [⟨0, 0, 17⟩] ∧ full.ledger.confiscated = 13 := by decide +kernel
 example : observed (runPacket packet after) = observed after := by decide +kernel
 example : runPacket packet after = after := historical_replay _ _ _ _ _
-example : observed (runPacket packet (epoch_transition after expanded)) = observed after := by decide +kernel
+example : observed (runPacket packet (epoch_transition after expanded)) = observed after
+  := by decide +kernel
 example : observed (applyHistorical window 17 packet 1 after) = observed after := by decide +kernel
 example : permuted.toGlobal 1 = old.toGlobal 0 := by decide +kernel
 example : permuted.weight 1 = 8 ∧ permuted.weight 0 = 6 := by decide +kernel
@@ -101,14 +102,17 @@ example : observed (runPacket noReference changed) = observed changed := by deci
 example : observed (runPacket packet future) = observed future := by decide +kernel
 example : observed (runPacket packet expired) = observed expired := by decide +kernel
 example : observed (runPacket packet closed) = observed closed := by decide +kernel
-example : observed (applyHistorical window 17 packet 0 changed) = observed changed := by decide +kernel
-example : observed (applyHistorical window 17 packet 2 changed) = observed changed := by decide +kernel
+example : observed (applyHistorical window 17 packet 0 changed) = observed changed
+  := by decide +kernel
+example : observed (applyHistorical window 17 packet 2 changed) = observed changed
+  := by decide +kernel
 example : totalValue after.ledger = 31 := by decide +kernel
 example : totalValue after.ledger = totalValue changed.ledger := historical_conservation _ _ _ _ _
 example : totalValue paid = 31 := by decide +kernel
 example : ownedQueue after.ledger 2 = ownedQueue changed.ledger 2 := by decide +kernel
 -- Being distinct from one culprit does not prove innocence of all culprits.
-example : old.toGlobal 0 ≠ old.toGlobal 1 ∧ old.toGlobal 1 ∈ globalBlame old {0, 1} := by decide +kernel
+example : old.toGlobal 0 ≠ old.toGlobal 1 ∧ old.toGlobal 1 ∈ globalBlame old {0, 1}
+  := by decide +kernel
 example : WellFormed after.ledger := historical_wellFormed _ _ _ _ _
   ⟨by decide +kernel, by decide +kernel, by decide +kernel⟩
 
@@ -118,7 +122,8 @@ def reached : State 2 := (run (old.atHeight 17) initial actions).getD initial
 theorem execution : run (old.atHeight 17) initial actions = some reached := by
   change run (⟨![8, 6], {0}, 17⟩ : Config 2) initial actions = some reached
   decide +kernel
-theorem reachable : Reachable (old.atHeight 17) reached := run_reachable _ _ Reachable.init execution
+theorem reachable : Reachable (old.atHeight 17) reached := run_reachable _ _ Reachable.init
+  execution
 example : reached.votes = votes 0 := by decide +kernel
 example : old.toGlobal 1 ∉ globalBlame old {0} := historical_honest_unaccused old 17 reachable
   (payload 17 0).evidence {0} 1 (by decide +kernel) (by decide +kernel)
@@ -143,7 +148,8 @@ example : paid.completed 0 = 4 := by
   ("old queue", decide (after.ledger.queue = [⟨0, 4, 17⟩])),
   ("deadline", decide (paid.completed 0 = 4)),
   ("full", decide (full.ledger.confiscated = 13)),
-  ("replay", decide (observed (runPacket packet (epoch_transition after expanded)) = observed after)),
+  ("replay", decide (observed (runPacket packet (epoch_transition after expanded)) = observed
+    after)),
   ("permutation", decide (observed (runPacket permPacket permState) = observed after)),
   ("missing", decide (observed (runPacket packet missing) = observed missing)),
   ("ambiguous", decide (observed (runPacket packet ambiguous) = observed ambiguous)),

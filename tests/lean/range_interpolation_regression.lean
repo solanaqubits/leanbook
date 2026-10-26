@@ -64,7 +64,8 @@ example : formal_t0 (![0] : Fin 1 → F) ![0] ≠ formal_rhs (-1) 1 := two_z_for
 example : (0 : F) - 0 ≠ 1 ∧ (0 : F) ≠ -1 := by decide
 example : residual_eval (![0] : Fin 1 → F) ![0] (-1) 0 2 ≠ 0 := two_z_counterexample.2.2.1
 example (y z : F) : residual_eval ![2, 0] ![0, 0] 2 y z = z * (1 - y) := repeated_y_residual y z
-example : GridEqualities (![2, 0] : Fin 2 → F) ![0, 0] 2 (fun _ => 1) gridZ := repeated_y_counterexample.1
+example : GridEqualities (![2, 0] : Fin 2 → F) ![0, 0] 2 (fun _ => 1) gridZ
+  := repeated_y_counterexample.1
 example : (2 : F) * (2 - 1) ≠ 0 := repeated_y_counterexample.2.1
 example : verify_interpolation_grid a1 (rightBits a1) 1 (gridY 1) ![0, 1, 1] =
     .error .repeatedZ := repeated_z_rejected
@@ -72,7 +73,8 @@ example : verify_interpolation_grid a4 (rightBits a4) 6 (gridY 4) gridZ =
     .error .invalidEquality := corrupted_value_rejected
 example : verify_interpolation_grid a4 (fun _ => 0) 5 (gridY 4) gridZ =
     .error .invalidEquality := by decide
-example : verify_interpolation_grid a4 (rightBits a4) 5 ![3, 2, 1, 0] ![2, 1, 0] = .ok () := by decide
+example : verify_interpolation_grid a4 (rightBits a4) 5 ![3, 2, 1, 0] ![2, 1, 0] = .ok ()
+  := by decide
 -- A noncanonical natural representative passes the field test but is not in range.
 example : GridEqualities a4 (rightBits a4) (106 : F) (gridY 4) gridZ ∧ ¬ (106 : ℕ) < 16 := by decide
 example : verify_interpolation_grid a1 (rightBits a1) 1 (gridY 1) ![1, -1, 2] = .ok () := by decide

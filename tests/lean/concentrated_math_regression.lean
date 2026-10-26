@@ -54,7 +54,8 @@ private def check (label : String) (ok : Bool) : IO Unit :=
   check "root negative tick" (sqrtPriceReference (-1) < scale)
   check "floor / ceiling" (mulDivFloor 7 3 2 == 10 && mulDivCeil 7 3 2 == 11)
   check "exact division" (mulDivFloor 6 4 3 == 8 && mulDivCeil 6 4 3 == 8)
-  check "zero amount" (computeSwapStep (up .exactInput 0 0 (by decide)) == (⟨scale, 0, 0, 0⟩ : SwapResult))
+  check "zero amount" (computeSwapStep (up .exactInput 0 0 (by decide)) == (⟨scale, 0, 0, 0⟩ :
+    SwapResult))
   check "one wei input" ((computeSwapStep (up .exactInput 1 0 (by decide))).nextPrice == scale + 1)
   check "up target" ((computeSwapStep (up .exactInput 2 0 (by decide))).nextPrice == scale + 2)
   check "down input" ((computeSwapStep (down .exactInput 2)).nextPrice == scale)
@@ -63,8 +64,10 @@ private def check (label : String) (ok : Bool) : IO Unit :=
   check "fee budget" ((computeSwapStep (up .exactInput 2 3000 (by decide))).amountIn +
     (computeSwapStep (up .exactInput 2 3000 (by decide))).fee ≤ 2)
   check "empty liquidity gap" (computeSwapStep gap == (⟨scale + 2, 0, 0, 0⟩ : SwapResult))
-  check "multiple ticks through gap" (crossTrace ps ⟨0, 5⟩ [false, false, false] == (⟨3, 7⟩ : TickState))
+  check "multiple ticks through gap" (crossTrace ps ⟨0, 5⟩ [false, false, false] == (⟨3, 7⟩ :
+    TickState))
   check "return across boundary" (crossTrace ps ⟨1, 5⟩ [false, true] == (⟨1, 5⟩ : TickState))
-  check "no duplicate crossing" (crossAt ps (crossAt ps ⟨1, 5⟩ 2 false true) 2 false true == (⟨2, 0⟩ : TickState))
+  check "no duplicate crossing" (crossAt ps (crossAt ps ⟨1, 5⟩ 2 false true) 2 false true == (⟨2,
+    0⟩ : TickState))
   check "unreached boundary" (crossAt ps ⟨1, 5⟩ 2 false false == (⟨1, 5⟩ : TickState))
   IO.println "CLMATH_EXEC_OK: 16 cases"

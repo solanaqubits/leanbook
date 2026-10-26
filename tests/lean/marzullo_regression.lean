@@ -2,7 +2,6 @@ import Verification.DistributedMarzulloAlgorithm
 import Mathlib.Tactic.Linarith
 
 open DistributedMarzulloAlgorithm
-open scoped Classical
 
 noncomputable section
 
@@ -12,6 +11,7 @@ private def disconnected : List TimeInterval :=
 
 -- Closed endpoints produce a genuine singleton output.
 example : ∃ I, thresholdHull touching 2 = some I ∧ I.low = 1 ∧ I.high = 1 := by
+  classical
   have hchar (t : ℝ) : 2 ≤ overlapCount touching t ↔ t = 1 := by
     simp only [touching, overlapCount_cons, overlapCount_nil, containsTime]
     constructor
@@ -27,6 +27,7 @@ example : ∃ I, thresholdHull touching 2 = some I ∧ I.low = 1 ∧ I.high = 1 
 example : ∃ I, thresholdHull disconnected 2 = some I ∧
     I.low = 0 ∧ I.high = 3 ∧ containsTime I (3 / 2) ∧
     overlapCount disconnected (3 / 2) = 1 := by
+  classical
   have hzero : 2 ≤ overlapCount disconnected 0 := by norm_num [disconnected, containsTime]
   have hthree : 2 ≤ overlapCount disconnected 3 := by norm_num [disconnected, containsTime]
   have hbound (t : ℝ) (h : 2 ≤ overlapCount disconnected t) : 0 ≤ t ∧ t ≤ 3 := by
@@ -45,10 +46,12 @@ example : ∃ I, thresholdHull disconnected 2 = some I ∧
 example : overlapCount misleadingSources 1 = 2 ∧
     overlapCount misleadingSources 8 = 3 ∧
     ¬ (8 ≤ (1 : ℝ) ∧ (1 : ℝ) ≤ 9) := by
+  classical
   norm_num [misleadingSources, containsTime]
 
 -- Empty lists, zero thresholds, and impossible thresholds do not succeed.
 example : thresholdHull [] 1 = none := by
+  classical
   cases h : thresholdHull [] 1 with
   | none => rfl
   | some I =>
@@ -56,9 +59,11 @@ example : thresholdHull [] 1 = none := by
     simp at this
 
 example (sources : List TimeInterval) : thresholdHull sources 0 = none := by
+  classical
   simp [thresholdHull]
 
 example (sources : List TimeInterval) : thresholdHull sources (sources.length + 1) = none := by
+  classical
   cases h : thresholdHull sources (sources.length + 1) with
   | none => rfl
   | some I =>
@@ -68,4 +73,5 @@ example (sources : List TimeInterval) : thresholdHull sources (sources.length + 
 
 -- Equal intervals are separate sources, not a deduplicated vote.
 example : overlapCount [⟨0, 1, by norm_num⟩, ⟨0, 1, by norm_num⟩] (1 / 2) = 2 := by
+  classical
   norm_num [containsTime]

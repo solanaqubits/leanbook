@@ -1,10 +1,12 @@
 import Verification.MasterSuite
 
 example : DistributedTendermintAccountableSafety.DistributedTendermintAccountableSafetySuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).distributed_suite.tendermint_accountability
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).distributed_suite.tendermint_accountability
 
 example : DistributedTendermintCoreSafety.DistributedTendermintCoreSafetySuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).distributed_suite.tendermint
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).distributed_suite.tendermint
 
 example (r : MasterSuite.VerificationMasterRegistry) :
     DistributedTendermintAccountableSafety.DistributedTendermintAccountableSafetySuite :=

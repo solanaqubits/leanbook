@@ -11,14 +11,18 @@ private def rationalMix : NVSpinPopulation :=
 private noncomputable def rationalAmp : CoherentAmp := (3 / 5, 4 / 5, 0)
 private noncomputable def phaseChangedAmp : CoherentAmp := (-3 / 5, 4 / 5, 0)
 
-example : QuantumDiamondNVInterfaceContract.residual (purePopulation .Zero) = 0 := by norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation]
-example : QuantumDiamondNVInterfaceContract.residual (purePopulation .Plus) = 1 := by norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation]
-example : QuantumDiamondNVInterfaceContract.residual (purePopulation .Minus) = 1 := by norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation]
+example : QuantumDiamondNVInterfaceContract.residual (purePopulation .Zero) = 0
+  := by norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation]
+example : QuantumDiamondNVInterfaceContract.residual (purePopulation .Plus) = 1
+  := by norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation]
+example : QuantumDiamondNVInterfaceContract.residual (purePopulation .Minus) = 1
+  := by norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation]
 example : (opticalPumpStep (1 / 2) (by norm_num) (purePopulation .Plus)).p0 = 1 / 2 ∧
     (opticalPumpStep (1 / 2) (by norm_num) (purePopulation .Plus)).pPlus = 1 / 2 ∧
     (opticalPumpStep (1 / 2) (by norm_num) (purePopulation .Plus)).pMinus = 0 := by
   norm_num [opticalPumpStep, purePopulation]
-example : QuantumDiamondNVInterfaceContract.residual (pumpCycles (1 / 2) (by norm_num) 3 (purePopulation .Plus)) = 1 / 8 := by
+example : QuantumDiamondNVInterfaceContract.residual (pumpCycles (1 / 2) (by norm_num) 3
+  (purePopulation .Plus)) = 1 / 8 := by
   rw [optical_pump_convergence]
   norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation]
 example : (pumpCycles (1 / 2) (by norm_num) 3 (purePopulation .Minus)).p0 = 7 / 8 := by
@@ -41,10 +45,13 @@ example : purePopulation .Plus ≠ purePopulation .Minus ∧
     norm_num [purePopulation] at hp
   · rw [optical_pump_one, optical_pump_one]
 
-example (k : ℕ) : 0 < QuantumDiamondNVInterfaceContract.residual (pumpCycles (1 / 2) (by norm_num) k (purePopulation .Minus)) :=
-  finite_residual_positive (1 / 2) (by norm_num) (by norm_num) k _ (by norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation])
+example (k : ℕ) : 0 < QuantumDiamondNVInterfaceContract.residual (pumpCycles (1 / 2) (by norm_num)
+  k (purePopulation .Minus)) :=
+  finite_residual_positive (1 / 2) (by norm_num) (by norm_num) k _ (by norm_num
+    [QuantumDiamondNVInterfaceContract.residual, purePopulation])
 example (k : ℕ) : (pumpCycles (1 / 2) (by norm_num) k (purePopulation .Plus)).p0 < 1 :=
-  finite_p0_lt_one (1 / 2) (by norm_num) (by norm_num) k _ (by norm_num [QuantumDiamondNVInterfaceContract.residual, purePopulation])
+  finite_p0_lt_one (1 / 2) (by norm_num) (by norm_num) k _ (by norm_num
+    [QuantumDiamondNVInterfaceContract.residual, purePopulation])
 example : ¬ ((0 : ℚ) ≤ 2 ∧ 2 ≤ 1) := by norm_num
 example : ((1 - (2 : ℚ)) * 1) < 0 := by norm_num
 example : ¬ ((0 : ℚ) ≤ -1 ∧ -1 ≤ 1) := by norm_num
@@ -59,12 +66,14 @@ example : halfPlus.p0 ≤ halfMinus.p0 ∧
 example : luminescenceYield 2 1 halfPlus = 3 / 2 := by
   norm_num [luminescenceYield, halfPlus]
 example : (purePopulation .Plus).p0 < (purePopulation .Zero).p0 ∧
-    luminescenceYield 1 1 (purePopulation .Plus) = luminescenceYield 1 1 (purePopulation .Zero) := by
+    luminescenceYield 1 1 (purePopulation .Plus) = luminescenceYield 1 1 (purePopulation .Zero)
+      := by
   norm_num [luminescenceYield, purePopulation]
 example : luminescenceYield (-1) (-2) (purePopulation .Zero) < 0 := by
   norm_num [luminescenceYield, purePopulation]
 example : luminescenceYield 2 1 halfPlus < luminescenceYield 2 1 (purePopulation .Zero) :=
-  luminescence_contrast_bound _ _ (by norm_num) _ (by norm_num [QuantumDiamondNVInterfaceContract.residual, halfPlus])
+  luminescence_contrast_bound _ _ (by norm_num) _ (by norm_num
+    [QuantumDiamondNVInterfaceContract.residual, halfPlus])
 example (η : ℚ) (hη : 0 ≤ η ∧ η ≤ 1) (p : NVSpinPopulation) :
     luminescenceYield 2 1 p ≤ luminescenceYield 2 1 (opticalPumpStep η hη p) :=
   readout_contrast_monotonicity _ _ (by norm_num) _ _ (optical_pump_p0_monotonicity η hη p)

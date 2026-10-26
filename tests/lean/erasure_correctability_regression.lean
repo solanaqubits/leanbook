@@ -56,7 +56,8 @@ example : liftedRecovery (erasureChannel 4 2) entangledCode (erasureChannel 2 2)
     2 (maximallyEntangled 2) = maximallyEntangled 2 :=
   erasure_reference_recovery _ _ entangledCode_recovery 2 _
 example (m : ℕ) (X : Joint m 2) :
-    amplify (environmentMap (erasureChannel 4 2) entangledCode) m X = traceLogical X ⊗ₖ mixedLost := by
+    amplify (environmentMap (erasureChannel 4 2) entangledCode) m X = traceLogical X ⊗ₖ mixedLost
+      := by
   apply independence_env_reference
   intro Y
   rw [erasure_complement, entangledCode_lost]

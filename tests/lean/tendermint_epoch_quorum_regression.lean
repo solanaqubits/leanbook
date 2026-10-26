@@ -59,7 +59,8 @@ example : mass raw univ = 6 := by decide +kernel
 example : normalize raw = p := by apply funext; decide +kernel
 example : normalize (fun v => 7 * raw v) = normalize raw :=
   normalization_scale_invariant raw 7 (by norm_num)
-example : Normalized (normalize raw) := normalize_normalized raw (by decide +kernel) (by decide +kernel)
+example : Normalized (normalize raw) :=
+  normalize_normalized raw (by decide +kernel) (by decide +kernel)
 example : ¬ Normalized (fun _ : Fin 3 => (0 : ℚ)) := by decide +kernel
 example : ¬ Normalized (normalize (fun _ : Fin 3 => (0 : ℚ))) := by decide +kernel
 example : ¬ Normalized (![2, -1, 0] : Fin 3 → ℚ) := by decide +kernel
@@ -79,7 +80,8 @@ example : ¬ ∃ v ∈ ({0, 1} : Finset (Fin 4)) ∩ {2, 3}, v ∉ (∅ : Finset
 example : (2:ℚ)/3 = mass boundaryOld {0, 1} := by decide +kernel
 example : variation splitOld splitNew = 2/5 := by decide +kernel
 example : (2:ℚ)/3 < mass splitOld {0, 1} ∧ (2:ℚ)/3 < mass splitNew {2, 3} := by decide +kernel
-example : mass (common splitOld splitNew) (honestIntersection ∅ {0, 1} {2, 3}) = 0 := by decide +kernel
+example : mass (common splitOld splitNew) (honestIntersection ∅ {0, 1} {2, 3}) = 0
+  := by decide +kernel
 -- Equality cannot replace strict slack for non-strict quorums, even in one epoch.
 example : Normalized uniform ∧ mass uniform {1} = 1/3 := by decide +kernel
 example : isQuorum uniform (2/3) {0, 1} ∧ isQuorum uniform (2/3) {1, 2} := by decide +kernel

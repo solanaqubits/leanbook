@@ -1,4 +1,5 @@
 """Kernel and runtime regressions for counted resumable quota search."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class QuotaResumeCostLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true', '--run',
-             'tests/lean/quota_resume_cost_regression.lean'],
+            lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_resume_cost_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('QUOTA_RESUME_COST_OK 30', result.stdout)
@@ -25,8 +25,7 @@ class QuotaResumeCostLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/quota_resume_cost_registry.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/quota_resume_cost_registry.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

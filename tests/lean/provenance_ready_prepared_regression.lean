@@ -43,17 +43,22 @@ private def dead (s : State) : State :=
 -- A successful six-state execution is derivable from the actual validator premise;
 -- the correspondence is not vacuous because all transitions are forbidden.
 private theorem full_cycle (b q report)
-    (hv : (redeemChallenge (DigitalProvenanceRecoveryContract.registryAt b []) q).report = some report) :
+    (hv : (redeemChallenge (DigitalProvenanceRecoveryContract.registryAt b []) q).report = some
+      report) :
     Execution b (initial b) [none, none, none, none, some q.expected.challenge]
       (p5 b q.expected.challenge) := by
   apply Execution.cons (Step.prepare (initial b) q report 0 rfl rfl rfl hv)
-  apply Execution.cons (Step.witnessPrepare (p1 b q.expected.challenge) 0 q.expected.challenge rfl rfl rfl rfl)
-  apply Execution.cons (Step.sqlCommit (p2 b q.expected.challenge) 0 q.expected.challenge rfl rfl rfl rfl)
+  apply Execution.cons (Step.witnessPrepare (p1 b q.expected.challenge) 0 q.expected.challenge rfl
+    rfl rfl rfl)
+  apply Execution.cons (Step.sqlCommit (p2 b q.expected.challenge) 0 q.expected.challenge rfl rfl
+    rfl rfl)
   apply Execution.cons (Step.finalize (p3 b q.expected.challenge) 0 [] rfl rfl rfl)
-  apply Execution.cons (Step.acknowledge (p4 b q.expected.challenge) 1 q.expected.challenge rfl rfl rfl rfl (by simp [p4, p3]))
+  apply Execution.cons (Step.acknowledge (p4 b q.expected.challenge) 1 q.expected.challenge rfl rfl
+    rfl rfl (by simp [p4, p3]))
   exact Execution.nil _
 
-example (b q report) (hv : (redeemChallenge (DigitalProvenanceRecoveryContract.registryAt b []) q).report = some report) :
+example (b q report) (hv : (redeemChallenge (DigitalProvenanceRecoveryContract.registryAt b [])
+  q).report = some report) :
     Reachable b (dead (p5 b q.expected.challenge)) := by
   refine ⟨[none, none, none, none, some q.expected.challenge, none], ?_⟩
   have append_crash : ∀ s os t, Execution b s os t →
@@ -98,23 +103,33 @@ def main : IO Unit := do
     ("replay refused", decide (redeemChallenge expected (request c1) = reject expected)),
     ("distinct raw bytes not conflated", successful expected c2),
     ("prepared head fails closed", decide (restoreCandidate? b unsealed good = none)),
-    ("recovery finalization permits exact image", decide (restoreCandidate? b finalized good = some expected)),
+    ("recovery finalization permits exact image", decide (restoreCandidate? b finalized good = some
+      expected)),
     ("online recovery refused", decide (restoreCandidate? b (p5 b c1) good = none)),
     ("lost completed entry rejected", decide (restoreCandidate? b stop ⟨b,[]⟩ = none)),
     ("same length wrong bytes rejected", decide (restoreCandidate? b stop ⟨b,[c2]⟩ = none)),
     ("untrusted suffix rejected", decide (restoreCandidate? b stop ⟨b,[c1,c2]⟩ = none)),
     ("base mutation rejected", decide (restoreCandidate? b stop ⟨badBase,[c1]⟩ = none)),
     ("context mutation rejected", decide (restoreCandidate? b stop ⟨badContext,[c1]⟩ = none)),
-    ("stale head content rejected", decide (restoreCandidate? b {stop with head := .ready 0 []} good = none)),
-    ("large epoch cannot mask content change", decide (restoreCandidate? b {stop with head := .ready 1000 [c2]} good = none)),
-    ("epoch alone deliberately not freshness", decide (restoreCandidate? b {stop with head := .ready 0 [c1]} good = some expected)),
-    ("empty pending retains completed data", decide (finalized.pending = none ∧ finalized.completed = [c1])),
+    ("stale head content rejected", decide (restoreCandidate? b {stop with head := .ready 0 []}
+      good = none)),
+    ("large epoch cannot mask content change", decide
+      (restoreCandidate? b {stop with head := .ready 1000 [c2]} good = none)),
+    ("epoch alone deliberately not freshness", decide
+      (restoreCandidate? b {stop with head := .ready 0 [c1]} good = some expected)),
+    ("empty pending retains completed data", decide (finalized.pending = none ∧ finalized.completed
+      = [c1])),
     ("lost response need not be acknowledged", decide (finalized.acknowledged = [c3,c3])),
-    ("lost response challenge still consumed", decide (redeemChallenge expected (request c1) = reject expected)),
-    ("early ack mutation is outside protocol and loses protection", decide (c1 ∉ (DigitalProvenanceRecoveryContract.registryAt b []).usedChallenges)),
-    ("all abstract output statuses blocked", decide ((DigitalProvenanceRecoveryContract.acknowledge (DigitalProvenanceRecoveryContract.initial b)).authorization = .blocked)),
-    ("empty trace is identity", decide (abstractTrace b (DigitalProvenanceRecoveryContract.initial b) [] = (DigitalProvenanceRecoveryContract.initial b, []))),
-    ("abstract full trace emits once", decide ((abstractTrace b (DigitalProvenanceRecoveryContract.initial b)
+    ("lost response challenge still consumed", decide (redeemChallenge expected (request c1) =
+      reject expected)),
+    ("early ack mutation is outside protocol and loses protection", decide (c1 ∉
+      (DigitalProvenanceRecoveryContract.registryAt b []).usedChallenges)),
+    ("all abstract output statuses blocked", decide ((DigitalProvenanceRecoveryContract.acknowledge
+      (DigitalProvenanceRecoveryContract.initial b)).authorization = .blocked)),
+    ("empty trace is identity", decide (abstractTrace b (DigitalProvenanceRecoveryContract.initial
+      b) [] = (DigitalProvenanceRecoveryContract.initial b, []))),
+    ("abstract full trace emits once", decide ((abstractTrace b
+      (DigitalProvenanceRecoveryContract.initial b)
       [.prepare (request c1),.persist,.anchorCommit,.acknowledge,.crash]).2 = [c1]))]
   for (label, ok) in cases do
     unless ok do throw (IO.userError label)
@@ -128,6 +143,7 @@ def main : IO Unit := do
     unless stopped.completed = log ∧ stopped.acknowledged = ack do
       throw (IO.userError s!"crash retention {k}")
     let result := restoreCandidate? b stopped ⟨b,log⟩
-    let wanted := if k = 2 ∨ k = 3 then none else some (DigitalProvenanceRecoveryContract.registryAt b log)
+    let wanted := if k = 2 ∨ k = 3 then none else some
+      (DigitalProvenanceRecoveryContract.registryAt b log)
     unless result = wanted do throw (IO.userError s!"crash decision {k}")
   IO.println s!"READY_PREPARED_OK {cases.length + states.length}"

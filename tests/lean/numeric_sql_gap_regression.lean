@@ -62,5 +62,6 @@ example : (gapInterval (1 / 2 ^ 1074) (1 / 2 ^ 1074) 2 smallRoot).hi = 1 / 2 ^ 1
   decide +kernel
 example : realRound binary64
     (sqlNoiseGap ((1 / 2 ^ 1074 : ℚ) : ℝ) ((1 / 2 ^ 1074 : ℚ) : ℝ) 2) = positiveZero := by
-  simpa only [Rat.cast_ofNat] using sql_gap_affine_rounding_soundness binary64 (1 / 2 ^ 1074) (1 / 2 ^ 1074) 2
+  simpa only [Rat.cast_ofNat] using sql_gap_affine_rounding_soundness binary64 (1 / 2 ^ 1074) (1 /
+    2 ^ 1074) 2
     smallRoot (by decide +kernel) positiveZero (by decide +kernel)

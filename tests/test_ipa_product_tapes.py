@@ -1,4 +1,5 @@
 """Kernel and runtime regressions for finite IPA sampling probabilities."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class IPAProductTapesLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true', '--run',
-             'tests/lean/ipa_product_tapes_regression.lean'],
+            lean_command(['-DwarningAsError=true', '--run', 'tests/lean/ipa_product_tapes_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('IPA_PRODUCT_TAPES_OK 16', result.stdout)
@@ -25,8 +25,7 @@ class IPAProductTapesLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/ipa_product_tapes_registry.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/ipa_product_tapes_registry.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

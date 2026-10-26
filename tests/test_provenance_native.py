@@ -1,6 +1,7 @@
 """Actual native-FFI conformance. Synthetic failures are explicitly separate.
 Fixed KATs/fixture are replayed without fixture generation or signing at test time.
 """
+from tools.lean_invoke import lean_command
 import copy
 import hashlib
 import importlib.util
@@ -44,9 +45,7 @@ class ProvenanceNativeTests(unittest.TestCase):
     def lean(self, script, argument):
         # Recheck the external binary before launching. This is not TOCTOU protection.
         build.qualify(self.profile)
-        result = subprocess.run(['lake','env','lean','-j1','-DwarningAsError=true',
-                                 '--load-dynlib='+str(self.shim),'--run',script,
-                                 self.profile['library_path'],self.profile['library_version'],str(argument)],
+        result = subprocess.run(lean_command(['-j1', '-DwarningAsError=true', '--load-dynlib=' + str(self.shim), '--run', script, self.profile['library_path'], self.profile['library_version'], str(argument)], lake='lake'),
                                 cwd=ROOT,capture_output=True,text=True,timeout=180)
         self.assertEqual(result.returncode,0,result.stdout+result.stderr)
         return result.stdout

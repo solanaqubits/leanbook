@@ -7,9 +7,11 @@ import Verification.MasterSuite
 open CryptoBulletproofsIPAFiniteForkingProbabilityContract
 
 example : CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).crypto_suite.ipa_probability
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).crypto_suite.ipa_probability
 example (r : MasterSuite.VerificationMasterRegistry) :
     CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite := r.crypto_suite.ipa_probability
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :
-    CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite := r.crypto_full_suite.ipa_probability
+    CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite
+      := r.crypto_full_suite.ipa_probability
 example : CryptoBulletproofsIPAFiniteForkingProbabilityContractSuite := verification_suite

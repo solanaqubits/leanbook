@@ -1,4 +1,5 @@
 """Live kernel checks for optical Bell analyzer amplitudes, detector POVM, and prior-dependent success."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class BellAnalyzerLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake, 'lake must be available for live compiler tests')
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/bell_analyzer_regression.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/bell_analyzer_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

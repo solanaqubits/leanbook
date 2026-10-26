@@ -1,4 +1,5 @@
 """Kernel and executable Q64.96 reference-model regressions."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class ConcentratedMathLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/concentrated_math_regression.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/concentrated_math_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('CLMATH_EXEC_OK: 16 cases', result.stdout)

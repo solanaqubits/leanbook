@@ -1,4 +1,6 @@
 """Conditional range composition: exact kernel checks, executable branches and registry."""
+from tools.lean_invoke import lean_command
+from tests.lean_test_support import checked_eval_output
 import os
 from pathlib import Path
 import shutil
@@ -14,10 +16,10 @@ class RangeWitnessLiveTests(unittest.TestCase):
     def run_lean(self, file):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true', file],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', '--json', file], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        return result.stdout
+        return checked_eval_output(self, result)
 
     def test_kernel_and_executable_contract(self):
         output = self.run_lean('tests/lean/range_witness_regression.lean')

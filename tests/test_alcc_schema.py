@@ -1,4 +1,7 @@
 """Scoped schema-decoder tests. No Python decoder or runtime admission is certified."""
+from tools.lean_invoke import lean_command
+from tools.lean_fixture_format import wrap_source
+from tests.lean_test_support import assert_reduction_rejected
 import os
 from pathlib import Path
 import subprocess
@@ -20,9 +23,11 @@ class ALCCSchemaFixtureTests(unittest.TestCase):
 @unittest.skipUnless(os.environ.get('LEAN_VERIFIER_LIVE_TESTS') == '1', 'Live Lean required')
 class ALCCSchemaTests(unittest.TestCase):
     def run_lean(self, source):
+        if not Path(source).resolve().is_relative_to(ROOT):
+            source = Path(source)
+            source.write_text(wrap_source(source.read_text()))
         result = subprocess.run(
-            ['lake', 'env', 'lean', '-j1', '-DwarningAsError=true',
-             '-DrelaxedAutoImplicit=false', str(source)],
+            lean_command(['-j1', '-DwarningAsError=true', '-DrelaxedAutoImplicit=false', '--json', str(source)], lake='lake'),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         target = os.environ.get('ALCC_SCHEMA_EVIDENCE_DIR')
         if target:
@@ -50,6 +55,6 @@ example : (decodePoly 0 (.array [.object [
   (bytes "powers", .array [])]])).isSome = true := by rfl
 ''')
             result = self.run_lean(source)
-        self.assertNotEqual(result.returncode, 0)
+        assert_reduction_rejected(self, result)
         self.assertIn('rfl', result.stdout + result.stderr)
         self.assertNotIn('object file', result.stdout + result.stderr)

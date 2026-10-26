@@ -20,12 +20,14 @@ example : checked_extract L 4 t₂ t₁ = .ok (3, 4) := by decide +kernel
 example : checked_extract L 4 t₁ t₁ = .error .equalChallenges := by decide +kernel
 example : extractOpening t₁ t₁ = (0, 0) := by decide +kernel
 example : L (extractOpening t₁ t₁) ≠ 4 := by decide +kernel
-example : ((t₂.challenge - t₁.challenge)⁻¹ • (t₁.response - t₂.response)) = (4, 3) := by decide +kernel
+example : ((t₂.challenge - t₁.challenge)⁻¹ • (t₁.response - t₂.response)) = (4, 3)
+  := by decide +kernel
 example : L ((t₂.challenge - t₁.challenge)⁻¹ • (t₁.response - t₂.response)) ≠ 4 := by decide +kernel
 
 def otherAnnouncement : Transcript F (F × F) F := ⟨4, 1, 4, (1, 1)⟩
 example : Verify L 4 otherAnnouncement := by decide +kernel
-example : checked_extract L 4 t₁ otherAnnouncement = .error .announcementMismatch := by decide +kernel
+example : checked_extract L 4 t₁ otherAnnouncement = .error .announcementMismatch
+  := by decide +kernel
 example : L (extractOpening t₁ otherAnnouncement) ≠ 4 := by decide +kernel
 
 def otherStatement : Transcript F (F × F) F := ⟨5, 0, 4, (4, 1)⟩
@@ -77,11 +79,15 @@ example : extractOpening (honestTranscript (scalarMap (q := 7) (0 : F) 0) (3, 4)
 def scenarios : List (String × Bool) := [
   ("scalar", decide (checked_extract L 4 t₁ t₂ = .ok (3, 4))),
   ("reverse", decide (checked_extract L 4 t₂ t₁ = .ok (3, 4))),
-  ("zero challenge", decide (checked_extract L 4 (honestTranscript L (3, 4) (2, 6) 0) t₂ = .ok (3, 4))),
+  ("zero challenge", decide (checked_extract L 4 (honestTranscript L (3, 4) (2, 6) 0) t₂ = .ok (3,
+    4))),
   ("equal challenge", decide (checked_extract L 4 t₁ t₁ = .error .equalChallenges)),
-  ("different announcement", decide (checked_extract L 4 t₁ otherAnnouncement = .error .announcementMismatch)),
-  ("different statement", decide (checked_extract L 4 t₁ otherStatement = .error .statementMismatch)),
-  ("bad response", decide (checked_extract L 4 t₁ {t₂ with response := (1,1)} = .error .rejectedResponse)),
+  ("different announcement", decide (checked_extract L 4 t₁ otherAnnouncement = .error
+    .announcementMismatch)),
+  ("different statement", decide (checked_extract L 4 t₁ otherStatement = .error
+    .statementMismatch)),
+  ("bad response", decide (checked_extract L 4 t₁ {t₂ with response := (1,1)} = .error
+    .rejectedResponse)),
   ("sign mutation", decide (L ((t₂.challenge-t₁.challenge)⁻¹ • (t₁.response-t₂.response)) ≠ 4)),
   ("vector", decide (checked_extract VL 4 v₁ v₂ = .ok (![2,4],5))),
   ("nonunique", decide (L (1,5) = L (3,4))),

@@ -66,7 +66,8 @@ def main : IO Unit := do
     ("initial duplicate base retained", decide (start.acknowledged = [c3, c3])),
     ("initial exact registry", decide (registryAt nonempty [] = nonempty)),
     ("prepared has no durable data", decide (prepared.committed = [] ∧ prepared.anchor = [])),
-    ("prepared not externally accepted", decide ((prepare nonempty start (request c1)).emitted = none)),
+    ("prepared not externally accepted", decide ((prepare nonempty start (request c1)).emitted =
+      none)),
     ("early ack before persist refused", decide (acknowledge prepared = quiet prepared)),
     ("early anchor before persist refused", decide (anchorCommit prepared = quiet prepared)),
     ("written exact chronological entry", decide (written.committed = [c1] ∧ written.anchor = [])),
@@ -95,30 +96,36 @@ def main : IO Unit := do
         reject (registryAt nonempty written.committed))),
     ("exact prefix accepted", decide (restoreRegistry? nonempty.context anchor correct =
       some ⟨nonempty.context, [c1, c3, c3]⟩)),
-    ("truncation rejected", decide (restoreRegistry? nonempty.context anchor ⟨nonempty, []⟩ = none)),
+    ("truncation rejected", decide (restoreRegistry? nonempty.context anchor ⟨nonempty, []⟩ =
+      none)),
     ("same version different bytes rejected", decide
-      (changed.entries.length = anchor.entries.length ∧ restoreRegistry? nonempty.context anchor changed = none)),
+      (changed.entries.length = anchor.entries.length ∧ restoreRegistry? nonempty.context anchor
+        changed = none)),
     ("higher version different bytes rejected", decide
-      (larger.entries.length > anchor.entries.length ∧ restoreRegistry? nonempty.context anchor larger = none)),
+      (larger.entries.length > anchor.entries.length ∧ restoreRegistry? nonempty.context anchor
+        larger = none)),
     ("numeric-only mutation would accept", decide (larger.entries.length ≥ anchor.entries.length)),
     ("suffix inclusion not provenance", decide (restoreRegistry? nonempty.context anchor suffix =
       some ⟨nonempty.context, [c2, c1, c3, c3]⟩)),
     ("service rejects unauthenticated suffix", decide
       (recover nonempty nonempty.context stopped suffix = quiet stopped)),
     ("wrong base rejected", decide (restoreRegistry? nonempty.context anchor ⟨r0, [c1]⟩ = none)),
-    ("failure stays offline", decide ((recover nonempty nonempty.context stopped changed).state.online = false)),
+    ("failure stays offline", decide ((recover nonempty nonempty.context stopped
+      changed).state.online = false)),
     ("validation refusal unchanged", decide (prepare nonempty start bad = quiet start)),
     ("already used bytes unchanged", decide (prepare nonempty start (request c3) = quiet start)),
     ("busy prepare refused", decide (prepare nonempty prepared (request c2) = quiet prepared)),
     ("empty challenge allowed by synthetic policy", decide
       ((run r0 (initial r0) (cycle ⟨#[]⟩)).acknowledged = [⟨#[]⟩])),
-    ("both outcomes blocked", decide (acked.authorization = .blocked ∧ resumed.authorization = .blocked)),
+    ("both outcomes blocked", decide (acked.authorization = .blocked ∧ resumed.authorization =
+      .blocked)),
     -- Excluded mutations, not operations of this state machine.
     ("empty fallback loses protection", successful { nonempty with usedChallenges := [] } c3),
     ("early-ack mutation loses challenge on crash", decide
       (c1 ∉ (registryAt nonempty (crash prepared).state.committed).usedChallenges)),
     ("repeated crash recovery retains data", decide
-      ((recover nonempty nonempty.context (crash resumed.state).state correct).state.committed = [c1]))]
+      ((recover nonempty nonempty.context (crash resumed.state).state correct).state.committed =
+        [c1]))]
   let contexts : List RegistryContext := [
     { nonempty.context with signerId := "other" }, { nonempty.context with keyId := "other" },
     { nonempty.context with roleId := "other" }, { nonempty.context with sessionId := "other" },

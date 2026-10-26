@@ -1,4 +1,5 @@
 """Canonical structured rational and snapshot data: kernel examples and executable finite cases."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -14,8 +15,7 @@ class QuotaCanonicalWireLiveTests(unittest.TestCase):
     def test_canonicality_reconstruction_and_continuation(self):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true',
-                                 '--run', 'tests/lean/quota_canonical_wire_regression.lean'],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_canonical_wire_regression.lean'], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('QUOTA_CANONICAL_WIRE_OK 29', result.stdout)
@@ -23,8 +23,7 @@ class QuotaCanonicalWireLiveTests(unittest.TestCase):
     def test_master_suite_exports_snapshot_contract(self):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        result = subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true',
-                                 'tests/lean/quota_canonical_wire_registry.lean'],
+        result = subprocess.run(lean_command(['-DwarningAsError=true', 'tests/lean/quota_canonical_wire_registry.lean'], lake=lake),
                                 cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

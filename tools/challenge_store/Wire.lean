@@ -95,7 +95,8 @@ def collect (backend : ProvenanceNative.IOBackend) (s : State) (i : Input) : IO 
         needMessage := true
         if isNew then
           if keyOf c.expected = some q.key then
-            if let .ok p := prepareVerification c.limits c.expected q.signed q.snapshot q.profile then
+            if let .ok p :=
+                prepareVerification c.limits c.expected q.signed q.snapshot q.profile then
               if let some req := p.signatureRequest then
                 sigs := [(req, ← backend.verifyEd25519 req.key req.message req.signature)]
               for bytes in p.snapshotRequest.toList ++ p.profileRequest.toList do

@@ -7,12 +7,14 @@ open CryptoHiddenScalarQuotaDeficitContract
 open CryptoHiddenScalarForkProgressProbabilityContract
 
 example (n p) : Matches n p (exportProfile n p) := export_matches n p
-example {n p q} (h : Agrees n p q) (j ε s) : ValidSnapshot n p j ε s ↔ ValidSnapshot n q j ε s := validSnapshot_agrees h j ε s
+example {n p q} (h : Agrees n p q) (j ε s) : ValidSnapshot n p j ε s ↔ ValidSnapshot n q j ε s
+  := validSnapshot_agrees h j ε s
 example : Matches 0 (fun _ => 17) [] := by decide
 example : ¬ Matches 1 (fun _ => 0) [] := by decide
 example : ¬ Matches 1 (fun _ => 0) [0, 0] := by decide
 example : ¬ Matches 1 (fun _ => 0) [1] := by decide
-example : exportProfile 1 (fun i => if i = 0 then 1/2 else 99) = [1/2] := by simp [exportProfile, List.ofFn_succ]
+example : exportProfile 1 (fun i => if i = 0 then 1/2 else 99) = [1/2]
+  := by simp [exportProfile, List.ofFn_succ]
 example : profileFunction (exportProfile 1 (fun _ => 99)) 1 = 0 := by decide
 example : Matches 1 (fun _ => 1/2) [2/4] := by
   rw [matches_iff]
@@ -31,292 +33,580 @@ private def check (ok : Bool) (label : String) : IO Unit :=
   unless ok do throw (IO.userError label)
 
 def main : IO Unit := do
-  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨0, [(1 : ℚ)]⟩).isSome == true) "reference 0"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ)]⟩).isSome) "extra coefficient 1"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨0, [(2 : ℚ)]⟩).isSome) "corrupt row 2"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨0, [(1 : ℚ)]⟩).isSome == false) "reference 3"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ)]⟩).isSome) "extra coefficient 4"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨0, [(2 : ℚ)]⟩).isSome) "corrupt row 5"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨0, [(1 : ℚ)]⟩).isSome == true) "reference 6"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ)]⟩).isSome) "extra coefficient 7"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨0, [(2 : ℚ)]⟩).isSome) "corrupt row 8"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨0, [(1 : ℚ)]⟩).isSome == false) "reference 9"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ)]⟩).isSome) "extra coefficient 10"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨0, [(2 : ℚ)]⟩).isSome) "corrupt row 11"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨1, [(1 : ℚ)]⟩).isSome == true) "reference 12"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ)]⟩).isSome) "extra coefficient 13"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨1, [(2 : ℚ)]⟩).isSome) "corrupt row 14"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨1, [(1 : ℚ)]⟩).isSome == false) "reference 15"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ)]⟩).isSome) "extra coefficient 16"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨1, [(2 : ℚ)]⟩).isSome) "corrupt row 17"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨1, [(1 : ℚ)]⟩).isSome == true) "reference 18"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ)]⟩).isSome) "extra coefficient 19"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨1, [(2 : ℚ)]⟩).isSome) "corrupt row 20"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨1, [(1 : ℚ)]⟩).isSome == false) "reference 21"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ)]⟩).isSome) "extra coefficient 22"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨1, [(2 : ℚ)]⟩).isSome) "corrupt row 23"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨3, [(1 : ℚ)]⟩).isSome == true) "reference 24"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ)]⟩).isSome) "extra coefficient 25"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨3, [(2 : ℚ)]⟩).isSome) "corrupt row 26"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨3, [(1 : ℚ)]⟩).isSome == false) "reference 27"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ)]⟩).isSome) "extra coefficient 28"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨3, [(2 : ℚ)]⟩).isSome) "corrupt row 29"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨3, [(1 : ℚ)]⟩).isSome == true) "reference 30"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ)]⟩).isSome) "extra coefficient 31"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨3, [(2 : ℚ)]⟩).isSome) "corrupt row 32"
-  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨3, [(1 : ℚ)]⟩).isSome == false) "reference 33"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ)]⟩).isSome) "extra coefficient 34"
-  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨3, [(2 : ℚ)]⟩).isSome) "corrupt row 35"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 36"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 37"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 38"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 39"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 40"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 41"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 42"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 43"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 44"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 45"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 46"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 47"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 48"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 49"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 50"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 51"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 52"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 53"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 54"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 55"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 56"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 57"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 58"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 59"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 60"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 61"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 62"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 63"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 64"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 65"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 66"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 67"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 68"
-  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 69"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 70"
-  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 71"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 72"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 73"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 74"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 75"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 76"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 77"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 78"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 79"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 80"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 81"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 82"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 83"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨1, [(1/2 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 84"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨1, [(1/2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 85"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨1, [(3/2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 86"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨1, [(1/2 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 87"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨1, [(1/2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 88"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨1, [(3/2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 89"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨1, [(1/2 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 90"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨1, [(1/2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 91"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨1, [(3/2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 92"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨1, [(1/2 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 93"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨1, [(1/2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 94"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨1, [(3/2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 95"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨3, [(7/8 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 96"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨3, [(7/8 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 97"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨3, [(15/8 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 98"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨3, [(7/8 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 99"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨3, [(7/8 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 100"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨3, [(15/8 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 101"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨3, [(7/8 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 102"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨3, [(7/8 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 103"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨3, [(15/8 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 104"
-  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨3, [(7/8 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 105"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨3, [(7/8 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 106"
-  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨3, [(15/8 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 107"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 108"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 109"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 110"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 111"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 112"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 113"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 114"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 115"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 116"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 117"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 118"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 119"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 120"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 121"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 122"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 123"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 124"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 125"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 126"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 127"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 128"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 129"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 130"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 131"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 132"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 133"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 134"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 135"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 136"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 137"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 138"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 139"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 140"
-  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 141"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 142"
-  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 143"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 144"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 145"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 146"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 147"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 148"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 149"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 150"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 151"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 152"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 153"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 154"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 155"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨1, [(-1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 156"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨1, [(-1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 157"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 158"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨1, [(-1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 159"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨1, [(-1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 160"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 161"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨1, [(-1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 162"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨1, [(-1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 163"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 164"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨1, [(-1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 165"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨1, [(-1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 166"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 167"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨3, [(-7 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 168"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨3, [(-7 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 169"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨3, [(-6 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 170"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨3, [(-7 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 171"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨3, [(-7 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 172"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨3, [(-6 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 173"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨3, [(-7 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 174"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨3, [(-7 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 175"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨3, [(-6 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 176"
-  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨3, [(-7 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 177"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨3, [(-7 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 178"
-  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨3, [(-6 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 179"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 180"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 181"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 182"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 183"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 184"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 185"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 186"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 187"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 188"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 189"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 190"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨0, [(1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 191"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 192"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 193"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨1, [(3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 194"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 195"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 196"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨1, [(3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 197"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 198"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 199"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨1, [(3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 200"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 201"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨1, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 202"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨1, [(3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 203"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 204"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 205"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨3, [(3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 206"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 207"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 208"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨3, [(3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 209"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 210"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 211"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨3, [(3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 212"
-  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 213"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨3, [(2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 214"
-  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨3, [(3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 215"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 216"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 217"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 218"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 219"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 220"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 221"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 222"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 223"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 224"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 225"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 226"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 227"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 228"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 229"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨1, [(1 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 230"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 231"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 232"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨1, [(1 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 233"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 234"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 235"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨1, [(1 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 236"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 237"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 238"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨1, [(1 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 239"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 240"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 241"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨3, [(13/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 242"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 243"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 244"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨3, [(13/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 245"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 246"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 247"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨3, [(13/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 248"
-  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 249"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ), (0 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 250"
-  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ), (2/3 : ℚ)] ⟨3, [(13/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 251"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 252"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 253"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 254"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 255"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 256"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 257"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 258"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 259"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 260"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 261"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 262"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 263"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 264"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 265"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 266"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 267"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 268"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 269"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 270"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 271"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 272"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 273"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 274"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 275"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 276"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 277"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 278"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 279"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 280"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 281"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 282"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 283"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 284"
-  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 285"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ), (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 286"
-  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 287"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨0, [(1 : ℚ)]⟩).isSome == true)
+    "reference 0"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 1"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨0, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 2"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨0, [(1 : ℚ)]⟩).isSome ==
+    false) "reference 3"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 4"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨0, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 5"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨0, [(1 : ℚ)]⟩).isSome == true)
+    "reference 6"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 7"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨0, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 8"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨0, [(1 : ℚ)]⟩).isSome ==
+    false) "reference 9"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 10"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨0, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 11"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨1, [(1 : ℚ)]⟩).isSome == true)
+    "reference 12"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 13"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨1, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 14"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨1, [(1 : ℚ)]⟩).isSome ==
+    false) "reference 15"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 16"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨1, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 17"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨1, [(1 : ℚ)]⟩).isSome == true)
+    "reference 18"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 19"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨1, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 20"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨1, [(1 : ℚ)]⟩).isSome ==
+    false) "reference 21"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 22"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨1, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 23"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨3, [(1 : ℚ)]⟩).isSome == true)
+    "reference 24"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 25"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨3, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 26"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨3, [(1 : ℚ)]⟩).isSome ==
+    false) "reference 27"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 28"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨3, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 29"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨3, [(1 : ℚ)]⟩).isSome == true)
+    "reference 30"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 31"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (-1 : ℚ) [] ⟨3, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 32"
+  check ((restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨3, [(1 : ℚ)]⟩).isSome ==
+    false) "reference 33"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ)]⟩).isSome)
+    "extra coefficient 34"
+  check (!(restoreTransferred? 0 (profileFunction []) 0 (1/4 : ℚ) [] ⟨3, [(2 : ℚ)]⟩).isSome)
+    "corrupt row 35"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 36"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 37"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 38"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == true) "reference 39"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 40"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 41"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 42"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 43"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 44"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 45"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 46"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 47"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 48"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨1, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 49"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 50"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == true) "reference 51"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨1, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 52"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 53"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 54"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨1, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 55"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 56"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 57"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨1, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 58"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨1, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 59"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 60"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨3, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 61"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 62"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == true) "reference 63"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨3, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 64"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 65"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 66"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨3, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 67"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (-1 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 68"
+  check ((restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 69"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ), (0 : ℚ)] ⟨3, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 70"
+  check (!(restoreTransferred? 1 (profileFunction [(0 : ℚ)]) 1 (1/4 : ℚ) [(0 : ℚ)] ⟨3, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 71"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨0, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 72"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨0,
+    [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 73"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨0, [(1 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 74"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨0, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 75"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨0,
+    [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 76"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨0, [(1 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 77"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨0, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 78"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨0,
+    [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 79"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨0, [(1 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 80"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨0, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome == false) "reference 81"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨0,
+    [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 82"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨0, [(1 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 83"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨1, [(1/2 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 84"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨1,
+    [(1/2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 85"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨1, [(3/2 :
+    ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 86"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨1, [(1/2 :
+    ℚ), (1 : ℚ)]⟩).isSome == true) "reference 87"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨1,
+    [(1/2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 88"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨1, [(3/2 :
+    ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 89"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨1, [(1/2 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 90"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨1,
+    [(1/2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 91"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨1, [(3/2 :
+    ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 92"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨1, [(1/2 :
+    ℚ), (1 : ℚ)]⟩).isSome == false) "reference 93"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨1,
+    [(1/2 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 94"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨1, [(3/2 :
+    ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 95"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨3, [(7/8 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 96"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨3,
+    [(7/8 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 97"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (-1 : ℚ) [(1/2 : ℚ)] ⟨3, [(15/8 :
+    ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 98"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨3, [(7/8 :
+    ℚ), (1 : ℚ)]⟩).isSome == false) "reference 99"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨3,
+    [(7/8 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 100"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 0 (1/4 : ℚ) [(1/2 : ℚ)] ⟨3, [(15/8 :
+    ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 101"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨3, [(7/8 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 102"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨3,
+    [(7/8 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 103"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (-1 : ℚ) [(1/2 : ℚ)] ⟨3, [(15/8 :
+    ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 104"
+  check ((restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨3, [(7/8 :
+    ℚ), (1 : ℚ)]⟩).isSome == false) "reference 105"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ), (0 : ℚ)] ⟨3,
+    [(7/8 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 106"
+  check (!(restoreTransferred? 1 (profileFunction [(1/2 : ℚ)]) 1 (1/4 : ℚ) [(1/2 : ℚ)] ⟨3, [(15/8 :
+    ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 107"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨0, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 108"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 109"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 110"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨0, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == true) "reference 111"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 112"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 113"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨0, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 114"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 115"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 116"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨0, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 117"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 118"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 119"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨1, [(1 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 120"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨1, [(1
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 121"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨1, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 122"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨1, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 123"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨1, [(1
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 124"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨1, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 125"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨1, [(1 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 126"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨1, [(1
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 127"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨1, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 128"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨1, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 129"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨1, [(1
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 130"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨1, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 131"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨3, [(1 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 132"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨3, [(1
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 133"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (-1 : ℚ) [(1 : ℚ)] ⟨3, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 134"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨3, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 135"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨3, [(1
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 136"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 0 (1/4 : ℚ) [(1 : ℚ)] ⟨3, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 137"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨3, [(1 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 138"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨3, [(1
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 139"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (-1 : ℚ) [(1 : ℚ)] ⟨3, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 140"
+  check ((restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨3, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 141"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ), (0 : ℚ)] ⟨3, [(1
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 142"
+  check (!(restoreTransferred? 1 (profileFunction [(1 : ℚ)]) 1 (1/4 : ℚ) [(1 : ℚ)] ⟨3, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 143"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨0, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == true) "reference 144"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨0,
+    [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 145"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨0, [(1 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 146"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨0, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 147"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨0,
+    [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 148"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨0, [(1 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 149"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨0, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == true) "reference 150"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨0,
+    [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 151"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨0, [(1 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 152"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨0, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome == false) "reference 153"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨0,
+    [(0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 154"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨0, [(1 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 155"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨1, [(-1 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 156"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨1,
+    [(-1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 157"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨1, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 158"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨1, [(-1 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 159"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨1,
+    [(-1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 160"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨1, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 161"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨1, [(-1 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 162"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨1,
+    [(-1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 163"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨1, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 164"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨1, [(-1 : ℚ),
+    (1 : ℚ)]⟩).isSome == false) "reference 165"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨1,
+    [(-1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 166"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨1, [(0 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 167"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨3, [(-7 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 168"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨3,
+    [(-7 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 169"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (-1 : ℚ) [(-1 : ℚ)] ⟨3, [(-6 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 170"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨3, [(-7 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 171"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨3,
+    [(-7 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 172"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 0 (1/4 : ℚ) [(-1 : ℚ)] ⟨3, [(-6 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 173"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨3, [(-7 : ℚ),
+    (1 : ℚ)]⟩).isSome == true) "reference 174"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨3,
+    [(-7 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 175"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (-1 : ℚ) [(-1 : ℚ)] ⟨3, [(-6 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 176"
+  check ((restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨3, [(-7 : ℚ),
+    (1 : ℚ)]⟩).isSome == false) "reference 177"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ), (0 : ℚ)] ⟨3,
+    [(-7 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 178"
+  check (!(restoreTransferred? 1 (profileFunction [(-1 : ℚ)]) 1 (1/4 : ℚ) [(-1 : ℚ)] ⟨3, [(-6 : ℚ),
+    (1 : ℚ)]⟩).isSome) "corrupt row 179"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨0, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 180"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 181"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 182"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨0, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == true) "reference 183"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 184"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 185"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨0, [(0 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 186"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 187"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 188"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨0, [(0 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 189"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨0, [(0
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 190"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨0, [(1 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 191"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨1, [(2 : ℚ), (1 :
+    ℚ)]⟩).isSome == false) "reference 192"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨1, [(2
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 193"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨1, [(3 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 194"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨1, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 195"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨1, [(2
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 196"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨1, [(3 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 197"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨1, [(2 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 198"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨1, [(2
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 199"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨1, [(3 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 200"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨1, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 201"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨1, [(2
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 202"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨1, [(3 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 203"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨3, [(2 : ℚ), (1 :
+    ℚ)]⟩).isSome == false) "reference 204"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨3, [(2
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 205"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (-1 : ℚ) [(2 : ℚ)] ⟨3, [(3 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 206"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨3, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 207"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨3, [(2
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 208"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 0 (1/4 : ℚ) [(2 : ℚ)] ⟨3, [(3 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 209"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨3, [(2 : ℚ), (1 :
+    ℚ)]⟩).isSome == true) "reference 210"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨3, [(2
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 211"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (-1 : ℚ) [(2 : ℚ)] ⟨3, [(3 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 212"
+  check ((restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨3, [(2 : ℚ), (1
+    : ℚ)]⟩).isSome == false) "reference 213"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ), (0 : ℚ)] ⟨3, [(2
+    : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 214"
+  check (!(restoreTransferred? 1 (profileFunction [(2 : ℚ)]) 1 (1/4 : ℚ) [(2 : ℚ)] ⟨3, [(3 : ℚ), (1
+    : ℚ)]⟩).isSome) "corrupt row 215"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 216"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 217"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 218"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 219"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 220"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 221"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 222"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 223"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 224"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 225"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 226"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 227"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 228"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 229"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨1, [(1 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 230"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 231"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 232"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨1, [(1 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 233"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 234"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 235"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨1, [(1 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 236"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 237"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨1, [(0 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 238"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨1, [(1 : ℚ), (2/3 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 239"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 240"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 241"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨3, [(13/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 242"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 243"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 244"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 0 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨3, [(13/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 245"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 246"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 247"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (-1 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨3, [(13/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 248"
+  check ((restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 249"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ), (0 : ℚ)] ⟨3, [(4/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 250"
+  check (!(restoreTransferred? 2 (profileFunction [(1/3 : ℚ), (2/3 : ℚ)]) 2 (1/4 : ℚ) [(1/3 : ℚ),
+    (2/3 : ℚ)] ⟨3, [(13/9 : ℚ), (26/27 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 251"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 252"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 253"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 254"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 255"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 256"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 :
+    ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 257"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 258"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 259"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 260"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 261"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨0, [(0 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 262"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 :
+    ℚ)] ⟨0, [(1 : ℚ), (0 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 263"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 264"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 265"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨1, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 266"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 267"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 268"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 :
+    ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 269"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 270"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 271"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨1, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 272"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 273"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨1, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 274"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 :
+    ℚ)] ⟨1, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 275"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 276"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 277"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨3, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 278"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 279"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 280"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 0 (1/4 : ℚ) [(0 : ℚ), (1 :
+    ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 281"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == true) "reference 282"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 283"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (-1 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨3, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 284"
+  check ((restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ)]
+    ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome == false) "reference 285"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 : ℚ),
+    (0 : ℚ)] ⟨3, [(0 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "extra coefficient 286"
+  check (!(restoreTransferred? 2 (profileFunction [(0 : ℚ), (1 : ℚ)]) 2 (1/4 : ℚ) [(0 : ℚ), (1 :
+    ℚ)] ⟨3, [(1 : ℚ), (1 : ℚ), (1 : ℚ)]⟩).isSome) "corrupt row 287"
   IO.println "QUOTA_PROFILE_OK 288"

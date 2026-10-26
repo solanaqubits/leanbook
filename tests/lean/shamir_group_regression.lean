@@ -7,7 +7,8 @@ instance : Fact (Nat.Prime 7) := ⟨by decide⟩
 instance : Fact (0 < 3) := ⟨by decide⟩
 instance : Fact (0 < 1) := ⟨by decide⟩
 
-private noncomputable def S : Setup 7 3 4 (ZMod 7) := ConsistencyModel 7 3 4 (by decide) (by decide) (by decide)
+private noncomputable def S : Setup 7 3 4 (ZMod 7) := ConsistencyModel 7 3 4 (by decide)
+  (by decide) (by decide)
 private noncomputable def ξ : Fin 4 → ZMod 7 := S.coordinates
 private noncomputable def p : ShamirPoly (ZMod 7) 3 3 :=
   ⟨C 3 + C 2 * X + C 4 * X ^ 2, by compute_degree!, by simp⟩
@@ -28,7 +29,8 @@ example (I : Finset (Fin 4)) (hI : I.card = 3) :
   shamir_group_reconstruction 1 ξ S.coordinates_injective I hI p
 
 -- The distribution is joint across a two-member coalition, for all secret values.
-example (s s' : ZMod 7) : observationLaw (t := 3) ξ {0, 2} s = observationLaw (t := 3) ξ {0, 2} s' :=
+example (s s' : ZMod 7) : observationLaw (t := 3) ξ {0, 2} s = observationLaw (t := 3) ξ {0, 2} s'
+  :=
   shamir_pmf_perfect_secrecy ξ S.coordinates_nonzero _ (by decide) s s'
 example (s s' : ZMod 7) : observationLaw (t := 1) ξ ∅ s = observationLaw (t := 1) ξ ∅ s' :=
   shamir_pmf_perfect_secrecy ξ S.coordinates_nonzero _ (by decide) s s'
@@ -43,7 +45,8 @@ example (f : ShamirPoly (ZMod 7) 3 3) :
   shift_preserves_observations 3 5 ξ S.coordinates_nonzero _ (by decide) f
 
 -- Threshold boundary cases and the independent two-share field identity.
-example (s : ZMod 7) (f : ShamirPoly (ZMod 7) 1 s) (z : ZMod 7) : f.val.eval z = s := threshold_one f z
+example (s : ZMod 7) (f : ShamirPoly (ZMod 7) 1 s) (z : ZMod 7) : f.val.eval z = s := threshold_one
+  f z
 example (s a : ZMod 7) :
     2 / (2 - 1) * (s + a * 1) + (-1) / (2 - 1) * (s + a * 2) = s :=
   two_share_field s a 1 2 (by decide)
@@ -72,7 +75,8 @@ example (w : Fin 2 → ZMod 7) (f : Fin 2 → (ZMod 7)[X]) (z : ZMod 7) :
 -- Removing the nonzero-coordinate restriction exposes the secret, even with threshold 3.
 example (s : ZMod 7) (f : ShamirPoly (ZMod 7) 3 s) : f.val.eval ((fun _ : Fin 1 => 0) 0) = s :=
   shamir_zero_coord_leakage f (fun _ : Fin 1 => 0) 0 rfl
-example (f : ShamirPoly (ZMod 7) 3 0) (g : ShamirPoly (ZMod 7) 3 1) : f.val.eval 0 ≠ g.val.eval 0 := by
+example (f : ShamirPoly (ZMod 7) 3 0) (g : ShamirPoly (ZMod 7) 3 1) : f.val.eval 0 ≠ g.val.eval 0
+  := by
   rw [f.property.2, g.property.2]
   decide
 example (f : CryptoShamirSecretSharing.Shamir2Polynomial) (x y : ℝ) (h : x ≠ y) :

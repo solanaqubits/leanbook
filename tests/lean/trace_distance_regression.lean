@@ -29,12 +29,14 @@ example {d : ℕ} {ρ σ : Q d} (hρ : Density ρ) (hσ : Density σ)
 example : optimal_success fair qubitZero rhoPlus = (1 + trace_distance qubitZero rhoPlus) / 2 :=
   trace_distance_helstrom_link qubitZero_density rhoPlus_density
 example : IsGreatest {x : ℝ | ∃ E : Effect 2, |(E.matrix * (qubitZero - rhoPlus)).trace.re| = x}
-    (trace_distance qubitZero rhoPlus) := trace_distance_variational_sup qubitZero_density rhoPlus_density
+    (trace_distance qubitZero rhoPlus) := trace_distance_variational_sup qubitZero_density
+      rhoPlus_density
 example : (distance_effect qubitZero_density rhoPlus_density).matrix *
     (distance_effect qubitZero_density rhoPlus_density).matrix =
     (distance_effect qubitZero_density rhoPlus_density).matrix := distance_effect_projective _ _
 example (E : Effect 2) : |(E.matrix * (qubitZero - rhoPlus)).trace.re| ≤ 1 / Real.sqrt 2 := by
-  simpa only [noncommuting_distance] using trace_distance_effect_bound qubitZero_density rhoPlus_density E
+  simpa only [noncommuting_distance] using trace_distance_effect_bound qubitZero_density
+    rhoPlus_density E
 example : TV (prob_dist (optimal_povm qubitZero_density rhoPlus_density) qubitZero)
     (prob_dist (optimal_povm qubitZero_density rhoPlus_density) rhoPlus) = 1 / Real.sqrt 2 := by
   rw [tv_attains_trace_distance, noncommuting_distance]
@@ -45,7 +47,8 @@ example : TV (prob_dist (optimal_povm qubitZero_density qubitZero_density) qubit
     (prob_dist (optimal_povm qubitZero_density qubitZero_density) qubitZero) = 0 := tv_self _
 example : TV (prob_dist pauliZ qubitZero) (prob_dist pauliZ rhoPlus) = 1 / 2 :=
   z_measurement_noncommuting_loss.1
-example : TV (prob_dist pauliZ qubitZero) (prob_dist pauliZ rhoPlus) < trace_distance qubitZero rhoPlus :=
+example : TV (prob_dist pauliZ qubitZero) (prob_dist pauliZ rhoPlus) < trace_distance qubitZero
+  rhoPlus :=
   z_measurement_noncommuting_loss.2
 example : TV (prob_dist (effect_povm (QuantumHelstromStateDiscrimination.zero_effect 2)) qubitZero)
     (prob_dist (effect_povm (QuantumHelstromStateDiscrimination.zero_effect 2)) rhoOne) <
@@ -73,10 +76,12 @@ example : TV (prob_dist (postprocess_povm bit_flip pauliZ) qubitZero)
       (prob_dist pauliZ rhoOne) := measurement_tv_permutation (Equiv.swap 0 1) _ _ _
 example (M : ClassicalChannel 2 3) (N : ClassicalChannel 3 1) (p q : Fin 2 → ℝ) :
     TV (apply_channel N (apply_channel M p)) (apply_channel N (apply_channel M q)) ≤ TV p q :=
-  (tv_contractive_under_classical_channel N _ _).trans (tv_contractive_under_classical_channel M _ _)
+  (tv_contractive_under_classical_channel N _ _).trans (tv_contractive_under_classical_channel M _
+    _)
 example (M : ClassicalChannel 2 3) : TV (prob_dist (postprocess_povm M pauliZ) qubitZero)
     (prob_dist (postprocess_povm M pauliZ) rhoPlus) ≤ 1 / Real.sqrt 2 := by
-  simpa only [noncommuting_distance] using tv_postprocess_le qubitZero_density rhoPlus_density pauliZ M
+  simpa only [noncommuting_distance] using tv_postprocess_le qubitZero_density rhoPlus_density
+    pauliZ M
 example : IsGreatest {x : ℝ | ∃ m, ∃ E : FinitePOVM 2 m,
     TV (prob_dist E qubitZero) (prob_dist E rhoPlus) = x} (trace_distance qubitZero rhoPlus) :=
   measurement_tv_isGreatest qubitZero_density rhoPlus_density

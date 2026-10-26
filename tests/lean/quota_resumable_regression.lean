@@ -23,7 +23,8 @@ example : (initQuotaSearch 2 half 2 0).toOption = some 0 := by decide +kernel
 
 example : view (startQuotaSearch 2 half 2 (-1) 2) = some (2, [1/4, 3/4, 1]) := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 2 half 3 (-1) 1) 3).toOption = none := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 2 half 3 (-1) 1) 3).toOption = none
+  := by decide +kernel
 
 example : (initQuotaSearch 2 half 0 1).toOption = some 0 := by decide +kernel
 
@@ -31,53 +32,74 @@ example : view (initQuotaSearch 2 half 0 (1/2)) = some (0, [0, 0, 1]) := by deci
 
 example : view (startQuotaSearch 2 half 0 (2/5) 3) = some (3, [1/2, 7/8, 1]) := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 4).toOption = some 4 := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 4).toOption = some 4
+  := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 5).toOption = some 4 := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 5).toOption = some 4
+  := by decide +kernel
 
-example : view (startQuotaSearch 2 half 0 (1/8) 5) = some (5, [13/16, 31/32, 1]) := by decide +kernel
+example : view (startQuotaSearch 2 half 0 (1/8) 5) = some (5, [13/16, 31/32, 1])
+  := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (1/8) 5) 6).toOption = some 6 := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (1/8) 5) 6).toOption = some 6
+  := by decide +kernel
 
-example : view (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 3) = some (3, [1/2, 7/8, 1]) := by decide +kernel
+example : view (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 3) = some (3, [1/2, 7/8, 1])
+  := by decide +kernel
 
-example : view (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 1) = some (3, [1/2, 7/8, 1]) := by decide +kernel
+example : view (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 1) = some (3, [1/2, 7/8, 1])
+  := by decide +kernel
 
-example : (resumeQuotaSearch (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 2) 3) 4).toOption = some 4 := by decide +kernel
+example : (resumeQuotaSearch (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 2) 3) 4).toOption
+  = some 4 := by decide +kernel
 
-example : (resumeQuotaSearch (resumeQuotaSearch (initQuotaSearch 2 half 0 (1/8)) 5) 6).toOption = some 6 := by decide +kernel
+example : (resumeQuotaSearch (resumeQuotaSearch (initQuotaSearch 2 half 0 (1/8)) 5) 6).toOption =
+  some 6 := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 4) 8).toOption = some 4 := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 4) 8).toOption = some 4
+  := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 1) 0 0 1) 0).toOption = some 1 ∧ chooseQuotaBudgetWithin 1 (fun _ => 1) 0 0 0 = none := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 1) 0 0 1) 0).toOption = some 1 ∧
+  chooseQuotaBudgetWithin 1 (fun _ => 1) 0 0 0 = none := by decide +kernel
 
-example : (resumeQuotaSearch (initQuotaSearch 1 (fun _ => 2) 0 (-1)) 1).toOption = some 1 := by decide +kernel
+example : (resumeQuotaSearch (initQuotaSearch 1 (fun _ => 2) 0 (-1)) 1).toOption = some 1
+  := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 2) 0 (-1) 1) 2).toOption = some 1 := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 2) 0 (-1) 1) 2).toOption = some 1
+  := by decide +kernel
 
-example : view (resumeQuotaSearch (startQuotaSearch 1 (fun _ => -1) 0 0 1) 3) = some (3, [-7, 1]) := by decide +kernel
+example : view (resumeQuotaSearch (startQuotaSearch 1 (fun _ => -1) 0 0 1) 3) = some (3, [-7, 1])
+  := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 2 (fun i => if i = 0 then 1/2 else 1) 0 (1/2) 1) 2).toOption = some 2 := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 2 (fun i => if i = 0 then 1/2 else 1) 0 (1/2) 1)
+  2).toOption = some 2 := by decide +kernel
 
-example : view (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 0) 0 0 2) 4) = some (4, [0, 1]) := by decide +kernel
+example : view (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 0) 0 0 2) 4) = some (4, [0, 1])
+  := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 2 (fun _ => 1) 0 0 1) 2).toOption = some 2 := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 2 (fun _ => 1) 0 0 1) 2).toOption = some 2
+  := by decide +kernel
 
-example : view (resumeQuotaSearch (startQuotaSearch 0 half 0 (-1) 2) 5) = some (5, [1]) := by decide +kernel
+example : view (resumeQuotaSearch (startQuotaSearch 0 half 0 (-1) 2) 5) = some (5, [1])
+  := by decide +kernel
 
-example : view (resumeQuotaSearch (startQuotaSearch 0 half 0 (-1) 5) 0) = some (5, [1]) := by decide +kernel
+example : view (resumeQuotaSearch (startQuotaSearch 0 half 0 (-1) 5) 0) = some (5, [1])
+  := by decide +kernel
 
 example : (resumeQuotaSearch (initQuotaSearch 0 half 0 0) 5).toOption = some 0 := by decide +kernel
 
-example : (resumeQuotaSearch (.found 99 : QuotaSearchResult 1 half 0 0) 0).toOption = some 99 := by decide +kernel
+example : (resumeQuotaSearch (.found 99 : QuotaSearchResult 1 half 0 0) 0).toOption = some 99
+  := by decide +kernel
 
 example : view (startQuotaSearch 1 half 0 (-1) 0) = some (0, [0, 1]) := by decide +kernel
 
 example : (startQuotaSearch 1 half 0 (1/2) 1).toOption = some 1 := by decide +kernel
 
-example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 0).toOption = chooseQuotaBudgetWithin 2 half 0 (2/5) 0 := by decide +kernel
+example : (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 0).toOption =
+  chooseQuotaBudgetWithin 2 half 0 (2/5) 0 := by decide +kernel
 
-example : view (resumeQuotaSearch (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 0) 0 0 4) 1) 5) = some (5, [0, 1]) := by decide +kernel
+example : view (resumeQuotaSearch (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 0) 0 0 4) 1) 5)
+  = some (5, [0, 1]) := by decide +kernel
 
 example (n p j ε cap₁ cap₂) (h : cap₁ ≤ cap₂) :
     (resumeQuotaSearch (startQuotaSearch n p j ε cap₁) cap₂).toOption =
@@ -105,16 +127,23 @@ def main : IO Unit := do
     decide ((resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 5).toOption = some 4),
     decide (view (startQuotaSearch 2 half 0 (1/8) 5) = some (5, [13/16, 31/32, 1])),
     decide ((resumeQuotaSearch (startQuotaSearch 2 half 0 (1/8) 5) 6).toOption = some 6),
-    decide (view (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 3) = some (3, [1/2, 7/8, 1])),
-    decide (view (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 1) = some (3, [1/2, 7/8, 1])),
-    decide ((resumeQuotaSearch (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 2) 3) 4).toOption = some 4),
-    decide ((resumeQuotaSearch (resumeQuotaSearch (initQuotaSearch 2 half 0 (1/8)) 5) 6).toOption = some 6),
+    decide (view (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 3) = some (3, [1/2, 7/8,
+      1])),
+    decide (view (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 1) = some (3, [1/2, 7/8,
+      1])),
+    decide ((resumeQuotaSearch (resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 2) 3)
+      4).toOption = some 4),
+    decide ((resumeQuotaSearch (resumeQuotaSearch (initQuotaSearch 2 half 0 (1/8)) 5) 6).toOption =
+      some 6),
     decide ((resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 4) 8).toOption = some 4),
-    decide ((resumeQuotaSearch (startQuotaSearch 1 (fun _ => 1) 0 0 1) 0).toOption = some 1 ∧ chooseQuotaBudgetWithin 1 (fun _ => 1) 0 0 0 = none),
+    decide ((resumeQuotaSearch (startQuotaSearch 1 (fun _ => 1) 0 0 1) 0).toOption = some 1 ∧
+      chooseQuotaBudgetWithin 1 (fun _ => 1) 0 0 0 = none),
     decide ((resumeQuotaSearch (initQuotaSearch 1 (fun _ => 2) 0 (-1)) 1).toOption = some 1),
     decide ((resumeQuotaSearch (startQuotaSearch 1 (fun _ => 2) 0 (-1) 1) 2).toOption = some 1),
-    decide (view (resumeQuotaSearch (startQuotaSearch 1 (fun _ => -1) 0 0 1) 3) = some (3, [-7, 1])),
-    decide ((resumeQuotaSearch (startQuotaSearch 2 (fun i => if i = 0 then 1/2 else 1) 0 (1/2) 1) 2).toOption = some 2),
+    decide (view (resumeQuotaSearch (startQuotaSearch 1 (fun _ => -1) 0 0 1) 3) = some (3, [-7,
+      1])),
+    decide ((resumeQuotaSearch (startQuotaSearch 2 (fun i => if i = 0 then 1/2 else 1) 0 (1/2) 1)
+      2).toOption = some 2),
     decide (view (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 0) 0 0 2) 4) = some (4, [0, 1])),
     decide ((resumeQuotaSearch (startQuotaSearch 2 (fun _ => 1) 0 0 1) 2).toOption = some 2),
     decide (view (resumeQuotaSearch (startQuotaSearch 0 half 0 (-1) 2) 5) = some (5, [1])),
@@ -123,8 +152,10 @@ def main : IO Unit := do
     decide ((resumeQuotaSearch (.found 99 : QuotaSearchResult 1 half 0 0) 0).toOption = some 99),
     decide (view (startQuotaSearch 1 half 0 (-1) 0) = some (0, [0, 1])),
     decide ((startQuotaSearch 1 half 0 (1/2) 1).toOption = some 1),
-    decide ((resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 0).toOption = chooseQuotaBudgetWithin 2 half 0 (2/5) 0),
-    decide (view (resumeQuotaSearch (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 0) 0 0 4) 1) 5) = some (5, [0, 1]))]
+    decide ((resumeQuotaSearch (startQuotaSearch 2 half 0 (2/5) 3) 0).toOption =
+      chooseQuotaBudgetWithin 2 half 0 (2/5) 0),
+    decide (view (resumeQuotaSearch (resumeQuotaSearch (startQuotaSearch 1 (fun _ => 0) 0 0 4) 1)
+      5) = some (5, [0, 1]))]
   for passed in scenarios do
     unless passed do throw (IO.userError "quota resumable scenario failed")
   IO.println s!"QUOTA_RESUMABLE_OK {scenarios.length}"

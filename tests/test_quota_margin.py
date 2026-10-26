@@ -1,4 +1,5 @@
 """Kernel and runtime regressions for recursive quota margins."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,8 +16,7 @@ class QuotaMarginLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true', '--run',
-             'tests/lean/quota_margin_regression.lean'],
+            lean_command(['-DwarningAsError=true', '--run', 'tests/lean/quota_margin_regression.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('QUOTA_MARGIN_OK 23', result.stdout)
@@ -25,8 +25,7 @@ class QuotaMarginLiveTests(unittest.TestCase):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, 'env', 'lean', '-DwarningAsError=true',
-             'tests/lean/quota_margin_registry.lean'],
+            lean_command(['-DwarningAsError=true', 'tests/lean/quota_margin_registry.lean'], lake=lake),
             cwd=ROOT, capture_output=True, text=True, timeout=240)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

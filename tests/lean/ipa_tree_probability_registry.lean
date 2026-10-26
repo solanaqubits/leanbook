@@ -7,7 +7,8 @@ import Verification.MasterSuite
 open CryptoBulletproofsIPATreeProbabilityContract
 
 example : CryptoBulletproofsIPATreeProbabilityContractSuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).crypto_suite.ipa_tree_probability
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).crypto_suite.ipa_tree_probability
 example (r : MasterSuite.VerificationMasterRegistry) :
     CryptoBulletproofsIPATreeProbabilityContractSuite := r.crypto_suite.ipa_tree_probability
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :

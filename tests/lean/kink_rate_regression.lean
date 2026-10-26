@@ -80,7 +80,8 @@ example : utilization_int 1000 0 1 2 = none := by decide
 example : utilization_int 1000 10 100 20 = some 1111 := by decide
 example : quote_rates params 10 100 20 = none := by decide
 -- Rounding can hide U>1; admission checks the exact reserves/cash predicate.
-example : utilization_int 1000 0 10001 1 = some 1000 ∧ quote_rates params 0 10001 1 = none := by decide
+example : utilization_int 1000 0 10001 1 = some 1000 ∧ quote_rates params 0 10001 1 = none
+  := by decide
 example : quote_rates params 999 1 0 = some (1,21,0) := by decide
 example (P : FixedParams) (u : ℕ) (hu : u ≤ P.scale) :
     supply_rate_int P u ≤ borrow_rate_int P u := supply_rate_int_le_borrow P hu
@@ -93,7 +94,8 @@ example : -(1 / (params.scale : ℚ)) < (supply_rate_int params 500 : ℚ) / par
     (supply_rate_int params 500 : ℚ) / params.scale - supply_rate params.lift (500 / params.scale) <
       1 / params.scale := supply_rate_int_error params (by decide)
 example (P : FixedParams) (c b r u rb rs : ℕ)
-    (h : quote_rates P c b r = some (u,rb,rs)) : u ≤ P.scale ∧ rs ≤ rb := quote_rates_preserves P h
+    (h : quote_rates P c b r = some (u, rb, rs)) : u ≤ P.scale ∧ rs ≤ rb :=
+  quote_rates_preserves P h
 example : ceil_div 100 10 = 10 ∧ ceil_div 101 10 = 11 ∧ ceil_div 0 10 = 0 := by decide
 
 /-- Runtime scenarios exercise the same natural arithmetic as the kernel regressions. -/

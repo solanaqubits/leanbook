@@ -76,13 +76,15 @@ example : complementary_channel (dephasing_channel 2) rhoPlus = !![1/2, 0; 0, 1/
   rw [dephasing_complementary]
   ext i j; fin_cases i <;> fin_cases j <;> rfl
 example : complementary_channel (dephasing_channel 2)
-    QuantumCPTPChannelContract.Regression.rhoMinus = complementary_channel (dephasing_channel 2) rhoPlus :=
+    QuantumCPTPChannelContract.Regression.rhoMinus = complementary_channel (dephasing_channel 2)
+      rhoPlus :=
   QuantumComplementaryChannelContract.Regression.dephasing_environment_equal.symm
 example : dilation (dephasing_channel 2) rhoPlus ≠
     dilation (dephasing_channel 2) QuantumCPTPChannelContract.Regression.rhoMinus :=
   QuantumComplementaryChannelContract.Regression.correlations_retain_distinction.2.2
 example : complementary_channel (dephasing_channel 2) rhoPlus *
-    complementary_channel (dephasing_channel 2) rhoPlus ≠ complementary_channel (dephasing_channel 2) rhoPlus := by
+    complementary_channel (dephasing_channel 2) rhoPlus ≠ complementary_channel (dephasing_channel
+      2) rhoPlus := by
   rw [dephasing_complementary]
   intro h
   have he := congrArg (fun X : Q 2 => X 0 0) h
@@ -100,11 +102,14 @@ example (X : Q 2) : apply_channel (append_zero (append_zero reset)) X = apply_ch
   simp only [append_zero_channel]
 
 -- Covariance needs no isometry, whereas invariance of the main channel does.
-example (M : Ext 1 2) : partialTrace_system (change_environment (0 : Matrix (Fin 3) (Fin 2) ℂ) M) = 0 := by
+example (M : Ext 1 2) : partialTrace_system (change_environment (0 : Matrix (Fin 3) (Fin 2) ℂ) M) =
+  0 := by
   rw [complementary_environment_covariance]
   simp
-example : (0 : Matrix (Fin 3) (Fin 2) ℂ).conjTranspose * (0 : Matrix (Fin 3) (Fin 2) ℂ) ≠ (1 : Q 2) := by simp
-example : partialTrace (change_environment (0 : Q 1) (1 : Ext 1 1)) ≠ partialTrace (1 : Ext 1 1) := by
+example : (0 : Matrix (Fin 3) (Fin 2) ℂ).conjTranspose * (0 : Matrix (Fin 3) (Fin 2) ℂ) ≠ (1 : Q 2)
+  := by simp
+example : partialTrace (change_environment (0 : Q 1) (1 : Ext 1 1)) ≠ partialTrace (1 : Ext 1 1)
+  := by
   intro h
   have he := congrArg (fun M : Q 1 => M 0 0) h
   norm_num [change_environment, environment_lift, partialTrace] at he
@@ -112,5 +117,6 @@ example : partialTrace (change_environment (0 : Q 1) (1 : Ext 1 1)) ≠ partialT
 -- Complete positivity covers arbitrary finite block amplifications, not just positivity.
 example : QuantumNoBroadcastingMixed.IsCompletelyPositive
     (apply_channel (complementary_kraus transformed)) := complementary_completely_positive _
-example : QuantumComplementaryChannelContractSuite := QuantumComplementaryChannelContract.verification_suite
+example : QuantumComplementaryChannelContractSuite
+  := QuantumComplementaryChannelContract.verification_suite
 end ComplementaryRegression

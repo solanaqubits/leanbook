@@ -63,11 +63,14 @@ example : WithinResourceLimits positive9 := by decide +kernel
 example : serializeCanonical positive9 = [34,97,32,98,34] := by rfl
 example : parseCanonical [34,97,32,98,34] = some positive9 := by rfl
 
-def positive10 : JsonAST := .object [([97], .array [.number [48], .number [45,49,55]]), ([98], .string [120,32,121,10,127])]
+def positive10 : JsonAST := .object [([97], .array [.number [48], .number [45,49,55]]), ([98],
+  .string [120,32,121,10,127])]
 example : IsCanonicalAST positive10 := by decide +kernel
 example : WithinResourceLimits positive10 := by decide +kernel
-example : serializeCanonical positive10 = [123,34,97,34,58,91,48,44,45,49,55,93,44,34,98,34,58,34,120,32,121,92,110,92,117,48,48,55,102,34,125] := by rfl
-example : parseCanonical [123,34,97,34,58,91,48,44,45,49,55,93,44,34,98,34,58,34,120,32,121,92,110,92,117,48,48,55,102,34,125] = some positive10 := by rfl
+example : serializeCanonical positive10 = [123,34,97,34,58,91,48,44,45,49,55,93,44,34,98,34,58,34,
+  120,32,121,92,110,92,117,48,48,55,102,34,125] := by rfl
+example : parseCanonical [123,34,97,34,58,91,48,44,45,49,55,93,44,34,98,34,58,34,120,32,121,92,110,
+  92,117,48,48,55,102,34,125] = some positive10 := by rfl
 
 -- Negative syntax case 0: b''
 example : parseCanonical [] = none := by rfl

@@ -12,7 +12,8 @@ private theorem sign_variance : variance fairCoin sign = 1 := by
 private theorem sign_mean : mean fairCoin sign = 0 := by
   norm_num [mean, fairCoin, sign, Fintype.sum_bool]
 example : 1 / variance fairCoin sign ≤ variance fairCoin sign :=
-  score_information_bound fairCoin sign sign sign_mean sign_variance (by rw [sign_variance]; norm_num)
+  score_information_bound fairCoin sign sign sign_mean sign_variance
+    (by rw [sign_variance]; norm_num)
 example : variance fairCoin (fun _ => (0 : ℝ)) = 0 := by
   norm_num [variance, covariance, centered, mean, fairCoin, Fintype.sum_bool]
 example : covariance fairCoin sign (fun _ => 0) ≠ 1 := by

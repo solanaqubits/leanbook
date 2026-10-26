@@ -66,7 +66,8 @@ example :
     cancelErrors (z_share S H f pairSession) 0 2 1 2 • S.generator ≠ R_share S H f pairSession 2 +
       (challenge S H f pairSession * CryptoShamirSecretSharingGroup.lagrange_coeff S.coordinates
         pairSession.signers 2) • sharePublic S f 2 :=
-  session_error_cancellation S H f degree_f pairSession (by decide) (by decide) (by decide) 1 (by decide)
+  session_error_cancellation S H f degree_f pairSession (by decide) (by decide) (by decide) 1
+    (by decide)
 
 -- t=1 genuinely reduces the scalar response to Schnorr with a combined nonce.
 example (s d e ρ c : ZMod 7) :

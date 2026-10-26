@@ -72,11 +72,14 @@ example : replaceLock .strict ctx advanced { freshPolka with round := 0 } = none
   stale_polka_rejected _ _ _ _ (by decide +kernel)
 example : replaceLock .strict ctx advanced { freshPolka with round := 2 } = none :=
   future_polka_rejected _ _ _ _ (by decide +kernel)
-example : replaceLock .strict ctx advanced { freshPolka with epoch := 4 } = none := by decide +kernel
-example : replaceLock .strict ctx advanced { freshPolka with height := 13 } = none := by decide +kernel
+example : replaceLock .strict ctx advanced { freshPolka with epoch := 4 } = none
+  := by decide +kernel
+example : replaceLock .strict ctx advanced { freshPolka with height := 13 } = none
+  := by decide +kernel
 example : replaceLock .strict ctx advanced { freshPolka with phase := .precommit } = none :=
   by decide +kernel
-example : replaceLock .strict ctx advanced { freshPolka with votes := ∅ } = none := by decide +kernel
+example : replaceLock .strict ctx advanced { freshPolka with votes := ∅ } = none
+  := by decide +kernel
 example : replaceLock .strict ctx changed freshPolka = none := by decide +kernel
 example : execute .strict ctx advanced (.advance 0) = none := by decide +kernel
 example : execute .strict ctx start (.advance 2) = some advanced := by decide +kernel
@@ -132,10 +135,12 @@ example : checkHandover .strict ctx { polkaOld with round := 18 } = false := by 
   ("round zero", decide (replaceLock .strict ctx start freshPolka = none)),
   ("stale", decide (replaceLock .strict ctx advanced { freshPolka with round := 0 } = none)),
   ("future", decide (replaceLock .strict ctx advanced { freshPolka with round := 2 } = none)),
-  ("foreign replacement", decide (replaceLock .strict ctx advanced { freshPolka with epoch := 4 } = none)),
+  ("foreign replacement", decide (replaceLock .strict ctx advanced { freshPolka with epoch := 4 } =
+    none)),
   ("replay", decide (replaceLock .strict ctx changed freshPolka = none)),
   ("no rewind", decide (execute .strict ctx advanced (.advance 0) = none)),
-  ("threshold boundary", decide (Quorum .weak boundaryOld {0, 1} ∧ ¬ Quorum .strict boundaryOld {0, 1})),
+  ("threshold boundary", decide (Quorum .weak boundaryOld {0, 1} ∧ ¬ Quorum .strict boundaryOld {0,
+    1})),
   ("omission", decide (¬ Adoptions unitContext ∅ (unitCertificate 0 4 .precommit 7)
       (unitCertificate 0 4 .prevote 7) omissionStates))]
 end TendermintLockHandoverRegression

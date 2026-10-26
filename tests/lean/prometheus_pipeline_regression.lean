@@ -46,14 +46,18 @@ example (lanes : Fin 20 → QueueInput) (epoch : Fin 20 → ℝ) (horizon : ℕ)
 
 -- Capacity is waiting-only: a simultaneous burst of three leaves two waiting.
 example : (waitingSet (periodicQueue 0 0 1) 3 0).card = 2 := by
-  norm_num [waitingSet, Finset.range_add_one, Finset.filter_insert, Finset.filter_singleton, start, ready, periodicQueue]
+  norm_num [waitingSet, Finset.range_add_one, Finset.filter_insert, Finset.filter_singleton, start,
+    ready, periodicQueue]
 example : bufferOverflow (fun _ : Fin 1 => periodicQueue 0 0 1) 1 3 0 = true := by
-  norm_num [bufferOverflow, poolWaiting, waitingSet, Finset.range_add_one, Finset.filter_insert, Finset.filter_singleton, start, ready,
+  norm_num [bufferOverflow, poolWaiting, waitingSet, Finset.range_add_one, Finset.filter_insert,
+    Finset.filter_singleton, start, ready,
     periodicQueue]
 example : (waitingSet (periodicQueue 0 0 1) 1 0).card = 0 := by
-  norm_num [waitingSet, Finset.range_add_one, Finset.filter_insert, Finset.filter_singleton, start, ready, periodicQueue]
+  norm_num [waitingSet, Finset.range_add_one, Finset.filter_insert, Finset.filter_singleton, start,
+    ready, periodicQueue]
 example : (waitingSet (periodicQueue 0 0 1) 3 1).card = 1 := by
-  norm_num [waitingSet, Finset.range_add_one, Finset.filter_insert, Finset.filter_singleton, start, ready, periodicQueue]
+  norm_num [waitingSet, Finset.range_add_one, Finset.filter_insert, Finset.filter_singleton, start,
+    ready, periodicQueue]
 
 -- Throughput and individual packet latency are separate.
 example : (64 : ℝ) * (96 / 1000) < 6234 / 1000 ∧

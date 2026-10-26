@@ -10,7 +10,8 @@ example : CryptoHiddenScalarInnerProductCompressionContractSuite := by
   have r := MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
   exact r.crypto_suite.hidden_scalar_compression
 example (r : MasterSuite.VerificationMasterRegistry) :
-    CryptoHiddenScalarInnerProductCompressionContractSuite := r.crypto_suite.hidden_scalar_compression
+    CryptoHiddenScalarInnerProductCompressionContractSuite
+      := r.crypto_suite.hidden_scalar_compression
 example (r : MasterHundredRegistry.MasterHundredFormalSuite) :
     CryptoHiddenScalarInnerProductCompressionContractSuite :=
   r.crypto_full_suite.hidden_scalar_compression

@@ -1,4 +1,5 @@
 """Bounded reader IO tests; no assertion of formal OS or memory-cost verification."""
+from tools.lean_invoke import lean_command
 import hashlib
 import json
 import os
@@ -18,7 +19,7 @@ class QuotaReaderLiveTests(unittest.TestCase):
     def lean(self, *args):
         lake = shutil.which('lake')
         self.assertIsNotNone(lake)
-        return subprocess.run([lake, 'env', 'lean', '-DwarningAsError=true', *map(str, args)],
+        return subprocess.run(lean_command(['-DwarningAsError=true', *map(str, args)], lake=lake),
                               cwd=ROOT, capture_output=True, text=True, timeout=120)
 
     def cli(self, path, size='64', bound='128', rows='3'):

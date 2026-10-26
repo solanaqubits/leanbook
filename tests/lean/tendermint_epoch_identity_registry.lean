@@ -2,10 +2,13 @@ import Verification.MasterSuite
 
 open DistributedTendermintEpochIdentityContract
 example : DistributedTendermintEpochIdentityContractSuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).distributed_suite.tendermint_epoch_identity
-example (r : MasterSuite.VerificationMasterRegistry) : DistributedTendermintEpochIdentityContractSuite :=
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).distributed_suite.tendermint_epoch_identity
+example (r : MasterSuite.VerificationMasterRegistry) :
+  DistributedTendermintEpochIdentityContractSuite :=
   r.distributed_suite.tendermint_epoch_identity
-example (r : MasterHundredRegistry.MasterHundredFormalSuite) : DistributedTendermintEpochIdentityContractSuite :=
+example (r : MasterHundredRegistry.MasterHundredFormalSuite) :
+  DistributedTendermintEpochIdentityContractSuite :=
   r.distributed_systems_full_suite.tendermint_epoch_identity
 open DistributedTendermintUnbondingPeriodContract
 example {V : Type} [DecidableEq V] [Fintype V] w h p α (s : EpochState V) :

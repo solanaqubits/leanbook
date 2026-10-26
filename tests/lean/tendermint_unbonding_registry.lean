@@ -2,10 +2,13 @@ import Verification.MasterSuite
 
 open DistributedTendermintUnbondingPeriodContract
 example : DistributedTendermintUnbondingPeriodContractSuite :=
-  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).distributed_suite.tendermint_unbonding
-example (r : MasterSuite.VerificationMasterRegistry) : DistributedTendermintUnbondingPeriodContractSuite :=
+  (MasterSuite.verification_master_registry.{0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                              0}).distributed_suite.tendermint_unbonding
+example (r : MasterSuite.VerificationMasterRegistry) :
+  DistributedTendermintUnbondingPeriodContractSuite :=
   r.distributed_suite.tendermint_unbonding
-example (r : MasterHundredRegistry.MasterHundredFormalSuite) : DistributedTendermintUnbondingPeriodContractSuite :=
+example (r : MasterHundredRegistry.MasterHundredFormalSuite) :
+  DistributedTendermintUnbondingPeriodContractSuite :=
   r.distributed_systems_full_suite.tendermint_unbonding
 example {n : ℕ} w α (s : UnbondingState (Fin n)) rs :
     totalValue (processSlot w α s rs) = totalValue s := verification_suite.conservation w α s rs

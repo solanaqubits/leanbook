@@ -95,7 +95,8 @@ example : ensembleStep unitParams 1 (by norm_num) twoHalves (fun _ => none) = tw
   · norm_num [totalWeight, Fin.sum_univ_two, twoHalves, halfState]
 
 -- Full silence does not suppress normalization of an initially over-budget ensemble.
-example : (ensembleStep unitParams 1 (by norm_num) pairStates (fun _ => none) 0).weight = 1 / 3 := by
+example : (ensembleStep unitParams 1 (by norm_num) pairStates (fun _ => none) 0).weight = 1 / 3
+  := by
   norm_num [ensembleStep, ensembleEventUpdate, eventUpdate, homeostaticNormalize,
     normalizationFactor, totalWeight, Fin.sum_univ_two, pairStates, halfState, fullState]
 example : ensembleStep unitParams 1 (by norm_num) pairStates (fun _ => none) ≠ pairStates := by

@@ -10,7 +10,8 @@ def unhex (s : String) : Except String ByteArray := do
     let a := chars[2*i]!
     let b := chars[2*i+1]!
     if !a.isHexDigit || !b.isHexDigit then throw "invalid hex"
-    result := result.push (UInt8.ofNat (a.toNat - (if a ≤ '9' then 48 else if a ≤ 'F' then 55 else 87)) * 16 +
+    result := result.push (UInt8.ofNat (a.toNat - (if a ≤ '9' then 48 else if a ≤ 'F' then 55 else
+      87)) * 16 +
       UInt8.ofNat (b.toNat - (if b ≤ '9' then 48 else if b ≤ 'F' then 55 else 87)))
   return result
 
@@ -50,4 +51,5 @@ def main (args : List String) : IO Unit := do
       | .ok true => result := "ok_true"
       | .ok false => result := "ok_false"
       | .error _ => result := "backend_failure"
-    IO.println (Json.mkObj [("id", toJson id), ("result", toJson result), ("digest",toJson digest)]).compress
+    IO.println (Json.mkObj [("id", toJson id), ("result", toJson result), ("digest",toJson
+      digest)]).compress

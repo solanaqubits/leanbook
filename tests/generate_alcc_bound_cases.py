@@ -1,4 +1,5 @@
 """Independent byte/digest fixtures. Neither hashlib nor json is a proof premise."""
+from tools.lean_fixture_format import wrap_source
 from copy import deepcopy
 import hashlib
 import json
@@ -127,7 +128,7 @@ end ALCCBoundCases
     sources = {'sha256': '\n'.join(sha), 'bound': '\n'.join(lines)}
     meta = {'nist_vectors':len(vectors),'positive_pairs':len(positive),'negative_pairs':len(negative)+2,
             'sha_assertions':len(vectors)+7,'bound_assertions':len(positive)*3+len(negative)+6+7}
-    return sources, meta
+    return {name: wrap_source(text) for name, text in sources.items()}, meta
 
 
 if __name__ == '__main__':

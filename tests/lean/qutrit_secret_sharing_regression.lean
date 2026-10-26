@@ -42,7 +42,8 @@ example (q : Fin 3) : apply_channel (pairRecovery q)
   pair_recovery q _
 example (q : Fin 3) : ∑ j, ((pairRecovery q).operators j).conjTranspose *
     (pairRecovery q).operators j = 1 := (pairRecovery q).complete
-example (q : Fin 3) : QuantumNoBroadcastingMixed.IsCompletelyPositive (apply_channel (pairRecovery q)) :=
+example (q : Fin 3) : QuantumNoBroadcastingMixed.IsCompletelyPositive (apply_channel (pairRecovery
+  q)) :=
   channel_completely_positive _
 example (q : Fin 3) (Y : Q 9) : (apply_channel (pairRecovery q) Y).trace = Y.trace :=
   channel_trace_preserving _ _

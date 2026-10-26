@@ -66,7 +66,8 @@ theorem sector_formula (Y : Q 4) : apply_channel (recoveryChannel S) Y =
       Matrix.single, Fin.sum_univ_succ]
   all_goals ring
 
-example : apply_channel (recoveryChannel S) (QuantumNoBroadcastingMixed.basisProjector (2 : Fin 4)) =
+example : apply_channel (recoveryChannel S) (QuantumNoBroadcastingMixed.basisProjector (2 : Fin 4))
+  =
     QuantumNoBroadcastingMixed.basisProjector (0 : Fin 2) := by
   rw [sector_formula]
   ext a b
@@ -109,7 +110,8 @@ def rectangularCode : DiagonalCode rectangularChannel (1 : Q 2) where
   diagonal := by
     intro i j
     have hij : i = j := Subsingleton.elim _ _
-    simp [rectangularChannel, hij, QuantumKnillLaflammeEnvironmentCriterion.Regression.code_isometry]
+    simp [rectangularChannel, hij,
+      QuantumKnillLaflammeEnvironmentCriterion.Regression.code_isometry]
 
 example (X : Q 2) : apply_channel (recoveryChannel rectangularCode)
     (apply_channel rectangularChannel X) = X := by

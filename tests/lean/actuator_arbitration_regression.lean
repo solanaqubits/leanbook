@@ -21,8 +21,10 @@ example : kept.resourceVersion = 1 := by decide
 example : kept.caseVersion 10 = 1 ∧ kept.caseVersion 11 = 0 := by decide
 example : (applyRequest allow kept keep).2 = .replayed none := by decide
 example : (applyRequest allow kept {keep with context := 101}).2 = .conflictingReplay := by decide
-example : (applyRequest allow kept {keep with expected := ⟨1,1⟩}).2 = .conflictingReplay := by decide
-example : (applyRequest allow kept {keep with reqID := 20, caseID := 11}).2 = .versionConflict := by decide
+example : (applyRequest allow kept {keep with expected := ⟨1,1⟩}).2 = .conflictingReplay
+  := by decide
+example : (applyRequest allow kept {keep with reqID := 20, caseID := 11}).2 = .versionConflict
+  := by decide
 example : (applyRequest allow kept {ready with expected := ⟨1,1⟩}).2 = .versionConflict := by decide
 example : (applyRequest (fun _ => false) kept ready).2 = .unauthorized := by decide
 example : (applyRequest allow kept ready).2 = .accepted none := by decide
@@ -42,8 +44,12 @@ example : (applyRequest allow issued newAction).2 = .replayed (some 80) := by de
 example : cleared.activeGrant = none := by decide
 example : (applyRequest allow cleared newAction).2 = .replayed (some 80) := by decide
 example : (applyRequest allow cleared newAction).1.activeGrant = none := by decide
-example : (applyRequest allow cleared {newAction with reqID := 30, expected := ⟨2,4⟩, decision := .authorizeNewAction 9 7 70 80}).2 = .invalidAction := by decide
-example : (applyRequest allow cleared {newAction with reqID := 30, expected := ⟨2,4⟩, decision := .authorizeNewAction 8 7 70 90}).2 = .invalidAction := by decide
+example : (applyRequest allow cleared {newAction with reqID := 30, expected := ⟨2,4⟩, decision
+                                        := .authorizeNewAction 9 7 70 80}).2 = .invalidAction
+  := by decide
+example : (applyRequest allow cleared {newAction with reqID := 30, expected := ⟨2,4⟩, decision
+                                        := .authorizeNewAction 8 7 70 90}).2 = .invalidAction
+  := by decide
 example : cleared.lineage = issued.lineage := by decide
 example : (applyRequest (fun _ => false) cleared newAction).2 = .replayed (some 80) := by decide
 

@@ -86,7 +86,8 @@ example : check good sameRound = .ok {1, 2} := by decide +kernel
 example : commit good sameRound 0 7 ∧ commit good sameRound 0 8 := by decide +kernel
 example : check weighted unequal = .ok {0} := by decide +kernel
 example : weighted.mass (culprits weighted unequal) = 3 ∧ weighted.total = 5 := by decide +kernel
-example : ¬ boundary.quorum {0} ∧ boundary.quorum {0, 1} ∧ boundary.weight 2 = 0 := by decide +kernel
+example : ¬ boundary.quorum {0} ∧ boundary.quorum {0, 1} ∧ boundary.weight 2 = 0
+  := by decide +kernel
 example : attribute_evidence good (some goodState.votes) partialView =
     .error .insufficientEvidence := by decide +kernel
 -- Without the coverage gate, missing prevotes would frame three honest precommitters.
@@ -107,7 +108,8 @@ example : Equivocation nilPair 0 := by decide +kernel
 example : LockViolation weighted oneSwitch 1 ∧
     ¬ weighted.total < 3 * weighted.mass (culprits weighted oneSwitch) := by decide +kernel
 example : ValidJustification bad legalState.votes validCertificate := by decide +kernel
-example : attribute_evidence bad (some legalState.votes) justifiedView = .ok {0, 1} := by decide +kernel
+example : attribute_evidence bad (some legalState.votes) justifiedView = .ok {0, 1}
+  := by decide +kernel
 example : HasJustification bad legalState.votes 0 2 8 := by decide +kernel
 example : ¬ LockViolation bad legalState.votes 2 := by decide +kernel
 example : 2 ∉ culprits bad (completeView bad legalState.votes).votes :=
@@ -139,7 +141,8 @@ def scenarios : List (String × Bool) :=
    ("partial view rejected", decide (attribute_evidence good (some goodState.votes) partialView =
      .error .insufficientEvidence)),
    ("unsafe raw partial blame", decide (culprits good partialVotes = {0, 1, 2})),
-   ("no reference", decide (attribute_evidence good none partialView = .error .insufficientEvidence)),
+   ("no reference", decide (attribute_evidence good none partialView = .error
+     .insufficientEvidence)),
    ("forged certificate", decide (attribute_evidence good (some goodState.votes) forgedView =
      .error .invalidEvidence)),
    ("wrong height", decide (attribute_evidence good (some goodState.votes) wrongHeight =
@@ -153,7 +156,8 @@ def scenarios : List (String × Bool) :=
    ("legal unlock execution", (run bad initial legalTrace).isSome),
    ("legal unlock not blamed", decide (¬ LockViolation bad legalState.votes 2)),
    ("valid certificate", decide (ValidJustification bad legalState.votes validCertificate)),
-   ("justified view", decide (attribute_evidence bad (some legalState.votes) justifiedView = .ok {0, 1})),
+   ("justified view", decide (attribute_evidence bad (some legalState.votes) justifiedView = .ok {0,
+     1})),
    ("single fault below threshold", decide
      (¬ weighted.total < 3 * weighted.mass (culprits weighted oneSwitch))),
    ("duplicate blame weight", decide (good.mass ({1, 2} ∪ {1, 2}) = 2)),

@@ -82,7 +82,8 @@ example : settle C.window (applyHistorical C.window 17 ⟨2, input⟩ C.rate (de
 example : applyHistorical C.window 17 ⟨2, input⟩ C.rate (pipeline C input) =
     pipeline C input := duplicate_after_settlement C input
 example : Commit C.threshold C.context C.transcript 1 9 := by decide +kernel
-example : ¬ Agreement C := by intro h; have hx := h 1 9 (by decide +kernel); change 9 = 0 at hx; omega
+example : ¬ Agreement C
+  := by intro h; have hx := h 1 9 (by decide +kernel); change 9 = 0 at hx; omega
 -- Coverage is supplied explicitly, not inferred from the target conflict.
 theorem covered : ConflictCovered C := fun _ _ _ _ => ⟨input, {0}, ready⟩
 example : Agreement C ∨ ∃ p B, CollectionReady C p B ∧ (globalBlame C.context.old B).Nonempty ∧
@@ -100,13 +101,17 @@ def ambiguous := {C with history := fun _ => [old, next]}
 def noRef : Input C := {input with reference := none}
 def wrongHeight : Input C := {input with evidence := ⟨oldVotes.image (fun v => ⟨18, v⟩), ∅⟩}
 def laterTranche := {C with ledger := {C.ledger with queue := [⟨0, 8, 16⟩]}}
-def honestQueue := {C with ledger := {C.ledger with queue := [⟨0, 8, 17⟩, ⟨2, 12, 17⟩], active := ![0,6,0]}}
+def honestQueue := {C with ledger := {C.ledger with queue := [⟨0, 8, 17⟩, ⟨2, 12, 17⟩], active
+                                       := ![0,6,0]}}
 instance : NeZero late.context.old.n := ⟨by decide⟩
 instance : NeZero honestQueue.context.old.n := ⟨by decide⟩
-example : (pipeline full input).ledger.confiscated = 13 ∧ (pipeline full input).ledger.completed 0 = 0 := by decide +kernel
+example : (pipeline full input).ledger.confiscated = 13 ∧ (pipeline full input).ledger.completed 0
+  = 0 := by decide +kernel
 example : (debit late input).ledger = late.ledger := expired_debit_noop _ _ (by decide +kernel)
-example : (pipeline late input).ledger.confiscated = 5 ∧ (pipeline late input).ledger.completed 0 = 8 := by decide +kernel
-example : ¬ CollectionReady late input {0} := expired_collection_impossible _ _ _ (by decide +kernel)
+example : (pipeline late input).ledger.confiscated = 5 ∧ (pipeline late input).ledger.completed 0 =
+  8 := by decide +kernel
+example : ¬ CollectionReady late input {0} :=
+  expired_collection_impossible _ _ _ (by decide +kernel)
 example : ¬ ConflictCovered late := uncovered_expired_conflict late 1 9 (by decide +kernel)
   (by decide +kernel) (by decide +kernel)
 example : (debit future input).ledger.confiscated = 5 := by decide +kernel
@@ -121,7 +126,8 @@ example : available laterTranche.ledger 17 0 = 0 := by decide +kernel
 example : (pipeline laterTranche input).ledger.completed 0 = 8 := by decide +kernel
 example : (pipeline honestQueue input).ledger.completed 2 = 12 := by decide +kernel
 example : subjectValue (pipeline honestQueue input).ledger 2 = subjectValue honestQueue.ledger 2 :=
-  (cross_epoch_innocent_index_reuse_protection honestQueue input {0} 2 accepted (by decide +kernel)).2
+  (cross_epoch_innocent_index_reuse_protection honestQueue input {0} 2 accepted
+    (by decide +kernel)).2
 
 -- A genuinely satisfiable safe path with a complete adopted lock and later-round commits.
 def H : Transcript 1 := ⟨1, 5, {⟨0, 0, .prevote, some 7⟩, ⟨0, 0, .precommit, some 7⟩,
@@ -157,7 +163,8 @@ def forkView : EvidenceView 1 := ⟨forkVotes.image (fun v => ⟨5, v⟩), ∅�
 example : checkPacket unitConfig 5 ⟨1, ⟨some forkVotes, forkView⟩⟩ =
     some (globalBlame unitConfig (culprits (unitConfig.atHeight 5) forkView.votes)) ∧
     (globalBlame unitConfig (culprits (unitConfig.atHeight 5) forkView.votes)).Nonempty :=
-  historical_fork_global_blame unitConfig 5 forkVotes forkView ⟨by decide +kernel, by decide +kernel⟩ 0 0 0 1
+  historical_fork_global_blame unitConfig 5 forkVotes forkView
+    ⟨by decide +kernel, by decide +kernel⟩ 0 0 0 1
     (by decide +kernel) (by decide +kernel) (by decide)
 
 -- Nonzero admissible weight shift: TV=1/4, common honest mass=3/4.
@@ -183,16 +190,23 @@ def weightedSafe : EpochTransitionMasterContext (Fin 3) where
   window := w
   rate := 1/2
 theorem weighted_safety : SafetyConditions weightedSafe := by constructor <;> decide +kernel
-example : variation (epochWeights weightedOld) (epochWeights weightedNext) = 1/4 := by decide +kernel
-example : honestCommon (epochWeights weightedOld) (epochWeights weightedNext) ∅ = 3/4 := by decide +kernel
+example : variation (epochWeights weightedOld) (epochWeights weightedNext) = 1/4
+  := by decide +kernel
+example : honestCommon (epochWeights weightedOld) (epochWeights weightedNext) ∅ = 3/4
+  := by decide +kernel
 example : Agreement weightedSafe := cross_epoch_master_safety_branch weightedSafe weighted_safety
-example : Commit weightedSafe.threshold weightedSafe.context weightedSafe.transcript 0 7 := by decide +kernel
-example : Commit weightedSafe.threshold weightedSafe.context weightedSafe.transcript 4 7 := by decide +kernel
+example : Commit weightedSafe.threshold weightedSafe.context weightedSafe.transcript 0 7
+  := by decide +kernel
+example : Commit weightedSafe.threshold weightedSafe.context weightedSafe.transcript 4 7
+  := by decide +kernel
 
 #eval [
-  ("nonzero weight shift", decide (variation (epochWeights weightedOld) (epochWeights weightedNext) = 1/4)),
-  ("shifted later commit", decide (Commit weightedSafe.threshold weightedSafe.context weightedSafe.transcript 4 7)),
-  ("historical attribution", decide (attribute_evidence (old.atHeight 17) input.reference input.evidence = .ok {0})),
+  ("nonzero weight shift", decide (variation (epochWeights weightedOld) (epochWeights weightedNext)
+    = 1/4)),
+  ("shifted later commit", decide (Commit weightedSafe.threshold weightedSafe.context
+    weightedSafe.transcript 4 7)),
+  ("historical attribution", decide (attribute_evidence (old.atHeight 17) input.reference
+    input.evidence = .ok {0})),
   ("global identity", decide (globalBlame old {0} = {0} ∧ globalBlame next {0} = {2})),
   ("left membership", decide ((0 : Fin 3) ∉ next.activeIds)),
   ("queued liability", decide (available C.ledger 17 0 = 8)),

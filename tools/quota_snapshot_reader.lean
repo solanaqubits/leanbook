@@ -107,7 +107,8 @@ def cli (args : List String) : IO UInt32 := do
       return 2
   | _ =>
     (← IO.getStderr).putStrLn
-      "Usage: lake env lean --run tools/quota_snapshot_reader.lean FILE MAX_BYTES MAX_BOUND MAX_ROWS"
+      "Usage: lake lean tools/quota_snapshot_reader.lean -- --run \
+        tools/quota_snapshot_reader.lean FILE MAX_BYTES MAX_BOUND MAX_ROWS"
     return 2
 end QuotaSnapshotReader
 

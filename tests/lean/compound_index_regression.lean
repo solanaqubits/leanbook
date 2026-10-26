@@ -40,7 +40,8 @@ example (I r t u : ℚ) : accrue_index (accrue_index I r t) r u =
     accrue_index I r (t + u) + I * r ^ 2 * t * u := subdivision_identity I r t u
 example : total_debt_from_scaled (fun _ : Fin 2 => 5) 2 = 20 := by
   norm_num [total_debt_from_scaled, Fin.sum_univ_two]
-example : (accrue pool (1 / 5) 1 (1 / 2)).debt = 120 := by norm_num [accrue, accrue_index, PoolState.debt,
+example : (accrue pool (1 / 5) 1 (1 / 2)).debt = 120
+  := by norm_num [accrue, accrue_index, PoolState.debt,
     total_debt_from_scaled, pool]
 example : net_accounting_assets 10 120 15 = 115 := by norm_num [net_accounting_assets]
 example : net_accounting_assets 10 100 5 = 105 := by norm_num [net_accounting_assets]

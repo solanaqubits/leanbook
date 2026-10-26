@@ -24,8 +24,8 @@ example (s : State edge M D) (h : Reachable root data s) (e : Edge edge)
 
 example (tr : Execution (edge := edge) (M := M) root data) (e : Edge edge) (k t : ℕ)
     (m : Packet M) (tail) (next : D) (hpre : ((tr.state k).node e.val.2).started = false)
-    (hpost : ((tr.state (k+1)).node e.val.2).started = true)
-    (hevent : tr.state (t+1) = deliverApp (tr.state t) e m tail next) :
+    (hpost : ((tr.state (k + 1)).node e.val.2).started = true)
+    (hevent : tr.state (t + 1) = deliverApp (tr.state t) e m tail next) :
     ((tr.state t).node e.val.2).started = false ↔ t < k :=
   receive_event_precedes_cut tr e k t m tail next hpre hpost hevent
 end General
@@ -120,5 +120,7 @@ example : recording s3 e21 = true ∧ (s3.node 2).started = false := by decide
 example : ¬ Path edge 0 2 := by
   intro h
   cases h with
-  | next path he => have bad : (2 : Fin 3) = 1 := he.2; exact (show (2 : Fin 3) ≠ 1 from by decide) bad
+  | next path he =>
+    have bad : (2 : Fin 3) = 1 := he.2
+    exact (show (2 : Fin 3) ≠ 1 from by decide) bad
 end UnreachableIncoming

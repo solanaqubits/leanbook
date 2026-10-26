@@ -1,4 +1,5 @@
 """Live Lean checks of Bell projections, reduced states and the explicit release policy."""
+from tools.lean_invoke import lean_command
 import os
 from pathlib import Path
 import shutil
@@ -15,7 +16,7 @@ class QuantumStateAvailabilityLiveTests(unittest.TestCase):
         lake = shutil.which("lake")
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, "env", "lean", "-DwarningAsError=true", f"tests/lean/{name}.lean"],
+            lean_command(['-DwarningAsError=true', f'tests/lean/{name}.lean'], lake=lake),
             cwd=ROOT, text=True, capture_output=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

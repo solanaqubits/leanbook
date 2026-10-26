@@ -27,12 +27,14 @@ def observed (s : SlashingLedgerState (Fin 3)) :=
 
 example : attribute_evidence cfg (some votes₁) (view 17 votes₁) = .ok {0, 1} := by decide +kernel
 example : attribute_evidence cfg (some votes₂) (view 17 votes₂) = .ok {1, 2} := by decide +kernel
-example : attribute_evidence cfg (some votesOther) (view 17 votesOther) = .ok {0, 1} := by decide +kernel
+example : attribute_evidence cfg (some votesOther) (view 17 votesOther) = .ok {0, 1}
+  := by decide +kernel
 example : view 17 votes₁ ≠ view 17 votesOther := by decide +kernel
 example : first.balances 0 = 4 ∧ first.balances 1 = 3 ∧ first.balances 2 = 4 := by decide +kernel
 example : first.confiscated = 12 := by decide +kernel
 example : first.processed = {(17, 0), (17, 1)} := by decide +kernel
-example : replayed = first := replay_idempotence cfg (some votes₁) (view 17 votes₁) (1/2) initialLedger
+example : replayed = first := replay_idempotence cfg (some votes₁) (view 17 votes₁) (1/2)
+  initialLedger
 example : observed replayed = (4, 3, 4, 12, {(17, 0), (17, 1)}) := by decide +kernel
 example : observed alternate = observed first := by decide +kernel
 example : alternate = first :=
@@ -46,22 +48,29 @@ example : overlap.balances 1 = first.balances 1 :=
   checked_overlap cfg (some votes₁) (some votes₂) (view 17 votes₁) (view 17 votes₂)
     (1/2) (1/2) initialLedger {0, 1} {1, 2} (by decide +kernel)
     (by decide +kernel) (by norm_num) (by norm_num) 1 (by decide)
-example : applySlashingCertificate cfg (some ∅) (view 17 ∅) (1/2) initialLedger = initialLedger := by
+example : applySlashingCertificate cfg (some ∅) (view 17 ∅) (1/2) initialLedger = initialLedger
+  := by
   rw [accepted_certificate cfg _ _ _ _ ∅ (by decide +kernel) (by norm_num)]
   exact empty_certificate _ _ _
 example : applySlashingCertificate cfg none (view 17 votes₁) (1/2) initialLedger = initialLedger :=
   invalid_certificate_noop cfg _ _ _ _ .insufficientEvidence rfl
-example : applySlashingCertificate cfg (some votes₁) (view 18 votes₁) (1/2) initialLedger = initialLedger :=
+example : applySlashingCertificate cfg (some votes₁) (view 18 votes₁) (1/2) initialLedger =
+  initialLedger :=
   invalid_certificate_noop cfg _ _ _ _ .invalidEvidence (by decide +kernel)
-example : applySlashingCertificate cfg (some votes₁) (view 17 (equiv 0 0)) (1/2) initialLedger = initialLedger :=
+example : applySlashingCertificate cfg (some votes₁) (view 17 (equiv 0 0)) (1/2) initialLedger =
+  initialLedger :=
   invalid_certificate_noop cfg _ _ _ _ .insufficientEvidence (by decide +kernel)
-example : applySlashingCertificate cfg (some votes₁) (view 17 votes₂) (1/2) initialLedger = initialLedger :=
+example : applySlashingCertificate cfg (some votes₁) (view 17 votes₂) (1/2) initialLedger =
+  initialLedger :=
   invalid_certificate_noop cfg _ _ _ _ .invalidEvidence (by decide +kernel)
-example : applySlashingCertificate cfg (some votes₁) (view 17 votes₁) 0 initialLedger = initialLedger :=
+example : applySlashingCertificate cfg (some votes₁) (view 17 votes₁) 0 initialLedger =
+  initialLedger :=
   invalid_rate_noop cfg _ _ _ _ (by norm_num)
-example : applySlashingCertificate cfg (some votes₁) (view 17 votes₁) (-1) initialLedger = initialLedger :=
+example : applySlashingCertificate cfg (some votes₁) (view 17 votes₁) (-1) initialLedger =
+  initialLedger :=
   invalid_rate_noop cfg _ _ _ _ (by norm_num)
-example : applySlashingCertificate cfg (some votes₁) (view 17 votes₁) 2 initialLedger = initialLedger :=
+example : applySlashingCertificate cfg (some votes₁) (view 17 votes₁) 2 initialLedger =
+  initialLedger :=
   invalid_rate_noop cfg _ _ _ _ (by norm_num)
 example : first.balances = stakeSlashing initialLedger.balances {0, 1} (1/2) :=
   checked_first_step cfg _ _ _ _ {0, 1} (by decide +kernel) (by norm_num) rfl
@@ -80,7 +89,8 @@ example : observed nextHeight =
 -- A zero current balance still consumes the permitted per-height key.
 def zeroLedger : SlashingLedgerState (Fin 3) := ⟨![0, 6, 4], 0, ∅⟩
 example : (17, 0) ∈ (step votes₁ zeroLedger).processed := by decide +kernel
-example : stakeSlashing (stakeSlashing initialLedger.balances {0, 1} (1/2)) {0, 1} (1/2) 0 = 2 := by decide +kernel
+example : stakeSlashing (stakeSlashing initialLedger.balances {0, 1} (1/2)) {0, 1} (1/2) 0 = 2
+  := by decide +kernel
 example : replayed.balances 0 ≠ 2 := by decide +kernel
 -- Non-vacuous executable protocol trace: all messages are legal faulty emissions.
 def actions : List (Action 3) :=
@@ -90,13 +100,16 @@ def reached := (run cfg initial actions).getD initial
 theorem execution : run cfg initial actions = some reached := by decide +kernel
 theorem reachable : Reachable cfg reached := run_reachable cfg actions Reachable.init execution
 example : reached.votes = votes₁ := by decide +kernel
-example : attribute_evidence cfg (some reached.votes) (view 17 votes₁) = .ok {0, 1} := by decide +kernel
+example : attribute_evidence cfg (some reached.votes) (view 17 votes₁) = .ok {0, 1}
+  := by decide +kernel
 
 def requests : List (CertificateRequest 3) :=
   [⟨cfg, some votes₁, view 17 votes₁⟩, ⟨cfg, none, view 17 votes₂⟩,
    ⟨cfg, some votesOther, view 17 votesOther⟩, ⟨cfg, some votes₂, view 17 votes₂⟩]
-example : observed (runCertificates (1/2) initialLedger requests) = observed overlap := by decide +kernel
-example : accountedTotal (runCertificates (1/2) initialLedger requests) = accountedTotal initialLedger :=
+example : observed (runCertificates (1/2) initialLedger requests) = observed overlap
+  := by decide +kernel
+example : accountedTotal (runCertificates (1/2) initialLedger requests) = accountedTotal
+  initialLedger :=
   run_conservation _ _ _
 example : WellFormed (runCertificates (1/2) initialLedger requests) :=
   run_wellFormed _ _ _ ⟨by decide +kernel, by norm_num [initialLedger]⟩
