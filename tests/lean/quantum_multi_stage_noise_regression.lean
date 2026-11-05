@@ -6,7 +6,8 @@ open QuantumStateAvailabilityContract QuantumBellDiagonalInputs QuantumRectangul
 open QuantumBellCircuitRefinement QuantumGeneralBellReadout
 open QuantumSwappingInstrument QuantumOutcomeInstrument QuantumGateNoiseComposition
 open QuantumCentralDepolarization QuantumNoiseTransport QuantumInternalBSMNoise
-open QuantumOrderedNoiseComposition QuantumMultiStageBSM QuantumLocalPostNoise QuantumNoisyVisibility
+open QuantumOrderedNoiseComposition QuantumMultiStageBSM
+open QuantumLocalPostNoise QuantumNoisyVisibility
 open scoped BigOperators ComplexOrder Matrix
 
 -- Empty and singleton paths, and arbitrary chronological concatenation.

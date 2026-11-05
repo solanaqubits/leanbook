@@ -15,7 +15,8 @@ private def randomLabels : ReadoutModel := ⟨fullBps, randomBps⟩
 private def lost : ReadoutModel := ⟨zeroBps, zeroBps⟩
 
 private theorem clean_positive : 0 < probability clean.detection := by
-  norm_num [probability, clean, halfBps]
+  norm_num [
+    probability, clean, halfBps]
 private theorem wrong_positive : 0 < probability wrong.detection := clean_positive
 private theorem random_positive : 0 < probability randomLabels.detection := by
   norm_num [probability, randomLabels, fullBps]
@@ -40,7 +41,8 @@ example (r : BellMeasurement) : reportedMass clean r = reportedMass wrong r :=
   reported_marginals_ignore_corruption clean wrong rfl r
 
 example : acceptedMass clean = (1 / 2 : ℝ) ∧ lostMass clean = (1 / 2 : ℝ) := by
-  norm_num [QuantumNoisySwapping.accepted_mass_formula, lost_mass_formula, probability, clean, halfBps]
+  norm_num [QuantumNoisySwapping.accepted_mass_formula, lost_mass_formula,
+    probability, clean, halfBps]
 
 example : targetOverlap (conditionalState clean clean_positive).matrix = 1 := by
   rw [conditional_fidelity]

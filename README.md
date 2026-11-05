@@ -1,4 +1,4 @@
-# Mathematical Verification Components in Lean 4
+# Leanbook 1.0.0 — Mathematical Verification Components in Lean 4
 
 [![Lean verification](https://github.com/solanaqubits/leanbook/actions/workflows/lean_action_ci.yml/badge.svg)](https://github.com/solanaqubits/leanbook/actions/workflows/lean_action_ci.yml)
 
@@ -40,23 +40,26 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Combined synchronization v0.7.48](docs/release-v0.7.48.en.md) reconciles all completed streams and preserves their verification boundaries.
 
-**300 direct imports in MasterSuite**, **349 library Lean sources including Verification.lean**.
-The separate `AlccVerifyMain.lean` CLI, auxiliary tooling and test fixtures are outside
-this library-source metric.
-The [v0.9.0 publication](docs/release-v0.9.0.en.md) has a confirmed strict-build
-failure; its successful-beta qualification is withdrawn. See the
-[correction and validation boundary](docs/v0.9-build-correction.en.md).
-The last successful beta remains v0.8.0. The
-[300-module extension](docs/toward-300.en.md) describes the source additions.
+**Leanbook 1.0.0** consolidates the public library and Quantum v4.5–v4.20:
+**377 catalog modules**, **381 library Lean source files** (including the library
+root and support/specification files), and **331 direct MasterSuite imports**.
+The two executable roots are counted separately. The 31 new quantum modules
+contain 619 named theorem declarations, including 32 in the final v4.20 pair.
+These are source inventory counts, not counts of independent scientific results.
 
-ALCC is an additive batch on top of v0.7.48, released with a new full-validation checkpoint; see the
-[public integration record](docs/release-v0.8.0.en.md).
-The [bounded Prometheus synchronization](docs/prometheus-lean-sync.en.md) adds nine
-conditional model modules and their public verification scope.
-[Release v0.7.47](docs/release-v0.7.47.en.md) adds granular provenance reports,
-an explicit pinned native IO adapter and sequential replay-registry recovery.
-The Lake package metadata retains version 0.7.1; checkpoint tags follow the
-separate [hierarchical version policy](VERSIONING.md).
+[Release scope and migration](docs/release-v1.0.0.en.md) ·
+[New quantum theorem inventory](docs/quantum-v1.0.0-inventory.json) ·
+[Full release evidence](https://github.com/solanaqubits/leanbook/releases/tag/v1.0.0)
+
+The 1.0.0 publication requires the complete fresh-project release gate. Its
+release assets record actual checks and axiom counts. Earlier scoped evidence
+remains historical: [Quantum v4.20](docs/quantum-v4.20.md),
+[ALCC integration](docs/release-v0.8.0.en.md), and
+[Prometheus models](docs/prometheus-lean-sync.en.md).
+The v0.9.0 strict-build failure remains documented in the
+[correction record](docs/v0.9-build-correction.en.md); v0.10.0 was the subsequent
+successful full checkpoint. The package metadata is now **1.0.0**; the package
+identifier, Lean 4.33.1, Mathlib pin and existing import paths are unchanged.
 
 [Native adapter](tools/provenance_native/README.md) ·
 [Snapshot format](docs/quota-codec-v1.en.md) ·

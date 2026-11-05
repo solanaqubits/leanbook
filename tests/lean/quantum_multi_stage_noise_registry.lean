@@ -1,7 +1,8 @@
 import Verification.MasterSuite
 
 example (r : MasterSuite.QuantumPhysicsFullSuite) :
-    QuantumOrderedNoiseComposition.QuantumOrderedNoiseCompositionSuite := r.ordered_noise_composition
+    QuantumOrderedNoiseComposition.QuantumOrderedNoiseCompositionSuite :=
+  r.ordered_noise_composition
 
 example (r : MasterSuite.QuantumPhysicsFullSuite) :
     QuantumMultiStageBSM.QuantumMultiStageBSMSuite := r.multi_stage_bsm

@@ -1,0 +1,2702 @@
+{
+  "release": "v1.0.0",
+  "origin": "quantum-v4.20",
+  "method": "Named theorem declarations in the 31 added source files; not semantic independence or novelty",
+  "module_count": 31,
+  "named_theorem_count": 619,
+  "modules": [
+    {
+      "module": "QuantumBSMMemoryWitness",
+      "path": "Verification/QuantumBSMMemoryWitness.lean",
+      "sha256": "a6da1ff07645fd22ffc555928722986390d7762fe94dcf70dfd47140256a9a64",
+      "named_theorems": [
+        {
+          "name": "central_preserves_flag",
+          "line": 29
+        },
+        {
+          "name": "effective_echo",
+          "line": 34
+        },
+        {
+          "name": "retained_outcome",
+          "line": 63
+        },
+        {
+          "name": "computational_branch_analysis",
+          "line": 79
+        },
+        {
+          "name": "readout_after_analysis",
+          "line": 83
+        },
+        {
+          "name": "reset_evolution",
+          "line": 99
+        },
+        {
+          "name": "reset_outcome",
+          "line": 121
+        },
+        {
+          "name": "input_valid",
+          "line": 128
+        },
+        {
+          "name": "dephased_input",
+          "line": 136
+        },
+        {
+          "name": "perfect_report_matrix",
+          "line": 146
+        },
+        {
+          "name": "perfect_report_product",
+          "line": 151
+        },
+        {
+          "name": "retained_branch",
+          "line": 159
+        },
+        {
+          "name": "reset_branch",
+          "line": 165
+        },
+        {
+          "name": "mixed_outer_valid",
+          "line": 173
+        },
+        {
+          "name": "same_report_probabilities",
+          "line": 181
+        },
+        {
+          "name": "retained_output",
+          "line": 193
+        },
+        {
+          "name": "reset_output",
+          "line": 198
+        },
+        {
+          "name": "outputs_normalized",
+          "line": 203
+        },
+        {
+          "name": "outputs_positive",
+          "line": 207
+        },
+        {
+          "name": "rejection_absent",
+          "line": 211
+        },
+        {
+          "name": "output_fidelity_gap",
+          "line": 217
+        },
+        {
+          "name": "output_coherence_gap",
+          "line": 224
+        },
+        {
+          "name": "outputs_distinct",
+          "line": 230
+        },
+        {
+          "name": "verification_suite",
+          "line": 244
+        }
+      ]
+    },
+    {
+      "module": "QuantumBellCircuitRefinement",
+      "path": "Verification/QuantumBellCircuitRefinement.lean",
+      "sha256": "0f418f873d3780c406c81a33ee3a0aab6c811ae3951c0614b151b2c254559e83",
+      "named_theorems": [
+        {
+          "name": "cnot_agrees_with_gaussian_matrix",
+          "line": 53
+        },
+        {
+          "name": "analysis_row",
+          "line": 61
+        },
+        {
+          "name": "analysis_unitary_left",
+          "line": 68
+        },
+        {
+          "name": "analysis_unitary_right",
+          "line": 76
+        },
+        {
+          "name": "branch_equals_bell_contraction",
+          "line": 92
+        },
+        {
+          "name": "instrument_equals_bell_projection",
+          "line": 105
+        },
+        {
+          "name": "readout_norm",
+          "line": 111
+        },
+        {
+          "name": "circuit_born_probability",
+          "line": 120
+        },
+        {
+          "name": "circuit_feedforward",
+          "line": 126
+        },
+        {
+          "name": "circuit_density_eq_corrected_state",
+          "line": 135
+        },
+        {
+          "name": "circuit_density_valid",
+          "line": 140
+        },
+        {
+          "name": "circuit_then_cptp_fidelity",
+          "line": 147
+        },
+        {
+          "name": "verification_suite",
+          "line": 169
+        }
+      ]
+    },
+    {
+      "module": "QuantumBellDiagonalInputs",
+      "path": "Verification/QuantumBellDiagonalInputs.lean",
+      "sha256": "1ec0a0e3eeceee67f6fcdbca8674a14d41ad4af5d7dc435c1eb861789ee61b5a",
+      "named_theorems": [
+        {
+          "name": "xor_cancel",
+          "line": 35
+        },
+        {
+          "name": "xor_zero_iff",
+          "line": 38
+        },
+        {
+          "name": "branch_amplitude",
+          "line": 52
+        },
+        {
+          "name": "pair_norm_smul",
+          "line": 62
+        },
+        {
+          "name": "component_born_probability",
+          "line": 67
+        },
+        {
+          "name": "correction_smul",
+          "line": 72
+        },
+        {
+          "name": "signed_half_density",
+          "line": 77
+        },
+        {
+          "name": "correction_density",
+          "line": 85
+        },
+        {
+          "name": "raw_corrected_density",
+          "line": 93
+        },
+        {
+          "name": "density_positive",
+          "line": 105
+        },
+        {
+          "name": "density_trace",
+          "line": 108
+        },
+        {
+          "name": "product_density_tensor",
+          "line": 121
+        },
+        {
+          "name": "input_density_tensor",
+          "line": 131
+        },
+        {
+          "name": "input_positive",
+          "line": 144
+        },
+        {
+          "name": "input_trace",
+          "line": 148
+        },
+        {
+          "name": "mixed_born_probability",
+          "line": 154
+        },
+        {
+          "name": "verification_suite",
+          "line": 169
+        }
+      ]
+    },
+    {
+      "module": "QuantumBellDiagonalSwapping",
+      "path": "Verification/QuantumBellDiagonalSwapping.lean",
+      "sha256": "c7e3f6bee0aa13ecd16232a6366fd613659ddf6c88416a68b3bf69692a220c31",
+      "named_theorems": [
+        {
+          "name": "component_positive",
+          "line": 24
+        },
+        {
+          "name": "component_trace",
+          "line": 31
+        },
+        {
+          "name": "accepted_positive",
+          "line": 41
+        },
+        {
+          "name": "accepted_trace",
+          "line": 46
+        },
+        {
+          "name": "circuit_density_sound",
+          "line": 59
+        },
+        {
+          "name": "event_mass_formula",
+          "line": 79
+        },
+        {
+          "name": "targetOverlap_sum",
+          "line": 94
+        },
+        {
+          "name": "projector_overlap",
+          "line": 101
+        },
+        {
+          "name": "accepted_overlap",
+          "line": 115
+        },
+        {
+          "name": "conditional_fidelity",
+          "line": 120
+        },
+        {
+          "name": "perfect_mass",
+          "line": 138
+        },
+        {
+          "name": "perfect_component",
+          "line": 142
+        },
+        {
+          "name": "ideal_density_from_circuit",
+          "line": 155
+        },
+        {
+          "name": "ideal_conditional_density",
+          "line": 160
+        },
+        {
+          "name": "ideal_fidelity",
+          "line": 167
+        },
+        {
+          "name": "ideal_inputs_recover_v49",
+          "line": 176
+        },
+        {
+          "name": "uniform_bell_sum",
+          "line": 200
+        },
+        {
+          "name": "uniform_input_erases_ideal_output",
+          "line": 209
+        },
+        {
+          "name": "visibility_product_valid",
+          "line": 231
+        },
+        {
+          "name": "isotropic_visibility_product",
+          "line": 237
+        },
+        {
+          "name": "isotropic_output_fidelity",
+          "line": 248
+        },
+        {
+          "name": "density_overlap",
+          "line": 256
+        },
+        {
+          "name": "scalar_fidelity_insufficient",
+          "line": 270
+        },
+        {
+          "name": "null_event_density",
+          "line": 277
+        },
+        {
+          "name": "ideal_inputs_conditional",
+          "line": 281
+        },
+        {
+          "name": "verification_suite",
+          "line": 305
+        }
+      ]
+    },
+    {
+      "module": "QuantumBinaryMemoryCoupling",
+      "path": "Verification/QuantumBinaryMemoryCoupling.lean",
+      "sha256": "585206685ad431c93d23537e07fa13b7cb29d14d348eead3f52cdf06b09b8e4b",
+      "named_theorems": [
+        {
+          "name": "flip_involutive",
+          "line": 20
+        },
+        {
+          "name": "flip_eq_iff",
+          "line": 24
+        },
+        {
+          "name": "coupling_left",
+          "line": 35
+        },
+        {
+          "name": "coupling_right",
+          "line": 39
+        },
+        {
+          "name": "coupling_adjoint",
+          "line": 44
+        },
+        {
+          "name": "coupling_squared",
+          "line": 52
+        },
+        {
+          "name": "coupling_map_entry",
+          "line": 61
+        },
+        {
+          "name": "reduced_coupling",
+          "line": 70
+        },
+        {
+          "name": "dephase_idempotent",
+          "line": 78
+        },
+        {
+          "name": "coupling_commutes",
+          "line": 84
+        },
+        {
+          "name": "coupling_twice",
+          "line": 95
+        },
+        {
+          "name": "extend_prepare",
+          "line": 100
+        },
+        {
+          "name": "commuting_sandwich",
+          "line": 111
+        },
+        {
+          "name": "dephase_sandwich",
+          "line": 120
+        },
+        {
+          "name": "reduced_noisy_coupling",
+          "line": 134
+        },
+        {
+          "name": "pullback_coupling",
+          "line": 142
+        },
+        {
+          "name": "verification_suite",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "module": "QuantumCentralDepolarization",
+      "path": "Verification/QuantumCentralDepolarization.lean",
+      "sha256": "da66027a582650cadb966878ce94d0ef897684adf280af38cd6946fdfa5967b7",
+      "named_theorems": [
+        {
+          "name": "probability_bounds",
+          "line": 27
+        },
+        {
+          "name": "sqrt_sandwich",
+          "line": 44
+        },
+        {
+          "name": "kraus_exact",
+          "line": 51
+        },
+        {
+          "name": "kraus_none_norm",
+          "line": 63
+        },
+        {
+          "name": "kraus_some_norm",
+          "line": 71
+        },
+        {
+          "name": "kraus_completeness",
+          "line": 79
+        },
+        {
+          "name": "linearChannel_trace",
+          "line": 89
+        },
+        {
+          "name": "linearChannel_add",
+          "line": 94
+        },
+        {
+          "name": "linearChannel_smul",
+          "line": 99
+        },
+        {
+          "name": "depolarizing_map",
+          "line": 108
+        },
+        {
+          "name": "depolarizing_covariance",
+          "line": 116
+        },
+        {
+          "name": "embedBC_adjoint",
+          "line": 129
+        },
+        {
+          "name": "embedBC_mul",
+          "line": 134
+        },
+        {
+          "name": "embedBC_one",
+          "line": 138
+        },
+        {
+          "name": "embedBC_sum",
+          "line": 143
+        },
+        {
+          "name": "central_map",
+          "line": 155
+        },
+        {
+          "name": "central_depolarizing_entry",
+          "line": 166
+        },
+        {
+          "name": "bell_left_marginal",
+          "line": 174
+        },
+        {
+          "name": "bell_right_marginal",
+          "line": 179
+        },
+        {
+          "name": "traceBC_product",
+          "line": 184
+        },
+        {
+          "name": "traceBC_sum",
+          "line": 208
+        },
+        {
+          "name": "traceBC_real_smul",
+          "line": 211
+        },
+        {
+          "name": "traceBC_input",
+          "line": 215
+        },
+        {
+          "name": "central_input_depolarization",
+          "line": 222
+        },
+        {
+          "name": "flip_ghz_density",
+          "line": 238
+        },
+        {
+          "name": "pre_flip_opens_ghz_branch",
+          "line": 250
+        },
+        {
+          "name": "verification_suite",
+          "line": 272
+        }
+      ]
+    },
+    {
+      "module": "QuantumEnvironmentExtension",
+      "path": "Verification/QuantumEnvironmentExtension.lean",
+      "sha256": "7067cacd7cf077fdf7d482b1da378e073f4d5b1798119583924118880300561e",
+      "named_theorems": [
+        {
+          "name": "extend_adjoint",
+          "line": 19
+        },
+        {
+          "name": "extend_mul",
+          "line": 23
+        },
+        {
+          "name": "extend_one",
+          "line": 28
+        },
+        {
+          "name": "select_extend",
+          "line": 38
+        },
+        {
+          "name": "extend_insert",
+          "line": 47
+        },
+        {
+          "name": "trace_environment_sandwich",
+          "line": 55
+        },
+        {
+          "name": "trace_environment_sum",
+          "line": 76
+        },
+        {
+          "name": "trace_environment_smul",
+          "line": 83
+        },
+        {
+          "name": "branch_partial_trace",
+          "line": 89
+        },
+        {
+          "name": "verification_suite",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "module": "QuantumGateNoiseComposition",
+      "path": "Verification/QuantumGateNoiseComposition.lean",
+      "sha256": "2cb1098e20a4076035bf859fc786a7e4218244041716003fce3ba27ec55677b8",
+      "named_theorems": [
+        {
+          "name": "CPTP.positive",
+          "line": 27
+        },
+        {
+          "name": "CPTP.trace",
+          "line": 30
+        },
+        {
+          "name": "CPTP.map_add",
+          "line": 38
+        },
+        {
+          "name": "CPTP.map_smul",
+          "line": 42
+        },
+        {
+          "name": "CPTP.map_sum",
+          "line": 51
+        },
+        {
+          "name": "identity_map",
+          "line": 57
+        },
+        {
+          "name": "CPTP.cp",
+          "line": 61
+        },
+        {
+          "name": "composite_kraus_weighted",
+          "line": 84
+        },
+        {
+          "name": "noisy_micro_kraus",
+          "line": 89
+        },
+        {
+          "name": "noisy_micro_cp",
+          "line": 96
+        },
+        {
+          "name": "post_noise_trace_invariant",
+          "line": 103
+        },
+        {
+          "name": "noisy_reported_cp",
+          "line": 110
+        },
+        {
+          "name": "noisy_reject_cp",
+          "line": 122
+        },
+        {
+          "name": "noisy_outcome_cp",
+          "line": 135
+        },
+        {
+          "name": "noisy_outcome_trace",
+          "line": 141
+        },
+        {
+          "name": "noisy_outcome_positive",
+          "line": 148
+        },
+        {
+          "name": "noisy_total_trace",
+          "line": 155
+        },
+        {
+          "name": "noisy_probability",
+          "line": 163
+        },
+        {
+          "name": "noisy_null_iff",
+          "line": 169
+        },
+        {
+          "name": "ideal_noise_refinement",
+          "line": 175
+        },
+        {
+          "name": "verification_suite",
+          "line": 191
+        }
+      ]
+    },
+    {
+      "module": "QuantumGeneralBellReadout",
+      "path": "Verification/QuantumGeneralBellReadout.lean",
+      "sha256": "3abf6baaad56056cadb0bba65a7e86ee9596f706c1c80990cc0fb2a63425561d",
+      "named_theorems": [
+        {
+          "name": "confusion_le_one",
+          "line": 26
+        },
+        {
+          "name": "observation_nonnegative",
+          "line": 36
+        },
+        {
+          "name": "observation_row_sum",
+          "line": 42
+        },
+        {
+          "name": "symmetric_weights",
+          "line": 55
+        },
+        {
+          "name": "operation_kraus",
+          "line": 70
+        },
+        {
+          "name": "all_operations",
+          "line": 79
+        },
+        {
+          "name": "trace_total",
+          "line": 86
+        },
+        {
+          "name": "extension_kraus",
+          "line": 96
+        },
+        {
+          "name": "branch_completely_positive",
+          "line": 108
+        },
+        {
+          "name": "operation_positive",
+          "line": 114
+        },
+        {
+          "name": "outcomeProbability_nonnegative",
+          "line": 123
+        },
+        {
+          "name": "outcomeProbability_total",
+          "line": 127
+        },
+        {
+          "name": "outcomeProbability_le_one",
+          "line": 132
+        },
+        {
+          "name": "symmetric_operation",
+          "line": 138
+        },
+        {
+          "name": "verification_suite",
+          "line": 154
+        }
+      ]
+    },
+    {
+      "module": "QuantumInternalBSMNoise",
+      "path": "Verification/QuantumInternalBSMNoise.lean",
+      "sha256": "753110d39c0ef7f5811b80734f99077e4131f1fded3e5dbc8d5908daaaf32bce",
+      "named_theorems": [
+        {
+          "name": "cnot_adjoint",
+          "line": 21
+        },
+        {
+          "name": "cnot_squared",
+          "line": 28
+        },
+        {
+          "name": "computational_analysis_reduction",
+          "line": 54
+        },
+        {
+          "name": "cut_reduction",
+          "line": 60
+        },
+        {
+          "name": "internal_reduction_transport",
+          "line": 76
+        },
+        {
+          "name": "internal_branch_transport",
+          "line": 86
+        },
+        {
+          "name": "internal_micro_refinement",
+          "line": 104
+        },
+        {
+          "name": "internal_reject_refinement",
+          "line": 110
+        },
+        {
+          "name": "internal_outcome_refinement",
+          "line": 116
+        },
+        {
+          "name": "internal_outcome_noisy_bridge",
+          "line": 122
+        },
+        {
+          "name": "internal_outcome_cp",
+          "line": 130
+        },
+        {
+          "name": "internal_total_trace",
+          "line": 135
+        },
+        {
+          "name": "internal_depolarizing_outcome",
+          "line": 142
+        },
+        {
+          "name": "internal_accepted_refinement",
+          "line": 152
+        },
+        {
+          "name": "internal_depolarizing_accepted",
+          "line": 158
+        },
+        {
+          "name": "internal_local_visibility",
+          "line": 166
+        },
+        {
+          "name": "flip_control_unitary",
+          "line": 179
+        },
+        {
+          "name": "flip_control_adjoint",
+          "line": 186
+        },
+        {
+          "name": "cnot_transports_control_flip_to_both",
+          "line": 201
+        },
+        {
+          "name": "naive_noise_relocation_changes_born_probability",
+          "line": 212
+        },
+        {
+          "name": "verification_suite",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "module": "QuantumLocalNoisySwapping",
+      "path": "Verification/QuantumLocalNoisySwapping.lean",
+      "sha256": "668953678a1213d95c4bde11244f98594954b065663cde7fb504d9c67631dea3",
+      "named_theorems": [
+        {
+          "name": "traceD_sum",
+          "line": 21
+        },
+        {
+          "name": "traceD_smul",
+          "line": 27
+        },
+        {
+          "name": "traceD_bell",
+          "line": 32
+        },
+        {
+          "name": "bell_mixture_marginal",
+          "line": 40
+        },
+        {
+          "name": "local_equals_pair_on_bell_mixture",
+          "line": 53
+        },
+        {
+          "name": "local_equals_pair_on_density",
+          "line": 58
+        },
+        {
+          "name": "local_depolarizing_isotropic",
+          "line": 63
+        },
+        {
+          "name": "local_noisy_visibility_matrix",
+          "line": 73
+        },
+        {
+          "name": "local_noisy_refines_pair_model",
+          "line": 83
+        },
+        {
+          "name": "local_noisy_visibility_fidelity",
+          "line": 87
+        },
+        {
+          "name": "local_noisy_visibility_trace",
+          "line": 92
+        },
+        {
+          "name": "local_noisy_visibility_positive",
+          "line": 96
+        },
+        {
+          "name": "product_zero_positive",
+          "line": 104
+        },
+        {
+          "name": "product_zero_trace",
+          "line": 110
+        },
+        {
+          "name": "product_zero_marginal_not_mixed",
+          "line": 113
+        },
+        {
+          "name": "local_and_pair_noise_differ_on_product",
+          "line": 120
+        },
+        {
+          "name": "identity_endpoint_agrees",
+          "line": 126
+        },
+        {
+          "name": "verification_suite",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "module": "QuantumLocalPostNoise",
+      "path": "Verification/QuantumLocalPostNoise.lean",
+      "sha256": "5b49c01fc8644dcc0f4d9e02447032b51985e5f6c642b83421e6a5815a8808ff",
+      "named_theorems": [
+        {
+          "name": "embedD_adjoint",
+          "line": 23
+        },
+        {
+          "name": "embedD_mul",
+          "line": 27
+        },
+        {
+          "name": "embedD_one",
+          "line": 31
+        },
+        {
+          "name": "embedD_sum",
+          "line": 36
+        },
+        {
+          "name": "onD_map",
+          "line": 48
+        },
+        {
+          "name": "onD_preserves_A",
+          "line": 57
+        },
+        {
+          "name": "pauli_error_physical",
+          "line": 66
+        },
+        {
+          "name": "qubit_depolarizing_map",
+          "line": 75
+        },
+        {
+          "name": "local_depolarizing_entry",
+          "line": 88
+        },
+        {
+          "name": "local_depolarizing_formula",
+          "line": 94
+        },
+        {
+          "name": "local_depolarizing_preserves_A",
+          "line": 101
+        },
+        {
+          "name": "local_equals_pair_of_marginal",
+          "line": 105
+        },
+        {
+          "name": "local_equals_pair_iff",
+          "line": 115
+        },
+        {
+          "name": "verification_suite",
+          "line": 144
+        }
+      ]
+    },
+    {
+      "module": "QuantumMemoryBSM",
+      "path": "Verification/QuantumMemoryBSM.lean",
+      "sha256": "d646314ca92f23618b7a26271938a572bf2ee5862f59958a7ab3ef22437a3a02",
+      "named_theorems": [
+        {
+          "name": "path_reduction_bridge",
+          "line": 45
+        },
+        {
+          "name": "path_branch_bridge",
+          "line": 55
+        },
+        {
+          "name": "micro_partial_trace",
+          "line": 95
+        },
+        {
+          "name": "reject_partial_trace",
+          "line": 101
+        },
+        {
+          "name": "outcome_partial_trace",
+          "line": 108
+        },
+        {
+          "name": "micro_bridge",
+          "line": 114
+        },
+        {
+          "name": "reject_bridge",
+          "line": 122
+        },
+        {
+          "name": "outcome_bridge",
+          "line": 130
+        },
+        {
+          "name": "outcome_noisy_bridge",
+          "line": 137
+        },
+        {
+          "name": "outcome_cp",
+          "line": 145
+        },
+        {
+          "name": "total_trace",
+          "line": 151
+        },
+        {
+          "name": "joint_run_refinement",
+          "line": 159
+        },
+        {
+          "name": "outcome_positive",
+          "line": 166
+        },
+        {
+          "name": "outcome_zero_iff",
+          "line": 173
+        },
+        {
+          "name": "joint_total_trace",
+          "line": 179
+        },
+        {
+          "name": "memory_ideal",
+          "line": 193
+        },
+        {
+          "name": "memory_run",
+          "line": 199
+        },
+        {
+          "name": "memory_outcome_bridge",
+          "line": 207
+        },
+        {
+          "name": "accepted_bridge",
+          "line": 217
+        },
+        {
+          "name": "memory_no_noise",
+          "line": 225
+        },
+        {
+          "name": "verification_suite",
+          "line": 253
+        }
+      ]
+    },
+    {
+      "module": "QuantumMemoryCounterexample",
+      "path": "Verification/QuantumMemoryCounterexample.lean",
+      "sha256": "09e35a06ead521efc7f9e9d33c906b786e2b7aec25954e8649e739b154d6a8c7",
+      "named_theorems": [
+        {
+          "name": "run_one_collision",
+          "line": 26
+        },
+        {
+          "name": "cnot_twice",
+          "line": 32
+        },
+        {
+          "name": "run_two_collisions",
+          "line": 41
+        },
+        {
+          "name": "collision_reduced_map",
+          "line": 47
+        },
+        {
+          "name": "persistent_once",
+          "line": 55
+        },
+        {
+          "name": "persistent_twice",
+          "line": 59
+        },
+        {
+          "name": "reset_collision_map",
+          "line": 63
+        },
+        {
+          "name": "dephase_idempotent",
+          "line": 70
+        },
+        {
+          "name": "reset_twice",
+          "line": 73
+        },
+        {
+          "name": "coherent_positive",
+          "line": 84
+        },
+        {
+          "name": "coherent_trace",
+          "line": 87
+        },
+        {
+          "name": "coherent_offdiagonal",
+          "line": 91
+        },
+        {
+          "name": "dephase_coherent",
+          "line": 95
+        },
+        {
+          "name": "coherent_states_distinct",
+          "line": 101
+        },
+        {
+          "name": "first_marginals_equal",
+          "line": 108
+        },
+        {
+          "name": "retained_and_reset_differ",
+          "line": 113
+        },
+        {
+          "name": "no_system_only_intermediate_map",
+          "line": 121
+        },
+        {
+          "name": "collision_not_fresh",
+          "line": 133
+        },
+        {
+          "name": "verification_suite",
+          "line": 149
+        }
+      ]
+    },
+    {
+      "module": "QuantumMixedEnvironment",
+      "path": "Verification/QuantumMixedEnvironment.lean",
+      "sha256": "873e7c0d171b7ab9326512391ff3cffc9ef3e5c927e8df64e2796891acaacfa5",
+      "named_theorems": [
+        {
+          "name": "factor_product",
+          "line": 27
+        },
+        {
+          "name": "prepare_op_sandwich",
+          "line": 36
+        },
+        {
+          "name": "preparation_semantics",
+          "line": 44
+        },
+        {
+          "name": "preparation_complete",
+          "line": 52
+        },
+        {
+          "name": "trace_tensor_state",
+          "line": 72
+        },
+        {
+          "name": "mixed_branch_partial_trace",
+          "line": 101
+        },
+        {
+          "name": "mixed_reduced_map",
+          "line": 116
+        },
+        {
+          "name": "density_extensionality",
+          "line": 124
+        },
+        {
+          "name": "ensemble_semantics",
+          "line": 131
+        },
+        {
+          "name": "mixed_identity",
+          "line": 143
+        },
+        {
+          "name": "pure_basis_limit",
+          "line": 148
+        },
+        {
+          "name": "verification_suite",
+          "line": 165
+        }
+      ]
+    },
+    {
+      "module": "QuantumMixedMemoryBSM",
+      "path": "Verification/QuantumMixedMemoryBSM.lean",
+      "sha256": "1cb066ec35a64002336a065182c26bc3130ed17b57c15ebb70a2a16c3190db5c",
+      "named_theorems": [
+        {
+          "name": "path_reduction_bridge",
+          "line": 38
+        },
+        {
+          "name": "path_branch_bridge",
+          "line": 48
+        },
+        {
+          "name": "micro_partial_trace",
+          "line": 72
+        },
+        {
+          "name": "reject_partial_trace",
+          "line": 78
+        },
+        {
+          "name": "outcome_partial_trace",
+          "line": 85
+        },
+        {
+          "name": "micro_bridge",
+          "line": 91
+        },
+        {
+          "name": "reject_bridge",
+          "line": 99
+        },
+        {
+          "name": "outcome_bridge",
+          "line": 107
+        },
+        {
+          "name": "outcome_noisy_bridge",
+          "line": 114
+        },
+        {
+          "name": "outcome_cp",
+          "line": 122
+        },
+        {
+          "name": "total_trace",
+          "line": 128
+        },
+        {
+          "name": "joint_run_refinement",
+          "line": 136
+        },
+        {
+          "name": "outcome_positive",
+          "line": 143
+        },
+        {
+          "name": "outcome_zero_iff",
+          "line": 150
+        },
+        {
+          "name": "joint_total_trace",
+          "line": 156
+        },
+        {
+          "name": "pure_basis_outcome",
+          "line": 166
+        },
+        {
+          "name": "outcome_density_extensionality",
+          "line": 176
+        },
+        {
+          "name": "memory_outcome_bridge",
+          "line": 182
+        },
+        {
+          "name": "memory_no_noise",
+          "line": 189
+        },
+        {
+          "name": "verification_suite",
+          "line": 220
+        }
+      ]
+    },
+    {
+      "module": "QuantumMultiStageBSM",
+      "path": "Verification/QuantumMultiStageBSM.lean",
+      "sha256": "4b14d48c2d7f2163f6b8e90522d0ae112b5cbba48be104711d3b91fbdc1eaf00",
+      "named_theorems": [
+        {
+          "name": "path_reduction_bridge",
+          "line": 28
+        },
+        {
+          "name": "path_branch_bridge",
+          "line": 34
+        },
+        {
+          "name": "micro_bridge",
+          "line": 49
+        },
+        {
+          "name": "reject_bridge",
+          "line": 56
+        },
+        {
+          "name": "outcome_bridge",
+          "line": 63
+        },
+        {
+          "name": "outcome_noisy_bridge",
+          "line": 69
+        },
+        {
+          "name": "outcome_cp",
+          "line": 77
+        },
+        {
+          "name": "total_trace",
+          "line": 83
+        },
+        {
+          "name": "h_gate_matrix",
+          "line": 93
+        },
+        {
+          "name": "bsm_ideal",
+          "line": 102
+        },
+        {
+          "name": "bsm_run",
+          "line": 109
+        },
+        {
+          "name": "bsm_outcome_bridge",
+          "line": 116
+        },
+        {
+          "name": "bsm_effective_order",
+          "line": 122
+        },
+        {
+          "name": "depolarizing_compose",
+          "line": 135
+        },
+        {
+          "name": "central_composition",
+          "line": 143
+        },
+        {
+          "name": "two_depolarizing_effective",
+          "line": 149
+        },
+        {
+          "name": "accepted_bridge",
+          "line": 162
+        },
+        {
+          "name": "two_noise_local_visibility",
+          "line": 169
+        },
+        {
+          "name": "qubit_zero_valid",
+          "line": 195
+        },
+        {
+          "name": "reset_order_changes_probability",
+          "line": 204
+        },
+        {
+          "name": "verification_suite",
+          "line": 221
+        }
+      ]
+    },
+    {
+      "module": "QuantumNoiseTransport",
+      "path": "Verification/QuantumNoiseTransport.lean",
+      "sha256": "7438a20cc4e296e41b7fbb49672db874359fce8dddab1a8fb70ad97f6710aec9",
+      "named_theorems": [
+        {
+          "name": "unitary_channel_map",
+          "line": 28
+        },
+        {
+          "name": "pullback_map",
+          "line": 48
+        },
+        {
+          "name": "slide_channel",
+          "line": 54
+        },
+        {
+          "name": "slide_branch",
+          "line": 65
+        },
+        {
+          "name": "pullback_eq_of_covariant",
+          "line": 75
+        },
+        {
+          "name": "central_pullback_operator",
+          "line": 94
+        },
+        {
+          "name": "central_pullback_map",
+          "line": 99
+        },
+        {
+          "name": "central_depolarizing_transport",
+          "line": 106
+        },
+        {
+          "name": "verification_suite",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "module": "QuantumNoisyBellInstrument",
+      "path": "Verification/QuantumNoisyBellInstrument.lean",
+      "sha256": "2e76c664335d354eb228b6bdc0cae63fd0474496078e30698739a07ab0bc12a7",
+      "named_theorems": [
+        {
+          "name": "sum_bell",
+          "line": 22
+        },
+        {
+          "name": "confusion_nonnegative",
+          "line": 35
+        },
+        {
+          "name": "confusion_row_sum",
+          "line": 42
+        },
+        {
+          "name": "confusion_column_sum",
+          "line": 47
+        },
+        {
+          "name": "observation_nonnegative",
+          "line": 57
+        },
+        {
+          "name": "observation_row_sum",
+          "line": 63
+        },
+        {
+          "name": "operation_kraus",
+          "line": 78
+        },
+        {
+          "name": "all_operations",
+          "line": 87
+        },
+        {
+          "name": "nonselective_trace",
+          "line": 94
+        },
+        {
+          "name": "trace_total",
+          "line": 103
+        },
+        {
+          "name": "extension_kraus",
+          "line": 113
+        },
+        {
+          "name": "branch_completely_positive",
+          "line": 125
+        },
+        {
+          "name": "operation_positive",
+          "line": 131
+        },
+        {
+          "name": "outcomeProbability_nonnegative",
+          "line": 140
+        },
+        {
+          "name": "outcomeProbability_total",
+          "line": 144
+        },
+        {
+          "name": "outcomeProbability_le_one",
+          "line": 149
+        },
+        {
+          "name": "projector_matches_circuit",
+          "line": 156
+        },
+        {
+          "name": "verification_suite",
+          "line": 179
+        }
+      ]
+    },
+    {
+      "module": "QuantumNoisySwapping",
+      "path": "Verification/QuantumNoisySwapping.lean",
+      "sha256": "0f01f25be82e491177b1ebb346dc6254cfd606073efe62659dc05c8de1daa946",
+      "named_theorems": [
+        {
+          "name": "joint_nonnegative",
+          "line": 30
+        },
+        {
+          "name": "reported_mass_formula",
+          "line": 35
+        },
+        {
+          "name": "accepted_mass_formula",
+          "line": 41
+        },
+        {
+          "name": "lost_mass_formula",
+          "line": 48
+        },
+        {
+          "name": "complete_event_mass",
+          "line": 55
+        },
+        {
+          "name": "correctedKet_eq",
+          "line": 63
+        },
+        {
+          "name": "corrected_density_positive",
+          "line": 72
+        },
+        {
+          "name": "corrected_density_trace",
+          "line": 75
+        },
+        {
+          "name": "miscorrection_overlap",
+          "line": 80
+        },
+        {
+          "name": "row_density_formula",
+          "line": 97
+        },
+        {
+          "name": "bell_projector_trace",
+          "line": 107
+        },
+        {
+          "name": "labelMixture_positive",
+          "line": 111
+        },
+        {
+          "name": "labelMixture_trace",
+          "line": 116
+        },
+        {
+          "name": "labelMixture_overlap",
+          "line": 120
+        },
+        {
+          "name": "accepted_density_formula",
+          "line": 129
+        },
+        {
+          "name": "accepted_density_trace",
+          "line": 150
+        },
+        {
+          "name": "normalized_accepted_eq",
+          "line": 155
+        },
+        {
+          "name": "conditional_matrix",
+          "line": 167
+        },
+        {
+          "name": "conditional_fidelity",
+          "line": 171
+        },
+        {
+          "name": "success_weighted_overlap",
+          "line": 176
+        },
+        {
+          "name": "conditional_after_depolarization",
+          "line": 181
+        },
+        {
+          "name": "no_detection_no_success",
+          "line": 188
+        },
+        {
+          "name": "detection_does_not_change_conditional",
+          "line": 192
+        },
+        {
+          "name": "correctOuter_double",
+          "line": 198
+        },
+        {
+          "name": "pure_pair_double",
+          "line": 203
+        },
+        {
+          "name": "raw_branch_density",
+          "line": 209
+        },
+        {
+          "name": "circuit_accepted_density_sound",
+          "line": 221
+        },
+        {
+          "name": "zero_detection_not_conditionable",
+          "line": 231
+        },
+        {
+          "name": "reported_marginals_ignore_corruption",
+          "line": 236
+        },
+        {
+          "name": "verification_suite",
+          "line": 255
+        }
+      ]
+    },
+    {
+      "module": "QuantumNoisyVisibility",
+      "path": "Verification/QuantumNoisyVisibility.lean",
+      "sha256": "678c8867fb45550a1dae3d5b423bcd8bd3fc7bc315bf7911509e035466dc7602",
+      "named_theorems": [
+        {
+          "name": "uniform_density",
+          "line": 24
+        },
+        {
+          "name": "fully_mixed_input",
+          "line": 28
+        },
+        {
+          "name": "ideal_accepted",
+          "line": 36
+        },
+        {
+          "name": "fully_mixed_output",
+          "line": 42
+        },
+        {
+          "name": "isotropic_mix",
+          "line": 53
+        },
+        {
+          "name": "isotropic_trace",
+          "line": 64
+        },
+        {
+          "name": "depolarizing_isotropic",
+          "line": 66
+        },
+        {
+          "name": "common_post_aggregate",
+          "line": 80
+        },
+        {
+          "name": "noisy_visibility_matrix",
+          "line": 92
+        },
+        {
+          "name": "noisy_visibility_fidelity",
+          "line": 102
+        },
+        {
+          "name": "noisy_visibility_trace",
+          "line": 109
+        },
+        {
+          "name": "isotropic_fidelity_nonincreasing",
+          "line": 114
+        },
+        {
+          "name": "cptp_can_increase_target_fidelity",
+          "line": 124
+        },
+        {
+          "name": "verification_suite",
+          "line": 152
+        }
+      ]
+    },
+    {
+      "module": "QuantumNullConditioning",
+      "path": "Verification/QuantumNullConditioning.lean",
+      "sha256": "e58a2a95e52db94d6d81ee5f3344df928f5ef59fdd6f8e96fd363d3ca76fc13b",
+      "named_theorems": [
+        {
+          "name": "psd_trace_real",
+          "line": 21
+        },
+        {
+          "name": "psd_zero_probability_iff",
+          "line": 27
+        },
+        {
+          "name": "micro_zero_iff",
+          "line": 37
+        },
+        {
+          "name": "outcome_zero_iff",
+          "line": 41
+        },
+        {
+          "name": "normalize_positive",
+          "line": 49
+        },
+        {
+          "name": "normalize_trace_one",
+          "line": 56
+        },
+        {
+          "name": "normalize_null",
+          "line": 61
+        },
+        {
+          "name": "normalize_reconstruct",
+          "line": 64
+        },
+        {
+          "name": "micro_reconstruct",
+          "line": 92
+        },
+        {
+          "name": "outcome_reconstruct",
+          "line": 97
+        },
+        {
+          "name": "impossible_outcome",
+          "line": 101
+        },
+        {
+          "name": "reported_barycenter",
+          "line": 106
+        },
+        {
+          "name": "positive_reported_barycenter",
+          "line": 112
+        },
+        {
+          "name": "accepted_reconstruct",
+          "line": 129
+        },
+        {
+          "name": "conditional_v411_refinement",
+          "line": 133
+        },
+        {
+          "name": "conditional_barycenter",
+          "line": 141
+        },
+        {
+          "name": "conditional_weights_total",
+          "line": 152
+        },
+        {
+          "name": "accepted_null_all_reports",
+          "line": 157
+        },
+        {
+          "name": "ghz_psi_micro_null",
+          "line": 168
+        },
+        {
+          "name": "ghz_ideal_report_null",
+          "line": 174
+        },
+        {
+          "name": "zero_true_branch_nonzero_report",
+          "line": 192
+        },
+        {
+          "name": "verification_suite",
+          "line": 215
+        }
+      ]
+    },
+    {
+      "module": "QuantumOrderedNoiseComposition",
+      "path": "Verification/QuantumOrderedNoiseComposition.lean",
+      "sha256": "a2424cad594e532a69300cf0d88e130413cbc5fc046a47d4465a26c7012eb1c1",
+      "named_theorems": [
+        {
+          "name": "compose_map",
+          "line": 31
+        },
+        {
+          "name": "noisy_gate_map",
+          "line": 66
+        },
+        {
+          "name": "pullback_compose_map",
+          "line": 70
+        },
+        {
+          "name": "nested_pullback_map",
+          "line": 75
+        },
+        {
+          "name": "direct_map_run",
+          "line": 116
+        },
+        {
+          "name": "run_append",
+          "line": 124
+        },
+        {
+          "name": "path_factorization",
+          "line": 131
+        },
+        {
+          "name": "circuit_factorization",
+          "line": 144
+        },
+        {
+          "name": "run_effective",
+          "line": 150
+        },
+        {
+          "name": "run_trace",
+          "line": 155
+        },
+        {
+          "name": "run_positive",
+          "line": 158
+        },
+        {
+          "name": "singleton_effective",
+          "line": 163
+        },
+        {
+          "name": "two_stage_effective",
+          "line": 169
+        },
+        {
+          "name": "verification_suite",
+          "line": 185
+        }
+      ]
+    },
+    {
+      "module": "QuantumOutcomeInstrument",
+      "path": "Verification/QuantumOutcomeInstrument.lean",
+      "sha256": "e90f19c8fc9e7a98b4cc9d47941e000311c2d796e362e6273dffa29e8b3cc670",
+      "named_theorems": [
+        {
+          "name": "lift_family",
+          "line": 30
+        },
+        {
+          "name": "family_cp",
+          "line": 40
+        },
+        {
+          "name": "micro_kraus",
+          "line": 54
+        },
+        {
+          "name": "reported_family",
+          "line": 59
+        },
+        {
+          "name": "reject_family",
+          "line": 64
+        },
+        {
+          "name": "micro_cp",
+          "line": 69
+        },
+        {
+          "name": "reported_cp",
+          "line": 76
+        },
+        {
+          "name": "reject_cp",
+          "line": 80
+        },
+        {
+          "name": "micro_positive",
+          "line": 84
+        },
+        {
+          "name": "reported_positive",
+          "line": 89
+        },
+        {
+          "name": "reported_sum",
+          "line": 93
+        },
+        {
+          "name": "outcome_cp",
+          "line": 104
+        },
+        {
+          "name": "outcome_positive",
+          "line": 109
+        },
+        {
+          "name": "outcome_add",
+          "line": 115
+        },
+        {
+          "name": "outcome_smul",
+          "line": 120
+        },
+        {
+          "name": "outcome_total",
+          "line": 134
+        },
+        {
+          "name": "outcome_total_trace",
+          "line": 140
+        },
+        {
+          "name": "outcome_trace_nonincreasing",
+          "line": 144
+        },
+        {
+          "name": "full_detection_no_reject",
+          "line": 152
+        },
+        {
+          "name": "outcome_probability_nonnegative",
+          "line": 162
+        },
+        {
+          "name": "outcome_probability_total",
+          "line": 166
+        },
+        {
+          "name": "outcome_probability_le_one",
+          "line": 171
+        },
+        {
+          "name": "reported_probability_sum",
+          "line": 177
+        },
+        {
+          "name": "reject_probability",
+          "line": 182
+        },
+        {
+          "name": "micro_probability_born",
+          "line": 188
+        },
+        {
+          "name": "reported_probability_born",
+          "line": 193
+        },
+        {
+          "name": "verification_suite",
+          "line": 206
+        }
+      ]
+    },
+    {
+      "module": "QuantumPauliDensityBridge",
+      "path": "Verification/QuantumPauliDensityBridge.lean",
+      "sha256": "42d47dd9660966911d85be6abb30fcbe7c9ef0ca872703b0a0e8a14ab2e13784",
+      "named_theorems": [
+        {
+          "name": "toComplex_add",
+          "line": 27
+        },
+        {
+          "name": "toComplex_mul",
+          "line": 30
+        },
+        {
+          "name": "toComplex_conjugate",
+          "line": 36
+        },
+        {
+          "name": "toComplex_injective",
+          "line": 39
+        },
+        {
+          "name": "sumBasis_embedding",
+          "line": 55
+        },
+        {
+          "name": "embed_multiplication",
+          "line": 67
+        },
+        {
+          "name": "embed_adjoint",
+          "line": 73
+        },
+        {
+          "name": "pauli_complex_matrix_sound",
+          "line": 78
+        },
+        {
+          "name": "cnot_complex_conjugation_sound",
+          "line": 82
+        },
+        {
+          "name": "probability_bounds",
+          "line": 91
+        },
+        {
+          "name": "maximallyMixed_positive",
+          "line": 104
+        },
+        {
+          "name": "maximallyMixed_trace",
+          "line": 107
+        },
+        {
+          "name": "depolarize_positive",
+          "line": 114
+        },
+        {
+          "name": "depolarize_trace",
+          "line": 119
+        },
+        {
+          "name": "targetOverlap_add",
+          "line": 127
+        },
+        {
+          "name": "targetOverlap_real_smul",
+          "line": 131
+        },
+        {
+          "name": "maximallyMixed_overlap",
+          "line": 140
+        },
+        {
+          "name": "depolarize_overlap",
+          "line": 147
+        },
+        {
+          "name": "channelNumerator_matrix_sound",
+          "line": 154
+        },
+        {
+          "name": "channelFloor_matrix_error",
+          "line": 162
+        },
+        {
+          "name": "correctedSwap_overlap",
+          "line": 181
+        },
+        {
+          "name": "born_and_noisy_conditional_fidelity",
+          "line": 190
+        },
+        {
+          "name": "verification_suite",
+          "line": 219
+        }
+      ]
+    },
+    {
+      "module": "QuantumPauliMatrix",
+      "path": "Verification/QuantumPauliMatrix.lean",
+      "sha256": "792e67953446cf623d408c34d41dec7f4815f54876be1ec080b2cb3a9b963161",
+      "named_theorems": [
+        {
+          "name": "ga_assoc",
+          "line": 16
+        },
+        {
+          "name": "ga_comm",
+          "line": 18
+        },
+        {
+          "name": "gm_assoc",
+          "line": 20
+        },
+        {
+          "name": "gm_comm",
+          "line": 22
+        },
+        {
+          "name": "gm_add",
+          "line": 24
+        },
+        {
+          "name": "gm_zero",
+          "line": 26
+        },
+        {
+          "name": "gm_one",
+          "line": 27
+        },
+        {
+          "name": "sum_scale",
+          "line": 39
+        },
+        {
+          "name": "four_mul",
+          "line": 44
+        },
+        {
+          "name": "sum_tensor_term",
+          "line": 46
+        },
+        {
+          "name": "tensor_mul",
+          "line": 53
+        },
+        {
+          "name": "scale_mul",
+          "line": 60
+        },
+        {
+          "name": "tensor_scales",
+          "line": 64
+        },
+        {
+          "name": "scale_scale",
+          "line": 68
+        },
+        {
+          "name": "phase_one_value",
+          "line": 84
+        },
+        {
+          "name": "phase_mul_sound",
+          "line": 85
+        },
+        {
+          "name": "axis_mul_sound",
+          "line": 108
+        },
+        {
+          "name": "scalar_identity_mul",
+          "line": 130
+        },
+        {
+          "name": "mulPauli4Q_matrix_sound",
+          "line": 131
+        },
+        {
+          "name": "cnot_matrix_sound",
+          "line": 144
+        },
+        {
+          "name": "channel_numerator_bounds",
+          "line": 157
+        },
+        {
+          "name": "channel_rounding_bound",
+          "line": 170
+        },
+        {
+          "name": "cnot_self_adjoint",
+          "line": 178
+        },
+        {
+          "name": "cnot_involutive_matrix",
+          "line": 182
+        },
+        {
+          "name": "cnot_conjugation_sound",
+          "line": 186
+        },
+        {
+          "name": "noncommuting_product_keeps_imaginary_phase",
+          "line": 193
+        },
+        {
+          "name": "channel_zero_noise",
+          "line": 197
+        },
+        {
+          "name": "channel_full_noise",
+          "line": 201
+        },
+        {
+          "name": "verification_suite",
+          "line": 215
+        }
+      ]
+    },
+    {
+      "module": "QuantumPersistentEnvironment",
+      "path": "Verification/QuantumPersistentEnvironment.lean",
+      "sha256": "93159a411e4c1aae485a89e37b2ee3f85dca6b2ce723e21a198a22e0a75c1529",
+      "named_theorems": [
+        {
+          "name": "insert_isometry",
+          "line": 24
+        },
+        {
+          "name": "selectors_complete",
+          "line": 29
+        },
+        {
+          "name": "selector_sandwich",
+          "line": 39
+        },
+        {
+          "name": "trace_environment_family",
+          "line": 44
+        },
+        {
+          "name": "trace_environment_trace",
+          "line": 50
+        },
+        {
+          "name": "trace_environment_positive",
+          "line": 55
+        },
+        {
+          "name": "prepare_entry",
+          "line": 66
+        },
+        {
+          "name": "trace_environment_prepare",
+          "line": 72
+        },
+        {
+          "name": "prepare_positive",
+          "line": 78
+        },
+        {
+          "name": "prepare_trace",
+          "line": 81
+        },
+        {
+          "name": "reduced_map",
+          "line": 100
+        },
+        {
+          "name": "persistent_map",
+          "line": 111
+        },
+        {
+          "name": "reset_run_nil",
+          "line": 122
+        },
+        {
+          "name": "reset_run_cons",
+          "line": 124
+        },
+        {
+          "name": "joint_run_fresh",
+          "line": 135
+        },
+        {
+          "name": "persistent_equals_reset_of_fresh",
+          "line": 145
+        },
+        {
+          "name": "verification_suite",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "module": "QuantumRectangularSwapping",
+      "path": "Verification/QuantumRectangularSwapping.lean",
+      "sha256": "dbe7a68178e4395b2ff2fb3122cdb7260ded7f3494ca9b616e21517f318dd31d",
+      "named_theorems": [
+        {
+          "name": "reduction_amplitudes",
+          "line": 43
+        },
+        {
+          "name": "correction_amplitudes",
+          "line": 50
+        },
+        {
+          "name": "branch_amplitudes",
+          "line": 58
+        },
+        {
+          "name": "correction_unitary",
+          "line": 62
+        },
+        {
+          "name": "reduction_effect",
+          "line": 75
+        },
+        {
+          "name": "branch_effect",
+          "line": 82
+        },
+        {
+          "name": "central_projector_positive",
+          "line": 92
+        },
+        {
+          "name": "bell_completeness",
+          "line": 96
+        },
+        {
+          "name": "central_completeness",
+          "line": 103
+        },
+        {
+          "name": "sandwich_pure",
+          "line": 115
+        },
+        {
+          "name": "branch_pure_density",
+          "line": 121
+        },
+        {
+          "name": "component_refinement",
+          "line": 127
+        },
+        {
+          "name": "sandwich_trace",
+          "line": 134
+        },
+        {
+          "name": "verification_suite",
+          "line": 150
+        }
+      ]
+    },
+    {
+      "module": "QuantumSelectiveSwapping",
+      "path": "Verification/QuantumSelectiveSwapping.lean",
+      "sha256": "4d4d1ce120daf9ab6cc95ebcaba019c071dd9036b2429c33ebcb8729b75ee1bd",
+      "named_theorems": [
+        {
+          "name": "joint_formula",
+          "line": 23
+        },
+        {
+          "name": "joint_nonnegative",
+          "line": 28
+        },
+        {
+          "name": "accepted_mass_formula",
+          "line": 38
+        },
+        {
+          "name": "accepted_mass_nonnegative",
+          "line": 42
+        },
+        {
+          "name": "complete_event_mass",
+          "line": 45
+        },
+        {
+          "name": "accepted_mass_le_one",
+          "line": 50
+        },
+        {
+          "name": "row_positive",
+          "line": 59
+        },
+        {
+          "name": "row_trace",
+          "line": 64
+        },
+        {
+          "name": "row_overlap",
+          "line": 68
+        },
+        {
+          "name": "accepted_positive",
+          "line": 77
+        },
+        {
+          "name": "accepted_density_rows",
+          "line": 81
+        },
+        {
+          "name": "accepted_trace",
+          "line": 85
+        },
+        {
+          "name": "circuit_density_sound",
+          "line": 95
+        },
+        {
+          "name": "correct_mass_bounds",
+          "line": 108
+        },
+        {
+          "name": "accepted_overlap",
+          "line": 118
+        },
+        {
+          "name": "conditional_fidelity",
+          "line": 131
+        },
+        {
+          "name": "conditional_fidelity_bounds",
+          "line": 139
+        },
+        {
+          "name": "constant_rows_conditional",
+          "line": 146
+        },
+        {
+          "name": "symmetric_confusion_rows",
+          "line": 156
+        },
+        {
+          "name": "symmetric_confusion_loss_invariant",
+          "line": 161
+        },
+        {
+          "name": "symmetric_joint",
+          "line": 166
+        },
+        {
+          "name": "symmetric_mass",
+          "line": 170
+        },
+        {
+          "name": "symmetric_density",
+          "line": 176
+        },
+        {
+          "name": "symmetric_conditional",
+          "line": 180
+        },
+        {
+          "name": "biased_mass",
+          "line": 202
+        },
+        {
+          "name": "biased_correct_mass",
+          "line": 207
+        },
+        {
+          "name": "biased_positive",
+          "line": 210
+        },
+        {
+          "name": "selection_bias_counterexample",
+          "line": 216
+        },
+        {
+          "name": "zero_mass_iff",
+          "line": 224
+        },
+        {
+          "name": "zero_mass_zero_density",
+          "line": 232
+        },
+        {
+          "name": "fidelity_eq_iff_balance",
+          "line": 238
+        },
+        {
+          "name": "constant_accuracy_fidelity",
+          "line": 249
+        },
+        {
+          "name": "verification_suite",
+          "line": 268
+        }
+      ]
+    },
+    {
+      "module": "QuantumSwappingInstrument",
+      "path": "Verification/QuantumSwappingInstrument.lean",
+      "sha256": "fc161f2047a1ff7b46c39046cd72eed56ce3ee71d23a27502173e1f2d3b061a4",
+      "named_theorems": [
+        {
+          "name": "weight_nonnegative",
+          "line": 21
+        },
+        {
+          "name": "weight_sum",
+          "line": 24
+        },
+        {
+          "name": "sqrt_sandwich",
+          "line": 36
+        },
+        {
+          "name": "accepted_kraus",
+          "line": 44
+        },
+        {
+          "name": "accepted_add",
+          "line": 48
+        },
+        {
+          "name": "accepted_smul",
+          "line": 52
+        },
+        {
+          "name": "accepted_sum",
+          "line": 66
+        },
+        {
+          "name": "accepted_real_smul",
+          "line": 70
+        },
+        {
+          "name": "ensemble_independent",
+          "line": 81
+        },
+        {
+          "name": "extension_kraus",
+          "line": 95
+        },
+        {
+          "name": "completely_positive",
+          "line": 107
+        },
+        {
+          "name": "accepted_positive",
+          "line": 114
+        },
+        {
+          "name": "kraus_effect",
+          "line": 124
+        },
+        {
+          "name": "effect_formula",
+          "line": 132
+        },
+        {
+          "name": "effect_positive",
+          "line": 137
+        },
+        {
+          "name": "effect_le_identity",
+          "line": 142
+        },
+        {
+          "name": "full_detection_effect",
+          "line": 150
+        },
+        {
+          "name": "accepted_trace",
+          "line": 154
+        },
+        {
+          "name": "lost_positive",
+          "line": 165
+        },
+        {
+          "name": "lost_trace",
+          "line": 170
+        },
+        {
+          "name": "trace_balance",
+          "line": 179
+        },
+        {
+          "name": "trace_nonincreasing",
+          "line": 184
+        },
+        {
+          "name": "trace_preserving_full_detection",
+          "line": 192
+        },
+        {
+          "name": "acceptance_bounds",
+          "line": 204
+        },
+        {
+          "name": "trace_eq_probability",
+          "line": 209
+        },
+        {
+          "name": "product_component_refinement",
+          "line": 224
+        },
+        {
+          "name": "bell_diagonal_refinement",
+          "line": 237
+        },
+        {
+          "name": "bell_diagonal_probability",
+          "line": 246
+        },
+        {
+          "name": "bell_diagonal_conditional",
+          "line": 253
+        },
+        {
+          "name": "born_nonnegative",
+          "line": 267
+        },
+        {
+          "name": "born_total",
+          "line": 271
+        },
+        {
+          "name": "acceptance_born_formula",
+          "line": 277
+        },
+        {
+          "name": "ghz_born_probabilities",
+          "line": 293
+        },
+        {
+          "name": "ghz_acceptance_not_uniform_average",
+          "line": 304
+        },
+        {
+          "name": "verification_suite",
+          "line": 325
+        }
+      ]
+    },
+    {
+      "module": "QuantumTwoQubitCPTP",
+      "path": "Verification/QuantumTwoQubitCPTP.lean",
+      "sha256": "d19eade99b8bc2264562c5434e9f210f8c22efc89914b9a9cc9a7b4f2bda1c30",
+      "named_theorems": [
+        {
+          "name": "unit_sandwich",
+          "line": 22
+        },
+        {
+          "name": "unit_sum",
+          "line": 30
+        },
+        {
+          "name": "unit_adjoint",
+          "line": 37
+        },
+        {
+          "name": "unit_reverse_product",
+          "line": 42
+        },
+        {
+          "name": "diagonal_unit_sum",
+          "line": 48
+        },
+        {
+          "name": "sqrt_sandwich",
+          "line": 65
+        },
+        {
+          "name": "kraus_exact",
+          "line": 72
+        },
+        {
+          "name": "kraus_none_norm",
+          "line": 84
+        },
+        {
+          "name": "kraus_some_norm",
+          "line": 92
+        },
+        {
+          "name": "kraus_completeness",
+          "line": 100
+        },
+        {
+          "name": "linearChannel_trace",
+          "line": 110
+        },
+        {
+          "name": "linearChannel_add",
+          "line": 115
+        },
+        {
+          "name": "linearChannel_smul",
+          "line": 120
+        },
+        {
+          "name": "state_map_agrees",
+          "line": 126
+        },
+        {
+          "name": "extension_kraus",
+          "line": 140
+        },
+        {
+          "name": "completely_positive",
+          "line": 152
+        },
+        {
+          "name": "extension_trace_preserving",
+          "line": 158
+        },
+        {
+          "name": "verification_suite",
+          "line": 179
+        }
+      ]
+    }
+  ]
+}

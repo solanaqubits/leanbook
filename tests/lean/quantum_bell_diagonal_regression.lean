@@ -30,7 +30,8 @@ example (p q : BellDistribution) (model : Readout) :
   circuit_density_sound p q model
 
 example (p q : BellDistribution) (model : Readout) :
-    eventMass p q model = QuantumSelectiveSwapping.acceptedMass model := event_mass_formula p q model
+    eventMass p q model = QuantumSelectiveSwapping.acceptedMass model :=
+  event_mass_formula p q model
 
 example (p q : BellDistribution) (model : Readout)
     (h : 0 < QuantumSelectiveSwapping.acceptedMass model) :

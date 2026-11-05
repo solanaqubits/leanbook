@@ -1,4 +1,5 @@
 """Kernel regressions for event loss, wrong readout labels and conditional quantum states."""
+from tools.lean_invoke import elaborate_command
 import os
 from pathlib import Path
 import shutil
@@ -15,7 +16,7 @@ class QuantumNoisySwappingLiveTests(unittest.TestCase):
         lake = shutil.which("lake")
         self.assertIsNotNone(lake)
         result = subprocess.run(
-            [lake, "env", "lean", "-j1", "-DwarningAsError=true", f"tests/lean/{name}.lean"],
+            elaborate_command(f"tests/lean/{name}.lean", lake=lake),
             cwd=ROOT, text=True, capture_output=True, timeout=180)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

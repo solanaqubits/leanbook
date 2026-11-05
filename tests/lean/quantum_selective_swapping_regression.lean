@@ -49,18 +49,21 @@ example (model : Readout) (h : 0 < QuantumSelectiveSwapping.acceptedMass model)
 example (model : Readout) (old : ReadoutModel)
     (hc : model.confusion = QuantumNoisyBellInstrument.confusion old)
     (h : 0 < QuantumSelectiveSwapping.acceptedMass model) :
-    (QuantumSelectiveSwapping.conditionalState model h).matrix = QuantumNoisySwapping.labelMixture old :=
+    (QuantumSelectiveSwapping.conditionalState model h).matrix =
+      QuantumNoisySwapping.labelMixture old :=
   symmetric_confusion_loss_invariant model old hc h
 
 example : QuantumSelectiveSwapping.acceptedMass (biasedReadout true) = (1 / 4 : ℝ) :=
   biased_mass true
 
 example : targetOverlap
-    (QuantumSelectiveSwapping.conditionalState (biasedReadout false) (biased_positive false)).matrix =
+    (QuantumSelectiveSwapping.conditionalState
+      (biasedReadout false) (biased_positive false)).matrix =
     (1 / 4 : ℂ) := selection_bias_counterexample.1
 
 example : targetOverlap
-    (QuantumSelectiveSwapping.conditionalState (biasedReadout true) (biased_positive true)).matrix = 1 :=
+    (QuantumSelectiveSwapping.conditionalState
+      (biasedReadout true) (biased_positive true)).matrix = 1 :=
   selection_bias_counterexample.2.1
 
 example : correctMass (biasedReadout false) = correctMass (biasedReadout true) :=
