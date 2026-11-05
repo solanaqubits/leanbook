@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: de770e6b744c1a60ccb0359c1d4d35a9b121e095683eb774f3abc95b29464818
+source_sha256: 6030e0fa37436c3e8af2f5cb068c69bff7868411e0c2dffc2c8f299b0e5bbafc
 novelty: not-assessed
 status: reviewed
 ---
@@ -280,3 +280,5 @@ ProofDAGFullSuite includes the rational certificate kernel and normalization
 completeness suites. The byte-to-verdict module is imported as part of the
 [ALCC pipeline](../../docs/alcc.en.md). Imported declarations retain their
 individual assumptions; registration supplies no OS or input-authenticity guarantee.
+
+The registry includes the quantum instrument and retained-environment contracts through [Quantum v4.20](../../docs/quantum-v4.20.md).

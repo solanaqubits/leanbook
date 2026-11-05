@@ -1141,3 +1141,9 @@ See the [quantum/hardware contract publication](docs/quantum-series-sync.en.md) 
 ## Provenance runtime and audit preparation
 
 [Source/export boundaries and test setup](docs/provenance-test-setup.en.md) · [SQLite adapter](tools/challenge_store/README.md) · [Runtime qualification](tools/challenge_store/RUNTIME.en.md). Native acceptance requires a separately qualified host; ordinary CI does not provide it.
+
+## Quantum v4.20 component update
+
+[Scope and proof boundaries](docs/quantum-v4.20.md): Bell instruments, gate-noise
+composition, retained memory and arbitrary fixed mixed environment preparation.
+This component update is not a new whole-library beta checkpoint.

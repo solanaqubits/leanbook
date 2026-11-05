@@ -1,3 +1,34 @@
+import Verification.QuantumTwoQubitCPTP
+import Verification.QuantumSwappingInstrument
+import Verification.QuantumSelectiveSwapping
+import Verification.QuantumRectangularSwapping
+import Verification.QuantumPersistentEnvironment
+import Verification.QuantumPauliMatrix
+import Verification.QuantumPauliDensityBridge
+import Verification.QuantumOutcomeInstrument
+import Verification.QuantumOrderedNoiseComposition
+import Verification.QuantumNullConditioning
+import Verification.QuantumNoisyVisibility
+import Verification.QuantumNoisySwapping
+import Verification.QuantumNoisyBellInstrument
+import Verification.QuantumNoiseTransport
+import Verification.QuantumMultiStageBSM
+import Verification.QuantumMixedMemoryBSM
+import Verification.QuantumMixedEnvironment
+import Verification.QuantumMemoryCounterexample
+import Verification.QuantumMemoryBSM
+import Verification.QuantumLocalPostNoise
+import Verification.QuantumLocalNoisySwapping
+import Verification.QuantumInternalBSMNoise
+import Verification.QuantumGeneralBellReadout
+import Verification.QuantumGateNoiseComposition
+import Verification.QuantumEnvironmentExtension
+import Verification.QuantumCentralDepolarization
+import Verification.QuantumBinaryMemoryCoupling
+import Verification.QuantumBellDiagonalSwapping
+import Verification.QuantumBellDiagonalInputs
+import Verification.QuantumBellCircuitRefinement
+import Verification.QuantumBSMMemoryWitness
 import Verification.DeFiLendingUtilizationTransitions
 import Verification.DeFiFiniteRouteSelection
 import Verification.DeFiStatefulAMMRouting
@@ -903,6 +934,37 @@ structure QuantumPhysicsFullSuite : Prop where
   quantum_state_availability : QuantumStateAvailabilityContract.QuantumStateAvailabilitySuite
   entanglement_swapping_purification : QuantumEntanglementSwappingPurificationSuite
   steane_code : QuantumSteaneCodeErrorCorrectionContract.QuantumSteaneCodeErrorCorrectionSuite
+  bsm_memory_witness : QuantumBSMMemoryWitness.QuantumBSMMemoryWitnessSuite
+  bell_circuit_refinement : QuantumBellCircuitRefinement.QuantumBellCircuitRefinementSuite
+  bell_diagonal_inputs : QuantumBellDiagonalInputs.QuantumBellDiagonalInputsSuite
+  bell_diagonal_swapping : QuantumBellDiagonalSwapping.QuantumBellDiagonalSwappingSuite
+  binary_memory_coupling : QuantumBinaryMemoryCoupling.QuantumBinaryMemoryCouplingSuite
+  central_depolarization : QuantumCentralDepolarization.QuantumCentralDepolarizationSuite
+  environment_extension : QuantumEnvironmentExtension.QuantumEnvironmentExtensionSuite
+  gate_noise_composition : QuantumGateNoiseComposition.QuantumGateNoiseCompositionSuite
+  general_bell_readout : QuantumGeneralBellReadout.QuantumGeneralBellReadoutSuite
+  internal_bsm_noise : QuantumInternalBSMNoise.QuantumInternalBSMNoiseSuite
+  local_noisy_swapping : QuantumLocalNoisySwapping.QuantumLocalNoisySwappingSuite
+  local_post_noise : QuantumLocalPostNoise.QuantumLocalPostNoiseSuite
+  memory_bsm : QuantumMemoryBSM.QuantumMemoryBSMSuite
+  memory_counterexample : QuantumMemoryCounterexample.QuantumMemoryCounterexampleSuite
+  mixed_environment : QuantumMixedEnvironment.QuantumMixedEnvironmentSuite
+  mixed_memory_bsm : QuantumMixedMemoryBSM.QuantumMixedMemoryBSMSuite
+  multi_stage_bsm : QuantumMultiStageBSM.QuantumMultiStageBSMSuite
+  noise_transport : QuantumNoiseTransport.QuantumNoiseTransportSuite
+  noisy_bell_instrument : QuantumNoisyBellInstrument.QuantumNoisyBellInstrumentSuite
+  noisy_swapping : QuantumNoisySwapping.QuantumNoisySwappingSuite
+  noisy_visibility : QuantumNoisyVisibility.QuantumNoisyVisibilitySuite
+  null_conditioning : QuantumNullConditioning.QuantumNullConditioningSuite
+  ordered_noise_composition : QuantumOrderedNoiseComposition.QuantumOrderedNoiseCompositionSuite
+  outcome_instrument : QuantumOutcomeInstrument.QuantumOutcomeInstrumentSuite
+  pauli_density_bridge : QuantumPauliDensityBridge.QuantumPauliDensityBridgeSuite
+  pauli_matrix : QuantumPauliMatrix.QuantumPauliMatrixSuite
+  persistent_environment : QuantumPersistentEnvironment.QuantumPersistentEnvironmentSuite
+  rectangular_swapping : QuantumRectangularSwapping.QuantumRectangularSwappingSuite
+  selective_swapping : QuantumSelectiveSwapping.QuantumSelectiveSwappingSuite
+  swapping_instrument : QuantumSwappingInstrument.QuantumSwappingInstrumentSuite
+  two_qubit_cptp : QuantumTwoQubitCPTP.QuantumTwoQubitCPTPSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1027,6 +1089,37 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   entanglement_swapping_purification := by
     exact QuantumEntanglementSwappingPurificationContract.verification_suite
   steane_code := QuantumSteaneCodeErrorCorrectionContract.verification_suite
+  bsm_memory_witness := QuantumBSMMemoryWitness.verification_suite
+  bell_circuit_refinement := QuantumBellCircuitRefinement.verification_suite
+  bell_diagonal_inputs := QuantumBellDiagonalInputs.verification_suite
+  bell_diagonal_swapping := QuantumBellDiagonalSwapping.verification_suite
+  binary_memory_coupling := QuantumBinaryMemoryCoupling.verification_suite
+  central_depolarization := QuantumCentralDepolarization.verification_suite
+  environment_extension := QuantumEnvironmentExtension.verification_suite
+  gate_noise_composition := QuantumGateNoiseComposition.verification_suite
+  general_bell_readout := QuantumGeneralBellReadout.verification_suite
+  internal_bsm_noise := QuantumInternalBSMNoise.verification_suite
+  local_noisy_swapping := QuantumLocalNoisySwapping.verification_suite
+  local_post_noise := QuantumLocalPostNoise.verification_suite
+  memory_bsm := QuantumMemoryBSM.verification_suite
+  memory_counterexample := QuantumMemoryCounterexample.verification_suite
+  mixed_environment := QuantumMixedEnvironment.verification_suite
+  mixed_memory_bsm := QuantumMixedMemoryBSM.verification_suite
+  multi_stage_bsm := QuantumMultiStageBSM.verification_suite
+  noise_transport := QuantumNoiseTransport.verification_suite
+  noisy_bell_instrument := QuantumNoisyBellInstrument.verification_suite
+  noisy_swapping := QuantumNoisySwapping.verification_suite
+  noisy_visibility := QuantumNoisyVisibility.verification_suite
+  null_conditioning := QuantumNullConditioning.verification_suite
+  ordered_noise_composition := QuantumOrderedNoiseComposition.verification_suite
+  outcome_instrument := QuantumOutcomeInstrument.verification_suite
+  pauli_density_bridge := QuantumPauliDensityBridge.verification_suite
+  pauli_matrix := QuantumPauliMatrix.verification_suite
+  persistent_environment := QuantumPersistentEnvironment.verification_suite
+  rectangular_swapping := QuantumRectangularSwapping.verification_suite
+  selective_swapping := QuantumSelectiveSwapping.verification_suite
+  swapping_instrument := QuantumSwappingInstrument.verification_suite
+  two_qubit_cptp := QuantumTwoQubitCPTP.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

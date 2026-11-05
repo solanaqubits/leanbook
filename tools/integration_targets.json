@@ -574,7 +574,7 @@
   },
   "Verification.MasterHundredRegistry": {
     "suite_struct": "MasterHundredFormalSuite",
-    "suite_type": "MasterHundredFormalSuite.{u₁, u₂, u₃, u₄, u₅,\n    uFRI, uHopf, uRaft1, uRaft2, uRaft3}",
+    "suite_type": "MasterHundredFormalSuite.{u\u2081, u\u2082, u\u2083, u\u2084, u\u2085,\n    uFRI, uHopf, uRaft1, uRaft2, uRaft3}",
     "parent": "VerificationMasterRegistry",
     "field": "master_hundred_registry",
     "constructor": "verification_master_registry",
@@ -767,7 +767,7 @@
   },
   "Verification.CryptoPedersenHomomorphicSum": {
     "suite_struct": "CryptoPedersenHomomorphicSumSuite",
-    "suite_type": "CryptoPedersenHomomorphicSum.CryptoPedersenHomomorphicSumSuite.{u₁}",
+    "suite_type": "CryptoPedersenHomomorphicSum.CryptoPedersenHomomorphicSumSuite.{u\u2081}",
     "parent": "CryptoFullSuite",
     "field": "pedersen_homomorphic_sum",
     "constructor": "crypto_full_master_suite",
@@ -776,7 +776,7 @@
   },
   "Verification.CryptoSchnorrIdentification": {
     "suite_struct": "CryptoSchnorrIdentificationSuite",
-    "suite_type": "CryptoSchnorrIdentification.CryptoSchnorrIdentificationSuite.{u₁}",
+    "suite_type": "CryptoSchnorrIdentification.CryptoSchnorrIdentificationSuite.{u\u2081}",
     "parent": "CryptoFullSuite",
     "field": "schnorr_identification",
     "constructor": "crypto_full_master_suite",
@@ -2347,6 +2347,285 @@
     "field": "lending_step",
     "constructor": "finance_risk_full_master_suite",
     "proof": "DeFiLendingUtilizationTransitions.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumBSMMemoryWitness": {
+    "suite_struct": "QuantumBSMMemoryWitnessSuite",
+    "suite_type": "QuantumBSMMemoryWitness.QuantumBSMMemoryWitnessSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "bsm_memory_witness",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumBSMMemoryWitness.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumBellCircuitRefinement": {
+    "suite_struct": "QuantumBellCircuitRefinementSuite",
+    "suite_type": "QuantumBellCircuitRefinement.QuantumBellCircuitRefinementSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "bell_circuit_refinement",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumBellCircuitRefinement.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumBellDiagonalInputs": {
+    "suite_struct": "QuantumBellDiagonalInputsSuite",
+    "suite_type": "QuantumBellDiagonalInputs.QuantumBellDiagonalInputsSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "bell_diagonal_inputs",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumBellDiagonalInputs.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumBellDiagonalSwapping": {
+    "suite_struct": "QuantumBellDiagonalSwappingSuite",
+    "suite_type": "QuantumBellDiagonalSwapping.QuantumBellDiagonalSwappingSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "bell_diagonal_swapping",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumBellDiagonalSwapping.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumBinaryMemoryCoupling": {
+    "suite_struct": "QuantumBinaryMemoryCouplingSuite",
+    "suite_type": "QuantumBinaryMemoryCoupling.QuantumBinaryMemoryCouplingSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "binary_memory_coupling",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumBinaryMemoryCoupling.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumCentralDepolarization": {
+    "suite_struct": "QuantumCentralDepolarizationSuite",
+    "suite_type": "QuantumCentralDepolarization.QuantumCentralDepolarizationSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "central_depolarization",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumCentralDepolarization.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumEnvironmentExtension": {
+    "suite_struct": "QuantumEnvironmentExtensionSuite",
+    "suite_type": "QuantumEnvironmentExtension.QuantumEnvironmentExtensionSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "environment_extension",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumEnvironmentExtension.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumGateNoiseComposition": {
+    "suite_struct": "QuantumGateNoiseCompositionSuite",
+    "suite_type": "QuantumGateNoiseComposition.QuantumGateNoiseCompositionSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "gate_noise_composition",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumGateNoiseComposition.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumGeneralBellReadout": {
+    "suite_struct": "QuantumGeneralBellReadoutSuite",
+    "suite_type": "QuantumGeneralBellReadout.QuantumGeneralBellReadoutSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "general_bell_readout",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumGeneralBellReadout.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumInternalBSMNoise": {
+    "suite_struct": "QuantumInternalBSMNoiseSuite",
+    "suite_type": "QuantumInternalBSMNoise.QuantumInternalBSMNoiseSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "internal_bsm_noise",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumInternalBSMNoise.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumLocalNoisySwapping": {
+    "suite_struct": "QuantumLocalNoisySwappingSuite",
+    "suite_type": "QuantumLocalNoisySwapping.QuantumLocalNoisySwappingSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "local_noisy_swapping",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumLocalNoisySwapping.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumLocalPostNoise": {
+    "suite_struct": "QuantumLocalPostNoiseSuite",
+    "suite_type": "QuantumLocalPostNoise.QuantumLocalPostNoiseSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "local_post_noise",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumLocalPostNoise.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumMemoryBSM": {
+    "suite_struct": "QuantumMemoryBSMSuite",
+    "suite_type": "QuantumMemoryBSM.QuantumMemoryBSMSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "memory_bsm",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumMemoryBSM.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumMemoryCounterexample": {
+    "suite_struct": "QuantumMemoryCounterexampleSuite",
+    "suite_type": "QuantumMemoryCounterexample.QuantumMemoryCounterexampleSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "memory_counterexample",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumMemoryCounterexample.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumMixedEnvironment": {
+    "suite_struct": "QuantumMixedEnvironmentSuite",
+    "suite_type": "QuantumMixedEnvironment.QuantumMixedEnvironmentSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "mixed_environment",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumMixedEnvironment.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumMixedMemoryBSM": {
+    "suite_struct": "QuantumMixedMemoryBSMSuite",
+    "suite_type": "QuantumMixedMemoryBSM.QuantumMixedMemoryBSMSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "mixed_memory_bsm",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumMixedMemoryBSM.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumMultiStageBSM": {
+    "suite_struct": "QuantumMultiStageBSMSuite",
+    "suite_type": "QuantumMultiStageBSM.QuantumMultiStageBSMSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "multi_stage_bsm",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumMultiStageBSM.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNoiseTransport": {
+    "suite_struct": "QuantumNoiseTransportSuite",
+    "suite_type": "QuantumNoiseTransport.QuantumNoiseTransportSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "noise_transport",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNoiseTransport.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNoisyBellInstrument": {
+    "suite_struct": "QuantumNoisyBellInstrumentSuite",
+    "suite_type": "QuantumNoisyBellInstrument.QuantumNoisyBellInstrumentSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "noisy_bell_instrument",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNoisyBellInstrument.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNoisySwapping": {
+    "suite_struct": "QuantumNoisySwappingSuite",
+    "suite_type": "QuantumNoisySwapping.QuantumNoisySwappingSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "noisy_swapping",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNoisySwapping.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNoisyVisibility": {
+    "suite_struct": "QuantumNoisyVisibilitySuite",
+    "suite_type": "QuantumNoisyVisibility.QuantumNoisyVisibilitySuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "noisy_visibility",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNoisyVisibility.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNullConditioning": {
+    "suite_struct": "QuantumNullConditioningSuite",
+    "suite_type": "QuantumNullConditioning.QuantumNullConditioningSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "null_conditioning",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNullConditioning.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumOrderedNoiseComposition": {
+    "suite_struct": "QuantumOrderedNoiseCompositionSuite",
+    "suite_type": "QuantumOrderedNoiseComposition.QuantumOrderedNoiseCompositionSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "ordered_noise_composition",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumOrderedNoiseComposition.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumOutcomeInstrument": {
+    "suite_struct": "QuantumOutcomeInstrumentSuite",
+    "suite_type": "QuantumOutcomeInstrument.QuantumOutcomeInstrumentSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "outcome_instrument",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumOutcomeInstrument.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumPauliDensityBridge": {
+    "suite_struct": "QuantumPauliDensityBridgeSuite",
+    "suite_type": "QuantumPauliDensityBridge.QuantumPauliDensityBridgeSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "pauli_density_bridge",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumPauliDensityBridge.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumPauliMatrix": {
+    "suite_struct": "QuantumPauliMatrixSuite",
+    "suite_type": "QuantumPauliMatrix.QuantumPauliMatrixSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "pauli_matrix",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumPauliMatrix.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumPersistentEnvironment": {
+    "suite_struct": "QuantumPersistentEnvironmentSuite",
+    "suite_type": "QuantumPersistentEnvironment.QuantumPersistentEnvironmentSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "persistent_environment",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumPersistentEnvironment.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumRectangularSwapping": {
+    "suite_struct": "QuantumRectangularSwappingSuite",
+    "suite_type": "QuantumRectangularSwapping.QuantumRectangularSwappingSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "rectangular_swapping",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumRectangularSwapping.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumSelectiveSwapping": {
+    "suite_struct": "QuantumSelectiveSwappingSuite",
+    "suite_type": "QuantumSelectiveSwapping.QuantumSelectiveSwappingSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "selective_swapping",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumSelectiveSwapping.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumSwappingInstrument": {
+    "suite_struct": "QuantumSwappingInstrumentSuite",
+    "suite_type": "QuantumSwappingInstrument.QuantumSwappingInstrumentSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "swapping_instrument",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumSwappingInstrument.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumTwoQubitCPTP": {
+    "suite_struct": "QuantumTwoQubitCPTPSuite",
+    "suite_type": "QuantumTwoQubitCPTP.QuantumTwoQubitCPTPSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "two_qubit_cptp",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumTwoQubitCPTP.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
   }
 }

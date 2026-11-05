@@ -353,6 +353,114 @@
         "Verification.DeFiLendingUtilizationTransitions"
       ],
       "description": "Conserved lending accounting and utilization/rate changes under borrow and repayment."
+    },
+    "quantum-physics/pauli-density-bridge": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumPauliMatrix",
+        "Verification.QuantumPauliDensityBridge"
+      ],
+      "description": "Four-phase Gaussian Pauli matrices, complex embedding and bounded density depolarization after ideal Born swapping; no noisy BSM or hardware threshold."
+    },
+    "quantum-physics/cptp-bell-circuit": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumTwoQubitCPTP",
+        "Verification.QuantumBellCircuitRefinement"
+      ],
+      "description": "Explicit 17-Kraus depolarization, arbitrary finite ancillary extension and CNOT+H Bell instrument; ideal gates and readout, post-correction noise only."
+    },
+    "quantum-physics/noisy-bell-swapping": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumNoisyBellInstrument",
+        "Verification.QuantumNoisySwapping"
+      ]
+    },
+    "quantum-physics/selective-bell-readout": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumGeneralBellReadout",
+        "Verification.QuantumSelectiveSwapping"
+      ]
+    },
+    "quantum-physics/bell-diagonal-inputs": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumBellDiagonalInputs",
+        "Verification.QuantumBellDiagonalSwapping"
+      ]
+    },
+    "quantum-physics/rectangular-swapping-instrument": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumRectangularSwapping",
+        "Verification.QuantumSwappingInstrument"
+      ]
+    },
+    "quantum-physics/outcome-instrument-conditioning": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumOutcomeInstrument",
+        "Verification.QuantumNullConditioning"
+      ]
+    },
+    "quantum-physics/gate-noise-composition": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumGateNoiseComposition",
+        "Verification.QuantumCentralDepolarization",
+        "Verification.QuantumNoisyVisibility"
+      ]
+    },
+    "quantum-physics/local-post-noise": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumLocalPostNoise",
+        "Verification.QuantumLocalNoisySwapping"
+      ]
+    },
+    "quantum-physics/internal-bsm-noise": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumNoiseTransport",
+        "Verification.QuantumInternalBSMNoise"
+      ]
+    },
+    "quantum-physics/multi-stage-noise": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumOrderedNoiseComposition",
+        "Verification.QuantumMultiStageBSM"
+      ]
+    },
+    "quantum-physics/persistent-environment": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumPersistentEnvironment",
+        "Verification.QuantumMemoryCounterexample"
+      ]
+    },
+    "quantum-physics/memory-bsm": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumEnvironmentExtension",
+        "Verification.QuantumMemoryBSM"
+      ]
+    },
+    "quantum-physics/bsm-memory-witness": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumBinaryMemoryCoupling",
+        "Verification.QuantumBSMMemoryWitness"
+      ]
+    },
+    "quantum-physics/mixed-environment": {
+      "direction": "quantum-physics",
+      "modules": [
+        "Verification.QuantumMixedEnvironment",
+        "Verification.QuantumMixedMemoryBSM"
+      ]
     }
   },
   "infrastructure_batches": {

@@ -614,6 +614,37 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumTwoQubitCPTP",
+        "Verification.QuantumSwappingInstrument",
+        "Verification.QuantumSelectiveSwapping",
+        "Verification.QuantumRectangularSwapping",
+        "Verification.QuantumPersistentEnvironment",
+        "Verification.QuantumPauliMatrix",
+        "Verification.QuantumPauliDensityBridge",
+        "Verification.QuantumOutcomeInstrument",
+        "Verification.QuantumOrderedNoiseComposition",
+        "Verification.QuantumNullConditioning",
+        "Verification.QuantumNoisyVisibility",
+        "Verification.QuantumNoisySwapping",
+        "Verification.QuantumNoisyBellInstrument",
+        "Verification.QuantumNoiseTransport",
+        "Verification.QuantumMultiStageBSM",
+        "Verification.QuantumMixedMemoryBSM",
+        "Verification.QuantumMixedEnvironment",
+        "Verification.QuantumMemoryCounterexample",
+        "Verification.QuantumMemoryBSM",
+        "Verification.QuantumLocalPostNoise",
+        "Verification.QuantumLocalNoisySwapping",
+        "Verification.QuantumInternalBSMNoise",
+        "Verification.QuantumGeneralBellReadout",
+        "Verification.QuantumGateNoiseComposition",
+        "Verification.QuantumEnvironmentExtension",
+        "Verification.QuantumCentralDepolarization",
+        "Verification.QuantumBinaryMemoryCoupling",
+        "Verification.QuantumBellDiagonalSwapping",
+        "Verification.QuantumBellDiagonalInputs",
+        "Verification.QuantumBellCircuitRefinement",
+        "Verification.QuantumBSMMemoryWitness",
         "Verification.DeFiLendingUtilizationTransitions",
         "Verification.DeFiFiniteRouteSelection",
         "Verification.DeFiStatefulAMMRouting",
@@ -1552,6 +1583,37 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumTwoQubitCPTP",
+        "Verification.QuantumSwappingInstrument",
+        "Verification.QuantumSelectiveSwapping",
+        "Verification.QuantumRectangularSwapping",
+        "Verification.QuantumPersistentEnvironment",
+        "Verification.QuantumPauliMatrix",
+        "Verification.QuantumPauliDensityBridge",
+        "Verification.QuantumOutcomeInstrument",
+        "Verification.QuantumOrderedNoiseComposition",
+        "Verification.QuantumNullConditioning",
+        "Verification.QuantumNoisyVisibility",
+        "Verification.QuantumNoisySwapping",
+        "Verification.QuantumNoisyBellInstrument",
+        "Verification.QuantumNoiseTransport",
+        "Verification.QuantumMultiStageBSM",
+        "Verification.QuantumMixedMemoryBSM",
+        "Verification.QuantumMixedEnvironment",
+        "Verification.QuantumMemoryCounterexample",
+        "Verification.QuantumMemoryBSM",
+        "Verification.QuantumLocalPostNoise",
+        "Verification.QuantumLocalNoisySwapping",
+        "Verification.QuantumInternalBSMNoise",
+        "Verification.QuantumGeneralBellReadout",
+        "Verification.QuantumGateNoiseComposition",
+        "Verification.QuantumEnvironmentExtension",
+        "Verification.QuantumCentralDepolarization",
+        "Verification.QuantumBinaryMemoryCoupling",
+        "Verification.QuantumBellDiagonalSwapping",
+        "Verification.QuantumBellDiagonalInputs",
+        "Verification.QuantumBellCircuitRefinement",
+        "Verification.QuantumBSMMemoryWitness",
         "Verification.DeFiLendingUtilizationTransitions",
         "Verification.DeFiFiniteRouteSelection",
         "Verification.DeFiStatefulAMMRouting",
@@ -4092,6 +4154,356 @@
         "Verification.AlgebraicCertificateKernel"
       ],
       "novelty": "not-assessed"
+    },
+    {
+      "id": "QuantumBSMMemoryWitness",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumBSMMemoryWitness.lean",
+      "card": "knowledge/quantum-physics/QuantumBSMMemoryWitness.en.md",
+      "project_imports": [
+        "Verification.QuantumBinaryMemoryCoupling",
+        "Verification.QuantumMemoryBSM"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumBellCircuitRefinement",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumBellCircuitRefinement.lean",
+      "card": "knowledge/quantum-physics/QuantumBellCircuitRefinement.en.md",
+      "project_imports": [
+        "Verification.QuantumTwoQubitCPTP"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumBellDiagonalInputs",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumBellDiagonalInputs.lean",
+      "card": "knowledge/quantum-physics/QuantumBellDiagonalInputs.en.md",
+      "project_imports": [
+        "Verification.QuantumSelectiveSwapping"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumBellDiagonalSwapping",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumBellDiagonalSwapping.lean",
+      "card": "knowledge/quantum-physics/QuantumBellDiagonalSwapping.en.md",
+      "project_imports": [
+        "Verification.QuantumBellDiagonalInputs"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumBinaryMemoryCoupling",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumBinaryMemoryCoupling.lean",
+      "card": "knowledge/quantum-physics/QuantumBinaryMemoryCoupling.en.md",
+      "project_imports": [
+        "Verification.QuantumEnvironmentExtension"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumCentralDepolarization",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumCentralDepolarization.lean",
+      "card": "knowledge/quantum-physics/QuantumCentralDepolarization.en.md",
+      "project_imports": [
+        "Verification.QuantumGateNoiseComposition",
+        "Verification.QuantumTwoQubitCPTP"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumEnvironmentExtension",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumEnvironmentExtension.lean",
+      "card": "knowledge/quantum-physics/QuantumEnvironmentExtension.en.md",
+      "project_imports": [
+        "Verification.QuantumPersistentEnvironment"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumGateNoiseComposition",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumGateNoiseComposition.lean",
+      "card": "knowledge/quantum-physics/QuantumGateNoiseComposition.en.md",
+      "project_imports": [
+        "Verification.QuantumNullConditioning"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumGeneralBellReadout",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumGeneralBellReadout.lean",
+      "card": "knowledge/quantum-physics/QuantumGeneralBellReadout.en.md",
+      "project_imports": [
+        "Verification.QuantumNoisyBellInstrument"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumInternalBSMNoise",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumInternalBSMNoise.lean",
+      "card": "knowledge/quantum-physics/QuantumInternalBSMNoise.en.md",
+      "project_imports": [
+        "Verification.QuantumNoiseTransport",
+        "Verification.QuantumLocalNoisySwapping"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumLocalNoisySwapping",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumLocalNoisySwapping.lean",
+      "card": "knowledge/quantum-physics/QuantumLocalNoisySwapping.en.md",
+      "project_imports": [
+        "Verification.QuantumLocalPostNoise"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumLocalPostNoise",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumLocalPostNoise.lean",
+      "card": "knowledge/quantum-physics/QuantumLocalPostNoise.en.md",
+      "project_imports": [
+        "Verification.QuantumNoisyVisibility",
+        "Verification.QuantumDepolarizingChannel"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumMemoryBSM",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumMemoryBSM.lean",
+      "card": "knowledge/quantum-physics/QuantumMemoryBSM.en.md",
+      "project_imports": [
+        "Verification.QuantumEnvironmentExtension",
+        "Verification.QuantumMultiStageBSM"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumMemoryCounterexample",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumMemoryCounterexample.lean",
+      "card": "knowledge/quantum-physics/QuantumMemoryCounterexample.en.md",
+      "project_imports": [
+        "Verification.QuantumPersistentEnvironment",
+        "Verification.QuantumInternalBSMNoise"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumMixedEnvironment",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumMixedEnvironment.lean",
+      "card": "knowledge/quantum-physics/QuantumMixedEnvironment.en.md",
+      "project_imports": [
+        "Verification.QuantumEnvironmentExtension"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumMixedMemoryBSM",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumMixedMemoryBSM.lean",
+      "card": "knowledge/quantum-physics/QuantumMixedMemoryBSM.en.md",
+      "project_imports": [
+        "Verification.QuantumMixedEnvironment",
+        "Verification.QuantumMemoryBSM",
+        "Verification.QuantumMultiStageBSM"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumMultiStageBSM",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumMultiStageBSM.lean",
+      "card": "knowledge/quantum-physics/QuantumMultiStageBSM.en.md",
+      "project_imports": [
+        "Verification.QuantumOrderedNoiseComposition",
+        "Verification.QuantumInternalBSMNoise"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumNoiseTransport",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumNoiseTransport.lean",
+      "card": "knowledge/quantum-physics/QuantumNoiseTransport.en.md",
+      "project_imports": [
+        "Verification.QuantumCentralDepolarization"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumNoisyBellInstrument",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumNoisyBellInstrument.lean",
+      "card": "knowledge/quantum-physics/QuantumNoisyBellInstrument.en.md",
+      "project_imports": [
+        "Verification.QuantumBellCircuitRefinement"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumNoisySwapping",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumNoisySwapping.lean",
+      "card": "knowledge/quantum-physics/QuantumNoisySwapping.en.md",
+      "project_imports": [
+        "Verification.QuantumNoisyBellInstrument"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumNoisyVisibility",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumNoisyVisibility.lean",
+      "card": "knowledge/quantum-physics/QuantumNoisyVisibility.en.md",
+      "project_imports": [
+        "Verification.QuantumCentralDepolarization"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumNullConditioning",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumNullConditioning.lean",
+      "card": "knowledge/quantum-physics/QuantumNullConditioning.en.md",
+      "project_imports": [
+        "Verification.QuantumOutcomeInstrument"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumOrderedNoiseComposition",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumOrderedNoiseComposition.lean",
+      "card": "knowledge/quantum-physics/QuantumOrderedNoiseComposition.en.md",
+      "project_imports": [
+        "Verification.QuantumNoiseTransport"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumOutcomeInstrument",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumOutcomeInstrument.lean",
+      "card": "knowledge/quantum-physics/QuantumOutcomeInstrument.en.md",
+      "project_imports": [
+        "Verification.QuantumSwappingInstrument"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumPauliDensityBridge",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumPauliDensityBridge.lean",
+      "card": "knowledge/quantum-physics/QuantumPauliDensityBridge.en.md",
+      "project_imports": [
+        "Verification.QuantumPauliMatrix",
+        "Verification.QuantumEntanglementSwappingPurificationContract"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumPauliMatrix",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumPauliMatrix.lean",
+      "card": "knowledge/quantum-physics/QuantumPauliMatrix.en.md",
+      "project_imports": [],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumPersistentEnvironment",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumPersistentEnvironment.lean",
+      "card": "knowledge/quantum-physics/QuantumPersistentEnvironment.en.md",
+      "project_imports": [
+        "Verification.QuantumOrderedNoiseComposition"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumRectangularSwapping",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumRectangularSwapping.lean",
+      "card": "knowledge/quantum-physics/QuantumRectangularSwapping.en.md",
+      "project_imports": [
+        "Verification.QuantumBellDiagonalSwapping"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumSelectiveSwapping",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumSelectiveSwapping.lean",
+      "card": "knowledge/quantum-physics/QuantumSelectiveSwapping.en.md",
+      "project_imports": [
+        "Verification.QuantumGeneralBellReadout",
+        "Verification.QuantumNoisySwapping"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumSwappingInstrument",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumSwappingInstrument.lean",
+      "card": "knowledge/quantum-physics/QuantumSwappingInstrument.en.md",
+      "project_imports": [
+        "Verification.QuantumRectangularSwapping"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumTwoQubitCPTP",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumTwoQubitCPTP.lean",
+      "card": "knowledge/quantum-physics/QuantumTwoQubitCPTP.en.md",
+      "project_imports": [
+        "Verification.QuantumPauliDensityBridge"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
     }
   ],
   "support_modules": [

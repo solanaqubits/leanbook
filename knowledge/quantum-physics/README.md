@@ -192,3 +192,65 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 | [PrometheusRSCycleModel](PrometheusRSCycleModel.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
 | [PrometheusNQKDFiniteKey](PrometheusNQKDFiniteKey.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
 | [PrometheusThresholdTomography](PrometheusThresholdTomography.md) | Explicit conditional mathematics; see the card for assumptions and unproved bridges. |
+
+- [QuantumBSMMemoryWitness](QuantumBSMMemoryWitness.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumBellCircuitRefinement](QuantumBellCircuitRefinement.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumBellDiagonalInputs](QuantumBellDiagonalInputs.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumBellDiagonalSwapping](QuantumBellDiagonalSwapping.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumBinaryMemoryCoupling](QuantumBinaryMemoryCoupling.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumCentralDepolarization](QuantumCentralDepolarization.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumEnvironmentExtension](QuantumEnvironmentExtension.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumGateNoiseComposition](QuantumGateNoiseComposition.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumGeneralBellReadout](QuantumGeneralBellReadout.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumInternalBSMNoise](QuantumInternalBSMNoise.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumLocalNoisySwapping](QuantumLocalNoisySwapping.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumLocalPostNoise](QuantumLocalPostNoise.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumMemoryBSM](QuantumMemoryBSM.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumMemoryCounterexample](QuantumMemoryCounterexample.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumMixedEnvironment](QuantumMixedEnvironment.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumMixedMemoryBSM](QuantumMixedMemoryBSM.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumMultiStageBSM](QuantumMultiStageBSM.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumNoiseTransport](QuantumNoiseTransport.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumNoisyBellInstrument](QuantumNoisyBellInstrument.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumNoisySwapping](QuantumNoisySwapping.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumNoisyVisibility](QuantumNoisyVisibility.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumNullConditioning](QuantumNullConditioning.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumOrderedNoiseComposition](QuantumOrderedNoiseComposition.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumOutcomeInstrument](QuantumOutcomeInstrument.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumPauliDensityBridge](QuantumPauliDensityBridge.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumPauliMatrix](QuantumPauliMatrix.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumPersistentEnvironment](QuantumPersistentEnvironment.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumRectangularSwapping](QuantumRectangularSwapping.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumSelectiveSwapping](QuantumSelectiveSwapping.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumSwappingInstrument](QuantumSwappingInstrument.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumTwoQubitCPTP](QuantumTwoQubitCPTP.en.md) — finite quantum operator/instrument contracts.
