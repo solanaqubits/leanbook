@@ -1,3 +1,5 @@
+import Verification.QuantumWernerCascade
+import Verification.QuantumCascadeReduction
 import Verification.QuantumCascadedSwapping
 import Verification.QuantumCorrelatedPostNoise
 import Verification.QuantumPostBSMEnvironment
@@ -981,6 +983,8 @@ structure QuantumPhysicsFullSuite : Prop where
   post_bsm_environment : QuantumPostBSMEnvironment.QuantumPostBSMEnvironmentSuite
   correlated_post : QuantumCorrelatedPostNoise.QuantumCorrelatedPostNoiseSuite
   cascade : QuantumCascadedSwapping.QuantumCascadedSwappingSuite
+  cascade_decay : QuantumCascadeReduction.QuantumCascadeReductionSuite
+  werner_cascade : QuantumWernerCascade.QuantumWernerCascadeSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1144,6 +1148,8 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   post_bsm_environment := QuantumPostBSMEnvironment.verification_suite
   correlated_post := QuantumCorrelatedPostNoise.verification_suite
   cascade := QuantumCascadedSwapping.verification_suite
+  cascade_decay := QuantumCascadeReduction.verification_suite
+  werner_cascade := QuantumWernerCascade.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

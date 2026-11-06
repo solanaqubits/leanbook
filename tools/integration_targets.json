@@ -2699,5 +2699,23 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumCascadedSwapping.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumCascadeReduction": {
+    "suite_struct": "QuantumCascadeReductionSuite",
+    "suite_type": "QuantumCascadeReduction.QuantumCascadeReductionSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "cascade_decay",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumCascadeReduction.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumWernerCascade": {
+    "suite_struct": "QuantumWernerCascadeSuite",
+    "suite_type": "QuantumWernerCascade.QuantumWernerCascadeSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "werner_cascade",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumWernerCascade.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

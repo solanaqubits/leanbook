@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumWernerCascade",
+        "Verification.QuantumCascadeReduction",
         "Verification.QuantumCascadedSwapping",
         "Verification.QuantumCorrelatedPostNoise",
         "Verification.QuantumPostBSMEnvironment",
@@ -1591,6 +1593,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumWernerCascade",
+        "Verification.QuantumCascadeReduction",
         "Verification.QuantumCascadedSwapping",
         "Verification.QuantumCorrelatedPostNoise",
         "Verification.QuantumPostBSMEnvironment",
@@ -4607,6 +4611,29 @@
       "card": "knowledge/quantum-physics/QuantumCascadedSwapping.en.md",
       "project_imports": [
         "Verification.QuantumCorrelatedPostNoise"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumCascadeReduction",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumCascadeReduction.lean",
+      "card": "knowledge/quantum-physics/QuantumCascadeReduction.en.md",
+      "project_imports": [
+        "Verification.QuantumNoisyVisibility"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumWernerCascade",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumWernerCascade.lean",
+      "card": "knowledge/quantum-physics/QuantumWernerCascade.en.md",
+      "project_imports": [
+        "Verification.QuantumCascadedSwapping",
+        "Verification.QuantumCascadeReduction"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

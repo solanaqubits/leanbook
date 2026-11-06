@@ -1,3 +1,5 @@
+import Verification.QuantumWernerCascade
+import Verification.QuantumCascadeReduction
 import Verification.QuantumCascadedSwapping
 import Verification.QuantumCorrelatedPostNoise
 import Verification.QuantumPostBSMEnvironment

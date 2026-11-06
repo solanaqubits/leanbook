@@ -268,3 +268,7 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [QuantumCorrelatedPostNoise](QuantumCorrelatedPostNoise.en.md)
 
 - [QuantumCascadedSwapping](QuantumCascadedSwapping.en.md)
+
+- [QuantumCascadeReduction](QuantumCascadeReduction.en.md)
+
+- [QuantumWernerCascade](QuantumWernerCascade.en.md)

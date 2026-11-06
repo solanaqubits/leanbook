@@ -1,0 +1,233 @@
+{
+  "iteration": "Quantum v4.27",
+  "base_commit": "d54e87cf10c7f50f2caeb66dcd6dd67c0acfccfc",
+  "modules": [
+    {
+      "module": "QuantumCascadeReduction",
+      "source": "Verification/QuantumCascadeReduction.lean",
+      "sha256": "eff7af44d03ee34a938fd623cebd6787800ba392b1034e3526d5798e419bb214",
+      "named_theorem_count": 16,
+      "declarations": [
+        {
+          "name": "QuantumCascadeReduction.CascadeParameters",
+          "kind": "structure",
+          "line": 17
+        },
+        {
+          "name": "QuantumCascadeReduction.ofVisibilities",
+          "kind": "def",
+          "line": 28
+        },
+        {
+          "name": "QuantumCascadeReduction.alphaParam",
+          "kind": "def",
+          "line": 32
+        },
+        {
+          "name": "QuantumCascadeReduction.wernerTransition",
+          "kind": "def",
+          "line": 34
+        },
+        {
+          "name": "QuantumCascadeReduction.wernerFidelity",
+          "kind": "def",
+          "line": 36
+        },
+        {
+          "name": "QuantumCascadeReduction.alpha_bounds",
+          "kind": "theorem",
+          "line": 38
+        },
+        {
+          "name": "QuantumCascadeReduction.werner_transition_le_id",
+          "kind": "theorem",
+          "line": 47
+        },
+        {
+          "name": "QuantumCascadeReduction.transition_bounds",
+          "kind": "theorem",
+          "line": 51
+        },
+        {
+          "name": "QuantumCascadeReduction.fidelity_monotonicity",
+          "kind": "theorem",
+          "line": 55
+        },
+        {
+          "name": "QuantumCascadeReduction.strict_decay",
+          "kind": "theorem",
+          "line": 62
+        },
+        {
+          "name": "QuantumCascadeReduction.fixed_point_iff",
+          "kind": "theorem",
+          "line": 69
+        },
+        {
+          "name": "QuantumCascadeReduction.unique_fixed_point_at_zero",
+          "kind": "theorem",
+          "line": 79
+        },
+        {
+          "name": "QuantumCascadeReduction.lossless_identity",
+          "kind": "theorem",
+          "line": 83
+        },
+        {
+          "name": "QuantumCascadeReduction.fidelity_equality_iff",
+          "kind": "theorem",
+          "line": 86
+        },
+        {
+          "name": "QuantumCascadeReduction.cascaded_iteration",
+          "kind": "theorem",
+          "line": 93
+        },
+        {
+          "name": "QuantumCascadeReduction.runVisibility",
+          "kind": "def",
+          "line": 103
+        },
+        {
+          "name": "QuantumCascadeReduction.finite_schedule_product",
+          "kind": "theorem",
+          "line": 107
+        },
+        {
+          "name": "QuantumCascadeReduction.visibility_tends_to_zero",
+          "kind": "theorem",
+          "line": 116
+        },
+        {
+          "name": "QuantumCascadeReduction.fidelity_tends_to_quarter",
+          "kind": "theorem",
+          "line": 121
+        },
+        {
+          "name": "QuantumCascadeReduction.fidelity_above_quarter",
+          "kind": "theorem",
+          "line": 128
+        },
+        {
+          "name": "QuantumCascadeReduction.finite_schedule_nonincrease",
+          "kind": "theorem",
+          "line": 136
+        },
+        {
+          "name": "QuantumCascadeReduction.QuantumCascadeReductionSuite",
+          "kind": "structure",
+          "line": 145
+        },
+        {
+          "name": "QuantumCascadeReduction.verification_suite",
+          "kind": "theorem",
+          "line": 152
+        }
+      ]
+    },
+    {
+      "module": "QuantumWernerCascade",
+      "source": "Verification/QuantumWernerCascade.lean",
+      "sha256": "1d94acf30ef82ef5771a8cef6de3256c67e9b52e4587d6dece1cc20e08834928",
+      "named_theorem_count": 12,
+      "declarations": [
+        {
+          "name": "QuantumWernerCascade.preStages",
+          "kind": "def",
+          "line": 27
+        },
+        {
+          "name": "QuantumWernerCascade.preStages_ideal",
+          "kind": "theorem",
+          "line": 31
+        },
+        {
+          "name": "QuantumWernerCascade.preStages_run",
+          "kind": "theorem",
+          "line": 36
+        },
+        {
+          "name": "QuantumWernerCascade.preRound",
+          "kind": "def",
+          "line": 44
+        },
+        {
+          "name": "QuantumWernerCascade.preRound_micro",
+          "kind": "theorem",
+          "line": 48
+        },
+        {
+          "name": "QuantumWernerCascade.preRound_map",
+          "kind": "theorem",
+          "line": 59
+        },
+        {
+          "name": "QuantumWernerCascade.wernerRound",
+          "kind": "def",
+          "line": 79
+        },
+        {
+          "name": "QuantumWernerCascade.pairResource",
+          "kind": "def",
+          "line": 82
+        },
+        {
+          "name": "QuantumWernerCascade.wernerCascade",
+          "kind": "def",
+          "line": 86
+        },
+        {
+          "name": "QuantumWernerCascade.acceptedCascade",
+          "kind": "def",
+          "line": 96
+        },
+        {
+          "name": "QuantumWernerCascade.wernerRound_accepted",
+          "kind": "theorem",
+          "line": 101
+        },
+        {
+          "name": "QuantumWernerCascade.uniform_continuation",
+          "kind": "theorem",
+          "line": 110
+        },
+        {
+          "name": "QuantumWernerCascade.cascade_visibility_matrix",
+          "kind": "theorem",
+          "line": 117
+        },
+        {
+          "name": "QuantumWernerCascade.cascade_visibility_trace",
+          "kind": "theorem",
+          "line": 147
+        },
+        {
+          "name": "QuantumWernerCascade.cascade_fidelity_transition",
+          "kind": "theorem",
+          "line": 155
+        },
+        {
+          "name": "QuantumWernerCascade.cascade_fidelity_nonincrease",
+          "kind": "theorem",
+          "line": 171
+        },
+        {
+          "name": "QuantumWernerCascade.cascade_visibility_positive",
+          "kind": "theorem",
+          "line": 182
+        },
+        {
+          "name": "QuantumWernerCascade.QuantumWernerCascadeSuite",
+          "kind": "structure",
+          "line": 190
+        },
+        {
+          "name": "QuantumWernerCascade.verification_suite",
+          "kind": "theorem",
+          "line": 208
+        }
+      ]
+    }
+  ],
+  "counts_are_not_independent_scientific_results": true
+}

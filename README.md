@@ -16,12 +16,21 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## Quantum v4.27 development candidate
+
+[Werner cascade reduction and fixed points](docs/quantum-v4.27.md) ·
+[Exact theorem inventory](docs/quantum-v4.27-inventory.json).
+Two new modules contain 28 named theorem declarations, including helpers.
+Current catalog: 387 modules, 391 library Lean files, 341 direct MasterSuite imports.
+Validation is scoped to this addition and integration. Published Leanbook v1.0.0
+and its historical full-validation evidence remain unchanged.
+
 ## Quantum v4.26 development candidate
 
 [Two-round adaptive swapping cascade](docs/quantum-v4.26.md) ·
 [Exact theorem inventory](docs/quantum-v4.26-inventory.json).
 One new module contains 23 named theorem declarations, including helpers.
-Current catalog: 385 modules, 389 library Lean files, 339 direct MasterSuite imports.
+The v4.26 catalog had 385 modules, 389 library Lean files, 339 direct MasterSuite imports.
 Validation is scoped to this addition and integration. Published Leanbook v1.0.0
 and its historical full-validation evidence remain unchanged.
 

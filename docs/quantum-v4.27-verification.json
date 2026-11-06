@@ -1,0 +1,172 @@
+{
+  "schema": "leanbook-quantum-candidate-verification/v1",
+  "iteration": "Quantum v4.27",
+  "base_commit": "d54e87cf10c7f50f2caeb66dcd6dd67c0acfccfc",
+  "branch": "quantum-werner-v427",
+  "scope": "gamma/scoped additive local candidate; no public release",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "lake_manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "lake_configuration_sha256": "1d5bfb3126447a54d31fd958640ba31a2f35066f1072741f5d63bb7c9751fea1",
+  "new_modules": [
+    {
+      "module": "QuantumCascadeReduction",
+      "source": "Verification/QuantumCascadeReduction.lean",
+      "sha256": "eff7af44d03ee34a938fd623cebd6787800ba392b1034e3526d5798e419bb214",
+      "named_theorem_count": 16
+    },
+    {
+      "module": "QuantumWernerCascade",
+      "source": "Verification/QuantumWernerCascade.lean",
+      "sha256": "1d94acf30ef82ef5771a8cef6de3256c67e9b52e4587d6dece1cc20e08834928",
+      "named_theorem_count": 12
+    }
+  ],
+  "named_theorem_count": 28,
+  "named_exported_declarations": 42,
+  "counts_are_not_independent_scientific_results": true,
+  "strict_module_verification": {
+    "ok": true,
+    "transitive_sources": 55,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 4745,
+      "violations": []
+    },
+    "source_unchanged": true,
+    "scalar_reelaboration": {
+      "command": [
+        "lake",
+        "lean",
+        "Verification/QuantumCascadeReduction.lean",
+        "--",
+        "-j1",
+        "-DwarningAsError=true"
+      ],
+      "exit_code": 0,
+      "seconds": 2.818136851004965
+    }
+  },
+  "build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 11.000890272000106,
+    "jobs": 4130,
+    "fresh_built_markers": 5,
+    "cache": "incremental, not a clean rebuild; new modules built earlier during verification"
+  },
+  "independent_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43155,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": [],
+    "binary_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254",
+    "scope": "compiled project declarations, not fresh elaboration of every source"
+  },
+  "tests": {
+    "passed": 19,
+    "failed": 0,
+    "skipped": 0,
+    "new_tests": 3,
+    "prior_regressions": 16,
+    "full_discovery_run": false,
+    "container": {
+      "resources": {
+        "memory.max": "12884901888",
+        "memory.swap.max": "0",
+        "cpu.max": "400000 100000"
+      },
+      "runtime_qualification": "pinned SQLite and libsodium passed",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "tests.test_quantum_v427",
+        "tests.test_quantum_v426",
+        "tests.test_quantum_v424",
+        "tests.test_quantum_v423",
+        "tests.test_quantum_v422",
+        "tests.test_quantum_gate_noise",
+        "tests.test_quantum_local_post_noise",
+        "-v"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 51.24914003999584,
+      "log_sha256": "13433fbb1ae4b6b7a77cd944db233dc72a389a9a4ab9a06b2de8d4d46238bdd9"
+    },
+    "history": [
+      "First targeted container run: 18/19; the new operator fixture lacked the namespace defining targetOverlap.",
+      "Added the namespace; final complete targeted set 19/19, no skips. No propositions, proof checks, time limits or assertions weakened."
+    ]
+  },
+  "exports": {
+    "log": "exports.log",
+    "sha256": "db0e72aaf8efb6a6d1540bb36c92c6f39a5288ab2be4ecf4a4ad90f2868d6870",
+    "declarations": 42,
+    "exit_code": 0
+  },
+  "catalog": {
+    "modules": 387,
+    "sections": 12,
+    "library_lean_files": 391,
+    "master_direct_imports": 341
+  },
+  "historical_full_validation": {
+    "commit": "127a55b885f1cb6ad67132d6a0f3d4d8f56ff607",
+    "scope": "v4.21 full gates and documented multi-run test history; not rerun here"
+  },
+  "published_baseline": {
+    "tag": "v1.0.0",
+    "commit": "5276529c6c1010722cc96c39217892b9e874f6a8",
+    "changed": false
+  },
+  "development_history": [
+    "Five development logs retained; initial operator attempt needed real/complex scalar-action normalization and explicit use of the input tensor lemma instead of expensive definitional unfolding.",
+    "Scalar limit proof needed an explicit real constant in Tendsto; an operator proof used map_sum as a global theorem instead of an unavailable LinearMap field.",
+    "Final strict verify and separate scalar re-elaboration passed. No heartbeat/recursion or linter overrides were introduced."
+  ],
+  "limits": [
+    "Operator specialization: two-round accepted aggregate, fixed fresh Werner pair, independent fresh memory and continuation independent of first message.",
+    "Perfect readout, central BC depolarization before the full analyzer, and full-pair AD depolarization after correction.",
+    "Visibility output is c2*b2*c1*b1*w1*w2*fresh; no per-message equality is assumed.",
+    "Fixed points and finite/scheduled iteration concern the scalar recurrence; the operator instrument remains two-round.",
+    "Constant alpha<1 implies convergence; a varying schedule has no general convergence claim.",
+    "Nonnegative visibility implies fidelity at or above 1/4, not below. Alpha=0 may reach the limit immediately.",
+    "No universal CPTP fidelity monotonicity, distillation circuit, retained memory process tensor or hardware calibration.",
+    "No new full verify-all, full test discovery, clean build or hosted CI claim.",
+    "Local candidate; no push/tag/release."
+  ],
+  "final_checks": {
+    "metadata": {
+      "exit_code": 0,
+      "summary": "{\"ok\": true, \"batches\": 53, \"recipes\": 302}"
+    },
+    "knowledge": {
+      "exit_code": 0,
+      "summary": "Knowledge catalog OK: 387 modules, 12 sections; 3 support modules; local links checked in 592 Markdown files."
+    },
+    "diff-check": {
+      "exit_code": 0,
+      "summary": ""
+    },
+    "checked_import_source_hashes_unchanged": true
+  }
+}
