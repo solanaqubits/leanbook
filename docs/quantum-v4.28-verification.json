@@ -1,0 +1,96 @@
+{
+  "iteration": "Quantum v4.28",
+  "base_commit": "3cdac4021bf5c9b574116c19dec2461125b9e31c",
+  "branch": "quantum-adaptive-v428",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "new_modules": 1,
+  "named_theorems": 29,
+  "named_exports": 45,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 56,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 4866,
+      "violations": []
+    }
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43277,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "incremental_build": {
+    "jobs": 4131,
+    "fresh_targets": [
+      "\u2714 [4126/4131] Built Verification.MasterSuiteComponents (3.7s)",
+      "\u2714 [4127/4131] Built Verification.MasterHundredRegistry (1.7s)",
+      "\u2139 [4128/4131] Built Verification.MasterSuite (1.8s)",
+      "\u2139 [4129/4131] Built Verification.AxiomAudit (2.0s)",
+      "\u2714 [4130/4131] Built Verification (1.9s)"
+    ],
+    "clean_build": false
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 61.23722857199982,
+    "log_sha256": "df7ef40fe7ca3e96d1b27cba8ec1a15110ecd689fd0e9b7fe44a260f8cb2d6b7"
+  },
+  "test_history": [
+    "First container run:21/22; new scalar fixture needed explicit Bell constructor inequalities and cardinality facts.",
+    "Local fixture elaboration then exposed one overlong line; shortened without disabling lint.",
+    "Second complete targeted run:22/22,zero skips; source proofs unchanged."
+  ],
+  "development_logs": "develop-01 through develop-10; finite compilation errors retained; no increased limits or weakened checks",
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "556618487e74e8cca7c37997dcf0dddc4ac7aa0620305efe7e662615dad8a15a",
+  "catalog": {
+    "modules": 388,
+    "sections": 12,
+    "library_files": 392,
+    "MasterSuite_direct_imports": 342
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed"
+}

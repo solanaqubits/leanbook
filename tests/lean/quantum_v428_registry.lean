@@ -1,0 +1,3 @@
+import Verification.MasterSuite
+example : QuantumAdaptiveWernerCascade.QuantumAdaptiveWernerCascadeSuite :=
+  MasterSuite.quantum_physics_full_master_suite.adaptive_werner

@@ -272,3 +272,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [QuantumCascadeReduction](QuantumCascadeReduction.en.md)
 
 - [QuantumWernerCascade](QuantumWernerCascade.en.md)
+
+- [Adaptive Werner cascade with losses](QuantumAdaptiveWernerCascade.en.md)

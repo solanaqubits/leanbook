@@ -2717,5 +2717,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumWernerCascade.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumAdaptiveWernerCascade": {
+    "suite_struct": "QuantumAdaptiveWernerCascadeSuite",
+    "suite_type": "QuantumAdaptiveWernerCascade.QuantumAdaptiveWernerCascadeSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "adaptive_werner",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumAdaptiveWernerCascade.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
