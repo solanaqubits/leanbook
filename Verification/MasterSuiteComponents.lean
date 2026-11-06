@@ -1,3 +1,5 @@
+import Verification.QuantumCorrelatedProbabilityWitness
+import Verification.QuantumDecoupledEnvironment
 import Verification.QuantumCorrelatedMemoryWitness
 import Verification.QuantumCorrelatedMemoryBSM
 import Verification.QuantumTwoQubitCPTP
@@ -969,6 +971,8 @@ structure QuantumPhysicsFullSuite : Prop where
   two_qubit_cptp : QuantumTwoQubitCPTP.QuantumTwoQubitCPTPSuite
   correlated_memory_bsm : QuantumCorrelatedMemoryBSM.QuantumCorrelatedMemoryBSMSuite
   correlated_memory_witness : QuantumCorrelatedMemoryWitness.QuantumCorrelatedMemoryWitnessSuite
+  decoupled_environment : QuantumDecoupledEnvironment.QuantumDecoupledEnvironmentSuite
+  probability_shift : QuantumCorrelatedProbabilityWitness.QuantumCorrelatedProbabilityWitnessSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1126,6 +1130,8 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   two_qubit_cptp := QuantumTwoQubitCPTP.verification_suite
   correlated_memory_bsm := QuantumCorrelatedMemoryBSM.verification_suite
   correlated_memory_witness := QuantumCorrelatedMemoryWitness.verification_suite
+  decoupled_environment := QuantumDecoupledEnvironment.verification_suite
+  probability_shift := QuantumCorrelatedProbabilityWitness.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

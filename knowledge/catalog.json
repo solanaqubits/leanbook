@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumCorrelatedProbabilityWitness",
+        "Verification.QuantumDecoupledEnvironment",
         "Verification.QuantumCorrelatedMemoryWitness",
         "Verification.QuantumCorrelatedMemoryBSM",
         "Verification.QuantumTwoQubitCPTP",
@@ -1585,6 +1587,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumCorrelatedProbabilityWitness",
+        "Verification.QuantumDecoupledEnvironment",
         "Verification.QuantumCorrelatedMemoryWitness",
         "Verification.QuantumCorrelatedMemoryBSM",
         "Verification.QuantumTwoQubitCPTP",
@@ -4528,6 +4532,29 @@
       "project_imports": [
         "Verification.QuantumCorrelatedMemoryBSM",
         "Verification.QuantumBSMMemoryWitness"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumDecoupledEnvironment",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumDecoupledEnvironment.lean",
+      "card": "knowledge/quantum-physics/QuantumDecoupledEnvironment.en.md",
+      "project_imports": [
+        "Verification.QuantumCorrelatedMemoryBSM"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumCorrelatedProbabilityWitness",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumCorrelatedProbabilityWitness.lean",
+      "card": "knowledge/quantum-physics/QuantumCorrelatedProbabilityWitness.en.md",
+      "project_imports": [
+        "Verification.QuantumCorrelatedMemoryWitness",
+        "Verification.QuantumDecoupledEnvironment"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

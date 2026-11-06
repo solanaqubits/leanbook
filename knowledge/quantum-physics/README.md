@@ -257,3 +257,6 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [QuantumSwappingInstrument](QuantumSwappingInstrument.en.md) — finite quantum operator/instrument contracts.
 
 - [QuantumTwoQubitCPTP](QuantumTwoQubitCPTP.en.md) — finite quantum operator/instrument contracts.
+
+- [QuantumDecoupledEnvironment](QuantumDecoupledEnvironment.en.md)
+- [QuantumCorrelatedProbabilityWitness](QuantumCorrelatedProbabilityWitness.en.md)

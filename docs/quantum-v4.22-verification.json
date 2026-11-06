@@ -1,0 +1,134 @@
+{
+  "schema": "leanbook-quantum-candidate-verification/v1",
+  "iteration": "Quantum v4.22",
+  "base_commit": "127a55b885f1cb6ad67132d6a0f3d4d8f56ff607",
+  "branch": "quantum-decoupled-v422",
+  "scope": "gamma/scoped additive local candidate; not a new public release",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "lake_manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "new_modules": [
+    {
+      "module": "QuantumDecoupledEnvironment",
+      "source": "Verification/QuantumDecoupledEnvironment.lean",
+      "sha256": "e464a043a8cf82f65077b2458438e652aed46d29510d1a9306c11e7e974bde73",
+      "named_theorem_count": 12
+    },
+    {
+      "module": "QuantumCorrelatedProbabilityWitness",
+      "source": "Verification/QuantumCorrelatedProbabilityWitness.lean",
+      "sha256": "f7480eacfb38411cc7db1e554e7dfc53c5d7c193aaddc30babc2e5e802c89950",
+      "named_theorem_count": 18
+    }
+  ],
+  "named_theorem_count": 30,
+  "named_exported_declarations": 38,
+  "counts_are_not_independent_scientific_results": true,
+  "strict_module_verification": {
+    "ok": true,
+    "transitive_sources": 53,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 4614,
+      "violations": []
+    },
+    "source_unchanged": true,
+    "additional_registered_module_reelaboration": "strict-A-final.log"
+  },
+  "build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "jobs": 4124,
+    "fresh_built_markers": 5,
+    "cache": "incremental; not a clean rebuild"
+  },
+  "independent_audit": {
+    "ok": true,
+    "audited": 42804,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "violations": [],
+    "binary_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254",
+    "scope": "compiled project declarations; not fresh re-elaboration of every source"
+  },
+  "tests": {
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "new_tests": 3,
+    "prior_v420_v421_regressions": 4,
+    "full_discovery_run": false,
+    "container": {
+      "resources": {
+        "memory.max": "12884901888",
+        "memory.swap.max": "0",
+        "cpu.max": "400000 100000"
+      },
+      "runtime_qualification": "pinned SQLite and libsodium passed",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "tests.test_quantum_v422",
+        "tests.test_quantum_correlated_memory",
+        "tests.test_quantum_mixed_environment",
+        "-v"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 20.857044741002028,
+      "log_sha256": "2aea8a2c2e63ffba61fda477c09e676e7463d6d0d7c3eb7e79f6847847efce7e"
+    }
+  },
+  "historical_full_validation": {
+    "commit": "127a55b885f1cb6ad67132d6a0f3d4d8f56ff607",
+    "reference": "quantum-v4.21-verification.json",
+    "reused_as_new_run": false
+  },
+  "history": [
+    "Development proof drafts failed before final corrections; intermediate logs retained.",
+    "First integrated build failed a 100-character registry field line; shortened the new field to probability_shift, then strict build passed.",
+    "The seven-test container run passed on its first execution with swap disabled before launch."
+  ],
+  "evidence_sha256": {
+    "verify.json": "edf70a08cc4e7217fe490e6d77471b899cbf5a4132048d81db41aea2bb583b4c",
+    "strict-A-final.log": "9f60de15b36360e2dbb0aca552294b7baabd0800a3fda2ddd8304ea4947fafc8",
+    "build.log": "490c89399a5ad6053c532fc228da693d1a28cfef913dc1000d8c93e19f27a9d0",
+    "build-1.log": "13ba9c63cf917563a97fc2191f8fc2921e2ea5a3183508f8d4cedaa66c99f77a",
+    "independent-audit.json": "1dd050324940d6b020c8250c67612c9f4778502a6335f23b7582b3550b74f625",
+    "targeted.log": "2aea8a2c2e63ffba61fda477c09e676e7463d6d0d7c3eb7e79f6847847efce7e",
+    "targeted.json": "beac35ac3162aa3bb287872aaa6d63b1804cfba4b3a396f9503f93ab89eb72b7",
+    "container-command.json": "63a7dcddf05c6b2b360261386c1c6a40a62aff3b7df0f3d988e3f9414f875046",
+    "exports.log": "b31fa585dfd0804f188d02e87faa2a0aef7211cb70d2db79ea3471870df5f463",
+    "integration-inputs.json": "c3cad9c8949b63c6e185eede527b90a084106d80b87d8bd111cb60121dc3b28e"
+  },
+  "integration_inputs": {
+    "Verification.lean": "e61fd885217ac001019346559826fb1aeece7416c125683139284af412173a19",
+    "Verification/MasterSuite.lean": "bad13c280ec1d42de082cccb001804d275184854c1537f84182875b6298fb67f",
+    "Verification/MasterSuiteComponents.lean": "03a77e08a87fc85418e20d41d860417e7efedfb8bfe5956d8f0df71c83f0d784",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "lake-manifest.json": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+    "lakefile.toml": "1d5bfb3126447a54d31fd958640ba31a2f35066f1072741f5d63bb7c9751fea1",
+    "tools/integration_targets.json": "4af25737cc59a4e8e1fbaf5de31cb4935869ae955025ac975cf4f38b685dcafc",
+    "tests/test_quantum_v422.py": "8252e5e1c748f09c0dcf2278b34cee3c681ce61070e0df39d5e019bf072ca25e",
+    "tests/lean/quantum_decoupled_regression.lean": "04eea4f982af2a9220acdb640eabcd26fad917e3c00ff2daa12492881187c19d",
+    "tests/lean/quantum_probability_regression.lean": "6db8865db8a4e2ae964f4e9833ae452373434ea652199c819c8c7e44d6424ea2",
+    "tests/lean/quantum_v422_registry.lean": "9e16c2c81c09cc91a93ab03a1e62c97ee8f4228988141f5d640891ae8ea3fc3b"
+  },
+  "limits": [
+    "Sufficient marginal-reduction conditions, not an iff classification.",
+    "Independent tensor channel factors; no shared correlated Kraus labels.",
+    "Joint correlations need not disappear before partial trace.",
+    "One finite-dimensional cycle; no adaptive process tensors or hardware claim."
+  ]
+}

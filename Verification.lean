@@ -1,3 +1,5 @@
+import Verification.QuantumCorrelatedProbabilityWitness
+import Verification.QuantumDecoupledEnvironment
 import Verification.QuantumCorrelatedMemoryWitness
 import Verification.QuantumCorrelatedMemoryBSM
 import Verification.QuantumTwoQubitCPTP

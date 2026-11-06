@@ -16,13 +16,22 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## Quantum v4.22 development candidate
+
+[Marginal reduction and probability witness](docs/quantum-v4.22.md) ·
+[Exact theorem inventory](docs/quantum-v4.22-inventory.json).
+Two further modules add 30 named theorem declarations, including helpers.
+Current catalog: 381 modules, 385 library Lean files, 335 direct MasterSuite imports.
+Validation is scoped to these additions and integration; historical full checks
+remain attached to their own commits. Published Leanbook v1.0.0 is unchanged.
+
 ## Quantum v4.21 development candidate
 
 [Correlated-input scope](docs/quantum-v4.21.md) ·
 [Exact theorem inventory](docs/quantum-v4.21-inventory.json).
 Two additive modules contain 54 named theorem declarations: a completely positive
-joint-input Bell instrument and a same-marginal correlation witness. This branch
-has 379 catalog modules, 383 library Lean files, and 333 direct MasterSuite imports.
+joint-input Bell instrument and a same-marginal correlation witness. The v4.21 candidate
+had 379 catalog modules, 383 library Lean files, and 333 direct MasterSuite imports.
 The published v1.0.0 tag and its release statistics below remain historical anchors;
 this development delta does not change the package version or claim a new public release.
 

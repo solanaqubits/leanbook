@@ -2645,5 +2645,23 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumCorrelatedMemoryWitness.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumDecoupledEnvironment": {
+    "suite_struct": "QuantumDecoupledEnvironmentSuite",
+    "suite_type": "QuantumDecoupledEnvironment.QuantumDecoupledEnvironmentSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "decoupled_environment",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumDecoupledEnvironment.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumCorrelatedProbabilityWitness": {
+    "suite_struct": "QuantumCorrelatedProbabilityWitnessSuite",
+    "suite_type": "QuantumCorrelatedProbabilityWitness.QuantumCorrelatedProbabilityWitnessSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "probability_shift",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumCorrelatedProbabilityWitness.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
