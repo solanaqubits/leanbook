@@ -264,3 +264,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [QuantumTensorStageEnvironment](QuantumTensorStageEnvironment.en.md)
 
 - [QuantumPostBSMEnvironment](QuantumPostBSMEnvironment.en.md)
+
+- [QuantumCorrelatedPostNoise](QuantumCorrelatedPostNoise.en.md)

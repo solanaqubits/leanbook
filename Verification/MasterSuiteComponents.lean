@@ -1,3 +1,4 @@
+import Verification.QuantumCorrelatedPostNoise
 import Verification.QuantumPostBSMEnvironment
 import Verification.QuantumTensorStageEnvironment
 import Verification.QuantumCorrelatedProbabilityWitness
@@ -977,6 +978,7 @@ structure QuantumPhysicsFullSuite : Prop where
   probability_shift : QuantumCorrelatedProbabilityWitness.QuantumCorrelatedProbabilityWitnessSuite
   tensor_environment : QuantumTensorStageEnvironment.QuantumTensorStageEnvironmentSuite
   post_bsm_environment : QuantumPostBSMEnvironment.QuantumPostBSMEnvironmentSuite
+  correlated_post : QuantumCorrelatedPostNoise.QuantumCorrelatedPostNoiseSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1138,6 +1140,7 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   probability_shift := QuantumCorrelatedProbabilityWitness.verification_suite
   tensor_environment := QuantumTensorStageEnvironment.verification_suite
   post_bsm_environment := QuantumPostBSMEnvironment.verification_suite
+  correlated_post := QuantumCorrelatedPostNoise.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

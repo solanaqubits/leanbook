@@ -2681,5 +2681,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumPostBSMEnvironment.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumCorrelatedPostNoise": {
+    "suite_struct": "QuantumCorrelatedPostNoiseSuite",
+    "suite_type": "QuantumCorrelatedPostNoise.QuantumCorrelatedPostNoiseSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "correlated_post",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumCorrelatedPostNoise.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

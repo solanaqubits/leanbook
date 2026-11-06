@@ -1,0 +1,167 @@
+{
+  "iteration": "Quantum v4.24",
+  "base_commit": "f038e0e706ba2b2a412533dfd93a0ae9b8cc8589",
+  "modules": [
+    {
+      "module": "QuantumCorrelatedPostNoise",
+      "source": "Verification/QuantumCorrelatedPostNoise.lean",
+      "sha256": "7ad4c90bcb7eab4f31cf49ea918f5ba99bceb034e0b51fe8718262faa5ba8b51",
+      "named_theorem_count": 23,
+      "declarations": [
+        {
+          "name": "QuantumCorrelatedPostNoise.post_weighted_family",
+          "kind": "theorem",
+          "line": 26
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.post_weighted_cp",
+          "kind": "theorem",
+          "line": 36
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.sqrt_sandwich_rectangular",
+          "kind": "theorem",
+          "line": 47
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.postLinear",
+          "kind": "def",
+          "line": 60
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisyJointLinear",
+          "kind": "def",
+          "line": 65
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisyJointOutcome",
+          "kind": "def",
+          "line": 70
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisyJointMicro",
+          "kind": "def",
+          "line": 74
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.postPath",
+          "kind": "def",
+          "line": 79
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.microKraus",
+          "kind": "def",
+          "line": 84
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_micro_weighted",
+          "kind": "theorem",
+          "line": 89
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_micro_kraus",
+          "kind": "theorem",
+          "line": 101
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_micro_cp",
+          "kind": "theorem",
+          "line": 111
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_micro_trace",
+          "kind": "theorem",
+          "line": 118
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.post_before_environment_trace",
+          "kind": "theorem",
+          "line": 125
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_outcome_some",
+          "kind": "theorem",
+          "line": 132
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_outcome_cp",
+          "kind": "theorem",
+          "line": 140
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_outcome_positive",
+          "kind": "theorem",
+          "line": 152
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_outcome_trace",
+          "kind": "theorem",
+          "line": 160
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_total_trace",
+          "kind": "theorem",
+          "line": 168
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_zero_iff",
+          "kind": "theorem",
+          "line": 175
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_zero_iff_original",
+          "kind": "theorem",
+          "line": 182
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_outcome_sum",
+          "kind": "theorem",
+          "line": 189
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.identity_post_refinement",
+          "kind": "theorem",
+          "line": 199
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_product_partial_trace",
+          "kind": "theorem",
+          "line": 208
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_sum_products",
+          "kind": "theorem",
+          "line": 217
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_product_bridge",
+          "kind": "theorem",
+          "line": 226
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_post_interaction_invariant",
+          "kind": "theorem",
+          "line": 241
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.noisy_tensor_stages_reduction",
+          "kind": "theorem",
+          "line": 249
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.QuantumCorrelatedPostNoiseSuite",
+          "kind": "structure",
+          "line": 258
+        },
+        {
+          "name": "QuantumCorrelatedPostNoise.verification_suite",
+          "kind": "theorem",
+          "line": 269
+        }
+      ]
+    }
+  ],
+  "named_theorem_count": 23,
+  "named_exported_declarations": 30,
+  "count_semantics": "Named source declarations, including helpers and suite structure; not independent scientific results."
+}

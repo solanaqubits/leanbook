@@ -1,0 +1,145 @@
+{
+  "schema": "leanbook-quantum-candidate-verification/v1",
+  "iteration": "Quantum v4.24",
+  "base_commit": "f038e0e706ba2b2a412533dfd93a0ae9b8cc8589",
+  "branch": "quantum-correlated-post-v424",
+  "scope": "gamma/scoped additive local candidate; no new public release",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "lake_manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "new_modules": [
+    {
+      "module": "QuantumCorrelatedPostNoise",
+      "source": "Verification/QuantumCorrelatedPostNoise.lean",
+      "sha256": "7ad4c90bcb7eab4f31cf49ea918f5ba99bceb034e0b51fe8718262faa5ba8b51",
+      "named_theorem_count": 23
+    }
+  ],
+  "named_theorem_count": 23,
+  "named_exported_declarations": 30,
+  "counts_are_not_independent_scientific_results": true,
+  "strict_module_verification": {
+    "ok": true,
+    "transitive_sources": 52,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 4520,
+      "violations": []
+    },
+    "source_unchanged": true
+  },
+  "build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 11.822726882001007,
+    "jobs": 4127,
+    "fresh_built_markers": 5,
+    "cache": "incremental; not a clean rebuild"
+  },
+  "independent_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 42927,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": [],
+    "binary_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254",
+    "scope": "compiled project declarations; not fresh re-elaboration of every source"
+  },
+  "tests": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "new_tests": 3,
+    "prior_regressions": 10,
+    "full_discovery_run": false,
+    "container": {
+      "resources": {
+        "memory.max": "12884901888",
+        "memory.swap.max": "0",
+        "cpu.max": "400000 100000"
+      },
+      "runtime_qualification": "pinned SQLite and libsodium passed",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "tests.test_quantum_v424",
+        "tests.test_quantum_v423",
+        "tests.test_quantum_v422",
+        "tests.test_quantum_gate_noise",
+        "tests.test_quantum_local_post_noise",
+        "-v"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 34.03385356800209,
+      "log_sha256": "a62b9d64b6b801f28212797d2eec950ae07869b5943a6ecf30cee32c71b40ff6"
+    },
+    "history": [
+      "Initial targeted run: 12/13 passed; ambiguous short theorem name in new fixture.",
+      "Qualified QuantumCorrelatedPostNoise.noisy_outcome_trace; second run 12/13 because the longer line exceeded the 100-character limit.",
+      "Wrapped the line; final full targeted set 13/13, zero skips. Initial and second logs retained.",
+      "Core proofs, fixture propositions and checker policies were not weakened."
+    ]
+  },
+  "exports": {
+    "log": "exports.log",
+    "sha256": "248cbfb9e4037a9ec34d85c0848b149771b7847af4e2a017aaf1987f2719f486",
+    "declarations": 30,
+    "exit_code": 0
+  },
+  "catalog": {
+    "modules": 384,
+    "sections": 12,
+    "library_lean_files": 388,
+    "master_direct_imports": 338
+  },
+  "historical_full_validation": {
+    "commit": "127a55b885f1cb6ad67132d6a0f3d4d8f56ff607",
+    "scope": "v4.21 full gates and documented multi-run test history; not rerun or relabeled here"
+  },
+  "published_baseline": {
+    "tag": "v1.0.0",
+    "commit": "5276529c6c1010722cc96c39217892b9e874f6a8",
+    "changed": false
+  },
+  "limits": [
+    "Post channels act only on AD, without a later interaction with the same memory.",
+    "Five-outcome balance and effective system-channel bridge retain their stated ideal-analyzer hypothesis.",
+    "Werner visibility results are reused under their earlier hypotheses, not generalized to arbitrary correlated inputs.",
+    "No adaptive process tensors, hardware calibration or arbitrary-interaction classification.",
+    "No fresh verify-all/full discovery/clean build/remote CI claim.",
+    "Local candidate; no push/tag/release."
+  ],
+  "final_checks": {
+    "metadata": {
+      "exit_code": 0,
+      "summary": "{\"ok\": true, \"batches\": 53, \"recipes\": 299}"
+    },
+    "knowledge": {
+      "exit_code": 0,
+      "summary": "Knowledge catalog OK: 384 modules, 12 sections; 3 support modules; local links checked in 587 Markdown files."
+    },
+    "diff-check": {
+      "exit_code": 0,
+      "summary": ""
+    },
+    "checked_input_hashes_unchanged": true
+  }
+}
