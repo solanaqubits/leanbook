@@ -1,0 +1,238 @@
+{
+  "base_commit": "5276529c6c1010722cc96c39217892b9e874f6a8",
+  "iteration": "Quantum v4.21",
+  "modules": [
+    {
+      "module": "QuantumCorrelatedMemoryBSM",
+      "source": "Verification/QuantumCorrelatedMemoryBSM.lean",
+      "sha256": "04819b96e84b0a251cf3e982d233aeb4598f5da21ef1bb4c84d564db7caa0136",
+      "theorems": [
+        {
+          "name": "QuantumCorrelatedMemoryBSM.weightedFamily_positive",
+          "line": 37
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.lift_weightedFamily",
+          "line": 44
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.weightedFamily_cp",
+          "line": 53
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.weightedFamily_add",
+          "line": 59
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.weightedFamily_smul",
+          "line": 63
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reduced_outcome_some",
+          "line": 84
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.joint_family_partial_trace",
+          "line": 97
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointMicro_kraus",
+          "line": 107
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointReject_kraus",
+          "line": 114
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.outcome_weight_nonnegative",
+          "line": 135
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointOutcome_family",
+          "line": 141
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointOutcome_cp",
+          "line": 157
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointOutcome_positive",
+          "line": 164
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointOutcome_zero_iff",
+          "line": 172
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointOutcome_product",
+          "line": 184
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointOutcome_sum_products",
+          "line": 190
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.joint_reduction_effective",
+          "line": 201
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.joint_branch_effective",
+          "line": 207
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointMicro_effective",
+          "line": 213
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointReject_effective",
+          "line": 226
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointOutcome_effective",
+          "line": 239
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.reducedJointOutcome_total_trace",
+          "line": 249
+        },
+        {
+          "name": "QuantumCorrelatedMemoryBSM.verification_suite",
+          "line": 267
+        }
+      ],
+      "named_theorem_count": 23
+    },
+    {
+      "module": "QuantumCorrelatedMemoryWitness",
+      "source": "Verification/QuantumCorrelatedMemoryWitness.lean",
+      "sha256": "742bd9f7b05e3473eca811b764c6b333bcadeea6300def4fe561d431d2c3682f",
+      "theorems": [
+        {
+          "name": "QuantumCorrelatedMemoryWitness.flipEB_involutive",
+          "line": 27
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.flipEB_eq_iff",
+          "line": 31
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.coupling_left",
+          "line": 39
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.coupling_right",
+          "line": 43
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.coupling_adjoint",
+          "line": 47
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.coupling_squared",
+          "line": 53
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.coupling_entry",
+          "line": 62
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_ideal",
+          "line": 73
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.effective_identity_memory",
+          "line": 78
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_effective",
+          "line": 89
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.input_positive",
+          "line": 99
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.input_trace",
+          "line": 102
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.coupling_prepared",
+          "line": 108
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witnessPlus_posSemidef_and_trace_one",
+          "line": 126
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witnessMinus_posSemidef_and_trace_one",
+          "line": 136
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.trace_environment_add",
+          "line": 146
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_same_system_marginal",
+          "line": 151
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.trace_system_prepared",
+          "line": 159
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_same_environment_marginal",
+          "line": 163
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_reduced_plus",
+          "line": 175
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_reduced_minus",
+          "line": 184
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_branch_plus",
+          "line": 193
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_branch_minus",
+          "line": 200
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.scaled_bell_distinct",
+          "line": 207
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_same_branch_trace_but_diff_branch_matrix",
+          "line": 214
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.no_marginal_only_map_for_witness_config",
+          "line": 225
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.accepted_plus",
+          "line": 242
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.accepted_minus",
+          "line": 246
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.accepted_fidelity_gap",
+          "line": 250
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.witness_accepted_outputs_distinct",
+          "line": 255
+        },
+        {
+          "name": "QuantumCorrelatedMemoryWitness.verification_suite",
+          "line": 272
+        }
+      ],
+      "named_theorem_count": 31
+    }
+  ]
+}

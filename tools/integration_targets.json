@@ -2627,5 +2627,23 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumTwoQubitCPTP.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumCorrelatedMemoryBSM": {
+    "suite_struct": "QuantumCorrelatedMemoryBSMSuite",
+    "suite_type": "QuantumCorrelatedMemoryBSM.QuantumCorrelatedMemoryBSMSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "correlated_memory_bsm",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumCorrelatedMemoryBSM.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumCorrelatedMemoryWitness": {
+    "suite_struct": "QuantumCorrelatedMemoryWitnessSuite",
+    "suite_type": "QuantumCorrelatedMemoryWitness.QuantumCorrelatedMemoryWitnessSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "correlated_memory_witness",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumCorrelatedMemoryWitness.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

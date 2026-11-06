@@ -16,6 +16,16 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## Quantum v4.21 development candidate
+
+[Correlated-input scope](docs/quantum-v4.21.md) ·
+[Exact theorem inventory](docs/quantum-v4.21-inventory.json).
+Two additive modules contain 54 named theorem declarations: a completely positive
+joint-input Bell instrument and a same-marginal correlation witness. This branch
+has 379 catalog modules, 383 library Lean files, and 333 direct MasterSuite imports.
+The published v1.0.0 tag and its release statistics below remain historical anchors;
+this development delta does not change the package version or claim a new public release.
+
 ## Proof sections
 
 | Section | Focus |

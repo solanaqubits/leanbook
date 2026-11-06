@@ -4,6 +4,9 @@
 
 ## Modules
 
+- [QuantumCorrelatedMemoryBSM](QuantumCorrelatedMemoryBSM.en.md) — correlated environment inputs and exact instrument semantics.
+- [QuantumCorrelatedMemoryWitness](QuantumCorrelatedMemoryWitness.en.md) — correlated environment inputs and exact instrument semantics.
+
 | Module | Verified result |
 |---|---|
 | [SpinPhotonicWaveguide](SpinPhotonicWaveguide.en.md) | Nonnegative four-coordinate energy, preservation under specified mixing, and phase and geometric-profile formulas. |

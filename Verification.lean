@@ -1,3 +1,5 @@
+import Verification.QuantumCorrelatedMemoryWitness
+import Verification.QuantumCorrelatedMemoryBSM
 import Verification.QuantumTwoQubitCPTP
 import Verification.QuantumSwappingInstrument
 import Verification.QuantumSelectiveSwapping

@@ -1,3 +1,5 @@
+import Verification.QuantumCorrelatedMemoryWitness
+import Verification.QuantumCorrelatedMemoryBSM
 import Verification.QuantumTwoQubitCPTP
 import Verification.QuantumSwappingInstrument
 import Verification.QuantumSelectiveSwapping
@@ -965,6 +967,8 @@ structure QuantumPhysicsFullSuite : Prop where
   selective_swapping : QuantumSelectiveSwapping.QuantumSelectiveSwappingSuite
   swapping_instrument : QuantumSwappingInstrument.QuantumSwappingInstrumentSuite
   two_qubit_cptp : QuantumTwoQubitCPTP.QuantumTwoQubitCPTPSuite
+  correlated_memory_bsm : QuantumCorrelatedMemoryBSM.QuantumCorrelatedMemoryBSMSuite
+  correlated_memory_witness : QuantumCorrelatedMemoryWitness.QuantumCorrelatedMemoryWitnessSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1120,6 +1124,8 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   selective_swapping := QuantumSelectiveSwapping.verification_suite
   swapping_instrument := QuantumSwappingInstrument.verification_suite
   two_qubit_cptp := QuantumTwoQubitCPTP.verification_suite
+  correlated_memory_bsm := QuantumCorrelatedMemoryBSM.verification_suite
+  correlated_memory_witness := QuantumCorrelatedMemoryWitness.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

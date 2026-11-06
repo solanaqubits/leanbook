@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumCorrelatedMemoryWitness",
+        "Verification.QuantumCorrelatedMemoryBSM",
         "Verification.QuantumTwoQubitCPTP",
         "Verification.QuantumSwappingInstrument",
         "Verification.QuantumSelectiveSwapping",
@@ -1583,6 +1585,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumCorrelatedMemoryWitness",
+        "Verification.QuantumCorrelatedMemoryBSM",
         "Verification.QuantumTwoQubitCPTP",
         "Verification.QuantumSwappingInstrument",
         "Verification.QuantumSelectiveSwapping",
@@ -4501,6 +4505,29 @@
       "card": "knowledge/quantum-physics/QuantumTwoQubitCPTP.en.md",
       "project_imports": [
         "Verification.QuantumPauliDensityBridge"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumCorrelatedMemoryBSM",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumCorrelatedMemoryBSM.lean",
+      "card": "knowledge/quantum-physics/QuantumCorrelatedMemoryBSM.en.md",
+      "project_imports": [
+        "Verification.QuantumMixedMemoryBSM"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumCorrelatedMemoryWitness",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumCorrelatedMemoryWitness.lean",
+      "card": "knowledge/quantum-physics/QuantumCorrelatedMemoryWitness.en.md",
+      "project_imports": [
+        "Verification.QuantumCorrelatedMemoryBSM",
+        "Verification.QuantumBSMMemoryWitness"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

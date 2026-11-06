@@ -1,0 +1,116 @@
+{
+  "schema": "leanbook-quantum-candidate-verification/v1",
+  "iteration": "Quantum v4.21",
+  "base_commit": "5276529c6c1010722cc96c39217892b9e874f6a8",
+  "branch": "quantum-correlated-v421",
+  "publication": "local candidate; v1.0.0 unchanged",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "lake_manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "new_modules": [
+    {
+      "module": "QuantumCorrelatedMemoryBSM",
+      "source": "Verification/QuantumCorrelatedMemoryBSM.lean",
+      "sha256": "04819b96e84b0a251cf3e982d233aeb4598f5da21ef1bb4c84d564db7caa0136",
+      "named_theorem_count": 23
+    },
+    {
+      "module": "QuantumCorrelatedMemoryWitness",
+      "source": "Verification/QuantumCorrelatedMemoryWitness.lean",
+      "sha256": "742bd9f7b05e3473eca811b764c6b333bcadeea6300def4fe561d431d2c3682f",
+      "named_theorem_count": 31
+    }
+  ],
+  "named_theorem_count": 54,
+  "counts_are_not_independent_scientific_results": true,
+  "build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "jobs": 4122,
+    "fresh_built_markers": 2,
+    "cache": "incremental; not a clean rebuild"
+  },
+  "verify_all": {
+    "ok": true,
+    "checked_roots": 382,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 42725,
+      "violations": []
+    },
+    "source_unchanged": true
+  },
+  "independent_audit": {
+    "ok": true,
+    "audited": 42725,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "violations": [],
+    "binary_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254"
+  },
+  "tests": {
+    "status": "passed_after_targeted_environment_recovery",
+    "distinct_tests": 674,
+    "full_run": {
+      "tests": 674,
+      "passed": 671,
+      "failed": {
+        "test_clean_project_build.CleanBuildTests.test_failed_build_keeps_failure_receipt": "FAIL",
+        "test_clean_project_build.CleanBuildTests.test_live_clean_graph_and_receipt_tampering": "ERROR",
+        "test_clean_project_build.CleanBuildTests.test_live_native_helpers_preserve_frozen_receipt": "ERROR"
+      }
+    },
+    "recovery": {
+      "tests": 12,
+      "passed": 12,
+      "log": "clean-build-tests-recovery.log"
+    },
+    "unresolved_failures": [],
+    "skipped": 0,
+    "interpretation": "674 distinct tests passed across the full discovery run and affected 12-test rerun; not a single clean full-run claim."
+  },
+  "history": [
+    "Initial host discovery was interrupted after missing pinned SQLite caused failures; checks.json and all-tests.log retain this unsuccessful attempt.",
+    "First container startup used the image default entrypoint and exited 127; explicit Python entrypoint fixed launch.",
+    "Qualified discovery completed 674 tests: 671 passed, 3 failed the clean-build memory.swap.max contract. The container swap limit was corrected and all 12 affected-module tests passed. No source, tests, assertions or skips were weakened."
+  ],
+  "exports": {
+    "named_declarations": 67,
+    "named_theorems": 54,
+    "exit_code": 0,
+    "log": "exports.log"
+  },
+  "evidence_sha256": {
+    "build.log": "81b102c8b30b283ee3a9ac401d47cf40d645e8fe7888b746399998af024ba581",
+    "verify-all.log": "d58dbec0c5dd40383a9071f301cfe153a4951c81d371a068f676354cb4f90df4",
+    "registry-audit.log": "02572342e3b7519f7e1b7bda35c325520bd4a7b3e21816a2039dc87d690437cb",
+    "independent-audit.log": "3674c710b96f20f23c4542d91a9e4b9bf52f486a7c39af979f4e70240461a01f",
+    "verify-witness.json": "c06924b1fbc71a5405c26f3c9a2d87cf803eeb174cd7a061892abac1c9712819",
+    "targeted-tests-final.log": "41976828d6bba965556bc14d751e46cf6d61c56a9aa3670847a2da9b5b8a45c9",
+    "all-tests-qualified.log": "125fe3f04a3e1159e2cb0ee1676c6b1d08b0e511d5d400d6506d99ceefaeafea",
+    "clean-build-tests-recovery.log": "78592e16eeabf14d47432e0de04a17acc3c5da3bf38842295a00c176b7031700",
+    "test-coverage.json": "1a25c8254900a6cf2c456d7e87ccd3c114fe7feedc1dc65fdef679224a0c524c",
+    "exports.log": "0e446e057835fa3c0e1fd17a3d1a57d80eacfc81e756a974cd7c3b5be6e8ea66",
+    "all-tests.log": "914221c4536d5105557504097c2751731e3d3a6bf2ce44228510e65559e1008a",
+    "checks.json": "48542b6d0158ddadfbfb8863c8cad94f74c015e35997e83c53df2b2db8362491",
+    "qualified-checks.json": "b819d131e3f28c4473a3bac5a228e54406d9e5b8493de261693fb4f218430285",
+    "qualified-runtime-final.json": "1d15dfda6bae293131985574cb24adfeb534c971a4de289045ae21d7d9de5b8b"
+  },
+  "limits": [
+    "Finite-dimensional single-cycle model; no adaptive process tensor.",
+    "The no-marginal-map result is for the explicit fixed witness configuration.",
+    "The witness has equal branch probabilities 1/4; only output matrices and target overlap differ.",
+    "Optional GHZ different-probability witness not implemented.",
+    "No hardware characterization, novelty assessment or general assignment-map theorem."
+  ]
+}
