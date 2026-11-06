@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: ad11eb0d5584cf32838447b1ff25f88eed52555a7c7904fea255ed631383ba6d
+source_sha256: 267f5aa9918c5e0fbf7e4fb0c50894998ebe3168129001c7441f69f093991082
 novelty: not-assessed
 status: reviewed
 ---
@@ -14,7 +14,7 @@ status: reviewed
 
 ## Verified result
 
-Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 300 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
+Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 339 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
 
 ## Assumptions and scope
 
@@ -25,21 +25,21 @@ Scientific priority and first-formalization claims have not been established.
 
 ## Proof entry points
 
-- [`finsler_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L526)
-- [`finsler_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L538)
-- [`lamzouri_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L550)
-- [`collatz_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L569)
-- [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L674)
-- [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L907)
-- [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1037)
-- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1050)
-- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1064)
-- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1117)
-- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1213)
-- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1304)
-- [`verification_master_registry`](../../Verification/MasterSuite.lean#L456)
+- [`finsler_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L565)
+- [`finsler_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L577)
+- [`lamzouri_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L589)
+- [`collatz_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L608)
+- [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L713)
+- [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L985)
+- [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1154)
+- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1167)
+- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1181)
+- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1234)
+- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1330)
+- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1421)
+- [`verification_master_registry`](../../Verification/MasterSuite.lean#L495)
 
-- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1317)
+- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1434)
 
 ## Verification
 

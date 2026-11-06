@@ -1,0 +1,153 @@
+{
+  "schema": "leanbook-quantum-candidate-verification/v1",
+  "iteration": "Quantum v4.26",
+  "base_commit": "f075bb4657382c0f5677326b6853cfbe728d024c",
+  "branch": "quantum-cascade-v426",
+  "scope": "gamma/scoped additive local candidate; no public release",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "lake_manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "new_modules": [
+    {
+      "module": "QuantumCascadedSwapping",
+      "source": "Verification/QuantumCascadedSwapping.lean",
+      "sha256": "7b63a3025a6ccc01334cae528cf557f068d621d1dbecaad7cfe8a5a497b3e20a",
+      "named_theorem_count": 23
+    }
+  ],
+  "named_theorem_count": 23,
+  "named_exported_declarations": 37,
+  "counts_are_not_independent_scientific_results": true,
+  "strict_module_verification": {
+    "ok": true,
+    "transitive_sources": 53,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 4638,
+      "violations": []
+    },
+    "source_unchanged": true
+  },
+  "build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 11.661525955001707,
+    "jobs": 4128,
+    "fresh_built_markers": 5,
+    "cache": "incremental, not a clean rebuild"
+  },
+  "independent_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43046,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": [],
+    "binary_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254",
+    "scope": "compiled project declarations, not fresh elaboration of every source"
+  },
+  "tests": {
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "new_tests": 3,
+    "prior_regressions": 13,
+    "full_discovery_run": false,
+    "container": {
+      "resources": {
+        "memory.max": "12884901888",
+        "memory.swap.max": "0",
+        "cpu.max": "400000 100000"
+      },
+      "runtime_qualification": "pinned SQLite and libsodium passed",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "tests.test_quantum_v426",
+        "tests.test_quantum_v424",
+        "tests.test_quantum_v423",
+        "tests.test_quantum_v422",
+        "tests.test_quantum_gate_noise",
+        "tests.test_quantum_local_post_noise",
+        "-v"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 41.933999473993026,
+      "log_sha256": "4328fcb9639ee146b781e4a61e2e09971f2b336009b55bbb7a8225ebb6732b50"
+    },
+    "history": [
+      "First targeted container run: 15/16; new feedback fixture had a record-layout error, unreduced projections and excessive definitional unfolding.",
+      "Local fixture refinement then found a missing qualified weight name and a redundant change tactic.",
+      "Final full targeted container set: 16/16, no skips. No propositions, proof checks or test assertions weakened."
+    ]
+  },
+  "exports": {
+    "log": "exports.log",
+    "sha256": "56af5b23b9e582a7f57c89bc4a38fb213c11a69940df617b59f00a1462cb5ca9",
+    "declarations": 37,
+    "exit_code": 0
+  },
+  "catalog": {
+    "modules": 385,
+    "sections": 12,
+    "library_lean_files": 389,
+    "master_direct_imports": 339
+  },
+  "historical_full_validation": {
+    "commit": "127a55b885f1cb6ad67132d6a0f3d4d8f56ff607",
+    "scope": "v4.21 full gates and documented multi-run test history; not rerun here"
+  },
+  "published_baseline": {
+    "tag": "v1.0.0",
+    "commit": "5276529c6c1010722cc96c39217892b9e874f6a8",
+    "changed": false
+  },
+  "v425_status": "Separate six-theorem checked prototype of existing v4.24 corollaries; no intervening integrated commit",
+  "development_history": [
+    "Four development elaborations retained; fixed typeclass instances, explicit rectangular dimensions and finite-sum proofs.",
+    "Initial strict verification failed only a 100-character source line; wrapped it and reran strict verification successfully.",
+    "Preliminary documentation check detected the not-yet-written verification JSON; final check runs after this record exists."
+  ],
+  "limits": [
+    "Exactly two swapping rounds; no distillation circuit.",
+    "Fresh pair is EnvironmentState PairIndex; second memory has its own independent dimension.",
+    "First-round quantum memory is discarded; no retained-memory process tensor.",
+    "Feedback selects fixed resources and round parameters from delivered r1, not hidden m1 or the input matrix.",
+    "Each Round carries the inherited analyzer equality required for five-outcome trace balance.",
+    "Zero-branch and chain reconstruction theorems require PSD. Conditional maps have no linearity or CP claim.",
+    "No new full verify-all, full discovery, clean build or hosted CI claim.",
+    "Local candidate; no push/tag/release."
+  ],
+  "final_checks": {
+    "metadata": {
+      "exit_code": 0,
+      "summary": "{\"ok\": true, \"batches\": 53, \"recipes\": 300}"
+    },
+    "knowledge": {
+      "exit_code": 0,
+      "summary": "Knowledge catalog OK: 385 modules, 12 sections; 3 support modules; local links checked in 589 Markdown files."
+    },
+    "diff-check": {
+      "exit_code": 0,
+      "summary": ""
+    },
+    "checked_import_source_hashes_unchanged": true
+  }
+}

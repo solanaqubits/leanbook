@@ -2690,5 +2690,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumCorrelatedPostNoise.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumCascadedSwapping": {
+    "suite_struct": "QuantumCascadedSwappingSuite",
+    "suite_type": "QuantumCascadedSwapping.QuantumCascadedSwappingSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "cascade",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumCascadedSwapping.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

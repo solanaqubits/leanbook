@@ -1,0 +1,200 @@
+{
+  "iteration": "Quantum v4.26",
+  "base_commit": "f075bb4657382c0f5677326b6853cfbe728d024c",
+  "modules": [
+    {
+      "module": "QuantumCascadedSwapping",
+      "source": "Verification/QuantumCascadedSwapping.lean",
+      "sha256": "7b63a3025a6ccc01334cae528cf557f068d621d1dbecaad7cfe8a5a497b3e20a",
+      "named_theorem_count": 23,
+      "declarations": [
+        {
+          "name": "QuantumCascadedSwapping.KrausBranch",
+          "kind": "structure",
+          "line": 21
+        },
+        {
+          "name": "QuantumCascadedSwapping.KrausBranch.map",
+          "kind": "def",
+          "line": 31
+        },
+        {
+          "name": "QuantumCascadedSwapping.KrausBranch.linear",
+          "kind": "def",
+          "line": 34
+        },
+        {
+          "name": "QuantumCascadedSwapping.KrausBranch.cp",
+          "kind": "theorem",
+          "line": 40
+        },
+        {
+          "name": "QuantumCascadedSwapping.KrausBranch.positive",
+          "kind": "theorem",
+          "line": 48
+        },
+        {
+          "name": "QuantumCascadedSwapping.KrausBranch.comp",
+          "kind": "def",
+          "line": 55
+        },
+        {
+          "name": "QuantumCascadedSwapping.KrausBranch.comp_map",
+          "kind": "theorem",
+          "line": 61
+        },
+        {
+          "name": "QuantumCascadedSwapping.preparation",
+          "kind": "def",
+          "line": 71
+        },
+        {
+          "name": "QuantumCascadedSwapping.preparation_map",
+          "kind": "theorem",
+          "line": 77
+        },
+        {
+          "name": "QuantumCascadedSwapping.preparation_trace",
+          "kind": "theorem",
+          "line": 81
+        },
+        {
+          "name": "QuantumCascadedSwapping.Round",
+          "kind": "structure",
+          "line": 87
+        },
+        {
+          "name": "QuantumCascadedSwapping.Round.branch",
+          "kind": "def",
+          "line": 96
+        },
+        {
+          "name": "QuantumCascadedSwapping.Round.branch_map",
+          "kind": "theorem",
+          "line": 107
+        },
+        {
+          "name": "QuantumCascadedSwapping.Round.total_trace",
+          "kind": "theorem",
+          "line": 123
+        },
+        {
+          "name": "QuantumCascadedSwapping.Cascade",
+          "kind": "structure",
+          "line": 131
+        },
+        {
+          "name": "QuantumCascadedSwapping.TerminalOutcome",
+          "kind": "abbrev",
+          "line": 139
+        },
+        {
+          "name": "QuantumCascadedSwapping.terminal_outcome_card",
+          "kind": "theorem",
+          "line": 141
+        },
+        {
+          "name": "QuantumCascadedSwapping.continuation",
+          "kind": "def",
+          "line": 147
+        },
+        {
+          "name": "QuantumCascadedSwapping.cascadeBranch",
+          "kind": "def",
+          "line": 152
+        },
+        {
+          "name": "QuantumCascadedSwapping.terminalBranch",
+          "kind": "def",
+          "line": 156
+        },
+        {
+          "name": "QuantumCascadedSwapping.continuation_semantics",
+          "kind": "theorem",
+          "line": 162
+        },
+        {
+          "name": "QuantumCascadedSwapping.cascade_semantics",
+          "kind": "theorem",
+          "line": 169
+        },
+        {
+          "name": "QuantumCascadedSwapping.cascade_kraus",
+          "kind": "theorem",
+          "line": 176
+        },
+        {
+          "name": "QuantumCascadedSwapping.terminal_cp",
+          "kind": "theorem",
+          "line": 192
+        },
+        {
+          "name": "QuantumCascadedSwapping.terminal_positive",
+          "kind": "theorem",
+          "line": 195
+        },
+        {
+          "name": "QuantumCascadedSwapping.terminal_sum",
+          "kind": "theorem",
+          "line": 199
+        },
+        {
+          "name": "QuantumCascadedSwapping.continuation_total_trace",
+          "kind": "theorem",
+          "line": 206
+        },
+        {
+          "name": "QuantumCascadedSwapping.terminal_total_trace",
+          "kind": "theorem",
+          "line": 212
+        },
+        {
+          "name": "QuantumCascadedSwapping.conditionalContinuation",
+          "kind": "def",
+          "line": 220
+        },
+        {
+          "name": "QuantumCascadedSwapping.cascade_reconstruction",
+          "kind": "theorem",
+          "line": 225
+        },
+        {
+          "name": "QuantumCascadedSwapping.cascade_probability_factorization",
+          "kind": "theorem",
+          "line": 238
+        },
+        {
+          "name": "QuantumCascadedSwapping.zero_first_branch_gives_zero_continuation",
+          "kind": "theorem",
+          "line": 245
+        },
+        {
+          "name": "QuantumCascadedSwapping.conditional_total_trace",
+          "kind": "theorem",
+          "line": 252
+        },
+        {
+          "name": "QuantumCascadedSwapping.terminal_probability_nonnegative",
+          "kind": "theorem",
+          "line": 260
+        },
+        {
+          "name": "QuantumCascadedSwapping.terminal_probabilities_sum_one",
+          "kind": "theorem",
+          "line": 265
+        },
+        {
+          "name": "QuantumCascadedSwapping.QuantumCascadedSwappingSuite",
+          "kind": "structure",
+          "line": 271
+        },
+        {
+          "name": "QuantumCascadedSwapping.verification_suite",
+          "kind": "theorem",
+          "line": 280
+        }
+      ]
+    }
+  ],
+  "counts_are_not_independent_scientific_results": true
+}

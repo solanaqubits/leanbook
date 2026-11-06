@@ -1,3 +1,4 @@
+import Verification.QuantumCascadedSwapping
 import Verification.QuantumCorrelatedPostNoise
 import Verification.QuantumPostBSMEnvironment
 import Verification.QuantumTensorStageEnvironment
@@ -979,6 +980,7 @@ structure QuantumPhysicsFullSuite : Prop where
   tensor_environment : QuantumTensorStageEnvironment.QuantumTensorStageEnvironmentSuite
   post_bsm_environment : QuantumPostBSMEnvironment.QuantumPostBSMEnvironmentSuite
   correlated_post : QuantumCorrelatedPostNoise.QuantumCorrelatedPostNoiseSuite
+  cascade : QuantumCascadedSwapping.QuantumCascadedSwappingSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1141,6 +1143,7 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   tensor_environment := QuantumTensorStageEnvironment.verification_suite
   post_bsm_environment := QuantumPostBSMEnvironment.verification_suite
   correlated_post := QuantumCorrelatedPostNoise.verification_suite
+  cascade := QuantumCascadedSwapping.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/
