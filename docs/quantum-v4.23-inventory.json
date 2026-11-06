@@ -1,0 +1,250 @@
+{
+  "base_commit": "2f56a1a3d80a95a01277fcfaa2693e477c4f5f41",
+  "iteration": "Quantum v4.23",
+  "modules": [
+    {
+      "module": "QuantumTensorStageEnvironment",
+      "source": "Verification/QuantumTensorStageEnvironment.lean",
+      "sha256": "3277a5d6d56dde0714a5782775b05eeca77ff7fd8828e7575f0a503c48cb1870",
+      "named_theorem_count": 9,
+      "declarations": [
+        {
+          "name": "QuantumTensorStageEnvironment.tensorGate",
+          "kind": "def",
+          "line": 20
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.tensorStage",
+          "kind": "def",
+          "line": 29
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.stageStep",
+          "kind": "def",
+          "line": 33
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.traceEnvironment_tensorGate",
+          "kind": "theorem",
+          "line": 36
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.traceEnvironment_tensorStage_step",
+          "kind": "theorem",
+          "line": 43
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.tensorCPTP_identity_map",
+          "kind": "theorem",
+          "line": 53
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.tensorStage_identity_step_eq_extendStage",
+          "kind": "theorem",
+          "line": 58
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.tensorStages",
+          "kind": "def",
+          "line": 67
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.traceEnvironment_run_tensorStages",
+          "kind": "theorem",
+          "line": 70
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.tensorStages_outcome_marginal_reduction",
+          "kind": "theorem",
+          "line": 81
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.tensorStages_reducedJointOutcome",
+          "kind": "theorem",
+          "line": 94
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.tensorStages_identity_run",
+          "kind": "theorem",
+          "line": 103
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.QuantumTensorStageEnvironmentSuite",
+          "kind": "structure",
+          "line": 114
+        },
+        {
+          "name": "QuantumTensorStageEnvironment.verification_suite",
+          "kind": "theorem",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "module": "QuantumPostBSMEnvironment",
+      "source": "Verification/QuantumPostBSMEnvironment.lean",
+      "sha256": "92f2929797c1145283e3e4d8332e42ed1ea2c8bbd6e8509140ce3a7307bf0314",
+      "named_theorem_count": 21,
+      "declarations": [
+        {
+          "name": "QuantumPostBSMEnvironment.flipBE",
+          "kind": "def",
+          "line": 21
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.flipBE_involutive",
+          "kind": "theorem",
+          "line": 24
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.flipBE_eq_iff",
+          "kind": "theorem",
+          "line": 28
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.postMatrix",
+          "kind": "def",
+          "line": 33
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.post_left",
+          "kind": "theorem",
+          "line": 36
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.post_right",
+          "kind": "theorem",
+          "line": 40
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.post_adjoint",
+          "kind": "theorem",
+          "line": 44
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.post_squared",
+          "kind": "theorem",
+          "line": 50
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.postBSMCnotBE",
+          "kind": "def",
+          "line": 55
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.post_channel_entry",
+          "kind": "theorem",
+          "line": 58
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.postBSMCnotBE_not_kronecker_product",
+          "kind": "theorem",
+          "line": 65
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.computational_sandwich_entry",
+          "kind": "theorem",
+          "line": 85
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.computational_reduction_post_cancel",
+          "kind": "theorem",
+          "line": 94
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.corrected_computational_post_cancel",
+          "kind": "theorem",
+          "line": 105
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.select_branch_postBSMCnotBE_cancel",
+          "kind": "theorem",
+          "line": 116
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.postStage",
+          "kind": "def",
+          "line": 126
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.run_postStage",
+          "kind": "theorem",
+          "line": 129
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.post_interaction_outcome_invariant",
+          "kind": "theorem",
+          "line": 138
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.baseBSMStages",
+          "kind": "def",
+          "line": 150
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.postCoupledBSMStages",
+          "kind": "def",
+          "line": 153
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.postBSMCnotBE_preserves_all_reducedJointOutcomes",
+          "kind": "theorem",
+          "line": 156
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.probeKet",
+          "kind": "def",
+          "line": 164
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.probeState",
+          "kind": "def",
+          "line": 167
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.coupledKet",
+          "kind": "def",
+          "line": 169
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.probeState_positive",
+          "kind": "theorem",
+          "line": 171
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.probeState_trace_one",
+          "kind": "theorem",
+          "line": 174
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.probeState_coupled_pure",
+          "kind": "theorem",
+          "line": 178
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.coupledKet_not_product",
+          "kind": "theorem",
+          "line": 185
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.post_changes_joint_probe",
+          "kind": "theorem",
+          "line": 210
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.QuantumPostBSMEnvironmentSuite",
+          "kind": "structure",
+          "line": 217
+        },
+        {
+          "name": "QuantumPostBSMEnvironment.verification_suite",
+          "kind": "theorem",
+          "line": 227
+        }
+      ]
+    }
+  ],
+  "named_theorem_count": 30,
+  "named_exported_declarations": 45,
+  "count_semantics": "Named source declarations including helpers and suite structures; not independent scientific results."
+}

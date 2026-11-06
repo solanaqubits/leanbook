@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumPostBSMEnvironment",
+        "Verification.QuantumTensorStageEnvironment",
         "Verification.QuantumCorrelatedProbabilityWitness",
         "Verification.QuantumDecoupledEnvironment",
         "Verification.QuantumCorrelatedMemoryWitness",
@@ -1587,6 +1589,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumPostBSMEnvironment",
+        "Verification.QuantumTensorStageEnvironment",
         "Verification.QuantumCorrelatedProbabilityWitness",
         "Verification.QuantumDecoupledEnvironment",
         "Verification.QuantumCorrelatedMemoryWitness",
@@ -4555,6 +4559,28 @@
       "project_imports": [
         "Verification.QuantumCorrelatedMemoryWitness",
         "Verification.QuantumDecoupledEnvironment"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumTensorStageEnvironment",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumTensorStageEnvironment.lean",
+      "card": "knowledge/quantum-physics/QuantumTensorStageEnvironment.en.md",
+      "project_imports": [
+        "Verification.QuantumDecoupledEnvironment"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumPostBSMEnvironment",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumPostBSMEnvironment.lean",
+      "card": "knowledge/quantum-physics/QuantumPostBSMEnvironment.en.md",
+      "project_imports": [
+        "Verification.QuantumTensorStageEnvironment"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: bad13c280ec1d42de082cccb001804d275184854c1537f84182875b6298fb67f
+source_sha256: 9cd0e8396dcf649e76b64f652ea6db3d00620e211f981961d759802412634674
 novelty: not-assessed
 status: reviewed
 ---

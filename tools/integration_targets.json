@@ -2663,5 +2663,23 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumCorrelatedProbabilityWitness.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumTensorStageEnvironment": {
+    "suite_struct": "QuantumTensorStageEnvironmentSuite",
+    "suite_type": "QuantumTensorStageEnvironment.QuantumTensorStageEnvironmentSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "tensor_environment",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumTensorStageEnvironment.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumPostBSMEnvironment": {
+    "suite_struct": "QuantumPostBSMEnvironmentSuite",
+    "suite_type": "QuantumPostBSMEnvironment.QuantumPostBSMEnvironmentSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "post_bsm_environment",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumPostBSMEnvironment.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

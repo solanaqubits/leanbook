@@ -1,0 +1,140 @@
+{
+  "schema": "leanbook-quantum-candidate-verification/v1",
+  "iteration": "Quantum v4.23",
+  "base_commit": "2f56a1a3d80a95a01277fcfaa2693e477c4f5f41",
+  "branch": "quantum-postmeasurement-v423",
+  "scope": "gamma/scoped additive local candidate; no new public release",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "lake_manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "new_modules": [
+    {
+      "module": "QuantumTensorStageEnvironment",
+      "source": "Verification/QuantumTensorStageEnvironment.lean",
+      "sha256": "3277a5d6d56dde0714a5782775b05eeca77ff7fd8828e7575f0a503c48cb1870",
+      "named_theorem_count": 9
+    },
+    {
+      "module": "QuantumPostBSMEnvironment",
+      "source": "Verification/QuantumPostBSMEnvironment.lean",
+      "sha256": "92f2929797c1145283e3e4d8332e42ed1ea2c8bbd6e8509140ce3a7307bf0314",
+      "named_theorem_count": 21
+    }
+  ],
+  "named_theorem_count": 30,
+  "named_exported_declarations": 45,
+  "counts_are_not_independent_scientific_results": true,
+  "strict_module_verification": {
+    "ok": true,
+    "transitive_sources": 51,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 4479,
+      "violations": []
+    },
+    "source_unchanged": true,
+    "additional_registered_module_reelaboration": "strict-A-final.log"
+  },
+  "build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 11.124065148000227,
+    "jobs": 4126,
+    "fresh_built_markers": 5,
+    "cache": "incremental; not a clean rebuild"
+  },
+  "independent_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 42885,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": [],
+    "binary_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254",
+    "scope": "compiled project declarations; not fresh re-elaboration of every source"
+  },
+  "tests": {
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0,
+    "new_tests": 3,
+    "prior_v420_v422_regressions": 7,
+    "full_discovery_run": false,
+    "container": {
+      "resources": {
+        "memory.max": "12884901888",
+        "memory.swap.max": "0",
+        "cpu.max": "400000 100000"
+      },
+      "runtime_qualification": "pinned SQLite and libsodium passed",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "tests.test_quantum_v423",
+        "tests.test_quantum_v422",
+        "tests.test_quantum_correlated_memory",
+        "tests.test_quantum_mixed_environment",
+        "-v"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 27.15355221599748,
+      "log_sha256": "8d0b44b6e41220be1cae2d85f497b27084a71261b4820f0fa34dc080723ade2e"
+    },
+    "history": [
+      "Initial targeted run: 9/10 passed; new post-BSM fixture missing open scoped ComplexOrder.",
+      "Added ComplexOrder to the fixture only; complete same targeted set rerun: 10/10 passed.",
+      "Initial log retained as initial-targeted.log; no proof, test assertion or checker weakened."
+    ]
+  },
+  "exports": {
+    "log": "exports.log",
+    "sha256": "f9a0eedf418de46346c366860eb3912635b8ff8b5fbb4912ce7d3589c35b0d52",
+    "declarations": 45,
+    "exit_code": 0
+  },
+  "catalog": {
+    "modules": 383,
+    "sections": 12,
+    "library_lean_files": 387,
+    "master_direct_imports": 337
+  },
+  "historical_full_validation": {
+    "commit": "127a55b885f1cb6ad67132d6a0f3d4d8f56ff607",
+    "scope": "v4.21 full gates and documented multi-run test history; not rerun or relabeled here"
+  },
+  "published_baseline": {
+    "tag": "v1.0.0",
+    "commit": "5276529c6c1010722cc96c39217892b9e874f6a8",
+    "changed": false
+  },
+  "limits": [
+    "No full characterization of marginally reducible interactions.",
+    "No adaptive process tensors or hardware claims.",
+    "Optional CNOT A-to-E coherence example not added as a new theorem.",
+    "No fresh verify-all/full discovery/clean build/remote CI claim.",
+    "Local candidate; no push, tag move or release."
+  ],
+  "final_checks": {
+    "metadata": "passed",
+    "knowledge": "passed: 383 modules / 12 sections / 3 support modules / 585 Markdown files",
+    "diff_check": "passed",
+    "checked_input_hashes_unchanged": true
+  }
+}

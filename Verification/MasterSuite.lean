@@ -1,3 +1,5 @@
+import Verification.QuantumPostBSMEnvironment
+import Verification.QuantumTensorStageEnvironment
 import Verification.QuantumCorrelatedProbabilityWitness
 import Verification.QuantumDecoupledEnvironment
 import Verification.QuantumCorrelatedMemoryWitness

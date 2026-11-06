@@ -260,3 +260,7 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 
 - [QuantumDecoupledEnvironment](QuantumDecoupledEnvironment.en.md)
 - [QuantumCorrelatedProbabilityWitness](QuantumCorrelatedProbabilityWitness.en.md)
+
+- [QuantumTensorStageEnvironment](QuantumTensorStageEnvironment.en.md)
+
+- [QuantumPostBSMEnvironment](QuantumPostBSMEnvironment.en.md)
