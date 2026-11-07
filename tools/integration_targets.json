@@ -2780,5 +2780,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumNestedRepeater.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNoisyBBPSSW": {
+    "suite_struct": "QuantumNoisyBBPSSWSuite",
+    "suite_type": "QuantumNoisyBBPSSW.QuantumNoisyBBPSSWSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "noisy_bbpssw",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNoisyBBPSSW.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

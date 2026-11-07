@@ -1,0 +1,115 @@
+{
+  "iteration": "Quantum v4.34",
+  "base_commit": "ad83f5a23cade7b6d58ae7f2447d21a06e1c9b69",
+  "branch": "quantum-noisy-bbpssw-v434",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "model": "CPTP depolarization of the entire retained output pair after ideal BBPSSW and twirl",
+  "new_modules": 1,
+  "named_theorems": 42,
+  "named_exports": 50,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 62,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 5368,
+      "violations": []
+    }
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43907,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "independent_auditor_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254",
+  "incremental_build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "jobs": 4138,
+    "fresh_targets": [
+      "\u2714 [4133/4138] Built Verification.MasterSuiteComponents (2.6s)",
+      "\u2714 [4134/4138] Built Verification.MasterHundredRegistry (1.8s)",
+      "\u2139 [4135/4138] Built Verification.MasterSuite (1.9s)",
+      "\u2139 [4136/4138] Built Verification.AxiomAudit (2.2s)",
+      "\u2714 [4137/4138] Built Verification (1.9s)"
+    ],
+    "clean_build": false
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v434",
+      "tests.test_quantum_v433",
+      "tests.test_quantum_v432",
+      "tests.test_quantum_v431",
+      "tests.test_quantum_v430",
+      "tests.test_quantum_v429",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 114.94272010899977,
+    "log_sha256": "0588bee581e729f099055565ba7a07ebe429603eeb3c79b9c4b2bc08dab9d17f"
+  },
+  "development_history": "develop-01..04 retained. Proof repairs addressed denominator positivity, a tactic parser layout, exposing the discriminant polynomial without changing the square-root atom, affine addition order, and sqrt(100). No limits increased or checks disabled.",
+  "model_boundaries": [
+    "This is post-depolarization of the entire retained pair, not input noise, bilateral CNOT gate noise or detector noise.",
+    "Success probability remains P(F); physical conditional states cover the full F interval [0,1].",
+    "The fixed-point numerator is cubic; the quadratic factor remains after the root F=1/4 is separated.",
+    "The stationary upper root is strictly below the one-step pure-input output, so it is not a bound on all transient fidelities.",
+    "No noisy-orbit Tendsto theorem, complete noisy repeater, rate or expected yield is claimed."
+  ],
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "24052a4ef9eadf084342f407837d309f81105375b4df79eb0ea036c47677f54e",
+  "catalog": {
+    "modules": 395,
+    "sections": 12,
+    "library_files": 399,
+    "MasterSuite_direct_imports": 349
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed",
+  "test_history": [
+    "First targeted container run:43/43,zero skips (4 new and 39 previous tests)."
+  ]
+}

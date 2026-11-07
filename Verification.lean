@@ -1,3 +1,4 @@
+import Verification.QuantumNoisyBBPSSW
 import Verification.QuantumNestedRepeater
 import Verification.QuantumRepeaterChain
 import Verification.QuantumHeterogeneousBBPSSW

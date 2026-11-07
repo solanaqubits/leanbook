@@ -1,0 +1,261 @@
+{
+  "modules": [
+    {
+      "module": "QuantumNoisyBBPSSW",
+      "source": "Verification/QuantumNoisyBBPSSW.lean",
+      "sha256": "5b5821b8f3f3d59fcd889ab81b77e86e18e3567172b3cb05db6ba98cf402f2eb",
+      "declarations": [
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified",
+          "kind": "def",
+          "line": 19
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence",
+          "kind": "def",
+          "line": 22
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyIncrementQuad",
+          "kind": "def",
+          "line": 24
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyDiscFactor",
+          "kind": "def",
+          "line": 26
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.criticalGamma",
+          "kind": "def",
+          "line": 28
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.lowerWindowBound",
+          "kind": "def",
+          "line": 30
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.upperWindowCeiling",
+          "kind": "def",
+          "line": 32
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_sub_self",
+          "kind": "theorem",
+          "line": 34
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_bounds",
+          "kind": "theorem",
+          "line": 42
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_quarter",
+          "kind": "theorem",
+          "line": 52
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_one",
+          "kind": "theorem",
+          "line": 56
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_zero",
+          "kind": "theorem",
+          "line": 59
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_pure_input",
+          "kind": "theorem",
+          "line": 62
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.criticalGamma_bounds",
+          "kind": "theorem",
+          "line": 66
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyDiscFactor_critical",
+          "kind": "theorem",
+          "line": 72
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyDiscFactor_sub",
+          "kind": "theorem",
+          "line": 77
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyDiscFactor_neg",
+          "kind": "theorem",
+          "line": 82
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyDiscFactor_pos",
+          "kind": "theorem",
+          "line": 90
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyIncrementQuad_square",
+          "kind": "theorem",
+          "line": 99
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_fixed_iff_quad",
+          "kind": "theorem",
+          "line": 104
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_strict_decay_below_critical",
+          "kind": "theorem",
+          "line": 118
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_subcritical_fixed_iff",
+          "kind": "theorem",
+          "line": 130
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyIncrementQuad_critical",
+          "kind": "theorem",
+          "line": 139
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_critical_no_strict_gain",
+          "kind": "theorem",
+          "line": 144
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_critical_fixed_iff",
+          "kind": "theorem",
+          "line": 154
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyIncrementQuad_roots",
+          "kind": "theorem",
+          "line": 166
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.working_window_inside_half_one",
+          "kind": "theorem",
+          "line": 173
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_strict_improve_iff_in_window",
+          "kind": "theorem",
+          "line": 190
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_fixed_points_iff",
+          "kind": "theorem",
+          "line": 222
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.critical_window_bounds_coincide",
+          "kind": "theorem",
+          "line": 229
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyRecurrence_strictMonoOn",
+          "kind": "theorem",
+          "line": 234
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.ceiling_lt_pure_output",
+          "kind": "theorem",
+          "line": 242
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_isCPMap",
+          "kind": "theorem",
+          "line": 254
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_add",
+          "kind": "theorem",
+          "line": 263
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_smul",
+          "kind": "theorem",
+          "line": 267
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_trace",
+          "kind": "theorem",
+          "line": 271
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_trace_balance",
+          "kind": "theorem",
+          "line": 274
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_posSemidef",
+          "kind": "theorem",
+          "line": 278
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.depolarizing_werner",
+          "kind": "theorem",
+          "line": 287
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_werner",
+          "kind": "theorem",
+          "line": 293
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_success_probability",
+          "kind": "theorem",
+          "line": 299
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_conditional",
+          "kind": "theorem",
+          "line": 303
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.noisyPurified_conditional_density",
+          "kind": "theorem",
+          "line": 309
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.nine_tenths_below_critical",
+          "kind": "theorem",
+          "line": 318
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.nine_tenths_no_working_window",
+          "kind": "theorem",
+          "line": 324
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.nineteen_twentieths_above_critical",
+          "kind": "theorem",
+          "line": 328
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.nineteen_twentieths_ceiling",
+          "kind": "theorem",
+          "line": 334
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.nineteen_twentieths_working_window_witness",
+          "kind": "theorem",
+          "line": 341
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.QuantumNoisyBBPSSWSuite",
+          "kind": "structure",
+          "line": 353
+        },
+        {
+          "name": "QuantumNoisyBBPSSW.verification_suite",
+          "kind": "theorem",
+          "line": 363
+        }
+      ]
+    }
+  ]
+}

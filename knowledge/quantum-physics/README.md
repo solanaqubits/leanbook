@@ -285,3 +285,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [Finite ideal repeater chain](QuantumRepeaterChain.en.md)
 
 - [Nested repeater limits, conditional growth and resources](QuantumNestedRepeater.en.md)
+
+- [Post-depolarized BBPSSW and exact working windows](QuantumNoisyBBPSSW.en.md)

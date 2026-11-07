@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumNoisyBBPSSW",
         "Verification.QuantumNestedRepeater",
         "Verification.QuantumRepeaterChain",
         "Verification.QuantumHeterogeneousBBPSSW",
@@ -1600,6 +1601,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumNoisyBBPSSW",
         "Verification.QuantumNestedRepeater",
         "Verification.QuantumRepeaterChain",
         "Verification.QuantumHeterogeneousBBPSSW",
@@ -4726,6 +4728,17 @@
       "card": "knowledge/quantum-physics/QuantumNestedRepeater.en.md",
       "project_imports": [
         "Verification.QuantumRepeaterChain"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumNoisyBBPSSW",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumNoisyBBPSSW.lean",
+      "card": "knowledge/quantum-physics/QuantumNoisyBBPSSW.en.md",
+      "project_imports": [
+        "Verification.QuantumNestedRepeater"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"
