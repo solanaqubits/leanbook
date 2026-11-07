@@ -1,0 +1,136 @@
+{
+  "modules": [
+    {
+      "module": "QuantumNoisyBBPSSWConvergence",
+      "source": "Verification/QuantumNoisyBBPSSWConvergence.lean",
+      "sha256": "12cdfce85ebf5c863e0bcc437da165cab9441d6bc4b802b68d142be3f3daac93",
+      "declarations": [
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit",
+          "kind": "def",
+          "line": 16
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_zero",
+          "kind": "theorem",
+          "line": 18
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_succ",
+          "kind": "theorem",
+          "line": 20
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_fixed",
+          "kind": "theorem",
+          "line": 24
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_stationary_iff",
+          "kind": "theorem",
+          "line": 30
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_bounds",
+          "kind": "theorem",
+          "line": 40
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.continuous_noisyRecurrence",
+          "kind": "theorem",
+          "line": 46
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_limit_is_fixed_point",
+          "kind": "theorem",
+          "line": 49
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisy_step_below_quarter",
+          "kind": "theorem",
+          "line": 58
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisy_step_decay_outside_window",
+          "kind": "theorem",
+          "line": 70
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisy_step_between_quarter_and_lower",
+          "kind": "theorem",
+          "line": 88
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisy_step_inside_window",
+          "kind": "theorem",
+          "line": 100
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisy_step_above_ceiling",
+          "kind": "theorem",
+          "line": 116
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_below_quarter",
+          "kind": "theorem",
+          "line": 133
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_between_quarter_and_lower",
+          "kind": "theorem",
+          "line": 143
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_inside_window",
+          "kind": "theorem",
+          "line": 154
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_above_ceiling",
+          "kind": "theorem",
+          "line": 165
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_strictMono_below_quarter",
+          "kind": "theorem",
+          "line": 176
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_strictAnti_between_quarter_and_lower",
+          "kind": "theorem",
+          "line": 185
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_strictMono_inside_window",
+          "kind": "theorem",
+          "line": 194
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_strictAnti_above_ceiling",
+          "kind": "theorem",
+          "line": 204
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_tendsto_quarter",
+          "kind": "theorem",
+          "line": 214
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.noisyOrbit_tendsto_ceiling",
+          "kind": "theorem",
+          "line": 249
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.QuantumNoisyBBPSSWConvergenceSuite",
+          "kind": "structure",
+          "line": 288
+        },
+        {
+          "name": "QuantumNoisyBBPSSWConvergence.verification_suite",
+          "kind": "theorem",
+          "line": 297
+        }
+      ]
+    }
+  ]
+}

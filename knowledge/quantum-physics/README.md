@@ -287,3 +287,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [Nested repeater limits, conditional growth and resources](QuantumNestedRepeater.en.md)
 
 - [Post-depolarized BBPSSW and exact working windows](QuantumNoisyBBPSSW.en.md)
+
+- [Noisy BBPSSW orbit basins and topological limits](QuantumNoisyBBPSSWConvergence.en.md)

@@ -2789,5 +2789,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumNoisyBBPSSW.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNoisyBBPSSWConvergence": {
+    "suite_struct": "QuantumNoisyBBPSSWConvergenceSuite",
+    "suite_type": "QuantumNoisyBBPSSWConvergence.QuantumNoisyBBPSSWConvergenceSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "noisy_limit",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNoisyBBPSSWConvergence.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

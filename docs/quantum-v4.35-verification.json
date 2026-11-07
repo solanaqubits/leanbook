@@ -1,0 +1,119 @@
+{
+  "iteration": "Quantum v4.35",
+  "base_commit": "bf09b86b62d6dbd799d76f51988f05135b7b1082",
+  "branch": "quantum-noisy-convergence-v435",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "model": "Iterations of BBPSSW with constant supercritical output-pair post-depolarization quality",
+  "new_modules": 1,
+  "named_theorems": 23,
+  "named_exports": 25,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 63,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 5401,
+      "violations": []
+    }
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43941,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "independent_auditor_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254",
+  "incremental_build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "jobs": 4139,
+    "fresh_targets": [
+      "\u2714 [4134/4139] Built Verification.MasterSuiteComponents (2.5s)",
+      "\u2714 [4135/4139] Built Verification.MasterHundredRegistry (1.8s)",
+      "\u2139 [4136/4139] Built Verification.MasterSuite (1.9s)",
+      "\u2139 [4137/4139] Built Verification.AxiomAudit (2.1s)",
+      "\u2714 [4138/4139] Built Verification (1.9s)"
+    ],
+    "clean_build": false
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v435",
+      "tests.test_quantum_v434",
+      "tests.test_quantum_v433",
+      "tests.test_quantum_v432",
+      "tests.test_quantum_v431",
+      "tests.test_quantum_v430",
+      "tests.test_quantum_v429",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 122.7882993660005,
+    "log_sha256": "cf55ebc2029ff387bad7bb9c511dfdb96f678df0eba5e8d904fcf41537e735c6"
+  },
+  "development_history": "develop-01..02 retained. Fixed multiline tactic-block indentation in ciSup/ciInf bounds and normalized source spacing. No proof limits increased or checks disabled.",
+  "model_boundaries": [
+    "Basin theorems require constant criticalGamma < gamma < 1 and physical initial fidelity in [0,1].",
+    "The separating lower fixed point is stationary, excluded from both open basin boundaries.",
+    "All four nonstationary regions have all-index invariance and strict orbit monotonicity.",
+    "Continuity is proved on the entire real line, for every real gamma.",
+    "No critical/subcritical orbit classification, variable noise, convergence rate, spatial repeater limit or resource yield is claimed."
+  ],
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "e2cc0bd6a7ecf2309ebe6fc19b9afe49d0982f4f9ef01b466d0dbd976c2823fa",
+  "catalog": {
+    "modules": 396,
+    "sections": 12,
+    "library_files": 400,
+    "MasterSuite_direct_imports": 350
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed",
+  "test_history": [
+    "First targeted container run: 47/47, zero skips (4 new and 43 previous tests)."
+  ],
+  "documentation_history": [
+    "Initial link check ran before the verification JSON was created; its missing-link report is retained."
+  ]
+}
