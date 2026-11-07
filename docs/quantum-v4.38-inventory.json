@@ -1,0 +1,279 @@
+{
+  "modules": [
+    {
+      "module": "QuantumScheduledNoisyRepeater",
+      "source": "Verification/QuantumScheduledNoisyRepeater.lean",
+      "sha256": "0b48fd5cbbed7903963deca5b41d352661304761d976780c010d72e201906db4",
+      "declarations": [
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyGeneralTree",
+          "kind": "def",
+          "line": 22
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyGeneralTree_werner",
+          "kind": "theorem",
+          "line": 26
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyGeneralTree_smul",
+          "kind": "theorem",
+          "line": 32
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyRepeaterLevelStep",
+          "kind": "def",
+          "line": 42
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyOrbit_quarter_bounds",
+          "kind": "theorem",
+          "line": 45
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyLevelVisibilityValue",
+          "kind": "def",
+          "line": 58
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyLevelVisibility_bounds",
+          "kind": "theorem",
+          "line": 61
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyLevelVisibility",
+          "kind": "def",
+          "line": 71
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyLevelProbability",
+          "kind": "def",
+          "line": 75
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyLevelProbability_bounds",
+          "kind": "theorem",
+          "line": 78
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyRepeaterLevelStep_smul",
+          "kind": "theorem",
+          "line": 87
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyRepeaterLevelStep_isotropic",
+          "kind": "theorem",
+          "line": 94
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.ScheduledState",
+          "kind": "structure",
+          "line": 110
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledStepAcc",
+          "kind": "def",
+          "line": 115
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledState",
+          "kind": "def",
+          "line": 120
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix",
+          "kind": "def",
+          "line": 123
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterProbability",
+          "kind": "def",
+          "line": 126
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledVisibility",
+          "kind": "def",
+          "line": 129
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledVisibilityValue",
+          "kind": "def",
+          "line": 132
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledSegmentCount",
+          "kind": "def",
+          "line": 135
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRawPairCount",
+          "kind": "def",
+          "line": 137
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.ScheduledState.Valid",
+          "kind": "def",
+          "line": 141
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledStepAcc_valid",
+          "kind": "theorem",
+          "line": 144
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledFold_valid",
+          "kind": "theorem",
+          "line": 153
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledState_valid",
+          "kind": "theorem",
+          "line": 159
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledState_append",
+          "kind": "theorem",
+          "line": 163
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledState_snoc",
+          "kind": "theorem",
+          "line": 167
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix_snoc",
+          "kind": "theorem",
+          "line": 171
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterProbability_snoc",
+          "kind": "theorem",
+          "line": 176
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledVisibilityValue_snoc",
+          "kind": "theorem",
+          "line": 182
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix_refinement",
+          "kind": "theorem",
+          "line": 188
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterProbability_pos",
+          "kind": "theorem",
+          "line": 192
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterProbability_le_one",
+          "kind": "theorem",
+          "line": 195
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix_posSemidef",
+          "kind": "theorem",
+          "line": 198
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix_trace",
+          "kind": "theorem",
+          "line": 203
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix_conditional",
+          "kind": "theorem",
+          "line": 207
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix_conditional_density",
+          "kind": "theorem",
+          "line": 214
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix_nil",
+          "kind": "theorem",
+          "line": 221
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRawPairCount_append",
+          "kind": "theorem",
+          "line": 228
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledSegmentCount_append",
+          "kind": "theorem",
+          "line": 232
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyRepeaterLevelStep_zero",
+          "kind": "theorem",
+          "line": 236
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyLevelVisibilityValue_zero",
+          "kind": "theorem",
+          "line": 239
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduled_zero_depths",
+          "kind": "theorem",
+          "line": 244
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.noisyGeneralTree_unit",
+          "kind": "theorem",
+          "line": 262
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRepeaterMatrix_ideal_replicate",
+          "kind": "theorem",
+          "line": 271
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledFold_matrix_smul",
+          "kind": "theorem",
+          "line": 281
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledRawPairCount_replicate",
+          "kind": "theorem",
+          "line": 297
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledVisibilityValue_bounds",
+          "kind": "theorem",
+          "line": 305
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.LocalQualityGain",
+          "kind": "def",
+          "line": 310
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledVisibility_prefix_sustains_initial_of_local_gain",
+          "kind": "theorem",
+          "line": 315
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.scheduledVisibility_sustains_initial_of_local_gain",
+          "kind": "theorem",
+          "line": 328
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.QuantumScheduledNoisyRepeaterSuite",
+          "kind": "structure",
+          "line": 333
+        },
+        {
+          "name": "QuantumScheduledNoisyRepeater.verification_suite",
+          "kind": "theorem",
+          "line": 340
+        }
+      ]
+    }
+  ],
+  "named_theorems": 36,
+  "named_exports": 53,
+  "counts_are_not_independent_scientific_results": true
+}

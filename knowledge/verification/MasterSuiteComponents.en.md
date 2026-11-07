@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 767be1865d620e51f6914e09a7bf780a4c3771fad7c3e3cfc619addb3765c67b
+source_sha256: 4f9bec64c273ef1ac3e7aedbd192b4f1bbd4499e11b26a1518288473fcdc05c1
 novelty: not-assessed
 status: reviewed
 ---
@@ -265,3 +265,5 @@ completeness suites. The byte-to-verdict module is imported as part of the
 individual assumptions; registration supplies no OS or input-authenticity guarantee.
 
 The registry includes the quantum instrument and retained-environment contracts through [Quantum v4.20](../../docs/quantum-v4.20.md).
+
+Quantum v4.38 adds `scheduled_noisy` for the chronological scheduled noisy repeater suite.

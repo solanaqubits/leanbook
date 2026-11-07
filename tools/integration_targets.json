@@ -2816,5 +2816,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumNoisyBBPSSWTree.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumScheduledNoisyRepeater": {
+    "suite_struct": "QuantumScheduledNoisyRepeaterSuite",
+    "suite_type": "QuantumScheduledNoisyRepeater.QuantumScheduledNoisyRepeaterSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "scheduled_noisy",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumScheduledNoisyRepeater.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

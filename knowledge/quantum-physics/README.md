@@ -293,3 +293,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [Critical and subcritical noisy BBPSSW orbits](QuantumNoisyBBPSSWCritical.en.md)
 
 - [Noisy BBPSSW resource trees and finite recovery](QuantumNoisyBBPSSWTree.en.md)
+
+- [QuantumScheduledNoisyRepeater](QuantumScheduledNoisyRepeater.en.md) — chronological noisy spatial schedules, operator weights and conditional prefix quality.

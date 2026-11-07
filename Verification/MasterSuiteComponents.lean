@@ -1,3 +1,4 @@
+import Verification.QuantumScheduledNoisyRepeater
 import Verification.QuantumNoisyBBPSSWTree
 import Verification.QuantumNoisyBBPSSWCritical
 import Verification.QuantumNoisyBBPSSWConvergence
@@ -1007,6 +1008,7 @@ structure QuantumPhysicsFullSuite : Prop where
   noisy_limit : QuantumNoisyBBPSSWConvergence.QuantumNoisyBBPSSWConvergenceSuite
   noisy_critical : QuantumNoisyBBPSSWCritical.QuantumNoisyBBPSSWCriticalSuite
   noisy_tree : QuantumNoisyBBPSSWTree.QuantumNoisyBBPSSWTreeSuite
+  scheduled_noisy : QuantumScheduledNoisyRepeater.QuantumScheduledNoisyRepeaterSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1183,6 +1185,7 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   noisy_limit := QuantumNoisyBBPSSWConvergence.verification_suite
   noisy_critical := QuantumNoisyBBPSSWCritical.verification_suite
   noisy_tree := QuantumNoisyBBPSSWTree.verification_suite
+  scheduled_noisy := QuantumScheduledNoisyRepeater.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

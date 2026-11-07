@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumScheduledNoisyRepeater",
         "Verification.QuantumNoisyBBPSSWTree",
         "Verification.QuantumNoisyBBPSSWCritical",
         "Verification.QuantumNoisyBBPSSWConvergence",
@@ -1604,6 +1605,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumScheduledNoisyRepeater",
         "Verification.QuantumNoisyBBPSSWTree",
         "Verification.QuantumNoisyBBPSSWCritical",
         "Verification.QuantumNoisyBBPSSWConvergence",
@@ -4778,6 +4780,17 @@
       "card": "knowledge/quantum-physics/QuantumNoisyBBPSSWTree.en.md",
       "project_imports": [
         "Verification.QuantumNoisyBBPSSWCritical"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumScheduledNoisyRepeater",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumScheduledNoisyRepeater.lean",
+      "card": "knowledge/quantum-physics/QuantumScheduledNoisyRepeater.en.md",
+      "project_imports": [
+        "Verification.QuantumNoisyBBPSSWTree"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"
