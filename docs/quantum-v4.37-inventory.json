@@ -1,0 +1,184 @@
+{
+  "modules": [
+    {
+      "module": "QuantumNoisyBBPSSWTree",
+      "source": "Verification/QuantumNoisyBBPSSWTree.lean",
+      "sha256": "1bded450afc7fe44a11380f52a43869bc436460fc0d69fce0739e3d75c48dd0e",
+      "declarations": [
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeMatrix",
+          "kind": "def",
+          "line": 22
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeProbability",
+          "kind": "def",
+          "line": 27
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeProbability_pos",
+          "kind": "theorem",
+          "line": 31
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeProbability_closed_form",
+          "kind": "theorem",
+          "line": 37
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeProbability_two",
+          "kind": "theorem",
+          "line": 55
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeProbability_le_one",
+          "kind": "theorem",
+          "line": 60
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeMatrix_eq_werner",
+          "kind": "theorem",
+          "line": 70
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeMatrix_trace",
+          "kind": "theorem",
+          "line": 81
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeMatrix_posSemidef",
+          "kind": "theorem",
+          "line": 85
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeMatrix_conditional",
+          "kind": "theorem",
+          "line": 91
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeMatrix_conditional_density",
+          "kind": "theorem",
+          "line": 98
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeInputPairs",
+          "kind": "def",
+          "line": 108
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeInputPairs_eq",
+          "kind": "theorem",
+          "line": 112
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.swapThenNoisyTree",
+          "kind": "def",
+          "line": 118
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.swapThenNoisyTree_eq_noisyTreeMatrix",
+          "kind": "theorem",
+          "line": 122
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.swapThenNoisyTree_refinement",
+          "kind": "theorem",
+          "line": 132
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.swapThenNoisyTree_conditional",
+          "kind": "theorem",
+          "line": 138
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.swapThenNoisyTreeRawPairs",
+          "kind": "def",
+          "line": 143
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.swapThenNoisyTreeRawPairs_eq",
+          "kind": "theorem",
+          "line": 145
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyOrbit_le_initial_below_lower",
+          "kind": "theorem",
+          "line": 149
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyOrbit_le_initial_above_ceiling",
+          "kind": "theorem",
+          "line": 158
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.exists_noisy_depth_exceeding_elemFidelity_iff",
+          "kind": "theorem",
+          "line": 168
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.unitVisibility",
+          "kind": "def",
+          "line": 199
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.zeroVisibility",
+          "kind": "def",
+          "line": 200
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyOrbit_unit",
+          "kind": "theorem",
+          "line": 202
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeProbability_unit",
+          "kind": "theorem",
+          "line": 207
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeMatrix_unit",
+          "kind": "theorem",
+          "line": 213
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeMatrix_zero_conditional",
+          "kind": "theorem",
+          "line": 219
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.noisyTreeProbability_quarter",
+          "kind": "theorem",
+          "line": 228
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.nineteen_twentieths_four_fifths_recovery_possible",
+          "kind": "theorem",
+          "line": 241
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.nineteen_twentieths_nine_tenths_below_elem",
+          "kind": "theorem",
+          "line": 256
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.nineteen_twentieths_nine_tenths_recovery_impossible",
+          "kind": "theorem",
+          "line": 275
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.QuantumNoisyBBPSSWTreeSuite",
+          "kind": "structure",
+          "line": 280
+        },
+        {
+          "name": "QuantumNoisyBBPSSWTree.verification_suite",
+          "kind": "theorem",
+          "line": 288
+        }
+      ]
+    }
+  ],
+  "named_theorems": 26,
+  "named_exports": 34,
+  "counts_are_not_independent_scientific_results": true
+}

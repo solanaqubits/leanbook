@@ -2807,5 +2807,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumNoisyBBPSSWCritical.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNoisyBBPSSWTree": {
+    "suite_struct": "QuantumNoisyBBPSSWTreeSuite",
+    "suite_type": "QuantumNoisyBBPSSWTree.QuantumNoisyBBPSSWTreeSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "noisy_tree",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNoisyBBPSSWTree.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

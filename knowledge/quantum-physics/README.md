@@ -291,3 +291,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [Noisy BBPSSW orbit basins and topological limits](QuantumNoisyBBPSSWConvergence.en.md)
 
 - [Critical and subcritical noisy BBPSSW orbits](QuantumNoisyBBPSSWCritical.en.md)
+
+- [Noisy BBPSSW resource trees and finite recovery](QuantumNoisyBBPSSWTree.en.md)

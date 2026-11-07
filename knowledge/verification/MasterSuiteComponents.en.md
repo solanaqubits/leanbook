@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: eac544e3ccdc1e5744000de062ac9516611ffebab0b734fe37bdbdefc6afcfd2
+source_sha256: 767be1865d620e51f6914e09a7bf780a4c3771fad7c3e3cfc619addb3765c67b
 novelty: not-assessed
 status: reviewed
 ---
@@ -11,6 +11,11 @@ status: reviewed
 # MasterSuiteComponents
 
 [Section](README.md) · [Lean](../../Verification/MasterSuiteComponents.lean)
+
+## Quantum v4.37 candidate
+
+`noisy_tree` adds the all-success noisy BBPSSW resource tree and the exact
+finite-depth post-swap recovery criterion. See the [scope card](../quantum-physics/QuantumNoisyBBPSSWTree.en.md).
 
 ## Quantum integration through v4.36
 

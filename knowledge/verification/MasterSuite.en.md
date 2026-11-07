@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 6198f6308d4cf6cae57767a66892e1b13c3c472412809a4ed4bdd8ca209ea5b8
+source_sha256: f138f267fd68471ef890408fb80309367e495c9bec8054995c5bb3a05268f6c6
 novelty: not-assessed
 status: reviewed
 ---
@@ -11,6 +11,11 @@ status: reviewed
 # MasterSuite
 
 [Section](README.md) · [Lean source](../../Verification/MasterSuite.lean)
+
+## Quantum v4.37 candidate
+
+`noisy_tree` adds the all-success noisy BBPSSW resource tree and the exact
+finite-depth post-swap recovery criterion. See the [scope card](../quantum-physics/QuantumNoisyBBPSSWTree.en.md).
 
 ## Quantum integration through v4.36
 
@@ -23,7 +28,7 @@ repository-wide counts.
 
 ## Verified result
 
-Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 351 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
+Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 352 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
 
 ## Assumptions and scope
 
@@ -46,7 +51,7 @@ Scientific priority and first-formalization claims have not been established.
 - [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1270)
 - [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1366)
 - [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1457)
-- [`verification_master_registry`](../../Verification/MasterSuite.lean#L507)
+- [`verification_master_registry`](../../Verification/MasterSuite.lean#L508)
 
 - [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1470)
 

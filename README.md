@@ -16,12 +16,19 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## Quantum v4.37 development candidate
+
+[Noisy BBPSSW trees and finite post-swap recovery](docs/quantum-v4.37.md) ·
+[Exact inventory](docs/quantum-v4.37-inventory.json).
+
+Current catalog: 398 modules, 402 library Lean files, 352 direct MasterSuite imports.
+
 ## Quantum v4.21–v4.36 integration
 
 [Integrated scope and verification boundaries](docs/quantum-integration-v421-v436.md).
 The twenty added modules connect correlated-memory swapping, adaptive Werner
 cascades, constructive BBPSSW distillation, repeater trees and noisy-orbit limits.
-The library now has 397 catalog modules, 401 library Lean files and 351 direct
+At that integration the library had 397 catalog modules, 401 library Lean files and 351 direct
 MasterSuite imports. The v1.0.0 release and its evidence remain historical snapshots.
 
 The development-stage records below retain their original local-candidate status
@@ -32,7 +39,7 @@ and validation scope; the integration record describes their combined acceptance
 [Critical and subcritical noisy BBPSSW orbits](docs/quantum-v4.36.md) ·
 [Exact inventory](docs/quantum-v4.36-inventory.json).
 
-Current catalog: 397 modules, 401 library Lean files, 351 direct MasterSuite imports.
+The v4.36 catalog had 397 modules, 401 library Lean files, 351 direct MasterSuite imports.
 
 ## Quantum v4.35 development candidate
 
