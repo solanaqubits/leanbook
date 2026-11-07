@@ -2744,5 +2744,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumBBPSSWDistillation.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumBBPSSWConvergence": {
+    "suite_struct": "QuantumBBPSSWConvergenceSuite",
+    "suite_type": "QuantumBBPSSWConvergence.QuantumBBPSSWConvergenceSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "bbpssw_limit",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumBBPSSWConvergence.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

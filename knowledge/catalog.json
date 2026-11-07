@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumBBPSSWConvergence",
         "Verification.QuantumBBPSSWDistillation",
         "Verification.QuantumCliffordTwirl",
         "Verification.QuantumAdaptiveWernerCascade",
@@ -1596,6 +1597,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumBBPSSWConvergence",
         "Verification.QuantumBBPSSWDistillation",
         "Verification.QuantumCliffordTwirl",
         "Verification.QuantumAdaptiveWernerCascade",
@@ -4673,6 +4675,17 @@
       "card": "knowledge/quantum-physics/QuantumBBPSSWDistillation.en.md",
       "project_imports": [
         "Verification.QuantumCliffordTwirl"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumBBPSSWConvergence",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumBBPSSWConvergence.lean",
+      "card": "knowledge/quantum-physics/QuantumBBPSSWConvergence.en.md",
+      "project_imports": [
+        "Verification.QuantumBBPSSWDistillation"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

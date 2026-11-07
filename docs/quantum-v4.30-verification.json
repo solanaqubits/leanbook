@@ -1,0 +1,110 @@
+{
+  "iteration": "Quantum v4.30",
+  "base_commit": "3bb16017eab7b6b2550c088b629630588fa7b314",
+  "branch": "quantum-convergence-v430",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "new_modules": 1,
+  "named_theorems": 33,
+  "named_exports": 37,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 56,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 4879,
+      "violations": []
+    }
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43521,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "incremental_build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 10.910660401001223,
+    "fresh_targets": [
+      "\u2714 [4129/4134] Built Verification.MasterSuiteComponents (2.5s)",
+      "\u2714 [4130/4134] Built Verification.MasterHundredRegistry (1.7s)",
+      "\u2139 [4131/4134] Built Verification.MasterSuite (1.8s)",
+      "\u2139 [4132/4134] Built Verification.AxiomAudit (1.0s)",
+      "\u2714 [4133/4134] Built Verification (1.9s)"
+    ],
+    "clean_build": false,
+    "jobs": 4134
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v430",
+      "tests.test_quantum_v429",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 73.14359242200044,
+    "log_sha256": "a93d2711ca2fbb8e289508d00781718279c2f8d81da50f28d8fb91b386ec857d"
+  },
+  "test_history": [
+    "First targeted container run:28/28,zero skips (3 new and 25 prior tests)."
+  ],
+  "development_history": "develop-01 failed on an untyped continuity tactic term, function extensionality for constant orbits, and unused simp arguments; develop-02 passed. No limits increased, checks disabled or proof shortcuts added. Knowledge checker initially interpreted iterate notation as links and ran before the verification document existed; documentation repaired.",
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "4f6198d77b8b82a1d58dcfe4c50e7cb96aa2cd4ce1051218d548475846e5f201",
+  "catalog": {
+    "modules": 391,
+    "sections": 12,
+    "library_files": 395,
+    "MasterSuite_direct_imports": 345
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed",
+  "claims": {
+    "topological_limits": true,
+    "geometric_rate": false,
+    "tree_weight": "p_(n+1)=p_n^2 P(F_n); all internal nodes must succeed",
+    "expected_resource_yield": false,
+    "noisy_operations": false
+  }
+}

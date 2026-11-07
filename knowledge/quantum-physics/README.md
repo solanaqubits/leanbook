@@ -277,3 +277,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 
 - [Finite local Clifford twirl](QuantumCliffordTwirl.en.md)
 - [BBPSSW distillation](QuantumBBPSSWDistillation.en.md)
+
+- [BBPSSW convergence and binary resource tree](QuantumBBPSSWConvergence.en.md)

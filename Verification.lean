@@ -1,3 +1,4 @@
+import Verification.QuantumBBPSSWConvergence
 import Verification.QuantumBBPSSWDistillation
 import Verification.QuantumCliffordTwirl
 import Verification.QuantumAdaptiveWernerCascade

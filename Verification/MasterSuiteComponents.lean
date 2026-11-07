@@ -1,3 +1,4 @@
+import Verification.QuantumBBPSSWConvergence
 import Verification.QuantumBBPSSWDistillation
 import Verification.QuantumCliffordTwirl
 import Verification.QuantumAdaptiveWernerCascade
@@ -991,6 +992,7 @@ structure QuantumPhysicsFullSuite : Prop where
   adaptive_werner : QuantumAdaptiveWernerCascade.QuantumAdaptiveWernerCascadeSuite
   clifford_twirl : QuantumCliffordTwirl.QuantumCliffordTwirlSuite
   bbpssw : QuantumBBPSSWDistillation.QuantumBBPSSWDistillationSuite
+  bbpssw_limit : QuantumBBPSSWConvergence.QuantumBBPSSWConvergenceSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1159,6 +1161,7 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   adaptive_werner := QuantumAdaptiveWernerCascade.verification_suite
   clifford_twirl := QuantumCliffordTwirl.verification_suite
   bbpssw := QuantumBBPSSWDistillation.verification_suite
+  bbpssw_limit := QuantumBBPSSWConvergence.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/

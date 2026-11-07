@@ -1,0 +1,196 @@
+{
+  "modules": [
+    {
+      "module": "QuantumBBPSSWConvergence",
+      "source": "Verification/QuantumBBPSSWConvergence.lean",
+      "sha256": "3d40f68bbcabdab5f82556c9452362ace6495a4d5ec9b246221cf97c1ea4e275",
+      "declarations": [
+        {
+          "name": "QuantumBBPSSWConvergence.recurrence_sub_quarter",
+          "kind": "theorem",
+          "line": 18
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.one_sub_recurrence",
+          "kind": "theorem",
+          "line": 25
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.recurrence_lt_one",
+          "kind": "theorem",
+          "line": 32
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.recurrence_invariant_above_half",
+          "kind": "theorem",
+          "line": 39
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.recurrence_invariant_quarter_to_half",
+          "kind": "theorem",
+          "line": 44
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.recurrence_invariant_below_quarter",
+          "kind": "theorem",
+          "line": 52
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit",
+          "kind": "def",
+          "line": 60
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_zero",
+          "kind": "theorem",
+          "line": 62
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_succ",
+          "kind": "theorem",
+          "line": 64
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_fixed",
+          "kind": "theorem",
+          "line": 68
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_bounds",
+          "kind": "theorem",
+          "line": 74
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_above_half",
+          "kind": "theorem",
+          "line": 80
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_quarter_to_half",
+          "kind": "theorem",
+          "line": 86
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_below_quarter",
+          "kind": "theorem",
+          "line": 94
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_strictMono_above_half",
+          "kind": "theorem",
+          "line": 103
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_strictAnti_quarter_to_half",
+          "kind": "theorem",
+          "line": 110
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_strictMono_below_quarter",
+          "kind": "theorem",
+          "line": 117
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.continuous_recurrence",
+          "kind": "theorem",
+          "line": 124
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.orbit_limit_fixed",
+          "kind": "theorem",
+          "line": 130
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_tendsto_one",
+          "kind": "theorem",
+          "line": 138
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.fidelityOrbit_tendsto_quarter",
+          "kind": "theorem",
+          "line": 156
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeMatrix",
+          "kind": "def",
+          "line": 185
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeProbability",
+          "kind": "def",
+          "line": 189
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeProbability_pos",
+          "kind": "theorem",
+          "line": 193
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeProbability_closed_form",
+          "kind": "theorem",
+          "line": 198
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeProbability_two",
+          "kind": "theorem",
+          "line": 216
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeMatrix_eq_werner",
+          "kind": "theorem",
+          "line": 220
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeMatrix_conditional",
+          "kind": "theorem",
+          "line": 230
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.successProbability_le_one",
+          "kind": "theorem",
+          "line": 235
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeProbability_le_one",
+          "kind": "theorem",
+          "line": 240
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.werner_trace",
+          "kind": "theorem",
+          "line": 250
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeMatrix_trace",
+          "kind": "theorem",
+          "line": 255
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeMatrix_positive",
+          "kind": "theorem",
+          "line": 259
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeMatrix_conditional_positive",
+          "kind": "theorem",
+          "line": 264
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.treeMatrix_conditional_trace",
+          "kind": "theorem",
+          "line": 269
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.QuantumBBPSSWConvergenceSuite",
+          "kind": "structure",
+          "line": 273
+        },
+        {
+          "name": "QuantumBBPSSWConvergence.verification_suite",
+          "kind": "theorem",
+          "line": 279
+        }
+      ]
+    }
+  ]
+}
