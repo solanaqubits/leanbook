@@ -1,0 +1,117 @@
+{
+  "iteration": "Quantum v4.33",
+  "base_commit": "4a51f89ab8a1221041f4dabfa2e6d643b2accaa2",
+  "branch": "quantum-nested-v433",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "model": "One-round repeater limit and nested ideal independent-resource trees; conditional finite-scale growth",
+  "new_modules": 1,
+  "named_theorems": 45,
+  "named_exports": 57,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 61,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 5291,
+      "violations": []
+    }
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43829,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "incremental_build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "jobs": 4137,
+    "fresh_targets": [
+      "\u2714 [4132/4137] Built Verification.MasterSuiteComponents (3.8s)",
+      "\u2714 [4133/4137] Built Verification.MasterHundredRegistry (1.8s)",
+      "\u2139 [4134/4137] Built Verification.MasterSuite (1.9s)",
+      "\u2139 [4135/4137] Built Verification.AxiomAudit (2.1s)",
+      "\u2714 [4136/4137] Built Verification (1.9s)"
+    ],
+    "clean_build": false
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v433",
+      "tests.test_quantum_v432",
+      "tests.test_quantum_v431",
+      "tests.test_quantum_v430",
+      "tests.test_quantum_v429",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 103.07926433300008,
+    "log_sha256": "c41bdcd50d92996c724a63c2ddfa1367e0954d147441d53c825a522dbc25b7a0"
+  },
+  "development_history": "develop-01..04 retained. Repairs addressed strict style, composition simplification, lambda reduction, a square-order proof, and power rewriting. No proof limits increased and no checks disabled. An initial pre-integration cached build is retained separately from the final integrated build.",
+  "model_boundaries": [
+    "The g(w)>w^2 comparison is local; a checked 3/5 counterexample refutes global comparison from the initial threshold alone.",
+    "Only m=1 has a proved asymptotic limit in this addition: visibility zero and fidelity one quarter.",
+    "For nested depth m a first-step gain implies strict growth at every finite level; no Tendsto to one is asserted.",
+    "p_(k+1)=p_k^(2^(m+1))*treeProbability(swapFidelity(w_k),m); raw pairs=2^((m+1)*k).",
+    "Conditional quality is separate from all-success probability, expected yield, scheduling and rate."
+  ],
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "bbc7332d4f7f877c9c11e59c1f0407bfeb2e057e1cb4ce128ddab513573177d0",
+  "catalog": {
+    "modules": 394,
+    "sections": 12,
+    "library_files": 398,
+    "MasterSuite_direct_imports": 348
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed",
+  "test_history": [
+    "First and second complete targeted runs:38/39 each; the operator fixture lacked the correct namespace for isotropic.",
+    "A further started attempt was explicitly interrupted after local checking detected the long line introduced by fully qualifying QuantumNoisyVisibility.isotropic.",
+    "The wrapped operator fixture passed strict CLI before the final complete targeted run.",
+    "Final complete targeted container run:39/39,zero skips (4 new and 35 previous tests)."
+  ],
+  "independent_auditor_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254"
+}

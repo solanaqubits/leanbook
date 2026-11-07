@@ -11,7 +11,7 @@ Verified components grouped into eleven subject areas and one verification secti
 | [Coordinate and multilinear geometry](finsler/README.md) | 3 |
 | [Proof certificates and DAGs](proof-graphs/README.md) | 2 |
 | [Cryptographic algebra and ZK components](cryptography/README.md) | 84 |
-| [Quantum algebra, photonics, and mechanics](quantum-physics/README.md) | 85 |
+| [Quantum algebra, photonics, and mechanics](quantum-physics/README.md) | 86 |
 | [Finance, liquidity, and mechanisms](finance/README.md) | 27 |
 | [Distributed consensus](distributed/README.md) | 63 |
 | [Exact numeric certificates](12_numeric_certificates/README.md) | 6 |

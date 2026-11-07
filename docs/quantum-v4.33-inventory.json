@@ -1,0 +1,296 @@
+{
+  "modules": [
+    {
+      "module": "QuantumNestedRepeater",
+      "source": "Verification/QuantumNestedRepeater.lean",
+      "sha256": "b29c1499c24a9730a9cb5418c919badb35ecef4d539d9e4ec249ccde6a443981",
+      "declarations": [
+        {
+          "name": "QuantumNestedRepeater.nodeVisibilityValue_loss_factorization",
+          "kind": "theorem",
+          "line": 20
+        },
+        {
+          "name": "QuantumNestedRepeater.nodeVisibilityValue_sub_sq_factorization",
+          "kind": "theorem",
+          "line": 27
+        },
+        {
+          "name": "QuantumNestedRepeater.nodeVisibilityValue_between_sq_and_self",
+          "kind": "theorem",
+          "line": 33
+        },
+        {
+          "name": "QuantumNestedRepeater.three_fifths_two_step_swap_reversal",
+          "kind": "theorem",
+          "line": 44
+        },
+        {
+          "name": "QuantumNestedRepeater.nodeVisibilityValue_fixed_iff",
+          "kind": "theorem",
+          "line": 52
+        },
+        {
+          "name": "QuantumNestedRepeater.continuous_nodeVisibilityValue",
+          "kind": "theorem",
+          "line": 65
+        },
+        {
+          "name": "QuantumNestedRepeater.visibilityAt_tendsto_zero",
+          "kind": "theorem",
+          "line": 70
+        },
+        {
+          "name": "QuantumNestedRepeater.elemFidelity_visibilityAt_tendsto_quarter",
+          "kind": "theorem",
+          "line": 89
+        },
+        {
+          "name": "QuantumNestedRepeater.recurrence_strictMonoOn",
+          "kind": "theorem",
+          "line": 96
+        },
+        {
+          "name": "QuantumNestedRepeater.recurrence_quarter_bounds",
+          "kind": "theorem",
+          "line": 111
+        },
+        {
+          "name": "QuantumNestedRepeater.fidelityOrbit_quarter_bounds",
+          "kind": "theorem",
+          "line": 120
+        },
+        {
+          "name": "QuantumNestedRepeater.fidelityOrbit_strictMonoOn",
+          "kind": "theorem",
+          "line": 126
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeVisibilityValue",
+          "kind": "def",
+          "line": 137
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeVisibility_bounds",
+          "kind": "theorem",
+          "line": 140
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeVisibility",
+          "kind": "def",
+          "line": 150
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedVisibilityAt",
+          "kind": "def",
+          "line": 154
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeVisibility_strictMonoOn",
+          "kind": "theorem",
+          "line": 158
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedVisibilityAt_strictMono_of_first_step_gain",
+          "kind": "theorem",
+          "line": 174
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedVisibilityAt_sustains_initial_quality",
+          "kind": "theorem",
+          "line": 186
+        },
+        {
+          "name": "QuantumNestedRepeater.fourFifthsVisibility",
+          "kind": "def",
+          "line": 194
+        },
+        {
+          "name": "QuantumNestedRepeater.fourFifths_depth_four_gain",
+          "kind": "theorem",
+          "line": 196
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeater_four_fifths_depth_four_sustains",
+          "kind": "theorem",
+          "line": 202
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedVisibilityAt_lt_one_of_gain",
+          "kind": "theorem",
+          "line": 211
+        },
+        {
+          "name": "QuantumNestedRepeater.purifiedTree",
+          "kind": "def",
+          "line": 218
+        },
+        {
+          "name": "QuantumNestedRepeater.purifiedTree_smul",
+          "kind": "theorem",
+          "line": 222
+        },
+        {
+          "name": "QuantumNestedRepeater.purifiedTree_werner",
+          "kind": "theorem",
+          "line": 233
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterStep",
+          "kind": "def",
+          "line": 239
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterMatrix",
+          "kind": "def",
+          "line": 242
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeProbability",
+          "kind": "def",
+          "line": 246
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedBranchFactor",
+          "kind": "def",
+          "line": 249
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterProbability",
+          "kind": "def",
+          "line": 251
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRawPairCount",
+          "kind": "def",
+          "line": 256
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNode_fidelity",
+          "kind": "theorem",
+          "line": 258
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterStep_smul",
+          "kind": "theorem",
+          "line": 263
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterStep_isotropic",
+          "kind": "theorem",
+          "line": 271
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeProbability_pos",
+          "kind": "theorem",
+          "line": 283
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeProbability_le_one",
+          "kind": "theorem",
+          "line": 286
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterProbability_pos",
+          "kind": "theorem",
+          "line": 293
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterProbability_le_one",
+          "kind": "theorem",
+          "line": 299
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterMatrix_refinement",
+          "kind": "theorem",
+          "line": 307
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterMatrix_positive",
+          "kind": "theorem",
+          "line": 317
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterMatrix_trace",
+          "kind": "theorem",
+          "line": 322
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterMatrix_conditional",
+          "kind": "theorem",
+          "line": 326
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterMatrix_conditional_density",
+          "kind": "theorem",
+          "line": 333
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterMatrix_conditional_fidelity",
+          "kind": "theorem",
+          "line": 340
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRawPairCount_eq",
+          "kind": "theorem",
+          "line": 346
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRawPairCount_per_segment",
+          "kind": "theorem",
+          "line": 349
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeVisibilityValue_zero",
+          "kind": "theorem",
+          "line": 356
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedVisibilityAt_zero",
+          "kind": "theorem",
+          "line": 360
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterProbability_zero",
+          "kind": "theorem",
+          "line": 368
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterStep_one",
+          "kind": "theorem",
+          "line": 375
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterMatrix_one",
+          "kind": "theorem",
+          "line": 378
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedNodeVisibilityValue_one",
+          "kind": "theorem",
+          "line": 384
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedVisibilityAt_one",
+          "kind": "theorem",
+          "line": 391
+        },
+        {
+          "name": "QuantumNestedRepeater.nestedRepeaterProbability_one",
+          "kind": "theorem",
+          "line": 399
+        },
+        {
+          "name": "QuantumNestedRepeater.QuantumNestedRepeaterSuite",
+          "kind": "structure",
+          "line": 405
+        },
+        {
+          "name": "QuantumNestedRepeater.verification_suite",
+          "kind": "theorem",
+          "line": 414
+        }
+      ]
+    }
+  ]
+}

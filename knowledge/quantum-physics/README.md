@@ -283,3 +283,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [Heterogeneous BBPSSW and swap-then-purify](QuantumHeterogeneousBBPSSW.en.md)
 
 - [Finite ideal repeater chain](QuantumRepeaterChain.en.md)
+
+- [Nested repeater limits, conditional growth and resources](QuantumNestedRepeater.en.md)

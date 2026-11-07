@@ -2771,5 +2771,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumRepeaterChain.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNestedRepeater": {
+    "suite_struct": "QuantumNestedRepeaterSuite",
+    "suite_type": "QuantumNestedRepeater.QuantumNestedRepeaterSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "nested_repeater",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNestedRepeater.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
