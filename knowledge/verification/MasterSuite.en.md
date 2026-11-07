@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 50163e0ca38160748b00e474dc6f352403b7511558e0a5a52ee421566653b03a
+source_sha256: 6198f6308d4cf6cae57767a66892e1b13c3c472412809a4ed4bdd8ca209ea5b8
 novelty: not-assessed
 status: reviewed
 ---
@@ -12,9 +12,18 @@ status: reviewed
 
 [Section](README.md) · [Lean source](../../Verification/MasterSuite.lean)
 
+## Quantum integration through v4.36
+
+The current quantum package includes the twenty modules in the
+[v4.21–v4.36 integration](../../docs/quantum-integration-v421-v436.md), including
+`noisy_bbpssw`, `noisy_limit` and `noisy_critical`. Their hypotheses and model
+boundaries remain those of the imported theorems. Historical extension notes
+below describe the snapshots at which they were written; they are not current
+repository-wide counts.
+
 ## Verified result
 
-Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 341 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
+Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 351 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
 
 ## Assumptions and scope
 
@@ -25,21 +34,21 @@ Scientific priority and first-formalization claims have not been established.
 
 ## Proof entry points
 
-- [`finsler_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L567)
-- [`finsler_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L579)
-- [`lamzouri_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L591)
-- [`collatz_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L610)
-- [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L715)
-- [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L989)
-- [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1160)
-- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1173)
-- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1187)
-- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1240)
-- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1336)
-- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1427)
-- [`verification_master_registry`](../../Verification/MasterSuite.lean#L497)
+- [`finsler_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L577)
+- [`finsler_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L589)
+- [`lamzouri_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L601)
+- [`collatz_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L620)
+- [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L725)
+- [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1009)
+- [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1190)
+- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1203)
+- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1217)
+- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1270)
+- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1366)
+- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1457)
+- [`verification_master_registry`](../../Verification/MasterSuite.lean#L507)
 
-- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1440)
+- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1470)
 
 ## Verification
 

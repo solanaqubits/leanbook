@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 2d5cd0d5a9a057d19666d64f9c347ad2dc363b5714437bad1db2d43283cefaf2
+source_sha256: eac544e3ccdc1e5744000de062ac9516611ffebab0b734fe37bdbdefc6afcfd2
 novelty: not-assessed
 status: reviewed
 ---
@@ -11,6 +11,15 @@ status: reviewed
 # MasterSuiteComponents
 
 [Section](README.md) · [Lean](../../Verification/MasterSuiteComponents.lean)
+
+## Quantum integration through v4.36
+
+The current quantum package includes the twenty modules in the
+[v4.21–v4.36 integration](../../docs/quantum-integration-v421-v436.md), including
+`noisy_bbpssw`, `noisy_limit` and `noisy_critical`. Their hypotheses and model
+boundaries remain those of the imported theorems. Historical extension notes
+below describe the snapshots at which they were written; they are not current
+repository-wide counts.
 
 ## Reusable package declarations
 

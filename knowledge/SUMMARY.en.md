@@ -3,8 +3,10 @@
 [Knowledge base](README.md)
 
 This project collects reusable, machine-checked components and the tooling needed
-to keep their proofs, assumptions, and documentation connected. The validated
-snapshot contains 150 subject files across eleven areas, plus four registry/audit support files. See the [validation record](VERIFICATION.en.md) for counts and evidence.
+to keep their proofs, assumptions, and documentation connected. The current catalog contains 397 modules across twelve sections, with 401 library
+Lean files including nested support sources and the root. See the
+[validation record](VERIFICATION.en.md) for the distinct historical checkpoints
+and scoped integration evidence.
 
 ## What has been achieved
 

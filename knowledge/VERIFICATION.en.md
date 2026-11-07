@@ -1,6 +1,18 @@
 # Public verification record
 
-## Current checkpoint: v0.7.0
+## Current source integration: Quantum v4.21–v4.36
+
+The [integration record](../docs/quantum-integration-v421-v436.md) describes the
+twenty added modules and scoped checks on the combined source tree. The catalog
+now contains 397 modules and 401 library Lean files, with 351 direct MasterSuite
+imports. This integration does not establish a new full beta checkpoint.
+
+The published [Leanbook v1.0.0 checkpoint](../docs/release-v1.0.0.en.md), commit
+`5276529c6c1010722cc96c39217892b9e874f6a8`, and its release assets remain immutable.
+Local development checks retain the scope stated in their individual reports.
+The records below are historical and are not relabelled as current full audits.
+
+## Historical checkpoint: v0.7.0
 
 191 direct imports and 235 root-inclusive Lean sources. The subject change is
 module 191 in `quantum-physics/qutrit-secret-sharing`. The
