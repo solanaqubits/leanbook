@@ -1,0 +1,211 @@
+{
+  "modules": [
+    {
+      "module": "QuantumRepeaterChain",
+      "source": "Verification/QuantumRepeaterChain.lean",
+      "sha256": "1b746e132d4fd26259815ac6de221a09726afa37c6048a0afe90c6e560fdf135",
+      "declarations": [
+        {
+          "name": "QuantumRepeaterChain.nodeVisibilityValue",
+          "kind": "def",
+          "line": 20
+        },
+        {
+          "name": "QuantumRepeaterChain.nodeProbability",
+          "kind": "def",
+          "line": 22
+        },
+        {
+          "name": "QuantumRepeaterChain.nodeProbability_bounds",
+          "kind": "theorem",
+          "line": 24
+        },
+        {
+          "name": "QuantumRepeaterChain.nodeProbability_pos",
+          "kind": "theorem",
+          "line": 30
+        },
+        {
+          "name": "QuantumRepeaterChain.nodeVisibility_bounds",
+          "kind": "theorem",
+          "line": 34
+        },
+        {
+          "name": "QuantumRepeaterChain.node_fidelity",
+          "kind": "theorem",
+          "line": 45
+        },
+        {
+          "name": "QuantumRepeaterChain.node_visibility_strict_decay",
+          "kind": "theorem",
+          "line": 54
+        },
+        {
+          "name": "QuantumRepeaterChain.node_visibility_nonincrease",
+          "kind": "theorem",
+          "line": 61
+        },
+        {
+          "name": "QuantumRepeaterChain.nodeVisibility",
+          "kind": "def",
+          "line": 69
+        },
+        {
+          "name": "QuantumRepeaterChain.visibilityAt",
+          "kind": "def",
+          "line": 73
+        },
+        {
+          "name": "QuantumRepeaterChain.visibilityAt_recurrence",
+          "kind": "theorem",
+          "line": 77
+        },
+        {
+          "name": "QuantumRepeaterChain.visibilityAt_antitone",
+          "kind": "theorem",
+          "line": 82
+        },
+        {
+          "name": "QuantumRepeaterChain.visibilityAt_interior",
+          "kind": "theorem",
+          "line": 87
+        },
+        {
+          "name": "QuantumRepeaterChain.visibilityAt_strictAnti",
+          "kind": "theorem",
+          "line": 99
+        },
+        {
+          "name": "QuantumRepeaterChain.fidelityAt_recurrence",
+          "kind": "theorem",
+          "line": 106
+        },
+        {
+          "name": "QuantumRepeaterChain.fidelityAt_nonincrease",
+          "kind": "theorem",
+          "line": 110
+        },
+        {
+          "name": "QuantumRepeaterChain.pairSwap",
+          "kind": "def",
+          "line": 117
+        },
+        {
+          "name": "QuantumRepeaterChain.pairSwap_isotropic",
+          "kind": "theorem",
+          "line": 120
+        },
+        {
+          "name": "QuantumRepeaterChain.pairSwap_common_smul",
+          "kind": "theorem",
+          "line": 126
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterNode",
+          "kind": "def",
+          "line": 132
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterNode_isotropic",
+          "kind": "theorem",
+          "line": 135
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterNode_common_smul",
+          "kind": "theorem",
+          "line": 147
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterMatrix",
+          "kind": "def",
+          "line": 157
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterProbability",
+          "kind": "def",
+          "line": 162
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterProbability_pos",
+          "kind": "theorem",
+          "line": 166
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterProbability_le_one",
+          "kind": "theorem",
+          "line": 171
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterProbability_closed_form",
+          "kind": "theorem",
+          "line": 179
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterMatrix_refinement",
+          "kind": "theorem",
+          "line": 196
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterMatrix_positive",
+          "kind": "theorem",
+          "line": 204
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterMatrix_trace",
+          "kind": "theorem",
+          "line": 208
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterMatrix_conditional",
+          "kind": "theorem",
+          "line": 212
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterMatrix_conditional_density",
+          "kind": "theorem",
+          "line": 217
+        },
+        {
+          "name": "QuantumRepeaterChain.repeaterMatrix_conditional_fidelity",
+          "kind": "theorem",
+          "line": 224
+        },
+        {
+          "name": "QuantumRepeaterChain.segmentCount",
+          "kind": "def",
+          "line": 231
+        },
+        {
+          "name": "QuantumRepeaterChain.rawPairCount",
+          "kind": "def",
+          "line": 233
+        },
+        {
+          "name": "QuantumRepeaterChain.segmentCount_eq",
+          "kind": "theorem",
+          "line": 235
+        },
+        {
+          "name": "QuantumRepeaterChain.rawPairCount_eq",
+          "kind": "theorem",
+          "line": 240
+        },
+        {
+          "name": "QuantumRepeaterChain.rawPairCount_per_segment",
+          "kind": "theorem",
+          "line": 245
+        },
+        {
+          "name": "QuantumRepeaterChain.QuantumRepeaterChainSuite",
+          "kind": "structure",
+          "line": 249
+        },
+        {
+          "name": "QuantumRepeaterChain.verification_suite",
+          "kind": "theorem",
+          "line": 258
+        }
+      ]
+    }
+  ]
+}

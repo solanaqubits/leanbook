@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumRepeaterChain",
         "Verification.QuantumHeterogeneousBBPSSW",
         "Verification.QuantumBBPSSWConvergence",
         "Verification.QuantumBBPSSWDistillation",
@@ -1598,6 +1599,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumRepeaterChain",
         "Verification.QuantumHeterogeneousBBPSSW",
         "Verification.QuantumBBPSSWConvergence",
         "Verification.QuantumBBPSSWDistillation",
@@ -4700,6 +4702,17 @@
       "project_imports": [
         "Verification.QuantumBBPSSWConvergence",
         "Verification.QuantumWernerCascade"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumRepeaterChain",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumRepeaterChain.lean",
+      "card": "knowledge/quantum-physics/QuantumRepeaterChain.en.md",
+      "project_imports": [
+        "Verification.QuantumHeterogeneousBBPSSW"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

@@ -1,0 +1,112 @@
+{
+  "iteration": "Quantum v4.32",
+  "base_commit": "6493e45b7bb78ba41ac732b0f166988c58dd7b2b",
+  "branch": "quantum-repeater-v432",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "model": "Homogeneous ideal resources; one swap and one BBPSSW round per level; independent complete four-child resource tree",
+  "new_modules": 1,
+  "named_theorems": 29,
+  "named_exports": 40,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 60,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 5160,
+      "violations": []
+    }
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43697,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "incremental_build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 11.303442435000761,
+    "fresh_targets": [
+      "\u2714 [4131/4136] Built Verification.MasterSuiteComponents (2.5s)",
+      "\u2714 [4132/4136] Built Verification.MasterHundredRegistry (1.8s)",
+      "\u2139 [4133/4136] Built Verification.MasterSuite (1.9s)",
+      "\u2139 [4134/4136] Built Verification.AxiomAudit (2.1s)",
+      "\u2714 [4135/4136] Built Verification (1.9s)"
+    ],
+    "clean_build": false,
+    "jobs": 4136
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v432",
+      "tests.test_quantum_v431",
+      "tests.test_quantum_v430",
+      "tests.test_quantum_v429",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 91.45156340700123,
+    "log_sha256": "706c201feef906af9e23cafa2581e2aeb3714cea17439cc76872455d2e3b5810"
+  },
+  "test_history": [
+    "First targeted container run:35/35,zero skips (3 new and 32 prior tests)."
+  ],
+  "development_history": "develop-01 retained: strict positivity tactic required the inductive conjunction to be projected, and a numeral product in resource counting needed normalization. Final verify passed after these proof repairs. No limits increased or checks disabled.",
+  "model_boundaries": [
+    "2^k spatial segments require 4^k raw independent pairs, not 2^k total raw pairs.",
+    "All-success weights satisfy p_(k+1)=p_k^4 (1+w_k^4)/2.",
+    "One purification round per level gives strictly decreasing visibility for 0<w0<1, not a positive long-distance quality guarantee.",
+    "Finite state-tree construction is not a scheduling model or a deterministic end-to-end channel."
+  ],
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "d7dd9880110d06bd2a86dd062156c4d4176e69193125abbca2447c65c5d4dc97",
+  "catalog": {
+    "modules": 393,
+    "sections": 12,
+    "library_files": 397,
+    "MasterSuite_direct_imports": 347
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed"
+}

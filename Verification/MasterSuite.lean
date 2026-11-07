@@ -1,3 +1,4 @@
+import Verification.QuantumRepeaterChain
 import Verification.QuantumHeterogeneousBBPSSW
 import Verification.QuantumBBPSSWConvergence
 import Verification.QuantumBBPSSWDistillation

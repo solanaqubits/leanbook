@@ -281,3 +281,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [BBPSSW convergence and binary resource tree](QuantumBBPSSWConvergence.en.md)
 
 - [Heterogeneous BBPSSW and swap-then-purify](QuantumHeterogeneousBBPSSW.en.md)
+
+- [Finite ideal repeater chain](QuantumRepeaterChain.en.md)

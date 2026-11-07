@@ -2762,5 +2762,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumHeterogeneousBBPSSW.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumRepeaterChain": {
+    "suite_struct": "QuantumRepeaterChainSuite",
+    "suite_type": "QuantumRepeaterChain.QuantumRepeaterChainSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "repeater_chain",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumRepeaterChain.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

@@ -1,3 +1,4 @@
+import Verification.QuantumRepeaterChain
 import Verification.QuantumHeterogeneousBBPSSW
 import Verification.QuantumBBPSSWConvergence
 import Verification.QuantumBBPSSWDistillation
@@ -995,6 +996,7 @@ structure QuantumPhysicsFullSuite : Prop where
   bbpssw : QuantumBBPSSWDistillation.QuantumBBPSSWDistillationSuite
   bbpssw_limit : QuantumBBPSSWConvergence.QuantumBBPSSWConvergenceSuite
   bbpssw_hetero : QuantumHeterogeneousBBPSSW.QuantumHeterogeneousBBPSSWSuite
+  repeater_chain : QuantumRepeaterChain.QuantumRepeaterChainSuite
 
 theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   hctk_scalar := HCTKScalarPartition.verification_suite
@@ -1165,6 +1167,7 @@ theorem quantum_physics_full_master_suite : QuantumPhysicsFullSuite := {
   bbpssw := QuantumBBPSSWDistillation.verification_suite
   bbpssw_limit := QuantumBBPSSWConvergence.verification_suite
   bbpssw_hetero := QuantumHeterogeneousBBPSSW.verification_suite
+  repeater_chain := QuantumRepeaterChain.verification_suite
 }
 
 /-- Abstract barrier results and separate seven-coordinate product identities. -/
