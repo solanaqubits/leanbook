@@ -1,0 +1,241 @@
+{
+  "modules": [
+    {
+      "module": "QuantumHeterogeneousBBPSSW",
+      "source": "Verification/QuantumHeterogeneousBBPSSW.lean",
+      "sha256": "0865b49e467fbd308124162670bf3da676c1434b601417af68070b5cabfe4367",
+      "declarations": [
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroTargetMass",
+          "kind": "def",
+          "line": 21
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroSuccessProb",
+          "kind": "def",
+          "line": 23
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroRecurrence",
+          "kind": "def",
+          "line": 26
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.thresholdFor",
+          "kind": "def",
+          "line": 28
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroSuccessProb_symm",
+          "kind": "theorem",
+          "line": 30
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroRecurrence_symm",
+          "kind": "theorem",
+          "line": 33
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroSuccessProb_diag",
+          "kind": "theorem",
+          "line": 39
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroRecurrence_diag",
+          "kind": "theorem",
+          "line": 42
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.acceptedBellMatrix",
+          "kind": "def",
+          "line": 49
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.accepted_hetero_row00",
+          "kind": "theorem",
+          "line": 54
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.accepted_hetero_row01",
+          "kind": "theorem",
+          "line": 65
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.accepted_hetero_row10",
+          "kind": "theorem",
+          "line": 78
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.accepted_hetero_row11",
+          "kind": "theorem",
+          "line": 91
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.accepted_hetero_matrix",
+          "kind": "theorem",
+          "line": 103
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.accepted_hetero_trace",
+          "kind": "theorem",
+          "line": 113
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.accepted_hetero_target",
+          "kind": "theorem",
+          "line": 120
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.purified_hetero_isotropic",
+          "kind": "theorem",
+          "line": 125
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.purified_hetero_werner",
+          "kind": "theorem",
+          "line": 133
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroSuccessProb_bounds",
+          "kind": "theorem",
+          "line": 146
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroSuccessProb_pos",
+          "kind": "theorem",
+          "line": 155
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroRecurrence_bounds",
+          "kind": "theorem",
+          "line": 158
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.purified_hetero_conditional",
+          "kind": "theorem",
+          "line": 171
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.purified_hetero_conditional_density",
+          "kind": "theorem",
+          "line": 177
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.heteroRecurrence_sub_left",
+          "kind": "theorem",
+          "line": 185
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.threshold_denom_pos",
+          "kind": "theorem",
+          "line": 193
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.hetero_strict_improve_left_iff",
+          "kind": "theorem",
+          "line": 197
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.hetero_strict_improve_max_iff",
+          "kind": "theorem",
+          "line": 208
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.threshold_sub_self",
+          "kind": "theorem",
+          "line": 215
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.hetero_counterexample_three_quarters_three_fifths",
+          "kind": "theorem",
+          "line": 222
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.nonphysical_zero_weight_nonzero_output",
+          "kind": "theorem",
+          "line": 227
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.elemFidelity",
+          "kind": "def",
+          "line": 237
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swapFidelity",
+          "kind": "def",
+          "line": 239
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swap_success_probability",
+          "kind": "theorem",
+          "line": 241
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swap_then_purify_sub_elem",
+          "kind": "theorem",
+          "line": 245
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swap_then_purify_lt_elem",
+          "kind": "theorem",
+          "line": 255
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swap_then_one_purify_sandwich",
+          "kind": "theorem",
+          "line": 266
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.eventually_purification_exceeds_elem",
+          "kind": "theorem",
+          "line": 275
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.exists_purification_depth_exceeding_elemFidelity",
+          "kind": "theorem",
+          "line": 283
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.isotropic_eq_werner",
+          "kind": "theorem",
+          "line": 289
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swapOutput",
+          "kind": "def",
+          "line": 296
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swapOutput_matrix",
+          "kind": "theorem",
+          "line": 301
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swapThenPurify",
+          "kind": "def",
+          "line": 309
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swapThenPurify_matrix",
+          "kind": "theorem",
+          "line": 314
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.swapThenPurify_conditional",
+          "kind": "theorem",
+          "line": 321
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.QuantumHeterogeneousBBPSSWSuite",
+          "kind": "structure",
+          "line": 329
+        },
+        {
+          "name": "QuantumHeterogeneousBBPSSW.verification_suite",
+          "kind": "theorem",
+          "line": 338
+        }
+      ]
+    }
+  ]
+}

@@ -2753,5 +2753,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumBBPSSWConvergence.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumHeterogeneousBBPSSW": {
+    "suite_struct": "QuantumHeterogeneousBBPSSWSuite",
+    "suite_type": "QuantumHeterogeneousBBPSSW.QuantumHeterogeneousBBPSSWSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "bbpssw_hetero",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumHeterogeneousBBPSSW.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

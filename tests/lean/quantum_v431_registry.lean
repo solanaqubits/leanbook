@@ -1,0 +1,5 @@
+import Verification.MasterSuite
+example : QuantumHeterogeneousBBPSSW.QuantumHeterogeneousBBPSSWSuite :=
+  MasterSuite.quantum_physics_full_master_suite.bbpssw_hetero
+example : QuantumBBPSSWConvergence.QuantumBBPSSWConvergenceSuite :=
+  MasterSuite.quantum_physics_full_master_suite.bbpssw_limit

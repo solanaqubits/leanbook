@@ -1,0 +1,117 @@
+{
+  "iteration": "Quantum v4.31",
+  "base_commit": "b809738911b60cd4228f64fc2067c6cf437c86a7",
+  "branch": "quantum-heterogeneous-v431",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "new_modules": 1,
+  "named_theorems": 36,
+  "named_exports": 46,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 59,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 5063,
+      "violations": []
+    }
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43599,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "incremental_build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 11.109510763000799,
+    "fresh_targets": [
+      "\u2714 [4130/4135] Built Verification.MasterSuiteComponents (2.5s)",
+      "\u2714 [4131/4135] Built Verification.MasterHundredRegistry (1.8s)",
+      "\u2139 [4132/4135] Built Verification.MasterSuite (1.8s)",
+      "\u2139 [4133/4135] Built Verification.AxiomAudit (2.0s)",
+      "\u2714 [4134/4135] Built Verification (1.9s)"
+    ],
+    "clean_build": false,
+    "jobs": 4135
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v431",
+      "tests.test_quantum_v430",
+      "tests.test_quantum_v429",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 87.8785983459984,
+    "log_sha256": "10425a2c3169571c62f87a4ac5cd1160945375beea8ac57c39fbe70628e5e7fd"
+  },
+  "test_history": [
+    "First targeted container run:32/32,zero skips (4 new and 28 prior tests)."
+  ],
+  "development_history": "develop-01..03 retained: namespace ambiguities, default heartbeat timeout in finite matrix calculation, scalar rewriting and strict style/simp/sequence linters corrected. Matrix calculation split into four row lemmas. Final strict verify passed; no limits increased or checks disabled.",
+  "specification_corrections": [
+    "Threshold denominator square completion has constant 7/2, not 7.",
+    "Missing increment numerator term is (y-x)(2x+1), without an extra factor 9.",
+    "For w=4/5, the first depth exceeding Felem=17/20 is 4, not 2; exact Lean regressions cover depths 0..4."
+  ],
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "c5f2b7cb00f0f66e21c8adb487785d54d203a5b0d83bae843e65aa0c1d2b5374",
+  "catalog": {
+    "modules": 392,
+    "sections": 12,
+    "library_files": 396,
+    "MasterSuite_direct_imports": 346
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed",
+  "claims": {
+    "heterogeneous_operator": true,
+    "actual_swap_operator_bridge": true,
+    "eventual_recovery_above_segment": true,
+    "one_round_exceeds_segment": false,
+    "expected_resource_yield": false,
+    "noisy_operations": false
+  }
+}

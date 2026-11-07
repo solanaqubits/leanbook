@@ -279,3 +279,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [BBPSSW distillation](QuantumBBPSSWDistillation.en.md)
 
 - [BBPSSW convergence and binary resource tree](QuantumBBPSSWConvergence.en.md)
+
+- [Heterogeneous BBPSSW and swap-then-purify](QuantumHeterogeneousBBPSSW.en.md)

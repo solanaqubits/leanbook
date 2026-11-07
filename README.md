@@ -16,12 +16,19 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## Quantum v4.31 development candidate
+
+[Heterogeneous BBPSSW and swap-then-purify](docs/quantum-v4.31.md) ·
+[Exact inventory](docs/quantum-v4.31-inventory.json).
+
+Current catalog: 392 modules, 396 library Lean files, 346 direct MasterSuite imports.
+
 ## Quantum v4.30 development candidate
 
 [BBPSSW orbit convergence and binary resource tree](docs/quantum-v4.30.md) ·
 [Exact inventory](docs/quantum-v4.30-inventory.json).
 
-Current catalog: 391 modules, 395 library Lean files, 345 direct MasterSuite imports.
+The v4.30 catalog had 391 modules, 395 library Lean files, 345 direct MasterSuite imports.
 
 ## Quantum v4.29 development candidate
 
