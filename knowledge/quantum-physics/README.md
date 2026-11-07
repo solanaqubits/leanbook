@@ -274,3 +274,6 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [QuantumWernerCascade](QuantumWernerCascade.en.md)
 
 - [Adaptive Werner cascade with losses](QuantumAdaptiveWernerCascade.en.md)
+
+- [Finite local Clifford twirl](QuantumCliffordTwirl.en.md)
+- [BBPSSW distillation](QuantumBBPSSWDistillation.en.md)

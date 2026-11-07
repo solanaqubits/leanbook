@@ -16,12 +16,19 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## Quantum v4.29 development candidate
+
+[Ideal BBPSSW distillation and finite Clifford twirl](docs/quantum-v4.29.md) ·
+[Exact inventory](docs/quantum-v4.29-inventory.json).
+
+Current catalog: 390 modules, 394 library Lean files, 344 direct MasterSuite imports.
+
 ## Quantum v4.28 development candidate
 
 [Adaptive Werner cascade with detector losses](docs/quantum-v4.28.md) ·
 [Exact inventory](docs/quantum-v4.28-inventory.json).
 
-Current catalog: 388 modules, 392 library Lean files, 342 direct MasterSuite imports.
+The v4.28 catalog had 388 modules, 392 library Lean files, 342 direct MasterSuite imports.
 
 ## Quantum v4.27 development candidate
 

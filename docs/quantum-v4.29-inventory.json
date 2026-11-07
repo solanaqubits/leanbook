@@ -1,0 +1,458 @@
+{
+  "modules": [
+    {
+      "module": "QuantumCliffordTwirl",
+      "source": "Verification/QuantumCliffordTwirl.lean",
+      "sha256": "8dc34e2f8f29db84d47042091c6938b9c9beda7fbed2a479b6adebf41271f0c6",
+      "declarations": [
+        {
+          "name": "QuantumCliffordTwirl.QubitMatrix",
+          "kind": "abbrev",
+          "line": 17
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycleGate",
+          "kind": "def",
+          "line": 19
+        },
+        {
+          "name": "QuantumCliffordTwirl.localPair",
+          "kind": "def",
+          "line": 22
+        },
+        {
+          "name": "QuantumCliffordTwirl.pairCycle",
+          "kind": "def",
+          "line": 24
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_unitary",
+          "kind": "theorem",
+          "line": 26
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauli",
+          "kind": "def",
+          "line": 32
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauliPair",
+          "kind": "def",
+          "line": 35
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauliTwirl",
+          "kind": "def",
+          "line": 37
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycleTwirl",
+          "kind": "def",
+          "line": 40
+        },
+        {
+          "name": "QuantumCliffordTwirl.twirl",
+          "kind": "def",
+          "line": 44
+        },
+        {
+          "name": "QuantumCliffordTwirl.permute",
+          "kind": "def",
+          "line": 46
+        },
+        {
+          "name": "QuantumCliffordTwirl.bellSign",
+          "kind": "def",
+          "line": 52
+        },
+        {
+          "name": "QuantumCliffordTwirl.projector_entry",
+          "kind": "theorem",
+          "line": 59
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_phiPlus",
+          "kind": "theorem",
+          "line": 66
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_phiMinus",
+          "kind": "theorem",
+          "line": 77
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_psiPlus",
+          "kind": "theorem",
+          "line": 88
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_psiMinus",
+          "kind": "theorem",
+          "line": 99
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_projector",
+          "kind": "theorem",
+          "line": 110
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauli_unitary",
+          "kind": "theorem",
+          "line": 120
+        },
+        {
+          "name": "QuantumCliffordTwirl.bellMass",
+          "kind": "def",
+          "line": 127
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauli_dephasing_row0",
+          "kind": "theorem",
+          "line": 130
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauli_dephasing_row1",
+          "kind": "theorem",
+          "line": 139
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauli_dephasing_row2",
+          "kind": "theorem",
+          "line": 148
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauli_dephasing_row3",
+          "kind": "theorem",
+          "line": 157
+        },
+        {
+          "name": "QuantumCliffordTwirl.pauli_dephasing",
+          "kind": "theorem",
+          "line": 166
+        },
+        {
+          "name": "QuantumCliffordTwirl.bellMass_total",
+          "kind": "theorem",
+          "line": 176
+        },
+        {
+          "name": "QuantumCliffordTwirl.target_bellMass",
+          "kind": "theorem",
+          "line": 181
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_twirl_projector",
+          "kind": "theorem",
+          "line": 187
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_twirl_sum",
+          "kind": "theorem",
+          "line": 203
+        },
+        {
+          "name": "QuantumCliffordTwirl.twirl_formula",
+          "kind": "theorem",
+          "line": 211
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_family",
+          "kind": "theorem",
+          "line": 226
+        },
+        {
+          "name": "QuantumCliffordTwirl.cp_comp",
+          "kind": "theorem",
+          "line": 231
+        },
+        {
+          "name": "QuantumCliffordTwirl.twirl_cp",
+          "kind": "theorem",
+          "line": 237
+        },
+        {
+          "name": "QuantumCliffordTwirl.twirl_trace",
+          "kind": "theorem",
+          "line": 245
+        },
+        {
+          "name": "QuantumCliffordTwirl.twirl_overlap",
+          "kind": "theorem",
+          "line": 250
+        },
+        {
+          "name": "QuantumCliffordTwirl.twirl_add",
+          "kind": "theorem",
+          "line": 262
+        },
+        {
+          "name": "QuantumCliffordTwirl.twirl_smul",
+          "kind": "theorem",
+          "line": 265
+        },
+        {
+          "name": "QuantumCliffordTwirl.localPair_mul",
+          "kind": "theorem",
+          "line": 270
+        },
+        {
+          "name": "QuantumCliffordTwirl.cycle_clifford",
+          "kind": "theorem",
+          "line": 276
+        },
+        {
+          "name": "QuantumCliffordTwirl.bell_complete",
+          "kind": "theorem",
+          "line": 286
+        },
+        {
+          "name": "QuantumCliffordTwirl.twirl_isotropic_formula",
+          "kind": "theorem",
+          "line": 294
+        },
+        {
+          "name": "QuantumCliffordTwirl.QuantumCliffordTwirlSuite",
+          "kind": "structure",
+          "line": 303
+        },
+        {
+          "name": "QuantumCliffordTwirl.verification_suite",
+          "kind": "theorem",
+          "line": 310
+        }
+      ]
+    },
+    {
+      "module": "QuantumBBPSSWDistillation",
+      "source": "Verification/QuantumBBPSSWDistillation.lean",
+      "sha256": "4a4550887bfef49034bc11df86673b6520e6952cc01e8165d822bbffea104228",
+      "declarations": [
+        {
+          "name": "QuantumBBPSSWDistillation.flip",
+          "kind": "def",
+          "line": 21
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.flip_involutive",
+          "kind": "theorem",
+          "line": 23
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.flip_eq",
+          "kind": "theorem",
+          "line": 27
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.biCNOT",
+          "kind": "def",
+          "line": 32
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.biCNOT_left",
+          "kind": "theorem",
+          "line": 34
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.biCNOT_right",
+          "kind": "theorem",
+          "line": 37
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.biCNOT_adjoint",
+          "kind": "theorem",
+          "line": 40
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.biCNOT_unitary",
+          "kind": "theorem",
+          "line": 46
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.branchOp",
+          "kind": "def",
+          "line": 52
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.branch",
+          "kind": "def",
+          "line": 54
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.branch_entry",
+          "kind": "theorem",
+          "line": 57
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.accepted",
+          "kind": "def",
+          "line": 66
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.rejected",
+          "kind": "def",
+          "line": 69
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.accepted_entry",
+          "kind": "theorem",
+          "line": 72
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.instrument_cp",
+          "kind": "theorem",
+          "line": 82
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.instrument_trace",
+          "kind": "theorem",
+          "line": 85
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.distribution",
+          "kind": "def",
+          "line": 100
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.werner",
+          "kind": "def",
+          "line": 109
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.werner_distribution",
+          "kind": "theorem",
+          "line": 113
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.werner_positive",
+          "kind": "theorem",
+          "line": 118
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.successProbability",
+          "kind": "def",
+          "line": 122
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.targetMass",
+          "kind": "def",
+          "line": 123
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.recurrence",
+          "kind": "def",
+          "line": 124
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.probability_positive",
+          "kind": "theorem",
+          "line": 126
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.recurrence_difference",
+          "kind": "theorem",
+          "line": 130
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.improves_above_threshold",
+          "kind": "theorem",
+          "line": 137
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.improves_below_quarter",
+          "kind": "theorem",
+          "line": 144
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.decreases_between_fixed_points",
+          "kind": "theorem",
+          "line": 152
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.accepted_werner_matrix",
+          "kind": "theorem",
+          "line": 164
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.accepted_probability",
+          "kind": "theorem",
+          "line": 178
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.accepted_target_mass",
+          "kind": "theorem",
+          "line": 185
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.normalized_fidelity",
+          "kind": "theorem",
+          "line": 190
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.fixed_points",
+          "kind": "theorem",
+          "line": 198
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified",
+          "kind": "def",
+          "line": 216
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified_cp",
+          "kind": "theorem",
+          "line": 218
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified_add",
+          "kind": "theorem",
+          "line": 220
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified_smul",
+          "kind": "theorem",
+          "line": 226
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified_trace_balance",
+          "kind": "theorem",
+          "line": 231
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.recurrence_bounds",
+          "kind": "theorem",
+          "line": 235
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified_werner",
+          "kind": "theorem",
+          "line": 245
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified_conditional",
+          "kind": "theorem",
+          "line": 259
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified_conditional_positive",
+          "kind": "theorem",
+          "line": 265
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.purified_conditional_trace",
+          "kind": "theorem",
+          "line": 270
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.QuantumBBPSSWDistillationSuite",
+          "kind": "structure",
+          "line": 275
+        },
+        {
+          "name": "QuantumBBPSSWDistillation.verification_suite",
+          "kind": "theorem",
+          "line": 282
+        }
+      ]
+    }
+  ]
+}

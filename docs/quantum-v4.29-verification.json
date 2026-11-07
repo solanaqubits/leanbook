@@ -1,0 +1,115 @@
+{
+  "iteration": "Quantum v4.29",
+  "base_commit": "96b8f303ca3e5e0fd047b4ef98f8828daf43062d",
+  "branch": "quantum-bbpssw-v429",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "new_modules": 2,
+  "named_theorems": 62,
+  "named_exports": 88,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 55,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 4801,
+      "violations": []
+    }
+  },
+  "strict_helper_reelaboration": {
+    "command": [
+      "lake",
+      "lean",
+      "Verification/QuantumCliffordTwirl.lean",
+      "--",
+      "-j1",
+      "-DwarningAsError=true"
+    ],
+    "exit_code": 0,
+    "seconds": 48.403854349999165
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43442,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "incremental_build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 10.676272064999466,
+    "jobs": 4133,
+    "fresh_targets": [
+      "\u2714 [4128/4133] Built Verification.MasterSuiteComponents (2.4s)",
+      "\u2714 [4129/4133] Built Verification.MasterHundredRegistry (1.8s)",
+      "\u2139 [4130/4133] Built Verification.MasterSuite (1.7s)",
+      "\u2139 [4131/4133] Built Verification.AxiomAudit (1.9s)",
+      "\u2714 [4132/4133] Built Verification (1.8s)"
+    ],
+    "clean_build": false
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v429",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 64.21630464300051,
+    "log_sha256": "3f3d32ed85245775982432e17a188399a6ac0347c0f20ff3cceaa65f382f319e"
+  },
+  "test_history": [
+    "First targeted container run:25/25,zero skips (3 new and 22 prior tests)."
+  ],
+  "development_history": "develop-01..08 and twirl-01..06 retained; namespace, scalar casts, matrix arithmetic and strict linter errors corrected. Finite calculations split into helper lemmas after default heartbeat timeouts; no limit increases, disabled linters, new axioms or native_decide.",
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "d633eab6e97cee71fdc51bc4eb4491d30ab5e7b2fd7ed730be3dddeb54ac68bb",
+  "catalog": {
+    "modules": 390,
+    "sections": 12,
+    "library_files": 394,
+    "MasterSuite_direct_imports": 344
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed",
+  "asymptotic_convergence": "not claimed"
+}

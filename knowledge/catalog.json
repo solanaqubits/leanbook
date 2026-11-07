@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.QuantumBBPSSWDistillation",
+        "Verification.QuantumCliffordTwirl",
         "Verification.QuantumAdaptiveWernerCascade",
         "Verification.QuantumWernerCascade",
         "Verification.QuantumCascadeReduction",
@@ -1594,6 +1596,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.QuantumBBPSSWDistillation",
+        "Verification.QuantumCliffordTwirl",
         "Verification.QuantumAdaptiveWernerCascade",
         "Verification.QuantumWernerCascade",
         "Verification.QuantumCascadeReduction",
@@ -4647,6 +4651,28 @@
       "card": "knowledge/quantum-physics/QuantumAdaptiveWernerCascade.en.md",
       "project_imports": [
         "Verification.QuantumWernerCascade"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumCliffordTwirl",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumCliffordTwirl.lean",
+      "card": "knowledge/quantum-physics/QuantumCliffordTwirl.en.md",
+      "project_imports": [
+        "Verification.QuantumCascadedSwapping"
+      ],
+      "novelty": "not-assessed",
+      "status": "reviewed"
+    },
+    {
+      "id": "QuantumBBPSSWDistillation",
+      "section": "quantum-physics",
+      "source": "Verification/QuantumBBPSSWDistillation.lean",
+      "card": "knowledge/quantum-physics/QuantumBBPSSWDistillation.en.md",
+      "project_imports": [
+        "Verification.QuantumCliffordTwirl"
       ],
       "novelty": "not-assessed",
       "status": "reviewed"

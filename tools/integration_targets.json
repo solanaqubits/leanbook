@@ -2726,5 +2726,23 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumAdaptiveWernerCascade.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumCliffordTwirl": {
+    "suite_struct": "QuantumCliffordTwirlSuite",
+    "suite_type": "QuantumCliffordTwirl.QuantumCliffordTwirlSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "clifford_twirl",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumCliffordTwirl.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumBBPSSWDistillation": {
+    "suite_struct": "QuantumBBPSSWDistillationSuite",
+    "suite_type": "QuantumBBPSSWDistillation.QuantumBBPSSWDistillationSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "bbpssw",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumBBPSSWDistillation.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
