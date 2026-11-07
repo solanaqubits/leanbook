@@ -1,3 +1,4 @@
+import Verification.QuantumNoisyBBPSSWCritical
 import Verification.QuantumNoisyBBPSSWConvergence
 import Verification.QuantumNoisyBBPSSW
 import Verification.QuantumNestedRepeater

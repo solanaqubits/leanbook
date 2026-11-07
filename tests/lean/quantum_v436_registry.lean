@@ -1,0 +1,5 @@
+import Verification.MasterSuite
+example : QuantumNoisyBBPSSWCritical.QuantumNoisyBBPSSWCriticalSuite :=
+  MasterSuite.quantum_physics_full_master_suite.noisy_critical
+example : QuantumNoisyBBPSSWConvergence.QuantumNoisyBBPSSWConvergenceSuite :=
+  MasterSuite.quantum_physics_full_master_suite.noisy_limit

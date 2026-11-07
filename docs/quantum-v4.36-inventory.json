@@ -1,0 +1,146 @@
+{
+  "modules": [
+    {
+      "module": "QuantumNoisyBBPSSWCritical",
+      "source": "Verification/QuantumNoisyBBPSSWCritical.lean",
+      "sha256": "c3a1b888897323fb7e761bb632a885bc08ff9366f14eaebaae79f301f8c296a3",
+      "declarations": [
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalFidelity",
+          "kind": "def",
+          "line": 16
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalFidelity_radical",
+          "kind": "theorem",
+          "line": 18
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalFidelity_bounds",
+          "kind": "theorem",
+          "line": 22
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.critical_fixed_iff",
+          "kind": "theorem",
+          "line": 27
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.critical_stationary_iff",
+          "kind": "theorem",
+          "line": 31
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.critical_increment",
+          "kind": "theorem",
+          "line": 40
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.critical_strict_decay",
+          "kind": "theorem",
+          "line": 47
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.noisy_step_above_quarter",
+          "kind": "theorem",
+          "line": 56
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.lowOrbit_invariant",
+          "kind": "theorem",
+          "line": 63
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.lowOrbit_strictMono",
+          "kind": "theorem",
+          "line": 73
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.critical_step_below_double",
+          "kind": "theorem",
+          "line": 81
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.critical_step_above_double",
+          "kind": "theorem",
+          "line": 87
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalOrbit_below_double",
+          "kind": "theorem",
+          "line": 101
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalOrbit_above_double",
+          "kind": "theorem",
+          "line": 112
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalOrbit_strictAnti_below_double",
+          "kind": "theorem",
+          "line": 122
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalOrbit_strictAnti_above_double",
+          "kind": "theorem",
+          "line": 131
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalOrbit_tendsto_quarter",
+          "kind": "theorem",
+          "line": 141
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.criticalOrbit_tendsto_double",
+          "kind": "theorem",
+          "line": 172
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.zeroQuality_orbit_succ",
+          "kind": "theorem",
+          "line": 194
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.zeroQuality_tendsto",
+          "kind": "theorem",
+          "line": 197
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.subcritical_step_above_quarter",
+          "kind": "theorem",
+          "line": 204
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.subcriticalOrbit_above_quarter",
+          "kind": "theorem",
+          "line": 210
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.subcriticalOrbit_strictAnti",
+          "kind": "theorem",
+          "line": 220
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.subcritical_stationary_iff",
+          "kind": "theorem",
+          "line": 229
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.subcriticalOrbit_tendsto_quarter",
+          "kind": "theorem",
+          "line": 239
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.QuantumNoisyBBPSSWCriticalSuite",
+          "kind": "structure",
+          "line": 269
+        },
+        {
+          "name": "QuantumNoisyBBPSSWCritical.verification_suite",
+          "kind": "theorem",
+          "line": 277
+        }
+      ]
+    }
+  ]
+}

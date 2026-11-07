@@ -1,0 +1,117 @@
+{
+  "iteration": "Quantum v4.36",
+  "base_commit": "10d9660aad58b61882898fcd180ad50c838d17a7",
+  "branch": "quantum-critical-v436",
+  "scope": "gamma/scoped local candidate; no push or release",
+  "model": "Critical and subcritical constant-quality output-pair post-depolarized BBPSSW fidelity orbits",
+  "new_modules": 1,
+  "named_theorems": 25,
+  "named_exports": 27,
+  "counts_are_not_independent_scientific_results": true,
+  "strict": {
+    "ok": true,
+    "source_unchanged": true,
+    "sources": 64,
+    "audit": {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declarations": 5438,
+      "violations": []
+    }
+  },
+  "independent_compiled_audit": {
+    "allowed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audited": 43979,
+    "axiomsUsed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ok": true,
+    "root": "Verification",
+    "violations": []
+  },
+  "independent_auditor_sha256": "8a045cbabfa078df6577541d9768d5971ce573915f40e60806f32a50c3ffc254",
+  "incremental_build": {
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "jobs": 4140,
+    "fresh_targets": [
+      "\u2714 [4135/4140] Built Verification.MasterSuiteComponents (2.6s)",
+      "\u2714 [4136/4140] Built Verification.MasterHundredRegistry (1.8s)",
+      "\u2139 [4137/4140] Built Verification.MasterSuite (1.9s)",
+      "\u2139 [4138/4140] Built Verification.AxiomAudit (2.2s)",
+      "\u2714 [4139/4140] Built Verification (2.0s)"
+    ],
+    "clean_build": false
+  },
+  "targeted": {
+    "resources": {
+      "memory.max": "12884901888",
+      "memory.swap.max": "0",
+      "cpu.max": "400000 100000"
+    },
+    "runtime_qualification": "pinned SQLite and libsodium passed",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_quantum_v436",
+      "tests.test_quantum_v435",
+      "tests.test_quantum_v434",
+      "tests.test_quantum_v433",
+      "tests.test_quantum_v432",
+      "tests.test_quantum_v431",
+      "tests.test_quantum_v430",
+      "tests.test_quantum_v429",
+      "tests.test_quantum_v428",
+      "tests.test_quantum_v427",
+      "tests.test_quantum_v426",
+      "tests.test_quantum_v424",
+      "tests.test_quantum_v423",
+      "tests.test_quantum_v422",
+      "tests.test_quantum_gate_noise",
+      "tests.test_quantum_local_post_noise",
+      "-v"
+    ],
+    "status": "passed",
+    "exit_code": 0,
+    "seconds": 128.50466201499876,
+    "log_sha256": "7e6198cca1343fe34766607d14297c4c642a7b2a5eab46a8294a6471b403f811"
+  },
+  "development_history": "Strict development compilation passed on the first run; develop-01 retained. No proof limits increased or checks disabled.",
+  "model_boundaries": [
+    "Constant quality gamma, with subcritical 0<=gamma<criticalGamma or critical gamma=criticalGamma. Physical starting fidelities lie in [0,1].",
+    "The critical double root is (3*sqrt(5)-1)/8, attracting from above; starting points below it converge to 1/4.",
+    "For zero quality, absorption occurs by step one; F=1/4 is already fixed at step zero.",
+    "Fixed-point classifications and zero-quality absorption also have algebraic statements on all real inputs.",
+    "No variable noise, convergence rate, spatial repeater limit, multi-round success probability or resource yield is claimed."
+  ],
+  "full_gate": "Not run; last historical full checkpoint v4.21 retains its multi-run qualifications",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "manifest_sha256": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+  "exports_sha256": "39475e9617463bdde3e640fbe9c5a59f0ec6e49141dd228773299908cf1ca883",
+  "catalog": {
+    "modules": 397,
+    "sections": 12,
+    "library_files": 401,
+    "MasterSuite_direct_imports": 351
+  },
+  "metadata": "passed",
+  "knowledge": "passed",
+  "diff_check": "passed",
+  "test_history": [
+    "First targeted container run: 51/51, zero skips (4 new and 47 previous tests)."
+  ]
+}

@@ -289,3 +289,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [Post-depolarized BBPSSW and exact working windows](QuantumNoisyBBPSSW.en.md)
 
 - [Noisy BBPSSW orbit basins and topological limits](QuantumNoisyBBPSSWConvergence.en.md)
+
+- [Critical and subcritical noisy BBPSSW orbits](QuantumNoisyBBPSSWCritical.en.md)
