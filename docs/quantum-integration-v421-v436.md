@@ -4,9 +4,10 @@ This integration brings the verified local quantum chain into the Leanbook main
 line based on public commit `5276529c6c1010722cc96c39217892b9e874f6a8`.
 The candidate chain ends at `7981d0f6e1ec9dfda342eb32a8ad312a53b6ef30`.
 It contains fifteen commits adding twenty formal modules. v4.25 is a historical
-prototype, not a separate commit. Existing proof sources, toolchain, dependency
-manifest and verification mechanisms are unchanged. Integration adds this report
-and README navigation while preserving the checked mathematical source bytes.
+prototype, not a separate commit. Existing theorem statements and proofs, toolchain, dependency manifest and
+verification mechanisms are unchanged. Integration adds documentation and restores
+the missing license header of QuantumAdaptiveWernerCascade, as required by the
+hosted style linter; its mathematical body is byte-for-byte unchanged.
 
 ## Formal coverage
 
