@@ -295,3 +295,5 @@ The results concern the explicit matrices, transformations, and scalar energy mo
 - [Noisy BBPSSW resource trees and finite recovery](QuantumNoisyBBPSSWTree.en.md)
 
 - [QuantumScheduledNoisyRepeater](QuantumScheduledNoisyRepeater.en.md) — chronological noisy spatial schedules, operator weights and conditional prefix quality.
+
+- [QuantumNoisyRepeaterWitness](QuantumNoisyRepeaterWitness.en.md) — rational certificates, local minimum depths and a noisy two-level witness.

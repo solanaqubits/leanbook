@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 4f9bec64c273ef1ac3e7aedbd192b4f1bbd4499e11b26a1518288473fcdc05c1
+source_sha256: 03a9a2f43a3bf28b07840c4c48adacb516eb66f7ba1ae9c3ecf4a85da2ed7b68
 novelty: not-assessed
 status: reviewed
 ---
@@ -267,3 +267,5 @@ individual assumptions; registration supplies no OS or input-authenticity guaran
 The registry includes the quantum instrument and retained-environment contracts through [Quantum v4.20](../../docs/quantum-v4.20.md).
 
 Quantum v4.38 adds `scheduled_noisy` for the chronological scheduled noisy repeater suite.
+
+Quantum v4.39 adds `noisy_witness` for the certified two-level noisy schedule.

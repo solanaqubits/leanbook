@@ -3,7 +3,7 @@
 [Knowledge base](README.md)
 
 This project collects reusable, machine-checked components and the tooling needed
-to keep their proofs, assumptions, and documentation connected. The current catalog contains 399 modules across twelve sections, with 403 library
+to keep their proofs, assumptions, and documentation connected. The current catalog contains 400 modules across twelve sections, with 404 library
 Lean files including nested support sources and the root. See the
 [validation record](VERIFICATION.en.md) for the distinct historical checkpoints
 and scoped integration evidence.

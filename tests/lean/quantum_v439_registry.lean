@@ -1,0 +1,7 @@
+import Verification.MasterSuite
+example : QuantumNoisyRepeaterWitness.QuantumNoisyRepeaterWitnessSuite :=
+  MasterSuite.quantum_physics_full_master_suite.noisy_witness
+example : QuantumScheduledNoisyRepeater.QuantumScheduledNoisyRepeaterSuite :=
+  MasterSuite.quantum_physics_full_master_suite.scheduled_noisy
+example : QuantumNoisyBBPSSWTree.QuantumNoisyBBPSSWTreeSuite :=
+  MasterSuite.quantum_physics_full_master_suite.noisy_tree

@@ -1,0 +1,174 @@
+{
+  "modules": [
+    {
+      "module": "QuantumNoisyRepeaterWitness",
+      "source": "Verification/QuantumNoisyRepeaterWitness.lean",
+      "sha256": "a278ba9f41e027d30a31c58534abb71b75d0eca2367c2a9daf94ff76793d7625",
+      "declarations": [
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessGamma",
+          "kind": "def",
+          "line": 19
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessInitialVisibility",
+          "kind": "def",
+          "line": 20
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessSchedule",
+          "kind": "def",
+          "line": 21
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.firstLevelVisibility",
+          "kind": "def",
+          "line": 22
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.secondLevelVisibility",
+          "kind": "def",
+          "line": 24
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.noisyRecurrence_mono_of_ge_quarter",
+          "kind": "theorem",
+          "line": 27
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.noisyOrbit_interval_step",
+          "kind": "theorem",
+          "line": 35
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.first_orbit_certificate",
+          "kind": "theorem",
+          "line": 46
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.second_orbit_certificate",
+          "kind": "theorem",
+          "line": 120
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.initial_swap_fidelity",
+          "kind": "theorem",
+          "line": 195
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.first_level_value",
+          "kind": "theorem",
+          "line": 198
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.second_level_value",
+          "kind": "theorem",
+          "line": 206
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.first_level_visibility_bounds",
+          "kind": "theorem",
+          "line": 210
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.second_swap_fidelity_bounds",
+          "kind": "theorem",
+          "line": 219
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.second_level_visibility_bounds",
+          "kind": "theorem",
+          "line": 226
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.first_level_depth_15_lt_initial",
+          "kind": "theorem",
+          "line": 235
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.first_level_depth_16_gt_initial",
+          "kind": "theorem",
+          "line": 240
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.second_level_depth_15_lt_initial",
+          "kind": "theorem",
+          "line": 243
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.second_level_depth_15_lt_first",
+          "kind": "theorem",
+          "line": 248
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.second_level_depth_16_gt_first",
+          "kind": "theorem",
+          "line": 253
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witness_swap_inside_window",
+          "kind": "theorem",
+          "line": 257
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.first_level_minimal_depth_16",
+          "kind": "theorem",
+          "line": 273
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.second_level_minimal_depth_16",
+          "kind": "theorem",
+          "line": 282
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessSchedule_localQualityGain",
+          "kind": "theorem",
+          "line": 293
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessSchedule_sustains_initial_quality",
+          "kind": "theorem",
+          "line": 310
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessSchedule_refinement_and_psd",
+          "kind": "theorem",
+          "line": 316
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessSchedule_trace",
+          "kind": "theorem",
+          "line": 326
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessSchedule_conditional",
+          "kind": "theorem",
+          "line": 331
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessSchedule_conditional_density",
+          "kind": "theorem",
+          "line": 336
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.witnessSchedule_resource_count",
+          "kind": "theorem",
+          "line": 340
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.QuantumNoisyRepeaterWitnessSuite",
+          "kind": "structure",
+          "line": 346
+        },
+        {
+          "name": "QuantumNoisyRepeaterWitness.verification_suite",
+          "kind": "theorem",
+          "line": 355
+        }
+      ]
+    }
+  ],
+  "named_theorems": 26,
+  "named_exports": 32,
+  "counts_are_not_independent_scientific_results": true
+}

@@ -2825,5 +2825,14 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumScheduledNoisyRepeater.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.QuantumNoisyRepeaterWitness": {
+    "suite_struct": "QuantumNoisyRepeaterWitnessSuite",
+    "suite_type": "QuantumNoisyRepeaterWitness.QuantumNoisyRepeaterWitnessSuite",
+    "parent": "QuantumPhysicsFullSuite",
+    "field": "noisy_witness",
+    "constructor": "quantum_physics_full_master_suite",
+    "proof": "QuantumNoisyRepeaterWitness.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
