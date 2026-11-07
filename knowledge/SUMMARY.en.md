@@ -100,3 +100,5 @@ Release v0.5.9 contains 111 direct imports and 151 Lean files; see the [release 
 Release v0.5.10 adds static-epoch AND probe soundness, conditional delivery progress and a counterexample to naive dynamic edge checking. See the [release report](../docs/release-v0.5.10.en.md).
 
 - [Simon: exact sampling and rank-conditional recovery](03_quantum_physics_and_optics/QuantumSimonsAlgorithm.md)
+
+[Quantum v4.37–v4.39 integration](../docs/quantum-integration-v437-v439.md): noisy trees, chronological schedules and the certified noisy witness.

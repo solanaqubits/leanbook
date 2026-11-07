@@ -1,10 +1,19 @@
 # Public verification record
 
-## Current source integration: Quantum v4.21–v4.36
+## Current source integration: Quantum v4.37–v4.39
+
+The [integration record](../docs/quantum-integration-v437-v439.md) covers three
+additional modules: noisy BBPSSW trees, chronological spatial schedules and the
+certified [16,16] noisy witness. The catalog contains 400 modules across 12
+sections, 404 library Lean files and 354 direct MasterSuite imports. Proof bodies
+and stage evidence remain unchanged. Combined local checks and the two hosted
+CI runs have separate integration receipts; this is not a new beta checkpoint.
+
+## Historical source integration: Quantum v4.21–v4.36
 
 The [integration record](../docs/quantum-integration-v421-v436.md) describes the
 twenty added modules and scoped checks on the combined source tree. The catalog
-now contains 397 modules and 401 library Lean files, with 351 direct MasterSuite
+then contained 397 modules and 401 library Lean files, with 351 direct MasterSuite
 imports. This integration does not establish a new full beta checkpoint.
 
 The published [Leanbook v1.0.0 checkpoint](../docs/release-v1.0.0.en.md), commit

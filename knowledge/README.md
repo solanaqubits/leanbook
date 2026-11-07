@@ -24,3 +24,5 @@ Verified components grouped into eleven subject areas and one verification secti
 The cards summarize formal results and their scope. Lean statements remain authoritative. No scientific priority is claimed.
 
 [Verification hierarchy](../docs/verification-hierarchy.en.md) · [Normative qutrit contract](../docs/qutrit-conformance.en.md)
+
+[Quantum v4.37–v4.39 integration](../docs/quantum-integration-v437-v439.md): noisy trees, chronological schedules and the certified noisy witness.
