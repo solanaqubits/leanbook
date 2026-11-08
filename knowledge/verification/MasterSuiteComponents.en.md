@@ -3,7 +3,7 @@ id: MasterSuiteComponents
 language: en
 section: verification
 source: Verification/MasterSuiteComponents.lean
-source_sha256: 7b84d50497926d583f1df75ec07b31c5996820e179d56a7fb1ff1837cb8228a1
+source_sha256: 2ad1bbdd270a6add6297b52534291e41943f650000a85ee55e3835e8d83082ab
 novelty: not-assessed
 status: reviewed
 ---
@@ -269,3 +269,6 @@ The registry includes the quantum instrument and retained-environment contracts 
 Quantum v4.38 adds `scheduled_noisy` for the chronological scheduled noisy repeater suite.
 
 Quantum v4.39 adds `noisy_witness` for the certified two-level noisy schedule.
+
+The public Claim/Cairo integration adds `claim_transport` and `mldsa_cairo`.
+See [the integration record](../../docs/claim-cairo-integration-20261108.md) for exact scopes.

@@ -3,7 +3,7 @@ id: MasterSuite
 language: en
 section: verification
 source: Verification/MasterSuite.lean
-source_sha256: 13992242928951690519438102d061a872ae155c1e1f4ee0808376c6a6ee3139
+source_sha256: ae7ecdc2122be8ee4cab0d8f0fe8fc699a3cc74754c20e9e34d73006bd8eff59
 novelty: not-assessed
 status: reviewed
 ---
@@ -28,7 +28,7 @@ repository-wide counts.
 
 ## Verified result
 
-Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 356 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
+Eleven existing domain suites, four numerical certificate suites, and the historical milestone aggregate; the current registry has 358 direct imports. The registry does not contain every declaration in the project. The Raft package includes reachable-state election safety, global Log Matching, operational Leader Completeness for actual commit events, and preservation of committed prefixes. The new bridge proves the operational conclusion directly; it does not instantiate the earlier whole-log VoterEvolution abstraction.
 
 ## Assumptions and scope
 
@@ -39,21 +39,21 @@ Scientific priority and first-formalization claims have not been established.
 
 ## Proof entry points
 
-- [`finsler_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L582)
-- [`finsler_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L594)
-- [`lamzouri_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L606)
-- [`collatz_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L625)
-- [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L732)
-- [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1021)
-- [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1205)
-- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1218)
-- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1232)
-- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1285)
-- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1381)
-- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1472)
-- [`verification_master_registry`](../../Verification/MasterSuite.lean#L512)
+- [`finsler_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L584)
+- [`finsler_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L596)
+- [`lamzouri_full_master_verification_suite`](../../Verification/MasterSuiteComponents.lean#L608)
+- [`collatz_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L627)
+- [`crypto_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L735)
+- [`quantum_physics_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1025)
+- [`hopf_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1209)
+- [`proof_dag_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1222)
+- [`finance_defi_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1236)
+- [`finance_risk_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1289)
+- [`distributed_systems_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1386)
+- [`riemann_full_master_suite`](../../Verification/MasterSuiteComponents.lean#L1478)
+- [`verification_master_registry`](../../Verification/MasterSuite.lean#L514)
 
-- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1485)
+- [`photonics_interposer_master_suite`](../../Verification/MasterSuiteComponents.lean#L1491)
 
 ## Verification
 
@@ -300,3 +300,6 @@ The registry includes the quantum instrument and retained-environment contracts 
 Quantum v4.38 adds `scheduled_noisy` for the chronological scheduled noisy repeater suite.
 
 Quantum v4.39 adds `noisy_witness` for the certified two-level noisy schedule.
+
+The public Claim/Cairo integration adds `claim_transport` and `mldsa_cairo`.
+See [the integration record](../../docs/claim-cairo-integration-20261108.md) for exact scopes.

@@ -1,3 +1,4 @@
+import Verification.MlDsaCairoBlockSuite
 import Verification.ClaimTransportContract
 import Verification.MlDsaWtBranch
 import Verification.MlDsaPackedPredicate
@@ -728,6 +729,7 @@ structure CryptoFullSuite : Prop where
   kzg_equation : CryptoKZGOpeningEquation.CryptoKZGOpeningEquationSuite
   groth16_pairing : CryptoGroth16PairingEquation.CryptoGroth16PairingEquationSuite
   mldsa_packed : MlDsaPackedPredicate.MlDsaPackedPredicateSuite
+  mldsa_cairo : MlDsaCairoBlockSuite.CairoBlockSuite
   mldsa_wt : MlDsaWtBranch.MlDsaWtBranchSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
@@ -851,6 +853,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   kzg_equation := CryptoKZGOpeningEquation.verification_suite
   groth16_pairing := CryptoGroth16PairingEquation.verification_suite
   mldsa_packed := MlDsaPackedPredicate.verification_suite
+  mldsa_cairo := MlDsaCairoBlockSuite.verification_suite
   mldsa_wt := MlDsaWtBranch.verification_suite
 }
 

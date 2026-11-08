@@ -198,3 +198,13 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [ML-DSA packed coefficient predicate](MlDsaPackedPredicate.en.md): bounded arithmetic and explicit counterexamples.
 
 - [ML-DSA conservative word tests and conditional repair](MlDsaWtBranch.en.md): bounded arithmetic and explicit counterexamples.
+
+- [MlDsaRt1](MlDsaRt1.en.md) — Bounded Cairo arithmetic and block model.
+
+- [MlDsaU128Conversion](MlDsaU128Conversion.en.md) — Bounded Cairo arithmetic and block model.
+
+- [MlDsaProductionConversionBlock](MlDsaProductionConversionBlock.en.md) — Bounded Cairo arithmetic and block model.
+
+- [MlDsaCasmBlockSemantics](MlDsaCasmBlockSemantics.en.md) — Bounded Cairo arithmetic and block model.
+
+- [Cairo block registry](MlDsaCairoBlockSuite.en.md) — Conditional model obligations.

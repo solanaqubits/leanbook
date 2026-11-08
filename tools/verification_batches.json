@@ -476,6 +476,17 @@
         "Verification.ClaimTransportContract"
       ],
       "description": "Exact finite contract comparison and conditional implication transport under a fixed atom interpretation; no Python/JSON, source extraction or natural-language refinement theorem."
+    },
+    "cryptography/cairo-conversion-block": {
+      "direction": "cryptography",
+      "modules": [
+        "Verification.MlDsaRt1",
+        "Verification.MlDsaU128Conversion",
+        "Verification.MlDsaProductionConversionBlock",
+        "Verification.MlDsaCasmBlockSemantics",
+        "Verification.MlDsaCairoBlockSuite"
+      ],
+      "description": "Pinned block model: arbitrary finite successful trace classification and conditional numeric conversion, not real VM/compiler refinement."
     }
   },
   "infrastructure_batches": {

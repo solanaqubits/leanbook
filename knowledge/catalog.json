@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.MlDsaCairoBlockSuite",
         "Verification.ClaimTransportContract",
         "Verification.MlDsaWtBranch",
         "Verification.MlDsaPackedPredicate",
@@ -1609,6 +1610,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.MlDsaCairoBlockSuite",
         "Verification.ClaimTransportContract",
         "Verification.MlDsaWtBranch",
         "Verification.MlDsaPackedPredicate",
@@ -4838,6 +4840,53 @@
       "source": "Verification/ClaimTransportContract.lean",
       "card": "knowledge/distributed/ClaimTransportContract.en.md",
       "project_imports": []
+    },
+    {
+      "id": "MlDsaRt1",
+      "section": "cryptography",
+      "source": "Verification/MlDsaRt1.lean",
+      "card": "knowledge/cryptography/MlDsaRt1.en.md",
+      "project_imports": [],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "MlDsaU128Conversion",
+      "section": "cryptography",
+      "source": "Verification/MlDsaU128Conversion.lean",
+      "card": "knowledge/cryptography/MlDsaU128Conversion.en.md",
+      "project_imports": [
+        "Verification.MlDsaRt1"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "MlDsaProductionConversionBlock",
+      "section": "cryptography",
+      "source": "Verification/MlDsaProductionConversionBlock.lean",
+      "card": "knowledge/cryptography/MlDsaProductionConversionBlock.en.md",
+      "project_imports": [
+        "Verification.MlDsaU128Conversion"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "MlDsaCasmBlockSemantics",
+      "section": "cryptography",
+      "source": "Verification/MlDsaCasmBlockSemantics.lean",
+      "card": "knowledge/cryptography/MlDsaCasmBlockSemantics.en.md",
+      "project_imports": [
+        "Verification.MlDsaProductionConversionBlock"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "MlDsaCairoBlockSuite",
+      "section": "cryptography",
+      "source": "Verification/MlDsaCairoBlockSuite.lean",
+      "card": "knowledge/cryptography/MlDsaCairoBlockSuite.en.md",
+      "project_imports": [
+        "Verification.MlDsaCasmBlockSemantics"
+      ]
     }
   ],
   "support_modules": [

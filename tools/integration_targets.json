@@ -2861,5 +2861,14 @@
     "constructor": "distributed_systems_full_master_suite",
     "proof": "ClaimTransportContract.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.MlDsaCairoBlockSuite": {
+    "suite_struct": "CairoBlockSuite",
+    "suite_type": "MlDsaCairoBlockSuite.CairoBlockSuite",
+    "parent": "CryptoFullSuite",
+    "field": "mldsa_cairo",
+    "constructor": "crypto_full_master_suite",
+    "proof": "MlDsaCairoBlockSuite.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
