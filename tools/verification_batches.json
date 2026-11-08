@@ -469,6 +469,13 @@
         "Verification.MlDsaWtBranch"
       ],
       "description": "Packed coefficient predicate and conservative word-test arithmetic."
+    },
+    "distributed/claim-transport": {
+      "direction": "distributed",
+      "modules": [
+        "Verification.ClaimTransportContract"
+      ],
+      "description": "Exact finite contract comparison and conditional implication transport under a fixed atom interpretation; no Python/JSON, source extraction or natural-language refinement theorem."
     }
   },
   "infrastructure_batches": {

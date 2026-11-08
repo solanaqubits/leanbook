@@ -1,3 +1,4 @@
+import Verification.ClaimTransportContract
 import Verification.MlDsaWtBranch
 import Verification.MlDsaPackedPredicate
 import Verification.QuantumNoisyRepeaterWitness
@@ -1377,6 +1378,7 @@ structure DistributedSystemsFullSuite : Prop where
   marzullo_event_sorting : DistributedMarzulloEventSorting.DistributedMarzulloEventSortingSuite
   external_actuator : ExternalActuatorContract.ExternalActuatorContractSuite
   actuator_arbitration : ActuatorArbitrationContract.ActuatorArbitrationContractSuite
+  claim_transport : ClaimTransportContract.ClaimTransportSuite
 
 theorem distributed_systems_full_master_suite : DistributedSystemsFullSuite := {
   header_chain_auth := by
@@ -1460,6 +1462,7 @@ theorem distributed_systems_full_master_suite : DistributedSystemsFullSuite := {
     exact DistributedMarzulloEventSorting.verification_suite
   external_actuator := ExternalActuatorContract.verification_suite
   actuator_arbitration := ActuatorArbitrationContract.verification_suite
+  claim_transport := ClaimTransportContract.verification_suite
 }
 
 theorem DistributedSystemsFullSuite.two_phase_commit (suite : DistributedSystemsFullSuite) :

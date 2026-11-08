@@ -136,3 +136,5 @@ The operational machine establishes election safety; NetworkInduction establishe
 - [Actuator command history and recovery](ExternalActuatorContract.en.md).
 
 - [Serialized arbitration and immutable receipts](ActuatorArbitrationContract.en.md).
+
+- [ClaimTransportContract](ClaimTransportContract.en.md): exact finite contract comparison and conditional implication transport; no natural-language or Python refinement claim.

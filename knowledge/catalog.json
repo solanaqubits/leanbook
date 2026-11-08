@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.ClaimTransportContract",
         "Verification.MlDsaWtBranch",
         "Verification.MlDsaPackedPredicate",
         "Verification.QuantumNoisyRepeaterWitness",
@@ -1608,6 +1609,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.ClaimTransportContract",
         "Verification.MlDsaWtBranch",
         "Verification.MlDsaPackedPredicate",
         "Verification.QuantumNoisyRepeaterWitness",
@@ -4829,6 +4831,13 @@
         "Verification.MlDsaPackedPredicate"
       ],
       "novelty": "not-assessed"
+    },
+    {
+      "id": "ClaimTransportContract",
+      "section": "distributed",
+      "source": "Verification/ClaimTransportContract.lean",
+      "card": "knowledge/distributed/ClaimTransportContract.en.md",
+      "project_imports": []
     }
   ],
   "support_modules": [

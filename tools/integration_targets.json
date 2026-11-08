@@ -2852,5 +2852,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "MlDsaWtBranch.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.ClaimTransportContract": {
+    "suite_struct": "ClaimTransportSuite",
+    "suite_type": "ClaimTransportContract.ClaimTransportSuite",
+    "parent": "DistributedSystemsFullSuite",
+    "field": "claim_transport",
+    "constructor": "distributed_systems_full_master_suite",
+    "proof": "ClaimTransportContract.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }
