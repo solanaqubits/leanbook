@@ -1,0 +1,66 @@
+{
+  "source_commit": "667f11d293347572f6dfa248dff88819ce26c430",
+  "public_base": "38897a3ddaac9c8e95b21db452533ed4c8b5fb83",
+  "selected": [
+    {
+      "path": "docs/rt1-stage20/RT1_VERIFICATION_CHECKPOINT_STAGE20.md",
+      "source_sha256": "2998c4f1594246ca571f30e068f35c5ded47fbdab22a5e455d5a32f55f033fe5",
+      "public_sha256": "b8e740b3720b26a6d0025aed0f5c5a688f0abc82e9ee0b12b8026d5e1e6dd963",
+      "adaptation": "Labeled historical rendering; execution-log links point to an explicitly derived public summary.",
+      "original_path": "reports/RT1_VERIFICATION_CHECKPOINT_STAGE20.md"
+    },
+    {
+      "path": "docs/rt1-stage20/RT1_ARITHMETIC_STAGE20.md",
+      "source_sha256": "067354be8b880e791841d351faceec75cc14e620967062d0cd6dbd269023d509",
+      "public_sha256": "9e0ea3eb4f313316067eeb7163c9f63bb8570701b2920a1b92ac5d36baae5cfc",
+      "adaptation": "Labeled historical rendering; execution-log links point to an explicitly derived public summary.",
+      "original_path": "reports/RT1_ARITHMETIC_STAGE20.md"
+    },
+    {
+      "path": "docs/rt1-stage20/RT1_CONVERSION_STAGE19.md",
+      "source_sha256": "249cc5ca32c356fabc24668930ae65ebdb61760fdef169a539a8a367320f7f8a",
+      "public_sha256": "a4e3d382fee34fb98640573f3154d3184d7f88e9f979a2bd3c3d868c87398182",
+      "adaptation": "Labeled historical rendering; execution-log links point to an explicitly derived public summary.",
+      "original_path": "reports/RT1_CONVERSION_STAGE19.md"
+    }
+  ],
+  "excluded": [
+    "Private SimLab materials and histories",
+    "Raw verifier stdout with host paths and execution configuration",
+    "Docker inspect, host memory, infrastructure records and local coordination",
+    "Temporary, rejected and generated research drafts",
+    "Production CASM binaries and compiler installations"
+  ],
+  "unchanged_eight_module_hashes": {
+    "Verification/MlDsaRt1.lean": "4c71d1dbc65b670c7ff96363019ce4c2f7a9a16b7833b069dd9e33e65c18d2a0",
+    "Verification/MlDsaU128Conversion.lean": "cee8be432db3005edf80433d7f963e5e11deb01a4bb8bcdf229dbf5800349617",
+    "Verification/MlDsaProductionConversionBlock.lean": "ca0d92465aac3d3db8e4e4ee8f6127a19622aad4e203a7a9298bdf860671d1e5",
+    "Verification/MlDsaCasmBlockSemantics.lean": "a091865ee00e6a71071159bd17d9736da2d49881452a2fa583104abdd3518be5",
+    "Verification/MlDsaCasmMemoryRefinement.lean": "354fa3b1a4391df0f301f1f82f57e3828c1021ed575dbe3dc8e5db26957ddee5",
+    "Verification/MlDsaCasmWitnessLifting.lean": "3ad62f11d3f67093f0a32b1660e34e0df5c5044aa5aaa4228734143c7af655bf",
+    "Verification/MlDsaRt1ConversionBlock.lean": "58ac1f4ab48d8282a1e798a824c3bb36d5e52a7f8838cc722b9a21d83ae77c1b",
+    "Verification/MlDsaRt1ArithmeticBlock.lean": "d0eda5e7cbbd02046faa071d12b8cda5f6549fd981410190147bed39e74b8024"
+  },
+  "already_in_public_main": [
+    "MlDsaRt1",
+    "MlDsaU128Conversion",
+    "MlDsaProductionConversionBlock",
+    "MlDsaCasmBlockSemantics"
+  ],
+  "new_mathematical_modules": [
+    "MlDsaCasmMemoryRefinement",
+    "MlDsaCasmWitnessLifting",
+    "MlDsaRt1ConversionBlock",
+    "MlDsaRt1ArithmeticBlock"
+  ],
+  "public_receipt_scope": "Documentation renderings and selected derived summaries; original receipts are unchanged in the local source history.",
+  "integration_input_hashes": {
+    "Verification/MlDsaCairoBlockSuite.lean": "2eb07db39e43fdc734d93064c183ed24c493dd19268af9fa332bdf427b0f5a34",
+    "tests/test_mldsa_cairo.py": "c0ccda4371f4ec42a7035f00bb7ffca999de98eeeb45c02008fd480c308c94f7",
+    "tests/lean/mldsa_stage20_registry.lean": "da57b786d5633e33f0419c489cbfbfd35682ae7c025122e5dc9fda52b384b492",
+    "lakefile.toml": "1d5bfb3126447a54d31fd958640ba31a2f35066f1072741f5d63bb7c9751fea1",
+    "lake-manifest.json": "2c1668761888260f77d978c538058526e4531d83bd10a2efdc0a0943ab015def",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "tools/verifier_skill.py": "efe2a4f11aac9079f3681029a57300117ff477f1ba386bf6b577cf555532dcbc"
+  }
+}

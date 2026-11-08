@@ -1,6 +1,12 @@
 # Public verification record
 
-## Current source integration: Claim Transport and Cairo block model
+## Current rt1 Stage20 synchronization
+
+[Exact contract, OPEN register and separate new evidence](../docs/rt1-stage20-public.md).
+The source modules match local checkpoint `667f11d`. Historical closure counts
+are not new public-tree checks and are not summed.
+
+## Historical source integration: Claim Transport and Cairo block model
 
 The [integration record](../docs/claim-cairo-integration-20261108.md) records the
 unchanged Cairo research sources through `7993221f`, the Claim Transport model,

@@ -31,3 +31,6 @@ class MlDsaCairoLiveTests(unittest.TestCase):
     def test_mldsa_cairo_registry(self):
         self.check_fixture('mldsa_cairo_registry')
 
+
+    def test_stage20_registry_contract(self):
+        self.check_fixture('mldsa_stage20_registry')

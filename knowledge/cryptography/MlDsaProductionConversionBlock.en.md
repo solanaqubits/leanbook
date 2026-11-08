@@ -63,3 +63,7 @@ Public integration retains the exact checked mathematical source.
 - [no_wide_assertions_of_lt](../../Verification/MlDsaProductionConversionBlock.lean#L135)
 - [rt1_exit_is_narrow](../../Verification/MlDsaProductionConversionBlock.lean#L141)
 - [rt1_exit_option](../../Verification/MlDsaProductionConversionBlock.lean#L149)
+
+Stage 17 attributed the old PC1274–1296 window to `tx_version`. Its conditional
+rt1 lemmas do not identify an actual rt1 caller. The new PC3625–3663 candidate
+has separate path theorems; old completeness and memory results do not transfer.
