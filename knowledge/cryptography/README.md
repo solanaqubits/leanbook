@@ -194,3 +194,7 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [CryptoKZGOpeningEquation](CryptoKZGOpeningEquation.en.md) — Typed pairing equation for polynomial openings.
 
 - [CryptoGroth16PairingEquation](CryptoGroth16PairingEquation.en.md) — Groth16 verification equation in distinct pairing groups.
+
+- [ML-DSA packed coefficient predicate](MlDsaPackedPredicate.en.md): bounded arithmetic and explicit counterexamples.
+
+- [ML-DSA conservative word tests and conditional repair](MlDsaWtBranch.en.md): bounded arithmetic and explicit counterexamples.

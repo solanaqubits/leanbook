@@ -614,6 +614,8 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.MlDsaWtBranch",
+        "Verification.MlDsaPackedPredicate",
         "Verification.QuantumNoisyRepeaterWitness",
         "Verification.QuantumScheduledNoisyRepeater",
         "Verification.QuantumNoisyBBPSSWTree",
@@ -1606,6 +1608,8 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.MlDsaWtBranch",
+        "Verification.MlDsaPackedPredicate",
         "Verification.QuantumNoisyRepeaterWitness",
         "Verification.QuantumScheduledNoisyRepeater",
         "Verification.QuantumNoisyBBPSSWTree",
@@ -4807,6 +4811,24 @@
       ],
       "novelty": "not-assessed",
       "status": "reviewed"
+    },
+    {
+      "id": "MlDsaPackedPredicate",
+      "section": "cryptography",
+      "source": "Verification/MlDsaPackedPredicate.lean",
+      "card": "knowledge/cryptography/MlDsaPackedPredicate.en.md",
+      "project_imports": [],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "MlDsaWtBranch",
+      "section": "cryptography",
+      "source": "Verification/MlDsaWtBranch.lean",
+      "card": "knowledge/cryptography/MlDsaWtBranch.en.md",
+      "project_imports": [
+        "Verification.MlDsaPackedPredicate"
+      ],
+      "novelty": "not-assessed"
     }
   ],
   "support_modules": [

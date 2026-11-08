@@ -1,3 +1,5 @@
+import Verification.MlDsaWtBranch
+import Verification.MlDsaPackedPredicate
 import Verification.QuantumNoisyRepeaterWitness
 import Verification.QuantumScheduledNoisyRepeater
 import Verification.QuantumNoisyBBPSSWTree
@@ -724,6 +726,8 @@ structure CryptoFullSuite : Prop where
   qualified_sharing : CryptoQualifiedDealerSharing.CryptoQualifiedDealerSharingSuite
   kzg_equation : CryptoKZGOpeningEquation.CryptoKZGOpeningEquationSuite
   groth16_pairing : CryptoGroth16PairingEquation.CryptoGroth16PairingEquationSuite
+  mldsa_packed : MlDsaPackedPredicate.MlDsaPackedPredicateSuite
+  mldsa_wt : MlDsaWtBranch.MlDsaWtBranchSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -845,6 +849,8 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   qualified_sharing := CryptoQualifiedDealerSharing.verification_suite
   kzg_equation := CryptoKZGOpeningEquation.verification_suite
   groth16_pairing := CryptoGroth16PairingEquation.verification_suite
+  mldsa_packed := MlDsaPackedPredicate.verification_suite
+  mldsa_wt := MlDsaWtBranch.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :

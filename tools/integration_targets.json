@@ -2834,5 +2834,23 @@
     "constructor": "quantum_physics_full_master_suite",
     "proof": "QuantumNoisyRepeaterWitness.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.MlDsaPackedPredicate": {
+    "suite_struct": "MlDsaPackedPredicateSuite",
+    "suite_type": "MlDsaPackedPredicate.MlDsaPackedPredicateSuite",
+    "parent": "CryptoFullSuite",
+    "field": "mldsa_packed",
+    "constructor": "crypto_full_master_suite",
+    "proof": "MlDsaPackedPredicate.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.MlDsaWtBranch": {
+    "suite_struct": "MlDsaWtBranchSuite",
+    "suite_type": "MlDsaWtBranch.MlDsaWtBranchSuite",
+    "parent": "CryptoFullSuite",
+    "field": "mldsa_wt",
+    "constructor": "crypto_full_master_suite",
+    "proof": "MlDsaWtBranch.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

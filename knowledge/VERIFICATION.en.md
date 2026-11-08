@@ -1,10 +1,28 @@
 # Public verification record
 
-## Current source integration: Quantum v4.37–v4.39
+## Current source integration: ML-DSA arithmetic
+
+Two modules preserve the frozen Stage 3 arithmetic proofs (70 named theorems)
+and add two registry packaging theorems. The catalog contains 402 modules across
+12 sections, 406 library Lean files and 356 direct MasterSuite imports.
+
+The local scoped/gamma integration checks passed: strict cached Lake build (4145
+jobs), 190 declarations in the two-module imported axiom closure, independent
+audit of 44411 built project declarations, and 736/736 local tests without skips.
+Only `propext`, `Classical.choice` and `Quot.sound` occur; no `sorryAx` is accepted.
+The original theorem bodies and assumptions are unchanged. Registry, boundary and
+conditional-repair tests are included. Documentation-only count corrections were
+checked separately after the scoped run; its historical hashes are preserved.
+
+These are arithmetic model guarantees, not whole-signature security or a Cairo
+compiler refinement proof. Hosted CI and any publication receipt are recorded
+separately; this is not a new release tag or beta checkpoint.
+
+## Historical source integration: Quantum v4.37–v4.39
 
 The [integration record](../docs/quantum-integration-v437-v439.md) covers three
 additional modules: noisy BBPSSW trees, chronological spatial schedules and the
-certified [16,16] noisy witness. The catalog contains 400 modules across 12
+certified [16,16] noisy witness. The catalog then contained 400 modules across 12
 sections, 404 library Lean files and 354 direct MasterSuite imports. Proof bodies
 and stage evidence remain unchanged. Combined local checks and the two hosted
 CI runs have separate integration receipts; this is not a new beta checkpoint.

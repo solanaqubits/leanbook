@@ -461,6 +461,14 @@
         "Verification.QuantumMixedEnvironment",
         "Verification.QuantumMixedMemoryBSM"
       ]
+    },
+    "cryptography/mldsa-arithmetic": {
+      "direction": "cryptography",
+      "modules": [
+        "Verification.MlDsaPackedPredicate",
+        "Verification.MlDsaWtBranch"
+      ],
+      "description": "Packed coefficient predicate and conservative word-test arithmetic."
     }
   },
   "infrastructure_batches": {
