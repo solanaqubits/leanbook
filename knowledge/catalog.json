@@ -4885,8 +4885,50 @@
       "source": "Verification/MlDsaCairoBlockSuite.lean",
       "card": "knowledge/cryptography/MlDsaCairoBlockSuite.en.md",
       "project_imports": [
-        "Verification.MlDsaCasmBlockSemantics"
+        "Verification.MlDsaCasmBlockSemantics",
+        "Verification.MlDsaCasmWitnessLifting",
+        "Verification.MlDsaRt1ArithmeticBlock"
       ]
+    },
+    {
+      "id": "MlDsaCasmMemoryRefinement",
+      "section": "cryptography",
+      "source": "Verification/MlDsaCasmMemoryRefinement.lean",
+      "card": "knowledge/cryptography/MlDsaCasmMemoryRefinement.en.md",
+      "project_imports": [
+        "Verification.MlDsaCasmBlockSemantics"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "MlDsaCasmWitnessLifting",
+      "section": "cryptography",
+      "source": "Verification/MlDsaCasmWitnessLifting.lean",
+      "card": "knowledge/cryptography/MlDsaCasmWitnessLifting.en.md",
+      "project_imports": [
+        "Verification.MlDsaCasmMemoryRefinement"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "MlDsaRt1ConversionBlock",
+      "section": "cryptography",
+      "source": "Verification/MlDsaRt1ConversionBlock.lean",
+      "card": "knowledge/cryptography/MlDsaRt1ConversionBlock.en.md",
+      "project_imports": [
+        "Verification.MlDsaCasmBlockSemantics"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "MlDsaRt1ArithmeticBlock",
+      "section": "cryptography",
+      "source": "Verification/MlDsaRt1ArithmeticBlock.lean",
+      "card": "knowledge/cryptography/MlDsaRt1ArithmeticBlock.en.md",
+      "project_imports": [
+        "Verification.MlDsaRt1ConversionBlock"
+      ],
+      "novelty": "not-assessed"
     }
   ],
   "support_modules": [

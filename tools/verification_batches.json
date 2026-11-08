@@ -484,9 +484,13 @@
         "Verification.MlDsaU128Conversion",
         "Verification.MlDsaProductionConversionBlock",
         "Verification.MlDsaCasmBlockSemantics",
-        "Verification.MlDsaCairoBlockSuite"
+        "Verification.MlDsaCairoBlockSuite",
+        "Verification.MlDsaCasmMemoryRefinement",
+        "Verification.MlDsaCasmWitnessLifting",
+        "Verification.MlDsaRt1ConversionBlock",
+        "Verification.MlDsaRt1ArithmeticBlock"
       ],
-      "description": "Pinned block model: arbitrary finite successful trace classification and conditional numeric conversion, not real VM/compiler refinement."
+      "description": "Separate old tx_version block model and conditional Stage20 arithmetic/conversion rt1 candidate; no automatic transfer of completeness or memory results."
     }
   },
   "infrastructure_batches": {

@@ -77,3 +77,7 @@ Historical local evidence (not included in this public export).
 - [trace_to_exitAssertions](../../Verification/MlDsaCasmBlockSemantics.lean#L812)
 - [trace_to_conversionChecks](../../Verification/MlDsaCasmBlockSemantics.lean#L819)
 - [trace_rt1_narrow](../../Verification/MlDsaCasmBlockSemantics.lean#L826)
+
+Stage 17 attributed the old PC1274–1296 window to `tx_version`. Its conditional
+rt1 lemmas do not identify an actual rt1 caller. The new PC3625–3663 candidate
+has separate path theorems; old completeness and memory results do not transfer.

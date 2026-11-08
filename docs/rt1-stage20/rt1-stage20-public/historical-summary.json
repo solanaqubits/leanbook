@@ -1,0 +1,152 @@
+{
+  "kind": "derived-historical-summary-not-new-verification",
+  "source_commit": "667f11d293347572f6dfa248dff88819ce26c430",
+  "receipts": [
+    {
+      "source_path": "reports/rt1-arithmetic-stage20/verify-03/stdout.log",
+      "source_sha256": "ac7f330fdce87703bf0b06b98b6df9a7514001f152e4066d58ae79b725eedab1",
+      "reported_ok": true,
+      "reported_source_unchanged": true,
+      "reported_policy_findings": [],
+      "reported_audit": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "declarations": 560,
+        "violations": []
+      },
+      "reported_source_sha256": {
+        "Verification.MlDsaRt1ArithmeticBlock": "d0eda5e7cbbd02046faa071d12b8cda5f6549fd981410190147bed39e74b8024",
+        "Verification.MlDsaRt1ConversionBlock": "58ac1f4ab48d8282a1e798a824c3bb36d5e52a7f8838cc722b9a21d83ae77c1b",
+        "Verification.MlDsaCasmBlockSemantics": "a091865ee00e6a71071159bd17d9736da2d49881452a2fa583104abdd3518be5",
+        "Verification.MlDsaProductionConversionBlock": "ca0d92465aac3d3db8e4e4ee8f6127a19622aad4e203a7a9298bdf860671d1e5",
+        "Verification.MlDsaU128Conversion": "cee8be432db3005edf80433d7f963e5e11deb01a4bb8bcdf229dbf5800349617",
+        "Verification.MlDsaRt1": "4c71d1dbc65b670c7ff96363019ce4c2f7a9a16b7833b069dd9e33e65c18d2a0"
+      }
+    },
+    {
+      "source_path": "reports/rt1-conversion-stage19/verify-02/stdout.log",
+      "source_sha256": "2a8edce3ea277d23a90f6076158be19badd14a92dd1384964c9ac95e431850a8",
+      "reported_ok": true,
+      "reported_source_unchanged": true,
+      "reported_policy_findings": [],
+      "reported_audit": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "declarations": 461,
+        "violations": []
+      },
+      "reported_source_sha256": {
+        "Verification.MlDsaRt1ConversionBlock": "58ac1f4ab48d8282a1e798a824c3bb36d5e52a7f8838cc722b9a21d83ae77c1b",
+        "Verification.MlDsaCasmBlockSemantics": "a091865ee00e6a71071159bd17d9736da2d49881452a2fa583104abdd3518be5",
+        "Verification.MlDsaProductionConversionBlock": "ca0d92465aac3d3db8e4e4ee8f6127a19622aad4e203a7a9298bdf860671d1e5",
+        "Verification.MlDsaU128Conversion": "cee8be432db3005edf80433d7f963e5e11deb01a4bb8bcdf229dbf5800349617",
+        "Verification.MlDsaRt1": "4c71d1dbc65b670c7ff96363019ce4c2f7a9a16b7833b069dd9e33e65c18d2a0"
+      }
+    },
+    {
+      "source_path": "reports/casm-memory-stage16d/status.json",
+      "source_sha256": "b9b164951cdfa11355f86c79ae8ed0b6a9e902612823edb7b4c45daa6ed1ba57",
+      "reported_source_sha256": "354fa3b1a4391df0f301f1f82f57e3828c1021ed575dbe3dc8e5db26957ddee5",
+      "reported_status": "LOCALLY_VERIFIED_FORWARD_MEMORY_REFINEMENT"
+    },
+    {
+      "source_path": "reports/rt1-arithmetic-stage20/integrity.json",
+      "source_sha256": "408e9d85a535c49d6675e8f3de384766af4a43b8ed65073407f705c0b5ded7c2",
+      "reported_source_unchanged": true,
+      "reported_policy_findings": [],
+      "reported_audit": {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "declarations": 560,
+        "violations": []
+      },
+      "reported_source_sha256": "d0eda5e7cbbd02046faa071d12b8cda5f6549fd981410190147bed39e74b8024",
+      "reported_seven_predecessors_unchanged": {
+        "Verification/MlDsaRt1.lean": "4c71d1dbc65b670c7ff96363019ce4c2f7a9a16b7833b069dd9e33e65c18d2a0",
+        "Verification/MlDsaU128Conversion.lean": "cee8be432db3005edf80433d7f963e5e11deb01a4bb8bcdf229dbf5800349617",
+        "Verification/MlDsaProductionConversionBlock.lean": "ca0d92465aac3d3db8e4e4ee8f6127a19622aad4e203a7a9298bdf860671d1e5",
+        "Verification/MlDsaCasmBlockSemantics.lean": "a091865ee00e6a71071159bd17d9736da2d49881452a2fa583104abdd3518be5",
+        "Verification/MlDsaCasmMemoryRefinement.lean": "354fa3b1a4391df0f301f1f82f57e3828c1021ed575dbe3dc8e5db26957ddee5",
+        "Verification/MlDsaCasmWitnessLifting.lean": "3ad62f11d3f67093f0a32b1660e34e0df5c5044aa5aaa4228734143c7af655bf",
+        "Verification/MlDsaRt1ConversionBlock.lean": "58ac1f4ab48d8282a1e798a824c3bb36d5e52a7f8838cc722b9a21d83ae77c1b"
+      },
+      "reported_all_words_match": true,
+      "reported_production_sha256": "4b817187ccc55e73f3837d5995e2dfb761217f898aa43359c323783cfa4e09e3",
+      "reported_theorems": 38,
+      "reported_examples": 20,
+      "reported_status": "LOCALLY_VERIFIED_ARITHMETIC_INPUT_BRIDGE"
+    },
+    {
+      "source_path": "reports/RT1_CHECKPOINT_DOCUMENTATION_CHECK.json",
+      "source_sha256": "0571c170c32be967dc701b75ed73b15c5827bacf2197eef7d5bc4e0d0c35fb75",
+      "reported_unchanged_proof_hashes": {
+        "Verification/MlDsaRt1.lean": "4c71d1dbc65b670c7ff96363019ce4c2f7a9a16b7833b069dd9e33e65c18d2a0",
+        "Verification/MlDsaU128Conversion.lean": "cee8be432db3005edf80433d7f963e5e11deb01a4bb8bcdf229dbf5800349617",
+        "Verification/MlDsaProductionConversionBlock.lean": "ca0d92465aac3d3db8e4e4ee8f6127a19622aad4e203a7a9298bdf860671d1e5",
+        "Verification/MlDsaCasmBlockSemantics.lean": "a091865ee00e6a71071159bd17d9736da2d49881452a2fa583104abdd3518be5",
+        "Verification/MlDsaCasmMemoryRefinement.lean": "354fa3b1a4391df0f301f1f82f57e3828c1021ed575dbe3dc8e5db26957ddee5",
+        "Verification/MlDsaCasmWitnessLifting.lean": "3ad62f11d3f67093f0a32b1660e34e0df5c5044aa5aaa4228734143c7af655bf",
+        "Verification/MlDsaRt1ConversionBlock.lean": "58ac1f4ab48d8282a1e798a824c3bb36d5e52a7f8838cc722b9a21d83ae77c1b",
+        "Verification/MlDsaRt1ArithmeticBlock.lean": "d0eda5e7cbbd02046faa071d12b8cda5f6549fd981410190147bed39e74b8024"
+      },
+      "reported_scope": "documentation-only consolidated local checkpoint",
+      "reported_report_sha256": "2998c4f1594246ca571f30e068f35c5ded47fbdab22a5e455d5a32f55f033fe5"
+    },
+    {
+      "source_path": "reports/casm-witness-stage16e/wide-07/stdout.log",
+      "source_sha256": "4dcdd83d7a8002804944e1b0f422a647bf8c732b2c39b197621f37589cf97f35",
+      "reported_ok": true,
+      "reported_source_unchanged": true,
+      "reported_policy_findings": [],
+      "reported_audit": {
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "declarations": 871,
+        "violations": []
+      },
+      "reported_source_hashes": {
+        "Verification.MlDsaCasmWitnessLifting": "3ad62f11d3f67093f0a32b1660e34e0df5c5044aa5aaa4228734143c7af655bf",
+        "Verification.MlDsaCasmMemoryRefinement": "354fa3b1a4391df0f301f1f82f57e3828c1021ed575dbe3dc8e5db26957ddee5",
+        "Verification.MlDsaCasmBlockSemantics": "a091865ee00e6a71071159bd17d9736da2d49881452a2fa583104abdd3518be5",
+        "Verification.MlDsaProductionConversionBlock": "ca0d92465aac3d3db8e4e4ee8f6127a19622aad4e203a7a9298bdf860671d1e5",
+        "Verification.MlDsaU128Conversion": "cee8be432db3005edf80433d7f963e5e11deb01a4bb8bcdf229dbf5800349617",
+        "Verification.MlDsaRt1": "4c71d1dbc65b670c7ff96363019ce4c2f7a9a16b7833b069dd9e33e65c18d2a0"
+      }
+    },
+    {
+      "source_path": "reports/casm-memory-stage16d/verify-04/stdout.log",
+      "source_sha256": "845f176255d6a1546767f5cd4843641119fd590e0c72191486243b65ca0c4f2c",
+      "reported_ok": true,
+      "reported_source_unchanged": true,
+      "reported_policy_findings": [],
+      "reported_audit": {
+        "axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ],
+        "declarations": 514,
+        "violations": []
+      },
+      "reported_source_hashes": {
+        "Verification.MlDsaCasmMemoryRefinement": "354fa3b1a4391df0f301f1f82f57e3828c1021ed575dbe3dc8e5db26957ddee5",
+        "Verification.MlDsaCasmBlockSemantics": "a091865ee00e6a71071159bd17d9736da2d49881452a2fa583104abdd3518be5",
+        "Verification.MlDsaProductionConversionBlock": "ca0d92465aac3d3db8e4e4ee8f6127a19622aad4e203a7a9298bdf860671d1e5",
+        "Verification.MlDsaU128Conversion": "cee8be432db3005edf80433d7f963e5e11deb01a4bb8bcdf229dbf5800349617",
+        "Verification.MlDsaRt1": "4c71d1dbc65b670c7ff96363019ce4c2f7a9a16b7833b069dd9e33e65c18d2a0"
+      }
+    }
+  ]
+}

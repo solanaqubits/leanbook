@@ -4,6 +4,8 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: aicyberg
 -/
 import Verification.MlDsaCasmBlockSemantics
+import Verification.MlDsaCasmWitnessLifting
+import Verification.MlDsaRt1ArithmeticBlock
 
 /-! Registry for the pinned, flat immutable-memory block model. These obligations
 retain their entry, exit, range-check and input-binding assumptions. They do not
@@ -34,7 +36,17 @@ structure CairoBlockSuite : Prop where
     (hin : m (a + -1) = rt1FieldExpr w rt1Mask) :
     traceResult m a trace = .narrow (packRotl64_1 w)
 
+  /-- New window only: explicit arithmetic steps, AND relation, lane bound and conversion. -/
+  arithmetic_narrow {m : Memory} {a f : Int} {out : ConversionResult}
+    (hc : Canonical m)
+    (ht : MlDsaRt1ArithmeticBlock.CheckedTrace m (MlDsaRt1ArithmeticBlock.arithmeticTrace a f))
+    (hb : MlDsaRt1ArithmeticBlock.BitwiseAndAt m (m (a + -13) : Int))
+    (hx : m (f + 25) < 2 ^ 64)
+    (he : MlDsaRt1ConversionBlock.BlockExecution m (a + 9) f out) :
+    out = .narrow (packRotl64_1 (m a))
+
 theorem verification_suite : CairoBlockSuite := {
+  arithmetic_narrow := MlDsaRt1ArithmeticBlock.arithmetic_conversion_narrow
   rotation := @rt1FieldExpr_eq_packRotl64_1
   trace_classification := trace_classification
   conversion := trace_to_conversionChecks

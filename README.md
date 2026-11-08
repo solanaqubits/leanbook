@@ -16,11 +16,20 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## rt1 checkpoint through Stage 20
+
+[Public synchronization](docs/rt1-stage20-public.md) preserves all eight local
+mathematical modules and adds the four missing memory/witness/rt1 components.
+The current catalog has **412 modules**, **416 library Lean files**, and **358
+MasterSuite imports**. The candidate PC3625–3663 result is conditional on the
+specified steps, completed canonical memory, numeric AND, a bounded source lane
+and conversion RangeCheck/output bindings. It is not full Cairo–Lean verification.
+
 ## Claim Transport and Cairo block integration
 
 [Integration scope and local evidence](docs/claim-cairo-integration-20261108.md).
 The finite Claim Transport model and the completed Cairo block-model chain are
-registered as `claim_transport` and `mldsa_cairo`. The catalog contains **408
+registered as `claim_transport` and `mldsa_cairo`. That integration contained **408
 modules in 12 sections**, **412 library Lean files**, and **358 direct MasterSuite
 imports**. The local registry audit covers 44,894 declarations with zero violations.
 Cairo trace completeness holds within the explicit flat-memory model; real VM,

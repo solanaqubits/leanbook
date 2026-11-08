@@ -208,3 +208,11 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [MlDsaCasmBlockSemantics](MlDsaCasmBlockSemantics.en.md) — Bounded Cairo arithmetic and block model.
 
 - [Cairo block registry](MlDsaCairoBlockSuite.en.md) — Conditional model obligations.
+
+- [MlDsaCasmMemoryRefinement](MlDsaCasmMemoryRefinement.en.md) — Explicit conditional model.
+
+- [MlDsaCasmWitnessLifting](MlDsaCasmWitnessLifting.en.md) — Explicit conditional model.
+
+- [MlDsaRt1ConversionBlock](MlDsaRt1ConversionBlock.en.md) — Explicit conditional model.
+
+- [MlDsaRt1ArithmeticBlock](MlDsaRt1ArithmeticBlock.en.md) — Explicit conditional model.
