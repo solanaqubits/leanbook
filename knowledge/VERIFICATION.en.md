@@ -1,6 +1,17 @@
 # Public verification record
 
-## Current source integration: ML-DSA arithmetic
+## Current source integration: Claim Transport and Cairo block model
+
+The [integration record](../docs/claim-cairo-integration-20261108.md) records the
+unchanged Cairo research sources through `7993221f`, the Claim Transport model,
+and their registry integration. Local scoped checks passed: strict build (4151
+tasks with cache), 44,894 registry declarations with no forbidden axioms, 35
+targeted tests, metadata and knowledge validation. The current catalog has 408
+modules in 12 sections, 412 library Lean files and 358 direct MasterSuite imports.
+Hosted whole-project tests and verify-all are separate Actions receipts.
+No beta checkpoint or new release tag is declared.
+
+## Historical source integration: ML-DSA arithmetic
 
 Two modules preserve the frozen Stage 3 arithmetic proofs (70 named theorems)
 and add two registry packaging theorems. The catalog contains 402 modules across

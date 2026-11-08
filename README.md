@@ -16,13 +16,24 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## Claim Transport and Cairo block integration
+
+[Integration scope and local evidence](docs/claim-cairo-integration-20261108.md).
+The finite Claim Transport model and the completed Cairo block-model chain are
+registered as `claim_transport` and `mldsa_cairo`. The catalog contains **408
+modules in 12 sections**, **412 library Lean files**, and **358 direct MasterSuite
+imports**. The local registry audit covers 44,894 declarations with zero violations.
+Cairo trace completeness holds within the explicit flat-memory model; real VM,
+compiler, full-verifier and cryptographic security obligations remain open.
+This main-branch extension does not change release 1.0.0 or its tags.
+
 ## ML-DSA arithmetic integration
 
 Two cryptography modules preserve 70 arithmetic theorems from the frozen ML-DSA-44
 audit and add two registry packaging theorems (`mldsa_packed`, `mldsa_wt`). They
 cover bounded packed predicates, conservative split-word checks and conditional
 repair. This is not a proof of whole-signature security or Cairo compiler refinement.
-The catalog now contains 402 modules in 12 sections, 406 library Lean files and
+That integration contained 402 modules in 12 sections, 406 library Lean files and
 356 direct MasterSuite imports. See the [cryptography cards](knowledge/cryptography/README.md).
 
 ## Quantum v4.37–v4.39 integration
