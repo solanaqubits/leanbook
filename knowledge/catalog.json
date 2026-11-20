@@ -614,6 +614,7 @@
       "source": "Verification/MasterSuite.lean",
       "card": "knowledge/verification/MasterSuite.en.md",
       "project_imports": [
+        "Verification.ShrincsTickets",
         "Verification.MlDsaCairoBlockSuite",
         "Verification.ClaimTransportContract",
         "Verification.MlDsaWtBranch",
@@ -1610,6 +1611,7 @@
       "source": "Verification/MasterSuiteComponents.lean",
       "card": "knowledge/verification/MasterSuiteComponents.en.md",
       "project_imports": [
+        "Verification.ShrincsTickets",
         "Verification.MlDsaCairoBlockSuite",
         "Verification.ClaimTransportContract",
         "Verification.MlDsaWtBranch",
@@ -4927,6 +4929,33 @@
       "card": "knowledge/cryptography/MlDsaRt1ArithmeticBlock.en.md",
       "project_imports": [
         "Verification.MlDsaRt1ConversionBlock"
+      ],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "SignatureUsageBudget",
+      "section": "cryptography",
+      "source": "Verification/SignatureUsageBudget.lean",
+      "card": "knowledge/cryptography/SignatureUsageBudget.en.md",
+      "project_imports": [],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "ShrincsLeaf",
+      "section": "cryptography",
+      "source": "Verification/ShrincsLeaf.lean",
+      "card": "knowledge/cryptography/ShrincsLeaf.en.md",
+      "project_imports": [],
+      "novelty": "not-assessed"
+    },
+    {
+      "id": "ShrincsTickets",
+      "section": "cryptography",
+      "source": "Verification/ShrincsTickets.lean",
+      "card": "knowledge/cryptography/ShrincsTickets.en.md",
+      "project_imports": [
+        "Verification.ShrincsLeaf",
+        "Verification.SignatureUsageBudget"
       ],
       "novelty": "not-assessed"
     }

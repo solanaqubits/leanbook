@@ -491,6 +491,15 @@
         "Verification.MlDsaRt1ArithmeticBlock"
       ],
       "description": "Separate old tx_version block model and conditional Stage20 arithmetic/conversion rt1 candidate; no automatic transfer of completeness or memory results."
+    },
+    "cryptography/shrincs-leaf-selection": {
+      "direction": "cryptography",
+      "modules": [
+        "Verification.SignatureUsageBudget",
+        "Verification.ShrincsLeaf",
+        "Verification.ShrincsTickets"
+      ],
+      "description": "FXMSS leaf selection for two built-in shapes and monotone signing tickets."
     }
   },
   "infrastructure_batches": {

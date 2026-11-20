@@ -2870,5 +2870,14 @@
     "constructor": "crypto_full_master_suite",
     "proof": "MlDsaCairoBlockSuite.verification_suite",
     "parent_module": "Verification.MasterSuiteComponents"
+  },
+  "Verification.ShrincsTickets": {
+    "suite_struct": "ShrincsSuite",
+    "suite_type": "ShrincsLeaf.ShrincsSuite",
+    "parent": "CryptoFullSuite",
+    "field": "shrincs_leaves",
+    "constructor": "crypto_full_master_suite",
+    "proof": "ShrincsLeaf.verification_suite",
+    "parent_module": "Verification.MasterSuiteComponents"
   }
 }

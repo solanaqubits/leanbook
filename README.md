@@ -16,11 +16,19 @@ registry inclusion remains unconfirmed. The Lake package identifier is
 
 [Verification policy α–ζ](VERSIONING.md) · [Trust boundaries and conformance](docs/verification-hierarchy.en.md)
 
+## SHRINCS leaf selection
+
+The [signing-ticket contract](knowledge/cryptography/ShrincsTickets.en.md)
+connects two irreversible ticket charges to distinct FXMSS leaves for a fixed
+built-in tree shape. The [selector proof and reference comparison](knowledge/cryptography/ShrincsLeaf.en.md)
+cover the leaf coordinates used by the signer. The catalog has 415 modules
+across 12 sections and the master registry has 359 direct imports.
+
 ## rt1 checkpoint through Stage 20
 
 [Public synchronization](docs/rt1-stage20-public.md) preserves all eight local
 mathematical modules and adds the four missing memory/witness/rt1 components.
-The current catalog has **412 modules**, **416 library Lean files**, and **358
+At that checkpoint the catalog had **412 modules**, **416 library Lean files**, and **358
 MasterSuite imports**. The candidate PC3625–3663 result is conditional on the
 specified steps, completed canonical memory, numeric AND, a bounded source lane
 and conversion RangeCheck/output bindings. It is not full Cairo–Lean verification.

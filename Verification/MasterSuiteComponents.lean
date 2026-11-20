@@ -1,3 +1,4 @@
+import Verification.ShrincsTickets
 import Verification.MlDsaCairoBlockSuite
 import Verification.ClaimTransportContract
 import Verification.MlDsaWtBranch
@@ -731,6 +732,7 @@ structure CryptoFullSuite : Prop where
   mldsa_packed : MlDsaPackedPredicate.MlDsaPackedPredicateSuite
   mldsa_cairo : MlDsaCairoBlockSuite.CairoBlockSuite
   mldsa_wt : MlDsaWtBranch.MlDsaWtBranchSuite
+  shrincs_leaves : ShrincsLeaf.ShrincsSuite
 
 theorem crypto_full_master_suite : CryptoFullSuite := {
   pedersen_opening := CryptoPedersenCommitmentOpeningExtractionContract.verification_suite
@@ -855,6 +857,7 @@ theorem crypto_full_master_suite : CryptoFullSuite := {
   mldsa_packed := MlDsaPackedPredicate.verification_suite
   mldsa_cairo := MlDsaCairoBlockSuite.verification_suite
   mldsa_wt := MlDsaWtBranch.verification_suite
+  shrincs_leaves := ShrincsLeaf.verification_suite
 }
 
 theorem CryptoFullSuite.shamir_secret_sharing (suite : CryptoFullSuite) :

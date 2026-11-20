@@ -1,6 +1,14 @@
 # Public verification record
 
-## Current rt1 Stage20 synchronization
+## SHRINCS selector and signing tickets
+
+The [registered contract](cryptography/ShrincsTickets.en.md) passed strict
+Leanbook integration. The audit of the combined SHRINCS and MasterSuite import
+closure covered 45,679 declarations with zero violations. Lake built the
+project root with its existing cache. The executable selector agreed with the
+pinned Python reference on all 43,305 comparison inputs.
+
+## rt1 Stage20 synchronization
 
 [Exact contract, OPEN register and separate new evidence](../docs/rt1-stage20-public.md).
 The source modules match local checkpoint `667f11d`. Historical closure counts

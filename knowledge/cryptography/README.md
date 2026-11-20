@@ -216,3 +216,9 @@ These components do not prove end-to-end cryptographic security. Finite cryptogr
 - [MlDsaRt1ConversionBlock](MlDsaRt1ConversionBlock.en.md) — Explicit conditional model.
 
 - [MlDsaRt1ArithmeticBlock](MlDsaRt1ArithmeticBlock.en.md) — Explicit conditional model.
+
+- [Irreversible signing tickets](SignatureUsageBudget.en.md)
+
+- [FXMSS leaf selection](ShrincsLeaf.en.md)
+
+- [Distinct leaves for charged signing events](ShrincsTickets.en.md)
